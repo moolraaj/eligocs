@@ -584,3 +584,74 @@ p
 
 
 
+
+
+
+// footer css................
+
+.footer_wrapper{
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+
+    .footer-center-section{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 20px;
+        color: #fff;
+        
+        .center-section-second-inner-wrapper ul{
+           
+            list-style: none;
+           overflow-y: scroll;
+           height: 20vh;
+        }
+        .center-section-second-inner-wrapper ul::-webkit-scrollbar{
+            opacity: 0;
+        }
+        .center-section-first-inner-wrapper ul{
+
+            li.common-btns{
+                width: 90%;
+                padding: 10px 20px;
+                margin-bottom: 20px;
+                color: #000;
+                font-weight: 700;
+                font-size: 20px;
+                white-space: nowrap;
+            }
+            #eligo-creative{
+                background-color: #A6D6C6;
+            }
+            #app-web-design{
+                background-color: #F7D117;
+            }
+            #dev-company{
+                background-color: #EAAA00;
+            }
+        }
+        .center-section-second-inner-wrapper,
+        center-section-third-inner-wrapper{
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           text-align: left !important;
+           align-items: center;
+        }
+        .center-section-second-inner-wrapper ul{
+            li{
+                margin-bottom: 20px;
+            }
+        }
+        .center-section-third-inner-wrapper li{
+            margin-bottom: 20px;
+        }
+    }
+    .footer-top-headings{
+        color: #F7D117;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    ul{
+        list-style: none;
+    }
+}
