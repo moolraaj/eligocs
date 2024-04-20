@@ -2,6 +2,31 @@ import React, { useState, useEffect } from 'react';
 
 function Footer() {
   const [services, setServices] = useState([]);
+  const [contactInfo, setContactInfo] = useState({
+    email_address: '',
+    contact_us: '',
+    other_contact_number: '',
+    socials_networks: []
+  });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://api.eligo.cloud/wp-json/wp/v2/pages?slug=contact&fields=acf&acf_format=standard');
+        const data = await response.json();
+        if (data.length > 0) {
+          const contactData = data[0].acf;
+          if (contactData) {
+            setContactInfo(contactData);
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching contact data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -48,7 +73,20 @@ function Footer() {
               <li>no data yet</li>
             </ul>
             </div>
-            <div className='center-section-fourth-inner-wrapper'></div>
+            <div className='center-section-fourth-inner-wrapper'>
+            <ul>
+                <li>{contactInfo.email_address}</li>
+                <li>{contactInfo.contact_us}</li>
+                <li>{contactInfo.other_contact_number}</li>
+                <li>
+                {contactInfo.socials_networks.map((social, index) => (
+                <a key={index} href={social.social_link} target="_blank" rel="noopener noreferrer">
+                  <img src={social.social_icon.url} alt={`Social Icon ${index}`} />
+                </a>
+              ))}
+                </li>
+              </ul>
+            </div>
           </div>
           <div className='footer-right-section'></div>
         </div>
