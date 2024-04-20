@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 function Footer() {
   const [services, setServices] = useState([]);
+  const [data, setData] = useState([])
   const [contactInfo, setContactInfo] = useState({
     email_address: '',
     contact_us: '',
@@ -10,9 +11,9 @@ function Footer() {
     socials_networks: []
   });
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
+ 
+    const fetchContactData = async () => {
+
         const response = await fetch('https://api.eligo.cloud/wp-json/wp/v2/pages?slug=contact&fields=acf&acf_format=standard');
         const data = await response.json();
         if (data.length > 0) {
@@ -21,30 +22,36 @@ function Footer() {
             setContactInfo(contactData);
           }
         }
-      } catch (error) {
-        console.error('Error fetching contact data:', error);
-      }
+       
     };
 
-    fetchData();
-  }, []);
-
-  useEffect(() => {
+    
     const fetchData = async () => {
-      try {
         const response = await fetch('https://api.eligo.cloud/wp-json/wp/v2/services?fields=acf&acf_format=standard');
-        if (!response.ok) {
-          throw new Error('Failed to fetch services');
-        }
         const data = await response.json();
         setServices(data);
-      } catch (error) {
-        console.error('Error fetching services:', error);
-      }
     };
 
+   
+    
+  const loadPortfolio = async () => {
+      let url = await fetch('https://api.eligo.cloud/wp-json/wp/v2/portfolio?fields=acf&acf_format=standard')
+      let result = await url.json()
+      setData(result)
+      console.log(result)
+
+  }
+
+  useEffect(() => {
+    fetchContactData();
     fetchData();
-  }, []);
+      loadPortfolio()
+  }, [])
+
+
+
+
+
 
   return (
     <div className="footer_outer">
@@ -65,7 +72,7 @@ function Footer() {
                 {services.map((service,index) => (
                   <li key={index}>
                   
-                  <Link href={`services/${service.slug}`}>{service.acf.services_title}</Link>
+                  <Link href={`/services/${service.slug}`}>{service.acf.services_title}</Link>
                   </li>
                 ))}
               </ul>
@@ -73,7 +80,12 @@ function Footer() {
             <div className='center-section-third-inner-wrapper'>
             <h1 className='footer-top-headings'>Our Products</h1>
             <ul>
-              <li>no data yet</li>
+            {data.map((data,index) => (
+                  <li key={index}>
+                  
+                  <Link href={`/portfolio/${data.slug}`}>{data.acf.portfolio_title}</Link>
+                  </li>
+                ))}
             </ul>
             </div>
             <div className='center-section-fourth-inner-wrapper'>

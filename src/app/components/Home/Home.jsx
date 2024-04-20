@@ -236,10 +236,6 @@ function Home() {
           {/*our development process ends*/}
 
           {/*testimonial section starts*/}
-
-          
-          
-
            <div className="page_outer testimonial_section_outer scrolling">
                             <div className="page_inner testimonial_section_inner">
                                 <div className="home_testimonial_wrapper">
@@ -293,9 +289,6 @@ function Home() {
                   <div className="development_left_section">
                     <Portfolio />
                   </div>
-
-
-
                 </div>
               </div>
             </div>
