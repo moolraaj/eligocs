@@ -4,7 +4,10 @@ import React, { useEffect, useState } from "react";
 
 import Testimonial from "./Testimonial";
 import ParallaxContainer from "../About/ParallaxContainer";
-import Services from "../services/Services";
+import Services from "@/app/services/page";
+ 
+ 
+ 
 
 function Home() {
   const [result, setResult] = useState([]);

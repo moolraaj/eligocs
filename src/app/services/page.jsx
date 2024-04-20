@@ -23,11 +23,6 @@ function Services() {
 
     return (
         <>
-
-
-
- 
- 
             {services.map((item, index) => (
                  
                 <div className="trans_number" key={index}>
