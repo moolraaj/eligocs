@@ -75,9 +75,9 @@ function Footer() {
             </div>
             <div className='center-section-fourth-inner-wrapper'>
             <ul>
-                <li>{contactInfo.email_address}</li>
-                <li>{contactInfo.contact_us}</li>
-                <li>{contactInfo.other_contact_number}</li>
+            <li><a href={`mailto:${contactInfo.email_address}`}>{contactInfo.email_address}</a></li>
+                <li><a href={`tel:${contactInfo.contact_us}`}>{contactInfo.contact_us}</a></li>
+                <li><a href={`tel:${contactInfo.other_contact_number}`}>{contactInfo.other_contact_number}</a></li>
                 <li>
                 {contactInfo.socials_networks.map((social, index) => (
                 <a key={index} href={social.social_link} target="_blank" rel="noopener noreferrer">
