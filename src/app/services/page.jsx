@@ -22,7 +22,7 @@ function Services() {
         <>
             {services.map((item, index) => (
                 <div className="trans_number" key={index}>
-                    <Link href={`services/${item.id}`}>
+                    <Link href={`services/${item.slug}`}>
                         <ul className='transformation_wrapper'  >
                             <li>
                                 <h4>{index+1}</h4>
