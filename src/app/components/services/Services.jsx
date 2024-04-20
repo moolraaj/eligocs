@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
 
 function Services() {
 
@@ -28,16 +29,20 @@ function Services() {
  
  
             {services.map((item, index) => (
+                 
                 <div className="trans_number" key={index}>
+                    <Link href={`services/${item.id}`}>  
                     <ul className='transformation_wrapper'>
                         <li>
-                            <h4>{item.acf.services_number}</h4>
+                            <h4>{index+1}</h4>
                         </li>
                         <li>
                             <a href={item.acf.services_link} className="trans_redirecttion">{item.acf.services_title}</a>
                         </li>
                     </ul>
+                    </Link>
                 </div>
+               
             ))}
 
         </>
