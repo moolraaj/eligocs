@@ -5,9 +5,10 @@ import React, { useEffect, useState } from "react";
 import Testimonial from "./Testimonial";
 import ParallaxContainer from "../About/ParallaxContainer";
 import Services from "@/app/services/page";
- 
- 
- 
+import Portfolio from "@/app/portfolio/page";
+
+
+
 
 function Home() {
   const [result, setResult] = useState([]);
@@ -66,49 +67,47 @@ function Home() {
 
   return (
     <>
-    
+
       {result.map((ele) => (
         <div className="home_wrapper" key={ele.id}>
-            <ParallaxContainer  speed={0.5}
-              className="container-1">
+          <ParallaxContainer speed={0.5}
+            className="container-1">
             <div className="page_outer home_section_outer">
-            <div className="page_inner home_section_inner">
-              <div className="home_slider_wrapper">
-                <h1>{ele.acf.slider_heading_first}</h1>
-                <h1>{ele.acf.slider_heading_second}</h1>
-                <p
+              <div className="page_inner home_section_inner">
+                <div className="home_slider_wrapper">
+                  <h1>{ele.acf.slider_heading_first}</h1>
+                  <h1>{ele.acf.slider_heading_second}</h1>
+                  <p
                     dangerouslySetInnerHTML={{
                       __html: ele.acf.slider_para,
                     }}></p>
 
-                    
-                    </div>
-              <div
-                className={`home_slider_animate ${
-                  isScrolled ? "scrolled" : ""
-                }`}>
-                <div className={`innovation_left ${isScrolled ? "hide" : ""}`}>
-                  <h1 className={`innovation-heading`}>{ele.acf.innovation}</h1>
+
                 </div>
                 <div
-                  className={`innovation_right ${
-                    !isScrolled ? "hide" : "show"
-                  }`}>
-                  {isScrolled && (
-                    <>
-                      <button type="button">apply now</button>
-                      <p>{ele.acf.innovation_heading}</p>
-                    </>
-                  )}
+                  className={`home_slider_animate ${isScrolled ? "scrolled" : ""
+                    }`}>
+                  <div className={`innovation_left ${isScrolled ? "hide" : ""}`}>
+                    <h1 className={`innovation-heading`}>{ele.acf.innovation}</h1>
+                  </div>
+                  <div
+                    className={`innovation_right ${!isScrolled ? "hide" : "show"
+                      }`}>
+                    {isScrolled && (
+                      <>
+                        <button type="button">apply now</button>
+                        <p>{ele.acf.innovation_heading}</p>
+                      </>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-            </ParallaxContainer>
-         
+          </ParallaxContainer>
+
 
           {/*about us section starts*/}
-       
+
           <div className="page_outer about_section_outer scrolling">
             <div className="page_inner about_section_inner">
               <div className="home_about_wrapper">
@@ -125,14 +124,14 @@ function Home() {
                       __html: ele.acf.about_para_second,
                     }}></p>
 
-                     <a className="meet_our_team" href="/team">Meet Our Team</a>
-                   
+                  <a className="meet_our_team" href="/team">Meet Our Team</a>
+
                 </div>
               </div>
             </div>
           </div>
-        
-          
+
+
 
           {/*about us section ends*/}
 
@@ -146,7 +145,7 @@ function Home() {
                     <h1>{ele.acf.transformation_top_heading}</h1>
                   </div>
                   <div className="trans_right_section">
-                    <Services/>
+                    <Services />
                   </div>
                 </div>
               </div>
@@ -161,13 +160,13 @@ function Home() {
               <div className="home_company_wrapper">
                 <div className="company_flex">
                   <div className="company_left_section">
-                    
-                    <h1
-                    dangerouslySetInnerHTML={{
-                      __html: ele.acf.our_company_heading,
-                    }}></h1>
 
-                    
+                    <h1
+                      dangerouslySetInnerHTML={{
+                        __html: ele.acf.our_company_heading,
+                      }}></h1>
+
+
                     <p>{ele.acf.our_company_para}</p>
                   </div>
 
@@ -180,9 +179,8 @@ function Home() {
                             onClick={() => onTitleClick(index)}>
                             <h4>{items.faq_question}</h4>
                             <i
-                              className={`fa ${
-                                activeIndex === index ? "fa-minus" : "fa-plus"
-                              }`}></i>
+                              className={`fa ${activeIndex === index ? "fa-minus" : "fa-plus"
+                                }`}></i>
                           </div>
                           {activeIndex === index && (
                             <div className="company_answers">
@@ -206,18 +204,16 @@ function Home() {
               <div className="home_development_wrapper">
                 <div className="development_flex">
                   <div
-                    className={`development_left_section ${
-                      window.scrollY <= scrolling[0] ? "sticky" : ""
-                    }`}>
+                    className={`development_left_section ${window.scrollY <= scrolling[0] ? "sticky" : ""
+                      }`}>
                     <h1>{ele.acf.our_development_heading}</h1>
                   </div>
                   <div className="development_right_section">
                     {ele.acf.our_development_repeater.map((items, index) => {
                       return (
                         <div
-                          className={`development_scroll ${
-                            window.screenY <= scrolling[index] ? "sticky" : ""
-                          }`}
+                          className={`development_scroll ${window.screenY <= scrolling[index] ? "sticky" : ""
+                            }`}
                           style={{ top: index * 100 + " vh" }} key={index}>
                           <div className="develop_number">
                             <h4>{items.development_serial_number}</h4>
@@ -283,6 +279,36 @@ function Home() {
               </div>
             </div>
           </div>
+
+
+
+
+          {/*portfolio section starts*/}
+
+
+          <div className="page_outer portfolio_section_outer scrolling">
+            <div className="page_inner portfolio_section_inner">
+              <div className="portfolio_wrapper">
+
+                <Portfolio/>
+
+
+              </div>
+            </div>
+          </div>
+
+          {/*portfolio section ends*/}
+
+
+
+
+
+
+
+
+
+
+
         </div>
       ))}
     </>

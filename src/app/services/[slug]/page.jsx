@@ -33,12 +33,12 @@ function ServicePage({ params }) {
 
     return (
         <div>
-            {services.map((service, index) => (
-                <div key={index}>
-                    <h1>{service.acf.services_title}</h1>
-                    <p>{service.acf.services_description}</p>
-                    <img src={service.acf.services_image} alt="" />
-                    <h1>{service.acf.date}</h1>
+            {services.map((ele) => (
+                <div  key={ele.id}>
+                    <h1>{ele.acf.services_title}</h1>
+                    <p>{ele.acf.services_description}</p>
+                    <img src={ele.acf.services_image} alt="" />
+                    <h1>{ele.acf.date}</h1>
                 </div>
             ))}
         </div>
