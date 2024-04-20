@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 function Footer() {
   const [services, setServices] = useState([]);
@@ -53,7 +54,6 @@ function Footer() {
           <div className='footer-center-section'>
             <div className='center-section-first-inner-wrapper'>
               <ul>
-                <li></li>
                 <li id='eligo-creative' className='common-btns'><span>Eligo Creative Services</span></li>
                 <li id='app-web-design' className='common-btns'><span>App & Web Design,</span></li>
                 <li id='dev-company' className='common-btns'><span>Development Company</span></li>
@@ -62,8 +62,11 @@ function Footer() {
             <div className='center-section-second-inner-wrapper'>
               <h1 className='footer-top-headings'>Our Services</h1>
               <ul>
-                {services.map(service => (
-                  <li key={service.id}>{service.acf.services_title}</li>
+                {services.map((service,index) => (
+                  <li key={index}>
+                  {/* <a href={`/services/${service.id}`}></a> */}
+                  <Link href={`services/${service.slug}`}>{service.acf.services_title}</Link>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -74,6 +77,7 @@ function Footer() {
             </ul>
             </div>
             <div className='center-section-fourth-inner-wrapper'>
+            <h1 className='footer-top-headings'>Contacts</h1>
             <ul>
             <li><a href={`mailto:${contactInfo.email_address}`}>{contactInfo.email_address}</a></li>
                 <li><a href={`tel:${contactInfo.contact_us}`}>{contactInfo.contact_us}</a></li>
