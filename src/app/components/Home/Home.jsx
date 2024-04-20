@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 
 import Testimonial from "./Testimonial";
 import ParallaxContainer from "../About/ParallaxContainer";
+import Services from "../services/Services";
 
 function Home() {
   const [result, setResult] = useState([]);
@@ -62,6 +63,7 @@ function Home() {
 
   return (
     <>
+    
       {result.map((ele) => (
         <div className="home_wrapper" key={ele.id}>
             <ParallaxContainer  speed={0.5}
@@ -141,22 +143,7 @@ function Home() {
                     <h1>{ele.acf.transformation_top_heading}</h1>
                   </div>
                   <div className="trans_right_section">
-                    {ele.acf.transformation_repeater.map((items, index) => {
-                      return (
-                        <div className="trans_number" key={index}>
-                          <ul className="transformation_wrapper">
-                            <li>
-                              <h4>{items.transform_number}</h4>
-                            </li>
-                            <li>
-                              <a href="" className="trans_redirecttion">
-                                {items.transform_heading}
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      );
-                    })}
+                    <Services/>
                   </div>
                 </div>
               </div>
