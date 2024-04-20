@@ -10,8 +10,6 @@
     src: url('../font-family/Audiowide-Regular.ttf') format('truetype');
      
 }
-
- 
   
 
 
@@ -108,6 +106,17 @@ ul.transformation_wrapper li:nth-child(1) {
     position: sticky;
     top: 0;
     z-index: 1;
+}
+
+.company_scroll_wrapper:after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.company_scroll_wrapper {
+    position: relative;
 }
 
 .develop_heading h4  {

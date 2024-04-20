@@ -66,6 +66,7 @@ function Home() {
 
   return (
     <>
+    
       {result.map((ele) => (
         <div className="home_wrapper" key={ele.id}>
             <ParallaxContainer  speed={0.5}
