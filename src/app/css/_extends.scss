@@ -1,0 +1,34 @@
+//entend for all (<max-widht>)
+%max-width {
+    max-width:1520px;
+    margin:auto;
+}
+
+%home_top_heading{
+    font-size: 5em;
+    text-decoration: underline;
+    text-decoration-color:$primaryyellow ;
+    text-transform: capitalize;
+    color: $primaryblack;
+    line-height:120px ;
+}
+
+%section_top_bottom_padding{
+    padding: 80px 0px;
+}
+
+%section_bg_color{
+    background-color: $white
+}
+
+%button{
+    background: #191C1B;
+    padding: 14px 50px;
+    border-radius: 30px;
+    border: unset;
+    color: #EAAA00;
+    font-size: 1.875em;
+    text-transform: capitalize;
+}
+
+ 
