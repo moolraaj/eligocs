@@ -108,16 +108,22 @@ ul.transformation_wrapper li:nth-child(1) {
     z-index: 1;
 }
 
-.company_scroll_wrapper:after {
+.company_scroll_wrapper h4:after {
     content: "+";
     position: absolute;
     right: 0;
-    top: 0;
+    bottom: 0;
+    font-size: 1.8em;
+    color: white;
+    left: 29%;
+    font-weight: 200;
+    font-family: ui-monospace;
 }
 
 .company_scroll_wrapper {
     position: relative;
-}
+    border-right: 1px solid white;
+ }
 
 .develop_heading h4  {
     font-size: 50px;
@@ -231,17 +237,42 @@ span.cline:after {
 .company_right_section {
     background: $primaryyellow;
     @extend %section_top_bottom_padding;
+    display: flex;
+    padding: 0px;
+    justify-content: space-between;
+}
+.company_question h4 {
+    writing-mode: tb-rl;
+    font-size: 3.125em;
+    margin-right: 10px;
+    margin-left: 35px;
+    height: 64%;
+    writing-mode: tb-rl;
+    margin-top: 8vh;
+}
+
+.company_question {
+   position: relative !important;
 }
 
 .company_left_section h1 {
-    font-size: 64px;
+    font-size: 4em;
     color: #fff;
     line-height: 100px;
     margin: 0px;
 }
+span.vison_c {
+    color: $primaryyellow;
+}
 .company_left_section p {
     color: #fff;
-    font-size: 26px;
+    font-size: 1.625em;
+}
+
+
+
+.company_question {
+   position: relative !important;
 }
 
 
@@ -412,9 +443,10 @@ h1.innovation-heading {
 
 
 .company_faq_wrapper {
-    max-height: 40px;  
-    overflow: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+
     
 }
 
