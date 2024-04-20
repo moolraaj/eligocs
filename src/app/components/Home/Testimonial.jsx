@@ -6,7 +6,7 @@ function Testimonial() {
 
     const loadTestimonials = async () => {
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/testimonial`);
+            const response = await fetch(`https://api.eligo.cloud/wp-json/wp/v2/testimonial`);
             const data = await response.json();
             setTestimonials(data.map(ele => ele.acf.testimonials));
         } catch (error) {

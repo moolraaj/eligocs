@@ -218,7 +218,7 @@ function Home() {
                           className={`development_scroll ${
                             window.screenY <= scrolling[index] ? "sticky" : ""
                           }`}
-                          style={{ top: index * 100 + " vh" }}>
+                          style={{ top: index * 100 + " vh" }} key={index}>
                           <div className="develop_number">
                             <h4>{items.development_serial_number}</h4>
                           </div>
