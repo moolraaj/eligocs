@@ -54,6 +54,10 @@ a{
   
     margin: 0px;
 }
+
+.development_left_section {
+    display: flex;
+}
 .transform_section_outer{
 @extend %section_top_bottom_padding;
 @extend %section_bg_color;
@@ -89,7 +93,42 @@ ul.transformation_wrapper li:nth-child(1) {
 }
 
 .development_flex {
-    @include grid-property(grid,1fr 1fr,center,200px,unset);
+    @include grid-property(grid,1fr 1fr,flex-start,200px,unset);
+}
+
+.development_left_section {
+    position: sticky;
+    top: 18px;
+}
+
+.testimonial_wrap {
+    position: absolute;
+    max-width: 528px;
+    margin-bottom: 60px;
+}
+
+.page_outer.portfolio_section_outer.scrolling {
+    background: #191C1B;
+    height: 100vh;
+}
+.portfolio_wrapper {
+    display: flex;
+    column-gap: 38px;
+}
+
+.page_inner.portfolio_section_inner {
+    overflow: scroll;
+    max-width: 100%;
+}
+
+.testimonial_wrap.active {
+    position: relative;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
 }
 .development_scroll {
     border-bottom: 1px solid $bordercolor;
@@ -123,6 +162,9 @@ ul.transformation_wrapper li:nth-child(1) {
 .company_scroll_wrapper {
     position: relative;
     border-right: 1px solid white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
  }
 
 .develop_heading h4  {
@@ -219,9 +261,18 @@ span.cline:after {
     max-width: 100%;
 }
 
+.development_scroll {
+    position: sticky;
+    top: 40px;
+    background: white;
+    z-index: 99;
+    padding-top: 7px;
+}
+
 .company_flex {
     @include  grid-property(grid,40% 1fr,unset,unset);
     height: 80vh;
+    overflow: auto;
 }
 
 .company_left_section {
@@ -239,7 +290,7 @@ span.cline:after {
     @extend %section_top_bottom_padding;
     display: flex;
     padding: 0px;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 .company_question h4 {
     writing-mode: tb-rl;
@@ -249,6 +300,32 @@ span.cline:after {
     height: 64%;
     writing-mode: tb-rl;
     margin-top: 8vh;
+    position: relative;
+    font-weight: 400;
+}
+.company_answers p {
+    font-size: 1.25em;
+    width: 320px;
+}
+
+ul.transformation_wrapper:hover img{
+    display:block;
+}
+
+ul.transformation_wrapper img {
+    display: none;
+    position: absolute;
+    top: 11px;
+    right: 0;
+    margin-bottom: 22px !important;
+    padding-bottom: 20px;
+    max-width: 235px;
+    height: 145px;
+    object-fit: contain;
+}
+
+ul.transformation_wrapper {
+    position: relative;
 }
 
 .company_question {
@@ -456,11 +533,7 @@ h1.innovation-heading {
     max-height: 1000px; 
 }
 
-.development_scroll {
-    position: relative;
-    z-index: 1;
-    transition: top 0.3s ease;
-}
+
 
 .development_scroll.sticky {
     position: sticky;

@@ -208,9 +208,11 @@ function Home() {
                       }`}>
                     <h1>{ele.acf.our_development_heading}</h1>
                   </div>
+                  
                   <div className="development_right_section">
                     {ele.acf.our_development_repeater.map((items, index) => {
                       return (
+                        
                         <div
                           className={`development_scroll ${window.screenY <= scrolling[index] ? "sticky" : ""
                             }`}
@@ -225,9 +227,11 @@ function Home() {
                             <p>{items.development_paragraph}</p>
                           </div>
                         </div>
+                       
                       );
                     })}
                   </div>
+               
                 </div>
               </div>
             </div>
@@ -235,26 +239,43 @@ function Home() {
 
           {/*our development process ends*/}
 
-          {/*testimonial section starts*/}
-          <div className="content">
-            <Testimonial />
-          </div>
 
-          {/* <div className="page_outer testimonial_section_outer scrolling">
+               {/*portfolio section starts*/}
+
+
+          <div className="page_outer portfolio_section_outer scrolling">
+            <div className="page_inner portfolio_section_inner">
+              <div className="portfolio_wrapper">
+                <div className="development_flex">
+                  <div className="Portfolio_left_section">
+                    <h1>{ele.acf.portfolio_heading}</h1>
+                  </div>
+
+                  <div className="development_left_section">
+                    <Portfolio />
+                  </div>
+
+
+
+                </div>
+              </div>
+            </div>
+            </div>
+
+            {/*portfolio section ends*/}
+
+         {/*testimonial section starts*/}
+         <div className="page_outer testimonial_section_outer scrolling">
                             <div className="page_inner testimonial_section_inner">
                                 <div className="home_testimonial_wrapper">
                                     <div className="testimonial_flex">
                                         <div className="testimonial_left_section">
-                                            <h1>testimonials
-                                                from our
-                                                valued clients</h1>
+                                            <h1>{ele.acf.testimonial_heading}</h1>
                                         </div>
-                                        
                                         <div className="testimonial_right_section">
                                             <div className="testimonial_inner_flex">
 
-                                                <Testimonial
-                                                />
+                                            <Testimonial />
 
                                             </div>
                                         </div>
@@ -263,7 +284,7 @@ function Home() {
                                 </div>
                             </div>
                         </div>
- */}
+ 
 
           {/*testimonial section ends*/}
 
@@ -283,21 +304,7 @@ function Home() {
 
 
 
-          {/*portfolio section starts*/}
-
-
-          <div className="page_outer portfolio_section_outer scrolling">
-            <div className="page_inner portfolio_section_inner">
-              <div className="portfolio_wrapper">
-
-                <Portfolio/>
-
-
-              </div>
-            </div>
-          </div>
-
-          {/*portfolio section ends*/}
+       
 
 
 
