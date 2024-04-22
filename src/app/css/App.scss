@@ -140,6 +140,15 @@ ul.transformation_wrapper li:nth-child(1) {
 .page_outer.portfolio_section_outer.scrolling {
     background: #191C1B;
     height: 100vh;
+    overflow-y: hidden;
+    overflow-x: auto;
+
+}
+.portfolio_right_section {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    left: 50%;
 }
 .portfolio_wrapper {
     display: flex;
