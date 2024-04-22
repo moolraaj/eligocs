@@ -9,6 +9,8 @@ function Homepage() {
   const [loading, setLoading] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+
+
   const loadData = async () => {
     setLoading(true);
     const url = await fetch(
@@ -38,10 +40,14 @@ function Homepage() {
   }, []);
 
 
+  
+
+
   return (
 
     <Layout>
       <Home  loading={loading} result={result} isScrolled={isScrolled} />
+       
     </Layout>
 
   )
