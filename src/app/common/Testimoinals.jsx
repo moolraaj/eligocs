@@ -40,7 +40,9 @@ function Testimonials() {
   }, [testimonials]);
 
   return (
-    <div className="testimonials-outer">
+    <div className="page_outer testimonial_section_outer scrolling">
+    <div className="page_inner testimonial_section_inner">
+      <div className="testimonial_wrapper">
       <div className="testimonial-left-section">
         <h1>
           <span className="uderline-text">Testimonials</span>
@@ -88,6 +90,9 @@ function Testimonials() {
           ))}
         </div>
       </div>
+      </div>
+      
+    </div>
     </div>
   );
 }
