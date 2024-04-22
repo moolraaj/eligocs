@@ -67,9 +67,6 @@ function Navbar() {
               <li className="nav-item">
                 <Link className="nav-link" href={"/about"} onClick={closeMenu}>About</Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" href={"/services"} onClick={closeMenu}>services</Link>
-              </li>
              
 
             </ul>

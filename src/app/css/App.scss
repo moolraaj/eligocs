@@ -55,8 +55,18 @@ a{
     margin: 0px;
 }
 
+.portpolio_heading h1 {
+    display: none;
+}
+
+
 .development_left_section {
     display: flex;
+    top: 18px;
+    column-gap: 39px;
+}
+.page_outer.development_section_outer.scrolling {
+    padding-bottom: 35px;
 }
 .transform_section_outer{
 @extend %section_top_bottom_padding;
@@ -94,13 +104,32 @@ ul.transformation_wrapper li:nth-child(1) {
 
 .development_flex {
     @include grid-property(grid,1fr 1fr,flex-start,200px,unset);
+    padding-top: 75px;
 }
+
+
 
 .development_left_section {
     position: sticky;
     top: 18px;
 }
 
+
+.Portfolio_left_section h1 {
+    font-size: 8em;
+    text-transform: capitalize;
+    width: 60%;
+    margin-left: auto;
+    color: #ffffff30;
+    z-index: -3;
+    position: relative;
+    font-family: inherit;
+}
+
+.Portfolio_left_section {
+    z-index: -1;
+    position: relative;
+}
 .testimonial_wrap {
     position: absolute;
     max-width: 528px;
@@ -117,10 +146,12 @@ ul.transformation_wrapper li:nth-child(1) {
 }
 
 .page_inner.portfolio_section_inner {
-    overflow: scroll;
-    max-width: 100%;
+      max-width: 100%;
 }
-
+.portpolio_flex {
+    background: $white;
+    padding: 20px;
+}
 .testimonial_wrap.active {
     position: relative;
 }
