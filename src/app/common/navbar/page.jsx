@@ -60,29 +60,29 @@ function Navbar() {
 
           </button>
 
-          <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}>
-            <ul className={`navbar-nav ml-auto ${isOpen ? 'slide-down' : 'slide-up'}`}>
-              <li className="nav-item nav-left">
+          
+        </div>
+        <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}>
+            
+              <div className=" nav-left">
               <div className="header-menu-seperate-container-left">
 
               </div>
-              </li>
-              <li className="nav-item nav-right">
+              </div>
+              <div className=" nav-right">
               <div className="header-menu-seperate-container-right">
               <div className="menu-right-container-top">
                 <img src={closeMenuIcon.src} alt="closeMenuIcon" style={{float: 'right'}} onClick={closeMenu} />
               </div>
                 <div className="menu-right-container-bottom">
-                <Link className="nav-link" href={"/"} onClick={closeMenu}>Home</Link>
-                <Link className="nav-link" href={"/about"} onClick={closeMenu}>About</Link>
+                <Link className="nav-link" href={"/"} >Home</Link>
+                <Link className="nav-link" href={"/about"} >About</Link>
                 </div>
               </div>
-              </li>
+              </div>
              
 
-            </ul>
           </div>
-        </div>
         </div>
 
       </div>
