@@ -62,12 +62,12 @@ function Navbar() {
 
           <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}>
             <ul className={`navbar-nav ml-auto ${isOpen ? 'slide-down' : 'slide-up'}`}>
-              <li className="nav-item">
+              <li className="nav-item nav-left">
               <div className="header-menu-seperate-container-left">
 
               </div>
               </li>
-              <li className="nav-item">
+              <li className="nav-item nav-right">
               <div className="header-menu-seperate-container-right">
               <div className="menu-right-container-top">
                 <img src={closeMenuIcon.src} alt="closeMenuIcon" style={{float: 'right'}} onClick={closeMenu} />
