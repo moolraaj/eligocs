@@ -23,8 +23,7 @@ body {
     margin: 0px;
     padding: 0px;
     font-family: 'Euclid-Circular', sans-serif;
-
-
+    font-size: 16px;
 }
 
 a {
@@ -753,6 +752,12 @@ p .testimonial_wrap {
 }
 
 
+.footer_wrapper ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+
 
 
 
@@ -930,6 +935,19 @@ p .testimonial_wrap {
     }
 }
 
+
+
+// Davinder css 22-04-2024
+
+
+@media (max-width:1024px) {
+.home_about_wrapper{
+     @include grid-property(grid,1fr,unset);
+
+}}
+
+
+
 @media (max-width:768px) {
     li.common-btns {
         white-space: break-spaces !important;
@@ -940,6 +958,30 @@ p .testimonial_wrap {
     }
 
     .development_flex {
+        grid-template-columns: 1fr;
+    }
+    .company_flex {
+        display: block;
+         
+    }
+    .home_about_wrapper {
+        display: block;
+         
+    }
+    .trans_left_section {
+        position: relative;
+        top: 14%;
+        margin-top: 20%;
+    }
+    .testimonial_flex {
+        display: block;
+      
+    }
+    .home_quote_wrapper {
+        width: 100%;
+        margin-right: auto;
+    }
+    .footer_wrapper .footer-center-section {
         grid-template-columns: 1fr;
     }
 }

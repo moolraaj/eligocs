@@ -15,10 +15,10 @@ function AboutSection({ele}) {
                     dangerouslySetInnerHTML={{
                       __html: ele.acf.about_para_first,
                     }}></p>
-                  <p
+                  <div
                     dangerouslySetInnerHTML={{
                       __html: ele.acf.about_para_second,
-                    }}></p>
+                    }}></div>
 
                   <a className="meet_our_team" href="/team">Meet Our Team</a>
 

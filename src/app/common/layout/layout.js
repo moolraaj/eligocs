@@ -8,12 +8,12 @@ import Footer from '../footer/page'
 
 function Layout({ children }) {
   const [data, setData] = useState(false)
-  const [error, setError] = useState(false)
+  
 
 
   useEffect(() => {
     setData(true)
-    setError(true)
+    
   }, [])
 
 
