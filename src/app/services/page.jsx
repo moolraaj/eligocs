@@ -31,7 +31,7 @@ function Services() {
                                 <a href={item.acf.services_link} className="trans_redirecttion">{item.acf.services_title}</a>
                             </li>
                             <li>
-                                <img src={item.acf.services_image} alt="" srcset="" />
+                                <img src={item.acf.services_image} alt="" srcSet="" />
                             </li>
                         </ul>
                     </Link>

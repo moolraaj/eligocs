@@ -61,7 +61,7 @@ const AboutUs = () => {
   const [result, setResult] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  
+
   const loadData = async () => {
     setLoading(true);
     const url = await fetch(
@@ -76,7 +76,7 @@ const AboutUs = () => {
 
   useEffect(() => {
     loadData();
-    const handleScroll = () => {};
+    const handleScroll = () => { };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -226,7 +226,7 @@ const AboutUs = () => {
                 <Testimoinals />
               </div>
             </ParallaxContainer>
-            
+
           </div>
         </div>
       ))}
