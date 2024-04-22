@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import footerLogo from '../../assets/headerAssets/sitelogo.png'
 
 function Footer() {
   const [services, setServices] = useState([]);
@@ -58,8 +59,10 @@ function Footer() {
       <div className="footer_inner">
         <div className="footer_wrapper">
           <div className='footer-left-section'></div>
+          <div className="center-section-wrapper">
           <div className='footer-center-section'>
             <div className='center-section-first-inner-wrapper'>
+              <h1 className='footer-top-headings'><img src={footerLogo.src} alt="footerLogo" style={{width: '148px', height: '57px'}} /></h1>
               <ul>
                 <li id='eligo-creative' className='common-btns'><span>Eligo Creative Services</span></li>
                 <li id='app-web-design' className='common-btns'><span>App & Web Design,</span></li>
@@ -96,15 +99,24 @@ function Footer() {
                 <li><a href={`tel:${contactInfo.other_contact_number}`}>{contactInfo.other_contact_number}</a></li>
                 <li>
                 {contactInfo.socials_networks.map((social, index) => (
-                <a key={index} href={social.social_link} target="_blank" rel="noopener noreferrer">
+                <a key={index} href={social.social_link} target="_blank" rel="noopener noreferrer" className='social-icons'>
                   <img src={social.social_icon.url} alt={`Social Icon ${index}`} />
                 </a>
               ))}
                 </li>
               </ul>
             </div>
+           
           </div>
-          <div className='footer-right-section'></div>
+          <div className="footer-center-bottom-section">
+          <p>Registered Under Ministry Of Corporate Affairs</p>
+          <p>An ISO 9001:2015 Certified Company</p>
+          </div>
+          </div>
+         
+          <div className='footer-right-section'>
+            <p>© 2017 - 2024 All Rights Reserved</p>
+          </div>
         </div>
       </div>
     </div>

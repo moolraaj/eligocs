@@ -629,7 +629,7 @@ h1.innovation-heading {
 
 .footer_outer {
     background: $primaryblack;
-    @extend %section_top_bottom_padding;
+    padding: 80px 0px 20px 0px;
 }
 
 
@@ -755,19 +755,19 @@ p .testimonial_wrap {
     display: grid;
     grid-template-columns: 5% 80% 5%;
 
-    .footer-center-section {
+    .footer-center-section{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 20px;
         color: #fff;
-
-        .center-section-second-inner-wrapper ul {
-
-            overflow-y: scroll;
-            height: 20vh;
+        
+        .center-section-second-inner-wrapper ul{
+           
+           overflow-y: scroll;
+           height: 20vh;
         }
-
-        .center-section-first-inner-wrapper ul {
+        
+        .center-section-first-inner-wrapper ul{
 
             li.common-btns {
                 width: 90%;
@@ -791,40 +791,34 @@ p .testimonial_wrap {
                 background-color: #EAAA00;
             }
         }
-
         .center-section-second-inner-wrapper,
-        .center-section-third-inner-wrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: left !important;
-            align-items: center;
+        .center-section-third-inner-wrapper{
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           text-align: left !important;
+           align-items: center;
         }
-
-        .center-section-second-inner-wrapper ul {
-
-            li {
+        .center-section-second-inner-wrapper ul{
+            
+            li{
                 margin-bottom: 20px;
             }
         }
-
-        .center-section-third-inner-wrapper li {
+        .center-section-third-inner-wrapper li{
             margin-bottom: 20px;
         }
-
-        .center-section-third-inner-wrapper ul {
-
+        .center-section-third-inner-wrapper ul{
+           
             overflow-y: scroll;
             height: 20vh;
-        }
+         }
     }
-
     .center-section-second-inner-wrapper ul::-webkit-scrollbar,
-    .center-section-third-inner-wrapper ul::-webkit-scrollbar {
+    .center-section-third-inner-wrapper ul::-webkit-scrollbar{
         opacity: 0;
     }
-
-    .footer-top-headings {
+    .footer-top-headings{
         color: #F7D117;
         font-size: 20px;
         font-weight: 700;
@@ -832,6 +826,32 @@ p .testimonial_wrap {
 
     ul {
         list-style: none;
+        cursor: pointer;
+        
+    }
+    .footer-right-section {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        writing-mode: tb;
+       
+        p {
+            transform: rotate(180deg);
+            color: #A6D6C6;
+        }
+    }
+    .footer-center-bottom-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid #ffff;
+        margin: 20px 50px;
+        p{
+            color: #808080;
+            margin: 20px 0px 0px 0px ;
+        }
     }
 }
 
@@ -865,56 +885,11 @@ p .testimonial_wrap {
     gap: 40px;
     padding: 20px;
     cursor: pointer;
+
 }
 
 .nav-left {
     background-color: #191C1B;
     height: 100vh;
     width: 100%;
-}
-
-
-
-
-
-
-
-.portfolio-slider {
-    position: relative;
-    overflow: hidden;
-}
-
-.slider-wrapper {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.portfolio-item {
-    width: 100%;
-    flex-shrink: 0;
-    padding: 0 10px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-// button {
-//     position: absolute;
-//     top: 50%;
-//     transform: translateY(-50%);
-//     z-index: 1;
-// }
-
-.prev {
-    left: 0;
-}
-
-.next {
-    right: 0;
-}
-
-
-.portfolio_right_section {
-    display: flex;
-    column-gap: 45px;
-    align-items: center;
 }
