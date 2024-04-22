@@ -142,15 +142,32 @@ ul.transformation_wrapper li:nth-child(1) {
     height: 100vh;
     overflow-y: hidden;
     overflow-x: auto;
-
+    cursor: grab;
 }
 .portfolio_right_section {
     display: flex;
     gap: 20px;
     position: absolute;
     left: 50%;
+   
 }
+.portfolio{
+    cursor: grab !important;
+    img{
+        cursor: grab !important; 
+    }
+    a.portfolio-post {
+        display: flex;
+        flex-direction: column;
+        background: #ffffff;
+    }
+    .portfolio_flex {
+        padding: 20px;
+    }
+}
+
 .portfolio_wrapper {
+    position: relative;
     display: flex;
     column-gap: 38px;
 }
