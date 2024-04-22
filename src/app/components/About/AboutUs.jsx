@@ -65,7 +65,7 @@ const AboutUs = () => {
   const loadData = async () => {
     setLoading(true);
     const url = await fetch(
-      `https://api.eligo.cloud/wp-json/wp/v2/pages?slug=about&fields=acf&acf_format=standard`
+      `${process.env.NEXT_PUBLIC_API_URL}/pages?slug=about&fields=acf&acf_format=standard`
     );
 
     let data = await url.json();

@@ -112,6 +112,7 @@ ul.transformation_wrapper li:nth-child(1) {
 .development_left_section {
     position: sticky;
     top: 18px;
+    overflow: hidden;
 }
 
 
@@ -771,19 +772,23 @@ p
 
 
 
-.collapse.navbar-collapse {
-    position: absolute;
+.collapse.navbar-collapse,
+.collapse.navbar-collapse.show {
+    position: fixed;
     top: 0;
     background: #fff;
     height: 100vh;
     width: 100% !important;
     margin: auto;
-    transition: transform 0.3s ease; /* Add transition for smooth animation */
-    transform: translateX(40%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
-
+.collapse.navbar-collapse{
+    transition: transform 0.3s ease;
+    transform: translateX(100%);
+}
 .collapse.navbar-collapse.show {
-    transform: translateX(-100%);
+    transform: translateX(-0%);
 }
 
 .header-menu-seperate-container-right {
@@ -791,6 +796,7 @@ p
     flex-direction: column;
     gap: 40px;
     padding: 20px;
+    cursor: pointer;
 }
 .nav-left{
     background-color: #191C1B;

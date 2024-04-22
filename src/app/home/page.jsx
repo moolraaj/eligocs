@@ -12,7 +12,7 @@ function Homepage() {
   const loadData = async () => {
     setLoading(true);
     const url = await fetch(
-      `https://api.eligo.cloud/wp-json/wp/v2/pages?slug=home`
+      `${process.env.NEXT_PUBLIC_API_URL}/pages?slug=home&fields=acf&acf_format=standard`
     );
     let data = await url.json();
     setResult(data);
@@ -23,7 +23,7 @@ function Homepage() {
   useEffect(() => {
     loadData();
     const handleScroll = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 0) {
         setIsScrolled(true);
 
         window.removeEventListener("scroll", handleScroll);
@@ -39,7 +39,7 @@ function Homepage() {
 
 
   return (
-    
+
     <Layout>
       <Home result={result} isScrolled={isScrolled} />
     </Layout>
