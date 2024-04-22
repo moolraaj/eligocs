@@ -839,9 +839,35 @@ p
     }
 }
 
+
+
+// Davinder css 22-04-2024
+
+
+@media (max-width:1024px) {
+.home_about_wrapper{
+     @include grid-property(grid,1fr,unset);
+
+}}
+
+
+
 @media (max-width:768px) {
     li.common-btns{
         white-space: break-spaces !important;
+    }
+    .home_slider_wrapper h1:nth-child(1){
+        font-size: 3em !important;
+    }
+    .home_slider_wrapper h1:nth-child(2){
+        font-size: 3em !important;
+    }
+    .home_slider_wrapper p{
+        font-size: 2em !important;
+    }
+    .innovation_left h1.innovation-heading {
+        font-size: 3em !important;
+    
     }
 }
 
@@ -849,5 +875,29 @@ p
 @media (max-width:468px) {
     .footer_wrapper .footer-center-section{
         grid-template-columns: 1fr;
+    }
+    .home_slider_wrapper h1:nth-child(1){
+        font-size: 1.875em !important;
+    }
+    .home_slider_wrapper h1:nth-child(2){
+        font-size: 1.875em !important;
+    }
+    .home_slider_wrapper p{
+        font-size: 1.125em !important;
+    }
+    .innovation_left h1.innovation-heading {
+        font-size: 1.875em !important;
+    
+    }
+   .innovation_right button{
+        padding: 0.75em 1.75em !important;
+        font-size: 1.375em !important;
+    }
+    .home_about_left h1 {
+        font-size: 3.125em;
+    }
+    .home_about_right p{
+        font-size:1.125em;
+        line-height: 2.375em;
     }
 }
