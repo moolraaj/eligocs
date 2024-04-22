@@ -1,7 +1,7 @@
 "use client";
- 
 
 
+import React, { useState, useEffect } from "react";
 
 import ParallaxContainer from "../About/ParallaxContainer";
 import AboutSection from "./home-sections/About";
@@ -9,14 +9,30 @@ import QuoteSection from "./home-sections/Quote";
 import CompanySection from "./home-sections/Company";
 import DevelopmentSection from "./home-sections/Development";
 import TransformationSection from "./home-sections/Transformation";
- 
+
 import '../../about/AboutPage.scss'
 import PortfolioSection from "./home-sections/Portfolio";
- 
+
 import TestimonialSection from "./home-sections/Testimonial";
 
-function Home({result,isScrolled}) {
-  
+function Home({ result, isScrolled }) {
+
+  const [showInnovation, setShowInnovation] = useState(false);
+
+  useEffect(() => {
+    setShowInnovation(isScrolled);
+  }, [isScrolled]);
+
+  const handleScroll = () => {
+    setShowInnovation(window.scrollY > 0);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
 
 
@@ -27,7 +43,7 @@ function Home({result,isScrolled}) {
         <div className="home_wrapper" key={ele.id}>
 
 
-          <ParallaxContainer speed={0.5}
+          {/* <ParallaxContainer speed={0.5}
             className="container-1">
             <div className="page_outer home_section_outer">
               <div className="page_inner home_section_inner">
@@ -60,7 +76,44 @@ function Home({result,isScrolled}) {
                 </div>
               </div>
             </div>
+          </ParallaxContainer> */}
+
+          <ParallaxContainer speed={0.5} className="container-1">
+            <div className="page_outer home_section_outer">
+              <div className="page_inner home_section_inner">
+                <div className="home_slider_wrapper">
+                  <h1>{ele.acf.slider_heading_first}</h1>
+                  <h1>{ele.acf.slider_heading_second}</h1>
+                  <p dangerouslySetInnerHTML={{ __html: ele.acf.slider_para }}></p>
+                </div>
+                <div className={`home_slider_animate ${isScrolled ? "scrolled" : ""}`}>
+                  <div className="innovation_wrapper">
+                    <h1
+                      className={`innovation-heading ${showInnovation ? "hide" : ""}`}
+                    >
+                      {ele.acf.innovation}
+                    </h1>
+                    <div
+                      className={`innovation_content innovation_right ${showInnovation ? "show" : "hide"}`}
+                      style={{
+                        transform: showInnovation ? "translateX(-35%)" : "translateX(100%)",
+                        opacity: showInnovation ? 1 : 0,
+                        pointerEvents: showInnovation ? "auto" : "none",
+                      }}
+                    >
+                      {showInnovation && (
+                        <>
+                          <button type="button" >Apply Now</button>
+                          <p>{ele.acf.innovation_heading}</p>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </ParallaxContainer>
+
           {/*about us section starts*/}
           <AboutSection ele={ele} />
           {/*about us section ends*/}
