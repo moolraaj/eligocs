@@ -441,6 +441,8 @@ span.vison_c {
 .nav_outer ul {
     padding: 0px;
     margin: 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 .meet_our_team {
     font-size: 20px;
@@ -734,4 +736,28 @@ p
     ul{
         list-style: none;
     }
+}
+
+
+
+.collapse.navbar-collapse {
+    position: absolute;
+    top: 0;
+    background: #fff;
+    height: 100vh;
+    width: 100%;
+    margin: auto;
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
+    transform: translateX(5%);
+}
+
+.collapse.navbar-collapse.show {
+    transform: translateX(-96%);
+}
+
+.header-menu-seperate-container-right {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
 }

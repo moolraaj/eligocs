@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link';
 import React, { useState } from 'react';
+import closeMenuIcon from '../../assets/headerAssets/closeMenu.png'
  
 
 function Navbar() {
@@ -40,7 +41,7 @@ function Navbar() {
       <div className="nav_inner">
         <div className="nav_flex">
         <div className="nav_left_section">
-          <Link className="navbar-brand" href="/" onClick={closeMenu}>
+          <Link className="navbar-brand" href="/" >
             {/* {
               logo.map((id, logo)=>(
                 <img key={id} src={logo.acf.} alt="" />
@@ -62,10 +63,20 @@ function Navbar() {
           <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}>
             <ul className={`navbar-nav ml-auto ${isOpen ? 'slide-down' : 'slide-up'}`}>
               <li className="nav-item">
-                <Link className="nav-link" href={"/"} onClick={closeMenu}>Home</Link>
+              <div className="header-menu-seperate-container-left">
+
+              </div>
               </li>
               <li className="nav-item">
+              <div className="header-menu-seperate-container-right">
+              <div className="menu-right-container-top">
+                <img src={closeMenuIcon.src} alt="closeMenuIcon" style={{float: 'right'}} onClick={closeMenu} />
+              </div>
+                <div className="menu-right-container-bottom">
+                <Link className="nav-link" href={"/"} onClick={closeMenu}>Home</Link>
                 <Link className="nav-link" href={"/about"} onClick={closeMenu}>About</Link>
+                </div>
+              </div>
               </li>
              
 
