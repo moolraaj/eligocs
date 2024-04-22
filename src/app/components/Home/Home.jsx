@@ -14,6 +14,7 @@ import '../../about/AboutPage.scss'
 import PortfolioSection from "./home-sections/Portfolio";
  
 import TestimonialSection from "./home-sections/Testimonial";
+ 
 
 function Home({result,isScrolled}) {
   
@@ -23,7 +24,7 @@ function Home({result,isScrolled}) {
   return (
     <>
 
-      {result.map((ele) => (
+      { result.map((ele) => (
         <div className="home_wrapper" key={ele.id}>
 
 

@@ -10,7 +10,7 @@ function Page({ params }) {
         const fetchPortfolio = async () => {
             try {
                 if (slug) {
-                    const response = await fetch(`https://api.eligo.cloud/wp-json/wp/v2/portfolio?slug=${slug}&_fields=acf,date&acf_format=standard`);
+                    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/portfolio?slug=${slug}&_fields=acf,date&acf_format=standard`);
                     if (response.ok) {
                         const data = await response.json();
                         setPortfolio(data);

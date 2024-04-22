@@ -41,7 +41,7 @@ function Homepage() {
   return (
 
     <Layout>
-      <Home result={result} isScrolled={isScrolled} />
+      <Home  loading={loading} result={result} isScrolled={isScrolled} />
     </Layout>
 
   )
