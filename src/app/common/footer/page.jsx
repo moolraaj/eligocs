@@ -100,7 +100,7 @@ function Footer() {
                 <li>
                 {contactInfo.socials_networks.map((social, index) => (
                 <a key={index} href={social.social_link} target="_blank" rel="noopener noreferrer" className='social-icons'>
-                  <img src={social.social_icon.url} alt={`Social Icon ${index}`} />
+                  <img src={social.social_icon.url} alt={`SocialIcon${index}`} />
                 </a>
               ))}
                 </li>

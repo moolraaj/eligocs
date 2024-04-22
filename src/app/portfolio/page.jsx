@@ -1,53 +1,58 @@
-import React, { useEffect, useState } from 'react'
+import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
 
 function Portfolio() {
-    const [data, setData] = useState([])
-    const loadPortfolio = async () => {
-        let url = await fetch('https://api.eligo.cloud/wp-json/wp/v2/portfolio?fields=acf&acf_format=standard')
-        let result = await url.json()
-        setData(result)
-        console.log(result)
+    const [data, setData] = useState([]);
 
-    }
+    const loadPortfolio = async () => {
+        try {
+            const response = await fetch('https://api.eligo.cloud/wp-json/wp/v2/portfolio?fields=acf&acf_format=standard');
+            if (response.ok) {
+                const result = await response.json();
+                setData(result);
+            } else {
+                console.error('Failed to fetch portfolio data');
+            }
+        } catch (error) {
+            console.error('Error fetching portfolio data:', error);
+        }
+    };
 
     useEffect(() => {
-        loadPortfolio()
-    }, [])
+        loadPortfolio();
+    }, []);
+
     return (
         <>
-
-            {data.map((ele) => {
-
-                return <div className="portpolio" key={ele.acf.id}>
-                    <div className="portpolio_heading">
-                        <h1>{ele.acf.portfolio_title}</h1>
-                    </div>
-                    <div className="portpolio_image">
-                        <img src={ele.acf.portfolio_image} alt="" srcset="" />
-                    </div>
-
-                    <div className="portpolio_flex">
-                        <div className="protfolio_inner_left_section">
-                            <div className="portfolio_title">
-                                <h4>{ele.acf.portfolio_heading}</h4>
+            {data.map((ele) => (
+                <div className="portfolio" key={ele.acf.id}>
+                    <Link href={`portfolio/${ele.slug}`}>
+                        <div className="portfolio_heading">
+                            <h1>{ele.acf.portfolio_title}</h1>
+                        </div>
+                        <div className="portfolio_image">
+                            <img src={ele.acf.portfolio_image} alt="" srcSet="" />
+                        </div>
+                        <div className="portfolio_flex">
+                            <div className="portfolio_inner_left_section">
+                                <div className="portfolio_title">
+                                    <h4>{ele.acf.portfolio_heading}</h4>
+                                </div>
+                                <div className="portfolio_short_description">
+                                    <p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_short_description }}></p>
+                                </div>
                             </div>
-                        <div className="portpolio_short_decription">
-                            <p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_short_description }}></p>
+                            <div className="portfolio_inner_right_section">
+                                <div className="portfolio_technology">
+                                    <p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_technology }}></p>
+                                </div>
+                            </div>
                         </div>
-                        </div>
-                        <div className="portfolio_inner_right_section">
-                        <div className="portpolio_technology">
-                            <p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_technology }}></p>
-                        </div>
-                        </div>
-                    </div>
-
-
+                    </Link>
                 </div>
-            })}
-
+            ))}
         </>
-    )
+    );
 }
 
-export default Portfolio
+export default Portfolio;
