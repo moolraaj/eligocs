@@ -626,7 +626,9 @@ h1.innovation-heading {
 
 
   .nav_flex {
-    @include flex-property(flex,space-between,row,center)
+    @include flex-property(flex,space-between,row,center);
+    padding: 0px 20px;
+    
 }
 
 

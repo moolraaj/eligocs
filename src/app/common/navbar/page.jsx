@@ -1,7 +1,8 @@
 'use client'
 import Link from 'next/link';
 import React, { useState } from 'react';
-import closeMenuIcon from '../../assets/headerAssets/closeMenu.png'
+import closeMenuIcon from '../../assets/headerAssets/closeMenu.png';
+import siteLogo from '../../assets/headerAssets/sitelogo.png';
  
 
 function Navbar() {
@@ -42,13 +43,8 @@ function Navbar() {
         <div className="nav_flex">
         <div className="nav_left_section">
           <Link className="navbar-brand" href="/" >
-            {/* {
-              logo.map((id, logo)=>(
-                <img key={id} src={logo.acf.} alt="" />
-              ))
-            }
-             */}
-            </Link>   
+            <img src={siteLogo.src} alt="siteLogo" style={{width: '9.25rem', height: '3.5625rem',objectFit: 'cover'}} />
+             </Link>   
         </div>
 
         <div className="nav_right_section">
