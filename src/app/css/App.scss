@@ -753,6 +753,13 @@ p
             margin-bottom: 20px;
         }
     }
+    .center-section-fourth-inner-wrapper li img {
+        width: 30px; /* Set a fixed width */
+        height: auto; /* Let the height adjust automatically based on the aspect ratio */
+        max-width: 100%; /* Ensure the images don't exceed the specified width */
+        max-height: 30px; /* Set a maximum height to prevent stretching */
+    }
+    
     .footer-top-headings{
         color: #F7D117;
         font-size: 20px;
