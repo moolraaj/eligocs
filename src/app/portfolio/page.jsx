@@ -27,11 +27,18 @@ function Portfolio() {
                     </div>
 
                     <div className="portpolio_flex">
+                        <div className="protfolio_inner_left_section">
+                            <div className="portfolio_title">
+                                <h4>{ele.acf.portfolio_heading}</h4>
+                            </div>
                         <div className="portpolio_short_decription">
                             <p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_short_description }}></p>
                         </div>
+                        </div>
+                        <div className="portfolio_inner_right_section">
                         <div className="portpolio_technology">
                             <p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_technology }}></p>
+                        </div>
                         </div>
                     </div>
 

@@ -1,25 +1,30 @@
 import React from 'react'
-import Services from "@/app/services/page";
-function TransformationSection({ele}) {
+import Testimonial from '../Testimonial'
 
+function TestimonialSection({ele}) {
   return (
-    <>
-   <div className="page_outer transform_section_outer scrolling">
-            <div className="page_inner transform_section_inner">
-              <div className="home_transformation_wrapper">
-                <div className="trans_flex">
-                  <div className="trans_left_section">
-                    <h1>{ele.acf.transformation_top_heading}</h1>
-                  </div>
-                  <div className="trans_right_section">
-                    <Services />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-    </>
+     <>
+              <div className="page_outer testimonial_section_outer scrolling">
+                            <div className="page_inner testimonial_section_inner">
+                                <div className="home_testimonial_wrapper">
+                                    <div className="testimonial_flex">
+                                        <div className="testimonial_left_section">
+                                            <h1>{ele.acf.testimonial_heading}</h1>
+                                        </div>
+                                        <div className="testimonial_right_section">
+                                            <div className="testimonial_inner_flex">
+
+                                             <Testimonial/>
+
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+     </>
   )
 }
 
-export default TransformationSection
+export default TestimonialSection

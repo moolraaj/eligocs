@@ -110,18 +110,6 @@ function Home({result,isScrolled}) {
           {/*quote section ends*/}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
       ))}
     </>
