@@ -755,10 +755,10 @@ p
     }
     .center-section-fourth-inner-wrapper li img {
         width: 30px; 
-        height: 30px;
-        object-fit: cover;
+        height: auto; 
+        max-width: 100%;
+        max-height: 30px; 
     }
-    
     
     .footer-top-headings{
         color: #F7D117;
