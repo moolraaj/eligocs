@@ -27,13 +27,13 @@ function ServicePage({ params }) {
         fetchServices();
     }, [slug]);
 
-    if (services.length === 0) {
+    if (Object.keys(services).length === 0) {
         return <h1>Loading...</h1>;
     }
 
     return (
         <div>
-            {services.map((ele) => (
+            {Object.values(services).map((ele) => (
                 <div  key={ele.id}>
                     <h1>{ele.acf.services_title}</h1>
                     <p>{ele.acf.services_description}</p>

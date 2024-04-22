@@ -13,7 +13,7 @@ function Testimonials() {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await fetch("https://api.eligo.cloud/wp-json/wp/v2/pages?slug=about&fields=acf&acf_format=standard");
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pages?slug=about&fields=acf&acf_format=standard`);
         if (!response.ok) {
           throw new Error("Failed to fetch testimonials");
         }

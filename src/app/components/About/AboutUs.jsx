@@ -61,11 +61,11 @@ const AboutUs = () => {
   const [result, setResult] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  
+
   const loadData = async () => {
     setLoading(true);
     const url = await fetch(
-      `https://api.eligo.cloud/wp-json/wp/v2/pages?slug=about&fields=acf&acf_format=standard`
+      `${process.env.NEXT_PUBLIC_API_URL}/pages?slug=about&fields=acf&acf_format=standard`
     );
 
     let data = await url.json();
@@ -76,7 +76,7 @@ const AboutUs = () => {
 
   useEffect(() => {
     loadData();
-    const handleScroll = () => {};
+    const handleScroll = () => { };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -138,7 +138,7 @@ const AboutUs = () => {
                       </h1>
                       <h3>{ele.acf.top_heading_second}</h3>
                       <p>{ele.acf.top_para_first}</p>
-                      {/* <button id="get-in-tch"><a href={ele.acf.get_in_touch_button}  target="_blank">Get In Touch</a></button> */}
+                      <button id="get-in-tch"><a href={ele.acf.get_in_touch_button}  target="_blank">Get In Touch</a></button>
                     </div>
                   </div>
                 </div>
@@ -210,7 +210,7 @@ const AboutUs = () => {
                       Join Us on the Journey to Success with Our Tailored
                       Solutions and Expert Guidance.
                     </h2>
-                    {/* <button id="sucess-journy-btn"><a href={ele.acf.unlock_success_now_button} target="_blank"></a>Unlock Success Now</button> */}
+                    <button id="sucess-journy-btn"><a href={ele.acf.unlock_success_now_button} target="_blank"></a>Unlock Success Now</button>
                   </div>
                   <div className="success-journy-right">
                     <JournyImageSlider result={ele} />
@@ -226,7 +226,7 @@ const AboutUs = () => {
                 <Testimoinals />
               </div>
             </ParallaxContainer>
-            
+
           </div>
         </div>
       ))}

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+ 
 
 
 
@@ -9,45 +9,14 @@ import QuoteSection from "./home-sections/Quote";
 import CompanySection from "./home-sections/Company";
 import DevelopmentSection from "./home-sections/Development";
 import TransformationSection from "./home-sections/Transformation";
-import Testimonials from "@/app/common/Testimoinals";
+ 
 import '../../about/AboutPage.scss'
 import PortfolioSection from "./home-sections/Portfolio";
-import Testimonial from "./Testimonial";
+ 
 import TestimonialSection from "./home-sections/Testimonial";
 
-function Home() {
-  const [result, setResult] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  const loadData = async () => {
-    setLoading(true);
-    const url = await fetch(
-      `https://api.eligo.cloud/wp-json/wp/v2/pages?slug=home`
-    );
-    let data = await url.json();
-    setResult(data);
-    setLoading(false);
-    console.log(data);
-  };
-
-  useEffect(() => {
-    loadData();
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setIsScrolled(true);
-
-        window.removeEventListener("scroll", handleScroll);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+function Home({result,isScrolled}) {
+  
 
 
 
@@ -139,18 +108,6 @@ function Home() {
           {/*quote section ends*/}
           <QuoteSection ele={ele} />
           {/*quote section ends*/}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         </div>
