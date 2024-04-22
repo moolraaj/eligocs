@@ -140,7 +140,18 @@ ul.transformation_wrapper li:nth-child(1) {
 .page_outer.portfolio_section_outer.scrolling {
     background: #191C1B;
     height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+    cursor: pointer;
 }
+.portfolio_inner_right_section {
+    display: flex;
+    overflow-y: scroll;
+    position: absolute;
+    gap: 40px;
+    left: 50%;
+}
+
 .portfolio_wrapper {
     display: flex;
     column-gap: 38px;

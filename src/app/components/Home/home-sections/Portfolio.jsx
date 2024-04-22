@@ -6,12 +6,12 @@ function PortfolioSection({ele}) {
      <div className="page_outer portfolio_section_outer scrolling">
             <div className="page_inner portfolio_section_inner">
               <div className="portfolio_wrapper">
-                <div className="development_flex">
-                  <div className="development_left_section">
+                <div className="portfolio_flex">
+                  <div className="portfolio_inner_left_section">
                     <h1>{ele.acf.portfolio_heading}</h1>
                   </div>
 
-                  <div className="development_left_section">
+                  <div className="portfolio_inner_right_section">
                     <Portfolio />
                   </div>
                 </div>
