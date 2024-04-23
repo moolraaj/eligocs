@@ -41,7 +41,7 @@ const WorkForm = () => {
             required
           />
         </div>
-        <div className={styles.inputGroup}>
+        <div className='WorkForm-inputGroup'>
           <label htmlFor="lastName" className='WorkForm-label'>Last Name</label>
           <input
             type="text"
@@ -53,7 +53,7 @@ const WorkForm = () => {
             required
           />
         </div>
-        <div className={styles.inputGroup}>
+        <div className='WorkForm-inputGroup'>
           <label htmlFor="email" className='WorkForm-label'>Email Address</label>
           <input
             type="email"
@@ -65,7 +65,7 @@ const WorkForm = () => {
             required
           />
         </div>
-        <div className={styles.inputGroup}>
+        <div className='WorkForm-inputGroup'>
           <label htmlFor="companyName" className='WorkForm-label'>Company Name</label>
           <input
             type="text"
@@ -77,7 +77,7 @@ const WorkForm = () => {
             required
           />
         </div>
-        <div className={styles.inputGroup}>
+        <div className='WorkForm-inputGroup'>
           <label htmlFor="project" className='WorkForm-label'>Please Tell Us More About Project</label>
           <textarea
             id="project"
@@ -88,7 +88,7 @@ const WorkForm = () => {
             required
           ></textarea>
         </div>
-        <div className={styles.inputGroup}>
+        <div className='WorkForm-inputGroup'>
           <label htmlFor="phone" className='WorkForm-label'>Phone Number</label>
           <input
             type="tel"
@@ -100,7 +100,7 @@ const WorkForm = () => {
             required
           />
         </div>
-        <div className={styles.inputGroup}>
+        <div className='WorkForm-inputGroup'>
           <label htmlFor="budget" className='WorkForm-label'>Budget</label>
           <input
             type="number"

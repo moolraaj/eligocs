@@ -1016,11 +1016,11 @@ p .testimonial_wrap {
     box-sizing: border-box;
 }
 
-.textarea {
+.WorkForm-textarea {
     height: 150px;
 }
 
-.button {
+.WorkForm-button {
     background-color: #333;
     color: #fff;
     border: none;
@@ -1031,7 +1031,7 @@ p .testimonial_wrap {
     transition: background-color 0.3s ease;
 }
 
-.button:hover {
+.WorkForm-button:hover {
     background-color: #444;
 }
 

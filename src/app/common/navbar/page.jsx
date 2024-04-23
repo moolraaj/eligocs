@@ -4,10 +4,12 @@ import React, { useState } from 'react';
 import closeMenuIcon from '../../assets/headerAssets/closeMenu.png';
 import siteLogo from '../../assets/headerAssets/sitelogo.png';
 import formLogo from '../../assets/headerAssets/formlogo.png';
+import WorkForm from './WorkForm';
 
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showWorkForm, setShowWorkForm] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -15,6 +17,10 @@ function Navbar() {
 
   const closeMenu = () => {
     setIsOpen(false);
+  };
+
+  const toggleWorkForm = () => {
+    setShowWorkForm(!showWorkForm);
   };
 
   const NavigationLink = ({ href, children }) => (
@@ -34,8 +40,8 @@ function Navbar() {
           </div>
 
           <div className="nav_right_section">
-            <button>
-            <img src={formLogo.src} alt="formLogo"/>
+          <button onClick={toggleWorkForm}> 
+              <img src={formLogo.src} alt="formLogo" />
             </button>
             <button className="nav-toggler" type="button" onClick={toggleMenu}>
               <span className="nav-toggler-icon"></span>
@@ -43,7 +49,7 @@ function Navbar() {
               <span className="nav-toggler-icon"></span>
             </button>
           </div>
-
+          {showWorkForm && <WorkForm/>}
           <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}>
             <div className="nav-left">
               <div className="header-menu-seperate-container-left"></div>
