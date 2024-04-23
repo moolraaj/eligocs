@@ -1,5 +1,3 @@
- 
- 
 import Portfolio from '@/app/portfolio/page'
 import React from 'react'
  

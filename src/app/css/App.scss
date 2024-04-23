@@ -628,7 +628,7 @@ h1.innovation-heading {
     align-items: center;
     justify-content: center;
     margin-bottom: 50px;
-    
+
 }
 
 .footer_inner {
@@ -885,7 +885,7 @@ p .testimonial_wrap {
 
 .collapse.navbar-collapse,
 .collapse.navbar-collapse.show {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     background: #fff;
@@ -904,7 +904,7 @@ p .testimonial_wrap {
 }
 
 .collapse.navbar-collapse.show {
-    transform: translateX(-0%);
+    transform: translateX(0%);
 
 }
 
@@ -930,6 +930,105 @@ p .testimonial_wrap {
     width: 100%;
 }
 
+.nav_right_section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    button {
+        background: transparent;
+        border: none;
+    }
+}
+
+
+// Work Form css
+
+
+
+.WorkForm-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.WorkForm-tittle {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+.WorkForm-subtitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.WorkForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+}
+
+.WorkForm-inputGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.WorkForm-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.WorkForm-input,
+.WorkForm-textarea {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1.2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.textarea {
+    height: 150px;
+}
+
+.button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #444;
+}
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width:1024px) {
     .footer_wrapper .footer-center-section {
@@ -943,119 +1042,197 @@ p .testimonial_wrap {
 
 
 @media (max-width:1024px) {
-.home_about_wrapper{
-     @include grid-property(grid,1fr,unset);
+    .home_about_wrapper {
+        @include grid-property(grid, 1fr, unset);
 
-}}
+    }
+}
 
 
 
 @media (max-width:768px) {
-    li.common-btns{
+    .collapse.navbar-collapse,
+    .collapse.navbar-collapse.show{
+        left: 35% !important;
+    }
+    li.common-btns {
         white-space: break-spaces !important;
     }
 
-    .page_outer {
-        padding: 0px 14px;
-    }
     
     .company_flex {
         display: grid;
         grid-template-columns: 1fr;
         height: auto;
     }
+
     .development_flex {
         display: block;
     }
-    
+
     .company_question h4 {
-               writing-mode: horizontal-tb;
-        
+        margin: 20px;
+        position: relative;
+        width: 90%;
+        writing-mode: inherit;
+
     }
-     
+
     .company_right_section {
-         display: block;
-      
-    }
+        display: block;
 
+        .company_scroll_wrapper {
+            position: relative;
+            border: none;
+            display: flex;
+            justify-content: flex-start;
+           
+        }
 
+        .company_faq_wrapper {
+            cursor: pointer;
+            border-bottom: 1px solid #ffff;
+            width: 100%;
+            display: flex;
+    flex-direction: column;
+        }
+        .company_answers p {
+            font-size: 1.25em;
+            width: 80%;
+            margin: 0px auto 0px 20px;
+        }
+        .company_question {
+            position: relative !important;
+            width: 100%;
+        }
+
+        .company_scroll_wrapper h4:after {
+            content: "+";
+            color: white;
+            font-weight: 200;
+            font-family: ui-monospace;
+            position: absolute;
+            left: auto;
+            right: 0;
+        }
+}
     .testimonial_flex {
         display: block;
-       
+
     }
+
     .trans_flex {
         display: block;
-       
+
     }
+
     .trans_left_section {
         position: relative;
-       
+
     }
-   
+
     .home_slider_animate {
         flex-direction: column;
     }
+
     .innovation_right.show {
         transform: translateX(0%);
     }
+
     .innovation_content {
         right: 70%;
     }
-    
-    .page_inner{
+
+    .page_inner {
         margin: 0px 0px 50px 0px;
     }
+
     body.__className_aaf875 {
         font-size: 12px;
     }
+
     .show {
         transform: translateX(-35%) !important;
-      }
+    }
+    .about_section_outer,
+    .transform_section_outer,
+    .development_flex{
+        padding: 20px ;
+    }
+    .trans_left_section{
+        margin: 0;
+    }
+    
+    .company_left_section{
+        height: auto;
+        padding: 20px;
+    }
+
 }
+
+
+
+
+
+
+
 
 .innovation_wrapper {
     position: relative;
     display: flex;
     align-items: center;
-  }
-  
-  .innovation-heading {
+}
+
+.innovation-heading {
     transition: transform 0.5s ease;
-  }
-  
-  .innovation_content {
+}
+
+.innovation_content {
     transition: transform 0.5s ease;
     position: absolute;
     right: 0;
     opacity: 0;
-  }
-  
-  .hide {
+}
+
+.hide {
     transform: translateX(100%);
     opacity: 0;
-    pointer-events: none; 
-  }
-  
-  .show {
+    pointer-events: none;
+}
+
+.show {
     transform: translateX(-50%);
     opacity: 1;
-  }
-  
+}
+
 
 
 @media (max-width:468px) {
-    .footer_wrapper .footer-center-section{
+    .footer_wrapper .footer-center-section {
         grid-template-columns: 1fr;
-        
+
     }
+
     .footer-center-section h1 {
         margin-left: 40px;
     }
-    
-    .footer_wrapper .footer-center-section .center-section-second-inner-wrapper, .footer_wrapper .footer-center-section .center-section-third-inner-wrapper, .footer_wrapper .footer-center-section .center-section-fourth-inner-wrapper{
+
+    .footer_wrapper .footer-center-section .center-section-second-inner-wrapper,
+    .footer_wrapper .footer-center-section .center-section-third-inner-wrapper,
+    .footer_wrapper .footer-center-section .center-section-fourth-inner-wrapper {
         align-items: flex-start;
     }
+
     body.__className_aaf875 {
         font-size: 9px;
+    }
+    .trans_left_section h1,
+    .development_left_section h1,
+    .company_left_section h1{
+        line-height: 80px;
+        margin: 0;
+    }
+    .company_left_section{
+        display: block;
     }
 }
