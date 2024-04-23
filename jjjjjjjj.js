@@ -1,5 +1,6 @@
-'use client'
-import React, { useEffect, useState } from 'react';
+
+'use client '
+import { fetchServices } from '@/utils/apis/Apis';
 import Link from 'next/link';
  
 import { useEffect, useState } from 'react';
@@ -8,21 +9,22 @@ export default function  Services() {
     const [services, setServices] = useState([]);  
 
     const loadServices = async () => {
-        let url = await fetch('https://api.eligo.cloud/wp-json/wp/v2/services?fields=acf&acf_format=standard');
-        let data = await url.json();
-        setServices(data);
-        console.log(data)
+        let url = await  fetchServices()
+        setServices(url)  
+        console.log(url)
     };
 
     useEffect(() => {
         loadServices()
     }, []);
 
-    
+     
+
+
 
     return (
         <>
-            {sortedServices.map((item, index) => (
+            {services.map((item, index) => (
                 <div className="trans_number" key={index}>
                     <Link href={`services/${item.slug}`}>
                         <ul className='transformation_wrapper'  >

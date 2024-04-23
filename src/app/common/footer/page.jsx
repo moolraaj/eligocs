@@ -63,7 +63,7 @@ function Footer() {
           <div className="center-section-wrapper">
           <div className='footer-center-section'>
             <div className='center-section-first-inner-wrapper'>
-              <h1 className='footer-top-headings'><img src={footerLogo.src} alt="footerLogo" style={{width: '148px', height: '57px'}} /></h1>
+              <div className='footer-top-headings'><img src={footerLogo.src} alt="footerLogo" style={{width: '148px', height: '57px'}} /></div>
               <ul>
                 <li id='eligo-creative' className='common-btns'><span>Eligo Creative Services</span></li>
                 <li id='app-web-design' className='common-btns'><span>App & Web Design,</span></li>
