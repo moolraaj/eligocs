@@ -1,24 +1,22 @@
-'use client'
+
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
- 
-import { useEffect, useState } from 'react';
 
-export default function  Services() {
-    const [services, setServices] = useState([]);  
+function Services() {
+    const [services, setServices] = useState([]);
 
     const loadServices = async () => {
         let url = await fetch('https://api.eligo.cloud/wp-json/wp/v2/services?fields=acf&acf_format=standard');
         let data = await url.json();
         setServices(data);
-        console.log(data)
     };
 
     useEffect(() => {
-        loadServices()
+        loadServices();
     }, []);
 
-    
+    // Sort services array in ascending order based on service ID
+    const sortedServices = [...services].sort((a, b) => a.id - b.id);
 
     return (
         <>
@@ -43,4 +41,4 @@ export default function  Services() {
     );
 }
 
- 
+export default Services;
