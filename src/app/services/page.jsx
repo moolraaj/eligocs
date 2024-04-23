@@ -1,4 +1,4 @@
-'use client'
+
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 
@@ -9,18 +9,18 @@ function Services() {
         let url = await fetch('https://api.eligo.cloud/wp-json/wp/v2/services?fields=acf&acf_format=standard');
         let data = await url.json();
         setServices(data);
-        console.log(data)
     };
 
     useEffect(() => {
         loadServices();
     }, []);
 
-    
+    // Sort services array in ascending order based on service ID
+    const sortedServices = [...services].sort((a, b) => a.id - b.id);
 
     return (
         <>
-            {services.map((item, index) => (
+            {sortedServices.map((item, index) => (
                 <div className="trans_number" key={index}>
                     <Link href={`services/${item.slug}`}>
                         <ul className='transformation_wrapper'  >
