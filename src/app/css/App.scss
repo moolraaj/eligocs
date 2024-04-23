@@ -526,7 +526,7 @@ span.vison_c {
 .nav_outer {
     background: #fff;
     box-shadow: $shadow;
-    padding: 30px 0px;
+    padding: 15px 0px;
     position: fixed;
     width: 100%;
     z-index: 999999;
@@ -771,12 +771,26 @@ p .testimonial_wrap {
     display: grid;
     grid-template-columns: 0% 95% 5%;
     color: #fff;
+   
+
+    .center-section-second-inner-wrapper ul li {
+        text-transform: capitalize;
+    }
+    li.social_links a img {
+        width: 27px !important;
+        margin-left: 6px;
+        height: 32px !important;
+        object-fit: contain;
+    }
+
 
     .footer-center-section {
-        display: grid;
+        display: flex;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         max-width: 1520px;
+        justify-content: space-between;
         margin: auto;
+
 
         .center-section-first-inner-wrapper {
             h1 {
@@ -842,6 +856,7 @@ p .testimonial_wrap {
         color: #F7D117;
         font-size: 20px;
         font-weight: 700;
+        width:100%;
     }
 
     ul {
@@ -871,7 +886,7 @@ p .testimonial_wrap {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border-top: 1px solid #ffff;
+        border-top: 1px solid #ffffff61;
         margin: 20px 50px;
 
         p {

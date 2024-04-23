@@ -161,7 +161,7 @@ const AboutUs = () => {
               speed={3.5}
               className="container-3"
               backgroundColor="#ffffff">
-              <div className="content">
+              <div className="content_mission_our content">
                 <h1 className="uderline-text our-misson">
                   {ele.acf.our_mission_heading}
                 </h1>

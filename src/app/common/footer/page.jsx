@@ -98,7 +98,7 @@ function Footer() {
             <li><a href={`mailto:${contactInfo.email_address}`}>{contactInfo.email_address}</a></li>
                 <li><a href={`tel:${contactInfo.contact_us}`}>{contactInfo.contact_us}</a></li>
                 <li><a href={`tel:${contactInfo.other_contact_number}`}>{contactInfo.other_contact_number}</a></li>
-                <li>
+                <li class="social_links">
                 {contactInfo.socials_networks.map((social, index) => (
                 <a key={index} href={social.social_link} target="_blank" rel="noopener noreferrer" className='social-icons'>
                   <img src={social.social_icon.url} alt={`SocialIcon${index}`} />
