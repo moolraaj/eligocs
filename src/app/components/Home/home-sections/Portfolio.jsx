@@ -1,4 +1,4 @@
-import Portfolio from '@/app/portfolio/page'
+import Portfolio from '@/app/pages/portfolio/page'
 import React from 'react'
  
  

@@ -3,6 +3,8 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import closeMenuIcon from '../../assets/headerAssets/closeMenu.png';
 import siteLogo from '../../assets/headerAssets/sitelogo.png';
+import formLogo from '../../assets/headerAssets/formlogo.png';
+
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,6 +34,9 @@ function Navbar() {
           </div>
 
           <div className="nav_right_section">
+            <button>
+            <img src={formLogo.src} alt="formLogo"/>
+            </button>
             <button className="nav-toggler" type="button" onClick={toggleMenu}>
               <span className="nav-toggler-icon"></span>
               <span className="nav-toggler-icon"></span>
@@ -46,6 +51,7 @@ function Navbar() {
             <div className="nav-right">
               <div className="header-menu-seperate-container-right">
                 <div className="menu-right-container-top">
+               
                   <img src={closeMenuIcon.src} alt="closeMenuIcon" style={{ float: 'right' }} onClick={closeMenu} />
                 </div>
                 <div className="menu-right-container-bottom">
