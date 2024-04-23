@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import Home from '../components/Home/Home'
 import Layout from '../common/layout/layout'
+import { HomeApi } from '@/utils/apis/Apis';
 
 function Homepage() {
 
@@ -13,10 +14,7 @@ function Homepage() {
 
   const loadData = async () => {
     setLoading(true);
-    const url = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/pages?slug=home&fields=acf&acf_format=standard`
-    );
-    let data = await url.json();
+    const data = await HomeApi()
     setResult(data);
     setLoading(false);
     console.log(data);

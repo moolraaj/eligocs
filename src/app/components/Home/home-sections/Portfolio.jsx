@@ -1,3 +1,5 @@
+ 
+ 
 import Portfolio from '@/app/portfolio/page'
 import React from 'react'
  
@@ -15,7 +17,7 @@ function PortfolioSection({ ele }) {
 
                             <div className="portfolio_right_section">
                                
-                             <Portfolio/>     
+                              <Portfolio/>   
                                 
                               
                             </div>
