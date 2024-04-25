@@ -788,6 +788,7 @@ p .testimonial_wrap {
         margin: auto;
         @include grid-property(grid,repeat(4,1fr),unset,65px);
 
+
         .center-section-first-inner-wrapper {
             h1 {
                 margin-left: 40px;
@@ -956,8 +957,20 @@ p .testimonial_wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #ffffff;
+    z-index: 9999;
+    transition: top 0.3s ease; /* Add transition for smooth sliding */
 }
+
+.WorkForm-container.visible {
+    top: 0; /* Slide down to the top of the viewport */
+}
+
 
 .WorkForm-tittle {
     font-size: 3rem;
@@ -1025,7 +1038,10 @@ p .testimonial_wrap {
     background-color: #444;
 }
 
-
+.form-d-flex{
+    display: flex;
+    justify-content: space-around;
+}
 
 
 

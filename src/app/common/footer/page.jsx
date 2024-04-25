@@ -52,7 +52,8 @@ function Footer() {
 
 
 
-
+// Sort services array in ascending order based on service ID
+const sortedServices = [...services].sort((a, b) => a.id - b.id);
 
 
   return (
@@ -63,7 +64,7 @@ function Footer() {
           <div className="center-section-wrapper">
           <div className='footer-center-section'>
             <div className='center-section-first-inner-wrapper'>
-              <h1 className='footer-top-headings'><img src={footerLogo.src} alt="footerLogo" style={{width: '148px', height: '57px'}} /></h1>
+              <div className='footer-top-headings'><img src={footerLogo.src} alt="footerLogo" style={{width: '148px', height: '57px'}} /></div>
               <ul>
                 <li id='eligo-creative' className='common-btns'><span>Eligo Creative Services</span></li>
                 <li id='app-web-design' className='common-btns'><span>App & Web Design,</span></li>
@@ -73,7 +74,7 @@ function Footer() {
             <div className='center-section-second-inner-wrapper'>
               <h1 className='footer-top-headings'>Our Services</h1>
               <ul>
-                {services.map((service,index) => (
+                {sortedServices.map((service,index) => (
                   <li key={index}>
                   
                   <Link href={`/services/${service.slug}`}>{service.acf.services_title}</Link>
@@ -98,7 +99,7 @@ function Footer() {
             <li><a href={`mailto:${contactInfo.email_address}`}>{contactInfo.email_address}</a></li>
                 <li><a href={`tel:${contactInfo.contact_us}`}>{contactInfo.contact_us}</a></li>
                 <li><a href={`tel:${contactInfo.other_contact_number}`}>{contactInfo.other_contact_number}</a></li>
-                <li>
+                <li class="social_links">
                 {contactInfo.socials_networks.map((social, index) => (
                 <a key={index} href={social.social_link} target="_blank" rel="noopener noreferrer" className='social-icons'>
                   <img src={social.social_icon.url} alt={`SocialIcon${index}`} />

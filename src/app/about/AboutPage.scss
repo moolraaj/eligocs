@@ -11,8 +11,9 @@ $slider-thumbnail-height: 244px;
 $padding: 20px;
 $font-weight: 600;
 $secondory-font-weight: 700;
-$primary-font-size: 80px;
+$primary-font-size: 5em;
 $border-radius: 30px;
+
 
 button {
   cursor: pointer;
@@ -42,7 +43,7 @@ button {
 
 .parallax-container {
   position: sticky;
-  top: 0;
+  top:30px;
   height: auto;
   overflow: hidden;
   scroll-behavior: smooth;
@@ -124,7 +125,7 @@ button {
   box-shadow: 0px 0px 2px 0px $primary-color;
 
   h1 {
-    font-size: 45px;
+    font-size: 2.813em;
     font-weight: 800;
     color: #191c1b;
     line-height: 25px;
@@ -132,13 +133,13 @@ button {
 
   h3 {
     color: $primary-color;
-    font-size: 40px;
+    font-size: 2.5em;
     font-weight: $font-weight;
     margin: auto;
     line-height: 50.72px;
   }
   p {
-    font-size: 30px;
+    font-size: 1.875em;
     font-weight: 500;
     line-height: 55px;
   }
@@ -264,16 +265,25 @@ button {
   bottom: -10%;
   right: -10%;
 }
+.content_mission_our.content {
+  display: block;
+}
+.testimonial_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 
 .process-steps-content {
   transition: opacity 0.3s ease;
   h1 {
-    font-size: 55px;
+    font-size: 3.438em;
     font-weight: $font-weight;
     color: $third-color;
+    margin-top: 0px;
+    margin-bottom: 10px;
   }
   h3 {
-    font-size: 40px;
+    font-size: 2.5em;
     font-weight: $font-weight;
   }
 }
@@ -284,7 +294,7 @@ button {
   justify-content: center;
   align-items: center;
   h1 {
-    font-size: 32px;
+    font-size: 2em;
     font-weight: $secondory-font-weight;
   }
   button {
@@ -324,7 +334,7 @@ button {
 .mission-left {
 
   p {
-    font-size: 30px;
+    font-size: 1.875em;
     font-weight: 500;
     line-height: 60px;
   }
@@ -341,7 +351,7 @@ button {
 
 .success-journy-left {
   h2 {
-    font-size: 40px;
+    font-size: 2.5em;
     font-weight: $font-weight;
     line-height: 60.4px;
   }
@@ -480,6 +490,12 @@ button {
   
 }
 @media (max-width: 768px) {
+
+  .testimonial_wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
   .our-mission-outer, .success-journy-outer {
     display: flex;
     flex-direction: column-reverse;

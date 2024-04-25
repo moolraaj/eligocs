@@ -15,6 +15,7 @@ function Navbar({data}) {
   console.log(headerMenuItems)
 
   const [isOpen, setIsOpen] = useState(false);
+  const [showWorkForm, setShowWorkForm] = useState(false);
 
 
 
@@ -25,6 +26,13 @@ function Navbar({data}) {
   const closeMenu = () => {
     setIsOpen(false);
   };
+
+  const toggleWorkForm = () => {
+    setShowWorkForm(!showWorkForm);
+  };
+  const closeForm = () => {
+    setShowWorkForm(false);
+};
 
   const NavigationLink = ({ href, children }) => (
     <Link href={href} className="nav-link" onClick={closeMenu}>
@@ -55,7 +63,7 @@ function Navbar({data}) {
               <span className="nav-toggler-icon"></span>
             </button>
           </div>
-
+          {showWorkForm && <WorkForm onClose={closeForm} />}
           <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}>
             <div className="nav-left">
               <div className="header-menu-seperate-container-left"></div>
