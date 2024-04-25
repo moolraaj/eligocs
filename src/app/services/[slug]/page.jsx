@@ -1,34 +1,30 @@
-import { fetchServices, fetchSingleService } from "@/utils/apis/Apis";
+import { fetchAllServices, fetchSingleService } from "@/utils/apis/Apis";
+import ServiceSlug from "./component/ServiceSlug";
+ 
 
-export default async function ServicePage({ params }) {
+
+export default async function Page({ params }) {
     const { slug } = params;
     console.log(slug);
+    const data = await fetchSingleService(slug);
+    console.log(data);
 
 
-    const data = await fetchSingleService(slug)
-    console.log(data)
-
-
-    if (!data) {
-        return <h1>Loading...</h1>;
-    }
+    
 
     return (
         <>
-
+             <ServiceSlug data={data}  />
         </>
     );
 }
 
 
+// export async function generateStaticParams() {
+//     const result = await fetchAllServices();
+//     return result.map(ele => ({
+//         slug: ele.slug
+//     }));
+// }
 
-
-
-
-
-
-export async function generateStaticPr({ slug }) {
-    const data = await fetchServices(slug);
-    return data.map(ele => ({ slug: ele.acf.slug }));
-}
 

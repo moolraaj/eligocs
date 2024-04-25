@@ -1,8 +1,9 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import Home from '../components/Home/Home'
-import Layout from '../common/layout/layout'
-import { HomeApi } from '@/utils/apis/Apis';
+import { HomeApi, fetchHeaderFooter } from '@/utils/apis/Apis';
+
+
 
 function Homepage() {
 
@@ -14,6 +15,7 @@ function Homepage() {
 
   const loadData = async () => {
     setLoading(true);
+    
     const data = await HomeApi()
     setResult(data);
     setLoading(false);
@@ -38,15 +40,15 @@ function Homepage() {
   }, []);
 
 
-  
+
 
 
   return (
 
-    <Layout>
-      <Home  loading={loading} result={result} isScrolled={isScrolled} />
-       
-    </Layout>
+
+    <Home loading={loading} result={result} isScrolled={isScrolled} />
+
+
 
   )
 }

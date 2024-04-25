@@ -1,49 +1,40 @@
-'use client'
-import React, { useEffect, useState } from 'react';
+ 
+import { fetchAllportFolio, fetchSingleportFolio } from "@/utils/apis/Apis";
 
-function Page({ params }) {
-    const [portfolio, setPortfolio] = useState({});
+ 
 
+export default async function Page({ params }) {
     const { slug } = params;
 
-    useEffect(() => {
-        const fetchPortfolio = async () => {
-            try {
-                if (slug) {
-                    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/portfolio?slug=${slug}&_fields=acf,date&acf_format=standard`);
-                    if (response.ok) {
-                        const data = await response.json();
-                        setPortfolio(data);
-                    } else {
-                        console.error('Failed to fetch portfolio data');
-                    }
-                }
-            } catch (error) {
-                console.error('Error fetching portfolio data:', error);
-            }
-        };
+    console.log(slug)
 
-        fetchPortfolio();
-    }, [slug]);
 
-    if (Object.keys(portfolio).length === 0) {
-        return <h1>Loading...</h1>;
-    }
+    let data=await fetchSingleportFolio(slug)
+    console.log(data)
 
     return (
         <>
-            {Object.values(portfolio).map((ele) => (
-                <div key={ele.id}>
-                  <img src={ele.acf.portfolio_image} alt="" srcSet="" />
-                    <h1>{ele.acf.portfolio_heading}</h1>
-                    <p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_short_description }}></p>
-                    <p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_technology }}></p>
-                </div>
-            ))}
+            {data && data.map((ele)=>{
+                return  <div key={ele.id}>
+                <img src={ele.acf.portfolio_image} alt="" srcSet="" />
+                  <h1>{ele.acf.portfolio_heading}</h1>
+                  <p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_short_description }}></p>
+                  <p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_technology }}></p>
+              </div>
+            })}
         </>
     );
 }
 
-export default Page;
+
+export async function generateStaticParams(){
+    let data = await fetchAllportFolio();
+    return data.map((ele) => ({
+        slug: ele.slug
+    }));
+}
+
+
+
 
 

@@ -1,51 +1,59 @@
-// homepage api
+// fetch homepage api
+
 export const HomeApi = async () => {
-    try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pages?slug=home&fields=acf&acf_format=standard`);
-      if (!response.ok) {
-        throw new Error('Failed to fetch homepage data');
-      }
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error('Error fetching homepage data:', error);
-      throw error;
-    }
-  };
-
-
-  
-// fetch services page api
-
-export const fetchServices = async () =>{
-  let response=await fetch('https://api.eligo.cloud/wp-json/wp/v2/services?fields=acf&acf_format=standard')
-  let data=await response.json()
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pages?slug=home&fields=acf&acf_format=standard`);
+  let data = await response.json()
   return data
 }
 
 
 
-export const fetchSingleService = async(slug)=> {
-  try {
-      let url;
-      if (slug) {
-          url = `https://api.eligo.cloud/wp-json/wp/v2/services?slug=${slug}?fields=acf&acf_format=standard`;
-      }
-      const response = await fetch(url);
-      if (response.ok) {
-          return await response.json();
-      } else {
-          console.error('Failed to fetch service data');
-          return null;
-      }
-  } catch (error) {
-      console.error('Error fetching service data:', error);
-      return null;
-  }
+
+// fetch all services api
+export const fetchAllServices = async () => {
+  let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/services?fields=acf&acf_format=standard`)
+  let data = await response.json()
+  return data
+}
+
+
+
+
+// fetch single services api
+export const fetchSingleService = async (slug) => {
+      let response =await fetch(`${process.env.NEXT_PUBLIC_API_URL}/services?slug=${slug}&fields=acf&acf_format=standard`);
+      let result=await response.json()
+      return result  
+  
+}
+
+
+
+//fetch all portfolio api
+
+export const fetchAllportFolio=async()=>{
+  let response =await fetch(`${process.env.NEXT_PUBLIC_API_URL}/portfolio?fields=acf&acf_format=standard`)
+  let result=await response.json()
+  return result
+
+}
+
+//fetch single portfolio api
+export const fetchSingleportFolio=async(slug)=>{
+  let response =await fetch(`${process.env.NEXT_PUBLIC_API_URL}/portfolio?slug=${slug}&fields=acf&acf_format=standard`)
+  let result=await response.json()
+  return result
+
+}
+
+
+export const fetchHeaderFooter=async()=> {
+  let data = await fetch('https://api.eligo.cloud/wp-json/rae/v1/header-footer?header_location_id=hcms-menu-header&footer_location_id=hcms-menu-footer')
+  let response = await data.json()
+  return response
 }
 
 
 
 
 
- 

@@ -243,7 +243,7 @@ ul.transformation_wrapper li:nth-child(1) {
 }
 
 .develop_heading h4 {
-    font-size: 50px;
+    font-size: 3.125em;
     text-transform: capitalize;
     color: $primaryyellow;
     margin: 0px;
@@ -255,7 +255,8 @@ ul.transformation_wrapper li:nth-child(1) {
 
 .develop_para {
     font-size: 22px;
-    color: $black;
+    color: #000;
+    margin-bottom: 25px;
 }
 
 .development_left_section h1 {
@@ -526,7 +527,7 @@ span.vison_c {
 .nav_outer {
     background: #fff;
     box-shadow: $shadow;
-    padding: 30px 0px;
+    padding: 15px 0px;
     position: fixed;
     width: 100%;
     z-index: 999999;
@@ -768,15 +769,24 @@ p .testimonial_wrap {
 // footer css................
 
 .footer_wrapper {
-    display: grid;
-    grid-template-columns: 0% 95% 5%;
-    color: #fff;
+    color: $white;
+   @include grid-property(grid,0% 95% 5%);
+
+    .center-section-second-inner-wrapper ul li {
+        text-transform: capitalize;
+    }
+    li.social_links a img {
+        width: 27px !important;
+        margin-left: 6px;
+        height: 32px !important;
+        object-fit: contain;
+    }
+
 
     .footer-center-section {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        max-width: 1520px;
+      
         margin: auto;
+        @include grid-property(grid,repeat(4,1fr),unset,65px);
 
         .center-section-first-inner-wrapper {
             h1 {
@@ -787,7 +797,7 @@ p .testimonial_wrap {
         .center-section-first-inner-wrapper ul {
 
             li.common-btns {
-                width: 90%;
+               
                 padding: 10px 20px;
                 margin-bottom: 20px;
                 color: #000;
@@ -801,21 +811,18 @@ p .testimonial_wrap {
             }
 
             #app-web-design {
-                background-color: #F7D117;
+                background-color: $primaryyellowlight;
             }
 
             #dev-company {
-                background-color: #EAAA00;
+                background-color: $primaryyellow;
             }
         }
 
         .center-section-second-inner-wrapper,
         .center-section-third-inner-wrapper,
         .center-section-fourth-inner-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
+            @include flex-property(flex,flex-start,column,flex-start)
         }
 
         .center-section-third-inner-wrapper li {
@@ -839,9 +846,10 @@ p .testimonial_wrap {
     }
 
     .footer-top-headings {
-        color: #F7D117;
+        color: $primaryyellowlight;
         font-size: 20px;
         font-weight: 700;
+        width:100%;
     }
 
     ul {
@@ -849,16 +857,15 @@ p .testimonial_wrap {
         cursor: pointer;
 
         li:hover {
-            color: #F7D117;
+            color: $primaryyellowlight;
         }
     }
 
     .footer-right-section {
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        justify-content: center;
         writing-mode: tb;
+        @include flex-property(flex,center,column-reverse,center);
+
+     
 
         p {
             transform: rotate(180deg);
@@ -867,12 +874,9 @@ p .testimonial_wrap {
     }
 
     .footer-center-bottom-section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-top: 1px solid #ffff;
+        border-top: 1px solid $bordercolor;
         margin: 20px 50px;
+        @include flex-property(flex,center,column,center);;
 
         p {
             color: #808080;
@@ -939,6 +943,7 @@ p .testimonial_wrap {
     button {
         background: transparent;
         border: none;
+        width: 64px;
     }
 }
 
@@ -1001,11 +1006,11 @@ p .testimonial_wrap {
     box-sizing: border-box;
 }
 
-.textarea {
+.WorkForm-textarea {
     height: 150px;
 }
 
-.button {
+.WorkForm-button {
     background-color: #333;
     color: #fff;
     border: none;
@@ -1016,7 +1021,7 @@ p .testimonial_wrap {
     transition: background-color 0.3s ease;
 }
 
-.button:hover {
+.WorkForm-button:hover {
     background-color: #444;
 }
 
@@ -1032,7 +1037,7 @@ p .testimonial_wrap {
 
 @media (max-width:1024px) {
     .footer_wrapper .footer-center-section {
-        grid-template-columns: 1fr 1fr;
+        @include grid-property(grid,repeat(2,1fr));
     }
 }
 
@@ -1207,11 +1212,132 @@ p .testimonial_wrap {
 
 
 
-@media (max-width:468px) {
+@media (max-width:568px) {
     .footer_wrapper .footer-center-section {
-        grid-template-columns: 1fr;
+        @include grid-property(grid,repeat(1,1fr));
+        padding: 0px 20px;
 
     }
+
+    %section_top_bottom_padding{
+        padding: 35px 20px;
+    }
+    .footer_wrapper .footer-top-headings{
+        margin-left: 0px;
+    }
+    .footer_wrapper .footer-center-bottom-section p {
+           font-size: 2.5em;
+    }
+
+.page_inner.quote_section_inner .home_quote_wrapper {
+    width:100%;
+}
+
+.page_inner.quote_section_inner .home_quote_wrapper {
+    width:100%;
+}
+
+.center-section-wrapper li a {
+    font-size: 3em;
+}
+    .page_outer.testimonial_section_outer.scrolling {
+        padding: 10px 20px;
+    }
+    .qoute_para p {
+        font-size: 5.1875em;
+        line-height: 56px;
+        margin: 0px 0px 80px 0px;
+    }
+     
+    .page_inner.portfolio_section_inner {
+        padding: 25px 0px;
+    }
+
+    .portfolio_right_section {
+        display: flex;
+        gap: 26px;
+        left: 28%;
+        width: 1736px;
+    }
+    .testimonial_left_section h1 {
+        font-size: 7em;
+        line-height: 60px;
+        width: 71%;
+    }
+
+    .development_scroll.sticky {
+        position: sticky;
+        top: 122px;
+        z-index: 2;
+    }
+
+    .development_scroll {
+            top: 93px;
+       
+    }
+    .meet_our_team {
+        font-size: 20px;
+        padding: 15px 24px;
+    }
+    .portfolio_wrapper {
+     flex-wrap: wrap;
+     padding: 20px;
+       
+    }
+
+    .portfolio_left_section h1 {
+        font-size: 8.2em;
+         width: 90%;
+        padding-bottom: 48px;
+    }
+
+    .develop_number h4 {
+        font-size: 32px;
+        margin: 8px 0px;
+    }
+
+    .develop_heading h4 {
+        font-size: 5.125em;
+    }
+
+    .trans_left_section h1{
+        font-size: 6.5em;
+    }
+
+    a.trans_redirecttion {
+        font-size: 3.3em;
+     }
+     .trans_right_section {
+        margin-top: 50px;
+    }
+    ul.transformation_wrapper li h4 {
+        font-size: 6.6em;
+        margin: 0.4em 0px;
+        color: #EAAA00;
+        font-family: bebas;
+    }
+    .company_answers p {
+        font-size: 3em !important;
+        width: 80%;
+        margin: 0px auto 33px 20px !important;
+    }
+    .company_left_section h1 {
+        font-size: 6.5em;
+          }
+          .company_left_section p {
+            color: #fff;
+            font-size: 3em;
+        }
+
+        .company_left_section {
+            display: block;
+            padding-bottom: 60px;
+        }
+        .company_question h4 {
+            font-size: 4.5em;
+        }
+
+       
 
     .footer-center-section h1 {
         margin-left: 40px;
@@ -1224,13 +1350,31 @@ p .testimonial_wrap {
     }
 
     body.__className_aaf875 {
-        font-size: 9px;
+        font-size: 6px;
     }
+
+    .home_slider_wrapper p {      
+        font-size: 3em;
+      }
+
+      .home_about_left h1 {
+        font-size: 8.2em;       
+    }
+
+    .home_about_right p {
+        color: #fff;
+        font-size: 3em;
+        line-height: 38px;
+    }
+
+
+
     .trans_left_section h1,
     .development_left_section h1,
     .company_left_section h1{
-        line-height: 80px;
+        line-height: 55px;
         margin: 0;
+        font-size: 6em;
     }
     .company_left_section{
         display: block;

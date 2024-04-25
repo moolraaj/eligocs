@@ -1,4 +1,5 @@
 
+import { fetchAllportFolio } from '@/utils/apis/Apis';
 import Link from 'next/link';
 import React, { useEffect, useState, useRef } from 'react';
 
@@ -8,19 +9,9 @@ function Portfolio() {
 
     useEffect(() => {
         const loadPortfolio = async () => {
-            try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/portfolio?fields=acf&acf_format=standard`);
-                if (response.ok) {
-                    const result = await response.json();
-                    setData(result);
-                } else {
-                    console.error('Failed to fetch portfolio data');
-                }
-            } catch (error) {
-                console.error('Error fetching portfolio data:', error);
-            }
+                const response = await fetchAllportFolio()
+                 setData(response)
         };
-
         loadPortfolio();
     }, []);
 
@@ -29,7 +20,7 @@ function Portfolio() {
     return (
         <div className="portfolio_right_section" ref={portfolioRef}>
             {data.map((ele) => (
-                <div className="portfolio" key={ele.acf.id}>
+                <div className="portfolio" key={ele.id}>
                     <Link href={`/portfolio/${ele.slug}`} passHref className='portfolio-post'>
                         <div className="portfolio_image">
                             <img src={ele.acf.portfolio_image} alt="" srcSet="" />

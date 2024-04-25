@@ -1,20 +1,36 @@
 'use client'
  
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import closeMenuIcon from '../../assets/headerAssets/closeMenu.png';
- 
+import siteLogo from '../../assets/headerAssets/sitelogo.png';
 import formLogo from '../../assets/headerAssets/formlogo.png';
-import Link from 'next/link';
 
 
  
 
-function Navbar({data}) {
-
-  const {siteTitle,siteDescription,headerMenuItems}=data.header
-  console.log(headerMenuItems)
+function Navbar() {
 
   const [isOpen, setIsOpen] = useState(false);
+  const [nav, setNav] = useState([]);
+
+
+  const loadNavbar = async () => {
+    let result = await loadHeaderFooter()
+    setNav(result.data.header)
+    console.log(result.data)
+
+  }
+
+  useEffect(() => {
+    loadNavbar()
+  }, [])
+
+  
+
+
+
+
+
 
 
 
@@ -37,12 +53,9 @@ function Navbar({data}) {
       <div className="nav_inner">
         <div className="nav_flex">
           <div className="nav_left_section">
-            <Link className="navbar-brand" href="/"> 
-              {/* <img src={siteLogo.src} alt="siteLogo" style={{ width: '9.25rem', height: '3.5625rem', objectFit: 'cover' }} /> */}
-              <h1>{siteTitle}</h1>
-             
+            <Link className="navbar-brand" href="/">
+              <img src={siteLogo.src} alt="siteLogo" style={{ width: '9.25rem', height: '3.5625rem', objectFit: 'cover' }} />
             </Link>
-
           </div>
 
           <div className="nav_right_section">
@@ -67,17 +80,9 @@ function Navbar({data}) {
                   <img src={closeMenuIcon.src} alt="closeMenuIcon" style={{ float: 'right' }} onClick={closeMenu} />
                 </div>
                 <div className="menu-right-container-bottom">
-                  {/* {
-                    headerMenuItems.map((ele)=>{
-                      return <ul key={ele.ID}>
-                        <NavigationLink href={`${ele.pageSlug}`}>{ele.pageSlug}</NavigationLink>
-                      </ul>
-                    })
-                  } */}
-
-                  <NavigationLink href={'/'}>home</NavigationLink>
-                  <NavigationLink href={'/about'}>about</NavigationLink>
-                  <NavigationLink href={'/services'}>services</NavigationLink>
+                  <NavigationLink href="/">Home</NavigationLink>
+                  <NavigationLink href="/about">About</NavigationLink>
+                  {/* Add more NavigationLink components for additional menu items */}
                 </div>
               </div>
             </div>
