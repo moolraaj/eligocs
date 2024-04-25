@@ -5,6 +5,7 @@ import closeMenuIcon from '../../assets/headerAssets/closeMenu.png';
  
 import formLogo from '../../assets/headerAssets/formlogo.png';
 import Link from 'next/link';
+import WorkForm from './WorkForm';
 
 
  
@@ -16,6 +17,8 @@ function Navbar({data}) {
 
   const [isOpen, setIsOpen] = useState(false);
   const [showWorkForm, setShowWorkForm] = useState(false);
+
+
 
 
 
@@ -54,7 +57,7 @@ function Navbar({data}) {
           </div>
 
           <div className="nav_right_section">
-            <button>
+            <button onClick={toggleWorkForm}>
               <img src={formLogo.src} alt="formLogo" />
             </button>
             <button className="nav-toggler" type="button" onClick={toggleMenu}>
@@ -63,7 +66,7 @@ function Navbar({data}) {
               <span className="nav-toggler-icon"></span>
             </button>
           </div>
-          {showWorkForm && <WorkForm onClose={closeForm} />}
+          {showWorkForm && <WorkForm onClose={closeForm}/>}
           <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}>
             <div className="nav-left">
               <div className="header-menu-seperate-container-left"></div>
