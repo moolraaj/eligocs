@@ -9,12 +9,15 @@ export default async function Page({ params }) {
     const data = await fetchSingleService(slug);
     console.log(data);
 
+    let services=await fetchAllServices()
+    console.log(services)
+
 
     
 
     return (
         <>
-             <ServiceSlug data={data}  />
+             <ServiceSlug data={data} services={services} />
         </>
     );
 }
