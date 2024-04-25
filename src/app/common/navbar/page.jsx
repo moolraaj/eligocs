@@ -12,7 +12,7 @@ import WorkForm from './WorkForm';
 
 function Navbar({data}) {
 
-  const {siteTitle,siteDescription,headerMenuItems}=data.header
+  const {siteLogoUrl,siteTitle,headerMenuItems}=data.header
   console.log(headerMenuItems)
 
   const [isOpen, setIsOpen] = useState(false);
@@ -49,8 +49,8 @@ function Navbar({data}) {
         <div className="nav_flex">
           <div className="nav_left_section">
             <Link className="navbar-brand" href="/"> 
-              {/* <img src={siteLogo.src} alt="siteLogo" style={{ width: '9.25rem', height: '3.5625rem', objectFit: 'cover' }} /> */}
-              <h1>{siteTitle}</h1>
+              <img src={siteLogoUrl} alt={siteTitle} style={{ width: '9.25rem', height: '3.5625rem', objectFit: 'cover' }} />
+            
              
             </Link>
 
