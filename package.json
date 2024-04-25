@@ -7,14 +7,18 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
-     
   },
   "dependencies": {
+    "@apollo/react-hooks": "^4.0.0",
+    "apollo-boost": "^0.4.9",
+    "graphql": "^16.8.1",
+    "graphql-tag": "^2.12.6",
     "gsap": "^3.12.5",
     "next": "14.2.2",
     "next-images": "^1.8.5",
     "prop-types": "^15.8.1",
     "react": "^18",
+    "react-apollo": "^3.1.5",
     "react-dom": "^18",
     "sass": "^1.75.0"
   },

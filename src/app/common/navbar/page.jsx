@@ -22,6 +22,9 @@ function Navbar() {
   const toggleWorkForm = () => {
     setShowWorkForm(!showWorkForm);
   };
+  const closeForm = () => {
+    setShowWorkForm(false);
+};
 
   const NavigationLink = ({ href, children }) => (
     <Link href={href} className="nav-link" onClick={closeMenu}>
@@ -49,7 +52,7 @@ function Navbar() {
               <span className="nav-toggler-icon"></span>
             </button>
           </div>
-          {showWorkForm && <WorkForm/>}
+          {showWorkForm && <WorkForm onClose={closeForm} />}
           <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}>
             <div className="nav-left">
               <div className="header-menu-seperate-container-left"></div>

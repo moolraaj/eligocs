@@ -52,7 +52,8 @@ function Footer() {
 
 
 
-
+// Sort services array in ascending order based on service ID
+const sortedServices = [...services].sort((a, b) => a.id - b.id);
 
 
   return (
@@ -73,7 +74,7 @@ function Footer() {
             <div className='center-section-second-inner-wrapper'>
               <h1 className='footer-top-headings'>Our Services</h1>
               <ul>
-                {services.map((service,index) => (
+                {sortedServices.map((service,index) => (
                   <li key={index}>
                   
                   <Link href={`/services/${service.slug}`}>{service.acf.services_title}</Link>
