@@ -17,11 +17,15 @@ function PortfolioComponent({data}) {
                                 </div>
                                 <div className="portfolio_short_description">
                                     <p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_short_description }}></p>
+                                    <p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_technology }}></p>
                                 </div>
                             </div>
                             <div className="portfolio_inner_right_section">
                                 <div className="portfolio_technology">
-                                    <p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_technology }}></p>
+                                    {ele.categories.map((e,index)=>{
+                                      return <p key={index}>{e}</p>
+
+                                    })}
                                 </div>
                             </div>
                         </div>
