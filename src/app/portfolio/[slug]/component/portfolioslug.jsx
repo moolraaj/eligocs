@@ -1,18 +1,7 @@
- 
- 
 
-import { fetchAllportFolio, fetchSingleportFolio } from "@/utils/apis/Apis";
- 
+import Portfolio from "../../page";
 
-export default async function Page({ params }) {
-    const { slug } = params;
-    console.log(slug)
-
- 
-        let data=await fetchSingleportFolio(slug)
-        console.log(data)
-
-
+export default async function Portfolioslug({ data }) {
     return (
         <>
             {
@@ -35,7 +24,7 @@ export default async function Page({ params }) {
 
                         <div className="portfolio_relative_description">
                             <div className="port_description">
-                                <p>{ele.acf.portfolio_description}</p>
+                            <p dangerouslySetInnerHTML={{__html: ele.acf.portfolio_description }}></p>
                             </div>
                         </div>
 
@@ -46,7 +35,7 @@ export default async function Page({ params }) {
                                 </div>
                                 <div className="portfolio_showcase_right">
 
-                                    {/* <Portfolio /> */}
+                                    <Portfolio />
                                 </div>
                             </div>
 
@@ -54,16 +43,16 @@ export default async function Page({ params }) {
 
 
                         <div className="portfolio_slider">
-                             
-                                {/* {
-                                    ele.acf.portfolio_gallery.map((items,index)=>{
-                                        return  <div className="portfolio_gallery_wrapper" key={items.index}>
-                                            <img src={items.portfolio_gallery} alt="" />
-                                        </div>
-                                    })
-                                } */}
-                                
-                           
+
+                            {
+                                ele.acf.portfolio_gallery.map((items, index) => {
+                                    return <div className="portfolio_gallery_wrapper" key={index}>
+                                        <img src={items} alt="" />
+                                    </div>
+                                })
+                            }
+
+
                         </div>
 
 
@@ -79,8 +68,8 @@ export default async function Page({ params }) {
 }
 
 
-export async function generateStaticParams(){
-    let data = await fetchAllportFolio();  
+export async function generateStaticParams() {
+    let data = await fetchAllportFolio();
     return data.map((ele) => ({
         slug: ele.slug
     }));

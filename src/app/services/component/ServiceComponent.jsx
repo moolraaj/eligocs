@@ -1,23 +1,8 @@
 
-'use client'
  
-import { fetchAllServices } from '@/utils/apis/Apis';
 import Link from 'next/link';
- 
-import { useEffect, useState } from 'react';
+export default function  ServiceComponent({services}) {
 
-export default function  ServiceComponent() {
-    const [services, setServices] = useState([]);  
-
-    const loadServices = async () => {
-        let url = await  fetchAllServices()
-        setServices(url)  
-        console.log(url)
-    };
-
-    useEffect(() => {
-        loadServices()
-    }, []);
     return (
         <>
             {services.map((item, index) => (
