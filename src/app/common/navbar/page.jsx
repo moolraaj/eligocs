@@ -72,7 +72,7 @@ function Navbar({data}) {
           <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}>
             <div className="nav-left">
               <div className="header-menu-seperate-container-left">
-                <h1 class="blog_section_menu">Explore Our Work</h1>
+                <h1 className="blog_section_menu">Explore Our Work</h1>
                 <div className="header-portfolio-section">
                 <NavigationLink href={'/'}><PortfolioComponent/></NavigationLink>
                 </div>
