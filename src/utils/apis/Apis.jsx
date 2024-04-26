@@ -51,16 +51,8 @@ export const fetchAllportFolio=async()=>{
   let response =await fetch(`${process.env.NEXT_PUBLIC_API_URL}/portfolio?fields=acf&acf_format=standard`)
   let result=await response.json()
   return result
+
 }
-
-// fetch all categories for posts 
-export const fetchAllpostsCategory = async()=>{
-  let  data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/categories`);
-  let cat = await data.json();
-  return cat;
-}
-
-
 
 //fetch single portfolio api
 export const fetchSingleportFolio=async(slug)=>{
