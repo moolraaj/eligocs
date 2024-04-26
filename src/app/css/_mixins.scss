@@ -22,3 +22,14 @@
     column-gap: $grid-gap;
     row-gap: grid-row-gap;
 }
+
+@mixin font_color-y {
+    color: $primaryyellow;
+    font-size: 5em;
+}
+
+
+@mixin font_color-b {
+    color: $black;
+    font-size: 5em;
+}

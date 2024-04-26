@@ -392,6 +392,49 @@ span.cline:after {
     width: 320px;
 }
 
+
+/* header section */
+
+.nav_left_section a.navbar-brand img {
+    width: 100% !important;
+    height: auto !important;
+}
+
+
+.nav-right {
+    padding-left: 14%;
+}
+.menu-right-container-bottom a {
+    font-size: 1.875em;
+    font-weight: 500;
+}
+.header-menu-seperate-container-left {
+    width: 65%;
+    padding-left: 10%;
+}
+.nav-left .header-portfolio-section .portfolio_right_section {
+    place-items: flex-start !important;
+    margin-top: 20px;
+}
+.header-menu-seperate-container-left h1 {
+    font-size: 2em;
+    color: $white;
+    margin: 0px;
+    padding-top: 60px;
+    padding-bottom: 10px;
+}
+
+.header-menu-seperate-container-right {
+    padding-left: 20%;
+}
+
+
+
+/* header ends */
+
+
+
+
 /* css for inner pages services */
 
 .services_inner_template_wrapper {
@@ -435,39 +478,40 @@ span.cline:after {
     line-height: 49px;
 }
 
-
-.nav_left_section a.navbar-brand img {
-    width: 100% !important;
-    height: auto !important;
-}
-
-
-.nav-right {
-    padding-left: 14%;
-}
-.menu-right-container-bottom a {
-    font-size: 1.875em;
-    font-weight: 500;
-}
-.header-menu-seperate-container-left {
-    width: 65%;
-    padding-left: 10%;
-}
-.nav-left .header-portfolio-section .portfolio_right_section {
-    place-items: flex-start !important;
+.service_top_heading_first h1 {
+    @include font_color-y;
+    margin-bottom: 20px;
     margin-top: 20px;
-}
-.header-menu-seperate-container-left h1 {
-    font-size: 2em;
-    color: $white;
-    margin: 0px;
-    padding-top: 60px;
-    padding-bottom: 10px;
+ }
+ 
+ .service_top_sub_heading h1 {
+    @include font_color-b;
+       width: 64%;
+    margin: auto;
+    padding-bottom: 20px;
+ } 
+ .service_top_decription p {
+    font-size: 1.5em;
+    max-width: 961px;
+    margin: auto;
+    padding-bottom: 23px;
+    line-height: 170%;
 }
 
-.header-menu-seperate-container-right {
-    padding-left: 20%;
+.service_navigate_button button {
+    background: $primaryyellow;
+    padding: 15px 45px;
+    border-radius: 30px !important;
+    border: none;
+    text-transform: capitalize;
+    font-size: 25px;
 }
+.service_navigate_button button:hover {
+    background: $black;
+    color:$white
+   
+}
+
 
 
 
@@ -536,8 +580,26 @@ span.cline:after {
 }
 
 
+.service_page_wrapper {
+    padding-top: 93px;
+    max-width: $width-custom;
+    margin: auto;
+}
+
+
+
+.service_page_left_section {
+    text-align: center;
+    padding: 40px 0px !important;
+}
+
 
 /* ending css for service page */
+
+
+
+
+
 
 
 
