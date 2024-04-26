@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import footerLogo from '../../assets/headerAssets/sitelogo.png'
+import { fetchAllServices, fetchAllportFolio } from '@/utils/apis/Apis';
 
 function Footer() {
   const [services, setServices] = useState([]);
@@ -29,16 +30,13 @@ function Footer() {
 
     
     const fetchData = async () => {
-        const response = await fetch('https://api.eligo.cloud/wp-json/wp/v2/services?fields=acf&acf_format=standard');
-        const data = await response.json();
+        const data = await fetchAllServices();
         setServices(data);
     };
 
    
-    
   const loadPortfolio = async () => {
-      let url = await fetch('https://api.eligo.cloud/wp-json/wp/v2/portfolio?fields=acf&acf_format=standard')
-      let result = await url.json()
+      let result = await fetchAllportFolio();
       setData(result)
       console.log(result)
 

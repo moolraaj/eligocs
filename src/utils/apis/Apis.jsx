@@ -8,6 +8,23 @@ export const HomeApi = async () => {
 
 
 
+//fetch About page api
+export const AboutApi = async() =>{
+  let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pages?slug=about&fields=acf&acf_format=standard`);
+  let response = await data.json();
+  return response;
+}
+
+
+// Service page api 
+export const ServiceApi =async()=>{
+  let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pages?slug=our-services&fields=acf&acf_format=standard`);
+  let response = await data.json();
+  return response;
+}
+
+
+
 
 // fetch all services api
 export const fetchAllServices = async () => {
@@ -52,7 +69,6 @@ export const fetchHeaderFooter=async()=> {
   let response = await data.json()
   return response
 }
-
 
 
 

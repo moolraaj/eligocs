@@ -3,83 +3,25 @@ import React, { useEffect, useState } from "react";
 
 import ParallaxContainer from "./ParallaxContainer";
 
-// import myImg1 from '../../assets/aboutpageAssets/aboutImg-one.jpg';
-// import myImg2 from '../../assets/aboutpageAssets/aboutImg-two.jpg';
-// import myImg3 from '../../assets/aboutpageAssets/aboutImg-three.jpg';
-// import myImg4 from '../../assets/aboutpageAssets/aboutImg-four.jpg';
-
 import JournyImageSlider from "./JournyImageSlider";
 import WorkingProcess from "./WorkingProcess";
 import Testimoinals from "../../common/Testimoinals";
+import { AboutApi } from "@/utils/apis/Apis";
 
-// const workingProcess = [
-//   {
-//     step: "Step 1",
-//     title: "Discover",
-//     description:
-//       "Unleashing Innovation in Every Byte Crafting  IT Solutions with Vision Precision and Technological Mastery.",
-//     stepImage: {
-//       mainImg: myImg1,
-//     },
-//   },
-//   {
-//     step: "Step 2",
-//     title: "Design & Development",
-//     description:
-//       "Elevate Design & Development: Crafting Digital Experiences Vision: Inspire Innovation Mission: Transform Ideas into Seamless, Impactful Solutions.",
-//     stepImage: {
-//       imageUpper: myImg2,
-//       mainImg: myImg1,
-//       imagelower: myImg3,
-//     },
-//   },
-//   {
-//     step: "Step 3",
-//     title: "Install & Testing",
-//     description:
-//       "Ensuring Perfection | Vision: Seamless Integration Mission: Guaranteeing Quality, Reliability, and Performance Excellence.",
-//     stepImage: {
-//       imageUpper: myImg4,
-//       mainImg: myImg3,
-//       imagelower: myImg2,
-//     },
-//   },
-//   {
-//     step: "Step 4",
-//     title: "Project Delivery",
-//     description:
-//       "Timely Execution | Vision: Exceed Expectations Mission: Delivering Quality Solutions On Time, Every Time, Everywhere.",
-//     stepImage: {
-//       imageUpper: myImg2,
-//       mainImg: myImg4,
-//       imagelower: myImg1,
-//     },
-//   },
-// ];
+
 
 const AboutUs = () => {
   const [result, setResult] = useState([]);
-  const [loading, setLoading] = useState(false);
-
 
   const loadData = async () => {
-    setLoading(true);
-    const url = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/pages?slug=about&fields=acf&acf_format=standard`
-    );
-
-    let data = await url.json();
+    let data = await AboutApi();
     setResult(data);
-    setLoading(false);
     console.log(data);
   };
 
   useEffect(() => {
     loadData();
-    const handleScroll = () => { };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    
   }, []);
 
   return (

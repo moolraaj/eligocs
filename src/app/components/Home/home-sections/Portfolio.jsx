@@ -13,12 +13,10 @@ function PortfolioSection({ ele }) {
                                 <h1>{ele.acf.portfolio_heading}</h1>
                             </div>
 
-                            <div className="portfolio_right_section">
                                
                               <Portfolio/>   
                                 
                               
-                            </div>
                         
                     </div>
                 </div>

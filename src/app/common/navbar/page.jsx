@@ -6,6 +6,7 @@ import closeMenuIcon from '../../assets/headerAssets/closeMenu.png';
 import formLogo from '../../assets/headerAssets/formlogo.png';
 import Link from 'next/link';
 import WorkForm from './WorkForm';
+import Portfolio from '@/app/portfolio/page';
 
 
  
@@ -69,7 +70,12 @@ function Navbar({data}) {
           {showWorkForm && <WorkForm onClose={closeForm}/>}
           <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}>
             <div className="nav-left">
-              <div className="header-menu-seperate-container-left"></div>
+              <div className="header-menu-seperate-container-left">
+                <div className="header-portfolio-section">
+                <NavigationLink href={'/'}><Portfolio /></NavigationLink>
+                </div>
+               
+              </div>
             </div>
             <div className="nav-right">
               <div className="header-menu-seperate-container-right">
