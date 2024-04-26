@@ -10,6 +10,7 @@ import { AboutApi } from "@/utils/apis/Apis";
 
 
 
+
 const AboutUs = () => {
   const [result, setResult] = useState([]);
 
