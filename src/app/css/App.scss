@@ -408,20 +408,76 @@ span.cline:after {
 }
 .process_left_section {
     background: #eaaa00;
-    padding:20px;
-    height: 552px;
+    padding: 30px 40px;
+    
 }
 .process_description p {
     font-size: 1.25em;
     line-height: 42px;
+    width: 94%;
+
 }
+
+.process_right_section .process_image img {
+    height: 483px;
+    margin-left: -43px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.services_dont_miss_out {
+    padding-top: 112px;
+    padding-bottom: 100px;
+}
+
+.servives_missout_description p {
+    font-size: 1.75em;
+    line-height: 49px;
+}
+
+
+.nav_left_section a.navbar-brand img {
+    width: 100% !important;
+    height: auto !important;
+}
+
+
+.nav-right {
+    padding-left: 14%;
+}
+.menu-right-container-bottom a {
+    font-size: 1.875em;
+    font-weight: 500;
+}
+.header-menu-seperate-container-left {
+    width: 65%;
+    padding-left: 10%;
+}
+.nav-left .header-portfolio-section .portfolio_right_section {
+    place-items: flex-start !important;
+    margin-top: 20px;
+}
+.header-menu-seperate-container-left h1 {
+    font-size: 2em;
+    color: $white;
+    margin: 0px;
+    padding-top: 60px;
+    padding-bottom: 10px;
+}
+
+.header-menu-seperate-container-right {
+    padding-left: 20%;
+}
+
+
+
 .servies_barrner_bar {
     writing-mode: tb;
     font-size: 10px;
     position: absolute;
     white-space: nowrap;
     left: -3%;
-    top: 21%;
+    top: 16%;
     transform: rotate(180deg);
 }
 
@@ -1044,7 +1100,7 @@ p .testimonial_wrap {
         margin: 40px 0px;
     }
     .portfolio {
-        width: 60%;
+        width: 80%;
         overflow: hidden;
         .portfolio_image img {
             width: 100%;
