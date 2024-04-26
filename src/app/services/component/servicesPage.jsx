@@ -1,4 +1,4 @@
- 
+
 import { fetchAllServices } from "@/utils/apis/Apis"
 import Link from "next/link"
 import ServicesFaq from "./ServicesFaq"
@@ -6,7 +6,7 @@ import ServicesFaq from "./ServicesFaq"
 
 export default async function ServicesPage({ data }) {
 
-    let services=await fetchAllServices()
+    let services = await fetchAllServices()
     console.log(services)
 
 
@@ -50,28 +50,29 @@ export default async function ServicesPage({ data }) {
                             </div>
                             <div className="all_services_right_section">
                                 {
-                                    services.map((e)=>{
-                                        return  <div className="services_flex_wrapper" key={e.id}>
+                                    services.map((e) => {
+                                        return <div className="services_flex_wrapper" key={e.id}>
 
                                             <div className="all_services_outer">
                                                 <div className="service_icon">
-                                                    <img src={ele.acf.services_icons} alt="" />
-                                                </div>
-                                            <div className="service_both_sections">
-                                                <div className="services_content_area">
-                                                    <div className="service_content_heading">
-                                                        <h1>{e.acf.services_title}</h1>
-                                                        
-                                                    </div>
-                                                    <div className="service_content_description">
-                                                        <p>{e.acf.services_description.slice(0,150)}</p>
-
-                                                    </div>
+                                                    <img src={e.acf.services_icons} />
                                                 </div>
 
-                                                <div className="services_navigation">
-                                                    <Link href={`/services/${e.slug}`}>read more</Link>
-                                                </div>
+                                                <div className="service_both_sections">
+                                                    <div className="services_content_area">
+                                                        <div className="service_content_heading">
+                                                            <h1>{e.acf.services_title}</h1>
+
+                                                        </div>
+                                                        <div className="service_content_description">
+                                                            <p>{e.acf.services_description.slice(0, 150)}</p>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="services_navigation">
+                                                        <Link href={`/services/${e.slug}`}>read more</Link>
+                                                    </div>
                                                 </div>
 
                                             </div>
@@ -84,12 +85,10 @@ export default async function ServicesPage({ data }) {
                             </div>
                         </div>
 
-
                         <ServicesFaq faqs={ele.acf.our_service_faqs} outerHeading={ele.acf.faq_outer_heading} />
 
-
                         <div className="services_show_testimonials">
-                            
+
                         </div>
                     </div>
                 })
@@ -99,4 +98,4 @@ export default async function ServicesPage({ data }) {
     )
 }
 
- 
+

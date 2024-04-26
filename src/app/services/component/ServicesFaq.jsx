@@ -18,7 +18,6 @@ const ServicesFaq = ({ faqs, outerHeading }) => {
                     <div className="services_faq_outer" key={index}>
                         <div className="servies_question" onClick={() => toggleAccordion(index)}>
                             <h1>{faq.faq__tittle}</h1>
-                            {/* Add arrow icon here */}
                             <div className={`arrow-icon ${activeIndex === index ? 'active' : ''}`}></div>
                         </div>
                         {activeIndex === index && (
