@@ -43,7 +43,8 @@ export default function  Services() {
                     
                         <ul>
                             <li>
-                                <a href={item.acf.services_link} className="trans_redirecttion">{item.acf.services_title}</a>
+                                
+                                <Link href={item.acf.services_link} className="trans_redirecttion">{item.acf.services_title}</Link>
                             </li>
                             <li>
                                 <img src={item.acf.services_image} alt="" />

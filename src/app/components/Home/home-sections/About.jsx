@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 function AboutSection({ele}) {
@@ -20,7 +21,7 @@ function AboutSection({ele}) {
                       __html: ele.acf.about_para_second,
                     }}></p>
 
-                  <a className="meet_our_team" href="/team">Meet Our Team</a>
+                  <Link className="meet_our_team" href="/team">Meet Our Team</Link>
 
                 </div>
               </div>
