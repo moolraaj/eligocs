@@ -1,4 +1,4 @@
-// fetch homepage api
+// fetch home page api
 
 export const HomeApi = async () => {
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pages?slug=home&fields=acf&acf_format=standard`);
@@ -24,16 +24,12 @@ export const ServiceApi =async()=>{
 }
 
 
-
-
 // fetch all services template  api
 export const fetchAllServices = async () => {
   let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/services?fields=acf&acf_format=standard`)
   let data = await response.json()
   return data
 }
-
-
 
 
 // fetch single services template  api
@@ -44,6 +40,16 @@ export const fetchSingleService = async (slug) => {
   
 }
 
+
+
+//fecth portfolio page api
+
+export const portfolioApi=async ()=>{
+  let response=await fetch('https://api.eligo.cloud/wp-json/wp/v2/pages?slug=portfolio&fields=acf&acf_format=standard')
+  let result=await response.json()
+  return result
+
+}
 
 
 //fetch all portfolio api
@@ -60,6 +66,7 @@ export const fetchSingleportFolio=async(slug)=>{
   let result=await response.json()
   return result
 
+  
 }
 
 

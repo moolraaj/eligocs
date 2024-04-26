@@ -1,4 +1,5 @@
-import Portfolio from '@/app/portfolio/page'
+import PortfolioComponent from '@/app/portfolio/component/portfolioComponent'
+ 
 import React from 'react'
  
  
@@ -14,7 +15,7 @@ function PortfolioSection({ ele }) {
                             </div>
 
                                
-                              <Portfolio/>   
+                              <PortfolioComponent/> 
                                 
                               
                         

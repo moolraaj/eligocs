@@ -1,32 +1,28 @@
+import { fetchAllportFolio, portfolioApi } from "@/utils/apis/Apis";
+import PortfolioPage from "./component/portfolioPage";
 
-'use client'
-import { fetchAllportFolio } from '@/utils/apis/Apis';
 
-import React, { useEffect, useState } from 'react';
-import PortfolioComponent from './component/portfolioComponent';
 
-function Portfolio() {
-    const [data, setData] = useState([]);
-   
 
-    useEffect(() => {
-        const loadPortfolio = async () => {
-                const response = await fetchAllportFolio()
-                 setData(response)
-        };
-        loadPortfolio();
-    }, []);
 
-    
+export default async function Portfolio() {
+
+    let data=await portfolioApi()
+    console.log(data)
+
+
+    let portfolio=await fetchAllportFolio()
+
 
     return (
-       <>
-       <PortfolioComponent data={data}/>
-       </>
+        <>
+            <PortfolioPage data={data} portfolio={portfolio}/>
+
+        </>
     );
 }
 
-export default Portfolio;
+ 
 
 
 

@@ -6,7 +6,8 @@ import closeMenuIcon from '../../assets/headerAssets/closeMenu.png';
 import formLogo from '../../assets/headerAssets/formlogo.png';
 import Link from 'next/link';
 import WorkForm from './WorkForm';
-import Portfolio from '@/app/portfolio/page';
+ 
+import PortfolioComponent from '@/app/portfolio/component/portfolioComponent';
 
 
  
@@ -73,7 +74,7 @@ function Navbar({data}) {
               <div className="header-menu-seperate-container-left">
                 <h1 class="blog_section_menu">Explore Our Work</h1>
                 <div className="header-portfolio-section">
-                <NavigationLink href={'/'}><Portfolio /></NavigationLink>
+                <NavigationLink href={'/'}><PortfolioComponent/></NavigationLink>
                 </div>
                
               </div>
@@ -96,6 +97,7 @@ function Navbar({data}) {
                   <NavigationLink href={'/'}>home</NavigationLink>
                   <NavigationLink href={'/about'}>about</NavigationLink>
                   <NavigationLink href={'/services'}>services</NavigationLink>
+                  <NavigationLink href={'/portfolio'}>portfolio</NavigationLink>
                 </div>
               </div>
             </div>

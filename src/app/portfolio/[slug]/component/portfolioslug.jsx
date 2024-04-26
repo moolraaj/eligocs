@@ -1,7 +1,6 @@
 
-import Portfolio from "../../page";
-
-export default async function Portfolioslug({ data }) {
+import PortfolioComponent from "../../component/portfolioComponent";
+ export default async function Portfolioslug({ data }) {
     return (
         <>
             {
@@ -35,7 +34,7 @@ export default async function Portfolioslug({ data }) {
                                 </div>
                                 <div className="portfolio_showcase_right">
 
-                                    <Portfolio />
+                                    <PortfolioComponent/>
                                 </div>
                             </div>
 
