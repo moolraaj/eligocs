@@ -1321,7 +1321,24 @@ p .testimonial_wrap {
 
 
 
-
+.servies_question{
+    .arrow-icon {
+        width: 10px;
+        height: 10px;
+        border: solid black;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3px;
+        transition: transform 0.3s ease;
+        transform: rotate(45deg);
+        cursor: pointer;
+    }
+    
+    .arrow-icon.active {
+        transform: rotate(-135deg);
+    }
+    
+}
 
 
 
