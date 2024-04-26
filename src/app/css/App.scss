@@ -264,6 +264,8 @@ ul.transformation_wrapper li:nth-child(1) {
 }
 
 
+
+
 a.trans_redirecttion {
     font-size: 1.875em;
     text-decoration: none;
@@ -390,6 +392,99 @@ span.cline:after {
     font-size: 1.25em;
     width: 320px;
 }
+
+/* css for inner pages services */
+
+.services_inner_template_wrapper {
+    max-width: $width-custom;
+    margin: auto;
+    position: relative;
+    padding-top: 105px;
+}
+
+.process_flex_template {
+    display: grid;
+    grid-template-columns: 54% 1fr;
+    align-items: center;
+}
+.process_left_section {
+    background: #eaaa00;
+    padding:20px;
+    height: 552px;
+}
+.process_description p {
+    font-size: 1.25em;
+    line-height: 42px;
+}
+.servies_barrner_bar {
+    writing-mode: tb;
+    font-size: 10px;
+    position: absolute;
+    white-space: nowrap;
+    left: -3%;
+    top: 21%;
+    transform: rotate(180deg);
+}
+
+.services_inner_heading h1 {
+    font-size: 5em;
+    width: 50%;
+    margin-top: 0px;
+}
+
+.serices_flex_template {
+    display: grid;
+    grid-template-columns: 68% 1fr;
+    justify-content: space-between;
+    padding-top: 100px;
+    padding-bottom: 80px;
+}
+.services_right_sec {
+    padding: 20px 47px;
+    background: #eaaa00;
+}
+
+
+.services_banner_section img {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    object-position: top;
+}
+.servies_barrner_bar h1 {
+    text-transform: capitalize;
+    font-size: 1.75em !important;
+}
+.services_right_sec h1 {
+    font-size: 2.375em;
+    text-transform: capitalize;
+}
+.related-services ul li a {
+    color: white;
+    font-size: 1.875em;
+    text-transform: capitalize;
+    padding-bottom: 15px;
+}
+
+.related-services ul li {
+   list-style-type:none;
+   line-height: 37px;
+}
+.related-services ul  {
+   padding: 0px;
+}
+
+.services_inner_description p {
+    font-size: 1.75em;
+    line-height: 49px;
+    width: 90%;
+}
+
+
+
+/* ending css for service page */
+
+
 
 ul.transformation_wrapper:hover img {
     display: block;
@@ -781,6 +876,8 @@ p .testimonial_wrap {
         height: 32px !important;
         object-fit: contain;
     }
+
+    
 
 
     .footer-center-section {
