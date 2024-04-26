@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import Home from '../components/Home/Home'
-import { HomeApi, fetchHeaderFooter } from '@/utils/apis/Apis';
+import { HomeApi } from '@/utils/apis/Apis';
 
 
 

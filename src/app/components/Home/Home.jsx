@@ -1,7 +1,4 @@
-"use client";
-
-
-import React, { useState, useEffect } from "react";
+ 
 
 import ParallaxContainer from "../About/ParallaxContainer";
 import AboutSection from "./home-sections/About";
@@ -24,22 +21,7 @@ import TestimonialSection from "./home-sections/Testimonial";
 
 function Home({ result, isScrolled }) {
 
-  const [showInnovation, setShowInnovation] = useState(false);
-
-  useEffect(() => {
-    setShowInnovation(isScrolled);
-  }, [isScrolled]);
-
-  const handleScroll = () => {
-    setShowInnovation(window.scrollY > 0);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+ 
 
 
 

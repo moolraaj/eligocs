@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
 
-function CompanySection({ele}) {
-    const [activeIndex, setActiveIndex] = useState(null);  
-    const onTitleClick = (index) => {
-        setActiveIndex(index === activeIndex ? null : index);
-      };
+ 
+
+function CompanySection({ele,activeIndex}) {
+  
   return (
      <>
      <div className="page_outer  company_section_outer scrolling">

@@ -1,25 +1,22 @@
-'use client'
-import { fetchAllServices } from "@/utils/apis/Apis";
-import ServiceComponent from "./component/ServiceComponent";
+import { ServiceApi } from "@/utils/apis/Apis";
+import ServicesPage from "./component/servicesPage";
+
+ 
+
+ 
+
+ 
+export default async function Services() {
 
 
-import { useEffect, useState } from 'react';
-export default function Services() {
-    const [services, setServices] = useState([]);
+    let data=await ServiceApi()
+    console.log(data)
 
-    const loadServices = async () => {
-        let url = await fetchAllServices()
-        setServices(url)
-        console.log(url)
-    };
-
-    useEffect(() => {
-        loadServices()
-    }, []);
+    
 
     return (
         <>
-            <ServiceComponent services={services} />
+        <ServicesPage data={data}/>
         </>
     );
 }

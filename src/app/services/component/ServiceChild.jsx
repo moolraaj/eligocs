@@ -1,7 +1,7 @@
 
  
 import Link from 'next/link';
-export default function  ServiceComponent({services}) {
+export default function  ServiceChild({services}) {
 
     return (
         <>

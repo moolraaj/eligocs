@@ -10,11 +10,8 @@ export default async function SingleLayout({ children }) {
     
         let response=await fetchHeaderFooter()
         let data=await response.data
-<<<<<<< HEAD
         
-=======
         // console.log(data)
->>>>>>> 9a7babdf52cd6a32b11e7cb01bbf4b63ccf7ae7e
   
     
 
