@@ -56,7 +56,7 @@ export default async function ServicesPage({ data }) {
                                                 <div className="service_icon">
                                                     <img src='' alt="" />
                                                 </div>
-
+                                            <div className="service_both_sections">
                                                 <div className="services_content_area">
                                                     <div className="service_content_heading">
                                                         <h1>{e.acf.services_title}</h1>
@@ -70,6 +70,7 @@ export default async function ServicesPage({ data }) {
 
                                                 <div className="services_navigation">
                                                     <Link href={`/services/${e.slug}`}>read more</Link>
+                                                </div>
                                                 </div>
 
                                             </div>

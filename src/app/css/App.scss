@@ -264,6 +264,12 @@ ul.transformation_wrapper li:nth-child(1) {
 
 
 
+.service_both_sections {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
 
 a.trans_redirecttion {
     font-size: 1.875em;
@@ -271,6 +277,19 @@ a.trans_redirecttion {
     text-transform: uppercase;
     font-weight: 600;
     color: $primaryblack;
+}
+
+.all_services_right_section .service_content_description p{
+    font-size:1.25em;
+    color: $black;
+    width: 94%;
+}
+
+.services_navigation a {
+    font-size: 1.375em;
+    white-space: nowrap;
+    text-transform: capitalize;
+    font-weight: 600;
 }
 
 ul.transformation_wrapper li h4 {
@@ -482,6 +501,24 @@ span.cline:after {
     @include font_color-y;
     margin-bottom: 20px;
     margin-top: 20px;
+ }
+
+ .all_services_outer {
+    border-top: 1px solid $primaryyellow;
+    padding-bottom: 40px;
+}
+
+.service_content_heading h1 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    color: $primaryyellow;
+}
+
+
+
+
+ .all_services_left_section h1 {
+    @include font_color-b;
  }
  
  .service_top_sub_heading h1 {
