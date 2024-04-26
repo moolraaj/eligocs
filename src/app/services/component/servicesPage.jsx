@@ -54,7 +54,7 @@ export default async function ServicesPage({ data }) {
 
                                             <div className="all_services_outer">
                                                 <div className="service_icon">
-                                                    <img src='' alt="" />
+                                                    <img src={ele.acf.services_icons} alt="" />
                                                 </div>
                                             <div className="service_both_sections">
                                                 <div className="services_content_area">
