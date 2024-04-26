@@ -1,6 +1,7 @@
  
 import { fetchAllServices } from "@/utils/apis/Apis"
 import Link from "next/link"
+import ServicesFaq from "./ServicesFaq"
 
 
 export default async function ServicesPage({ data }) {
@@ -84,24 +85,7 @@ export default async function ServicesPage({ data }) {
                         </div>
 
 
-                        <div className="services_faqs_wrapper">
-                            <div className="services_faq_left_section">
-                                <h1>{ele.acf.faq_outer_heading}</h1>
-                            </div>
-                            <div className="services_faq_right_section">
-                                {ele.acf.our_service_faqs.map((faq,index)=>{
-                                    return  <div className="services_faq_outer" key={index}>
-                                    <div className="servies_question">
-                                        <h1>{faq.faq__tittle}</h1>
-                                    </div>
-                                    <div className="services_answer">
-                                        <p>{faq.faq_response}</p>
-                                    </div>
-                                </div>
-                                })}
-                               
-                            </div>
-                        </div>
+                        <ServicesFaq faqs={ele.acf.our_service_faqs} outerHeading={ele.acf.faq_outer_heading} />
 
 
                         <div className="services_show_testimonials">
