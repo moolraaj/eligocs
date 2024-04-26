@@ -16,9 +16,9 @@ const ServicesFaq = ({ faqs, outerHeading }) => {
             <div className="services_faq_right_section">
                 {faqs.map((faq, index) => (
                     <div className="services_faq_outer" key={index}>
-                        <div className="servies_question" onClick={() => toggleAccordion(index)}>
+                        <div className="servies_question" >
                             <h1>{faq.faq__tittle}</h1>
-                            <div className={`arrow-icon ${activeIndex === index ? 'active' : ''}`}></div>
+                            <div onClick={() => toggleAccordion(index)} className={`arrow-icon ${activeIndex === index ? 'active' : ''}`}></div>
                         </div>
                         {activeIndex === index && (
                             <div className="services_answer">
