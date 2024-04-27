@@ -98,6 +98,7 @@ function Navbar({data}) {
                   <NavigationLink href={'/about'}>about</NavigationLink>
                   <NavigationLink href={'/services'}>services</NavigationLink>
                   <NavigationLink href={'/portfolio'}>portfolio</NavigationLink>
+                  <NavigationLink href={'/meet-our-team'}>our team</NavigationLink>
                 </div>
               </div>
             </div>

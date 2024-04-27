@@ -62,11 +62,29 @@ export const fetchAllportFolio=async()=>{
 
 //fetch single portfolio api
 export const fetchSingleportFolio=async(slug)=>{
-  let response =await fetch(`https://api.eligo.cloud/wp-json/wp/v2/portfolio?slug=${slug}&fields=acf&acf_format=standard`)
+  let response =await fetch(`${process.env.NEXT_PUBLIC_API_URL}/portfolio?slug=${slug}&fields=acf&acf_format=standard`)
   let result=await response.json()
   return result
 
   
+}
+
+
+
+//fetch meet out team api
+export const fetchMeetOurTeam=async()=>{
+  let response=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/meet_our_team?fields=acf&acf_format=standard`)
+  let result=await response.json()
+  return result
+}
+
+
+
+//fetch meet out team page  api
+export const meetOurTeamPage=async()=>{
+  let response=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pages?slug=meet-our-team&fields=acf&acf_format=standard`)
+  let result=await response.json()
+  return result
 }
 
 
