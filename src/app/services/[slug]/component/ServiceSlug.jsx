@@ -39,10 +39,7 @@ function ServiceSlug({ data, services }) {
                                     <li>
                                     <Link href={`${items.slug}`}>{items.acf.services_title}</Link>
                                     </li>
-                                 </ul>
-                                  
-                                    
-                                  
+                                 </ul> 
                               </div>
 
                            })

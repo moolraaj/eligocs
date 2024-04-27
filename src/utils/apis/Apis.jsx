@@ -16,6 +16,7 @@ export const AboutApi = async() =>{
 }
 
 
+
 // fetch Service page api 
 export const ServiceApi =async()=>{
   let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pages?slug=our_services&fields=acf&acf_format=standard`);
@@ -24,12 +25,14 @@ export const ServiceApi =async()=>{
 }
 
 
+
 // fetch all services template  api
 export const fetchAllServices = async () => {
   let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/services?fields=acf&acf_format=standard`)
   let data = await response.json()
   return data
 }
+
 
 
 // fetch single services template  api
@@ -43,7 +46,6 @@ export const fetchSingleService = async (slug) => {
 
 
 //fecth portfolio page api
-
 export const portfolioApi=async ()=>{
   let response=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pages?slug=portfolio&fields=acf&acf_format=standard`)
   let result=await response.json()
