@@ -45,7 +45,7 @@ export const fetchSingleService = async (slug) => {
 //fecth portfolio page api
 
 export const portfolioApi=async ()=>{
-  let response=await fetch('https://api.eligo.cloud/wp-json/wp/v2/pages?slug=portfolio&fields=acf&acf_format=standard')
+  let response=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pages?slug=portfolio&fields=acf&acf_format=standard`)
   let result=await response.json()
   return result
 
@@ -91,7 +91,7 @@ export const meetOurTeamPage=async()=>{
 
 //fetch header footer
 export const fetchHeaderFooter=async()=> {
-  let data = await fetch('https://api.eligo.cloud/wp-json/rae/v1/header-footer?header_location_id=hcms-menu-header&footer_location_id=hcms-menu-footer')
+  let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL_HEADER_FOOTER}/header-footer?header_location_id=hcms-menu-header&footer_location_id=hcms-menu-footer`)
   let response = await data.json()
   return response
 }
