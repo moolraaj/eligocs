@@ -1,4 +1,5 @@
 
+'use client'
 import { useState } from "react";
 import { gsap } from "gsap";
 import StepGif from "../../assets/aboutpageAssets/next-step.gif";

@@ -23,11 +23,11 @@ export default async function Page({ params }) {
 }
 
 
-// export async function generateStaticParams() {
-//     const result = await fetchAllServices();
-//     return result.map(ele => ({
-//         slug: ele.slug
-//     }));
-// }
+export async function generateStaticParams() {
+    const result = await fetchAllServices();
+    return result.map(ele => ({
+        slug: ele.slug
+    }));
+}
 
 

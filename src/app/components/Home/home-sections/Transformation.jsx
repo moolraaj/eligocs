@@ -1,6 +1,6 @@
  
  
-import ServicesComponent from '@/app/services/component/ServicesComponent'
+ import ServicesComponent from '@/app/services/component/ServicesComponent'
 import React from 'react'
  
 function TransformationSection({ele}) {

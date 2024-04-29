@@ -1,11 +1,13 @@
 import { fetchAllportFolio, portfolioApi } from "@/utils/apis/Apis";
 import PortfolioPage from "./component/portfolioPage";
+import Layout from "../common/layout/lauout";
+ 
 
 
 
 
 
-export default async function Portfolio() {
+ async function Portfolio() {
 
     let data=await portfolioApi()
     console.log(data)
@@ -16,11 +18,15 @@ export default async function Portfolio() {
 
     return (
         <>
+        <Layout>
             <PortfolioPage data={data} portfolio={portfolio}/>
+            </Layout>
 
         </>
     );
 }
+
+export default Portfolio
 
  
 

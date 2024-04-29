@@ -1,12 +1,14 @@
 import { ServiceApi } from "@/utils/apis/Apis";
 import ServicesPage from "./component/servicesPage";
-
+import Layout from "../common/layout/lauout";
  
 
  
 
  
-export default async function Services() {
+
+ 
+ async function Services() {
 
 
     let data=await ServiceApi()
@@ -16,9 +18,13 @@ export default async function Services() {
 
     return (
         <>
+        <Layout>
         <ServicesPage data={data}/>
+        </Layout>
         </>
     );
 }
+
+export default Services
 
 

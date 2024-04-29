@@ -7,7 +7,7 @@ function PortfolioChild({data}) {
      <div className="portfolio_right_section">
             {data && data.map((ele) => (
                 <div className="portfolio" key={ele.id}>
-                    <Link href={`/portfolio/${ele.slug}`} passHref className='portfolio-post'>
+                    <Link href={`/portfolio/${ele.slug}`} className='portfolio-post'>
                         <div className="portfolio_image">
                             <img src={ele.acf.portfolio_image} alt="" srcSet="" />
                         </div>
