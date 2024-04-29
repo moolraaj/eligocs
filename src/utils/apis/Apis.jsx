@@ -48,6 +48,12 @@ export const BlogPageApi = async () => {
 }
 
 
+// fetch Our products page api
+export const ProductPageApi = async() => {
+  let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pages?slug=products&fields=acf&acf_format=standard`);
+  let response = await data.json();
+  return response;
+}
 
 
 
