@@ -1,5 +1,5 @@
 
-import { fetchSingleportFolio } from "@/utils/apis/Apis";
+import { fetchSingleportFolio } from "@/utils/apis/Apis.jsx";
 import Portfolioslug from "./component/portfolioslug";
 
 

@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
  
  
-import { fetchAllServices } from '@/utils/apis/Apis';
+import { fetchAllServices } from '@/utils/apis/Apis.jsx';
 import ServiceChild from './ServiceChild';
 
 export default function ServicesComponent() {

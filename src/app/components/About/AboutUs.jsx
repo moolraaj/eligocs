@@ -6,7 +6,7 @@ import ParallaxContainer from "./ParallaxContainer";
 import JournyImageSlider from "./JournyImageSlider";
 import WorkingProcess from "./WorkingProcess";
 import Testimoinals from "../../common/Testimoinals";
-import { AboutApi } from "@/utils/apis/Apis";
+import { AboutApi } from "@/utils/apis/Apis.jsx";
 import Link from "next/link";
 
 

@@ -1,5 +1,5 @@
 'use client'
-import { fetchAllportFolio } from "@/utils/apis/Apis";
+import { fetchAllportFolio } from "@/utils/apis/Apis.jsx";
 import PortfolioChild from "./portfolioChild";
 import { useEffect, useState } from "react";
 

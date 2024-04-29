@@ -1,7 +1,7 @@
  
 import Navbar from './navbar/page'
 import Footer from './footer/page'
-import { fetchHeaderFooter } from '@/utils/apis/Apis';
+import { fetchHeaderFooter } from '@/utils/apis/Apis.jsx';
 
 export default async function SingleLayout({ children }) {
 

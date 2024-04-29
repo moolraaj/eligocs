@@ -1,4 +1,4 @@
-import { fetchAllServices, fetchSingleService } from "@/utils/apis/Apis";
+import { fetchAllServices, fetchSingleService } from "@/utils/apis/Apis.jsx";
 import ServiceSlug from "./component/ServiceSlug";
  
 
