@@ -52,6 +52,13 @@ export const allExportedApi = () => {
   } 
 
 
+  // fetch Courses page api
+  const CoursesPageApi = async() => {
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pages?slug=courses&fields=acf&acf_format=standard`);
+    let response = await data.json();
+    return response;
+  } 
+
 
   // fetch all services template api
   const fetchAllServices = async () => {
@@ -112,6 +119,7 @@ export const allExportedApi = () => {
     meetOurTeamPage,
     BlogPageApi,
     ProductPageApi,
+    CoursesPageApi,
     fetchAllServices,
     fetchSingleService,
     fetchAllportFolio,
