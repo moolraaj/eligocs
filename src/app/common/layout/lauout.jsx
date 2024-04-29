@@ -1,11 +1,8 @@
  
-import Navbar from './navbar/page'
-import Footer from './footer/page'
-import { fetchHeaderFooter } from '@/utils/apis/Apis.jsx';
  
 import { fetchHeaderFooter } from '@/utils/apis/Apis';
-import Footer from '../footer/page';
 import Navbar from '../navbar/page';
+import Footer from '../footer/page';
 
 
  
