@@ -1,13 +1,15 @@
-import { ProductPageApi, fetchAllportFolio } from "@/utils/apis/Apis"
+import { allExportedApi } from "@/utils/apis/Apis"
 import OurProductPage from "./component/OurProductPage";
 
 export default async function page() {
-    let ProductPageApiData= await ProductPageApi();
-    let products = await fetchAllportFolio();
+
+  let api = allExportedApi()
+  let ProductPageApiData = await api.ProductPageApi();
+  let products = await api.fetchAllportFolio();
   return (
-   <>
-   <OurProductPage ProductPageApiData={ProductPageApiData} products={products} />
-   </>
+    <>
+      <OurProductPage ProductPageApiData={ProductPageApiData} products={products} />
+    </>
   )
 }
 

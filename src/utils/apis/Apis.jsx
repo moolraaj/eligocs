@@ -42,6 +42,17 @@ export const allExportedApi = () => {
     return response;
   };
 
+
+ 
+  // fetch Our products page api
+  const ProductPageApi = async() => {
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pages?slug=products&fields=acf&acf_format=standard`);
+    let response = await data.json();
+    return response;
+  } 
+
+
+
   // fetch all services template api
   const fetchAllServices = async () => {
     let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/services?fields=acf&acf_format=standard`);
@@ -91,6 +102,8 @@ export const allExportedApi = () => {
     return response;
   };
 
+
+
   return {
     HomeApi,
     AboutApi,
@@ -98,6 +111,7 @@ export const allExportedApi = () => {
     ServiceApi,
     meetOurTeamPage,
     BlogPageApi,
+    ProductPageApi,
     fetchAllServices,
     fetchSingleService,
     fetchAllportFolio,
