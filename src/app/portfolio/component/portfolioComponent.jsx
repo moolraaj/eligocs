@@ -1,14 +1,15 @@
 'use client'
-import { fetchAllportFolio } from "@/utils/apis/Apis.jsx";
+import { allExportedApi } from "@/utils/apis/Apis.jsx";
 import PortfolioChild from "./portfolioChild";
 import { useEffect, useState } from "react";
 
 export default  function PortfolioComponent() {
+    let api=allExportedApi()
 
    const[data,setData]=useState() 
    
    const loadPortfolio=async()=>{
-    let result=await fetchAllportFolio()
+    let result=await api.fetchAllportFolio()
     setData(result)
 
    }

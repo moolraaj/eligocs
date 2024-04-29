@@ -1,4 +1,4 @@
-import { fetchAllportFolio, portfolioApi } from "@/utils/apis/Apis.jsx";
+import { allExportedApi } from "@/utils/apis/Apis.jsx";
 import PortfolioPage from "./component/portfolioPage";
  
  
@@ -8,12 +8,13 @@ import PortfolioPage from "./component/portfolioPage";
 
 
  async function Portfolio() {
+    let api=allExportedApi()
 
-    let data=await portfolioApi()
+    let data=await api.portfolioApi()
     console.log(data)
 
 
-    let portfolio=await fetchAllportFolio()
+    let portfolio=await api.fetchAllportFolio()
 
 
     return (

@@ -6,7 +6,7 @@ import ParallaxContainer from "./ParallaxContainer";
 import JournyImageSlider from "./JournyImageSlider";
 import WorkingProcess from "./WorkingProcess";
 import Testimoinals from "../../common/Testimoinals";
-import { AboutApi } from "@/utils/apis/Apis.jsx";
+import { allExportedApi } from "@/utils/apis/Apis.jsx";
 import Link from "next/link";
 
 
@@ -14,9 +14,10 @@ import Link from "next/link";
 
 const AboutUs = () => {
   const [result, setResult] = useState([]);
+  const api=allExportedApi()
 
   const loadData = async () => {
-    let data = await AboutApi();
+    let data = await api.AboutApi();
     setResult(data);
     console.log(data);
   };

@@ -1,12 +1,14 @@
 
-import { fetchAllServices } from "@/utils/apis/Apis.jsx"
+import { allExportedApi } from "@/utils/apis/Apis.jsx"
 import Link from "next/link"
 import ServicesFaq from "./ServicesFaq"
 
 
 export default async function ServicesPage({ data }) {
 
-    let services = await fetchAllServices()
+    let api=allExportedApi()
+
+    let services = await api.fetchAllServices()
     console.log(services)
 
 

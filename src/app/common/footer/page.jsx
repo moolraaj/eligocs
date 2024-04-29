@@ -2,9 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import footerLogo from '../../assets/headerAssets/sitelogo.png'
-import { fetchAllServices, fetchAllportFolio } from '@/utils/apis/Apis.jsx';
+import { allExportedApi } from '@/utils/apis/Apis.jsx';
 
 function Footer() {
+  let api=allExportedApi()
   const [services, setServices] = useState([]);
   const [data, setData] = useState([])
   const [contactInfo, setContactInfo] = useState({
@@ -30,13 +31,13 @@ function Footer() {
 
     
     const fetchData = async () => {
-        const data = await fetchAllServices();
+        const data = await api.fetchAllServices();
         setServices(data);
     };
 
    
   const loadPortfolio = async () => {
-      let result = await fetchAllportFolio();
+      let result = await api.fetchAllportFolio();
       setData(result)
       console.log(result)
 
