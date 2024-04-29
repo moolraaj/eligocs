@@ -101,6 +101,7 @@ function NavbarCompo({data}) {
                   <NavigationLink href={'/services'}>services</NavigationLink>
                   <NavigationLink href={'/portfolio'}>portfolio</NavigationLink>
                   <NavigationLink href={'/meet-our-team'}>our team</NavigationLink>
+                  <NavigationLink href={'/blog'}>blog</NavigationLink>
                 </div>
               </div>
             </div>
