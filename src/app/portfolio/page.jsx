@@ -1,6 +1,6 @@
 import { fetchAllportFolio, portfolioApi } from "@/utils/apis/Apis";
 import PortfolioPage from "./component/portfolioPage";
-import Layout from "../common/layout/lauout";
+ 
  
 
 
@@ -18,9 +18,9 @@ import Layout from "../common/layout/lauout";
 
     return (
         <>
-        <Layout>
+      
             <PortfolioPage data={data} portfolio={portfolio}/>
-            </Layout>
+           
 
         </>
     );

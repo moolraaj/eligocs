@@ -1,6 +1,6 @@
 import { meetOurTeamPage } from "@/utils/apis/Apis"
 import TeamPageComponent from "./component/teamPageComponent"
-import Layout from "../common/layout/lauout"
+ 
  
 
  
@@ -11,9 +11,9 @@ import Layout from "../common/layout/lauout"
 
   return (
      <>
-     <Layout>
+     
      <TeamPageComponent data={data}/>
-     </Layout>
+   
     
      
      </>

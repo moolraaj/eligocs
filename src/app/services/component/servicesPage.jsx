@@ -55,7 +55,7 @@ export default async function ServicesPage({ data }) {
 
                                             <div className="all_services_outer">
                                                 <div className="service_icon">
-                                                    <img src={e.acf.services_icons} />
+                                                    <img src='' alt="" />
                                                 </div>
 
                                                 <div className="service_both_sections">

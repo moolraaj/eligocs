@@ -7,7 +7,7 @@
  
 
 import { HomeApi } from '@/utils/apis/Apis';
-import Layout from '../common/layout/lauout';
+ 
 import dynamic from 'next/dynamic';
  
 
@@ -29,11 +29,11 @@ export default async function HomePage() {
 
   return (
 
-<Layout>
+ 
 
 
   <HomeCompo result={result} />
-</Layout>
+ 
 
 
 

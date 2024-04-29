@@ -1,6 +1,6 @@
 import { ServiceApi } from "@/utils/apis/Apis";
 import ServicesPage from "./component/servicesPage";
-import Layout from "../common/layout/lauout";
+ 
  
 
  
@@ -18,9 +18,9 @@ import Layout from "../common/layout/lauout";
 
     return (
         <>
-        <Layout>
+       
         <ServicesPage data={data}/>
-        </Layout>
+       
         </>
     );
 }
