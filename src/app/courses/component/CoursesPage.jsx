@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-function CoursesPage({CoursesPageData}) {
+function CoursesPage({CoursesPageData,AllCourses}) {
   return (
    <>
    <div className="courses-page-outer">
@@ -19,7 +19,16 @@ function CoursesPage({CoursesPageData}) {
         })}
 
         <div className="courses-posts-outer">
-            
+            {AllCourses.map((course, index)=>{
+                return(
+                    <ul key={index} className='course'>
+                        <li><img src={course.acf.course_logo.url} alt="course_logo"/></li>
+                        <li><h1>{course.acf.course_tittle}</h1></li>
+                        <li>{course.acf.course_short_intro}</li>
+                        <li><Link href={`/`}>Read More</Link></li>
+                    </ul>
+                )
+            })}
         </div>
     </div>
    </div>
