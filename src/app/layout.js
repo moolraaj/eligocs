@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./css/App.scss";
-import Layout from "./common/layout/lauout";
+import Layout from "./common/layout/layout";
+ 
  
  
 
@@ -21,7 +22,11 @@ export default function RootLayout({ children }) {
         <Layout>
 
           {children}
+
         </Layout>
+        
+
+         
      
 
 
