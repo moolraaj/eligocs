@@ -102,6 +102,14 @@ export const allExportedApi = () => {
     return response;
   };
 
+ // fetch all courses api
+ const AllCourses = async () => {
+  let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/course?fields=acf&acf_format=standard`);
+  let response = await data.json();
+  return response;
+};
+
+
   // fetch header footer
   const fetchHeaderFooter = async () => {
     let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL_HEADER_FOOTER}/header-footer?header_location_id=hcms-menu-header&footer_location_id=hcms-menu-footer`);
@@ -126,6 +134,7 @@ export const allExportedApi = () => {
     fetchSingleportFolio,
     fetchMeetOurTeam,
     AllBlogPOsts,
+    AllCourses,
     fetchHeaderFooter
   };
   

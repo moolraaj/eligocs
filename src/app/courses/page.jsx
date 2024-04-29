@@ -6,9 +6,10 @@ export default async function page() {
 
     let api = allExportedApi();
     let CoursesPageData = await api.CoursesPageApi();
+    let AllCourses = await api.AllCourses();
   return (
    <>
-   <CoursesPage  CoursesPageData={CoursesPageData} />
+   <CoursesPage  CoursesPageData={CoursesPageData} AllCourses={AllCourses} />
    </>
   )
 }
