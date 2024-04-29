@@ -1,13 +1,9 @@
 import React from 'react'
 
-import dynamic from 'next/dynamic'
+ 
+import NavbarCompo from './component/navbarCompo'
 
-const NavbarCompo=dynamic(
-  ()=> import ('./component/navbarCompo'),
-  {
-    ssr:false
-  }
-)
+
 
 function Navbar({data}) {
   return (
