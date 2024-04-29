@@ -1,4 +1,4 @@
-import { fetchAllportFolio, portfolioApi } from "@/utils/apis/Apis";
+import { fetchAllportFolio, portfolioApi } from "@/utils/apis/Apis.jsx";
 import PortfolioPage from "./component/portfolioPage";
  
  

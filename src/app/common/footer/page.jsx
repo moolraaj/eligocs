@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import footerLogo from '../../assets/headerAssets/sitelogo.png'
-import { fetchAllServices, fetchAllportFolio } from '@/utils/apis/Apis';
+import { fetchAllServices, fetchAllportFolio } from '@/utils/apis/Apis.jsx';
 
 function Footer() {
   const [services, setServices] = useState([]);

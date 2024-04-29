@@ -1,5 +1,5 @@
 
-import { fetchAllServices } from "@/utils/apis/Apis"
+import { fetchAllServices } from "@/utils/apis/Apis.jsx"
 import Link from "next/link"
 import ServicesFaq from "./ServicesFaq"
 

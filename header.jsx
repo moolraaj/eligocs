@@ -1,7 +1,7 @@
  
  
 
-import { fetchAllportFolio, fetchSingleportFolio } from "@/utils/apis/Apis";
+import { fetchAllportFolio, fetchSingleportFolio } from "@/utils/apis/Apis.jsx";
  
 
 export default async function Page({ params }) {

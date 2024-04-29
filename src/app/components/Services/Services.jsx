@@ -1,7 +1,7 @@
 
 'use client'
  
-import { ServiceApi, fetchAllServices } from '@/utils/apis/Apis';
+import { ServiceApi, fetchAllServices } from '@/utils/apis/Apis.jsx';
 import Link from 'next/link';
  
 import { useEffect, useState } from 'react';

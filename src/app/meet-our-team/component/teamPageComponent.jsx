@@ -1,4 +1,4 @@
-import { fetchMeetOurTeam } from "@/utils/apis/Apis"
+import { fetchMeetOurTeam } from "@/utils/apis/Apis.jsx"
 import TeamComponent from "./teamComponent"
 
 

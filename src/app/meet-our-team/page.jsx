@@ -1,4 +1,4 @@
-import { meetOurTeamPage } from "@/utils/apis/Apis"
+import { meetOurTeamPage } from "@/utils/apis/Apis.jsx"
 import TeamPageComponent from "./component/teamPageComponent"
  
  

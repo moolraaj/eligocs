@@ -1,4 +1,4 @@
-import { ServiceApi } from "@/utils/apis/Apis";
+import { ServiceApi } from "@/utils/apis/Apis.jsx";
 import ServicesPage from "./component/servicesPage";
  
  
