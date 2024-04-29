@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import Home from '../components/Home/Home'
-import { HomeApi } from '@/utils/apis/Apis.jsx';
+import { HomeApi } from '@/utils/apis/Apis';
 
 
 
@@ -45,12 +45,15 @@ function Homepage() {
 
   return (
 
+<Layout>
 
-    <Home loading={loading} result={result} isScrolled={isScrolled} />
+
+  <HomeCompo result={result} />
+</Layout>
 
 
 
   )
 }
-
-export default Homepage
+ 
+ 

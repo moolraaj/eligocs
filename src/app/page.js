@@ -1,20 +1,34 @@
-
- 
- 
- 
- 
-import Homepage from "./home/page";
-
- 
- 
+import dynamic from "next/dynamic";
  
 
-export default function Home() {
+ 
+ 
+const HomePage=dynamic(
+  ()=> import  ("./home/page"),
+  {
+    ssr:false
+  }
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+export default function Home() {   
   return (
     <>
- 
-      <Homepage/>
-      
+     
+        <HomePage />
+       
+
     </>
   );
 }

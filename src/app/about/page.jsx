@@ -1,18 +1,23 @@
- 
-'use client'
+
+
+import Layout from "../common/layout/lauout";
 import AboutUs from "../components/About/AboutUs";
- 
+
+
 import './AboutPage.scss'
- 
+
 function AboutPage() {
   return (
     <>
- 
-    <AboutUs/>
- 
-   
-    
-   
+      <Layout>
+        <AboutUs />
+
+      </Layout>
+
+
+
+
+
     </>
   )
 }

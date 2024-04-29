@@ -1,8 +1,7 @@
 import { Inter } from "next/font/google";
 import "./css/App.scss";
-import Navbar from "./common/navbar/page";
-import Footer from "./common/footer/page";
-import SingleLayout from "./common/singleLayout";
+ 
+ 
 
 
 
@@ -18,11 +17,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
 
       <body className={inter.className}>
-        <SingleLayout>
+     
 
           {children}
 
-        </SingleLayout>
+          
+
+       
 
       </body>
 

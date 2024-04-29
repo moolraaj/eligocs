@@ -1,5 +1,6 @@
-import PortfolioComponent from '@/app/portfolio/component/portfolioComponent'
+  
  
+import PortfolioComponent from '@/app/portfolio/component/portfolioComponent'
 import React from 'react'
  
  

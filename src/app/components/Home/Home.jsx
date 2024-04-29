@@ -5,21 +5,24 @@ import AboutSection from "./home-sections/About";
 import QuoteSection from "./home-sections/Quote";
 import CompanySection from "./home-sections/Company";
 import DevelopmentSection from "./home-sections/Development";
-import TransformationSection from "./home-sections/Transformation";
+ 
 
 import '../../about/AboutPage.scss'
-import PortfolioSection from "./home-sections/Portfolio";
+ 
 
  
 import HeroSection from "./home-sections/Hero";
 import TestimonialSection from "./home-sections/Testimonial";
+import PortfolioSection from "./home-sections/Portfolio";
+import TransformationSection from "./home-sections/Transformation";
+ 
 
  
 
 
 
 
-function Home({ result, isScrolled }) {
+function HomeCompo({ result }) {
 
  
 
@@ -33,7 +36,7 @@ function Home({ result, isScrolled }) {
 
 
           <ParallaxContainer speed={0.5} className="container-1">
-           <HeroSection  ele={ele} isScrolled={isScrolled}/>
+           <HeroSection  ele={ele}/>
           </ParallaxContainer>
 
           {/*about us section starts*/}
@@ -91,4 +94,4 @@ function Home({ result, isScrolled }) {
   );
 }
 
-export default Home;
+export default HomeCompo;

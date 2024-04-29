@@ -1,5 +1,5 @@
 
-import { fetchSingleportFolio } from "@/utils/apis/Apis.jsx";
+import { fetchSingleportFolio } from "@/utils/apis/Apis";
 import Portfolioslug from "./component/portfolioslug";
 
 
@@ -21,12 +21,12 @@ export default async function Page({ params }) {
 }
 
 
-// export async function generateStaticParams() {
-//     let data = await fetchAllportFolio();
-//     return data.map((ele) => ({
-//         slug: ele.slug
-//     }));
-// }
+export async function generateStaticParams() {
+    let data = await fetchAllportFolio();
+    return data.map((ele) => ({
+        slug: ele.slug
+    }));
+}
 
 
 
