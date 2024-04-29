@@ -1,11 +1,12 @@
-import { fetchMeetOurTeam } from "@/utils/apis/Apis.jsx"
+import { allExportedApi } from "@/utils/apis/Apis.jsx"
 import TeamComponent from "./teamComponent"
 
 
 export default async function TeamPageComponent({ data }) {
+  let api=allExportedApi()
 
 
-  let result=await fetchMeetOurTeam()
+  let result=await api.fetchMeetOurTeam()
 
 
 

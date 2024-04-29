@@ -1,4 +1,4 @@
-import { meetOurTeamPage } from "@/utils/apis/Apis.jsx"
+import { allExportedApi } from "@/utils/apis/Apis.jsx"
 import TeamPageComponent from "./component/teamPageComponent"
  
  
@@ -6,7 +6,8 @@ import TeamPageComponent from "./component/teamPageComponent"
  
 
  async function MeetOurTeam() {
-    let data=await meetOurTeamPage()
+   let api=allExportedApi()
+    let data=await api.meetOurTeamPage()
     console.log(data)
 
   return (
