@@ -27,12 +27,14 @@ export default async function TeamPageComponent({ data }) {
             </div>
             <div className="right_banner_heading">
               <h1>{ele.acf.team_heading}</h1>
-            </div>
-          </div>
-
-          <div className="our_team_description">
+              <div className="our_team_description">
             <p dangerouslySetInnerHTML={{__html:ele.acf.team_description}}></p>
 
+          </div>
+            </div>
+            
+
+         
           </div>
 
 

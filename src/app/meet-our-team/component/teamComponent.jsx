@@ -10,10 +10,13 @@ function TeamComponent({ result }) {
 
                         <div className="team-member_image">
                             <img src={ele.acf.our_team_image} alt="" />
-                        </div>
-                        <div className="team_member_description">
+                            <div className="team_member_description">
+                        <p dangerouslySetInnerHTML={{__html:ele.acf.our_team_description.slice(0,70)}}></p>
+            
 
                         </div>
+                        </div>
+                       
 
                     </div>
                     <div className="member_right_section">
