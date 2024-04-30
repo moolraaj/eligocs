@@ -330,12 +330,12 @@ ul.transformation_wrapper li h4 {
 
 .home_section_outer {
     @extend %section_top_bottom_padding;
-    padding: 180px 0px 0px !important;
-
-
+    padding: 160px 0px 0px !important;
 }
 
-
+.page_outer{
+    padding: 160px 0px 0px !important;
+}
 
 .home_slider_wrapper p {
     text-align: center;
@@ -1689,6 +1689,13 @@ p .testimonial_wrap {
     }
     .company_left_section{
         display: block;
+    }
+    .home_section_outer{
+        padding: 120px 20px 0px 20px !important;
+    }
+    .home_slider_wrapper h1:first-child,
+    .home_slider_wrapper h1:nth-child(2){
+        font-size: 4em;
     }
 }
 
