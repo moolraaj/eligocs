@@ -2,7 +2,10 @@
 import { allExportedApi } from "@/utils/apis/Apis.jsx"
 import Link from "next/link"
 import ServicesFaq from "./ServicesFaq"
-
+import Testimonial from "@/app/components/Home/Testimonial"
+import TestimonialSection from "@/app/components/Home/home-sections/Testimonial"
+import Testimonials from "@/app/common/Testimoinals"
+import '../../about/AboutPage.scss'
 
 export default async function ServicesPage({ data }) {
 
@@ -17,7 +20,8 @@ export default async function ServicesPage({ data }) {
         <>
             {
                 data.map((ele) => {
-                    return <div className="service_page_wrapper" key={ele.id}>
+                    return   <div className="service_main_div" key={ele.id}>
+                    <div className="service_page_wrapper">
 
                         <div className="top_service_top_section_wrapper">
 
@@ -86,13 +90,29 @@ export default async function ServicesPage({ data }) {
                                 }
                             </div>
                         </div>
-
-                        <ServicesFaq faqs={ele.acf.our_service_faqs} outerHeading={ele.acf.faq_outer_heading} />
-
-                        <div className="services_show_testimonials">
-
-                        </div>
+                
+                      
+                        
                     </div>
+                    <div className="services_show_servicefaqs">
+                    <ServicesFaq faqs={ele.acf.our_service_faqs} outerHeading={ele.acf.faq_outer_heading} />
+
+                    </div>      
+
+                  <div className="testimonial_service content">
+
+                <Testimonials/>
+
+                  </div>
+
+
+
+
+                </div>
+
+
+
+
                 })
             }
 

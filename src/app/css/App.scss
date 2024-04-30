@@ -265,6 +265,132 @@ ul.transformation_wrapper li:nth-child(1) {
 }
 
 
+/* team section */
+.team_outer_wrapper {
+    max-width: 1520px;
+    margin: auto;
+    padding-top: 110px;
+    position: relative;
+  }
+  
+  .team_top_section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .team_banner_image {
+    display: flex;
+    align-items: baseline;
+  }
+  
+  h1 {
+    color: black;
+  }
+  
+  .left_banner_heading {
+    writing-mode: tb;
+    font-size: 10px;
+    position: absolute;
+    white-space: nowrap;
+    left: -3%;
+    top: 16%;
+    transform: rotate(180deg);
+  }
+  
+  .left_banner_heading h1 {
+    text-transform: capitalize;
+    font-size: 1.75em !important;
+  }
+  
+  .member_top_heading h1 {
+    font-size: 6em;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.team_member_section {
+    display: grid;
+    grid-template-columns: 1fr 60%;
+    column-gap: 12%;
+}
+
+.member_informations_section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.team_member_section {
+    display: grid;
+    grid-template-columns: 1fr 60%;
+    column-gap: 12%;
+}
+
+.member_informations_section {
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.team_member_section img {
+    width: 100%;
+}
+
+.member_name {
+    display: flex;
+    align-items: center;
+}
+
+.member_name img {
+    width: 30px;
+}
+.member_name h4 {
+    text-transform: capitalize;
+}
+
+.memebr_left_section {
+    opacity: 0;
+}
+
+.team-member_image {
+    position: absolute;
+    z-index:9;
+}
+
+.team_member_section:hover .memebr_left_section {
+    opacity: 1;
+}
+
+.our_memeber_wrapper {
+    padding-bottom: 150px;
+    padding-top: 110px;
+}
+
+.team_member_section:hover .team-member_image img {
+    display: block;
+    position: absolute;
+    max-width: 300px;
+}
+
+
+  .right_banner_heading h1 {
+    font-size: 5em;
+    width: 90%;
+    }
+
+.right_banner_heading {
+    padding-left: 60px;
+    max-width: 81% !important;
+}
+
+
+  
+  /* team section ends */
+  
+
+
+
 
 .service_both_sections {
     display: flex;
@@ -632,6 +758,18 @@ span.cline:after {
     padding: 40px 0px !important;
 }
 
+.services_faq_outer {
+    border-bottom: 1px solid #ffffff5e;
+}
+
+.services_answer p {
+    font-size: 1.285em;
+    margin-bottom: 20px;
+}
+
+.services_faq_heading h1 {
+    text-transform: uppercase;
+}
 
 /* ending css for service page */
 
@@ -665,6 +803,47 @@ ul.transformation_wrapper {
 .company_question {
     position: relative !important;
 }
+.services_faqs_wrapper {
+    background: #191C1B;
+    max-width: 1520px;
+    margin: auto;
+    padding: 50px 50px;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr 2fr;
+}
+
+.services_faq_left_section h1 {
+    color: white;
+    font-size: 5em;
+}
+
+.services_show_servicefaqs {
+    background: #191C1B;
+}
+.services_faq_right_section {
+    color: white;
+}
+.services_faq_left_section h1 {
+    color: white;
+}
+
+.servies_question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+
+}
+
+.services_faqs_wrapper .arrow-icon {
+    border: solid white !important;
+    border-width: 0 2px 2px 0 !important;
+}
+
+
+
+
 
 .company_left_section h1 {
     font-size: 4em;
