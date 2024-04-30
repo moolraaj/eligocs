@@ -109,6 +109,18 @@ export const allExportedApi = () => {
   return response;
 };
 
+// fetch single Course api
+const fetchSingleCourse = async (slug) => {
+  let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/course?slug=${slug}&fields=acf&acf_format=standard`);
+  let result = await response.json();
+  return result;
+};
+// fetch single Blog post api
+const SingleBlogPost = async (slug) => {
+  let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog?slug=${slug}&fields=acf&acf_format=standard`);
+  let result = await response.json();
+  return result;
+};
 
   // fetch header footer
   const fetchHeaderFooter = async () => {
@@ -132,9 +144,11 @@ export const allExportedApi = () => {
     fetchSingleService,
     fetchAllportFolio,
     fetchSingleportFolio,
+    SingleBlogPost,
     fetchMeetOurTeam,
     AllBlogPOsts,
     AllCourses,
+    fetchSingleCourse,
     fetchHeaderFooter
   };
   

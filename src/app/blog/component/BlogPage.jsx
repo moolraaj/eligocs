@@ -26,11 +26,13 @@ function BlogPage({blogPageData,allBlogPosts}) {
         {allBlogPosts.map((blogPost, index)=>{
           return(
             <ul key={index} className="blog-post">
+              <Link href={`/blog/${blogPost.slug}`}>
               <li className="blog-post-img"><img src={blogPost.acf.blog_post_image.url} alt="blog_post_image" /></li>
               <li className="blog-post-info-wrapper">
                 <h2>{blogPost.acf.blog_post_tittle}</h2>
                 <p><span>{blogPost.acf.post_by_}</span>  <span>{blogPost.acf.blog_post_date}</span></p>
               </li>
+              </Link>
             </ul>
           )
         })}
