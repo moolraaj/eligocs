@@ -131,6 +131,37 @@ const SingleBlogPost = async (slug) => {
 
 
 
+
+  //***************************   fetch forms apis  ****************************//
+
+
+  // job form api
+
+  const fetchJobFormApi=async(userData)=>{
+    let data = await fetch(`${process.env.NEXT_PUBLIC_FORM_API}/902/feedback`,userData)
+    let response=await data.json()
+    return response
+  }
+
+
+  // contact us form api
+
+  const fetchContactFormApi=async(userData)=>{
+    let data = await fetch(`${process.env.NEXT_PUBLIC_FORM_API}/942/feedback`,userData)
+    let response=await data.json()
+    return response
+  }
+
+
+  // apply for job api
+
+  const fetchApplyForJobApi=async(userData)=>{
+    let data = await fetch(`${process.env.NEXT_PUBLIC_FORM_API}/944/feedback`,userData)
+    let response=await data.json()
+    return response
+  }
+
+
   return {
     HomeApi,
     AboutApi,
@@ -149,7 +180,10 @@ const SingleBlogPost = async (slug) => {
     AllBlogPOsts,
     AllCourses,
     fetchSingleCourse,
-    fetchHeaderFooter
+    fetchHeaderFooter,
+    fetchJobFormApi,
+    fetchContactFormApi,
+    fetchApplyForJobApi
   };
   
 };
