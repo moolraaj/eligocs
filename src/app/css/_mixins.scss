@@ -4,14 +4,14 @@
 }
 
 // mixin for flex property
-@mixin flex-property($flex,$justify-content,$flex-direction:row,$align-items:unset,$column-gap:0px,$row-gap:0px){
+@mixin flex-property($flex,$justify-content,$flex-direction:row,$align-items:unset,$column-gap:0px,$row-gap:0px,$flex-wrap:wrap){
     display: $flex;
     justify-content: $justify-content;
     flex-direction: $flex-direction;
     align-items: $align-items;
     column-gap: $column-gap;
     row-gap: $row-gap;
-  
+   flex-wrap: wrap;
 }
 
 //mixin for grid property
