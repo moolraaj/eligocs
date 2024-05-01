@@ -1,7 +1,7 @@
-import PortfolioComponent from "@/app/portfolio/component/portfolioComponent";
+import Link from "next/link";
 
 
- export default async function Poductslug({ data }) {
+export default async function Poductslug({ data, allportFolioProducts }) {
     return (
         <>
             {
@@ -24,7 +24,7 @@ import PortfolioComponent from "@/app/portfolio/component/portfolioComponent";
 
                         <div className="portfolio_relative_description">
                             <div className="port_description">
-                            <p dangerouslySetInnerHTML={{__html: ele.acf.portfolio_description }}></p>
+                                <p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_description }}></p>
                             </div>
                         </div>
 
@@ -35,7 +35,34 @@ import PortfolioComponent from "@/app/portfolio/component/portfolioComponent";
                                 </div>
                                 <div className="portfolio_showcase_right">
 
-                                    <PortfolioComponent/>
+                                    <div className="portfolio_right_section">
+                                        {allportFolioProducts.map((ele) => (
+                                            <div className="portfolio" key={ele.id}>
+                                                <Link href={`/our-products/${ele.slug}`} className='portfolio-post'>
+                                                    <div className="portfolio_image">
+                                                        <img src={ele.acf.portfolio_image} alt="" srcSet="" />
+                                                    </div>
+                                                    <div className="portfolio_flex">
+                                                        <div className="portfolio_inner_left_section">
+                                                            <div className="portfolio_title">
+                                                                <h4>{ele.acf.portfolio_heading}</h4>
+                                                            </div>
+                                                            <div className="portfolio_short_description">
+                                                                <p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_technology }}></p>
+                                                            </div>
+                                                        </div>
+                                                        <div className="portfolio_inner_right_section">
+                                                            <div className="portfolio_technology">
+                                                                {ele.category.map((cat, index) => {
+                                                                    return <p key={index}>{cat}</p>
+                                                                })}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
 

@@ -8,15 +8,11 @@ export default async function Page({ params }) {
     let api=allExportedApi()
     const { slug } = params;
 
-    console.log(slug)
-
-
     let data = await api.fetchSingleportFolio(slug)
-    console.log(data)
-
+   let allportFolioProducts =await api.fetchAllportFolio(slug)
     return (
         <>
-            <Productslug data={data} />
+            <Productslug data={data} allportFolioProducts={allportFolioProducts} />
         </>
     );
 }
