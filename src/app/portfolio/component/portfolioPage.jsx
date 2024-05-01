@@ -4,26 +4,29 @@ function PortfolioPage({ data, portfolio }) {
 
     return (
         <>
+        <div className="page_top">
             {
                 data.map((ele) => {
                     return <div className="portfolio_page_wrapper" key={ele.id}>
 
                         <div className="portfolio_page_top_section">
+                            <div className="portfolio_heading_image_wrapper">
                             <div className="portfolio_page_top_heading">
                                 <h1>{ele.acf.portfolio_page_heading}</h1>
                             </div>
                             <div className="portfolio_page_top_image">
                                 <img src={ele.acf.portfolio_page_image} alt="" />
                             </div>
-
-                            <div className="portfolio_page_top_description">
-                                <p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_page_description }}></p>
                             </div>
-
+                            {/* <div className="portfolio_page_top_description">
+                                <p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_page_description }}></p>
+                            </div> */}
                         </div>
 
-
+                        <div className="portfolio_posts_wrapper">
+                        <h1>Our Projects</h1>
                         <div className="portfolio_showcase_wrapper">
+                           
 
                             {
                                 portfolio.map((e) => {
@@ -32,25 +35,29 @@ function PortfolioPage({ data, portfolio }) {
                                         <div className="protfolio_items" >
                                             <div className="port_showcase_image">
                                                 <img src={e.acf.portfolio_image} alt="" />
-                                            </div>
-
-                                            <div className="port_showcase_hove_effect">
+                                                <div className="port_showcase_hove_effect">
+                                                    <div className="showcase_wrapper">
                                                 <div className="port_showcase_left">
                                                     <div className="port_showcase_title">
-                                                        <h1>{e.acf.portfolio_title}</h1>
+                                                        <h2>{e.acf.portfolio_title}</h2>
                                                     </div>
                                                     <div className="port_showcase_short_description">
-                                                        <h1>{e.acf.portfolio_short_description}</h1>
+                                                        <h4>{e.acf.portfolio_technology}</h4>
                                                     </div>
 
                                                 </div>
                                                 <div className="port_showcase_right">
                                                     <div className="port_showcase_category">
-                                                        <p>{e.categories}</p>
+                                                        {e.category.map((e,index)=>{
+                                                            return <p key={index}>{e}</p>
+                                                        })}
                                                     </div>
                                                 </div>
-
+                                                </div>
                                             </div>
+                                            </div>
+
+                                          
                                         </div>
                                         
                                     </Link>
@@ -59,7 +66,7 @@ function PortfolioPage({ data, portfolio }) {
                             }
 
                         </div>
-
+                        </div>
                     </div>
 
 
@@ -70,6 +77,7 @@ function PortfolioPage({ data, portfolio }) {
 
                 })
             }
+            </div>
         </>
     )
 }
