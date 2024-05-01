@@ -10,11 +10,16 @@ function BlogPage({blogPageData,allBlogPosts}) {
          return (
          <div key={index} className="blog-header-section">
           <div className="blog-header-image-heading">
-            <img src={data.acf.blog_page_image.url} alt="blogPageImage" />
+            <div className="blog_img_heading_wrapper">
+              <h2>Our Blog</h2>
+              <img src={data.acf.blog_page_image.url} alt="blogPageImage" />
+            </div>
+            <div className="blog_page_heading_wrapper">
             <h1>{data.acf.blog_page_heading}</h1>
+            </div>
           </div>
           <div className="blog-header-description">
-            <p>{data.acf.blog_page_heading}</p>
+            <p>{data.acf.blog_page_description}</p>
           </div>
         </div>
         )

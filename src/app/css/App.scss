@@ -35,6 +35,7 @@ a {
 .page_top{
     padding: 120px 20px 50px 20px;
     @extend %max-width;
+    margin: auto
 }
 .page_inner {
     @extend %max-width;
@@ -1521,6 +1522,61 @@ p .testimonial_wrap {
     }
     
 }
+
+
+
+// Blog page css...........
+
+
+.blog-header-image-heading {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  
+}
+
+.blog_img_heading_wrapper {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+
+    h2 {
+        writing-mode: tb-rl;
+        transform: rotate(180deg);
+    }
+}
+
+.blog_page_heading_wrapper h1 {
+    font-size: 4em;
+}
+
+.all-blog-posts-outer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    ul.blog-post {
+        position: relative;
+        li.blog-post-info-wrapper {
+            background: rgb(153 153 153 / 96%);
+            padding: 20px;
+            position: absolute;
+            bottom: -100%; 
+            opacity: 0;
+            z-index: 9999;
+            h2 {
+                font-size: 1.4em;
+            }
+            transition: bottom 0.3s ease;
+        }
+        li.blog-post-img:hover + .blog-post-info-wrapper {
+            bottom: 0%; 
+            opacity: 1;
+            z-index: 9999;
+        }
+    }
+}
+
 
 
 
