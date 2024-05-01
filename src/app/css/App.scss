@@ -1564,6 +1564,7 @@ p .testimonial_wrap {
             bottom: -100%; 
             opacity: 0;
             z-index: 9999;
+            pointer-events: none;
             h2 {
                 font-size: 1.4em;
             }
@@ -1572,8 +1573,8 @@ p .testimonial_wrap {
         li.blog-post-img:hover + .blog-post-info-wrapper {
             bottom: 0%; 
             opacity: 1;
-            z-index: 9999;
         }
+        
     }
 }
 
