@@ -26,7 +26,7 @@ function CoursesPage({ CoursesPageData, AllCourses }) {
                 <h1>{coursesData.acf.courses_page_heading_first}</h1>
                 <h2>{coursesData.acf.courses_page_heading_second}</h2>
                 <p>{coursesData.acf.courses_page_description}</p>
-                <Link href={`/`}>Get In Touch</Link>
+                <Link className='button_global' href={`/`}>Get In Touch</Link>
                 <img src={coursesData.acf.courses_page_image.url} alt="courses_page_image" />
               </div>
             );
@@ -55,7 +55,8 @@ function CoursesPage({ CoursesPageData, AllCourses }) {
               <ul key={index} className='course'>
                 <li><img src={course.acf.course_logo.url} alt="course_logo" /></li>
                 <li><h1>{course.acf.course_tittle}</h1></li>
-                <li>{course.acf.course_short_intro}</li>
+                <li> <span dangerouslySetInnerHTML={{__html:course.acf.course_short_intro.slice(0,100)}}></span>..</li>
+           
                 <li><Link href={`/courses/${course.slug}`}>Read More</Link></li>
               </ul>
             ))}
