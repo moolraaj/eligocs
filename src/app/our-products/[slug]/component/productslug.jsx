@@ -6,7 +6,7 @@ import PortfolioComponent from "@/app/portfolio/component/portfolioComponent";
         <>
             {
                 data.map((ele) => {
-                    return <div className="portfolio_inner_template" key={ele.id}>
+                    return <div className="portfolio_inner_template page_top" key={ele.id}>
                         <div className="portfolio_top_section">
                             <div className="portfolio_top_flex">
                                 <div className="portfolio_top_left_section">

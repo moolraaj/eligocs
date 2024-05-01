@@ -4,7 +4,7 @@ function BlogPage({blogPageData,allBlogPosts}) {
     
   return (
     <>
-    <div className="blog-page-outer">
+    <div className="blog-page-outer page_top">
       <div className="blog-page-inner-wrapper">
         {blogPageData.map((data,index)=>{
          return (

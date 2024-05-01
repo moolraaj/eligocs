@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function CourseSlug({ data }) {
   return (
     <>
-      <div className="single_course_outer">
+      <div className="single_course_outer page_top">
         <div className="single_course_inner">
           {data.map((singleCourse, index) => {
             return (

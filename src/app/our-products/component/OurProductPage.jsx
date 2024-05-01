@@ -3,7 +3,7 @@ import Link from "next/link";
 function OurProductPage({ ProductPageApiData, products }) {
   return (
     <>
-      <div className="Our-product-page-outer">
+      <div className="Our-product-page-outer page_top">
         <div className="Our-product-page-inner">
 
           {ProductPageApiData.map((productPageData, index) => {

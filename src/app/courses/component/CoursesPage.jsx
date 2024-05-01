@@ -18,7 +18,7 @@ function CoursesPage({ CoursesPageData, AllCourses }) {
 
   return (
     <>
-      <div className="courses-page-outer">
+      <div className="courses-page-outer page_top">
         <div className="courses-page-inner">
           {CoursesPageData.map((coursesData, index) => {
             return (

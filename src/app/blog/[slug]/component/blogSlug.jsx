@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function BlogSlug({data}) {
     return(
         <>
-        <div className="blog_post_page_outer">
+        <div className="blog_post_page_outer page_top">
             <div className="blog_post_inner">
                 {data.map((blogPost, index)=>{
                     return(
