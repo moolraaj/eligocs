@@ -12,11 +12,7 @@
 }
 
 
-
-
 $font: font-family;
-
-
 
 
 body {
@@ -35,7 +31,6 @@ a {
 .page_top{
     padding: 120px 20px 50px 20px;
     @extend %max-width;
-    margin: auto
 }
 .page_inner {
     @extend %max-width;
@@ -105,6 +100,8 @@ ul.transformation_wrapper li:nth-child(1) {
     text-align: center;
     margin-left: -38px;
 }
+
+
 
 .trans_number:last-child {
     border-bottom: unset;
@@ -285,6 +282,7 @@ ul.transformation_wrapper li:nth-child(1) {
   .team_banner_image {
     display: flex;
     align-items: baseline;
+    position: relative;
   }
   
   h1 {
@@ -309,7 +307,10 @@ ul.transformation_wrapper li:nth-child(1) {
   .member_top_heading h1 {
     font-size: 6em;
     text-align: center;
+    margin: 0px;
     text-transform: capitalize;
+    padding-top: 110px;
+
 }
 
 .team_member_section {
@@ -322,6 +323,8 @@ ul.transformation_wrapper li:nth-child(1) {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid #191C1B;
+    height: 156px;
 }
 
 .team_member_section {
@@ -339,6 +342,7 @@ ul.transformation_wrapper li:nth-child(1) {
 
 .team_member_section img {
     width: 100%;
+    height: 200px;
 }
 
 .member_name {
@@ -351,6 +355,14 @@ ul.transformation_wrapper li:nth-child(1) {
 }
 .member_name h4 {
     text-transform: capitalize;
+    font-size: 1.75em;
+    font-weight: 400;
+}
+
+.member_designation p {
+    text-transform: capitalize;
+    font-size: 1.75em;
+    font-weight: 400;
 }
 
 .memebr_left_section {
@@ -362,19 +374,46 @@ ul.transformation_wrapper li:nth-child(1) {
     z-index:9;
 }
 
+.member_social_icons img {
+    filter: brightness(0.1);
+    width: 30px;
+    margin-right: 12px;
+    height: 30px;
+    object-fit: cover !important;
+}
+
+
+
+.bottom_banner {
+    max-width: 840px;
+    width: 100%;
+    position: absolute;
+    height: 103px;
+    background: $primaryyellow;
+    bottom: -5%;
+    left: 13%;
+}
+
+
+
 .team_member_section:hover .memebr_left_section {
     opacity: 1;
 }
 
 .our_memeber_wrapper {
-    padding-bottom: 150px;
-    padding-top: 110px;
+    padding-bottom: 250px;
+    padding-top: 50px;
 }
 
 .team_member_section:hover .team-member_image img {
     display: block;
-    position: absolute;
+    position: relative;
     max-width: 300px;
+    top: -13px;
+    z-index: 999999;
+    width: 280px;
+    height: 300px;
+    object-fit: contain;
 }
 
 
@@ -392,6 +431,125 @@ ul.transformation_wrapper li:nth-child(1) {
   
   /* team section ends */
   
+
+
+/* courses */
+
+.course-page-top-section {
+    text-align: center;
+}
+
+.course-page-top-section h1 {
+    font-size:5em;
+    color:#eaaa00;
+    margin-bottom: 10px;
+    
+}
+.course-page-top-section img {
+    width: 100%;
+}
+
+.course-page-top-section h2 {
+    font-size: 5em;
+    max-width: 800px;
+    margin: auto;
+    padding-bottom: 50px;
+    color: #3D3A3A;
+}
+.course-page-top-section p {
+    font-size: 1.5em;
+    max-width: 939px;
+    margin: auto;
+    padding-bottom: 40px;
+}
+
+a.button_global {
+    padding: 20px 80px;
+    background: #eaaa00;
+    display: inline-block;
+    margin-bottom: 60px;
+    font-size: 1.563em;
+    border-radius: 40px;
+}
+
+a.button_global:hover {
+    background: black;
+    color: white;
+}
+
+.course-page-top-section img {
+    width: 100%;
+}
+
+ul.course li:nth-child(1) img {
+    width: 68px;
+}
+
+.filter_courses_outer {
+    width: 85%;
+    margin: auto;
+    background: #eaaa00;
+    padding: 35px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 60px;
+    height: 215px;
+    margin-bottom: -10%;
+}
+
+select.filter_course_top_right {
+    padding: 20px;
+    border-radius: 40px;
+    color: #eaaa00;
+    font-size: 1.563em;
+}
+
+.courses-posts-outer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 48px;
+    width: 100% !important;
+}
+
+ul.course {
+    box-shadow: 2px 3px 19px #00000026;
+    padding: 15px;
+    text-align: center;
+    background: $white;
+    position: relative;
+    height: 300px;
+}
+ul.course li:nth-child(2) h1 {
+    font-size: 1.625em;
+    color: #e3a500;
+    text-transform: capitalize;
+}
+
+ul.course:nth-child(3n-1) {
+    margin-top: 73px;
+    height: auto;
+}
+
+ul.course li:nth-child(3) {
+    line-height: 35px;
+    max-width: 368px;
+    margin: auto;
+    margin-bottom: 45px;
+}
+
+ul.course li:nth-child(4) {
+    position: absolute;
+    bottom: 29px;
+    width: 100%;
+    color: #e4a600;
+    left: 0;
+}
+
+
+
+
+/*courses page end */
 
 
 
@@ -1522,62 +1680,6 @@ p .testimonial_wrap {
     }
     
 }
-
-
-
-// Blog page css...........
-
-
-.blog-header-image-heading {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
-  
-}
-
-.blog_img_heading_wrapper {
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-
-    h2 {
-        writing-mode: tb-rl;
-        transform: rotate(180deg);
-    }
-}
-
-.blog_page_heading_wrapper h1 {
-    font-size: 4em;
-}
-
-.all-blog-posts-outer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-
-    ul.blog-post {
-        position: relative;
-        li.blog-post-info-wrapper {
-            background: rgb(153 153 153 / 96%);
-            padding: 20px;
-            position: absolute;
-            bottom: -100%; 
-            opacity: 0;
-            z-index: 9999;
-            pointer-events: none;
-            h2 {
-                font-size: 1.4em;
-            }
-            transition: bottom 0.3s ease;
-        }
-        li.blog-post-img:hover + .blog-post-info-wrapper {
-            bottom: 0%; 
-            opacity: 1;
-        }
-        
-    }
-}
-
 
 
 
