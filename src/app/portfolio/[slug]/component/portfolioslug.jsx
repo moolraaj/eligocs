@@ -6,6 +6,7 @@ import PortfolioComponent from "../../component/portfolioComponent";
             {
                 data.map((ele) => {
                     return <div className="portfolio_inner_template" key={ele.id}>
+                        <div className="portfolio_inner_section">
                         <div className="portfolio_top_section">
                             <div className="portfolio_top_flex">
                                 <div className="portfolio_top_left_section">
@@ -26,7 +27,7 @@ import PortfolioComponent from "../../component/portfolioComponent";
                             <p dangerouslySetInnerHTML={{__html: ele.acf.portfolio_description }}></p>
                             </div>
                         </div>
-
+                        </div>
                         <div className="portfolio_project">
                             <div className="portfolio_projects_flex">
                                 <div className="portfolio_project_heading">

@@ -554,6 +554,73 @@ ul.course li:nth-child(4) {
 
 
 
+
+/*portfolio inner template */
+.portfolio_projects_flex {
+    display: grid;
+    max-width: 1520px;
+    margin: auto;
+    grid-template-columns: 1fr 3fr;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.portfolio_project {
+    background: #191C1B;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    overflow: hidden;
+}
+
+.portfolio_project_heading h1 {
+    font-size: 9.375em;
+    color: #ffffff57;
+    text-transform: capitalize;
+}
+
+.portfolio_top_image img {
+    width: 100%;
+    max-width: 450px;
+}
+
+.port_description p {
+    font-size: 1.375em;
+    margin-bottom: 10px;
+    line-height: 51px;
+}
+
+.portfolio_slider {
+    display: grid;
+    max-width: 1520px;
+    margin: auto;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.portfolio_slider img {
+    max-width: 600px;
+    height: 381px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.portfolio_slider {
+    padding: 100px 10px;
+}
+
+.portfolio_inner_section {
+    max-width: 1520px;
+    margin: auto;
+    padding-bottom: 100px;
+    padding-top: 108px;
+}
+
+/*portfolio inner page */
+
+
+
 .service_both_sections {
     display: flex;
     justify-content: space-between;
