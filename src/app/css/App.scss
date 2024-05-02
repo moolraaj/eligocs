@@ -2658,9 +2658,24 @@ p .testimonial_wrap {
 }
 
 
-// navbar form css
 
-@keyframes slide-down {
+//contact form 7 css 
+
+
+.show_form {
+    display: none;
+  }
+  
+  .slide-down {
+    display: block;
+    animation: slide-down-animation 0.5s forwards;
+  }
+  
+  .slide-up {
+    animation: slide-up-animation 0.5s forwards;
+  }
+  
+  @keyframes slide-down-animation {
     from {
       transform: translateY(-100%);
       opacity: 0;
@@ -2671,8 +2686,7 @@ p .testimonial_wrap {
     }
   }
   
- 
-  @keyframes slide-up {
+  @keyframes slide-up-animation {
     from {
       transform: translateY(0);
       opacity: 1;
@@ -2682,6 +2696,137 @@ p .testimonial_wrap {
       opacity: 0;
     }
   }
+  
+  
+
+
+
+
+.cf7_form_outer {
+  @extend %cf7_form;
+}
+.cf7_form_inner {
+   @extend %max-width;
+}
+
+
+.job_form_flex_wrapper {
+    @include grid-property(grid,1fr 1fr,unset,50px)
+}
+.form_fields_wrapper input {
+    @extend %cf7_form_input;
+}
+.form_fields_wrapper:nth-child(7) {
+    grid-column: 1/3;
+    padding: 36px 0px;
+}
+.form_fields_wrapper textarea {
+    width: 100%;
+    border-bottom: 1px solid #EAAA00!important;
+    border: unset;
+}
+input::placeholder {
+    @extend %cf7_form_placeholder;
+}
+textarea::placeholder {
+  @extend %cf7_form_placeholder;
+}
+
+.form_fields_wrapper input:focus-visible {
+    outline: unset!important;
+    border-bottom:1px solid $primaryyellow!important; 
+}
+.form_fields_wrapper textarea{
+     outline: unset!important;
+    border-bottom:1px solid $primaryyellow!important;  
+}
+
+.form_button:nth-child(8) {
+    grid-column: 1/3;
+}
+.form_button button {
+    background: $black;
+}
+.form_button button {
+  @extend %cf7_form_button;
+}
+
+
+.cf7_left_section {
+    display: flex;
+    flex-direction: column;
+}
+
+.cf7_top_banner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+}
+
+.form_slider_wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.form_slides {
+    display: flex;
+    flex-direction: column;
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #EAAA00;
+}
+._form_paragraph p {
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.form_banner_heading h1 {
+    font-size: 130px;
+    margin: 0px;
+    text-transform: capitalize;
+}
+
+.close_button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cf7_left_section span {
+    display: none;
+  }
+  
+  .cf7_left_section span.show {
+    display: inline;
+    animation: slide-down 0.5s ease forwards;
+  }
+  .close_button button {
+    border: unset;
+    background: unset;
+}
+
+span.error_fields {
+    color: red;
+    font-size: 24px;
+    text-transform: capitalize;
+}
+  @keyframes slide-down {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+
+ 
+
+
   
  
   

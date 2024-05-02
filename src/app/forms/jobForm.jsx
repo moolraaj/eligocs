@@ -90,19 +90,19 @@ function JobForm() {
                             <div className="job_form_flex_wrapper">
                                 <div className="form_fields_wrapper">
                                     <input type="text" name="firstname" placeholder='first name' value={user.firstname} onChange={getUserData} />
-                                    {errors.firstname && <span>first name is required</span>}
+                                    {errors.firstname && <span className='error_fields'>first name is required</span>}
                                 </div>
                                 <div className="form_fields_wrapper">
                                     <input type="text" name="lastname" placeholder='last name' value={user.lastname} onChange={getUserData} />
-                                    {errors.lastname && <span>last name is required</span>}
+                                    {errors.lastname && <span className='error_fields'>last name is required</span>}
                                 </div>
                                 <div className="form_fields_wrapper">
                                     <input type="email" name="youremail" placeholder='email address' value={user.youremail} onChange={getUserData} />
-                                    {errors.youremail && <span>email is required</span>}
+                                    {errors.youremail && <span className='error_fields'>email is required</span>}
                                 </div>
                                 <div className="form_fields_wrapper">
                                     <input type="number" name="phone" placeholder='phone number' value={user.phone} onChange={getUserData} />
-                                    {errors.phone && <span>phone number is required</span>}
+                                    {errors.phone && <span className='error_fields'>phone number is required</span>}
                                 </div>
                                 <div className="form_fields_wrapper">
                                     <input type="text" name="companyname" placeholder='company name' value={user.companyname} onChange={getUserData} />
