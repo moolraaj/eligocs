@@ -161,6 +161,7 @@ ul.transformation_wrapper li:nth-child(1) {
     width: -webkit-fill-available;
     bottom: 30px;
     display: none;
+    pointer-events: none;
 }
 
 .showcase_hover_image:hover+.port_showcase_hove_effect {
