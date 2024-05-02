@@ -1135,7 +1135,9 @@ span.cline:after {
     color: $primaryyellow;
 }
 
-
+.service_page_right_section img {
+    width: 100%;
+}
 
 
 .all_services_left_section h1 {
@@ -2310,6 +2312,10 @@ p .testimonial_wrap {
     .company_left_section {
         height: auto;
         padding: 20px;
+    }
+    .testimonial_service {
+        width: 80%;
+        margin: auto;
     }
 
 }
