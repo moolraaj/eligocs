@@ -83,10 +83,10 @@ function JobForm() {
 
     return (
         <>
-            <div className="job_form_outer">
-                <div className="job_form_inner">
-                    <div className="job_form_wrapper">
-                        <form style={{ marginTop: '100px' }} id='jobform'>
+           
+           
+                        
+                        <form id='jobform'>
                             <div className="job_form_flex_wrapper">
                                 <div className="form_fields_wrapper">
                                     <input type="text" name="firstname" placeholder='first name' value={user.firstname} onChange={getUserData} />
@@ -121,9 +121,8 @@ function JobForm() {
                                 </div>
                             </div>  
                         </form>
-                    </div>
-                </div>
-            </div>
+               
+               
         </>
     );
 }
