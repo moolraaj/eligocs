@@ -2,140 +2,130 @@
 import { allExportedApi } from '@/utils/apis/Apis';
 import React, { useState } from 'react';
 
-function ContactUsForm() {
-  let api = allExportedApi()
-  const [user, setUser] = useState({
-    yourname: '',
-    youremail: '',
-    yournumber: '',
-    yourmessage: '',
-  });
+function JobForm() {
+    let api = allExportedApi();
+    const [user, setUser] = useState({
+        firstname: '',
+        lastname: '',
+        youremail: '',
+        phone: '',
 
-  const [errors, setErrors] = useState({
-    yourname: false,
-    youremail: false,
-    yournumber: false,
-    yourmessage: false,
-  });
-
-  const getUserData = (e) => {
-    const { name, value } = e.target;
-    setUser({
-      ...user,
-      [name]: value
-    });
-    // Reset error state when user starts typing
-    setErrors({
-      ...errors,
-      [name]: false,
-    });
-  };
-
-  const submitUserData = async (e) => {
-    e.preventDefault();
-    let formData = new FormData();
-
-    formData.append('_wpcf7_unit_tag', 942);
-    formData.append('yourname', user.yourname);
-    formData.append('youremail', user.youremail);
-    formData.append('yournumber', user.yournumber);
-    formData.append('yourmessage', user.yourmessage);
-
-    // Validation for required fields
-    let formValid = true;
-    const requiredFields = Object.keys(errors);
-    requiredFields.forEach(field => {
-      if (!user[field]) {
-        formValid = false;
-        setErrors(prevErrors => ({
-          ...prevErrors,
-          [field]: true,
-        }));
-      }
     });
 
-    if (formValid) {
-      try {
-        let response = await api.fetchContactFormApi({
-          method: 'POST',
-          body: formData
-        })
-        console.log('response', response);
-        alert('Data submitted');
+    const [errors, setErrors] = useState({
+        firstname: false,
+        lastname: false,
+        youremail: false,
+        phone: false,
+    });
 
+    const getUserData = (e) => {
+        const { name, value } = e.target;
         setUser({
-          yourname: '',
-          youremail: '',
-          yournumber: '',
-          yourmessage: ''
+            ...user,
+            [name]: value
         });
-      } catch (error) {
-        console.error('Error:', error);
-        alert('Data not submitted');
-      }
-    }
-  };
+        setErrors({
+            ...errors,
+            [name]: false,
+        });
+    };
 
-  return (
-    <>
-      <div className="contact_us_form_outer">
-        <div className="contact_us_form_inner">
-          <div className="contact_us_form_wrapper">
-            <form style={{ marginTop: '100px' }} id='contactus'>
+    const submitUserData = async (e) => {
+        e.preventDefault();
+        let formData = new FormData();
 
+        formData.append('_wpcf7_unit_tag', 902);
+        formData.append('firstname', user.firstname);
+        formData.append('lastname', user.lastname);
+        formData.append('youremail', user.youremail);
+        formData.append('phone', user.phone);
+        formData.append('companyname', user.companyname);
+        formData.append('budget', user.budget);
+        formData.append('yourmessage', user.yourmessage);
 
-              <div className="contact_us_flex_wrapper">
+        let formValid = true;
+        const requiredFields = Object.keys(errors);
+        requiredFields.forEach(field => {
+            if (!user[field]) {
+                formValid = false;
+                setErrors(prevErrors => ({
+                    ...prevErrors,
+                    [field]: true,
+                }));
+            }
+        });
 
-                <div className="contactus_form_fields_wrapper">
+        if (formValid) {
+            try {
+                let response = await api.fetchJobFormApi({
+                    method: 'POST',
+                    body: formData
+                });
+                console.log('response', response);
+                alert('Data submitted');
 
-                  <div className="contact_input_wrapper">
-                    <label htmlFor="name">name</label>
-                    <input type="text" name="yourname" value={user.yourname} onChange={getUserData} />
-                    {errors.yourname && <span>name field is required</span>}
-                  </div>
+                setUser({
+                    firstname: '',
+                    lastname: '',
+                    youremail: '',
+                    phone: '',
+                    companyname: '',
+                    budget: '',
+                    yourmessage: ''
+                });
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Data not submitted');
+            }
+        }
+    };
 
+    return (
+        <>
+            <div className="job_form_outer">
+                <div className="job_form_inner">
+                    <div className="job_form_wrapper">
+                        <form style={{ marginTop: '100px' }} id='jobform'>
+                            <div className="job_form_flex_wrapper">
+                                <div className="form_fields_wrapper">
+                                    <input type="text" name="firstname" placeholder='first name' value={user.firstname} onChange={getUserData} />
+                                    {errors.firstname && <span>first name is required</span>}
+                                </div>
+                                <div className="form_fields_wrapper">
+                                    <input type="text" name="lastname" placeholder='last name' value={user.lastname} onChange={getUserData} />
+                                    {errors.lastname && <span>last name is required</span>}
+                                </div>
+                                <div className="form_fields_wrapper">
+                                    <input type="email" name="youremail" placeholder='email address' value={user.youremail} onChange={getUserData} />
+                                    {errors.youremail && <span>email is required</span>}
+                                </div>
+                                <div className="form_fields_wrapper">
+                                    <input type="number" name="phone" placeholder='phone number' value={user.phone} onChange={getUserData} />
+                                    {errors.phone && <span>phone number is required</span>}
+                                </div>
+                                <div className="form_fields_wrapper">
+                                    <input type="text" name="companyname" placeholder='company name' value={user.companyname} onChange={getUserData} />
+                                
+                                </div>
+                                <div className="form_fields_wrapper">
+                                    <input type="text" name="budget" placeholder='budget' value={user.budget} onChange={getUserData} />
+                                    
+                                </div>
+                                <div className="form_fields_wrapper">
+                                    <textarea name="yourmessage" placeholder="Enter your message" value={user.yourmessage} onChange={getUserData} cols="30" rows="10"></textarea>
+                                   
+                                </div>
+                                <div className="form_button">
+                                    <button onClick={submitUserData}>Submit</button>
+                                </div>
+                            </div>  
+                        </form>
+                    </div>
                 </div>
-
-                <div className="contactus_form_fields_wrapper">
-
-                  <div className="contact_input_wrapper">
-                    <label htmlFor="email">email address</label>
-                    <input type="email" name="youremail" value={user.youremail} onChange={getUserData} />
-                    {errors.youremail && <span>email is required</span>}
-                  </div>
-
-                </div>
-
-                <div className="contactus_form_fields_wrapper">
-
-                  <div className="contact_input_wrapper">
-                    <label htmlFor="phone_number">phone number</label>
-                    <input type="number" name="yournumber" value={user.yournumber} onChange={getUserData} />
-                    {errors.yournumber && <span>phone number is required</span>}
-                  </div>
-
-                </div>
-
-                <div className="contactus_form_fields_wrapper">
-
-                  <div className="contact_input_wrapper">
-                    <label htmlFor="email">your message</label>
-                    <textarea name="yourmessage" value={user.yourmessage} onChange={getUserData} cols="30" rows="10"></textarea>
-                   
-                  </div>
-
-                </div>
-
-                <div className="form_button">
-                  <button onClick={submitUserData}>Submit</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+            </div>
+        </>
+    );
 }
 
-export default ContactUsForm;
+export default JobForm;
