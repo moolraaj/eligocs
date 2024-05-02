@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 
 import PortfolioComponent from "../../component/portfolioComponent";
-import Lightbox from './Lightbox';
+import Lightbox from '../../Lightbox';
+
 export default  function Portfolioslug({ data }) {
 
 
