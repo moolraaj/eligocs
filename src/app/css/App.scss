@@ -938,7 +938,8 @@ span.cline:after {
 
 
 .nav-right {
-    padding-left: 14%;
+    padding-left: 5%;
+    width: 50%;
 }
 
 .menu-right-container-bottom a {
@@ -1727,6 +1728,7 @@ p .testimonial_wrap {
 
 
 
+
 .collapse.navbar-collapse,
 .collapse.navbar-collapse.show {
     position: absolute;
@@ -1736,8 +1738,7 @@ p .testimonial_wrap {
     height: 100vh;
     width: 100% !important;
     margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     transition: transform 0.3s ease;
     scroll-behavior: smooth;
 }
@@ -1771,7 +1772,7 @@ p .testimonial_wrap {
 .nav-left {
     background-color: #191C1B;
     height: 100vh;
-    width: 100%;
+    width: 50%;
 }
 
 
@@ -2465,7 +2466,29 @@ p .testimonial_wrap {
         }
     }
 
+    .nav-left {
+        display: none;
+    }
+
+    .nav-right {
+        width: 90%;
+    }
+    .menu-right-container-bottom a{
+        font-size: 4em;
+    }
 }
+
+@media (max-width:375px) {
+    .nav_left_section a.navbar-brand img {
+        width: 80% !important;
+        height: auto !important;
+    }
+    .nav_right_section button {
+        width: 50px;
+    }
+}
+
+
 
 
 // loader
