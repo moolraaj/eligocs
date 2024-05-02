@@ -1,7 +1,22 @@
+'use client'
+import React,{useState} from "react";
 import Link from "next/link";
+import Lightbox from "@/app/portfolio/Lightbox";
 
 
-export default async function Poductslug({ data, allportFolioProducts }) {
+
+export default  function Poductslug({ data, allportFolioProducts }) {
+    
+    const [lightboxImage, setLightboxImage] = useState(null);
+
+    const openLightbox = (image) => {
+        setLightboxImage(image);
+    };
+
+    const closeLightbox = () => {
+        setLightboxImage(null);
+    };
+
     return (
         <>
             {
@@ -68,21 +83,16 @@ export default async function Poductslug({ data, allportFolioProducts }) {
 
                         </div>
 
-
+                        <marquee  behavior="scroll"  direction="left" scrollamount="15">
                         <div className="portfolio_slider">
-
-                            {
-                                ele.acf.portfolio_gallery.map((items, index) => {
-                                    return <div className="portfolio_gallery_wrapper" key={index}>
-                                        <img src={items} alt="" />
-                                    </div>
-                                })
-                            }
-
-
+                        {ele.acf.portfolio_gallery.map((image, index) => (
+                                <div className="portfolio_gallery_wrapper" key={index} onClick={() => openLightbox(image)}>
+                                    <img src={image} alt={`portfolio-image-${index}`} />
+                                </div>
+                            ))}
                         </div>
-
-
+                        </marquee>
+                        {lightboxImage && <Lightbox image={lightboxImage} onClose={closeLightbox} />}
                     </div>
 
 

@@ -161,6 +161,7 @@ ul.transformation_wrapper li:nth-child(1) {
     width: -webkit-fill-available;
     bottom: 30px;
     display: none;
+    pointer-events: none;
 }
 
 .showcase_hover_image:hover+.port_showcase_hove_effect {
@@ -260,6 +261,48 @@ ul.transformation_wrapper li:nth-child(1) {
     @extend %max-width;
     @extend %section_top_bottom_padding;
 }
+
+.lightbox-overlay {
+    position: fixed;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 40px;
+    width: 80%;
+    height: 70%;
+    overflow: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    img{
+        width: 95%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.close-btn {
+    position: absolute;
+    font-size: 1.3em;
+    top: 10px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    color: #000;
+    cursor: pointer;
+}
+
 
 .portpolio_flex {
     background: $white;
@@ -715,6 +758,103 @@ ul.course li:nth-child(4) {
 
 
 
+// Courses inner page start.................
+
+.course_image {
+    position: relative;
+
+    img {
+        width: 100%;
+        object-fit: cover;
+        height: 500px;
+    }
+    span {
+        width: 30%;
+        height: 60px;
+        background: $primaryyellow;
+        position: absolute;
+        left: 10%;
+        bottom: -15px;
+    }
+}
+
+.course_intro_join_section {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    place-items: flex-start;
+    padding: 40px 0px 20px 0px;
+    margin-top: 30px;
+    text-transform: capitalize;
+    gap: 20px;
+  }
+  .course_intro_wrapper{
+    h1 {
+        font-size: 3em;
+        margin: 0px 0px 20px 0px;
+      }
+      p {
+    font-size: 1.4em;
+    letter-spacing: 2px;
+    line-height: 45px;
+  }
+  }
+
+  .course_join_inner{
+    background: #EAAA00;
+    padding: 60px 30px;
+    p {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+  }
+  a {
+    color: #EAAA00;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 35px;
+    margin-top: 20px;
+    font-size: 1.3em;
+  }
+  a:hover {
+    background-color: #191C1B;
+    color: #fff;
+    transition: transform 0.3s ease-in-out;
+  }
+  }
+
+  .what_u_learn_section{
+
+    h2 {
+        font-size: 3em;
+        color: $primaryyellow;
+    }
+    p {
+        font-size: 1.3em;
+    }
+    ul.course_points li {
+        position: relative;
+        p{
+            font-size: 1.2em;
+        }
+        p::before {
+            content: "";
+            width: 1%;
+            height: 40%;
+            background-color: $primaryyellow;
+            position: absolute;
+            margin-left: -26px;
+            top: 10px;
+        }
+    }
+  }
+
+
+
+
+
+// Courses inner page end....
+
+
 
 
 /*portfolio inner template */
@@ -752,20 +892,19 @@ ul.course li:nth-child(4) {
 }
 
 .portfolio_slider {
-    display: grid;
+    display: flex;
     max-width: 1520px;
     margin: auto;
     justify-content: space-between;
-    grid-template-columns: 1fr 1fr 1fr;
     column-gap: 20px;
     row-gap: 20px;
 }
 
 .portfolio_slider img {
-    max-width: 600px;
+    max-width: 700px;
     height: 381px;
-    object-fit: cover;
-    width: 100%;
+    box-shadow: 4px 3px 11px 0px #000;
+    cursor: pointer;
 }
 
 .portfolio_slider {
@@ -938,7 +1077,8 @@ span.cline:after {
 
 
 .nav-right {
-    padding-left: 14%;
+    padding-left: 5%;
+    width: 50%;
 }
 
 .menu-right-container-bottom a {
@@ -1037,7 +1177,9 @@ span.cline:after {
     color: $primaryyellow;
 }
 
-
+.service_page_right_section img {
+    width: 100%;
+}
 
 
 .all_services_left_section h1 {
@@ -1727,6 +1869,7 @@ p .testimonial_wrap {
 
 
 
+
 .collapse.navbar-collapse,
 .collapse.navbar-collapse.show {
     position: absolute;
@@ -1736,8 +1879,7 @@ p .testimonial_wrap {
     height: 100vh;
     width: 100% !important;
     margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     transition: transform 0.3s ease;
     scroll-behavior: smooth;
 }
@@ -1771,7 +1913,7 @@ p .testimonial_wrap {
 .nav-left {
     background-color: #191C1B;
     height: 100vh;
-    width: 100%;
+    width: 50%;
 }
 
 
@@ -2213,6 +2355,10 @@ p .testimonial_wrap {
         height: auto;
         padding: 20px;
     }
+    .testimonial_service {
+        width: 80%;
+        margin: auto;
+    }
 
 }
 
@@ -2252,12 +2398,18 @@ p .testimonial_wrap {
 }
 
 @media (max-width:767px) {
-    .product-top-info-section {
+    .product-top-info-section,
+    .course_intro_join_section{
         grid-template-columns: 1fr;
         width: 100%;
         padding: 20px;
         place-items: flex-start;
     }
+    .product-page-left-info p,
+    .course_intro_wrapper p{
+        font-size: 2em !important;
+    }
+    
 }
 
 @media (max-width:568px) {
@@ -2465,7 +2617,34 @@ p .testimonial_wrap {
         }
     }
 
+    .nav-left {
+        display: none;
+    }
+
+    .nav-right {
+        width: 90%;
+    }
+
+    .menu-right-container-bottom a {
+        font-size: 4em;
+    }
+    .lightbox-container {
+        top: 60%;
+    }
 }
+
+@media (max-width:375px) {
+    .nav_left_section a.navbar-brand img {
+        width: 80% !important;
+        height: auto !important;
+    }
+
+    .nav_right_section button {
+        width: 50px;
+    }
+}
+
+
 
 
 // loader
