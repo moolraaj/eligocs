@@ -14,6 +14,7 @@ export default function CourseSlug({ data }) {
                       src={singleCourse.acf.course_image.url}
                       alt="course_image"
                     />
+                    <span></span>
                   </div>
                   <div className="course_intro_join_section">
                     <div className="course_intro_wrapper">
@@ -21,8 +22,10 @@ export default function CourseSlug({ data }) {
                       <p>{singleCourse.acf.course_introduction}</p>
                     </div>
                     <div className="course_join_wrapper">
+                      <div className="course_join_inner">
                       <p>{singleCourse.acf.join_course_heading}</p>
                       <Link href={`/`}>JOin Course Now</Link>
+                      </div>
                     </div>
                   </div>
                   {singleCourse.acf.what_you_will_learn_heading && (
