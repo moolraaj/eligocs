@@ -37,6 +37,7 @@ function HeroSection({ ele }) {
       <div className="page_outer home_section_outer">
         <div className="page_inner home_section_inner">
           <div className="home_slider_wrapper">
+            
             <h1>{ele.acf.slider_heading_first}</h1>
             <h1>{ele.acf.slider_heading_second}</h1>
             <div dangerouslySetInnerHTML={{ __html: ele.acf.slider_para }}></div>
