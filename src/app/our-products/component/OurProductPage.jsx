@@ -10,7 +10,11 @@ function OurProductPage({ ProductPageApiData, products }) {
             return (
               <div key={index} className="product-page-top-section">
                 <div className="product-top-image-section">
-                  <img src={productPageData.acf.product_page_image.url} alt="product_page_image" />
+                  <div className="product_heading_left"><h3>{productPageData.acf.product_page_heading}</h3></div>
+                  <div className="product_image_right">
+                    <img src={productPageData.acf.product_page_image.url} alt="product_page_image" />
+                    <span></span>
+                    </div>
                 </div>
                 <div className="product-top-info-section">
                   <div className="product-page-left-info">
@@ -18,8 +22,10 @@ function OurProductPage({ ProductPageApiData, products }) {
                     <p>{productPageData.acf.product_page_description}</p>
                   </div>
                   <div className="product-page-right-info">
+                    <div className="product_right_info_inner">
                     <p>{productPageData.acf.product_page__find_product_heading}</p>
                     <Link href={`/our-products/${productPageData.slug}`} >{productPageData.acf.product_page__find_product_button}</Link>
+                    </div>
                   </div>
                 </div>
               </div>

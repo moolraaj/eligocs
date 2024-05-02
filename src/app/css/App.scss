@@ -141,8 +141,23 @@ ul.transformation_wrapper li:nth-child(1) {
     }
 }
 .portfolio_showcase_wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    @include grid-property(grid,repeat(3, 1fr));
+}
+.port_showcase_image img {
+    width: 100%;
+}
+
+.port_showcase_hove_effect {
+    background: antiquewhite;
+    padding: 0px 20px;
+    position: absolute;
+    width: -webkit-fill-available;
+    bottom: 30px;
+    display: none;
+}
+.showcase_hover_image:hover + .port_showcase_hove_effect{
+   display: block;
+   transition: transform 0.3s ease-in-out;
 }
 
 .portfolio_page_top_image img {
@@ -157,6 +172,8 @@ ul.transformation_wrapper li:nth-child(1) {
 }
 .port_showcase_image{
     position: relative;
+    padding: 20px 0px;
+
 }
 
 .showcase_wrapper {
@@ -306,6 +323,88 @@ ul.transformation_wrapper li:nth-child(1) {
 .development_left_section h1 {
     @extend %home_top_heading;
 }
+
+
+// Our Product page css....
+
+.product-top-image-section {
+    display: flex;
+    justify-content: space-between;
+
+    .product_heading_left {
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: 40px;
+        h3 {
+            writing-mode: tb-rl;
+            transform: rotate(180deg);
+        }
+    }
+    .product_image_right{
+        position: relative;
+        img{
+            width: 100%;
+        }
+        span {
+            width: 30%;
+            height: 60px;
+            background: $primaryyellow;
+            position: absolute;
+            left: 10%;
+            bottom: -15px;
+        }
+    }
+
+}
+
+
+
+.product-top-info-section {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    place-items: flex-end;
+    padding: 20px 0px 20px 45px;
+    text-transform: capitalize;
+    .product-page-left-info{
+        h1 {
+            font-size: 4em;
+            margin: 20px 0px;
+        }
+        p {
+            font-size: $primary-font;
+            letter-spacing: 2px;
+           line-height: 45px;
+        }
+    }
+    .product_right_info_inner {
+        background: $primaryyellow;
+        padding: 60px 30px;
+       
+        p {
+            color: $white;
+           margin-bottom: 20px;
+            font-size: $primary-font;
+
+        }
+        a{
+            color: $primaryyellow;
+            background-color: $white;
+            padding: 10px 20px;
+            border-radius: 35px;
+            margin-top: 20px;
+            font-size: 1.3em;
+        }
+        a:hover{
+            background-color: $primaryblack;
+            color: $white;
+            transition: transform 0.3s ease-in-out;
+        }
+    }
+}
+
+
+
+
 
 
 /* team section */
@@ -587,9 +686,6 @@ ul.course li:nth-child(4) {
     color: #e4a600;
     left: 0;
 }
-
-
-
 
 /*courses page end */
 
@@ -1833,7 +1929,7 @@ p .testimonial_wrap {
     font-size: 4em;
 }
 .blog-header-description p{
-    font-size: 1.4em;
+    font-size: $primary-font;
     line-height: 45px;
 }
 .all-blog-posts-outer {
@@ -1855,7 +1951,7 @@ p .testimonial_wrap {
             z-index: 9999;
             pointer-events: none;
             h2 {
-                font-size: 1.4em;
+                font-size: $primary-font;
                 font-weight: 800;
             }
             transition: bottom 0.3s ease;
@@ -1888,7 +1984,7 @@ p .testimonial_wrap {
     }
     p {
         margin-bottom: 30px;
-        font-size: 1.4em;
+        font-size: $primary-font;
         span:first-child {
             border-right: 1px solid;
             padding: 15px;
@@ -1922,6 +2018,9 @@ p .testimonial_wrap {
     }
     .all-blog-posts-outer {
         @include grid-property(grid,repeat(2, 1fr),unset);
+    }
+    .portfolio_showcase_wrapper {
+        @include grid-property(grid,repeat(2, 1fr));
     }
 }
 
@@ -2081,8 +2180,15 @@ p .testimonial_wrap {
     transform: translateX(-50%);
     opacity: 1;
 }
-
-
+ 
+@media (max-width:767px) {
+    .product-top-info-section{
+        grid-template-columns: 1fr;
+        width: 100%;
+        padding: 20px;
+        place-items: flex-start;
+    }
+}
 
 @media (max-width:568px) {
     .footer_wrapper .footer-center-section {
@@ -2097,9 +2203,7 @@ p .testimonial_wrap {
     .footer_wrapper .footer-top-headings{
         margin-left: 0px;
     }
-    .footer_wrapper .footer-center-bottom-section p {
-           font-size: 2.5em;
-    }
+    
 
 .page_inner.quote_section_inner .home_quote_wrapper {
     width:100%;
@@ -2109,9 +2213,7 @@ p .testimonial_wrap {
     width:100%;
 }
 
-.center-section-wrapper li a {
-    font-size: 3em;
-}
+
     .page_outer.testimonial_section_outer.scrolling {
         padding: 10px 20px;
     }
@@ -2261,6 +2363,20 @@ p .testimonial_wrap {
     .all-blog-posts-outer {
         @include grid-property(grid,repeat(1, 1fr));
     }
+    .portfolio_showcase_wrapper {
+        @include grid-property(grid,repeat(1, 1fr));
+    }
+    .protfolio_items{
+        padding: 0;
+    }
+    .port_showcase_image{
+        img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+    }
+    
 }
 
 

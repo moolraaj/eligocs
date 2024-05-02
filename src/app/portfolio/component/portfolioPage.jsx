@@ -34,7 +34,7 @@ function PortfolioPage({ data, portfolio }) {
 
                                         <div className="protfolio_items" >
                                             <div className="port_showcase_image">
-                                                <img src={e.acf.portfolio_image} alt="" />
+                                                <img className="showcase_hover_image" src={e.acf.portfolio_image} alt="" />
                                                 <div className="port_showcase_hove_effect">
                                                     <div className="showcase_wrapper">
                                                 <div className="port_showcase_left">
