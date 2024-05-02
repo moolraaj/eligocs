@@ -1,32 +1,47 @@
+'use client'
+import React, { useState } from 'react';
 
 import PortfolioComponent from "../../component/portfolioComponent";
- export default async function Portfolioslug({ data }) {
+import Lightbox from './Lightbox';
+export default  function Portfolioslug({ data }) {
+
+
+    const [lightboxImage, setLightboxImage] = useState(null);
+
+    const openLightbox = (image) => {
+        setLightboxImage(image);
+    };
+
+    const closeLightbox = () => {
+        setLightboxImage(null);
+    };
+
     return (
         <>
             {
                 data.map((ele) => {
                     return <div className="portfolio_inner_template" key={ele.id}>
                         <div className="portfolio_inner_section">
-                        <div className="portfolio_top_section">
-                            <div className="portfolio_top_flex">
-                                <div className="portfolio_top_left_section">
-                                    <div className="portfolio_top_image">
-                                        <img src={ele.acf.portfolio_inner_image} />
+                            <div className="portfolio_top_section">
+                                <div className="portfolio_top_flex">
+                                    <div className="portfolio_top_left_section">
+                                        <div className="portfolio_top_image">
+                                            <img src={ele.acf.portfolio_inner_image} />
+                                        </div>
+                                        <div className="portfolio_top_right_section">
+                                            <h1>{ele.acf.portfolio_heading}</h1>
+                                        </div>
                                     </div>
-                                    <div className="portfolio_top_right_section">
-                                        <h1>{ele.acf.portfolio_heading}</h1>
-                                    </div>
+
                                 </div>
-
+                                <div className="top_bottom_bar"></div>
                             </div>
-                            <div className="top_bottom_bar"></div>
-                        </div>
 
-                        <div className="portfolio_relative_description">
-                            <div className="port_description">
-                            <p dangerouslySetInnerHTML={{__html: ele.acf.portfolio_description }}></p>
+                            <div className="portfolio_relative_description">
+                                <div className="port_description">
+                                    <p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_description }}></p>
+                                </div>
                             </div>
-                        </div>
                         </div>
                         <div className="portfolio_project">
                             <div className="portfolio_projects_flex">
@@ -35,27 +50,22 @@ import PortfolioComponent from "../../component/portfolioComponent";
                                 </div>
                                 <div className="portfolio_showcase_right">
 
-                                    <PortfolioComponent/>
+                                    <PortfolioComponent />
                                 </div>
                             </div>
 
                         </div>
 
-
+                        <marquee  behavior="scroll"  direction="left" scrollamount="15">
                         <div className="portfolio_slider">
-
-                            {
-                                ele.acf.portfolio_gallery.map((items, index) => {
-                                    return <div className="portfolio_gallery_wrapper" key={index}>
-                                        <img src={items} alt="" />
-                                    </div>
-                                })
-                            }
-
-
+                            {ele.acf.portfolio_gallery.map((image, index) => (
+                                <div className="portfolio_gallery_wrapper" key={index} onClick={() => openLightbox(image)}>
+                                    <img src={image} alt={`portfolio-image-${index}`} />
+                                </div>
+                            ))}
                         </div>
-
-
+                        </marquee>
+                        {lightboxImage && <Lightbox image={lightboxImage} onClose={closeLightbox} />}
                     </div>
 
 
