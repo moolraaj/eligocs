@@ -1,6 +1,9 @@
 'use client'
 import React, { useEffect, useState, useRef } from 'react';
 import gsap from 'gsap';
+import ApplyForm from '@/app/common/navbar/slideforms/slideApplyForm';
+ 
+ 
 
 
 function ScrambleText({ text }) {
@@ -38,6 +41,12 @@ function HeroSection({ ele }) {
   const [showButton, setShowButton] = useState(false);
   const [animateButton, setAnimateButton] = useState(false);
   const sliderRef = useRef(null);
+ 
+
+
+  
+
+ 
 
   useEffect(() => {
     setAnimateButton(true);
@@ -89,8 +98,13 @@ function HeroSection({ ele }) {
 
   return (
     <>
+
+   
+   
+   
       <div className="page_outer home_section_outer">
         <div className="page_inner home_section_inner">
+         
           <div className="home_slider_wrapper" ref={sliderRef}>
           <ScrambleText text={ele.acf.slider_heading_first} />
             <ScrambleText text={ele.acf.slider_heading_second} />
@@ -120,6 +134,8 @@ function HeroSection({ ele }) {
           </div>
         </div>
       </div>
+
+    
     </>
   );
 }
