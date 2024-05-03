@@ -1,38 +1,29 @@
-import { allExportedApi } from "@/utils/apis/Apis.jsx";
+import PortfolioPage from "./component/portfolioPage";
+
  
-import dynamic from "next/dynamic";
+
+ 
+
+
  
  
-const PortfolioPage=dynamic(
-    ()=> import('./component/portfolioPage'),
-    {
-        ssr:false
-    }
-)
-
- async function Portfolio() {
-    let api=allExportedApi()
-
-    let data=await api.portfolioApi()
-    console.log(data)
 
 
-    let portfolio=await api.fetchAllportFolio()
+
+
+async function Portfolio() {
 
 
     return (
         <>
-      
-            <PortfolioPage data={data} portfolio={portfolio}/>
-           
-
+            <PortfolioPage />
         </>
     );
 }
 
 export default Portfolio
 
- 
+
 
 
 

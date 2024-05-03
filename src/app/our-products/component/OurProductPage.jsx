@@ -1,6 +1,33 @@
+'use client'
+import { allExportedApi } from "@/utils/apis/Apis";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
-function OurProductPage({ ProductPageApiData, products }) {
+
+
+
+function OurProductPage() {
+  let api = allExportedApi()
+  const [ProductPageApiData, setProductPageApiData] = useState([])
+  const [products, setProducts] = useState([])
+
+
+  const loadProductPafeData = async () => {
+    let data = await api.ProductPageApi();
+    setProductPageApiData(data)
+  }
+
+  const loadProducts = async () => {
+    let data = await api.fetchAllportFolio();
+    setProducts(data)
+  }
+
+  useEffect(() => {
+    loadProductPafeData()
+    loadProducts()
+  }, [])
+
+
   return (
     <>
       <div className="Our-product-page-outer page_top">
@@ -14,7 +41,7 @@ function OurProductPage({ ProductPageApiData, products }) {
                   <div className="product_image_right">
                     <img src={productPageData.acf.product_page_image.url} alt="product_page_image" />
                     <span></span>
-                    </div>
+                  </div>
                 </div>
                 <div className="product-top-info-section">
                   <div className="product-page-left-info">
@@ -23,8 +50,8 @@ function OurProductPage({ ProductPageApiData, products }) {
                   </div>
                   <div className="product-page-right-info">
                     <div className="product_right_info_inner">
-                    <p>{productPageData.acf.product_page__find_product_heading}</p>
-                    <Link href={`/our-products/${productPageData.slug}`} >{productPageData.acf.product_page__find_product_button}</Link>
+                      <p>{productPageData.acf.product_page__find_product_heading}</p>
+                      <Link href={`/our-products/${productPageData.slug}`} >{productPageData.acf.product_page__find_product_button}</Link>
                     </div>
                   </div>
                 </div>
@@ -32,15 +59,15 @@ function OurProductPage({ ProductPageApiData, products }) {
             )
           })}
 
-          {products.map((product,index)=>{
-            return(
-                <ul key={index}>
-                    <li>
-                        <span><h1>{product.acf.portfolio_title}</h1></span>
-                        <span><Link href={`/our-products/${product.slug}`}>Read More</Link></span>
-                    </li>
-                    <li><img src={product.acf.portfolio_image} alt="portfolio_image" /></li>
-                </ul>
+          {products.map((product, index) => {
+            return (
+              <ul key={index}>
+                <li>
+                  <span><h1>{product.acf.portfolio_title}</h1></span>
+                  <span><Link href={`/our-products/${product.slug}`}>Read More</Link></span>
+                </li>
+                <li><img src={product.acf.portfolio_image} alt="portfolio_image" /></li>
+              </ul>
             )
           })}
         </div>

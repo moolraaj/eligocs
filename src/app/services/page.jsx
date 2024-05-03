@@ -1,4 +1,4 @@
-import { allExportedApi } from "@/utils/apis/Apis.jsx";
+
 import ServicesPage from "./component/servicesPage";
  
  
@@ -8,21 +8,13 @@ import ServicesPage from "./component/servicesPage";
  
 
  
- async function Services() {
+function Services() {
 
-    let api=allExportedApi()
-
-
-
-    let data=await api.ServiceApi()
-    console.log(data)
-
-    
-
+  
     return (
         <>
        
-        <ServicesPage data={data}/>
+        <ServicesPage/>
        
         </>
     );

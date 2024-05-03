@@ -113,7 +113,7 @@ function JobForm() {
                                     
                                 </div>
                                 <div className="form_fields_wrapper">
-                                    <textarea name="yourmessage" placeholder="Enter your message" value={user.yourmessage} onChange={getUserData} cols="30" rows="10"></textarea>
+                                    <textarea name="yourmessage" placeholder="Enter your message" value={user.yourmessage} onChange={getUserData} cols="30" rows="50"></textarea>
                                    
                                 </div>
                                 <div className="form_button">

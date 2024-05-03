@@ -1,6 +1,31 @@
+'use client'
+import { allExportedApi } from "@/utils/apis/Apis"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 
-function PortfolioPage({ data, portfolio }) {
+function PortfolioPage() {
+
+    let api = allExportedApi()  
+    const [data, setData] = useState([])   
+    const [portfolio, setPortfolio] = useState([])
+
+
+
+
+    const loadPortfolioData = async () => {
+        let result = await api.portfolioApi()
+        setData(result)
+    }
+    const loadAllPortfolilo = async () => {
+        let result = await api.fetchAllportFolio()
+        setPortfolio(result)
+    }
+
+    useEffect(() => {
+        loadPortfolioData()
+        loadAllPortfolilo()
+    }, [])
+    
 
     return (
         <>

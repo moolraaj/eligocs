@@ -1,19 +1,38 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { allExportedApi } from '@/utils/apis/Apis';
 
-function CoursesPage({ CoursesPageData, AllCourses }) {
+function CoursesPage() {
   const [selectedCategory, setSelectedCategory] = useState('All Courses');
+  const [CoursesPageData, setCoursesPageData] = useState([]);
+  const [AllCourses, setAllCourses] = useState([]);
+  let api = allExportedApi();
 
-  // Get unique categories from AllCourses
+  const loadCoursePagedata = async () => {
+    let data = await api.CoursesPageApi();
+    setCoursesPageData(data)
+  }
+  const loadAllCourses = async () => {
+
+    let data = await api.AllCourses();
+    setAllCourses(data)
+  }
+
+  useEffect(() => {
+    loadCoursePagedata()
+    loadAllCourses()
+  }, [])
+
+
   const categories = ['All Courses', ...new Set(AllCourses.map(course => course.course_category))];
 
-  // Handler to filter courses by category
+
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
   };
 
-  // Filter courses based on selected category
+
   const filteredCourses = selectedCategory === 'All Courses' ? AllCourses : AllCourses.filter(course => course.course_category.includes(selectedCategory));
 
   return (
@@ -34,20 +53,20 @@ function CoursesPage({ CoursesPageData, AllCourses }) {
 
           <div className="filter_courses_outer">
             <div className='filter_course_top_left'>
-                <h1>EligoCs</h1>
+              <h1>EligoCs</h1>
             </div>
             <div >
-            <select
-            className='filter_course_top_right'
-              value={selectedCategory}
-              onChange={(e) => handleCategoryChange(e.target.value)}
-            >
-              {categories.map((category, index) => (
-                <option key={index} value={category}>{category}</option>
-              ))}
-            </select>
+              <select
+                className='filter_course_top_right'
+                value={selectedCategory}
+                onChange={(e) => handleCategoryChange(e.target.value)}
+              >
+                {categories.map((category, index) => (
+                  <option key={index} value={category}>{category}</option>
+                ))}
+              </select>
             </div>
-            
+
           </div>
 
           <div className="courses-posts-outer">
@@ -55,8 +74,8 @@ function CoursesPage({ CoursesPageData, AllCourses }) {
               <ul key={index} className='course'>
                 <li><img src={course.acf.course_logo.url} alt="course_logo" /></li>
                 <li><h1>{course.acf.course_tittle}</h1></li>
-                <li> <span dangerouslySetInnerHTML={{__html:course.acf.course_short_intro.slice(0,100)}}></span>..</li>
-           
+                <li> <span dangerouslySetInnerHTML={{ __html: course.acf.course_short_intro.slice(0, 100) }}></span>..</li>
+
                 <li><Link href={`/courses/${course.slug}`}>Read More</Link></li>
               </ul>
             ))}

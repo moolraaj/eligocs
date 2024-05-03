@@ -1,14 +1,27 @@
+'use client'
 import { allExportedApi } from "@/utils/apis/Apis.jsx"
 import TeamComponent from "./teamComponent"
+import { useEffect, useState } from "react"
 
 
-export default async function TeamPageComponent({ data }) {
-  let api=allExportedApi()
+export default  function TeamPageComponent() {
+  let api = allExportedApi()
 
+  const [result, setResult] = useState([])
+  const [data, setData] = useState([])
 
-  let result=await api.fetchMeetOurTeam()
-
-
+  const loadTeamPage = async () => {
+    let response = await api.meetOurTeamPage()
+    setData(response)
+  }
+  const loadMeetOurteam = async () => {
+    let data = await api.fetchMeetOurTeam()
+    setResult(data)
+  }
+  useEffect(() => {
+    loadMeetOurteam()
+    loadTeamPage()
+  }, [])
 
   return (
     <>
@@ -28,13 +41,13 @@ export default async function TeamPageComponent({ data }) {
             <div className="right_banner_heading">
               <h1>{ele.acf.team_heading}</h1>
               <div className="our_team_description">
-            <p dangerouslySetInnerHTML={{__html:ele.acf.team_description}}></p>
+                <p dangerouslySetInnerHTML={{ __html: ele.acf.team_description }}></p>
 
-          </div>
+              </div>
             </div>
-            
 
-         
+
+
           </div>
 
 
@@ -44,7 +57,7 @@ export default async function TeamPageComponent({ data }) {
             </div>
 
             <div className="our_memeber_wrapper">
-            <TeamComponent result={result}/>
+              <TeamComponent result={result} />
             </div>
           </div>
 
@@ -63,4 +76,4 @@ export default async function TeamPageComponent({ data }) {
   )
 }
 
- 
+

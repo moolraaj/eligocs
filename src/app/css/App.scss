@@ -2720,11 +2720,7 @@ p .testimonial_wrap {
     grid-column: 1/3;
     padding: 36px 0px;
 }
-.form_fields_wrapper textarea {
-    width: 100%;
-    border-bottom: 1px solid #EAAA00!important;
-    border: unset;
-}
+
 input::placeholder {
     @extend %cf7_form_placeholder;
 }
@@ -2737,8 +2733,13 @@ textarea::placeholder {
     border-bottom:1px solid $primaryyellow!important; 
 }
 .form_fields_wrapper textarea{
-     outline: unset!important;
+    outline: unset;
     border-bottom:1px solid $primaryyellow!important;  
+    width: 100%;
+    height: 16vh;
+    border: unset;
+    @extend %cf7_form_placeholder;
+     
 }
 
 .form_button:nth-child(8) {

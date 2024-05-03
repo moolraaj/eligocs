@@ -1,25 +1,30 @@
 
+'use client'
 import { allExportedApi } from '@/utils/apis/Apis'
 
-import dynamic from 'next/dynamic';
+ 
+import { useEffect, useState } from 'react';
+import HomeCompo from '../components/Home/Home';
 const api = allExportedApi()
 
-const HomeCompo = dynamic(
-    () => import('../components/Home/Home'),
-    {
-        ssr: false
+ 
+export default function HomePage() {
+    const [result, setResult] = useState([])
+
+
+
+    const loadHomePageData = async () => {
+        const data = await api.HomeApi()
+        setResult(data)
     }
-)
-export default async function HomePage() {
+    useEffect(() => {
+        loadHomePageData()
+    }, [])
 
 
 
 
 
-
-
-
-    const result = await api.HomeApi()
     return (
         <HomeCompo result={result} />
     )

@@ -20,17 +20,17 @@ import JobForm from '@/app/forms/jobForm';
 function NavbarCompo({ data }) {
 
   const { siteLogoUrl, siteTitle, headerMenuItems } = data.header
-   
+    const spanContents = [
+    "something cool",
+    "YOUR NEXT PROJECT",
+    "SOLVING CHALLENGES"
+  ];
 
   const [isOpen, setIsOpen] = useState(false);
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const spanContents = [
-    "something cool",
-    "YOUR NEXT PROJECT",
-    "SOLVING CHALLENGES"
-  ];
+ 
 
   const toggleFormVisibility = () => {
     setIsFormVisible(!isFormVisible);
@@ -43,7 +43,7 @@ function NavbarCompo({ data }) {
     }, 2000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [spanContents]);
 
 
 

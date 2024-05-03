@@ -1,114 +1,137 @@
 
+'use client'
 import { allExportedApi } from "@/utils/apis/Apis.jsx"
 import Link from "next/link"
 import ServicesFaq from "./ServicesFaq"
-import Testimonial from "@/app/components/Home/Testimonial"
-import TestimonialSection from "@/app/components/Home/home-sections/Testimonial"
+
 import Testimonials from "@/app/common/Testimoinals"
 import '../../about/AboutPage.scss'
+import { useEffect, useState } from "react"
 
-export default async function ServicesPage({ data }) {
-
-    let api=allExportedApi()
-
-    let services = await api.fetchAllServices()
-    console.log(services)
+export default function ServicesPage() {
+    let api = allExportedApi()
+    const [services, setServices] = useState([])
+    const [data, setData] = useState([])
 
 
-    console.log(data)
+
+    const loadAllservices = async () => {
+        let resp = await api.fetchAllServices()
+        setServices(resp)
+    }
+
+    const loadserviceApi = async () => {
+        let response = await api.ServiceApi()
+        setData(response)
+    }
+
+    useEffect(() => {
+        loadAllservices()
+        loadserviceApi()
+    }, [])
+
+
+
+
+
+
+
+
+
+
     return (
         <>
             {
                 data.map((ele) => {
-                    return   <div className="service_main_div" key={ele.id}>
-                    <div className="service_page_wrapper">
+                    return <div className="service_main_div" key={ele.id}>
+                        <div className="service_page_wrapper">
 
-                        <div className="top_service_top_section_wrapper">
+                            <div className="top_service_top_section_wrapper">
 
-                            <div className="service_page_left_section">
-                                <div className="service_top_heading_first">
+                                <div className="service_page_left_section">
+                                    <div className="service_top_heading_first">
 
-                                    <h1>{ele.acf.our_services_first_heading}</h1>
+                                        <h1>{ele.acf.our_services_first_heading}</h1>
+                                    </div>
+                                    <div className="service_top_sub_heading">
+                                        <h1>{ele.acf.our_services_second_heading}</h1>
+                                    </div>
+
+                                    <div className="service_top_decription">
+                                        <p>{ele.acf.our_services_top_paragraph}</p>
+                                    </div>
+
+                                    <div className="service_navigate_button">
+                                        <button>get in touch</button>
+                                    </div>
                                 </div>
-                                <div className="service_top_sub_heading">
-                                    <h1>{ele.acf.our_services_second_heading}</h1>
+
+                                <div className="service_page_right_section">
+                                    <img src={ele.acf.our_service_banner_image} alt="" />
                                 </div>
 
-                                <div className="service_top_decription">
-                                    <p>{ele.acf.our_services_top_paragraph}</p>
-                                </div>
-
-                                <div className="service_navigate_button">
-                                    <button>get in touch</button>
-                                </div>
                             </div>
 
-                            <div className="service_page_right_section">
-                                <img src={ele.acf.our_service_banner_image} alt="" />
-                            </div>
 
-                        </div>
+                            <div className="show_all_services_section">
+                                <div className="all_services_left_section">
+                                    <h1>{ele.acf.our_service_main_heading}</h1>
+                                </div>
+                                <div className="all_services_right_section">
+                                    {
+                                        services.map((e) => {
+                                            return <div className="services_flex_wrapper" key={e.id}>
 
+                                                <div className="all_services_outer">
+                                                    <div className="service_icon">
+                                                        <img src='' alt="" />
+                                                    </div>
 
-                        <div className="show_all_services_section">
-                            <div className="all_services_left_section">
-                                <h1>{ele.acf.our_service_main_heading}</h1>
-                            </div>
-                            <div className="all_services_right_section">
-                                {
-                                    services.map((e) => {
-                                        return <div className="services_flex_wrapper" key={e.id}>
+                                                    <div className="service_both_sections">
+                                                        <div className="services_content_area">
+                                                            <div className="service_content_heading">
+                                                                <h1>{e.acf.services_title}</h1>
 
-                                            <div className="all_services_outer">
-                                                <div className="service_icon">
-                                                    <img src='' alt="" />
-                                                </div>
+                                                            </div>
+                                                            <div className="service_content_description">
+                                                                <p>{e.acf.services_description.slice(0, 150)}</p>
 
-                                                <div className="service_both_sections">
-                                                    <div className="services_content_area">
-                                                        <div className="service_content_heading">
-                                                            <h1>{e.acf.services_title}</h1>
-
+                                                            </div>
                                                         </div>
-                                                        <div className="service_content_description">
-                                                            <p>{e.acf.services_description.slice(0, 150)}</p>
 
+                                                        <div className="services_navigation">
+                                                            <Link href={`/services/${e.slug}`}>read more</Link>
                                                         </div>
                                                     </div>
 
-                                                    <div className="services_navigation">
-                                                        <Link href={`/services/${e.slug}`}>read more</Link>
-                                                    </div>
                                                 </div>
 
                                             </div>
 
-                                        </div>
+                                        })
 
-                                    })
-
-                                }
+                                    }
+                                </div>
                             </div>
+
+
+
                         </div>
-                
-                      
-                        
+                        <div className="services_show_servicefaqs">
+                            <ServicesFaq faqs={ele.acf.our_service_faqs} outerHeading={ele.acf.faq_outer_heading} />
+
+                        </div>
+
+                        <div className="testimonial_service content">
+
+                            <Testimonials />
+
+                        </div>
+
+
+
+
                     </div>
-                    <div className="services_show_servicefaqs">
-                    <ServicesFaq faqs={ele.acf.our_service_faqs} outerHeading={ele.acf.faq_outer_heading} />
-
-                    </div>      
-
-                  <div className="testimonial_service content">
-
-                <Testimonials/>
-
-                  </div>
-
-
-
-
-                </div>
 
 
 

@@ -5,6 +5,7 @@ import Link from "next/link";
 
 
 function ServiceSlug({ data, services }) {
+ 
    return (
       <>
          {data && data.map((ele) => (
@@ -37,7 +38,7 @@ function ServiceSlug({ data, services }) {
 
                                  <ul>
                                     <li>
-                                    <Link href={`${items.slug}`}>{items.acf.services_title}</Link>
+                                    <Link href={`/services/${items.slug}`}>{items.acf.services_title}</Link>
                                     </li>
                                  </ul> 
                               </div>
