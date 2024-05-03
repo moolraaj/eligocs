@@ -7,6 +7,8 @@ import Link from 'next/link';
 import PortfolioComponent from '@/app/portfolio/component/portfolioComponent';
 import JobForm from '@/app/forms/jobForm';
 import RerenderCompo from './formAnimationCompo';
+import ApplyForJob from '@/app/forms/applyForJob';
+
 
 
 
@@ -17,25 +19,31 @@ import RerenderCompo from './formAnimationCompo';
 
 function NavbarCompo({ data }) {
 
-   
+
 
   const { siteLogoUrl, siteTitle, headerMenuItems } = data.header
- 
+
 
   const [isOpen, setIsOpen] = useState(false);
   const [isFormVisible, setIsFormVisible] = useState(false);
- 
+  const [isApplyJobVisible, setIsApplyJobVisible] = useState(false);
 
- 
+
+
+
+
+  const showApplyJob = () => {
+    setIsApplyJobVisible(true);
+  };
+
+  const closeApplyJob = () => {
+    setIsApplyJobVisible(false);
+  };
+
 
   const toggleFormVisibility = () => {
     setIsFormVisible(!isFormVisible);
   };
-
-
- 
-
-
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -54,10 +62,11 @@ function NavbarCompo({ data }) {
   );
 
 
-  
+
 
   return (
     <>
+
 
       {isFormVisible && (
 
@@ -67,21 +76,21 @@ function NavbarCompo({ data }) {
               <div className="cf7_left_section">
                 <div className="form_banner_heading">
 
-                <h1>hello</h1>
+                  <h1>hello</h1>
                 </div>
 
                 <div className="form_slider_wrapper">
                   <div className="_form_paragraph">
-                  <p>
-                  Let's work on
-                </p>
+                    <p>
+                      Let's work on
+                    </p>
                   </div>
                   <div className="form_slides">
-                     <RerenderCompo/>
+                    <RerenderCompo />
                   </div>
                 </div>
 
-               
+
               </div>
 
               <div className="cf7_right_section">
@@ -100,6 +109,49 @@ function NavbarCompo({ data }) {
         </div >
       )
       }
+
+
+
+      {isApplyJobVisible && (
+        <div className="cf7_form_outer" style={{ animation: isApplyJobVisible ? 'slide-down 0.5s' : 'slide-up 0.5s' }}>
+          <div className="cf7_form_inner">
+            <div className="cf7_top_banner">
+
+            <div className="cf7_left_section">
+                <div className="form_banner_heading">
+
+                  <h1>apply now</h1>
+                </div>
+
+                <div className="form_slider_wrapper">
+                  <div className="_form_paragraph">
+                    <p>
+                      apply for job
+                    </p>
+                  </div>
+                </div>
+
+
+              </div>
+
+              <div className="cf7_right_section">
+                <div className="close_button">
+                  <button onClick={closeApplyJob} className="close_button">
+                    <img src={formClose.src} alt="" srcset="" />
+                  </button>
+                </div>
+              </div>
+
+            </div>
+            <div className="cf7_form_wrapper">
+                <ApplyForJob />
+              </div>
+          </div>
+        </div>
+      )}
+
+
+
 
       <div className="nav_outer">
         <div className="nav_inner">
@@ -154,6 +206,15 @@ function NavbarCompo({ data }) {
                     <NavigationLink href={'/portfolio'}>portfolio</NavigationLink>
                     <NavigationLink href={'/meet-our-team'}>our team</NavigationLink>
                     <NavigationLink href={'/blog'}>blog</NavigationLink>
+                    <ul className='apply_now_navgation'>
+                      <NavigationLink href={'/contact'}>contact us</NavigationLink>
+                      <div className="form_button">
+                      <button  onClick={showApplyJob}>apply now</button>
+
+                      </div>
+
+                    </ul>
+
                     <NavigationLink href={'/our-products'}>our-products</NavigationLink>
                   </div>
                 </div>

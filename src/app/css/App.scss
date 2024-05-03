@@ -1514,8 +1514,8 @@ span.vison_c {
 .nav_outer ul {
     padding: 0px;
     margin: 0px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    @include grid-property(grid,1fr 1fr,center)
+  
 }
 
 .meet_our_team {
@@ -2755,8 +2755,8 @@ textarea::placeholder {
 
 
 .cf7_left_section {
-    display: flex;
-    flex-direction: column;
+    @include flex-property(flex,flex-start,column,unset,0px,20px);
+    
 }
 
 .cf7_top_banner {
@@ -2786,9 +2786,10 @@ textarea::placeholder {
 }
 
 .form_banner_heading h1 {
-    font-size: 130px;
+    font-size: 120px;
     margin: 0px;
     text-transform: capitalize;
+    font-weight: 500;
 }
 
 .close_button {
@@ -2824,6 +2825,22 @@ span.error_fields {
       opacity: 1;
     }
   }
+  @keyframes slide-up {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+
+  .apply-for-job-container {
+    z-index: 999999999;
+    background: #fff;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+}
   
 
  

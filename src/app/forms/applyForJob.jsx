@@ -88,46 +88,42 @@ function ApplyForJob() {
 
     return (
         <>
-            <div className="applyforjob_outer">
-                <div className="applyforjob_inner">
-                    <div className="applyforjob_wrapper">
-                        <form style={{ marginTop: '100px' }} id='applyforjob'>
-                            <div className="applyjob_flex_wrapper">
-                                <div className="applyforjob_fields_wrapper">
+              
+                        <form id='applyforjob'>
+                            <div className="job_form_flex_wrapper">
+                                <div className="form_fields_wrapper">
                                     <input type="text" name="yourname" placeholder='name' value={user.yourname} onChange={getUserData} />
-                                    {errors.yourname && <span>name is required</span>}
+                                    {errors.yourname && <span className='error_fields'>name is required</span>}
                                 </div>
-                                <div className="applyforjob_fields_wrapper">
+                                <div className="form_fields_wrapper">
                                     <input type="email" name="youremail" placeholder='email address' value={user.youremail} onChange={getUserData} />
-                                    {errors.youremail && <span>email is required</span>}
+                                    {errors.youremail && <span className='error_fields'>email is required</span>}
                                 </div>
-                                <div className="applyforjob_fields_wrapper">
+                                <div className="form_fields_wrapper">
                                     <input type="text" name="yourlocation" placeholder='current location' value={user.yourlocation} onChange={getUserData} />
-                                    {errors.yourlocation && <span>current location is required</span>}
+                                    {errors.yourlocation && <span className='error_fields'>current location is required</span>}
                                 </div>
-                                <div className="applyforjob_fields_wrapper">
+                                <div className="form_fields_wrapper">
                                     <input type="text" name="curruntstatus" placeholder='current status' value={user.curruntstatus} onChange={getUserData} />
-                                    {errors.curruntstatus && <span>currunt status is required</span>}
+                                    {errors.curruntstatus && <span className='error_fields'>currunt status is required</span>}
                                 </div>
-                                <div className="applyforjob_fields_wrapper">
+                                <div className="form_fields_wrapper">
                                     <input type="text" name="applyingfor" placeholder='applying for' value={user.applyingfor} onChange={getUserData} />
                                 </div>
-                                <div className="applyforjob_fields_wrapper">
+                                <div className="form_fields_wrapper">
                                     <input type="file" name="uploadresume" onChange={getUserData} />
-                                    {errors.uploadresume && <span>This field is required</span>}
+                                    {errors.uploadresume && <span className='error_fields'>This field is required</span>}
                                 </div>
-                                <div className="applyforjob_fields_wrapper">
+                                <div className="form_fields_wrapper">
                                     <textarea name="yourmessage" placeholder="additional information" value={user.yourmessage} onChange={getUserData} cols="30" rows="10"></textarea>
   
                                 </div>
-                                <div className="apply_form_button">
+                                <div className="form_button">
                                     <button onClick={submitUserData}>Submit</button>
                                 </div>
                             </div>
                         </form>
-                    </div>
-                </div>
-            </div>
+            
         </>
     );
 }
