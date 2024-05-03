@@ -3,12 +3,10 @@ import React, { useEffect, useState } from 'react';
 import closeMenuIcon from '../../../assets/headerAssets/closeMenu.png'
 import FormLogo from '../../../assets/headerAssets/formlogo.png'
 import formClose from '../../../assets/headerAssets/formclose.png'
-
-
 import Link from 'next/link';
-
 import PortfolioComponent from '@/app/portfolio/component/portfolioComponent';
 import JobForm from '@/app/forms/jobForm';
+import RerenderCompo from './formAnimationCompo';
 
 
 
@@ -19,16 +17,14 @@ import JobForm from '@/app/forms/jobForm';
 
 function NavbarCompo({ data }) {
 
+   
+
   const { siteLogoUrl, siteTitle, headerMenuItems } = data.header
-    const spanContents = [
-    "something cool",
-    "YOUR NEXT PROJECT",
-    "SOLVING CHALLENGES"
-  ];
+ 
 
   const [isOpen, setIsOpen] = useState(false);
   const [isFormVisible, setIsFormVisible] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
+ 
 
  
 
@@ -37,13 +33,7 @@ function NavbarCompo({ data }) {
   };
 
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % spanContents.length);
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, [spanContents]);
+ 
 
 
 
@@ -62,6 +52,9 @@ function NavbarCompo({ data }) {
       {children}
     </Link>
   );
+
+
+  
 
   return (
     <>
@@ -84,11 +77,7 @@ function NavbarCompo({ data }) {
                 </p>
                   </div>
                   <div className="form_slides">
-                    {spanContents.map((content, index) => (
-                      <span key={index} className={currentIndex === index ? "show" : "hide"}>
-                        {content}
-                      </span>
-                    ))}
+                     <RerenderCompo/>
                   </div>
                 </div>
 
