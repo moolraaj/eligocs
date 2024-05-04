@@ -28,15 +28,17 @@ export default  function TeamPageComponent() {
 
       {data.map((ele) => {
 
-        return <div className="team_outer_wrapper" key={ele.id}>
+        return <div className="team_outer_wrapper page_top" key={ele.id}>
 
           <div className="team_top_section">
+            <div className="team_header-wrapper">
             <div className="left_banner_heading">
               <h1>{ele.acf.team_top_banner_heading}</h1>
             </div>
             <div className="team_banner_image">
               <img src={ele.acf.team_image} alt="" />
               <div className="bottom_banner"></div>
+            </div>
             </div>
             <div className="right_banner_heading">
               <h1>{ele.acf.team_heading}</h1>

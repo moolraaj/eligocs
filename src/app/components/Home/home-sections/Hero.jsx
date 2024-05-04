@@ -1,37 +1,8 @@
 'use client'
 import React, { useEffect, useState, useRef } from 'react';
 import gsap from 'gsap';
-
-
-function ScrambleText({ text }) {
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const chars = text.split('');
-    const span = ref.current;
-    span.innerHTML = '';
-
-    chars.forEach((char, index) => {
-      const spanChar = document.createElement('span');
-      spanChar.textContent = char;
-      spanChar.style.animationDelay = `${index * 0.05}s`;
-      span.appendChild(spanChar);
-    });
-
-    gsap.from(span.children, {
-      y: 20,
-      opacity: 0,
-      stagger: 0.05,
-      duration: 1,
-      ease: 'power2.out',
-    });
-  }, [text]);
-
-  return <h1 ref={ref}>{text}</h1>;
-}
-
-
-
+import { TextPlugin } from 'gsap/all';
+gsap.registerPlugin(TextPlugin);
 
 function HeroSection({ ele }) {
   const [showInnovation, setShowInnovation] = useState(false);
@@ -87,13 +58,14 @@ function HeroSection({ ele }) {
 
   }, []);
 
+
   return (
     <>
       <div className="page_outer home_section_outer">
         <div className="page_inner home_section_inner">
           <div className="home_slider_wrapper" ref={sliderRef}>
-          <ScrambleText text={ele.acf.slider_heading_first} />
-            <ScrambleText text={ele.acf.slider_heading_second} />
+            <h1>{ele.acf.slider_heading_first}</h1>
+            <h1>{ele.acf.slider_heading_second}</h1>
             <div dangerouslySetInnerHTML={{ __html: ele.acf.slider_para }}></div>
           </div>
           <div className="home_slider_animate">

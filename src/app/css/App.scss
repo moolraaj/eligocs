@@ -285,7 +285,8 @@ ul.transformation_wrapper li:nth-child(1) {
     height: 70%;
     overflow: auto;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    img{
+
+    img {
         width: 95%;
         height: 100%;
         object-fit: cover;
@@ -471,6 +472,7 @@ ul.transformation_wrapper li:nth-child(1) {
 
 
 /* team section */
+
 .team_outer_wrapper {
     max-width: 1520px;
     margin: auto;
@@ -481,6 +483,7 @@ ul.transformation_wrapper li:nth-child(1) {
 .team_top_section {
     display: flex;
     align-items: center;
+
 }
 
 .team_banner_image {
@@ -493,19 +496,25 @@ h1 {
     color: black;
 }
 
-.left_banner_heading {
-    writing-mode: tb;
-    font-size: 10px;
-    position: absolute;
-    white-space: nowrap;
-    left: -3%;
-    top: 16%;
-    transform: rotate(180deg);
+.team_header-wrapper {
+    display: flex;
+    align-items: flex-end;
 }
 
-.left_banner_heading h1 {
-    text-transform: capitalize;
-    font-size: 1.75em !important;
+.left_banner_heading {
+    margin-bottom: 40px;
+
+    h1 {
+        text-transform: capitalize;
+        font-size: 1.75em !important;
+        writing-mode: tb;
+        transform: rotate(180deg);
+        margin-left: 0;
+    }
+}
+
+.team_member_lists {
+    padding-left: 10px;
 }
 
 .member_top_heading h1 {
@@ -522,6 +531,7 @@ h1 {
     grid-template-columns: 1fr 60%;
     column-gap: 12%;
 }
+
 
 .member_informations_section {
     display: flex;
@@ -574,9 +584,12 @@ h1 {
     opacity: 0;
 }
 
+
 .team-member_image {
     position: absolute;
     z-index: 9;
+    width: min-content;
+
 }
 
 .member_social_icons img {
@@ -599,6 +612,9 @@ h1 {
     left: 13%;
 }
 
+.team_banner_image img {
+    width: 100%;
+}
 
 
 .team_member_section:hover .memebr_left_section {
@@ -618,7 +634,7 @@ h1 {
     z-index: 999999;
     width: 280px;
     height: 300px;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 
@@ -768,6 +784,7 @@ ul.course li:nth-child(4) {
         object-fit: cover;
         height: 500px;
     }
+
     span {
         width: 30%;
         height: 60px;
@@ -786,56 +803,65 @@ ul.course li:nth-child(4) {
     margin-top: 30px;
     text-transform: capitalize;
     gap: 20px;
-  }
-  .course_intro_wrapper{
+}
+
+.course_intro_wrapper {
     h1 {
         font-size: 3em;
         margin: 0px 0px 20px 0px;
-      }
-      p {
-    font-size: 1.4em;
-    letter-spacing: 2px;
-    line-height: 45px;
-  }
-  }
+    }
 
-  .course_join_inner{
+    p {
+        font-size: 1.4em;
+        letter-spacing: 2px;
+        line-height: 45px;
+    }
+}
+
+.course_join_inner {
     background: #EAAA00;
     padding: 60px 30px;
-    p {
-    color: #fff;
-    margin-bottom: 20px;
-    font-size: 1.4em;
-  }
-  a {
-    color: #EAAA00;
-    background-color: #fff;
-    padding: 10px 20px;
-    border-radius: 35px;
-    margin-top: 20px;
-    font-size: 1.3em;
-  }
-  a:hover {
-    background-color: #191C1B;
-    color: #fff;
-    transition: transform 0.3s ease-in-out;
-  }
-  }
 
-  .what_u_learn_section{
+    p {
+        color: #fff;
+        margin-bottom: 20px;
+        font-size: 1.4em;
+    }
+
+    a {
+        color: #EAAA00;
+        background-color: #fff;
+        padding: 10px 20px;
+        border-radius: 35px;
+        margin-top: 20px;
+        font-size: 1.3em;
+    }
+
+    a:hover {
+        background-color: #191C1B;
+        color: #fff;
+        transition: transform 0.3s ease-in-out;
+    }
+}
+
+.what_u_learn_section {
 
     h2 {
         font-size: 3em;
         color: $primaryyellow;
     }
+
     p {
         font-size: 1.3em;
     }
+
     ul.course_points li {
         position: relative;
-        p{
+
+        p {
             font-size: 1.2em;
         }
+
         p::before {
             content: "";
             width: 1%;
@@ -846,7 +872,7 @@ ul.course li:nth-child(4) {
             top: 10px;
         }
     }
-  }
+}
 
 
 
@@ -1514,8 +1540,7 @@ span.vison_c {
 .nav_outer ul {
     padding: 0px;
     margin: 0px;
-    @include grid-property(grid,1fr 1fr,center)
-  
+    @include grid-property(grid, 1fr 1fr, center)
 }
 
 .meet_our_team {
@@ -2228,6 +2253,25 @@ p .testimonial_wrap {
     .portfolio_showcase_wrapper {
         @include grid-property(grid, repeat(2, 1fr));
     }
+
+    .team_top_section {
+        flex-wrap: wrap;
+    }
+
+    .bottom_banner {
+        width: 80%;
+        height: 12vh;
+        bottom: -20px;
+        left: -32px;
+    }
+
+    .right_banner_heading {
+        margin-top: 40px;
+    }
+    .right_banner_heading{
+    padding-left: 10px;
+    }
+   
 }
 
 
@@ -2356,13 +2400,27 @@ p .testimonial_wrap {
         height: auto;
         padding: 20px;
     }
+
     .testimonial_service {
         width: 80%;
         margin: auto;
     }
 
+    .member_informations_section {
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .our_memeber_wrapper {
+        padding-top: 20px;
+    }
+
 }
 
+.members_image_mobile {
+    display: none;
+}
 
 
 
@@ -2399,18 +2457,20 @@ p .testimonial_wrap {
 }
 
 @media (max-width:767px) {
+
     .product-top-info-section,
-    .course_intro_join_section{
+    .course_intro_join_section {
         grid-template-columns: 1fr;
         width: 100%;
         padding: 20px;
         place-items: flex-start;
     }
+
     .product-page-left-info p,
-    .course_intro_wrapper p{
+    .course_intro_wrapper p {
         font-size: 2em !important;
     }
-    
+
 }
 
 @media (max-width:568px) {
@@ -2475,7 +2535,7 @@ p .testimonial_wrap {
         top: 93px;
 
     }
-
+    
     .meet_our_team {
         font-size: 20px;
         padding: 15px 24px;
@@ -2558,7 +2618,7 @@ p .testimonial_wrap {
     }
 
     body.__className_aaf875 {
-        font-size: 6px;
+        font-size: 16px;
     }
 
     .home_slider_wrapper p {
@@ -2629,9 +2689,41 @@ p .testimonial_wrap {
     .menu-right-container-bottom a {
         font-size: 4em;
     }
+
     .lightbox-container {
         top: 60%;
     }
+
+
+    .left_banner_heading h1 {
+        font-size: 1.2em !important;
+    }
+
+    .right_banner_heading h1 {
+        font-size: 2em;
+        width: 100%;
+    }
+
+    .member_top_heading h1 {
+        font-size: 3em;
+        padding-top: 20px;
+    }
+
+    .team_member_section:hover .memebr_left_section {
+        opacity: 0;
+    }
+
+    .team_member_section {
+        grid-template-columns: 1fr;
+    }
+
+    .our_memeber_wrapper {
+        padding-bottom: 50px;
+    }
+    .members_image_mobile {
+        display: block;
+    }
+    
 }
 
 @media (max-width:375px) {
@@ -2665,58 +2757,63 @@ p .testimonial_wrap {
 
 .show_form {
     display: none;
-  }
-  
-  .slide-down {
+}
+
+.slide-down {
     display: block;
     animation: slide-down-animation 0.5s forwards;
-  }
-  
-  .slide-up {
+}
+
+.slide-up {
     animation: slide-up-animation 0.5s forwards;
-  }
-  
-  @keyframes slide-down-animation {
+}
+
+@keyframes slide-down-animation {
     from {
-      transform: translateY(-100%);
-      opacity: 0;
+        transform: translateY(-100%);
+        opacity: 0;
     }
+
     to {
-      transform: translateY(0);
-      opacity: 1;
+        transform: translateY(0);
+        opacity: 1;
     }
-  }
-  
-  @keyframes slide-up-animation {
+}
+
+@keyframes slide-up-animation {
     from {
-      transform: translateY(0);
-      opacity: 1;
+        transform: translateY(0);
+        opacity: 1;
     }
+
     to {
-      transform: translateY(-100%);
-      opacity: 0;
+        transform: translateY(-100%);
+        opacity: 0;
     }
-  }
-  
-  
+}
+
+
 
 
 
 
 .cf7_form_outer {
-  @extend %cf7_form;
+    @extend %cf7_form;
 }
+
 .cf7_form_inner {
-   @extend %max-width;
+    @extend %max-width;
 }
 
 
 .job_form_flex_wrapper {
-    @include grid-property(grid,1fr 1fr,unset,50px)
+    @include grid-property(grid, 1fr 1fr, unset, 50px)
 }
+
 .form_fields_wrapper input {
     @extend %cf7_form_input;
 }
+
 .form_fields_wrapper:nth-child(7) {
     grid-column: 1/3;
     padding: 36px 0px;
@@ -2725,38 +2822,42 @@ p .testimonial_wrap {
 input::placeholder {
     @extend %cf7_form_placeholder;
 }
+
 textarea::placeholder {
-  @extend %cf7_form_placeholder;
+    @extend %cf7_form_placeholder;
 }
 
 .form_fields_wrapper input:focus-visible {
-    outline: unset!important;
-    border-bottom:1px solid $primaryyellow!important; 
+    outline: unset !important;
+    border-bottom: 1px solid $primaryyellow !important;
 }
-.form_fields_wrapper textarea{
+
+.form_fields_wrapper textarea {
     outline: unset;
-    border-bottom:1px solid $primaryyellow!important;  
+    border-bottom: 1px solid $primaryyellow !important;
     width: 100%;
     height: 16vh;
     border: unset;
     @extend %cf7_form_placeholder;
-     
+
 }
 
 .form_button:nth-child(8) {
     grid-column: 1/3;
 }
+
 .form_button button {
     background: $black;
 }
+
 .form_button button {
-  @extend %cf7_form_button;
+    @extend %cf7_form_button;
 }
 
 
 .cf7_left_section {
-    @include flex-property(flex,flex-start,column,unset,0px,20px);
-    
+    @include flex-property(flex, flex-start, column, unset, 0px, 20px);
+
 }
 
 .cf7_top_banner {
@@ -2779,6 +2880,7 @@ textarea::placeholder {
     font-weight: 600;
     color: #EAAA00;
 }
+
 ._form_paragraph p {
     font-size: 35px;
     text-transform: uppercase;
@@ -2799,13 +2901,14 @@ textarea::placeholder {
 
 .cf7_left_section span {
     display: none;
-  }
-  
-  .cf7_left_section span.show {
+}
+
+.cf7_left_section span.show {
     display: inline;
     animation: slide-down 0.5s ease forwards;
-  }
-  .close_button button {
+}
+
+.close_button button {
     border: unset;
     background: unset;
 }
@@ -2815,38 +2918,33 @@ span.error_fields {
     font-size: 24px;
     text-transform: capitalize;
 }
-  @keyframes slide-down {
-    from {
-      transform: translateY(-100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  @keyframes slide-up {
-    from {
-      transform: translateY(0);
-    }
-    to {
-      transform: translateY(-100%);
-    }
-  }
 
-  .apply-for-job-container {
+@keyframes slide-down {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+.apply-for-job-container {
     z-index: 999999999;
     background: #fff;
     position: fixed;
     height: 100vh;
     width: 100%;
 }
-  
-
- 
-
-
-  
- 
-  
-  
