@@ -1,13 +1,13 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import closeMenuIcon from '../../../assets/headerAssets/closeMenu.png'
 import FormLogo from '../../../assets/headerAssets/formlogo.png'
- import Link from 'next/link';
+import formClose from '../../../assets/headerAssets/formclose.png'
+import Link from 'next/link';
 import PortfolioComponent from '@/app/portfolio/component/portfolioComponent';
- import ApplyForm from '../slideforms/slideApplyForm';
-import SlideJobForm from '../slideforms/slideJobForm';
- 
- 
+import JobForm from '@/app/forms/jobForm';
+import RerenderCompo from './formAnimationCompo';
+import ApplyForJob from '@/app/forms/applyForJob';
 
 
 
@@ -68,11 +68,87 @@ function NavbarCompo({ data }) {
     <>
 
 
-   <SlideJobForm isFormVisible={isFormVisible} toggleFormVisibility={toggleFormVisibility}/>
+      {isFormVisible && (
+
+        <div className="cf7_form_outer" style={{ animation: isFormVisible ? 'slide-down 0.5s' : 'slide-up 0.5s' }}>
+          <div className="cf7_form_inner">
+            <div className="cf7_top_banner">
+              <div className="cf7_left_section">
+                <div className="form_banner_heading">
+
+                  <h1>hello</h1>
+                </div>
+
+                <div className="form_slider_wrapper">
+                  <div className="_form_paragraph">
+                    <p>
+                      Let's work on
+                    </p>
+                  </div>
+                  <div className="form_slides">
+                    <RerenderCompo />
+                  </div>
+                </div>
+
+
+              </div>
+
+              <div className="cf7_right_section">
+                <div className="close_button">
+                  <button onClick={toggleFormVisibility} className="close_button">
+                    <img src={formClose.src} alt="" srcset="" />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="cf7_form_wrapper">
+              <JobForm />
+            </div>
+
+          </div>
+        </div >
+      )
+      }
 
 
 
-       <ApplyForm isApplyJobVisible={isApplyJobVisible} closeApplyJob={closeApplyJob} />
+      {isApplyJobVisible && (
+        <div className="cf7_form_outer" style={{ animation: isApplyJobVisible ? 'slide-down 0.5s' : 'slide-up 0.5s' }}>
+          <div className="cf7_form_inner">
+            <div className="cf7_top_banner">
+
+            <div className="cf7_left_section">
+                <div className="form_banner_heading">
+
+                  <h1>apply now</h1>
+                </div>
+
+                <div className="form_slider_wrapper">
+                  <div className="_form_paragraph">
+                    <p>
+                      apply for job
+                    </p>
+                  </div>
+                </div>
+
+
+              </div>
+
+              <div className="cf7_right_section">
+                <div className="close_button">
+                  <button onClick={closeApplyJob} className="close_button">
+                    <img src={formClose.src} alt="" srcset="" />
+                  </button>
+                </div>
+              </div>
+
+            </div>
+            <div className="cf7_form_wrapper">
+                <ApplyForJob />
+              </div>
+          </div>
+        </div>
+      )}
 
 
 
@@ -136,8 +212,6 @@ function NavbarCompo({ data }) {
                       <button  onClick={showApplyJob}>apply now</button>
 
                       </div>
-
-                      
 
                     </ul>
 

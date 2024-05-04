@@ -1,7 +1,10 @@
 'use client'
 import React, { useEffect, useState, useRef } from 'react';
-import gsap from 'gsap';
-import ApplyForm from '@/app/common/navbar/slideforms/slideApplyForm';
+import gsap from 'gsap'
+
+import Formclose from '../../../assets/headerAssets/formclose.png';
+import ApplyForJob from '@/app/forms/applyForJob';
+ 
  
  
 
@@ -36,10 +39,11 @@ function ScrambleText({ text }) {
 
 
 
-function HeroSection({ ele }) {
+function HeroSection({ ele,ParallaxContainer }) {
   const [showInnovation, setShowInnovation] = useState(false);
   const [showButton, setShowButton] = useState(false);
   const [animateButton, setAnimateButton] = useState(false);
+  const [isApplyJobVisible, setIsApplyJobVisible] = useState(false);
   const sliderRef = useRef(null);
  
 
@@ -96,12 +100,59 @@ function HeroSection({ ele }) {
 
   }, []);
 
+  const showApplyJob = () => {
+    setIsApplyJobVisible(true);
+  };
+
+  const closeApplyJob = () => {
+    setIsApplyJobVisible(false);
+  };
+
   return (
     <>
 
+{isApplyJobVisible && (
+        <div className="cf7_form_outer" style={{ animation: isApplyJobVisible ? 'slide-down 0.5s' : 'slide-up 0.5s' }}>
+          <div className="cf7_form_inner">
+            <div className="cf7_top_banner">
+
+            <div className="cf7_left_section">
+                <div className="form_banner_heading">
+
+                  <h1>apply now</h1>
+                </div>
+
+                <div className="form_slider_wrapper">
+                  <div className="_form_paragraph">
+                    <p>
+                      apply for job
+                    </p>
+                  </div>
+                </div>
+
+
+              </div>
+
+              <div className="cf7_right_section">
+                <div className="close_button">
+                  <button onClick={closeApplyJob} className="close_button">
+                    <img src={Formclose.src} alt="" srcset="" />
+                  </button>
+                </div>
+              </div>
+
+            </div>
+            <div className="cf7_form_wrapper">
+                <ApplyForJob />
+              </div>
+          </div>
+        </div>
+      )}
+
    
    
-   
+     <ParallaxContainer speed={0.5} className="container-1">
+
       <div className="page_outer home_section_outer">
         <div className="page_inner home_section_inner">
          
@@ -125,7 +176,7 @@ function HeroSection({ ele }) {
               >
                 {showInnovation && (
                   <>
-                    <button type="button" className={animateButton ? "animate" : ""}>Apply Now</button>
+                    <button type="button" className={animateButton ? "animate" : ""} onClick={showApplyJob}>Apply Now</button>
                     <p>{ele.acf.innovation_heading}</p>
                   </>
                 )}
@@ -134,6 +185,7 @@ function HeroSection({ ele }) {
           </div>
         </div>
       </div>
+      </ParallaxContainer>
 
     
     </>

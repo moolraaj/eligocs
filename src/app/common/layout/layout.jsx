@@ -33,7 +33,7 @@ export default function Layout({ children }) {
                 <>
                     <Navbar data={data} />
                     {children}
-                    <Footer />
+                    <Footer response={data}/>
                 </>
             )}
         </>

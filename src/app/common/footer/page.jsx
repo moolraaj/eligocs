@@ -1,10 +1,12 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import footerLogo from '../../assets/headerAssets/sitelogo.png'
+
 import { allExportedApi } from '@/utils/apis/Apis.jsx';
 
-function Footer() {
+function Footer({response}) {
+  const {siteLogoUrl,footerMenuItems}=response.footer
+  console.log(response)
   let api=allExportedApi()
   const [services, setServices] = useState([]);
   const [data, setData] = useState([])
@@ -63,7 +65,7 @@ const sortedServices = [...services].sort((a, b) => a.id - b.id);
           <div className="center-section-wrapper">
           <div className='footer-center-section'>
             <div className='center-section-first-inner-wrapper'>
-              <div className='footer-top-headings'><img src={footerLogo.src} alt="footerLogo" style={{width: '148px', height: '57px'}} /></div>
+              <div className='footer-top-headings'><img src={siteLogoUrl} alt="footerLogo" style={{width: '148px', height: '57px'}} /></div>
               <ul>
                 <li id='eligo-creative' className='common-btns'><span>Eligo Creative Services</span></li>
                 <li id='app-web-design' className='common-btns'><span>App & Web Design,</span></li>
@@ -82,12 +84,11 @@ const sortedServices = [...services].sort((a, b) => a.id - b.id);
               </ul>
             </div>
             <div className='center-section-third-inner-wrapper'>
-            <h1 className='footer-top-headings'>Our Products</h1>
+            <h1 className='footer-top-headings'>Our Services</h1>
             <ul>
-            {data.map((data,index) => (
-                  <li key={index}>
-                  
-                  <Link href={`/portfolio/${data.slug}`}>{data.acf.portfolio_title}</Link>
+            {footerMenuItems.map((ele) => (
+                  <li key={ele.id}>
+                  <Link href={`/services/${ele.pageSlug}`}><p dangerouslySetInnerHTML={{__html:ele.title}}></p></Link>
                   </li>
                 ))}
             </ul>

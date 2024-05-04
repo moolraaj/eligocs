@@ -35,9 +35,9 @@ function HomeCompo({ result }) {
         <div className="home_wrapper" key={ele.id}>
 
 
-          <ParallaxContainer speed={0.5} className="container-1">
-           <HeroSection  ele={ele}/>
-          </ParallaxContainer>
+        
+           <HeroSection  ele={ele} ParallaxContainer={ParallaxContainer}/>
+        
 
           {/*about us section starts*/}
           <AboutSection ele={ele} />
