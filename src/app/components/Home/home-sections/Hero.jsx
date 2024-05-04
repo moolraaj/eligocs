@@ -9,6 +9,9 @@ import ApplyForJob from '@/app/forms/applyForJob';
  
 
 
+ 
+
+
 
 
 function HeroSection({ ele,ParallaxContainer }) {
