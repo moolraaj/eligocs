@@ -253,6 +253,7 @@ form#jobform textarea {
 
 .portfolio_page_top_image img {
     width: 100%;
+    height: -webkit-fill-available;
 }
 
 .portfolio_posts_wrapper h1 {
@@ -1119,7 +1120,7 @@ ul.course li:nth-child(4) {
     max-width: 1520px;
     margin: auto;
     padding-bottom: 100px;
-    padding-top: 108px;
+    padding: 108px 10px;
 }
 
 /*portfolio inner page */
@@ -3327,6 +3328,10 @@ h5.title_heading_c {
     
     .port_showcase_hove_effect{
         bottom: 20px;
+    }
+    .portfolio_slider img {
+        max-width: 200px;
+        height: 200px;
     }
     
 }
