@@ -2666,48 +2666,62 @@ h5.title_heading_c {
     }
 
 
-
-    // 06-05-2024 Davinder css start
-
-    .all_services_left_section {
-        h1 {
-            font-size: 2.5em;
+  
+    // Service page css by Davinder start 
+    .testimonial_section_inner .card-content h1 {
+        font-size:2.6666666666666665em;
+        color:#000;
+    }
+    .testimonial-right-section 
+    {
+        .testimonial-card{
+            padding: 2.5em !important;
+            margin-left: 1.8333em !important;
         }
     }
-
+    .testimonial-right-section {
+        .client-img{
+            width: 4.166666666666667em !important;
+            height: 4.166666666666667em !important;
+            left:-2.3333em !important;
+        }
+    }
+    
+    .testimonial_section_inner .card-content h3 {
+        font-size:1.5em !important;
+        color:#233253;
+    }
+    .testimonial_service.content {
+        height: 70em;
+        margin: 0;
+        width: 100%;
+    }
     .show_all_services_section {
         padding: 1.7em;
     }
-
-    .service_both_sections {
+    .service_both_sections{
         display: block;
-    }
-
-    .service_navigate_button button {
-        font-size: 1.34em;
     }
 
     .services_faqs_wrapper {
         grid-template-columns: 1fr;
     }
-
-    .testimonial-right-section {
+    .testimonial-right-section{
         .dots {
             position: absolute;
             bottom: -40.25em;
             left: 50%;
-        }
+          }
     }
-
-    .service_page_left_section {
+    .service_page_left_section{
         text-align: left;
+        padding: 1.6666666666666667em 1.6666666666666667em 3.3333em 1.6666666666666667em;
     }
 
-    .service_content_heading h1 {
-        font-size: 1.7em;
-    }
 
-    // 06-05-2024 Davinder css end
+
+           
+    // Service page css by Davinder end 
 
 
 
@@ -2926,7 +2940,7 @@ h5.title_heading_c {
 
         p,
         a {
-            font-size: 3em !important;
+            font-size: 2em !important;
         }
     }
 
@@ -3103,10 +3117,6 @@ h5.title_heading_c {
         align-items: flex-start;
     }
 
-    body.__className_aaf875 {
-        font-size: 6px;
-    }
-
     .home_slider_wrapper p {
         font-size: 3em;
     }
@@ -3172,7 +3182,7 @@ h5.title_heading_c {
     }
 
     .menu-right-container-bottom a {
-        font-size: 4em;
+        font-size: 2em;
     }
 
     .lightbox-container {
@@ -3214,6 +3224,9 @@ h5.title_heading_c {
         grid-template-columns: 1fr 1fr;
         column-gap: 0;
     }
+    .filter_course_top_left h1{
+        font-size: 2em;
+    }
 
     ul.course {
         width: 80%;
@@ -3223,15 +3236,15 @@ h5.title_heading_c {
             line-height: normal !important;
 
             h1 {
-                font-size: 3em !important;
+                font-size: 2em !important;
             }
 
             span {
-                font-size: 2em;
+                font-size: 1.4em;
             }
 
             a {
-                font-size: 2.5em !important;
+                font-size: 2em !important;
             }
         }
     }
@@ -3251,16 +3264,16 @@ h5.title_heading_c {
         }
 
         h1 {
-            font-size: 7em;
+            font-size: 4.5em;
         }
 
         h2 {
-            font-size: 4em;
+            font-size: 3em;
         }
 
         p,
         a {
-            font-size: 2em;
+            font-size: 1.5em;
         }
 
         a.button_global {
@@ -3269,6 +3282,7 @@ h5.title_heading_c {
         }
     }
 
+    
     .filter_courses_outer {
         width: auto;
         height: auto;
@@ -3278,26 +3292,26 @@ h5.title_heading_c {
     select.filter_course_top_right {
         padding: 12px 20px;
         max-width: 90%;
-        font-size: 2em;
+        font-size: 1.2em;
     }
 
     .what_u_learn_section p {
-        font-size: 2.5em;
+        font-size: 2em;
     }
 
     .what_u_learn_section ul.course_points li {
         h3 {
-            font-size: 2.5em;
+            font-size: 2em;
         }
 
         p, ul{
-            font-size: 1.5em;
+            font-size: 1.2em;
         }
     }
     .portfolio_posts_wrapper {
         margin-top: 40px;
        h1 {
-            font-size: 5em;
+            font-size: 4em;
             padding-left: 10px;
         }
     }
@@ -3305,15 +3319,12 @@ h5.title_heading_c {
     .portfolio_heading_image_wrapper{
         align-items: stretch;
     }
-    .port_showcase_title h2{
-        font-size: 2.5em;
+    .port_showcase_title h2,
+    .port_showcase_short_description h4,
+    .port_showcase_category{
+        font-size: 1.2em;
     }
-    .port_showcase_short_description h4{
-        font-size: 2em;
-    }
-    .port_showcase_category {
-        font-size: 2em;
-    }
+    
     .port_showcase_hove_effect{
         bottom: 20px;
     }
@@ -3330,7 +3341,7 @@ h5.title_heading_c {
     }
 
     .course-page-top-section h1 {
-        font-size: 4.5em;
+        font-size: 3.5em;
     }
 
     .filter_courses_outer {
@@ -3339,7 +3350,105 @@ h5.title_heading_c {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
-
+// Service page css by Davinder start 
+.all_services_left_section {
+    h1 {
+        font-size: 3.3333333333333333em;
+    }
+}
+.what_u_learn_section {
+    h2{
+        font-size: 2em;
+    }
+    ul.course_points li {
+        h3 {
+            font-size: 1.4em;
+        }
+    
+        p, ul{
+            font-size: 1em;
+        }
+    }
+}
+.what_u_learn_section p {
+    font-size: 1.4em;
+}
+.all_services_outer {
+    box-shadow: 0em 0em 0.5833em rgba(0, 0, 0, 0.2);
+    margin-bottom: 3.3333333333333333em;
+    padding: 1.25em;
+    border-radius: 0.4167em;
+    border: unset;
+}
+.footer_wrapper .footer-center-section{
+    padding: 5em 0em 0em 1.6666666666666667em;
+}
+.service_navigate_button {
+    button {
+        font-size: 1.33333em;
+    }
+}
+.testimonial-right-section {
+    .dots {
+        transform:unset;
+        bottom: -43.25em;
+        left: 38%;
+      }
+} 
+.service_content_heading {
+    h1{
+        font-size:1.6666666666666667em;
+    }
+}
+        
+.service_top_heading_first {
+    h1 {
+        font-size: 2.5em;
+        text-align: left;
+        }
+}
+        
+.service_top_decription{
+    p {
+        text-align: left;
+        font-size: 1.5em;
+        }
+} 
+.service_top_sub_heading {
+    h1 {
+        font-size: 2.5em;
+        margin: 0;
+        width: 100%;
+        text-align: left;
+        }
+} 
+.all_services_right_section {
+    .service_content_description 
+    {p {
+        font-size: 1.333333em;
+    }
+}
+}
+.services_faq_heading {
+h1 {
+   font-size: 1.9166666666666667em;
+    }
+}
+.footer_outer{
+    padding: 0;
+}
+.services_faqs_wrapper{
+    padding: 1.6666666666666667em;
+}
+.services_faq_left_section {
+    h1 {
+        font-size: 2.5em !important;
+    }
+} 
+.service_content_description {
+    margin-bottom: 1.25em;
+}
+// Service page css by Davinder end
 
 }
 
