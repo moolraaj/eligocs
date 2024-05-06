@@ -1,5 +1,14 @@
 export const allExportedApi = () => {
 
+  //fetch call to action api for all pages
+
+
+  const fetchCallToAction=async()=>{
+    let response=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/call_to_action?fields=acf&acf_format=standard`)
+    let data=await response.json()
+    return data
+  }
+
   // fetch home page api
   const HomeApi = async () => {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pages?slug=home&fields=acf&acf_format=standard`,{ next: { revalidate: 10 }});
@@ -163,6 +172,7 @@ const SingleBlogPost = async (slug) => {
 
 
   return {
+    fetchCallToAction,
     HomeApi,
     AboutApi,
     portfolioApi,

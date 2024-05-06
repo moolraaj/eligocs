@@ -1,31 +1,14 @@
-'use client'
-import { allExportedApi } from "@/utils/apis/Apis";
+ 
+ 
+import CallToAction from "@/app/call-to-action/callToAction"
 import Link from "next/link"
-import { useEffect, useState } from "react";
+ 
 
 
 
-function BlogPage() {
+function BlogPage({blogPageData,allBlogPosts}) {
 
-  let api = allExportedApi()
-  const [blogPageData, setBlogPageData] = useState([])
-  const [allBlogPosts, setAllBlogPosts] = useState([])
-
-  const LoadBlog = async () => {
-    let data = await api.BlogPageApi();
-    setBlogPageData(data)
-  }
-
-  const loadAllBlog = async () => {
-    let result = await api.AllBlogPOsts();
-    setAllBlogPosts(result)
-    console.log(result)
-  }
-
-  useEffect(() => {
-    LoadBlog()
-    loadAllBlog()
-  }, [])
+  
 
 
 
@@ -75,6 +58,7 @@ function BlogPage() {
           </div>
         </div>
       </div>
+      <CallToAction/>
     </>
   )
 }
