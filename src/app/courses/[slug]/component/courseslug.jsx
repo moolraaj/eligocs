@@ -67,7 +67,7 @@ export default function CourseSlug({ data }) {
           })}
         </div>
       </div>
-      <CallToAction/>
+      
     </>
   );
 }
