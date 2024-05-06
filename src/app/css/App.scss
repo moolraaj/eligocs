@@ -2538,9 +2538,6 @@ h5.title_heading_c {
 
 
 @media only screen and (max-width:1500px) {
-    .page_outer {
-        padding: 20px;
-    }
 
     .footer_outer {
         padding-left: 30px;
@@ -2644,48 +2641,62 @@ h5.title_heading_c {
 
 
 
-    // 06-05-2024 Davinder css start
-
-    .all_services_left_section {
-        h1 {
-            font-size: 2.5em;
+     
+    // Service page css by Davinder start 
+    .testimonial_section_inner .card-content h1 {
+        font-size:2.6666666666666665em;
+        color:#000;
+    }
+    .testimonial-right-section 
+    {
+        .testimonial-card{
+            padding: 2.5em !important;
+            margin-left: 1.8333em !important;
         }
     }
-
+    .testimonial-right-section {
+        .client-img{
+            width: 4.166666666666667em !important;
+            height: 4.166666666666667em !important;
+            left:-2.3333em !important;
+        }
+    }
+    
+    .testimonial_section_inner .card-content h3 {
+        font-size:1.5em !important;
+        color:#233253;
+    }
+    .testimonial_service.content {
+        height: 70em;
+        margin: 0;
+        width: 100%;
+    }
     .show_all_services_section {
         padding: 1.7em;
     }
-
-    .service_both_sections {
+    .service_both_sections{
         display: block;
-    }
-
-    .service_navigate_button button {
-        font-size: 1.34em;
     }
 
     .services_faqs_wrapper {
         grid-template-columns: 1fr;
     }
-
-    .testimonial-right-section {
+    .testimonial-right-section{
         .dots {
             position: absolute;
             bottom: -40.25em;
             left: 50%;
-        }
+          }
     }
-
-    .service_page_left_section {
+    .service_page_left_section{
         text-align: left;
+        padding: 1.6666666666666667em 1.6666666666666667em 3.3333em 1.6666666666666667em;
     }
 
-    .service_content_heading h1 {
-        font-size: 1.7em;
-    }
 
-    // 06-05-2024 Davinder css end
 
+           
+    // Service page css by Davinder end 
 
 
     .company_flex {
@@ -2955,20 +2966,26 @@ h5.title_heading_c {
     .page_inner.quote_section_inner .home_quote_wrapper {
         width: 100%;
     }
-
+    .development_right_section{
+    .develop_para{
+        font-size: 1.5em;
+    }  
+    }
     .page_inner.quote_section_inner .home_quote_wrapper {
         width: 100%;
     }
-
+    .quote_redirection{
+        font-size:  1.5em;
+    }
 
     .page_outer.testimonial_section_outer.scrolling {
         padding: 10px 20px;
     }
 
     .qoute_para p {
-        font-size: 5.1875em;
+        font-size:  1.5em;
         line-height: 56px;
-        margin: 0px 0px 80px 0px;
+        margin: 0em 0em 1.6667em 0em;
     }
 
     .page_inner.portfolio_section_inner {
@@ -2983,7 +3000,7 @@ h5.title_heading_c {
     }
 
     .testimonial_left_section h1 {
-        font-size: 7em;
+        font-size: 3.3333em;
         line-height: 60px;
         width: 71%;
     }
@@ -3011,18 +3028,18 @@ h5.title_heading_c {
     }
 
     .portfolio_left_section h1 {
-        font-size: 8.2em;
+        font-size: 4.1667em;
         width: 90%;
         padding-bottom: 48px;
     }
 
     .develop_number h4 {
-        font-size: 32px;
+        font-size: 2.0833em;
         margin: 8px 0px;
     }
 
     .develop_heading h4 {
-        font-size: 5.125em;
+        font-size: 2.9167em;
     }
 
     .trans_left_section h1 {
@@ -3030,7 +3047,7 @@ h5.title_heading_c {
     }
 
     a.trans_redirecttion {
-        font-size: 3.3em;
+        font-size: 1.6667em;
     }
 
     .trans_right_section {
@@ -3038,7 +3055,7 @@ h5.title_heading_c {
     }
 
     ul.transformation_wrapper li h4 {
-        font-size: 6.6em;
+        font-size: 3.75em;
         margin: 0.4em 0px;
         color: #EAAA00;
         font-family: bebas;
@@ -3056,7 +3073,7 @@ h5.title_heading_c {
 
     .company_left_section p {
         color: #fff;
-        font-size: 3em;
+        font-size: 1.5em;
     }
 
     .company_left_section {
@@ -3065,7 +3082,7 @@ h5.title_heading_c {
     }
 
     .company_question h4 {
-        font-size: 4.5em;
+        font-size: 2.25em;
     }
 
 
@@ -3080,21 +3097,21 @@ h5.title_heading_c {
         align-items: flex-start;
     }
 
-    body.__className_aaf875 {
-        font-size: 6px;
-    }
+    // body.__className_aaf875 {
+    //     font-size: 6px;
+    // }
 
     .home_slider_wrapper p {
-        font-size: 3em;
+        font-size:  1.5em;
     }
 
     .home_about_left h1 {
-        font-size: 8.2em;
+        font-size: 4.1667em;
     }
 
     .home_about_right p {
         color: #fff;
-        font-size: 3em;
+        font-size: 1.5em;
         line-height: 38px;
     }
 
@@ -3105,7 +3122,7 @@ h5.title_heading_c {
     .company_left_section h1 {
         line-height: 55px;
         margin: 0;
-        font-size: 6em;
+        font-size: 3.3333em;
     }
 
     .company_left_section {
@@ -3118,7 +3135,7 @@ h5.title_heading_c {
 
     .home_slider_wrapper h1:first-child,
     .home_slider_wrapper h1:nth-child(2) {
-        font-size: 4em;
+        font-size: 2.5em;
     }
 
     .all-blog-posts-outer {
@@ -3316,7 +3333,93 @@ h5.title_heading_c {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
+ // Service page css by Davinder start 
+ .all_services_left_section {
+    h1 {
+        font-size: 3.3333333333333333em;
+    }
+}
+.service_page_right_section {
+    padding: 0em 1.6667em;
+}
 
+.all_services_outer {
+    box-shadow: 0em 0em 0.5833em rgba(0, 0, 0, 0.2);
+    margin-bottom: 3.3333333333333333em;
+    padding: 1.25em;
+    border-radius: 0.4167em;
+    border: unset;
+}
+.footer_wrapper .footer-center-section{
+    padding: 5em 0em 0em 1.6666666666666667em;
+}
+.service_navigate_button {
+    button {
+        font-size: 1.33333em;
+    }
+}
+.testimonial-right-section {
+    .dots {
+        transform:unset;
+        bottom: -43.25em;
+        left: 38%;
+      }
+} 
+.service_content_heading {
+    h1{
+        font-size:1.6666666666666667em;
+    }
+}
+        
+.service_top_heading_first {
+    h1 {
+        font-size: 2.5em;
+        text-align: left;
+        margin-bottom: 0;
+        }
+}
+        
+.service_top_decription{
+    p {
+        text-align: left;
+        font-size: 1.5em;
+        }
+} 
+.service_top_sub_heading {
+    h1 {
+        font-size: 2.5em;
+        margin: 0;
+        width: 100%;
+        text-align: left;
+        }
+} 
+.all_services_right_section {
+    .service_content_description 
+    {p {
+        font-size: 1.333333em;
+    }
+}
+}
+.services_faq_heading {
+h1 {
+   font-size: 1.9166666666666667em;
+    }
+}
+.footer_outer{
+    padding: 0;
+}
+.services_faqs_wrapper{
+    padding: 1.6666666666666667em;
+}
+.services_faq_left_section {
+    h1 {
+        font-size: 2.5em !important;
+    }
+} 
+.service_content_description {
+    margin-bottom: 1.25em;
+}
+// Service page css by Davinder end
 
 }
 
