@@ -1450,7 +1450,7 @@ span.cline:after {
 
 .service_page_left_section {
     text-align: center;
-    padding: 40px 0px !important;
+    padding: 40px 20px !important;
 }
 
 .services_faq_outer {
@@ -2600,6 +2600,43 @@ h5.title_heading_c {
     li.common-btns {
         white-space: break-spaces !important;
     }
+    
+    
+    
+    // 06-05-2024 Davinder css start
+    
+    .all_services_left_section {
+        h1 {
+            font-size: 2.5em;
+        }
+    }
+    .show_all_services_section {
+        padding: 1.7em;
+    }
+    .service_both_sections{
+        display: block;
+    }
+    .service_navigate_button button {
+        font-size: 1.34em;
+    }
+    .services_faqs_wrapper {
+        grid-template-columns: 1fr;
+    }
+    .testimonial-right-section{
+        .dots {
+            position: absolute;
+            bottom: -40.25em;
+            left: 50%;
+          }
+    }
+    .service_page_left_section{
+        text-align: left;
+    }
+    .service_content_heading h1{
+        font-size:1.7em;
+    }
+    // 06-05-2024 Davinder css end
+
 
 
     .company_flex {
@@ -2787,6 +2824,29 @@ h5.title_heading_c {
     .course_intro_wrapper p {
         font-size: 2em !important;
     }
+        // 06-05-2024 Davinder css start
+        .service_top_heading_first {
+            h1 {
+                font-size: 1.875em;
+                text-align: left;
+            }
+        }
+        .service_top_decription{
+            p {
+                text-align: left;
+                font-size: 1.125em;
+            }
+        } 
+        .service_top_sub_heading {
+            h1 {
+                font-size: 1.875em;
+                margin: 0;
+                width: 100%;
+                text-align: left;
+            }
+        }
+        // 06-05-2024 Davinder css end
+    
 
 }
 
@@ -2804,6 +2864,11 @@ h5.title_heading_c {
     .footer_wrapper .footer-top-headings {
         margin-left: 0px;
     }
+
+
+
+
+
 
 
     .page_inner.quote_section_inner .home_quote_wrapper {

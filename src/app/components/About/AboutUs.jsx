@@ -1,31 +1,20 @@
-'use client'
-import React, { useEffect, useState } from "react";
+ 
+ 
 
 import ParallaxContainer from "./ParallaxContainer";
 
-import JournyImageSlider from "./JournyImageSlider";
+ 
 import WorkingProcess from "./WorkingProcess";
 import Testimoinals from "../../common/Testimoinals";
-import { allExportedApi } from "@/utils/apis/Apis.jsx";
+ 
 import Link from "next/link";
+import CallToAction from "@/app/call-to-action/callToAction";
 
 
 
 
-const AboutUs = () => {
-  const [result, setResult] = useState([]);
-  const api=allExportedApi()
-
-  const loadData = async () => {
-    let data = await api.AboutApi();
-    setResult(data);
-    console.log(data);
-  };
-
-  useEffect(() => {
-    loadData();
-    
-  }, []);
+const AboutUs = ({result}) => {
+ 
 
   return (
     <>
@@ -148,19 +137,8 @@ const AboutUs = () => {
               speed={4}
               className="container-4"
               backgroundColor="#191C1B">
-              <div className="content">
-                <div className="success-journy-outer">
-                  <div className="success-journy-left">
-                    <h2>
-                      Join Us on the Journey to Success with Our Tailored
-                      Solutions and Expert Guidance.
-                    </h2>
-                    <button id="sucess-journy-btn"><Link href={ele.acf.unlock_success_now_button} target="_blank">Unlock Success Now</Link></button>
-                  </div>
-                  <div className="success-journy-right">
-                    <JournyImageSlider result={ele} />
-                  </div>
-                </div>
+              <div className="content call_action_wrapper">
+                <CallToAction />
               </div>
             </ParallaxContainer>
             <ParallaxContainer
