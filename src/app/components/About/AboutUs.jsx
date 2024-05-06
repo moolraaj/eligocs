@@ -1,20 +1,20 @@
- 
- 
+
+
 
 import ParallaxContainer from "./ParallaxContainer";
 
- 
+
 import WorkingProcess from "./WorkingProcess";
 import Testimoinals from "../../common/Testimoinals";
- 
+
 import Link from "next/link";
 import CallToAction from "@/app/call-to-action/callToAction";
 
 
 
 
-const AboutUs = ({result}) => {
- 
+const AboutUs = ({ result }) => {
+
 
   return (
     <>
@@ -72,7 +72,7 @@ const AboutUs = ({result}) => {
                       </h1>
                       <h3>{ele.acf.top_heading_second}</h3>
                       <p>{ele.acf.top_para_first}</p>
-                      <button id="get-in-tch"><Link href={ele.acf.get_in_touch_button}  target="_blank">Get In Touch</Link></button>
+                      <button id="get-in-tch"><Link href={ele.acf.get_in_touch_button} target="_blank">Get In Touch</Link></button>
                     </div>
                   </div>
                 </div>
@@ -138,7 +138,11 @@ const AboutUs = ({result}) => {
               className="container-4"
               backgroundColor="#191C1B">
               <div className="content call_action_wrapper">
-                <CallToAction />
+                <div className="about_call_action">
+                  <div className="inner_call">
+                    <CallToAction />
+                  </div>
+                </div>
               </div>
             </ParallaxContainer>
             <ParallaxContainer

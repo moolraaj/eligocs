@@ -60,6 +60,29 @@ body {
 }
 
 
+.call_outer {
+    background: $primaryyellow;
+   @extend %section_top_bottom_padding;
+}
+.inner_call {
+  @extend %max-width;
+}
+.call_wrapper {
+    @include grid-property(grid,70% 1fr ,unset,20px);
+}
+.call_slider_image img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+} 
+
+
+.call_action_wrapper {
+    margin: auto!important;
+    @extend %section_top_bottom_padding;
+}
+
 
 
 ul {
@@ -230,6 +253,7 @@ form#jobform textarea {
 
 .portfolio_page_top_image img {
     width: 100%;
+    height: -webkit-fill-available;
 }
 
 .portfolio_posts_wrapper h1 {
@@ -1096,7 +1120,7 @@ ul.course li:nth-child(4) {
     max-width: 1520px;
     margin: auto;
     padding-bottom: 100px;
-    padding-top: 108px;
+    padding: 108px 10px;
 }
 
 /*portfolio inner page */
@@ -2914,7 +2938,7 @@ h5.title_heading_c {
 
         p,
         a {
-            font-size: 3em !important;
+            font-size: 2em !important;
         }
     }
 
@@ -3097,10 +3121,6 @@ h5.title_heading_c {
         align-items: flex-start;
     }
 
-    // body.__className_aaf875 {
-    //     font-size: 6px;
-    // }
-
     .home_slider_wrapper p {
         font-size:  1.5em;
     }
@@ -3166,7 +3186,7 @@ h5.title_heading_c {
     }
 
     .menu-right-container-bottom a {
-        font-size: 4em;
+        font-size: 2em;
     }
 
     .lightbox-container {
@@ -3208,6 +3228,9 @@ h5.title_heading_c {
         grid-template-columns: 1fr 1fr;
         column-gap: 0;
     }
+    .filter_course_top_left h1{
+        font-size: 2em;
+    }
 
     ul.course {
         width: 80%;
@@ -3217,15 +3240,15 @@ h5.title_heading_c {
             line-height: normal !important;
 
             h1 {
-                font-size: 3em !important;
+                font-size: 2em !important;
             }
 
             span {
-                font-size: 2em;
+                font-size: 1.4em;
             }
 
             a {
-                font-size: 2.5em !important;
+                font-size: 2em !important;
             }
         }
     }
@@ -3245,16 +3268,16 @@ h5.title_heading_c {
         }
 
         h1 {
-            font-size: 7em;
+            font-size: 4.5em;
         }
 
         h2 {
-            font-size: 4em;
+            font-size: 3em;
         }
 
         p,
         a {
-            font-size: 2em;
+            font-size: 1.5em;
         }
 
         a.button_global {
@@ -3263,6 +3286,7 @@ h5.title_heading_c {
         }
     }
 
+    
     .filter_courses_outer {
         width: auto;
         height: auto;
@@ -3272,26 +3296,26 @@ h5.title_heading_c {
     select.filter_course_top_right {
         padding: 12px 20px;
         max-width: 90%;
-        font-size: 2em;
+        font-size: 1.2em;
     }
 
     .what_u_learn_section p {
-        font-size: 2.5em;
+        font-size: 2em;
     }
 
     .what_u_learn_section ul.course_points li {
         h3 {
-            font-size: 2.5em;
+            font-size: 2em;
         }
 
         p, ul{
-            font-size: 1.5em;
+            font-size: 1.2em;
         }
     }
     .portfolio_posts_wrapper {
         margin-top: 40px;
        h1 {
-            font-size: 5em;
+            font-size: 4em;
             padding-left: 10px;
         }
     }
@@ -3299,17 +3323,18 @@ h5.title_heading_c {
     .portfolio_heading_image_wrapper{
         align-items: stretch;
     }
-    .port_showcase_title h2{
-        font-size: 2.5em;
+    .port_showcase_title h2,
+    .port_showcase_short_description h4,
+    .port_showcase_category{
+        font-size: 1.2em;
     }
-    .port_showcase_short_description h4{
-        font-size: 2em;
-    }
-    .port_showcase_category {
-        font-size: 2em;
-    }
+    
     .port_showcase_hove_effect{
         bottom: 20px;
+    }
+    .portfolio_slider img {
+        max-width: 200px;
+        height: 200px;
     }
     
 }
@@ -3324,7 +3349,7 @@ h5.title_heading_c {
     }
 
     .course-page-top-section h1 {
-        font-size: 4.5em;
+        font-size: 3.5em;
     }
 
     .filter_courses_outer {

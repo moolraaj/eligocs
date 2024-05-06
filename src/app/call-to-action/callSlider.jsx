@@ -26,16 +26,20 @@ const CallSlider = ({ slider }) => {
   return (
     <div className="journy-image-container">
       {slider.map((image, index) => (
-        <div className="call_slider_image" key={index}>
- <img
-          
-          id={`slide-${index}`}
-          src={image}
-          alt={`Slide ${index}`}
-          style={{ position: "absolute", left: 0, top: 0, opacity: index === currentIndex ? 1 : 0 }}
-        />
+        <div
+          className="call_slider_image"
+          key={index}
+          style={{
+            display: index === currentIndex ? "block" : "none",
+            opacity: index === currentIndex ? 1 : 0
+          }}
+        >
+          <img
+            id={`slide-${index}`}
+            src={image}
+            alt={`Slide ${index}`}
+          />
         </div>
-       
       ))}
     </div>
   );

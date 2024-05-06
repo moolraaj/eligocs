@@ -58,7 +58,12 @@ function BlogPage({blogPageData,allBlogPosts}) {
           </div>
         </div>
       </div>
-      <CallToAction/>
+      <div className="call_outer inner_blogs">
+            <div className="inner_call">
+               <CallToAction />
+            </div>
+         </div>
+       
     </>
   )
 }

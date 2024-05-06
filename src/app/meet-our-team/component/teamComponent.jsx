@@ -1,6 +1,7 @@
 import React from 'react'
 
 function TeamComponent({ result }) {
+    console.log(result)
     return (
         <>
 
@@ -33,11 +34,11 @@ function TeamComponent({ result }) {
                                 <p>{ele.acf.our_team_designation}</p>
                             </div>
                             <div className="member_name">
-                                {ele.acf.our_team_social_connectivity.map((e, index) => {
+                                {ele.acf.our_team_social_connectivity.map((icons, index) => {
                                     return <div className="team_social_icon_wrapper" key={index}>
 
                                         <div className="member_social_icons">
-                                            <a href={e.social_link} target='_blanck'><img src={e.social_icon.url} alt='social icons' /></a>
+                                            <a href={icons.social_link} target='_blanck'><img src={icons.our_team_social_media} alt='social icons' /></a>
 
                                         </div>
 
