@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 import PortfolioComponent from '@/app/portfolio/component/portfolioComponent';
 
-function PortfolioSection({ ele }) {
+function PortfolioSection() {
 
     const triggerRef = useRef(null);
 
@@ -40,12 +40,14 @@ function PortfolioSection({ ele }) {
 
 
     return (
+        <>
+        
         <section ref={triggerRef} id='horizontal' style={{ width: '100%', height: '90vh', margin: 'auto', overflow: 'hidden', zIndex: '99999' }}>
             <div className="page_outer portfolio_section_outer scrolling">
                 <div className="page_inner portfolio_section_inner">
                     <div className="portfolio_wrapper">
                         <div className="portfolio_left_section">
-                            <h1>{ele.acf.portfolio_heading}</h1>
+                            <h1>Similar Projects</h1>
                         </div>
                         <div className='scrolling_portfolio_section' >
                             <div className="portfolio_inner">
@@ -56,6 +58,8 @@ function PortfolioSection({ ele }) {
                 </div>
             </div>
         </section>
+        </>
+        
     );
 }
 

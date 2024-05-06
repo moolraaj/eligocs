@@ -41,8 +41,9 @@ function PortfolioPage() {
                             </div>
                             <div className="portfolio_page_top_image">
                                 <img src={ele.acf.portfolio_page_image} alt="" />
+                                <div className="divider-yellow"></div> 
                             </div>
-                            <div className="divider-yellow"></div> 
+                            
 
 
                             </div>
@@ -105,6 +106,9 @@ function PortfolioPage() {
 
                 })
             }
+            <div className="unlock_success_btn">
+                <Link href={`/`}>Unlock Success Now</Link>
+            </div>
             </div>
         </>
     )

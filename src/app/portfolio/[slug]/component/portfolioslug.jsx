@@ -1,5 +1,8 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState,useRef,useEffect} from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 import PortfolioComponent from "../../component/portfolioComponent";
 import Lightbox from '../../Lightbox';
@@ -17,8 +20,39 @@ export default  function Portfolioslug({ data }) {
         setLightboxImage(null);
     };
 
+
+    const triggerRef = useRef(null);
+
+    useEffect(() => {
+        const pin = gsap.fromTo('.portfolio_inner', {
+            translateX: 0
+        }, {
+            translateX: '-300vw',
+            ease: 'none',
+            duration: 1,
+            scrollTrigger: {
+                trigger: triggerRef.current,
+                start: 'center center',
+                end: '2000 top',
+                scrub: 0.9,
+                pin: true,
+                pinSpacer: false,
+                pinnedContainer: '#horizontal',
+                invalidateOnRefresh: true,
+                onComplete: function () {
+                    document.querySelector('.pin-spacer').style.display = 'none !important';
+                }
+            }
+        })
+
+        return () => {
+            pin.kill()
+        }
+    }, [])
+
     return (
         <>
+
             {
                 data.map((ele) => {
                     return <div className="portfolio_inner_template" key={ele.id}>
@@ -44,18 +78,24 @@ export default  function Portfolioslug({ data }) {
                                 </div>
                             </div>
                         </div>
+                        <section ref={triggerRef} id='horizontal' style={{ width: '100%', height: '90vh', margin: 'auto', overflow: 'hidden', zIndex: '99999' }}>
                         <div className="portfolio_project">
                             <div className="portfolio_projects_flex">
                                 <div className="portfolio_project_heading">
                                     <h1>{ele.acf.portfolio_projects_heading}</h1>
                                 </div>
-                                <div className="portfolio_showcase_right">
+                                
 
+                                <div className="portfolio_showcase_right">
+                                <div className="portfolio_inner">
                                     <PortfolioComponent />
+                                    </div>
                                 </div>
+                               
                             </div>
 
                         </div>
+                        </section>
 
                         <marquee  behavior="scroll"  direction="left" scrollamount="15">
                         <div className="portfolio_slider">
