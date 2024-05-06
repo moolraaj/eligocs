@@ -30,28 +30,34 @@ const JournyImageSlider = ({ result }) => {
   }, [result, currentSliderIndex]);
 
   useEffect(() => {
-    if (!currentImages || currentImages.length === 0) return;
-
+    if (!currentImages || currentImages.length === 0 || !imageRef.current) return;
+  
     const currentImage = currentImages[currentImageIndex];
-
+    if (!currentImage || !currentImage.url) return; // Ensure currentImage and its url are defined
+  
     // Animate image transition
     gsap.to(imageRef.current, {
       duration: 1,
       opacity: 0,
       onComplete: () => {
+        // Ensure imageRef.current is still valid before modifying it
+        if (!imageRef.current) return;
+        
         imageRef.current.src = currentImage.url; // Use the url property of the current image
         gsap.to(imageRef.current, { duration: 1, opacity: 1 });
       }
     });
-
+  
     // Move to the next image in the current slider
     const imageInterval = setInterval(() => {
       setCurrentImageIndex(prevIndex => (prevIndex + 1) % currentImages.length);
     }, 3000);
-
+  
     // Clear the interval when component unmounts or when the images change
     return () => clearInterval(imageInterval);
   }, [currentImages, currentImageIndex]);
+  
+  
 
   if (!currentImages || currentImages.length === 0) {
     return null;

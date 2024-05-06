@@ -129,6 +129,7 @@ button {
     font-weight: 800;
     color: #191c1b;
     line-height: 25px;
+    text-transform: uppercase;
   }
 
   h3 {
@@ -144,7 +145,7 @@ button {
     line-height: 55px;
   }
   button {
-    padding: $padding 40px;
+    padding: 15px 35px;
     border-radius: $border-radius;
     text-align: right;
     float: right;
@@ -170,6 +171,9 @@ button {
     font-size: $primary-font-size;
     font-weight: $secondory-font-weight;
     color: $secondory-color;
+    margin-bottom: 20px;
+
+    
   }
 }
 
@@ -267,6 +271,7 @@ button {
 }
 .content_mission_our.content {
   display: block;
+  padding: 70px 0px;
 }
 .testimonial_wrapper {
   display: grid;
@@ -353,11 +358,17 @@ button {
   margin-top: 80px;
 }
 
+.testimonial-card p {
+  font-size: 1.25em;
+}
+
+
 .success-journy-left {
   h2 {
     font-size: 2.5em;
     font-weight: $font-weight;
     line-height: 60.4px;
+    margin-bottom: 80px;
   }
   button {
     padding: $padding 40px;
@@ -469,16 +480,15 @@ button {
 .dot {
   height: 12px;
   width: 12px;
-  background-color: #f7db96;
+  background-color: #E2E2E2;
   border-radius: 50%;
   display: inline-block;
   margin: 0 5px;
-  cursor: pointer;
-  box-shadow: 1px 0px 0px  0px #3b3b3b ;
-}
+ }
+
 
 .active-dot {
-  background-color: #eaaa00;
+  background-color: #F7D117;
 }
 
 

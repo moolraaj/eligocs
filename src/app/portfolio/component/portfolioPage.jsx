@@ -42,6 +42,9 @@ function PortfolioPage() {
                             <div className="portfolio_page_top_image">
                                 <img src={ele.acf.portfolio_page_image} alt="" />
                             </div>
+                            <div className="divider-yellow"></div> 
+
+
                             </div>
                             {/* <div className="portfolio_page_top_description">
                                 <p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_page_description }}></p>

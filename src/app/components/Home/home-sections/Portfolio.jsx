@@ -1,62 +1,37 @@
-
-
 'use client'
 
 import React, { useEffect, useRef} from 'react';
+
 import { gsap } from 'gsap';
+import { Draggable } from 'gsap/dist/Draggable';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 import PortfolioComponent from '@/app/portfolio/component/portfolioComponent';
 
-function PortfolioSection({ ele }) {
-    
-    const  triggerRef = useRef(null);
+function PortfolioSection({ ele }) {   
+   
 
-    useEffect(() => {
-     const pin = gsap.fromTo('.portfolio_inner',{
-      
-     },{
-        translateX: '-300vw',
-        ease : 'none',
-        duration: 2,
-        scrollTrigger: {
-            trigger: triggerRef.current,
-            start: 'center center',
-            end: '2000 top',
-            scrub: 4,
-            pin: true,
-            pinnedContainer: '#horizontal',
-            invalidateOnRefresh: true,
-            scrollBy: triggerRef
-        }
-     })
-
-     return ()=>{
-        pin.kill()
-     }
-    }, [])
-    
 
     return (
         <>
-        <section ref={triggerRef} id='horizontal' style={{width: '100%', height: '90vh',margin: 'auto' ,overflow: 'hidden', zIndex: '99999', scrollBehavior: 'smooth'}}>
-        <div className="page_outer portfolio_section_outer scrolling">
-            <div className="page_inner portfolio_section_inner">
-                <div className="portfolio_wrapper">
-                    <div className="portfolio_left_section">
-                        <h1>{ele.acf.portfolio_heading}</h1>
-                    </div>
-                    <div className='scrolling_portfolio_section' >
-                    <div className="portfolio_inner">
-                        <PortfolioComponent/>
-                    </div>
+      <section id='horizontal'>
+            <div className="page_outer portfolio_section_outer scrolling">
+                <div className="page_inner portfolio_section_inner">
+                    <div className="portfolio_wrapper">
+                        <div className="portfolio_left_section">
+                            <h1>{ele.acf.portfolio_heading}</h1>
+                        </div>
+                        <div className='scrolling_portfolio_section'>
+                            <div className="portfolio_inner">
+                                <PortfolioComponent />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </section>
-        </>
+      </>
     );
 }
 

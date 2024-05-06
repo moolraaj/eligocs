@@ -1,7 +1,7 @@
-
+import React from 'react';
 import Link from 'next/link';
 
-function PortfolioChild({ data }) {
+const PortfolioChild = ({ data }) => {
     return (
         <>
             <div className="portfolio_right_section">
@@ -25,7 +25,7 @@ function PortfolioChild({ data }) {
                                 </div>
                                 <div className="portfolio_inner_right_section">
                                     <div className="port_showcase_category">
-                                        {ele.category.map((cat,index)=>{
+                                         {ele.category.map((cat,index)=>{
                                             return <p key={index}>{cat}</p>
                                         })}
                                     </div>
@@ -36,7 +36,7 @@ function PortfolioChild({ data }) {
                 ))}
             </div>
         </>
-    )
-}
+    );
+};
 
-export default PortfolioChild
+export default PortfolioChild;
