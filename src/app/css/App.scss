@@ -564,6 +564,7 @@ h6.user_name_c {
 .team_banner_image {
     display: flex;
     align-items: baseline;
+    position: relative;
 }
 
 .success-journy-outer {
@@ -2571,20 +2572,19 @@ h5.title_heading_c {
 
     .bottom_banner {
         max-width: 600px;
-        width: 100%;
+        width: 90%;
         position: absolute;
-        height: 103px;
-        background: #EAAA00;
-        bottom: -5%;
-        left: 13%;
+        height: 50px;
+        background: $primaryyellow;
+        left: -30px;
     }
 
     .right_banner_heading {
         margin-top: 40px;
+        padding-left: 10px;
+        width: 100% !important;
     }
-    .right_banner_heading{
-    padding-left: 10px;
-    }
+    
    
 }
 
@@ -2728,6 +2728,9 @@ h5.title_heading_c {
 
     .our_memeber_wrapper {
         padding-top: 20px;
+    }
+    ul.course:nth-child(3n-1) {
+        margin-top: 45px;
     }
 
 }
@@ -2932,7 +2935,7 @@ h5.title_heading_c {
     }
 
     body.__className_aaf875 {
-        font-size: 16px;
+        font-size: 6px;
     }
 
     .home_slider_wrapper p {
@@ -3038,9 +3041,39 @@ h5.title_heading_c {
     .members_image_mobile {
         display: block;
     }
+
+    .courses-posts-outer{
+        grid-template-columns: 1fr 1fr;
+    }
+    ul.course {
+        margin: 20px 0px;
+        li{
+            line-height: normal !important;
+            h1{
+                font-size: 3em !important;
+            }
+            span{
+                font-size: 2em;
+            }
+            a {
+                font-size: 2.5em !important;
+            }
+        }
+    }
+
+    ul.course:nth-child(3n-1){
+        margin-top: 20px;
+    }
+   
     
 }
-
+@media (max-width:468px) {
+    .courses-posts-outer {
+        grid-template-columns: 1fr;
+        
+    }
+    
+}
 @media (max-width:375px) {
     .nav_left_section a.navbar-brand img {
         width: 80% !important;
