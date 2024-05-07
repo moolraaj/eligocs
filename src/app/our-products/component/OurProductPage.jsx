@@ -58,10 +58,10 @@ function OurProductPage() {
               </div>
             )
           })}
-
+          <div className="our_products_wrapper">
           {products.map((product, index) => {
             return (
-              <ul key={index} className={`product${index+1}`}>
+              <ul key={index} className={`product${index+1} our_product`}>
                 <li>
                   <span><h1>{product.acf.product_name}</h1></span>
                   <span><Link href={`/our-products/${product.slug}`}>Read More</Link></span>
@@ -70,6 +70,7 @@ function OurProductPage() {
               </ul>
             )
           })}
+          </div>
         </div>
       </div>
     </>

@@ -597,7 +597,9 @@ form#applyforjob textarea {
 
 
 // Our Product page css....
-
+.product-page-right-info {
+    width: 90% !important;
+}
 .product-top-image-section {
     display: flex;
     justify-content: space-between;
@@ -690,6 +692,25 @@ form#applyforjob textarea {
     width: 75%;
    
 }
+.our_products_wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    .our_product {
+        position: relative;
+
+        li {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        img {
+            width: 100%;
+            z-index: 1;
+        }
+    }
+  
+}
+
 // prodcut inner page css end.......... 
 
 
@@ -3396,7 +3417,6 @@ h5.title_heading_c {
 
     // 06-05-2024 Davinder css end
 
-
 }
 
 
@@ -3775,6 +3795,9 @@ h5.title_heading_c {
     }
 
 
+    .our_products_wrapper {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width:468px) {
