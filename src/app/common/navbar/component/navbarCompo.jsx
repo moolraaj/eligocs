@@ -228,7 +228,7 @@ function NavbarCompo({ data }) {
                         {
                           socialLinks.map((ele, index) => {
                             return <div key={index} className='header_media_icons'>
-                              <a href={ele.iconUrl}><img src={ele.imageUrl} /></a>
+                              <a href={ele.iconUrl} target='_blank'><img src={ele.imageUrl} /></a>
                             </div>
                           })
                         }

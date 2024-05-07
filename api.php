@@ -103,7 +103,6 @@ public function rest_endpoint_handler( WP_REST_Request $request ) {
             'header' => [
                 'siteLogoUrl'     => $this->get_custom_logo_url( 'custom_logo' ),
                 'siteTitle'       => get_bloginfo( 'title' ),
-               
                 'siteDescription' => get_bloginfo( 'description' ),
                 'favicon'         => get_site_icon_url(),
                 'headerMenuItems' => $header_menu_items ? $header_menu_items : [],
@@ -114,6 +113,13 @@ public function rest_endpoint_handler( WP_REST_Request $request ) {
                 'footerMenuItems' => $footer_menu_items ? $footer_menu_items : [],
                 'socialLinks'     => $footer_social_icons,
                 'copyrightText'   => $this->get_copyright_text(),
+                'copyrightTextSecond'   => $this->get_copyright_textarea(),
+                'footerEmail'   => $this->get_footer_email(),
+                'footerPhoneNumberFirst'   => $this->get_footer_phonenumber_first(),
+                'footerPhoneNumberSecond'   => $this->get_footer_phonenumber_second(),
+                'footerHeading1'   => $this->get_footer_heading_one(),
+                'footerHeading2'   => $this->get_footer_heading_two(),
+                'footerHeading3'   => $this->get_footer_heading_three(),
                 'sidebarOne'      => $this->get_sidebar( 'hcms-footer-sidebar-1' ),
                 'sidebarTwo'      => $this->get_sidebar( 'hcms-footer-sidebar-2' ),
             ],
@@ -215,6 +221,35 @@ public function get_social_icons() {
 	public function get_copyright_text() {
 		return get_theme_mod( 'rae_footer_text' );
 	}
+	
+	public function get_copyright_textarea() {
+		return get_theme_mod( 'rae_footer_textarea' );
+	}
+	
+	public function get_footer_email() {
+		return get_theme_mod( 'rae_footer_email' );
+	}
+	
+	public function get_footer_phonenumber_first() {
+		return get_theme_mod( 'rae_footer_phone_first' );
+	}
+	
+	public function get_footer_phonenumber_second() {
+		return get_theme_mod( 'rae_footer_phone_second' );
+	}
+	
+	public function get_footer_heading_one() {
+		return get_theme_mod( 'rae_footer_heading_one' );
+	}
+	
+	public function get_footer_heading_two() {
+		return get_theme_mod( 'rae_footer_heading_two' );
+	}
+	
+	public function get_footer_heading_three() {
+		return get_theme_mod( 'rae_footer_heading_three' );
+	}
+	 
 
 	/**
 	 * Get nav menu items by location.

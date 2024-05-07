@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 function Footer({ response }) {
   const { copyrightText,
@@ -10,7 +11,10 @@ function Footer({ response }) {
     socialLinks,
     footerHeading3,
     siteLogoUrl,
-    footerMenuItems } = response.footer
+    footerMenuItems,
+    portfolioMenuItems } = response.footer
+
+    console.log(response)
 
 
 
@@ -33,22 +37,21 @@ function Footer({ response }) {
               <div className='center-section-second-inner-wrapper'>
                 <h1 className='footer-top-headings'>Our Services</h1>
                 <ul>
-                  {/* {sortedServices.map((service, index) => (
-                    <li key={index}>
-
-                      <Link href={`/services/${service.slug}`}>{service.acf.services_title}</Link>
-                    </li>
-                  ))} */}
+                  {footerMenuItems.map((ele) => (
+                  <li key={ele.id}>
+                  <Link href={`/services/${ele.pageSlug}`}><p dangerouslySetInnerHTML={{__html:ele.title}}></p></Link>  
+                  </li>
+                ))}
                 </ul>
               </div>
               <div className='center-section-third-inner-wrapper'>
                 <h1 className='footer-top-headings'>Our Products</h1>
                 <ul>
-                  {/* {footerMenuItems.map((ele) => (
+                {portfolioMenuItems.map((ele) => (
                   <li key={ele.id}>
-                  <Link href={`/services/${ele.pageSlug}`}><p dangerouslySetInnerHTML={{__html:ele.title}}></p></Link>
+                  <Link href={`/portfolio/${ele.pageSlug}`}><p dangerouslySetInnerHTML={{__html:ele.title}}></p></Link>  
                   </li>
-                ))} */}
+                ))}
                 </ul>
               </div>
               <div className='center-section-fourth-inner-wrapper'>

@@ -158,7 +158,7 @@ const SingleBlogPost = async (slug) => {
 
   // fetch header footer
   const fetchHeaderFooter = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL_HEADER_FOOTER}/header-footer?header_location_id=hcms-menu-header&footer_location_id=hcms-menu-footer`);
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL_HEADER_FOOTER}/header-footer?header_location_id=hcms-menu-header&footer_location_id=hcms-menu-footer&portfolio_location_id=hcms-menu-portfolio`);
     let response = await data.json();
     return response;
   };
