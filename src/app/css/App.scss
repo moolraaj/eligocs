@@ -2948,6 +2948,10 @@ h5.title_heading_c {
     .collapse.navbar-collapse.show {
         left: 35% !important;
     }
+    .collapse.navbar-collapse.show {
+        transform: translateX(-35%) !important;
+    
+    }
 
     form#applyforjob input::placeholder {
         font-size: 18px;
