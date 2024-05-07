@@ -4,28 +4,28 @@ import gsap from 'gsap'
 
 import Formclose from '../../../assets/headerAssets/formclose.png';
 import ApplyForJob from '@/app/forms/applyForJob';
- 
- 
- 
-
-
- 
 
 
 
 
-function HeroSection({ ele,ParallaxContainer }) {
+
+
+
+
+
+
+function HeroSection({ ele, ParallaxContainer }) {
   const [showInnovation, setShowInnovation] = useState(false);
   const [showButton, setShowButton] = useState(false);
   const [animateButton, setAnimateButton] = useState(false);
   const [isApplyJobVisible, setIsApplyJobVisible] = useState(false);
   const sliderRef = useRef(null);
- 
 
 
-  
 
- 
+
+
+
 
   useEffect(() => {
     setAnimateButton(true);
@@ -86,12 +86,12 @@ function HeroSection({ ele,ParallaxContainer }) {
   return (
     <>
 
-{isApplyJobVisible && (
+      {isApplyJobVisible && (
         <div className="cf7_form_outer" style={{ animation: isApplyJobVisible ? 'slide-down 0.5s' : 'slide-up 0.5s' }}>
           <div className="cf7_form_inner">
             <div className="cf7_top_banner">
 
-            <div className="cf7_left_section">
+              <div className="cf7_left_section">
                 <div className="form_banner_heading">
 
                   <h1>apply now</h1>
@@ -118,51 +118,51 @@ function HeroSection({ ele,ParallaxContainer }) {
 
             </div>
             <div className="cf7_form_wrapper">
-                <ApplyForJob />
-              </div>
+              <ApplyForJob />
+            </div>
           </div>
         </div>
       )}
 
-   
-   
-     <ParallaxContainer speed={0.5} className="container-1">
 
-      <div className="page_outer home_section_outer">
-        <div className="page_inner home_section_inner">
-         
-          <div className="home_slider_wrapper" ref={sliderRef}>
-            <h1>{ele.acf.slider_heading_first}</h1>
-            <h1>{ele.acf.slider_heading_second}</h1>
-            <div dangerouslySetInnerHTML={{ __html: ele.acf.slider_para }}></div>
-          </div>
-          <div className="home_slider_animate">
-            <div className="innovation_wrapper">
-              <h1 className={`innovation-heading ${showInnovation ? "hide" : ""}`}>
-                {ele.acf.innovation}
-              </h1>
-              <div
-                className={`innovation_content innovation_right ${showInnovation ? "show" : "hide"}`}
-                style={{
-                  transform: showInnovation ? "translateX(-35%)" : "translateX(100%)",
-                  opacity: showInnovation ? 1 : 0,
-                  pointerEvents: showInnovation ? "auto" : "none",
-                }}
-              >
-                {showInnovation && (
-                  <>
-                    <button type="button" className={animateButton ? "animate" : ""} onClick={showApplyJob}>Apply Now</button>
-                    <p>{ele.acf.innovation_heading}</p>
-                  </>
-                )}
+      <div className="parallax-container">
+        <div className="container-1">
+
+          <div className="page_outer home_section_outer">
+            <div className="page_inner home_section_inner">
+
+              <div className="home_slider_wrapper" ref={sliderRef}>
+                <h1>{ele.acf.slider_heading_first}</h1>
+                <h1>{ele.acf.slider_heading_second}</h1>
+                <div dangerouslySetInnerHTML={{ __html: ele.acf.slider_para }}></div>
+              </div>
+              <div className="home_slider_animate">
+                <div className="innovation_wrapper">
+                  <h1 className={`innovation-heading ${showInnovation ? "hide" : ""}`}>
+                    {ele.acf.innovation}
+                  </h1>
+                  <div
+                    className={`innovation_content innovation_right ${showInnovation ? "show" : "hide"}`}
+                    style={{
+                      transform: showInnovation ? "translateX(-35%)" : "translateX(100%)",
+                      opacity: showInnovation ? 1 : 0,
+                      pointerEvents: showInnovation ? "auto" : "none",
+                    }}
+                  >
+                    {showInnovation && (
+                      <>
+                        <button type="button" className={animateButton ? "animate" : ""} onClick={showApplyJob}>Apply Now</button>
+                        <p>{ele.acf.innovation_heading}</p>
+                      </>
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      </ParallaxContainer>
 
-    
     </>
   );
 }

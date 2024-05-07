@@ -86,11 +86,11 @@ const sortedServices = [...services].sort((a, b) => a.id - b.id);
             <div className='center-section-third-inner-wrapper'>
             <h1 className='footer-top-headings'>Our Services</h1>
             <ul>
-            {footerMenuItems.map((ele) => (
+            {/* {footerMenuItems.map((ele) => (
                   <li key={ele.id}>
                   <Link href={`/services/${ele.pageSlug}`}><p dangerouslySetInnerHTML={{__html:ele.title}}></p></Link>
                   </li>
-                ))}
+                ))} */}
             </ul>
             </div>
             <div className='center-section-fourth-inner-wrapper'>

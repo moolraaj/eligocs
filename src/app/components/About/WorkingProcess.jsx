@@ -28,32 +28,22 @@ const WorkingProcess = ({ result }) => {
     if (currentStep + 1 < workingProcess.length) {
       gsap.to(".restart-workprocess.active h3,.restart-workprocess.active h1", {
         duration: 0.8,
-        x: "-500px",
-        y: "-310px",
+        x: window.innerWidth <= 568 ? 0 : "-510px",
+        y: window.innerWidth <= 568 ? "-168px" : "-310px",
         opacity: 1,
         onComplete: () => {
           setCurrentStep((prevStep) => prevStep + 1);
         },
       });
       animationStep();
-    } else {
-      gsap.to(".restart-workprocess.active h3,.restart-workprocess.active h1", {
-        duration: 0.8,
-        x: "-500px",
-        y: "-310px",
-        opacity: 1,
-        onComplete: () => {
-          setCurrentStep(0);
-        },
-      });
     }
   };
 
   const handlePlayAgain = () => {
     gsap.to(".restart-workprocess.active h3,.restart-workprocess.active h1", {
       duration: 0.8,
-      x: "-500px",
-      y: "-310px",
+      x: window.innerWidth <= 568 ? 0 : "-510px",
+      y: window.innerWidth <= 568 ? "-168px" : "-310px",
       opacity: 1,
       onComplete: () => {
         setCurrentStep(0);
@@ -64,6 +54,7 @@ const WorkingProcess = ({ result }) => {
 
   return (
     <div className="working-process-container">
+      
       {workingProcess.map((step, index) => (
         <div
           key={index}
@@ -163,6 +154,14 @@ const WorkingProcess = ({ result }) => {
           )}
         </div>
       ))}
+      <div className="working_bottom_rurlar_bar">
+        <div className="working_bottom_dot"></div>
+        <div className="working_bottom_bar"></div>
+        <div className="working_bottom_dot"></div>
+        <div className="working_bottom_bar"></div>
+        <div className="working_bottom_dot"></div>
+        <div className="working_bottom_bar"></div>
+      </div>
     </div>
   );
 };

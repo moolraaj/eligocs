@@ -128,6 +128,21 @@ export const allExportedApi = () => {
   return response;
 };
 
+//fetch all Products api
+const AllProducts = async ()=>{
+  let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product?fields=acf&acf_format=standard`);
+  let response = await data.json();
+  return response;
+}
+
+// fetch Single product api
+const fetchSigleProducts = async ()=>{
+  let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product?fields=acf&acf_format=standard`);
+  let response = await data.json();
+  return response;
+}
+
+
 // fetch single Course api
 const fetchSingleCourse = async (slug) => {
   let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/course?slug=${slug}&fields=acf&acf_format=standard`);
@@ -200,6 +215,8 @@ const SingleBlogPost = async (slug) => {
     fetchMeetOurTeam,
     AllBlogPOsts,
     AllCourses,
+    AllProducts,
+    fetchSigleProducts,
     fetchSingleCourse,
     fetchHeaderFooter,
     fetchJobFormApi,

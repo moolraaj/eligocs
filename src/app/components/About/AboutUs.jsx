@@ -18,13 +18,12 @@ const AboutUs = ({ result }) => {
 
   return (
     <>
+    
       {result.map((ele, index) => (
         <div className="aboutpage-outer" key={index}>
           <div className="pages-inner about-inner">
-            <ParallaxContainer
-              speed={0.5}
-              className="container-1"
-              backgroundColor="#ffffff">
+           <div className="parallax-container">
+            <div className="container-1">
               <div className="contents">
                 <div className="img-slider-container">
                   <div className="slider-inner">
@@ -77,11 +76,10 @@ const AboutUs = ({ result }) => {
                   </div>
                 </div>
               </div>
-            </ParallaxContainer>
-            <ParallaxContainer
-              speed={3}
-              className="container-2"
-              backgroundColor="#EAAA00">
+            </div>
+            </div>
+            <div className="parallax-container" style={{background: '#EAAA00'}}>
+            <div className="container-2" >
               <div className="content">
                 <div className="about-working-process">
                   <h3>
@@ -90,11 +88,10 @@ const AboutUs = ({ result }) => {
                   <WorkingProcess result={ele} />
                 </div>
               </div>
-            </ParallaxContainer>
-            <ParallaxContainer
-              speed={3.5}
-              className="container-3"
-              backgroundColor="#ffffff">
+            </div>
+            </div>
+            <div className="parallax-container" style={{background: "#fff"}}>
+            <div className="container-3" >
               <div className="content_mission_our content">
                 <h1 className="uderline-text our-misson">
                   {ele.acf.our_mission_heading}
@@ -132,11 +129,10 @@ const AboutUs = ({ result }) => {
                   </div>
                 </div>
               </div>
-            </ParallaxContainer>
-            <ParallaxContainer
-              speed={4}
-              className="container-4"
-              backgroundColor="#191C1B">
+            </div>
+            </div>
+            <div className="parallax-container" style={{background: "#191C1B"}}>
+            <div className="container-4">
               <div className="content call_action_wrapper">
                 <div className="about_call_action">
                   <div className="inner_call">
@@ -144,16 +140,15 @@ const AboutUs = ({ result }) => {
                   </div>
                 </div>
               </div>
-            </ParallaxContainer>
-            <ParallaxContainer
-              speed={4.5}
-              className="container-5"
-              backgroundColor="#ffffff">
+              </div>
+              </div>
+              <div className="parallax-container" style={{background: "#fff"}}>
+            <div className="container-5">
               <div className="content">
                 <Testimoinals />
               </div>
-            </ParallaxContainer>
-
+              </div>
+              </div>
           </div>
         </div>
       ))}

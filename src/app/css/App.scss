@@ -59,6 +59,16 @@ body {
     overflow-x: hidden;
 }
 
+body::-webkit-scrollbar{
+    width: 12px;
+    background-color: $white;
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: $primaryyellow;
+    border-radius: 10px;
+}
+  
 
 .call_outer {
     background: $primaryyellow;
@@ -83,6 +93,24 @@ body {
     @extend %section_top_bottom_padding;
 }
 
+
+.call_left_section h1 {
+    color: $white;
+    font-size: 1.875em;
+  }
+  button#sucess-journy-btn {
+    background: $primaryyellow;
+    padding: 15px 45px;
+    border-radius: 30px !important;
+    border: none;
+    text-transform: capitalize;
+    font-size: 25px;
+  }
+  button#sucess-journy-btn:hover{
+    background: $white;
+    color: $black;
+  }
+  
 
 
 ul {
@@ -2120,6 +2148,11 @@ p .testimonial_wrap {
         flex-direction: column;
         gap: 20px;
         text-transform: uppercase;
+        overflow-y: auto;
+        height: 80vh;
+    }
+    .menu-right-container-bottom::-webkit-scrollbar{
+        opacity: 0;
     }
 
 }
@@ -2527,6 +2560,14 @@ h5.title_heading_c {
 
 // contact us page end //
 
+
+
+
+
+
+
+
+
 // Blog Post page css Start..................
 
 .blog_post_header img {
@@ -2650,7 +2691,9 @@ h5.title_heading_c {
         width: 100% !important;
     }
 
-
+    .menu-right-container-bottom a {
+        font-size: 1.275em;
+      }
 }
 
 
@@ -2883,6 +2926,23 @@ h5.title_heading_c {
         left: 6%;
         bottom: -25px;
     }
+
+    .call_left_section h1{
+        font-size: 1.25em;
+    }
+    button#sucess-journy-btn{
+        font-size: 1.23em;
+    }
+
+    .call_action_wrapper{
+        padding: 20px 0px !important;
+    
+        .call_wrapper{
+          grid-template-columns: 1fr;
+          gap: 15px;
+        }
+      }
+     
 }
 
 
@@ -2998,10 +3058,6 @@ h5.title_heading_c {
         width: 100%;
     }
 
-
-    .page_outer.testimonial_section_outer.scrolling {
-        padding: 10px 20px;
-    }
 
     .qoute_para p {
         font-size: 5.1875em;
@@ -3182,9 +3238,7 @@ h5.title_heading_c {
         width: 90%;
     }
 
-    .menu-right-container-bottom a {
-        font-size: 2em;
-    }
+    
 
     .lightbox-container {
         top: 60%;
@@ -3334,6 +3388,8 @@ h5.title_heading_c {
         height: 200px;
     }
     
+      
+    
 }
 
 @media (max-width:468px) {
@@ -3393,13 +3449,7 @@ h5.title_heading_c {
         font-size: 1.33333em;
     }
 }
-.testimonial-right-section {
-    .dots {
-        transform:unset;
-        bottom: -43.25em;
-        left: 38%;
-      }
-} 
+ 
 .service_content_heading {
     h1{
         font-size:1.6666666666666667em;
@@ -3454,7 +3504,20 @@ h1 {
     margin-bottom: 1.25em;
 }
 // Service page css by Davinder end
+.testimonial-right-section {
+    .dots {
+        transform:unset;
+        bottom: -43.25em;
+        left: 38%;
+      }
+}
 
+.menu-right-container-bottom a{
+    font-size: 1.2em;
+}
+.form_button button {
+    padding: 15px 25px;
+}
 }
 
 @media (max-width:375px) {
