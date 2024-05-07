@@ -1,5 +1,5 @@
 import { allExportedApi } from "@/utils/apis/Apis.jsx";
-import ServiceSlug from "./component/ServiceSlug";
+import Serviceslug from "./component/Serviceslug";
  
 
 
@@ -18,7 +18,7 @@ export default async function Page({ params }) {
 
     return (
         <>
-             <ServiceSlug data={data} services={services} />
+             <Serviceslug data={data} services={services} />
         </>
     );
 }
