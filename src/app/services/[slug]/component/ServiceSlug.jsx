@@ -11,6 +11,7 @@ function ServiceSlug({ data, services }) {
    return (
       <>
          {data.map((ele) => {
+                const relatedServices = services.filter(relServices => relServices.slug !== ele.slug); 
             return <div className="services_inner_template_wrapper" key={ele.id}>
                <div className="services_banner_section">
                   <div className="servies_banner_image">
@@ -35,7 +36,7 @@ function ServiceSlug({ data, services }) {
 
                      <div className="related-services">
                         {
-                           services.map((items) => {
+                           relatedServices.map((items) => {
                               return <div key={items.id}>
 
                                  <ul>

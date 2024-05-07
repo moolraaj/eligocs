@@ -8,11 +8,11 @@ export default async function Page({ params }) {
     let api=allExportedApi()
     const { slug } = params;
 
-    console.log(slug)
+  
 
 
     let data = await api.fetchSingleportFolio(slug)
-    console.log(data)
+     
 
     return (
         <>

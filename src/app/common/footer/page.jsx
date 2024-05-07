@@ -1,6 +1,34 @@
+
+'use client'
+import { allExportedApi } from "@/utils/apis/Apis";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 function Footer({ response }) {
+  let api = allExportedApi()
+
+  const [result, setResult] = useState([])
+  const [data, setData] = useState([])
+
+
+  const fetchServices = async () => {
+
+    let response = await api.fetchAllServices()
+    setResult(response)
+  }
+  const fetchPortfolio = async () => {
+
+    let response = await api.fetchAllportFolio()
+    setData(response)
+  }
+
+  useEffect(() => {
+    fetchServices()
+    fetchPortfolio()
+  }, [])
+
+
+
   const { copyrightText,
     copyrightTextSecond,
     footerEmail,
@@ -11,10 +39,7 @@ function Footer({ response }) {
     socialLinks,
     footerHeading3,
     siteLogoUrl,
-    footerMenuItems,
-    portfolioMenuItems } = response.footer
-
-    console.log(response)
+  } = response.footer
 
 
 
@@ -37,21 +62,21 @@ function Footer({ response }) {
               <div className='center-section-second-inner-wrapper'>
                 <h1 className='footer-top-headings'>Our Services</h1>
                 <ul>
-                  {footerMenuItems.map((ele) => (
-                  <li key={ele.id}>
-                  <Link href={`/services/${ele.pageSlug}`}><p dangerouslySetInnerHTML={{__html:ele.title}}></p></Link>  
-                  </li>
-                ))}
+                  {result.map((ele) => (
+                    <li key={ele.id}>
+                      <Link href={`/services/${ele.slug}`}><p dangerouslySetInnerHTML={{ __html: ele.acf.services_title }}></p></Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div className='center-section-third-inner-wrapper'>
                 <h1 className='footer-top-headings'>Our Products</h1>
                 <ul>
-                {portfolioMenuItems.map((ele) => (
-                  <li key={ele.id}>
-                  <Link href={`/portfolio/${ele.pageSlug}`}><p dangerouslySetInnerHTML={{__html:ele.title}}></p></Link>  
-                  </li>
-                ))}
+                  {data.map((ele) => (
+                    <li key={ele.id}>
+                      <Link href={`portfolio/${ele.slug}`}><p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_title }}></p></Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div className='center-section-fourth-inner-wrapper'>
