@@ -99,17 +99,15 @@ body::-webkit-scrollbar-thumb {
     font-size: 1.875em;
   }
   button#sucess-journy-btn {
-    background: $primaryyellow;
+    background: $white;
     padding: 15px 45px;
     border-radius: 30px !important;
     border: none;
     text-transform: capitalize;
     font-size: 25px;
+    cursor: pointer;
   }
-  button#sucess-journy-btn:hover{
-    background: $white;
-    color: $black;
-  }
+ 
   
 
 
@@ -2901,11 +2899,21 @@ h5.title_heading_c {
             left:-2.3333em !important;
         }
     }
-    
-    .testimonial_section_inner .card-content h3 {
-        font-size:1.5em !important;
-        color:#233253;
+    .blog-header-image-heading {
+        grid-template-columns: 1fr;
     }
+    .call_wrapper{
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonial_section_inner {
+        .card-content {
+            h3 {
+                font-size:1.5em !important;
+                color:#233253;
+            }
+        }
+    } 
     .testimonial_service.content {
         height: 70em;
         margin: 0;
@@ -3603,8 +3611,63 @@ h5.title_heading_c {
         font-size: 3.3333333333333333em;
     }
 }
+.inner_call {
+    .call_left_section {
+        h1 {
+            font-size: 2.5em;
+        }
+    } 
+}
+
+.inner_call {
+    .call_left_section {
+        p {
+            font-size:1.333em;
+        }
+    } 
+} 
+
+.call_outer {
+    .call_button {
+        margin-bottom: 2em;
+    }
+} 
+.blog_img_heading_wrapper {
+    span{
+        left: 0;
+    }    
+} 
+.blog_img_heading_wrapper {
+    justify-content: end;
+}
+.blog_img_heading_wrapper {
+    h2{
+        left: 0;
+        bottom: 10em;
+    }  
+} 
+.blog_page_heading_wrapper {
+    h1{
+        font-size:2.5em;
+    }
+}
+.blog-page-outer.page_top {
+    padding: 10em 1.667em 4.167em 1.667em;
+}
+.blog-header-description {
+    padding: 0 !important; 
+    width: 100%;
+}
+.blog-header-description {
+    p{
+        font-size:1.333em;
+    }
+} 
 .service_page_right_section {
     padding: 0em 1.6667em;
+}
+.call_wrapper{
+    padding: 0;
 }
 
 .all_services_outer {
