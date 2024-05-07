@@ -16,12 +16,11 @@ export default async function Page({ params }) {
     let api = allExportedApi()
     const { slug } = params;
 
-    let data = await api.fetchSingleportFolio(slug)
-    let allportFolioProducts = await api.fetchAllportFolio(slug)
+    let data = await api.fetchSigleProducts(slug)
     let allProducts = await api.AllProducts(slug)
     return (
         <>
-            <Productslug data={data} allportFolioProducts={allportFolioProducts} allProducts={allProducts} />
+            <Productslug data={data} allProducts={allProducts} />
         </>
     );
 }
