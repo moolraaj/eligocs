@@ -192,21 +192,22 @@ function NavbarCompo({ data }) {
                     <img src={closeMenuIcon.src} alt="closeMenuIcon" style={{ float: 'right' }} onClick={closeMenu} />
                   </div>
                   <div className="menu-right-container-bottom">
-                    {
+                    {/* {
+
                     headerMenuItems.map((ele)=>{
                       return <ul key={ele.ID}>
                         <NavigationLink href={`${ele.pageSlug}`}>{ele.pageSlug}</NavigationLink>
                       </ul>
                     })
-                  }
+                  } */}
 
-                    {/* <NavigationLink href={'/'}>home</NavigationLink>
+                     <NavigationLink href={'/'}>home</NavigationLink>
                     <NavigationLink href={'/about'}>about</NavigationLink>
                     <NavigationLink href={'/services'}>services</NavigationLink>
                     <NavigationLink href={'/courses'}>courses</NavigationLink>
                     <NavigationLink href={'/portfolio'}>portfolio</NavigationLink>
                     <NavigationLink href={'/meet-our-team'}>our team</NavigationLink>
-                    <NavigationLink href={'/blog'}>blog</NavigationLink> */}
+                    <NavigationLink href={'/blog'}>blog</NavigationLink>
                     <ul className='apply_now_navgation'>
                       <NavigationLink href={'/contact'}>contact us</NavigationLink>
                       <div className="form_button">
