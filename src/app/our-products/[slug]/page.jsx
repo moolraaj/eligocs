@@ -16,11 +16,11 @@ export default async function Page({ params }) {
     let api = allExportedApi()
     const { slug } = params;
 
-    let data = await api.fetchSingleportFolio(slug)
-    let allportFolioProducts = await api.fetchAllportFolio(slug)
+    let data = await api.fetchSigleProducts(slug)
+    let allProducts = await api.AllProducts(slug)
     return (
         <>
-            <Productslug data={data} allportFolioProducts={allportFolioProducts} />
+            <Productslug data={data} allProducts={allProducts} />
         </>
     );
 }
@@ -28,7 +28,7 @@ export default async function Page({ params }) {
 
 export async function generateStaticParams() {
     let api = allExportedApi()
-    let data = await api.fetchAllportFolio();
+    let data = await api.AllProducts();
     return data.map((ele) => ({
         slug: ele.slug
     }));

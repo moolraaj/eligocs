@@ -200,7 +200,7 @@ function NavbarCompo({ data }) {
                     })
                   } */}
 
-                    <NavigationLink href={'/'}>home</NavigationLink>
+                     <NavigationLink href={'/'}>home</NavigationLink>
                     <NavigationLink href={'/about'}>about</NavigationLink>
                     <NavigationLink href={'/services'}>services</NavigationLink>
                     <NavigationLink href={'/courses'}>courses</NavigationLink>

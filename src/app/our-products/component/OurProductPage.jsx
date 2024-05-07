@@ -18,7 +18,7 @@ function OurProductPage() {
   }
 
   const loadProducts = async () => {
-    let data = await api.fetchAllportFolio();
+    let data = await api.AllProducts();
     setProducts(data)
   }
 
@@ -63,10 +63,10 @@ function OurProductPage() {
             return (
               <ul key={index}>
                 <li>
-                  <span><h1>{product.acf.portfolio_title}</h1></span>
+                  <span><h1>{product.acf.product_name}</h1></span>
                   <span><Link href={`/our-products/${product.slug}`}>Read More</Link></span>
                 </li>
-                <li><img src={product.acf.portfolio_image} alt="portfolio_image" /></li>
+                <li><img src={product.acf.product_image.url} alt="portfolio_image" /></li>
               </ul>
             )
           })}
