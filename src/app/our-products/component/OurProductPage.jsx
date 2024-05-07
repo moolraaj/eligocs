@@ -61,7 +61,7 @@ function OurProductPage() {
 
           {products.map((product, index) => {
             return (
-              <ul key={index}>
+              <ul key={index} className={`product${index+1}`}>
                 <li>
                   <span><h1>{product.acf.product_name}</h1></span>
                   <span><Link href={`/our-products/${product.slug}`}>Read More</Link></span>
