@@ -79,52 +79,58 @@ class Header_Footer_Api {
 	 *
 	 * @return WP_Error|WP_REST_Response response object.
 	 */
-	public function rest_endpoint_handler( WP_REST_Request $request ) {
-		$response                = [];
-		$parameters              = $request->get_params();
-		$header_menu_location_id = ! empty( $parameters['header_location_id'] ) ? sanitize_text_field( $parameters['header_location_id'] ) : '';
-		$footer_menu_location_id = ! empty( $parameters['footer_location_id'] ) ? sanitize_text_field( $parameters['footer_location_id'] ) : '';
+public function rest_endpoint_handler( WP_REST_Request $request ) {
+    $response                = [];
+    $parameters              = $request->get_params();
+    $header_menu_location_id = ! empty( $parameters['header_location_id'] ) ? sanitize_text_field( $parameters['header_location_id'] ) : '';
+    $footer_menu_location_id = ! empty( $parameters['footer_location_id'] ) ? sanitize_text_field( $parameters['footer_location_id'] ) : '';
 
-		// Error Handling.
-		$error = new WP_Error();
+    // Error Handling.
+    $error = new WP_Error();
 
-		$header_menu_items = $this->get_nav_menu_items( $header_menu_location_id );
-		$footer_menu_items = $this->get_nav_menu_items( $footer_menu_location_id );
+    $header_menu_items = $this->get_nav_menu_items( $header_menu_location_id );
+    $footer_menu_items = $this->get_nav_menu_items( $footer_menu_location_id );
 
-		// If any menus found.
-		if ( ! empty( $header_menu_items ) || ! empty( $footer_menu_items ) ) {
+    // Get social icons for both header and footer
+    $header_social_icons = $this->get_social_icons();
+    $footer_social_icons = $this->get_social_icons();
 
-    $response['status'] = 200;
-    $response['data']   = [
-        'header' => [
-            'siteLogoUrl'     => $this->get_custom_logo_url( 'custom_logo' ),
-            'siteTitle'       => get_bloginfo( 'title' ),
-            'siteDescription' => get_bloginfo( 'description' ),
-            'favicon'         => get_site_icon_url(),
-            'headerMenuItems' => $header_menu_items ? $header_menu_items : [],
-        ],
-        'footer' => [
-            'footerMenuItems' => $footer_menu_items ? $footer_menu_items : [],
-            'socialLinks'     => $this->get_social_icons(),
-            'copyrightText'   => $this->get_copyright_text(),
-            'sidebarOne'      => $this->get_sidebar( 'hcms-footer-sidebar-1' ),
-            'sidebarTwo'      => $this->get_sidebar( 'hcms-footer-sidebar-2' ),
-        ],
-    ];
+    // If any menus found.
+    if ( ! empty( $header_menu_items ) || ! empty( $footer_menu_items ) ) {
 
-} else {
+        $response['status'] = 200;
+        $response['data']   = [
+            'header' => [
+                'siteLogoUrl'     => $this->get_custom_logo_url( 'custom_logo' ),
+                'siteTitle'       => get_bloginfo( 'title' ),
+               
+                'siteDescription' => get_bloginfo( 'description' ),
+                'favicon'         => get_site_icon_url(),
+                'headerMenuItems' => $header_menu_items ? $header_menu_items : [],
+                'socialLinks'     => $header_social_icons,
+            ],
+            'footer' => [
+                'siteLogoUrl'     => $this->get_custom_logo_url( 'custom_logo' ),
+                'footerMenuItems' => $footer_menu_items ? $footer_menu_items : [],
+                'socialLinks'     => $footer_social_icons,
+                'copyrightText'   => $this->get_copyright_text(),
+                'sidebarOne'      => $this->get_sidebar( 'hcms-footer-sidebar-1' ),
+                'sidebarTwo'      => $this->get_sidebar( 'hcms-footer-sidebar-2' ),
+            ],
+        ];
+    } else {
+        // If the menus not found.
+        $error->add( 406, __( 'Data not found', 'rest-api-endpoints' ) );
+        return $error;
+    }
 
-    // If the menus not found.
-    $error->add( 406, __( 'Data not found', 'rest-api-endpoints' ) );
-
-    return $error;
-
+    return new WP_REST_Response( $response );
 }
 
 
-		return new WP_REST_Response( $response );
 
-	}
+
+
 
 /**
  * Get Custom logo URL.
@@ -155,29 +161,51 @@ public function get_custom_logo_url( $key ) {
 	 *
 	 * @return array $social_icons
 	 */
-	public function get_social_icons() {
+public function get_social_icons() {
 
-		$social_icons      = [];
-		$social_icons_name = [ 'facebook', 'twitter', 'instagram', 'youtube' ];
+    $social_icons      = [];
+    $social_icon_image = [
+        'facebook'  => 'https://api.eligo.cloud/wp-content/uploads/2024/05/facebook-1.png',
+        'twitter'   => 'https://api.eligo.cloud/wp-content/uploads/2024/05/twitter-1.png',
+        'instagram' => 'https://api.eligo.cloud/wp-content/uploads/2024/05/instagram-1.png',
+        'youtube'   => 'https://api.eligo.cloud/wp-content/uploads/2024/05/youtube.png',
+        'linkedin'  => 'https://api.eligo.cloud/wp-content/uploads/2024/05/linkedin-logo.png' 
+    ];
+    $social_icons_name = [ 'facebook', 'twitter', 'instagram', 'youtube', 'linkedin' ]; 
 
-		foreach ( $social_icons_name as $social_icon_name ) {
+    // Assuming the phone number is stored as a theme mod
+    $phone_number = get_theme_mod( 'rae_phone_number' );
 
-			$social_link = get_theme_mod( sprintf( 'rae_%s_link', $social_icon_name ) );
+    foreach ( $social_icons_name as $social_icon_name ) {
 
-			if ( $social_link ) {
-				array_push(
-					$social_icons,
-					[
-						'iconName' => esc_attr( $social_icon_name ),
-						'iconUrl'  => esc_url( $social_link ),
-					]
-				);
-			}
-		}
+        $social_link = get_theme_mod( sprintf( 'rae_%s_link', $social_icon_name ) );
 
-		return $social_icons;
+        if ( $social_link ) {
+            array_push(
+                $social_icons,
+                [
+                    'iconName' => esc_attr( $social_icon_name ),
+                    'iconUrl'  => esc_url( $social_link ),
+                    'imageUrl' => $social_icon_image[$social_icon_name]
+                ]
+            );
+        }
+    }
 
-	}
+    // Adding the phone number to the social icons array
+    if ( $phone_number ) {
+        $social_icons[] = [
+            'iconName' => 'phone',
+            'iconUrl'  => $phone_number,
+            'imageUrl' => '', // You can leave this empty for the phone icon
+        ];
+    }
+
+    return $social_icons;
+}
+
+
+
 
 	/**
 	 * Get copyright text
