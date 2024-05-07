@@ -137,9 +137,9 @@ const AllProducts = async ()=>{
 
 // fetch Single product api
 const fetchSigleProducts = async ()=>{
-  let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product?fields=acf&acf_format=standard`);
+  let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product?slug=${slug}&fields=acf&acf_format=standard`);
   let response = await data.json();
-  return response;
+  return response;``
 }
 
 
