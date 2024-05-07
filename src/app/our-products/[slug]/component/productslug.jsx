@@ -19,9 +19,10 @@ export default  function Poductslug({ data, allProducts }) {
 
     return (
         <>
-        
+        <div className="page_top">
             {
                 data.map((product,index)=>{
+                    const relatedProducts = allProducts.filter(relProduct => relProduct.slug !== product.slug);
                     return(
                         <div key={index} className="blog-header-section">
                         <div className="blog-header-image-heading">
@@ -34,13 +35,27 @@ export default  function Poductslug({ data, allProducts }) {
                             <h1>{product.acf.product_name}</h1>
                           </div>
                         </div>
-                        <div className="blog-header-description">
-                          <p>{product.acf.product_description}</p>
-                        </div>
+                        <div className="course_intro_join_section">
+                    <div className="products_inner_description">
+                      <p dangerouslySetInnerHTML={{__html: product.acf.product_description}}></p>
+                    </div>
+                    <div className="related_product_wrapper">
+                    <div className="related_product_inner">
+                        {relatedProducts.map((relProduct,index)=>{
+                            return <div key={index} className="related_product">
+                                
+                            <Link href={`/our-products/${relProduct.slug}`}>{relProduct.acf.product_name}</Link>
+                            </div>
+                            
+                        })}
+                      </div>
+                    </div>
+                  </div>
                       </div>
                     )
                 })
             }
+            </div>
         </>
     );
 }
