@@ -253,6 +253,7 @@ ul.transformation_wrapper li:nth-child(1) {
 
 form#jobform textarea {
     background: white;
+    font-family: 'Euclid Circular A';
 }
 
 .portfolio_showcase_wrapper {
@@ -476,6 +477,68 @@ h6.user_name_c {
     background-color: rgba(255, 255, 255, 0.9294117647);
     padding: 16px 0px 16px 0px;
 }
+
+.right_c_form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 50px;
+   }
+
+
+   .right_c_form h4 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin: 0px;
+}
+
+.contact_social_wrapper img {
+    width: 26px;
+}
+
+.contact_social_wrapper li {
+    list-style-type: none;
+}
+
+
+.social_icons {
+    display: flex;
+    column-gap: 10px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+
+.our_location li {
+    list-style-type: none;
+}
+
+
+
+
+.about_call_action .call_left_section h1{
+    color:white;    
+}
+
+.about_call_action .call_left_section p {
+color:white;
+}
+
+
+.call_button button {
+  padding: 19px 45px;
+  text-transform: capitalize;
+  border-radius: 26px;
+  border: none;
+  margin-top: 20px;
+}
+
+
+
+form#applyforjob textarea {
+    background: transparent;
+    font-family: 'Euclid Circular A';
+}
+
 
 .development_left_section.sticky {
     position: sticky;
@@ -802,6 +865,73 @@ h1 {
 
 
 /* team section ends */
+
+
+
+
+/* call to action started */
+
+.call_left_section {
+    position: relative;
+}
+
+.journy-image-container {
+    position: relative;
+}
+
+.call_right_section {
+    display: block;
+    position: relative;
+    height: 400px;
+}
+
+.call_outer {
+    background: #eaaa00;
+}
+
+.call_wrapper {
+    max-width: 1519px;
+    margin: auto;
+    padding: 50px 10px;
+}
+
+.call_outer.inner_services .call_left_section h1 {
+    font-size: 3.125em;
+    color:white;
+}
+
+.call_outer.inner_services .call_left_section p {
+    color:white;
+    font-size: 1.25em;
+}
+
+
+.call_wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-content: space-between;
+    column-gap: 50px;
+    align-items: center;
+}
+
+.call_slider_image img {
+    max-width: 468px;
+    height: 370px;
+    object-fit: cover;
+}
+
+.call_right_section img {
+    position: inherit;
+}
+
+.call_left_section h1 {
+    font-size: 3.125em;
+}
+
+
+
+/* call to action ended */
+
 
 
 
@@ -1412,6 +1542,9 @@ span.cline:after {
 
 .service_page_right_section img {
     width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    object-fit: cover;
 }
 
 
@@ -2603,9 +2736,6 @@ h5.title_heading_c {
 
 
 @media only screen and (max-width:1500px) {
-    .page_outer {
-        padding: 20px;
-    }
 
     .footer_outer {
         padding-left: 30px;
@@ -2710,7 +2840,8 @@ h5.title_heading_c {
     }
 
 
-  
+
+     
     // Service page css by Davinder start 
     .testimonial_section_inner .card-content h1 {
         font-size:2.6666666666666665em;
@@ -2766,7 +2897,6 @@ h5.title_heading_c {
 
            
     // Service page css by Davinder end 
-
 
 
     .company_flex {
@@ -3053,16 +3183,22 @@ h5.title_heading_c {
     .page_inner.quote_section_inner .home_quote_wrapper {
         width: 100%;
     }
-
+    .development_right_section{
+    .develop_para{
+        font-size: 1.5em;
+    }  
+    }
     .page_inner.quote_section_inner .home_quote_wrapper {
         width: 100%;
     }
-
+    .quote_redirection{
+        font-size:  1.5em;
+    }
 
     .qoute_para p {
-        font-size: 5.1875em;
+        font-size:  1.5em;
         line-height: 56px;
-        margin: 0px 0px 80px 0px;
+        margin: 0em 0em 1.6667em 0em;
     }
 
     .page_inner.portfolio_section_inner {
@@ -3077,7 +3213,7 @@ h5.title_heading_c {
     }
 
     .testimonial_left_section h1 {
-        font-size: 7em;
+        font-size: 3.3333em;
         line-height: 60px;
         width: 71%;
     }
@@ -3105,18 +3241,18 @@ h5.title_heading_c {
     }
 
     .portfolio_left_section h1 {
-        font-size: 8.2em;
+        font-size: 4.1667em;
         width: 90%;
         padding-bottom: 48px;
     }
 
     .develop_number h4 {
-        font-size: 32px;
+        font-size: 2.0833em;
         margin: 8px 0px;
     }
 
     .develop_heading h4 {
-        font-size: 5.125em;
+        font-size: 2.9167em;
     }
 
     .trans_left_section h1 {
@@ -3124,7 +3260,7 @@ h5.title_heading_c {
     }
 
     a.trans_redirecttion {
-        font-size: 3.3em;
+        font-size: 1.6667em;
     }
 
     .trans_right_section {
@@ -3132,7 +3268,7 @@ h5.title_heading_c {
     }
 
     ul.transformation_wrapper li h4 {
-        font-size: 6.6em;
+        font-size: 3.75em;
         margin: 0.4em 0px;
         color: #EAAA00;
         font-family: bebas;
@@ -3150,7 +3286,7 @@ h5.title_heading_c {
 
     .company_left_section p {
         color: #fff;
-        font-size: 3em;
+        font-size: 1.5em;
     }
 
     .company_left_section {
@@ -3159,7 +3295,7 @@ h5.title_heading_c {
     }
 
     .company_question h4 {
-        font-size: 4.5em;
+        font-size: 2.25em;
     }
 
 
@@ -3175,16 +3311,16 @@ h5.title_heading_c {
     }
 
     .home_slider_wrapper p {
-        font-size: 3em;
+        font-size:  1.5em;
     }
 
     .home_about_left h1 {
-        font-size: 8.2em;
+        font-size: 4.1667em;
     }
 
     .home_about_right p {
         color: #fff;
-        font-size: 3em;
+        font-size: 1.5em;
         line-height: 38px;
     }
 
@@ -3195,7 +3331,7 @@ h5.title_heading_c {
     .company_left_section h1 {
         line-height: 55px;
         margin: 0;
-        font-size: 6em;
+        font-size: 3.3333em;
     }
 
     .company_left_section {
@@ -3208,7 +3344,7 @@ h5.title_heading_c {
 
     .home_slider_wrapper h1:first-child,
     .home_slider_wrapper h1:nth-child(2) {
-        font-size: 4em;
+        font-size: 2.5em;
     }
 
     .all-blog-posts-outer {
@@ -3411,29 +3547,16 @@ h5.title_heading_c {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
-// Service page css by Davinder start 
-.all_services_left_section {
+ // Service page css by Davinder start 
+ .all_services_left_section {
     h1 {
         font-size: 3.3333333333333333em;
     }
 }
-.what_u_learn_section {
-    h2{
-        font-size: 2em;
-    }
-    ul.course_points li {
-        h3 {
-            font-size: 1.4em;
-        }
-    
-        p, ul{
-            font-size: 1em;
-        }
-    }
+.service_page_right_section {
+    padding: 0em 1.6667em;
 }
-.what_u_learn_section p {
-    font-size: 1.4em;
-}
+
 .all_services_outer {
     box-shadow: 0em 0em 0.5833em rgba(0, 0, 0, 0.2);
     margin-bottom: 3.3333333333333333em;
@@ -3460,6 +3583,7 @@ h5.title_heading_c {
     h1 {
         font-size: 2.5em;
         text-align: left;
+        margin-bottom: 0;
         }
 }
         
@@ -3630,7 +3754,7 @@ textarea::placeholder {
     outline: unset;
     border-bottom: 1px solid $primaryyellow !important;
     width: 100%;
-    height: 16vh;
+    height: 12vh;
     border: unset;
     @extend %cf7_form_placeholder;
 

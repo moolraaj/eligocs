@@ -7,7 +7,7 @@ const CallSlider = ({ slider }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % slider.length);
-    }, 2000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [slider.length]);
