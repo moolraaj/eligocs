@@ -27,14 +27,14 @@ export default  function Portfolioslug({ data }) {
         const pin = gsap.fromTo('.portfolio_inner', {
             translateX: 0
         }, {
-            translateX: '-300vw',
+            xPercent: -100,
             ease: 'none',
             duration: 1,
             scrollTrigger: {
                 trigger: triggerRef.current,
                 start: 'center center',
                 end: '2000 top',
-                scrub: 0.9,
+                scrub: 1,
                 pin: true,
                 pinSpacer: false,
                 pinnedContainer: '#horizontal',
