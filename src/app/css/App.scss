@@ -56,7 +56,7 @@ body {
     padding: 0px;
     font-family: 'Euclid Circular A' !important;
     font-size: 16px;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
 body::-webkit-scrollbar{
@@ -931,8 +931,20 @@ h1 {
 
 
 /* call to action ended */
-
-
+h1.innovation-heading{
+    font-size: 2em !important;
+}
+.innovation_right {
+    button{
+    font-size: 1.1em;
+    }
+    p{
+        font-size: 1.4em !important;
+    }
+}
+.innovation_content{
+    position: relative !important;
+}
 
 
 /* courses */
@@ -1442,6 +1454,26 @@ span.cline:after {
 .nav-right {
     padding-left: 5%;
     width: 50%;
+    .header_contact_section{
+        h2{
+            color: $primaryyellow;
+        }
+    }
+    .header_bottom_social_icons {
+        display: grid;
+    grid-template-columns: 1fr 1fr;
+        img {
+            width: 32px;
+            height: 32px;
+            object-fit: cover;
+        }
+    }
+    .navbar_social_media {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-start;
+    }
+    
 }
 
 .menu-right-container-bottom a {
@@ -2283,6 +2315,9 @@ p .testimonial_wrap {
         text-transform: uppercase;
         overflow-y: auto;
         height: 80vh;
+        a{
+            color: #0C171F;
+        }
     }
     .menu-right-container-bottom::-webkit-scrollbar{
         opacity: 0;
@@ -2316,6 +2351,7 @@ p .testimonial_wrap {
             width: 100%;
         }
     }
+    
 }
 
 .header-portfolio-section::-webkit-scrollbar {
@@ -2334,6 +2370,7 @@ p .testimonial_wrap {
         width: 64px;
         cursor: pointer;
     }
+    
 }
 
 
@@ -2839,7 +2876,10 @@ h5.title_heading_c {
         white-space: break-spaces !important;
     }
 
-
+    .portfolio_image img {
+        width: 300px;
+        object-fit: cover;
+    }
 
      
     // Service page css by Davinder start 
@@ -2980,6 +3020,11 @@ h5.title_heading_c {
     .innovation_right.show {
         transform: translateX(0%);
     }
+    .innovation_wrapper {
+        position: inherit !important;
+        display: grid !important;
+        grid-auto-columns: 1fr;
+    }
 
     .innovation_content {
         right: 70%;
@@ -2994,9 +3039,11 @@ h5.title_heading_c {
     }
 
     .show {
-        transform: translateX(-35%) !important;
+        transform: translateX(0%) !important;
     }
-
+    h1.innovation-heading{
+        height: 0;
+    }
     .about_section_outer,
     .transform_section_outer,
     .development_flex {
@@ -3344,7 +3391,7 @@ h5.title_heading_c {
 
     .home_slider_wrapper h1:first-child,
     .home_slider_wrapper h1:nth-child(2) {
-        font-size: 2.5em;
+        font-size: 2em;
     }
 
     .all-blog-posts-outer {
@@ -3523,7 +3570,10 @@ h5.title_heading_c {
         max-width: 200px;
         height: 200px;
     }
-    
+    .portfolio_top_image img {
+        height: 220px;
+        object-fit: cover;
+    }
       
     
 }

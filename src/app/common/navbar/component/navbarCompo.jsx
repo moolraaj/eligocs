@@ -21,7 +21,7 @@ function NavbarCompo({ data }) {
 
 
 
-  const { siteLogoUrl, siteTitle, headerMenuItems,socialLinks } = data.header
+  const { siteLogoUrl, siteTitle, headerMenuItems, socialLinks } = data.header
   console.log(socialLinks)
 
 
@@ -118,7 +118,7 @@ function NavbarCompo({ data }) {
           <div className="cf7_form_inner">
             <div className="cf7_top_banner">
 
-            <div className="cf7_left_section">
+              <div className="cf7_left_section">
                 <div className="form_banner_heading">
 
                   <h1>apply now</h1>
@@ -145,8 +145,8 @@ function NavbarCompo({ data }) {
 
             </div>
             <div className="cf7_form_wrapper">
-                <ApplyForJob />
-              </div>
+              <ApplyForJob />
+            </div>
           </div>
         </div>
       )}
@@ -192,54 +192,62 @@ function NavbarCompo({ data }) {
                     <img src={closeMenuIcon.src} alt="closeMenuIcon" style={{ float: 'right' }} onClick={closeMenu} />
                   </div>
                   <div className="menu-right-container-bottom">
-                    {
+                    {/* {
                     headerMenuItems.map((ele)=>{
                       return <ul key={ele.ID}>
                         <NavigationLink href={`${ele.pageSlug}`}>{ele.pageSlug}</NavigationLink>
                       </ul>
                     })
-                  }
+                  } */}
 
-                    {/* <NavigationLink href={'/'}>home</NavigationLink>
+                    <NavigationLink href={'/'}>home</NavigationLink>
                     <NavigationLink href={'/about'}>about</NavigationLink>
                     <NavigationLink href={'/services'}>services</NavigationLink>
                     <NavigationLink href={'/courses'}>courses</NavigationLink>
                     <NavigationLink href={'/portfolio'}>portfolio</NavigationLink>
                     <NavigationLink href={'/meet-our-team'}>our team</NavigationLink>
-                    <NavigationLink href={'/blog'}>blog</NavigationLink> */}
+                    <NavigationLink href={'/blog'}>blog</NavigationLink>
                     <ul className='apply_now_navgation'>
                       <NavigationLink href={'/contact'}>contact us</NavigationLink>
                       <div className="form_button">
-                      <button  onClick={showApplyJob}>apply now</button>
+                        <button onClick={showApplyJob}>apply now</button>
 
                       </div>
 
                     </ul>
 
                     <NavigationLink href={'/our-products'}>our-products</NavigationLink>
+                    <div className="header_contact_section">
+                      <h2>Connect here with us :</h2>
+
+                      <div className="header_bottom_social_icons">
+                        <div className="contacts_infos">
+                          <Link href={`tel: 9317215300`}>+ 9317215300</Link>
+                        </div>
+                        <div className='navbar_social_media'>
+                        {
+                          socialLinks.map((ele, index) => {
+                            return <div key={index} className='header_media_icons'>
+                              <a href={ele.iconUrl}><img src={ele.imageUrl} /></a>
+                            </div>
+                          })
+                        }
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="header_bottom_social_icons">
-            {
-              socialLinks.map((ele,index)=>{
-                return <div key={index} className='navbar_social_media'>
-                  <a href={ele.iconUrl}><img src={ele.imageUrl} /></a>
-                  </div>
-              })
 
-            }
-
-          </div>
 
             </div>
 
-         
+
 
 
 
           </div>
-        
+
         </div>
       </div>
     </>
