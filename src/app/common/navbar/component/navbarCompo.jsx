@@ -220,11 +220,7 @@ function NavbarCompo({ data }) {
                   </div>
                 </div>
               </div>
-          
-
-            </div>
-
-            <div className="header_bottom_social_icons">
+              <div className="header_bottom_social_icons">
             {
               socialLinks.map((ele,index)=>{
                 return <div key={index} className='navbar_social_media'>
@@ -235,6 +231,10 @@ function NavbarCompo({ data }) {
             }
 
           </div>
+
+            </div>
+
+         
 
 
 
