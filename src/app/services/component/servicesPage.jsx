@@ -144,3 +144,11 @@ export default function ServicesPage() {
 }
 
 
+export async function generateMetadata(){
+    return{
+        title:'this is service page',
+        description:'this is a description'
+    }
+}
+
+

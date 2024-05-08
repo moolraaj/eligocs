@@ -33,3 +33,21 @@ export async function generateStaticParams() {
 }
 
 
+// generate dynamic sco title and desriptions
+export async function generateMetadata({params}){
+    const { slug } = params;
+    let api=allExportedApi()
+    const data = await api.fetchSingleService(slug);
+    let result =data.map((ele)=>{
+        return{
+            title:ele.slug,
+            description:ele.acf.services_inner_heading
+        }
+    })
+    return{
+        title:result[0].title,
+        description:result[0].description
+    }
+}
+
+
