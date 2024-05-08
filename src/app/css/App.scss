@@ -60,6 +60,12 @@ body {
     button{
         cursor: pointer;
     }
+    input:focus-visible {
+        outline: unset;
+    }
+    textarea:focus-visible {
+        outline: unset;
+    }
 }
 
 body::-webkit-scrollbar {
@@ -72,6 +78,18 @@ body::-webkit-scrollbar-thumb {
     border-radius: 10px;
 }
 
+
+span.input-error {
+    color: red;
+    text-transform: capitalize;
+}
+
+.parent_loader{
+    @include flex-property(flex,center,row,center);
+    height: 100vh;
+    z-index: 999;
+    
+}
 
 .call_outer {
     background: $primaryyellow;
@@ -879,31 +897,27 @@ h1 {
 }
 
 .team_member_section {
-    display: grid;
-    grid-template-columns: 1fr 60%;
-    column-gap: 12%;
+    @include grid-property(grid,1fr 60%,unset,12%);
+     
 }
 
 
 .member_informations_section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex-property(flex,center,row,space-between);
     border-bottom: 1px solid #191C1B;
     height: 156px;
+    cursor: pointer;
 }
 
-.team_member_section {
-    display: grid;
-    grid-template-columns: 1fr 60%;
-    column-gap: 12%;
-}
+ 
 
 .member_informations_section {
     display: grid;
     align-items: center;
     justify-content: space-between;
     grid-template-columns: 1fr 1fr 1fr;
+ 
+    
 }
 
 .team_member_section img {

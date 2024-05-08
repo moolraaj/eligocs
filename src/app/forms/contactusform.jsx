@@ -91,7 +91,7 @@ function ContactUsForm() {
                   <div className="contact_input_wrapper">
                     <label htmlFor="name">name</label>
                     <input type="text" name="yourname" value={user.yourname} onChange={getUserData} />
-                    {errors.yourname && <span>name field is required</span>}
+                    {errors.yourname && <span className='input-error'>name field is required</span>}
                   </div>
 
                 </div>
@@ -101,7 +101,7 @@ function ContactUsForm() {
                   <div className="contact_input_wrapper">
                     <label htmlFor="email">email address</label>
                     <input type="email" name="youremail" value={user.youremail} onChange={getUserData} />
-                    {errors.youremail && <span>email is required</span>}
+                    {errors.youremail && <span className='input-error'>email is required</span>}
                   </div>
 
                 </div>
@@ -111,7 +111,7 @@ function ContactUsForm() {
                   <div className="contact_input_wrapper">
                     <label htmlFor="phone_number">phone number</label>
                     <input type="number" name="yournumber" value={user.yournumber} onChange={getUserData} />
-                    {errors.yournumber && <span>phone number is required</span>}
+                    {errors.yournumber && <span className='input-error'>phone number is required</span>}
                   </div>
 
                 </div>
