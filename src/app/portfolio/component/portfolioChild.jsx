@@ -7,13 +7,13 @@ const PortfolioChild = ({ data }) => {
             <div className="portfolio_right_section">
                 {data && data.map((ele) => (
                     <div className="portfolio" key={ele.id}>
-                         
+                          <Link href={`/portfolio/${ele.slug}`} className='portfolio-post'>
                     
                             <div className="portfolio_image">
                                 <img src={ele.acf.portfolio_image} alt="" srcSet="" />
                             </div>
                             <div className="portfolio_flex">
-                            <Link href={`/portfolio/${ele.slug}`} className='portfolio-post'>
+                           
                                 <div className="portfolio_inner_left_section">
                                     <div className="portfolio_title">
                                         <h4>{ele.acf.portfolio_heading}</h4>
@@ -32,9 +32,9 @@ const PortfolioChild = ({ data }) => {
                                         })}
                                     </div>
                                 </div>
-                                </Link>
+                               
                             </div>
-                       
+                            </Link>
                     </div>
                 ))}
             </div>
