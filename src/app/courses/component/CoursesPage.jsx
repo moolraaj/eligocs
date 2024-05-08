@@ -2,8 +2,10 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { allExportedApi } from '@/utils/apis/Apis';
+import { useRouter } from 'next/navigation';
 
 function CoursesPage() {
+  let router=useRouter()
   const [selectedCategory, setSelectedCategory] = useState('All Courses');
   const [CoursesPageData, setCoursesPageData] = useState([]);
   const [AllCourses, setAllCourses] = useState([]);
@@ -45,7 +47,7 @@ function CoursesPage() {
                 <h1>{coursesData.acf.courses_page_heading_first}</h1>
                 <h2>{coursesData.acf.courses_page_heading_second}</h2>
                 <p>{coursesData.acf.courses_page_description}</p>
-                <Link className='button_global' href={`/`}>Get In Touch</Link>
+                <button className='button_global' onClick={()=>router.push('/contact')}>Get In Touch</button>
                 <img src={coursesData.acf.courses_page_image.url} alt="courses_page_image" />
               </div>
             );

@@ -1,19 +1,23 @@
 
 
 
-import ParallaxContainer from "./ParallaxContainer";
+ 
+ 'use client'
 
 
 import WorkingProcess from "./WorkingProcess";
 import Testimoinals from "../../common/Testimoinals";
 
-import Link from "next/link";
+ 
 import CallToAction from "@/app/call-to-action/callToAction";
+import { useRouter } from "next/navigation";
+ 
 
 
 
 
 const AboutUs = ({ result }) => {
+  let router=useRouter()
 
 
   return (
@@ -71,7 +75,7 @@ const AboutUs = ({ result }) => {
                       </h1>
                       <h3>{ele.acf.top_heading_second}</h3>
                       <p>{ele.acf.top_para_first}</p>
-                      <button id="get-in-tch"><Link href={ele.acf.get_in_touch_button} target="_blank">Get In Touch</Link></button>
+                      <button id="get-in-tch" onClick={()=>router.push('/contact')}>Get In Touch</button>
                     </div>
                   </div>
                 </div>

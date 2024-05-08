@@ -7,8 +7,12 @@ import ServicesFaq from "./ServicesFaq"
 import Testimonials from "@/app/common/Testimoinals"
 import '../../about/AboutPage.scss'
 import { useEffect, useState } from "react"
+import { useRouter } from "next/navigation"
+
+
 
 export default function ServicesPage() {
+    let router=useRouter()
     let api = allExportedApi()
     const [services, setServices] = useState([])
     const [data, setData] = useState([])
@@ -62,7 +66,7 @@ export default function ServicesPage() {
                                     </div>
 
                                     <div className="service_navigate_button">
-                                        <button>get in touch</button>
+                                        <button onClick={()=>router.push('/contact')}>get in touch</button>
                                     </div>
                                 </div>
 

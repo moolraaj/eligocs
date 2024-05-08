@@ -19,7 +19,7 @@ function HeroSection({ ele, ParallaxContainer }) {
   const [showButton, setShowButton] = useState(false);
   const [animateButton, setAnimateButton] = useState(false);
   const [isApplyJobVisible, setIsApplyJobVisible] = useState(false);
-  const sliderRef = useRef(null);
+  
 
 
 
@@ -48,32 +48,7 @@ function HeroSection({ ele, ParallaxContainer }) {
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    const sliderElement = sliderRef.current;
-    const [headingFirst, headingSecond, paragraph] = sliderElement.children;
-
-    const animateScrambleText = (element) => {
-      gsap.fromTo(element, {
-        opacity: 0,
-        y: 20,
-        scrambleText: { text: element.textContent, chars: 'lowerCase', speed: 0.5 },
-      }, {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: 'power2.out',
-      });
-    };
-
-    const tl = gsap.timeline({ defaults: { duration: 1, ease: 'power2.out' } });
-    tl.from(headingFirst, { opacity: 0, y: 20 })
-      .call(() => animateScrambleText(headingFirst))
-      .from(headingSecond, { opacity: 0, y: 20 }, '-=0.5')
-      .call(() => animateScrambleText(headingSecond))
-      .from(paragraph, { opacity: 0, y: 20 }, '-=0.5')
-      .call(() => animateScrambleText(paragraph));
-
-  }, []);
+ 
 
   const showApplyJob = () => {
     setIsApplyJobVisible(true);
@@ -131,7 +106,7 @@ function HeroSection({ ele, ParallaxContainer }) {
           <div className="page_outer home_section_outer">
             <div className="page_inner home_section_inner">
 
-              <div className="home_slider_wrapper" ref={sliderRef}>
+              <div className="home_slider_wrapper">
                 <h1>{ele.acf.slider_heading_first}</h1>
                 <h1>{ele.acf.slider_heading_second}</h1>
                 <div dangerouslySetInnerHTML={{ __html: ele.acf.slider_para }}></div>

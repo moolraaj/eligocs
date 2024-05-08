@@ -12,7 +12,7 @@ export default function ServicesComponent() {
     const loadServices = async () => {
         let url = await api.fetchAllServices()
         setServices(url)
-        console.log(url)
+        
     };
 
     useEffect(() => {

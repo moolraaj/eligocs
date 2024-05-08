@@ -57,6 +57,9 @@ body {
     font-family: 'Euclid Circular A' !important;
     font-size: 16px;
     overflow-x: hidden !important;
+    button{
+        cursor: pointer;
+    }
 }
 
 body::-webkit-scrollbar {
@@ -1108,16 +1111,17 @@ h1.innovation-heading {
     padding-bottom: 40px;
 }
 
-a.button_global {
+.button_global {
     padding: 20px 80px;
     background: #eaaa00;
     display: inline-block;
     margin-bottom: 60px;
     font-size: 1.563em;
     border-radius: 40px;
+    border: unset;
 }
 
-a.button_global:hover {
+.button_global:hover {
     background: black;
     color: white;
 }

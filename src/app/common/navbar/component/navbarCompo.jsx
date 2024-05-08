@@ -22,7 +22,7 @@ function NavbarCompo({ data }) {
 
 
   const { siteLogoUrl, siteTitle, headerMenuItems, socialLinks } = data.header
-  console.log(socialLinks)
+ 
 
 
   const [isOpen, setIsOpen] = useState(false);
