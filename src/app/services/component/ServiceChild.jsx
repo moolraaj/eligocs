@@ -13,7 +13,7 @@ export default function  ServiceChild({services}) {
                                 <h4>{index+1}</h4>
                             </li>
                             <li>
-                                <a href={item.acf.services_link} className="trans_redirecttion">{item.acf.services_title}</a>
+                                <p className="trans_redirecttion">{item.acf.services_title}</p>
                             </li>
                             <li>
                                 <img src={item.acf.services_image} alt="" srcSet="" />

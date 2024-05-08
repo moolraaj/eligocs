@@ -1424,12 +1424,13 @@ ul.course li:nth-child(4) {
 }
 
 
-a.trans_redirecttion {
+.trans_redirecttion {
     font-size: 1.875em;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 500;
     color: $primaryblack;
+    margin: 0px;
 }
 
 .all_services_right_section .service_content_description p {

@@ -168,7 +168,7 @@ function NavbarCompo({ data }) {
               <button onClick={toggleFormVisibility}>
                 <img src={FormLogo.src} alt="formLogo" />
               </button>
-              <button className="nav-toggler" type="button" onClick={toggleMenu}>
+              <button className="nav-toggler" onClick={toggleMenu}>
                 <span className="nav-toggler-icon"></span>
                 <span className="nav-toggler-icon"></span>
                 <span className="nav-toggler-icon"></span>
@@ -228,7 +228,7 @@ function NavbarCompo({ data }) {
                         {
                           socialLinks.map((ele, index) => {
                             return <div key={index} className='header_media_icons'>
-                              <a href={ele.iconUrl} target='_blank'><img src={ele.imageUrl} /></a>
+                              <a href={ele.iconUrl} target='_blank'><img src={ele.imageUrl}  alt='spcial-icons'/></a>
                             </div>
                           })
                         }
