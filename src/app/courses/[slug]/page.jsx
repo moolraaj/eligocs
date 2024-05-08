@@ -28,3 +28,26 @@ export async function generateStaticParams() {
         slug: ele.slug
     }));
 }
+
+
+export async function generateMetadata({params}){
+    let {slug}=params
+    let api=allExportedApi() 
+    let data = await api.fetchSingleCourse(slug) 
+   
+    const result=data.map((ele)=>{
+        return{
+            title:ele.title.rendered,
+            description:ele.acf.course_short_intro
+             
+        }
+    })
+     
+    return{
+        title:result[0].title,
+        description:result[0].description,
+        openGraph:{
+          
+        }
+    }
+  }
