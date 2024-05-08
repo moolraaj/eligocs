@@ -702,34 +702,11 @@ form#applyforjob textarea {
     }
 }
 
-// prodcut inner page css starts.....
-
-.related_product_wrapper{
-    background-color: $primaryyellow;
-    padding: 40px 60px;
-    width: 75%;
-   
-}
-
-ul.product1.our_product {
-    li:nth-child(1){
-        background-color: $black;
-
-        a{
-            background-color: $primaryyellow;
-            color: $white;
-        }
-        a:hover{
-            background-color: $white;
-            color: $black;
-        }
-    }
-    
-}
-ul.product2.our_product {
+/* Styles for odd indexed product lists */
+.our_products_wrapper > ul.our_product.odd {
     display: flex;
     flex-direction: column-reverse;
-    li:nth-child(1){
+    li:first-child{
         align-items:flex-end ;
         background-color: $primaryyellow;  
         a{
@@ -741,14 +718,41 @@ ul.product2.our_product {
         }
     }
     li:nth-child(2){
-
         img{
-            top: 0;
+            top:  0;
             width: 70%;
             left: 30%;
+            height: 250px;
         }
     }
-} 
+}
+
+/* Styles for even indexed product lists */
+.our_products_wrapper > ul.our_product.even {
+
+    li:first-child{
+        background-color: $black;
+        a{
+            background-color: $primaryyellow;
+            color: $white;
+        }
+        a:hover{
+            background-color: $white;
+            color: $black;
+        }
+    }
+    li:nth-child(2){
+        img{
+            bottom: 0;
+            width: 70%;
+            left: 0;
+            height: 250px;
+        }
+    }
+  
+}
+
+
 .our_products_wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -783,10 +787,6 @@ ul.product2.our_product {
             width: 90%;
             margin: 20px;
         }
-      
-        
-        
-        
         img {
             width: 70%;
             z-index: 1;
@@ -797,6 +797,17 @@ ul.product2.our_product {
     }
   
 }
+
+// prodcut inner page css starts.....
+
+.related_product_wrapper{
+    background-color: $primaryyellow;
+    padding: 40px 60px;
+    width: 75%;
+   
+}
+
+
 
 // prodcut inner page css end.......... 
 
@@ -2298,7 +2309,6 @@ p .testimonial_wrap {
         .footer_social_wrapper a img {
             width: 30px;
             height: 30px;
-            filter: invert(1);
         }
     }
 

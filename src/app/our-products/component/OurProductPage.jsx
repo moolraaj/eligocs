@@ -61,7 +61,10 @@ function OurProductPage() {
           <div className="our_products_wrapper">
           {products.map((product, index) => {
             return (
-              <ul key={index} className={`product${index+1} our_product`}>
+              <ul
+              key={index}
+              className={`product${index % 2 === 0 ? " even" : " odd"} our_product`}
+            >
                 <li>
                   <span className="wrap_nmae_btn">
                   <span><h1>{product.acf.product_name}</h1></span>

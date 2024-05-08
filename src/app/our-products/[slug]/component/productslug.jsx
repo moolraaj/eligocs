@@ -61,12 +61,7 @@ export default  function Poductslug({ data, allProducts }) {
 }
 
 
-export async function generateStaticParams() {
-    let data = await AllProducts();
-    return data.map((ele) => ({
-        slug: ele.slug
-    }));
-}
+
 
 
 
