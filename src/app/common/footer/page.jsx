@@ -52,7 +52,11 @@ function Footer({ response }) {
           <div className="center-section-wrapper">
             <div className='footer-center-section'>
               <div className='center-section-first-inner-wrapper'>
-                <div className='footer-top-headings'><img src={siteLogoUrl} alt="footerLogo" style={{ width: '148px', height: '57px' }} /></div>
+                <div className='footer-top-headings'>
+                  <Link href='/'>
+                  <img src={siteLogoUrl} alt="footerLogo" style={{ width: '148px', height: '57px' }} />
+                  </Link>
+                  </div>
                 <ul>
                   <li id='eligo-creative' className='common-btns'><span>{footerHeading1}</span></li>
                   <li id='app-web-design' className='common-btns'><span>{footerHeading2}</span></li>
@@ -74,7 +78,7 @@ function Footer({ response }) {
                 <ul>
                   {data.map((ele) => (
                     <li key={ele.id}>
-                      <Link href={`portfolio/${ele.slug}`}><p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_title }}></p></Link>
+                      <Link href={`/portfolio/${ele.slug}`}><p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_title }}></p></Link>
                     </li>
                   ))}
                 </ul>

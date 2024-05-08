@@ -15,6 +15,7 @@ function OurProductPage() {
   const loadProductPafeData = async () => {
     let data = await api.ProductPageApi();
     setProductPageApiData(data)
+    console.log(data)
   }
 
   const loadProducts = async () => {

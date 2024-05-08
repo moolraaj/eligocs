@@ -38,9 +38,11 @@ export async function generateMetadata(){
  
    
   const result=data.map((ele)=>{
+    let description=ele.acf.team_description.replace(/<[^>]+>|&[^;]+;/g, '');
+    
       return{
           title:ele.title.rendered,
-          description:ele.acf.team_description
+          description
            
       }
   })

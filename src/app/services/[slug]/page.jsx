@@ -44,6 +44,7 @@ export async function generateMetadata({params}){
             description:ele.acf.services_inner_heading, 
         }
     })
+   
     return{
         title:result[0].title,
         description:result[0].description,
