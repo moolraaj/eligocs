@@ -121,8 +121,6 @@ function PortfolioSection() {
                             width: '50px',
                             height: '50px',
                             borderRadius: '50%',
-                            background: '#fff', // Button background color
-                            color: '#000', // Button text color
                             zIndex: '99999'
                         }}
                     >
@@ -154,8 +152,6 @@ function PortfolioSection() {
                             width: '50px',
                             height: '50px',
                             borderRadius: '50%',
-                            background: '#fff', // Button background color
-                            color: '#000', // Button text color
                             zIndex: '99999'
                         }}
                     >

@@ -1423,6 +1423,16 @@ ul.course li:nth-child(4) {
     padding-bottom: 100px;
     padding: 108px 10px;
 }
+.arrow_slider{
+    background-color: $primaryyellow;
+    color: $white;
+    font-size: 1.5em;
+}
+.arrow_slider:hover{
+    background-color: $white;
+    color: $black;
+
+}
 
 /*portfolio inner page */
 
