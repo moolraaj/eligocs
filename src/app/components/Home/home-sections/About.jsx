@@ -21,7 +21,7 @@ function AboutSection({ele}) {
                       __html: ele.acf.about_para_second,
                     }}></p>
 
-                  <Link className="meet_our_team" href="/team">Meet Our Team</Link>
+                  <Link className="meet_our_team" href="/meet-our-team">Meet Our Team</Link>
 
                 </div>
               </div>

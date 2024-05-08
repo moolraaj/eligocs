@@ -23,3 +23,24 @@ export default async function page() {
   )
 }
 
+export async function generateMetadata(){
+  let api=allExportedApi()
+  let data = await api.BlogPageApi(); 
+  console.log(data)
+  let result=data.map((ele)=>{
+    return{
+      title:ele.title.rendered,
+      description:ele.acf.blog_page_description
+    }
+  })
+  console.log(result[0])
+  return{
+    title:result[0].title,
+    description:result[0].description,
+    openGraph:{
+
+    }
+  }
+
+}
+

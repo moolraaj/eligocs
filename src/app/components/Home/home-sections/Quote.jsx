@@ -1,6 +1,10 @@
+'use client'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
-function QuoteSection({ ele }) {
+function QuoteSection({ ele }) {  
+
+  let router=useRouter()
   return (
     <>
       <div className="page_outer quote_section_outer scrolling">
@@ -10,7 +14,7 @@ function QuoteSection({ ele }) {
               <p>{ele.acf.quote_para}</p>
             </div>
             <div className="quote_button">
-              <button className="quote_redirection">get a quote</button>
+              <button className="quote_redirection" onClick={()=>router.push('/contact')}>get a quote</button>
             </div>
           </div>
         </div>
