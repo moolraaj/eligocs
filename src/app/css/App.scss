@@ -376,16 +376,33 @@ p {
     margin: 0px;
 
 }
+.portfolio_left_section {
+    width: min-content;
+    text-align: center;
+}
+.scrolling_portfolio_section {
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+    .portfolio_inner{
+        position: relative;
+        left: 50%;
+    }
+}
+.scrolling_portfolio_section::-webkit-scrollbar{
+    opacity: 0;
+}
 
 .portfolio_wrapper {
     position: relative;
     display: flex;
     column-gap: 38px;
     align-items: center;
+    height: 100vh;
 }
 
 .page_inner.portfolio_section_inner {
-    @extend %max-width;
+    
     @extend %section_top_bottom_padding;
 }
 
@@ -632,6 +649,7 @@ form#applyforjob textarea {
         }
     }
 
+
 }
 
 
@@ -692,20 +710,89 @@ form#applyforjob textarea {
     width: 75%;
    
 }
+
+ul.product1.our_product {
+    li:nth-child(1){
+        background-color: $black;
+
+        a{
+            background-color: $primaryyellow;
+            color: $white;
+        }
+        a:hover{
+            background-color: $white;
+            color: $black;
+        }
+    }
+    
+}
+ul.product2.our_product {
+    display: flex;
+    flex-direction: column-reverse;
+    li:nth-child(1){
+        align-items:flex-end ;
+        background-color: $primaryyellow;  
+        a{
+            background-color: $white;
+            color: $primaryyellow;
+        }
+        a:hover{
+            background-color: $black
+        }
+    }
+    li:nth-child(2){
+
+        img{
+            top: 0;
+            width: 70%;
+            left: 30%;
+        }
+    }
+} 
 .our_products_wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     .our_product {
         position: relative;
-
-        li {
+        margin-top: 50px;
+        height: 40vh;
+        li:nth-child(1) {
+            margin-left: 10%;
+            position: absolute;
+            width: 70%;
+            height: 80%;
+            position: inherit;
             display: flex;
             justify-content: space-around;
-            align-items: center;
+            align-items: baseline;
+            padding: 0px 10px;
+            h1{
+                color: $white;
+            }
+            a{
+                padding: 15px 20px;
+                border-radius: 50px;
+                font-size: 1.25em;
+            }
+
         }
+        span.wrap_nmae_btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 90%;
+            margin: 20px;
+        }
+      
+        
+        
+        
         img {
-            width: 100%;
+            width: 70%;
             z-index: 1;
+            position: absolute;
+            bottom: 0;
+            left: 0;
         }
     }
   
@@ -2821,6 +2908,9 @@ h5.title_heading_c {
 
 
 @media only screen and (max-width:1500px) {
+    #horizontal{
+        height: auto !important;
+    }
 
     .footer_outer {
         padding-left: 30px;
@@ -2953,12 +3043,37 @@ h5.title_heading_c {
     .menu-right-container-bottom a {
         font-size: 1.275em;
     }
+
+    .portfolio a.portfolio-post{
+        width: 240px;
+        height: 50vh;
+    }
+    .portfolio_wrapper {
+        flex-wrap: wrap;
+        height: auto;
+    }
+    .portfolio_image img {
+        width: 100%;
+        height: 30vh;
+    }
+    .scrolling_portfolio_section{
+        position: relative;
+    }
+    .portfolio_left_section{
+        padding: 20px 0px 0px 20px;
+         h1{
+        font-size: 4em;
+    }
+}
 }
 
 
 
 @media (max-width:768px) {
 
+    .scrolling_portfolio_section .portfolio_inner {
+        left: 20%;
+    }
 
     button.close_button img {
         width: 74px;
@@ -3458,6 +3573,9 @@ h5.title_heading_c {
 
 
 @media (max-width:568px) {
+    .arrow_slider{
+        opacity: 0;
+    }
     .footer_wrapper .footer-center-section {
         @include grid-property(grid, repeat(1, 1fr));
         padding: 0px 20px;
@@ -3531,7 +3649,6 @@ h5.title_heading_c {
 
     .portfolio_wrapper {
         flex-wrap: wrap;
-        padding: 20px;
 
     }
 
