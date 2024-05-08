@@ -632,6 +632,7 @@ form#applyforjob textarea {
         }
     }
 
+
 }
 
 
@@ -692,20 +693,89 @@ form#applyforjob textarea {
     width: 75%;
    
 }
+
+ul.product1.our_product {
+    li:nth-child(1){
+        background-color: $black;
+
+        a{
+            background-color: $primaryyellow;
+            color: $white;
+        }
+        a:hover{
+            background-color: $white;
+            color: $black;
+        }
+    }
+    
+}
+ul.product2.our_product {
+    display: flex;
+    flex-direction: column-reverse;
+    li:nth-child(1){
+        align-items:flex-end ;
+        background-color: $primaryyellow;  
+        a{
+            background-color: $white;
+            color: $primaryyellow;
+        }
+        a:hover{
+            background-color: $black
+        }
+    }
+    li:nth-child(2){
+
+        img{
+            top: 0;
+            width: 70%;
+            left: 30%;
+        }
+    }
+} 
 .our_products_wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     .our_product {
         position: relative;
-
-        li {
+        margin-top: 50px;
+        height: 40vh;
+        li:nth-child(1) {
+            margin-left: 10%;
+            position: absolute;
+            width: 70%;
+            height: 80%;
+            position: inherit;
             display: flex;
             justify-content: space-around;
-            align-items: center;
+            align-items: baseline;
+            padding: 0px 10px;
+            h1{
+                color: $white;
+            }
+            a{
+                padding: 15px 20px;
+                border-radius: 50px;
+                font-size: 1.25em;
+            }
+
         }
+        span.wrap_nmae_btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 90%;
+            margin: 20px;
+        }
+      
+        
+        
+        
         img {
-            width: 100%;
+            width: 70%;
             z-index: 1;
+            position: absolute;
+            bottom: 0;
+            left: 0;
         }
     }
   
