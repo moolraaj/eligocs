@@ -1394,7 +1394,7 @@ ul.transformation_wrapper li h4 {
 
 .home_section_outer {
     @extend %section_top_bottom_padding;
-    padding: 160px 0px 0px !important;
+    padding: 160px 0px 60px !important;
 }
 
 
@@ -2211,6 +2211,7 @@ p .testimonial_wrap {
         .footer_social_wrapper a img {
             width: 30px;
             height: 30px;
+            filter: invert(1);
         }
     }
 
