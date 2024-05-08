@@ -2513,7 +2513,11 @@ p .testimonial_wrap {
 .header-portfolio-section::-webkit-scrollbar {
     opacity: 0;
 }
-
+.apply_now_navgation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: baseline;
+}
 .nav_right_section {
     display: flex;
     align-items: center;
