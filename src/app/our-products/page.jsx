@@ -20,7 +20,7 @@ export default async function page() {
 export async function generateMetadata(){
   let api=allExportedApi() 
   const data = await api.ProductPageApi(); 
-  console.log(data)
+   
   const result=data.map((ele)=>{
       return{
           title:ele.title.rendered,
@@ -28,12 +28,12 @@ export async function generateMetadata(){
            
       }
   })
-  console.log(data)
+ 
   return{
       title:result[0].title,
       description:result[0].description,
       openGraph:{
-        
+
       }
   }
 }

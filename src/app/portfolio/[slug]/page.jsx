@@ -35,21 +35,22 @@ export async function generateMetadata({params}){
     let {slug}=params
     let api=allExportedApi() 
     const data = await api.fetchSingleportFolio(slug);
-    console.log(data)
+     
     
     const result=data.map((ele)=>{
+        let description=ele.acf.portfolio_description.replace(/<[^>]+>|&[^;]+;/g, '');
         return{
             title:ele.title.rendered,
-            description:ele.acf.portfolio_description
+            description
              
         }
     })
-    console.log(result[0])
+    
     return{
         title:result[0].title,
         description:result[0].description,
         openGraph:{
-            
+
         }
         
     }

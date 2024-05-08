@@ -42,9 +42,10 @@ export async function generateMetadata({params}){
     let data = await api.fetchSigleProducts(slug)
    
     const result=data.map((ele)=>{
+        let description=ele.acf.product_description.replace(/<[^>]+>|&[^;]+;/g, '');
         return{
             title:ele.title.rendered,
-            description:ele.acf.product_description
+            description
              
         }
     })

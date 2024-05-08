@@ -26,7 +26,7 @@ export default async function page() {
 export async function generateMetadata(){
   let api=allExportedApi()
   let data = await api.BlogPageApi(); 
-  console.log(data)
+ 
   let result=data.map((ele)=>{
     return{
       title:ele.title.rendered,
