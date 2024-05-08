@@ -168,7 +168,7 @@ function NavbarCompo({ data }) {
               <button onClick={toggleFormVisibility}>
                 <img src={FormLogo.src} alt="formLogo" />
               </button>
-              <button className="nav-toggler" onClick={toggleMenu}>
+              <button className="nav-toggler" onClick={toggleMenu} aria-label="toggle_navigation_menu">
                 <span className="nav-toggler-icon"></span>
                 <span className="nav-toggler-icon"></span>
                 <span className="nav-toggler-icon"></span>
@@ -207,16 +207,21 @@ function NavbarCompo({ data }) {
                     <NavigationLink href={'/portfolio'}>portfolio</NavigationLink>
                     <NavigationLink href={'/meet-our-team'}>our team</NavigationLink>
                     <NavigationLink href={'/blog'}>blog</NavigationLink>
-                    <ul className='apply_now_navgation'>
-                      <NavigationLink href={'/contact'}>contact us</NavigationLink>
-                      <div className="form_button">
+                    
+                     
+                     <div className='apply_now_navgation'>
+                     <NavigationLink href={'/contact'}>contact us</NavigationLink>
+                      <span className="form_button">
                         <button onClick={showApplyJob}>apply now</button>
-
-                      </div>
-
-                    </ul>
+                      </span>
+                     </div>
+                      
+ 
+                     
 
                     <NavigationLink href={'/our-products'}>our-products</NavigationLink>
+
+                    
                     <div className="header_contact_section">
                       <h2>Connect here with us :</h2>
 
