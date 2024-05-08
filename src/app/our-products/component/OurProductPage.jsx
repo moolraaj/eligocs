@@ -63,8 +63,10 @@ function OurProductPage() {
             return (
               <ul key={index} className={`product${index+1} our_product`}>
                 <li>
+                  <span className="wrap_nmae_btn">
                   <span><h1>{product.acf.product_name}</h1></span>
                   <span><Link href={`/our-products/${product.slug}`}>Read More</Link></span>
+                  </span>
                 </li>
                 <li><img src={product.acf.product_image.url} alt="portfolio_image" /></li>
               </ul>
