@@ -1676,12 +1676,7 @@ span.cline:after {
 
 /* css for inner pages services */
 
-.services_inner_template_wrapper {
-    max-width: $width-custom;
-    margin: auto;
-    position: relative;
-    padding-top: 105px;
-}
+
 
 .process_flex_template {
     display: grid;
@@ -3125,11 +3120,64 @@ h5.title_heading_c {
         font-size: 4em;
     }
 }
+.services_inner_heading h1 {
+    font-size: 3em;
+}
+.services_right_sec h1 {
+    font-size: 2em;
+}
+.related-services ul li a {
+    font-size: 1.2em;
+}
+.services_dont_miss_out{
+    padding: 0;
+}
+.call_outer{
+    padding: 0;
+}
+.call_outer.inner_services .call_left_section h1{
+    font-size: 2em;
+}
 }
 
 
 
 @media (max-width:768px) {
+    .product-top-info-section .product-page-left-info h1{
+        font-size: 2.5em;
+    }
+    .product-top-info-section{
+        padding: 0;
+    }
+    .serices_flex_template{
+        grid-template-columns: 1fr;
+        padding: 50px 0px 20px 0px ;
+        .services_inner_heading h1 {
+            width: 100%;
+            margin-top: 0px;
+        }
+        .services_inner_description p {
+            font-size: 1.4em;
+            line-height: 49px;
+            width: 100%;
+        }
+        .services_right_sec,
+        .process_right_section{
+            display: none;
+        }
+        
+        
+    }
+    .process_flex_template{
+        grid-template-columns: 1fr;
+        .process_image img{
+            display: none;
+        }
+        .process_left_section{
+            padding: 10px;
+        }
+        
+    }
     .our_products_wrapper .our_product{
         height: 30vh;
     }
@@ -3375,7 +3423,7 @@ h5.title_heading_c {
 
     .testimonial_flex {
         display: block;
-
+        padding: 0px 20px;
     }
 
     .trans_flex {
@@ -3592,14 +3640,28 @@ h5.title_heading_c {
         width: 100%;
         place-items: flex-start;
     }
-
+    .service_page_right_section img{
+        height: 200px;
+    }
  
-
+    .product-page-right-info{
+        width: 100%;
+    }
+    .menu-right-container-top{
+        img{
+            position: absolute;
+            right: 18px;
+            top: 5%;
+        }
+    }
     .product-page-left-info p,
     .course_intro_wrapper p {
-        font-size: 2em !important;
+        font-size: 1.2em !important;
+        line-height: normal !important;
     }
-
+    .product-page-left-info {
+        margin-bottom: 20px;
+    }
     .course_join_inner {
         padding: 40px 30px;
 
@@ -3607,6 +3669,9 @@ h5.title_heading_c {
         a {
             font-size: 2em !important;
         }
+    }
+    .product-top-info-section .product_right_info_inner{
+        padding: 30px;
     }
 
     // 06-05-2024 Davinder css start
@@ -3639,6 +3704,43 @@ h5.title_heading_c {
 
 
 @media (max-width:568px) {
+    .home_testimonial_wrapper {
+        height: 70vh;
+    }
+    .testimonial_wrap.active {
+        opacity: 1;
+        z-index: 1;
+        left: -20px !important;
+        top: 10px;
+    }
+    .testimonial_slider{
+        .dots{
+            bottom: -90%;
+        }
+    }
+
+    .testimonial_wrap.active{
+        margin-top: 20% !important;
+    }
+   
+    .testimonial_wrap {
+        position: absolute;
+        max-width: 80%;
+    }
+    .testimonial_asking p{
+        font-size: 1.4em;
+        line-height: normal;
+        margin-bottom: 5px;
+    }
+    .testi_image img {
+        width: 60px;
+        height: 60px;
+    }
+    .testimonial_wrap.active,
+    .testimonial_wrap.active~.testimonial_wrap {
+        top: 0;
+        left: 0;
+    }
     .arrow_slider{
         opacity: 0;
     }
@@ -3690,11 +3792,12 @@ h5.title_heading_c {
         left: 28%;
         width: 1736px;
     }
+    
 
     .testimonial_left_section h1 {
-        font-size: 3.3333em;
-        line-height: 60px;
-        width: 71%;
+        font-size: 2em;
+        line-height: normal;
+        width: 100%;
     }
 
     .development_scroll.sticky {
@@ -4021,6 +4124,31 @@ h5.title_heading_c {
 }
 
 @media (max-width:468px) {
+    .services_inner_heading h1,
+    .inner_process_heading h1,
+    .services_missout_heading h1,
+    .call_left_section h1{
+        font-size: 1.7em !important;
+    }
+    .serices_flex_template .services_inner_description p,
+    .servives_missout_description p,
+    .call_left_section p {
+        font-size: 1.2em !important;
+        line-height: normal;
+    }
+    .process_description p{
+        font-size: 1em;
+        width: 100%;
+        line-height: normal
+
+    }
+    .call_right_section{
+        height: auto;
+    }
+    .call_right_section img,
+    #slide-0{
+        height: 200px;
+    }
     .portfolio_showcase_wrapper {
         @include grid-property(grid, repeat(1, 1fr));
     }
@@ -4052,21 +4180,9 @@ h5.title_heading_c {
         font-size: 3.3333333333333333em;
     }
 }
-.inner_call {
-    .call_left_section {
-        h1 {
-            font-size: 2.5em;
-        }
-    } 
-}
 
-.inner_call {
-    .call_left_section {
-        p {
-            font-size:1.333em;
-        }
-    } 
-} 
+
+ 
 
 .call_outer {
 .call_button {
