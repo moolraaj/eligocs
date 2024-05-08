@@ -103,7 +103,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 button#sucess-journy-btn {
-    background: $primaryyellow;
+    background: $white;
     padding: 15px 45px;
     border-radius: 30px !important;
     border: none;
@@ -112,8 +112,8 @@ button#sucess-journy-btn {
 }
 
 button#sucess-journy-btn:hover {
-    background: $white;
-    color: $black;
+    background: $black;
+    color: $white;
 }
 
 
@@ -2416,7 +2416,7 @@ p .testimonial_wrap {
     }
 
     .footer-center-bottom-section {
-        border-top: 1px solid $bordercolor;
+        border-top: 1px solid $borderSecondary;
         margin: 20px 50px;
         @include flex-property(flex, center, column, center);
         ;
