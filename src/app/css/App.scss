@@ -2933,6 +2933,23 @@ h5.title_heading_c {
 
 
 @media only screen and (max-width:1500px) {
+    .our_products_wrapper > ul.our_product.even li:nth-child(2) img,
+    .our_products_wrapper > ul.our_product.odd li:nth-child(2) img{
+        height: auto;
+    }
+    .our_products_wrapper .our_product li:nth-child(1){
+        h1{
+            margin-top: 0;
+            font-size: 1.6em;
+        }
+        a{
+            font-size: 1em;
+        }
+    }
+     span.wrap_nmae_btn{
+        flex-wrap: wrap;
+        margin-top: 0 !important;
+    }
     #horizontal{
         height: auto !important;
     }
@@ -3095,6 +3112,12 @@ h5.title_heading_c {
 
 
 @media (max-width:768px) {
+    .our_products_wrapper .our_product{
+        height: 30vh;
+    }
+    .our_products_wrapper .our_product li:nth-child(1) {
+        height: 75%;
+    }
 
     .scrolling_portfolio_section .portfolio_inner {
         left: 20%;
