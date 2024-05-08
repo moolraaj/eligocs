@@ -6,12 +6,12 @@ import Serviceslug from "./component/Serviceslug";
 export default async function Page({ params }) {
     let api=allExportedApi()
     const { slug } = params;
-    console.log(slug);
+    
     const data = await api.fetchSingleService(slug);
-    console.log(data);
+    
 
     let services=await api.fetchAllServices()
-    console.log(services)
+    
 
 
     
@@ -41,12 +41,16 @@ export async function generateMetadata({params}){
     let result =data.map((ele)=>{
         return{
             title:ele.slug,
-            description:ele.acf.services_inner_heading
+            description:ele.acf.services_inner_heading, 
         }
     })
     return{
         title:result[0].title,
-        description:result[0].description
+        description:result[0].description,
+        openGraph:{
+        type:'website',
+        url:'https://www.eligo.cloud/',
+        }
     }
 }
 
