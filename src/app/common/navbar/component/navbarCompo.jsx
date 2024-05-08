@@ -165,7 +165,7 @@ function NavbarCompo({ data }) {
             </div>
 
             <div className="nav_right_section">
-              <button onClick={toggleFormVisibility}>
+              <button onClick={toggleFormVisibility} aria-label="show form">
                 <img src={FormLogo.src} alt="formLogo" />
               </button>
               <button className="nav-toggler" onClick={toggleMenu} aria-label="toggle_navigation_menu">

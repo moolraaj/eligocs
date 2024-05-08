@@ -6,19 +6,19 @@ function Loader() {
   return (
 
     <div className="loader">
- <Hourglass
-  visible={true}
-  height="80"
-  width="80"
-  ariaLabel="hourglass-loading"
-  wrapperStyle={{}}
-  wrapperClass=""
-  colors={['#191C1B', 'blue']}
-  />
+      <Hourglass
+        visible={true}
+        height="80"
+        width="80"
+        ariaLabel="hourglass-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+        colors={['#191C1B', 'blue']}
+      />
     </div>
-    
- 
-     
+
+
+
   )
 }
 
