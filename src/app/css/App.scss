@@ -3370,12 +3370,48 @@ h5.title_heading_c {
 
 @media (max-width:767px) {
 
+    .contact_usform_inner_section {
+        display: block;
+    }
+    .contact_us_l h1 {
+        font-size: 3.875em;
+        font-weight: 600;
+        margin: 0px;
+        margin-top: 112px;
+    }
+    .contact_usform_top_section {
+        margin: auto;
+        margin-top: 7%;
+        padding: 20px;
+        padding-top: 0px;
+    }
+    .lower_sec_c {
+        max-width: 1440px;
+        margin: auto;
+        display: block;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 5%;
+        justify-content: space-between;
+        padding: 41px 20px;
+    }
+    form#contactus .contact_input_wrapper input, textarea {
+        width: 96%;
+        background: #F4F4F4;
+        border: none;
+        padding: 9px;
+    }
+    .contact_us_flex_wrapper {
+        padding-bottom: 40px;
+    }
+
     .product-top-info-section,
     .course_intro_join_section {
         grid-template-columns: 1fr;
         width: 100%;
         place-items: flex-start;
     }
+
+ 
 
     .product-page-left-info p,
     .course_intro_wrapper p {
@@ -3803,6 +3839,11 @@ h5.title_heading_c {
 @media (max-width:468px) {
     .portfolio_showcase_wrapper {
         @include grid-property(grid, repeat(1, 1fr));
+    }
+    .contact_both_sec {
+        display: block;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 80px;
     }
 
     .courses-posts-outer {
