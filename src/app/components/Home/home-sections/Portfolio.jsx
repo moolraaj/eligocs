@@ -81,7 +81,7 @@ function PortfolioSection() {
     const scrollLeft = () => {
         if (scrollContainerRef.current) {
             scrollContainerRef.current.scrollTo({
-                left: scrollContainerRef.current.scrollLeft - 200, 
+                left: scrollContainerRef.current.scrollLeft - 500, 
                 scroll: 'smooth'
             });
         }
@@ -90,7 +90,7 @@ function PortfolioSection() {
     const scrollRight = () => {
         if (scrollContainerRef.current) {
             scrollContainerRef.current.scrollTo({
-                left: scrollContainerRef.current.scrollLeft + 200, 
+                left: scrollContainerRef.current.scrollLeft + 500, 
                 scroll: 'smooth' 
             });
         }
