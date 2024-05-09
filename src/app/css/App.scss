@@ -919,6 +919,14 @@ h1 {
 
 }
 
+.blogs{
+display: show;
+}
+.hide_seek{
+    display: none;
+}
+  
+
 .team_member_section {
     @include grid-property(grid, 1fr 60%, unset, 12%);
 
