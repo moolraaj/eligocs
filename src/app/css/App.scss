@@ -320,6 +320,8 @@ form#jobform textarea {
 .portfolio_posts_wrapper h1 {
     font-size: 4em;
     padding-left: 40px;
+    padding-left: 20px;
+    padding-top: 100px;
 }
 
 .protfolio_items {
@@ -2429,6 +2431,7 @@ p .testimonial_wrap {
         font-size: 20px;
         font-weight: 700;
         width: 100%;
+        margin-bottom: 25px;
     }
 
     ul {
@@ -2509,6 +2512,7 @@ p .testimonial_wrap {
 
         a {
             color: #0C171F;
+            white-space: nowrap;
         }
     }
 
@@ -3147,6 +3151,8 @@ h5.title_heading_c {
     .portfolio_image img {
         width: 100%;
         height: 30vh;
+        object-fit: cover;
+        object-position: top;
     }
 
     .scrolling_portfolio_section {
@@ -3479,7 +3485,7 @@ h5.title_heading_c {
         }
 
         .company_answers p {
-            font-size: 1.25em;
+            font-size: 1.25em !important;
             width: 80%;
             margin: 0px auto 0px 20px;
         }
@@ -3701,7 +3707,6 @@ h5.title_heading_c {
     .contact_usform_inner_section {
         display: block;
     }
-
     .contact_us_l h1 {
         font-size: 3.875em;
         font-weight: 600;

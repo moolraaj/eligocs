@@ -13,12 +13,12 @@ export default async function page() {
  
 
  
-    let allBlogPosts = await api.AllBlogPOsts();
+    
  
   
   return (
    <>
-   <BlogPage blogPageData={blogPageData} allBlogPosts={allBlogPosts}/>
+   <BlogPage blogPageData={blogPageData}/>
    </>
   )
 }

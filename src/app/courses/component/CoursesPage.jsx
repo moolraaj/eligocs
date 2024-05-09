@@ -1,30 +1,57 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { allExportedApi } from '@/utils/apis/Apis';
+import {  COURSE_PAGE_SIZE, allExportedApi } from '@/utils/apis/Apis';
 import { useRouter } from 'next/navigation';
 
 function CoursesPage() {
-  let router=useRouter()
+  let router = useRouter()
   const [selectedCategory, setSelectedCategory] = useState('All Courses');
   const [CoursesPageData, setCoursesPageData] = useState([]);
+
   const [AllCourses, setAllCourses] = useState([]);
+  const [totalPages, setTotalPages] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
+
   let api = allExportedApi();
 
   const loadCoursePagedata = async () => {
     let data = await api.CoursesPageApi();
     setCoursesPageData(data)
   }
-  const loadAllCourses = async () => {
 
+
+
+
+
+  const loadAllCourses = async () => {
     let data = await api.AllCourses();
-    setAllCourses(data)
+    const totalServices = data.length;
+    const totalPages = Math.ceil(totalServices / COURSE_PAGE_SIZE);
+    setTotalPages(totalPages);
+    const startIndex = (currentPage - 1) * COURSE_PAGE_SIZE;
+    const endIndex = Math.min(startIndex + COURSE_PAGE_SIZE, totalServices);
+    const displayedServices = data.slice(startIndex, endIndex);
+    setAllCourses(displayedServices)
   }
 
   useEffect(() => {
     loadCoursePagedata()
     loadAllCourses()
-  }, [])
+  }, [currentPage])
+
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
 
 
   const categories = ['All Courses', ...new Set(AllCourses.map(course => course.course_category))];
@@ -47,7 +74,7 @@ function CoursesPage() {
                 <h1>{coursesData.acf.courses_page_heading_first}</h1>
                 <h2>{coursesData.acf.courses_page_heading_second}</h2>
                 <p>{coursesData.acf.courses_page_description}</p>
-                <button className='button_global' onClick={()=>router.push('/contact')}>Get In Touch</button>
+                <button className='button_global' onClick={() => router.push('/contact')}>Get In Touch</button>
                 <img src={coursesData.acf.courses_page_image.url} alt="courses_page_image" />
               </div>
             );
@@ -81,6 +108,11 @@ function CoursesPage() {
                 <li><Link href={`/courses/${course.slug}`}>Read More</Link></li>
               </ul>
             ))}
+          </div>
+          <div className="Previous_next_button">
+            <button onClick={handlePrevPage} disabled={currentPage === 1}>Previous</button>
+            <span>courses {currentPage} of {totalPages}</span>
+            <button onClick={handleNextPage} disabled={currentPage === totalPages}>Next</button>
           </div>
         </div>
       </div>
