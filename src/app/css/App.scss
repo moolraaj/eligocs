@@ -3846,6 +3846,10 @@ h5.title_heading_c {
         }
     }}
 @media (max-width:568px) {
+    .header_bottom_social_icons img{
+        width: 22px !important;
+        height: 22px !important;
+    }
     .product-top-image-section .product_image_right span{
         width: 70%;
     }
