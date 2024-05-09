@@ -195,6 +195,8 @@ const SingleBlogPost = async (slug) => {
     return response
   }
 
+  
+
 
   return {
     fetchCallToAction,
@@ -221,7 +223,13 @@ const SingleBlogPost = async (slug) => {
     fetchHeaderFooter,
     fetchJobFormApi,
     fetchContactFormApi,
-    fetchApplyForJobApi
+    fetchApplyForJobApi,
+   
   };
   
 };
+
+export const BLOG_PAGE_SIZE=6;
+export const PRODUCTS_PAGE_SIZE=4;
+export const PORTFOLIO_PAGE_SIZE=6;
+export const COURSE_PAGE_SIZE=6;

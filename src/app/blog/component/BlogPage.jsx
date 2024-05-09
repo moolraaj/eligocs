@@ -1,14 +1,53 @@
- 
- 
+
+
+'use client'
 import CallToAction from "@/app/call-to-action/callToAction"
+import { BLOG_PAGE_SIZE, allExportedApi } from "@/utils/apis/Apis"
 import Link from "next/link"
- 
+import { useEffect, useState } from "react"
 
 
 
-function BlogPage({blogPageData,allBlogPosts}) {
 
-  
+function BlogPage({ blogPageData }) {
+
+  let [allBlogPosts, setAllBlogPosts] = useState([])
+  const [totalPages, setTotalPages] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
+
+
+  const loadAllBolgPosts = async () => {
+    let api = allExportedApi()
+    let response = await api.AllBlogPOsts();
+    console.log(response)
+    const totalServices = response.length;
+    const totalPages = Math.ceil(totalServices / BLOG_PAGE_SIZE);
+    setTotalPages(totalPages);
+    const startIndex = (currentPage - 1) * BLOG_PAGE_SIZE;
+    const endIndex = Math.min(startIndex + BLOG_PAGE_SIZE, totalServices);
+    const displayedServices = response.slice(startIndex, endIndex);
+    setAllBlogPosts(displayedServices);
+  }
+
+  useEffect(() => {
+    loadAllBolgPosts()
+  }, [currentPage])
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+
+
+
 
 
 
@@ -55,15 +94,20 @@ function BlogPage({blogPageData,allBlogPosts}) {
                 )
               })}
             </div>
+            <div className="Previous_next_button">
+              <button onClick={handlePrevPage} disabled={currentPage === 1}>Previous</button>
+              <span>Blogs {currentPage} of {totalPages}</span>
+              <button onClick={handleNextPage} disabled={currentPage === totalPages}>Next</button>
+            </div>
           </div>
         </div>
       </div>
       <div className="call_outer inner_blogs">
-            <div className="inner_call">
-               <CallToAction />
-            </div>
-         </div>
-       
+        <div className="inner_call">
+          <CallToAction />
+        </div>
+      </div>
+
     </>
   )
 }
