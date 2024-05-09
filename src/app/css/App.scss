@@ -249,7 +249,12 @@ ul.transformation_wrapper li:nth-child(1) {
 }
 
 // portfolio page css............
-
+.Previous_next_button {
+    padding: 20px 40px 40px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .portfolio_heading_image_wrapper {
     display: flex;
     align-items: flex-end;
@@ -321,7 +326,6 @@ form#jobform textarea {
     font-size: 4em;
     padding-left: 40px;
     padding-left: 20px;
-    padding-top: 100px;
 }
 
 .protfolio_items {
@@ -1674,7 +1678,7 @@ span.cline:after {
 }
 
 .menu-right-container-bottom a {
-    font-size: 1.875em;
+    font-size: 1.375em;
     font-weight: 500;
 }
 
@@ -2707,9 +2711,20 @@ p .testimonial_wrap {
 // Blog page css start...........
 
 
+.blog_itenary ul{
+   padding: 0;
+}
+p:empty {
+    display: none !important;
+}
+
+
+
+.blog_itenary h3{
+    font-size: 1.125em;
+}
 .blog_itenary p {
     font-size: 1.25em;
-    line-height: 37px;
 }
 
 .blog_post_header img {
@@ -2987,7 +3002,7 @@ h5.title_heading_c {
 
     .our_products_wrapper>ul.our_product.even li:nth-child(2) img,
     .our_products_wrapper>ul.our_product.odd li:nth-child(2) img {
-        height: auto;
+        height: 120px;
     }
 
     .our_products_wrapper .our_product li:nth-child(1) {
@@ -3253,7 +3268,7 @@ h5.title_heading_c {
     }
 
     .our_products_wrapper .our_product {
-        height: 35vh;
+        height: 230px;
     }
 
     .our_products_wrapper .our_product li:nth-child(1) {
@@ -3495,7 +3510,7 @@ h5.title_heading_c {
         .company_answers p {
             font-size: 1.25em !important;
             width: 80%;
-            margin: 0px auto 0px 20px;
+            margin: 0px auto 0px 0px;
         }
 
         .company_question {
@@ -3779,6 +3794,7 @@ h5.title_heading_c {
     .product-page-left-info p,
     .course_intro_wrapper p {
         font-size: 1em !important;
+        letter-spacing: normal !important;
         line-height: normal !important;
     }
 
@@ -3787,14 +3803,16 @@ h5.title_heading_c {
     }
 
     .course_join_inner {
-        padding: 40px 30px;
+        padding: 20px 10px !important;
 
         p,
         a {
-            font-size: 2em !important;
+            font-size: 1.125em !important;
         }
     }
-
+    .what_u_learn_section h2 {
+        font-size: 1.875em;
+    }
     .product-top-info-section .product_right_info_inner {
         padding: 30px;
     }
@@ -3836,6 +3854,52 @@ h5.title_heading_c {
         }
     }}
 @media (max-width:568px) {
+    .header_bottom_social_icons img{
+        width: 22px !important;
+        height: 22px !important;
+    }
+    .product-top-image-section .product_image_right span{
+        width: 70%;
+    }
+    .blog_itenary img {
+    width: 100% ;
+}
+.blog_itenary p{
+    font-size: 1em;
+}
+.blog_itenary ul{
+   padding: 0;
+}
+.blog_itenary strong {
+    font-size: 1em;
+}
+.blog_post_header img {
+    margin-bottom: 40px;
+}
+
+.blog_itenary h3 strong{
+    font-size: 1em;
+}
+    .port_description p {
+        font-size: 1em;
+        margin-bottom: 10px;
+        line-height: normal;
+    }
+    .portfolio_project{
+        padding: 0px;
+    }
+    .portfolio_inner_section{
+        padding-bottom: 30px;
+    }
+    .unlock_success_btn a{
+        padding: 15px 30px;
+        font-size: 1.125em;
+    }
+    .course_intro_join_section .course_intro_wrapper h1{
+        font-size: 1.875em;
+        margin-top: 20px;
+    }
+
     .services_page_testimonials{
         .testimonial-card {
             width: 60% !important;
@@ -3996,6 +4060,7 @@ h5.title_heading_c {
         margin: 20px 0px;
         border-radius: 1px;
         border: 1px solid #D7D7D780;
+        box-shadow: 0px 0px 5px 0px gray;
     }
 
     .development_scroll.sticky {
@@ -4270,17 +4335,22 @@ h5.title_heading_c {
     }
 
     .what_u_learn_section p {
-        font-size: 2em;
+        font-size: 1.125em;
     }
-
+    ul.course_points {
+        padding: 0;
+        li:last-child {
+            padding-left: 20px;
+        }
+    }
     .what_u_learn_section ul.course_points li {
         h3 {
-            font-size: 2em;
+            font-size: 1.25em;
         }
 
         p,
         ul {
-            font-size: 1.2em;
+            font-size: 1.01em;
         }
     }
 
@@ -4566,7 +4636,7 @@ h5.title_heading_c {
     }
 
     .form_button button {
-        padding: 15px 25px;
+        padding: 11px 18px;
     }
 }
 
