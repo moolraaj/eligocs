@@ -4,18 +4,20 @@ import CourseSlug from "./component/courseslug";
 
 
 export default async function Page({ params }) {
-    let api=allExportedApi()
     const { slug } = params;
+    let api=allExportedApi()
+   
 
     console.log(slug)
 
 
     let data = await api.fetchSingleCourse(slug)
+    let courseFaq = await api.CoursesPageApi();
     console.log(data)
 
     return (
         <>
-            <CourseSlug data={data} />
+            <CourseSlug data={data} courseFaq={courseFaq} />
         </>
     );
 }

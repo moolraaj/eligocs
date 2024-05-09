@@ -802,7 +802,7 @@ form#applyforjob textarea {
     .our_product {
         position: relative;
         margin-top: 50px;
-        height: 40vh;
+        height: 400px;
 
         li:nth-child(1) {
             margin-left: 10%;
@@ -2991,10 +2991,12 @@ h5.title_heading_c {
 
 
 @media only screen and (max-width:1500px) {
-
+    .our_products_wrapper .our_product{
+        height: 250px;
+    }
     .our_products_wrapper>ul.our_product.even li:nth-child(2) img,
     .our_products_wrapper>ul.our_product.odd li:nth-child(2) img {
-        height: 120px;
+        height: 150px;
     }
 
     .our_products_wrapper .our_product li:nth-child(1) {
@@ -3502,7 +3504,7 @@ h5.title_heading_c {
         .company_answers p {
             font-size: 1.25em !important;
             width: 80%;
-            margin: 0px auto 0px 0px;
+            margin: 0px auto 0px 20px;
         }
 
         .company_question {
@@ -4114,7 +4116,7 @@ h5.title_heading_c {
     .company_answers p {
         font-size: 3em !important;
         width: 80%;
-        margin: 0px auto 33px 20px !important;
+        margin: 0px auto 33px 0px !important;
     }
 
     .company_left_section h1 {
