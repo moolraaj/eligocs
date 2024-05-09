@@ -57,8 +57,8 @@ body {
     font-family: 'Euclid Circular A' !important;
     font-size: 16px;
     overflow-x: hidden !important;
-
-    button {
+    cursor: auto !important;
+    button{
         cursor: pointer;
     }
 
@@ -152,7 +152,7 @@ a {
 }
 
 .page_top {
-    padding: 120px 10px 50px 10px;
+    padding: 120px 20px 50px 20px;
     @extend %max-width;
 }
 
@@ -262,7 +262,9 @@ ul.transformation_wrapper li:nth-child(1) {
 }
 
 .unlock_success_btn {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
 
     a {
         background: $primaryyellow;
@@ -295,11 +297,14 @@ form#jobform textarea {
 
 .portfolio_showcase_wrapper {
     @include grid-property(grid, repeat(3, 1fr));
+    column-gap: 50px !important;
 
 }
 
 .port_showcase_image img {
     width: 100%;
+    height: 600px;
+    object-fit: cover;
 }
 
 .port_showcase_hove_effect {
@@ -307,9 +312,20 @@ form#jobform textarea {
     padding: 0px 20px;
     position: absolute;
     width: -webkit-fill-available;
-    bottom: 30px;
+    bottom: 25px;
     display: none;
     pointer-events: none;
+}
+
+.portfolio_image img {
+    max-width: 454px;
+    height: 585px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.portfolio_short_description {
+    display: none;
 }
 
 .showcase_hover_image:hover+.port_showcase_hove_effect {
@@ -345,6 +361,32 @@ form#jobform textarea {
     align-items: center;
 }
 
+
+
+.service_page_right_section {
+    padding: 0px 20px;
+}
+.show_all_services_section {
+    padding: 0px 20px;
+}
+.Previous_next_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Previous_next_button button {
+    padding: 9px 30px;
+    margin: 10px;
+    background: #eaaa00;
+    color: white;
+    border: none;
+    border-radius: 7px;
+}
+button:disabled {
+    background: grey;
+    pointer-events: none;
+}
 
 .Portfolio_left_section h1 {
     font-size: 8em;
@@ -409,13 +451,14 @@ p {
 
 .portfolio_left_section {
     width: min-content;
-    text-align: center;
+    text-align: left;
 }
 
 .scrolling_portfolio_section {
     position: absolute;
     width: 100%;
     overflow: auto;
+    padding-bottom: 60px;
 
     .portfolio_inner {
         position: relative;
@@ -605,6 +648,38 @@ form#applyforjob textarea {
     z-index: 1;
 }
 
+.members_image_mobile {
+    display: none;
+}
+
+.innovation_wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.innovation-heading {
+    transition: transform 0.5s ease;
+}
+
+.innovation_content {
+    transition: transform 0.5s ease;
+    position: absolute;
+    right: 0;
+    opacity: 0;
+}
+
+.hide {
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.show {
+    transform: translateX(-50%);
+    opacity: 1;
+}
+
 .company_scroll_wrapper h4:after {
     content: "+";
     position: absolute;
@@ -651,10 +726,16 @@ form#applyforjob textarea {
 .product-page-right-info {
     width: 90% !important;
 }
+.product_heading_left {
+    position: absolute;
+    left: -4%;
+    bottom: 10%;
+}
 
 .product-top-image-section {
     display: flex;
     justify-content: space-between;
+    position: relative;
 
     .product_heading_left {
         display: flex;
@@ -672,15 +753,18 @@ form#applyforjob textarea {
 
         img {
             width: 100%;
+            height: 708px;
+            object-fit: cover;
         }
 
         span {
-            width: 30%;
-            height: 60px;
+            width: 100%;
+            max-width: 750px;
+            height: 128px;
             background: $primaryyellow;
             position: absolute;
             left: 10%;
-            bottom: -15px;
+            bottom: -47px;
         }
     }
 
@@ -693,7 +777,7 @@ form#applyforjob textarea {
     display: grid;
     grid-template-columns: 60% 40%;
     place-items: flex-end;
-    padding: 20px 0px 20px 45px;
+    padding: 120px 0px 20px 2px;
     text-transform: capitalize;
 
     .product-page-left-info {
@@ -706,6 +790,7 @@ form#applyforjob textarea {
             font-size: $primary-font;
             letter-spacing: 2px;
             line-height: 45px;
+            width: 90%;
         }
     }
 
@@ -1079,12 +1164,13 @@ display: show;
 .call_wrapper {
     max-width: 1519px;
     margin: auto;
-    padding: 50px 10px;
+    padding: 20px 10px;
 }
 
 .call_outer.inner_services .call_left_section h1 {
     font-size: 3.125em;
     color: white;
+    margin-top: 0px;
 }
 
 .call_outer.inner_services .call_left_section p {
@@ -1481,6 +1567,7 @@ ul.course li:nth-child(4) {
     background-color: $primaryyellow;
     color: $white;
     font-size: 1.5em;
+    display: none;
 }
 
 .arrow_slider:hover {
@@ -2021,7 +2108,7 @@ span.vison_c {
 }
 
 .testimonial_flex {
-    @include grid-property(grid, 1fr, center, unset);
+    @include grid-property(grid, 1fr 1fr, center, unset);
 
 }
 
@@ -2048,6 +2135,7 @@ span.vison_c {
     color: #3D3A3A;
     line-height: 120px;
     margin: 40px 0px;
+    width: 80%;
 }
 
 
@@ -2951,8 +3039,18 @@ h5.title_heading_c {
     column-gap: 5%;
 }
 
+.form_button {
+    margin-top: 25px;
+}
 
 
+.menu-right-container-bottom .form_button {
+    margin: 0px;
+}
+
+.Previous_next_button span {
+    text-transform: capitalize;
+}
 
 // contact us page end //
 
@@ -2999,12 +3097,99 @@ h5.title_heading_c {
 
 
 @media only screen and (max-width:1500px) {
-    .our_products_wrapper .our_product{
-        height: 250px;
+
+    .content_mission_our.content {
+        display: block;
+        padding: 15px 0px;
     }
+    .product-top-image-section .product_image_right img {
+        width: 100%;
+        height: 514px;
+        object-fit: cover;
+    }
+    .product_heading_left {
+        position: relative;
+        left: 0;
+        bottom: 0;
+    }
+
+    .contact_us_l h1 {
+        font-size: 4.875em;
+        font-weight: 600;
+        margin: 0px;
+    }
+    .contact_usform_inner_section {
+        padding: 0px 20px;
+        margin-top: 120px;
+        align-items: center;
+    }
+    .header-menu-seperate-container-left {
+        width: 90%;
+        padding-left: 10%;
+    }
+    .lower_sec_c {
+            padding-left: 20px;
+        padding-right: 20px;
+    }
+    .call_outer {
+        background: #eaaa00;
+        padding: 20px 20px;
+    }
+    .form_button {
+        margin-top: 25px;
+    }
+    .call_left_section h1 {
+        font-size: 2.125em;
+    }
+    button#sucess-journy-btn {
+        font-size: 18px;
+    }
+     .testimonial_section_outer  {
+        padding: 30px 0px;
+    }
+    .service_page_right_section,
+    .show_all_services_section,
+    .testimonial_wrapper {
+        padding: 0px 20px;
+    }
+
+    .process-step.active, .our-mission-outer, .success-journy-outer {
+        display: grid;
+        grid-template-columns: 56% 30% !important;
+        object-fit: cover;
+    }
+    .mission-left p {
+        font-size: 1.275em !important;
+        font-weight: 500;
+        line-height: 45px !important;
+    }
+
+    .page_outer.about_section_outer.scrolling,
+    .trans_flex,
+    .development_flex,
+    .portfolio_wrapper,
+    .testimonial_flex,
+    .page_outer.quote_section_outer.scrolling {
+     padding-left: 20px;
+     padding-right: 20px;
+    }
+
     .our_products_wrapper>ul.our_product.even li:nth-child(2) img,
     .our_products_wrapper>ul.our_product.odd li:nth-child(2) img {
-        height: 150px;
+    .scrolling {
+        position: relative;
+        z-index: 999;
+       } 
+      
+    }
+
+   
+
+
+
+    .our_products_wrapper > ul.our_product.even li:nth-child(2) img,
+    .our_products_wrapper > ul.our_product.odd li:nth-child(2) img{
+        height: auto;
     }
 
     .our_products_wrapper .our_product li:nth-child(1) {
@@ -3086,19 +3271,28 @@ h5.title_heading_c {
 
     .company_left_section {
         background: #191C1B;
-        height: 100%;
+        height:35vh;
     }
 
     .company_question h4 {
-        height: 36%;
+        height: 50%;
         writing-mode: tb-rl;
+        font-size: 2.125em;
         margin-top: 0vh;
         position: relative;
         font-weight: 400;
+        padding-top: 30px;
+        margin:0px;
+    }
+    .company_scroll_wrapper h4:after {
+        content: "+";
+        position: absolute;
+        right: 0;
+        bottom: 25px;
     }
 
     .company_flex {
-        height: 74vh;
+        height: auto;
     }
 }
 
@@ -3228,7 +3422,7 @@ h5.title_heading_c {
 
 @media (max-width:768px) {
     .page_top {
-        padding: 100px 10px 50px 10px;
+        padding: 100px 20px 50px 20px;
     }
 
     .product-top-info-section .product-page-left-info h1 {
@@ -3493,6 +3687,7 @@ h5.title_heading_c {
         position: relative;
         width: 90%;
         writing-mode: inherit;
+   
 
     }
 
@@ -3613,6 +3808,7 @@ h5.title_heading_c {
     .company_left_section {
         height: auto;
         padding: 20px;
+        height: 32vh !important;
     }
 
     .testimonial_service {
@@ -3722,37 +3918,7 @@ h5.title_heading_c {
     }
 }
 
-.members_image_mobile {
-    display: none;
-}
 
-.innovation_wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.innovation-heading {
-    transition: transform 0.5s ease;
-}
-
-.innovation_content {
-    transition: transform 0.5s ease;
-    position: absolute;
-    right: 0;
-    opacity: 0;
-}
-
-.hide {
-    transform: translateX(100%);
-    opacity: 0;
-    pointer-events: none;
-}
-
-.show {
-    transform: translateX(-50%);
-    opacity: 1;
-}
 
 @media (max-width:767px) {
 
