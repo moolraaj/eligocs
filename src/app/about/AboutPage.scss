@@ -475,14 +475,12 @@ button {
   position: relative;
  
   .testimonial-card {
-    max-width: 60%;
     border-radius: 10px;
     display: flex;
     position: absolute;
     padding: 50px;
     background: #ffffff;
     margin-top: 80px;
-    transition: 0.3s all !important;
   }
 
   .testimonial-card:nth-child(1),
@@ -636,6 +634,7 @@ button {
 }
 
 @media (max-width: 568px) {
+ 
   .step-image-container {
     display: none;
   }
@@ -649,21 +648,23 @@ button {
   .about-top-content {
     top: 45%;
     h1 {
-      font-size: 2.5em;
+      font-size: 2em;
+      line-height: 10px;
     }
 
     h3 {
       line-height: normal;
-      font-size: 2em;
+      font-size: 1.875em;
       margin-bottom: 20px;
     }
 
     p {
       line-height: normal;
-      font-size: 1.4em;
+      font-size: 1.125em;
     }
 
     button {
+      margin-top: 10px;
       font-size: 1.2em;
     }
   }
@@ -686,7 +687,7 @@ button {
   .about-working-process{
 
     h3{
-      font-size: 2.5em;
+      font-size: 1.875em;
     }
   }
   .process-step.active{
@@ -699,15 +700,18 @@ button {
           font-size: 1.125em;
       }
       h1 {
-    font-size: 2.5em;
+    font-size: 1.875em;
       }
       }
       .step-after {
         display: flex;
     }
     }
+    .steps-content-after h1{
+      font-size: 1.875em;
+    }
   }
-
+  
   .content_mission_our.content{
     padding: 0;
     h1{

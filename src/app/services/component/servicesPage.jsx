@@ -127,9 +127,9 @@ export default function ServicesPage() {
                         </div>
 
                         <div className="testimonial_service content">
-
+                            <div className="services_page_testimonials">
                             <Testimonials />
-
+                            </div>
                         </div>
 
 

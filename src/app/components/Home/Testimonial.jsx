@@ -26,31 +26,7 @@ function Testimonial() {
         return () => clearInterval(interval);
     }, [testimonials.length]);
 
-    const getMargin = (index) => {
-        const activeMargin = { marginTop: '0px', marginLeft: '8px' };
-        const secondMargin = { marginTop: '15px', marginLeft: '26px' };
-        const thirdMargin = { marginTop: '28px', marginLeft: '44px' };
-
-        // Calculate the distance between the current slide and the active slide
-        let distanceToActive = index - currentSlide;
-
-        // Adjust distance for slides moving backward
-        if (distanceToActive < 0) {
-            distanceToActive += testimonials.length;
-        }
-
-        // Determine the margin values based on the position of the current slide relative to the active slide
-        if (distanceToActive === 0) {
-            return activeMargin; // Active slide
-        } else if (distanceToActive === 1) {
-            return secondMargin; // Second slide
-        } else if (distanceToActive === -1 || distanceToActive === testimonials.length - 2) {
-            return thirdMargin; // Third slide when moving backward or when it becomes the last slide
-        } 
-        else {
-            return activeMargin; // Default to active margin for other slides
-        }
-    };
+  
 
     return (
         <div className="testimonial_slider">
@@ -59,7 +35,7 @@ function Testimonial() {
                     <div
                         className={`testimonial_wrap ${index === currentSlide ? 'active' : ''}`}
                         key={innerIndex}
-                        style={getMargin(index)}
+                        
                     >
                         <div className="testi_image">
                             <img src={testimonial.client_image} alt={testimonial.client_name} />
