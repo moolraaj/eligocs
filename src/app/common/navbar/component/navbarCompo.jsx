@@ -1,8 +1,9 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import closeMenuIcon from '../../../assets/headerAssets/closeMenu.png'
 import FormLogo from '../../../assets/headerAssets/formlogo.png'
 import formClose from '../../../assets/headerAssets/formclose.png'
+import arrow from '../../../assets/headerAssets/arrow.png'
 import Link from 'next/link';
 import PortfolioComponent from '@/app/portfolio/component/portfolioComponent';
 import JobForm from '@/app/forms/jobForm';
@@ -22,12 +23,17 @@ function NavbarCompo({ data }) {
 
 
   const { siteLogoUrl, siteTitle, headerMenuItems, socialLinks } = data.header
- 
+
 
 
   const [isOpen, setIsOpen] = useState(false);
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [isApplyJobVisible, setIsApplyJobVisible] = useState(false);
+  const additionalLinksRef = useRef(null);
+
+  const toggleAdditionalLinks = () => {
+      additionalLinksRef.current.classList.toggle('hide_seek');  
+  };
 
 
 
@@ -200,28 +206,42 @@ function NavbarCompo({ data }) {
                     })
                   } */}
 
-                     <NavigationLink href={'/'}>home</NavigationLink>
+                    <NavigationLink href={'/'}>home</NavigationLink>
+                    <div className="navbar_toggle_navigation">
                     <NavigationLink href={'/about'}>about</NavigationLink>
+                    <div className="hide_seek_wrapper">
+
+                    <button ref={additionalLinksRef} onClick={toggleAdditionalLinks} aria-level='toggle navlinks'>
+                      <img src={arrow.src} alt="arrow" srcset="" />
+                    </button>
+            
+                    
+                    <div className="hide_seek blogs" ref={additionalLinksRef}>
+                        <NavigationLink href={'/meet-our-team'}>our team</NavigationLink>
+                        <NavigationLink href={'/blog'}>blog</NavigationLink>
+                      </div>
+                    </div>
+
+                    </div>
                     <NavigationLink href={'/services'}>services</NavigationLink>
                     <NavigationLink href={'/courses'}>courses</NavigationLink>
                     <NavigationLink href={'/portfolio'}>portfolio</NavigationLink>
-                    <NavigationLink href={'/meet-our-team'}>our team</NavigationLink>
-                    <NavigationLink href={'/blog'}>blog</NavigationLink>
-                    
-                     
-                     <div className='apply_now_navgation'>
-                     <NavigationLink href={'/contact'}>contact us</NavigationLink>
+
+
+
+                    <div className='apply_now_navgation'>
+                      <NavigationLink href={'/contact'}>contact us</NavigationLink>
                       <span className="form_button">
                         <button onClick={showApplyJob}>apply now</button>
                       </span>
-                     </div>
-                      
- 
-                     
+                    </div>
+
+
+
 
                     <NavigationLink href={'/our-products'}>our-products</NavigationLink>
 
-                    
+
                     <div className="header_contact_section">
                       <h2>Connect here with us :</h2>
 
@@ -230,13 +250,13 @@ function NavbarCompo({ data }) {
                           <Link href={`tel: 9317215300`}>+ 9317215300</Link>
                         </div>
                         <div className='navbar_social_media'>
-                        {
-                          socialLinks.map((ele, index) => {
-                            return <div key={index} className='header_media_icons'>
-                              <a href={ele.iconUrl} target='_blank'><img src={ele.imageUrl}  alt='spcial-icons'/></a>
-                            </div>
-                          })
-                        }
+                          {
+                            socialLinks.map((ele, index) => {
+                              return <div key={index} className='header_media_icons'>
+                                <a href={ele.iconUrl} target='_blank'><img src={ele.imageUrl} alt='spcial-icons' /></a>
+                              </div>
+                            })
+                          }
                         </div>
                       </div>
                     </div>
