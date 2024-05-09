@@ -1,7 +1,17 @@
+'use client'
+import React, { useEffect, useState } from 'react';
 import CallToAction from "@/app/call-to-action/callToAction";
 import Link from "next/link";
 
-export default function CourseSlug({ data }) {
+export default function CourseSlug({ data, courseFaq }) {
+
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const toggleAccordion = (index) => {
+      setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  console.log(courseFaq)
   return (
     <>
       <div className="single_course_outer page_top">
@@ -24,8 +34,8 @@ export default function CourseSlug({ data }) {
                     </div>
                     <div className="course_join_wrapper">
                       <div className="course_join_inner">
-                      <p>{singleCourse.acf.join_course_heading}</p>
-                      <Link href={`/`}>JOin Course Now</Link>
+                        <p>{singleCourse.acf.join_course_heading}</p>
+                        <Link href={`/`}>JOin Course Now</Link>
                       </div>
                     </div>
                   </div>
@@ -65,9 +75,35 @@ export default function CourseSlug({ data }) {
               </div>
             );
           })}
+          <div className="course_call_to_action">
+            <CallToAction />
+          </div>
+          <div className="course_page_faq_Section">
+             {
+              courseFaq.map((ele)=>{
+                return <div key={ele.id} className="course_page_faq_inner">
+                  {
+                    ele.acf.couerse_page_faq.map((cFaq,index)=>{
+                      return <div key={index} className="course_faq">
+                        <div className='course_faq_title_btn'>
+                        <h2>{cFaq.course_faq_tittle}</h2>
+                        <div onClick={() => toggleAccordion(index)} className={`faq_arrow-icon ${activeIndex === index ? 'active' : ''}`}></div>
+                        </div>
+                       {activeIndex === index && (
+                            <div className="faq_ans_section">
+                            <p>{cFaq.course_faq_description}</p>
+                            </div>
+                        )}
+                      </div>
+                    })
+                  }
+                </div>
+              })
+             }
+          </div>
         </div>
       </div>
-      
+
     </>
   );
 }
