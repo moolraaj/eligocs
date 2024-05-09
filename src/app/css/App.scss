@@ -3475,6 +3475,15 @@ h5.title_heading_c {
 
 
 @media (max-width:768px) {
+    .product-top-image-section .product_image_right span {
+        width: 100%;
+        max-width: 400px;
+        height: 51px;
+        background: #EAAA00;
+        position: absolute;
+        left: 10%;
+        bottom: -12px;
+    }
     .page_top {
         padding: 100px 20px 50px 20px;
     }
