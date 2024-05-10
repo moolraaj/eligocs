@@ -1,33 +1,18 @@
 'use client'
-import React, { useEffect, useState, useRef } from 'react';
-import gsap from 'gsap'
+import React, { useEffect, useState } from 'react';
+ 
 
 import Formclose from '../../../assets/headerAssets/formclose.png';
 import ApplyForJob from '@/app/forms/applyForJob';
-
-
-
-
-
-
-
-
-
 
 function HeroSection({ ele, ParallaxContainer }) {
   const [showInnovation, setShowInnovation] = useState(false);
   const [showButton, setShowButton] = useState(false);
   const [animateButton, setAnimateButton] = useState(false);
   const [isApplyJobVisible, setIsApplyJobVisible] = useState(false);
-
-  console.log(ele)
-  
-
-
-
-
-
-
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [currentWord, setCurrentWord] = useState('');
+  const [isRemoving, setIsRemoving] = useState(false);
 
   useEffect(() => {
     setAnimateButton(true);
@@ -50,7 +35,31 @@ function HeroSection({ ele, ParallaxContainer }) {
     return () => clearTimeout(timer);
   }, []);
 
- 
+  useEffect(() => {
+    setCurrentWord(ele.acf.home_page_typing_repeater[currentTextIndex].home_page_typing_text);
+    setIsRemoving(false);  
+  }, [currentTextIndex, ele.acf.home_page_typing_repeater]);
+
+  useEffect(() => {
+    const typingInterval = setInterval(() => {
+      if (!isRemoving) {
+        if (currentWord.length < ele.acf.home_page_typing_repeater[currentTextIndex].home_page_typing_text.length) {
+          setCurrentWord((prevWord) => prevWord + ele.acf.home_page_typing_repeater[currentTextIndex].home_page_typing_text[currentWord.length]);
+        } else {
+          setIsRemoving(true);
+        }
+      } else {
+        if (currentWord.length > 0) {
+          setCurrentWord((prevWord) => prevWord.slice(0, -1));
+        } else {
+          setIsRemoving(false);
+          setCurrentTextIndex((prevIndex) => (prevIndex + 1) % ele.acf.home_page_typing_repeater.length);
+        }
+      }
+    }, 200);  
+
+    return () => clearInterval(typingInterval);
+  }, [currentWord, currentTextIndex, ele.acf.home_page_typing_repeater, isRemoving]);
 
   const showApplyJob = () => {
     setIsApplyJobVisible(true);
@@ -62,37 +71,27 @@ function HeroSection({ ele, ParallaxContainer }) {
 
   return (
     <>
-
       {isApplyJobVisible && (
         <div className="cf7_form_outer" style={{ animation: isApplyJobVisible ? 'slide-down 0.5s' : 'slide-up 0.5s' }}>
           <div className="cf7_form_inner">
             <div className="cf7_top_banner">
-
               <div className="cf7_left_section">
                 <div className="form_banner_heading">
-
                   <h1>apply now</h1>
                 </div>
-
                 <div className="form_slider_wrapper">
                   <div className="_form_paragraph">
-                    <p>
-                      apply for job
-                    </p>
+                    <p>apply for job</p>
                   </div>
                 </div>
-
-
               </div>
-
               <div className="cf7_right_section">
                 <div className="close_button">
                   <button onClick={closeApplyJob} className="close_button">
-                    <img src={Formclose.src} alt="" srcset="" />
+                    <img src={Formclose.src} alt="" srcSet="" />
                   </button>
                 </div>
               </div>
-
             </div>
             <div className="cf7_form_wrapper">
               <ApplyForJob />
@@ -101,16 +100,13 @@ function HeroSection({ ele, ParallaxContainer }) {
         </div>
       )}
 
-
       <div className="parallax-container">
         <div className="container-1">
-
           <div className="page_outer home_section_outer">
             <div className="page_inner home_section_inner">
-
               <div className="home_slider_wrapper">
                 <h1>{ele.acf.slider_heading_first}</h1>
-                <h1>{ele.acf.slider_heading_second}</h1>
+                <h1>{ele.acf.slider_heading_second} <span>{currentWord}<span style={{color:'#191C1B'}}>|</span></span></h1>
                 <div dangerouslySetInnerHTML={{ __html: ele.acf.slider_para }}></div>
               </div>
               <div className="home_slider_animate">
@@ -139,7 +135,6 @@ function HeroSection({ ele, ParallaxContainer }) {
           </div>
         </div>
       </div>
-
     </>
   );
 }
