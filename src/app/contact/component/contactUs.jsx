@@ -15,7 +15,7 @@ function ContactUs({ data }) {
                         <div className='contact_usform_inner_section'>
 
                             <div className='contact_us_l'>
-                                <h1>Contact Us <span>Now</span></h1>
+                                <h1>Contact <span>Us Now</span></h1>
                             </div>
                             <div className='contact_us_r'>
                                 <div className='right_c_form'>
