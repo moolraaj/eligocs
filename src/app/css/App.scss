@@ -3223,10 +3223,7 @@ h5.title_heading_c {
     .lower_sec_c:before {
       display: none;
     }
-    .blogs {
-        top: 7% ;
-        left: 40% ;
-    }
+    
     .content_mission_our.content {
         display: block;
         padding: 15px 0px;
@@ -3566,8 +3563,9 @@ h5.title_heading_c {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 10% ;
+    top: 10% !important;
     left: 50% !important ;
+    gap: 15px !important;
 }
     .apply_now_navgation{
         place-items: baseline;
