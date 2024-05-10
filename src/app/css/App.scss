@@ -120,7 +120,9 @@ span.input-error {
     @extend %section_top_bottom_padding;
 }
 
-
+.collapse.navbar-collapse {
+    transform: translateX(0%);
+}
 .call_left_section h1 {
     color: $white;
     font-size: 1.875em;
@@ -2403,6 +2405,8 @@ span.nav-toggler-icon {
     border-radius: 30px;
 }
 
+
+
 button.nav-toggler span:nth-child(2) {
     width: 26px;
 }
@@ -2620,7 +2624,10 @@ p .testimonial_wrap {
     transform: translateX(100%);
 }
 
+.collapse.navbar-collapse.show {
+    transform: translateX(0%);
 
+}
 
 
 .header-menu-seperate-container-right {
@@ -3462,6 +3469,24 @@ h5.title_heading_c {
 
 
 @media (max-width:768px) {
+    .parallax-container:last-child .content {
+        height: 500px !important;
+      }
+    .testimonial-left-section {
+        h1 {
+          font-size: 1.125em !important;
+          span {
+            margin: 0px 10px !important;
+          }
+        }
+      }
+      .uderline-text {
+        line-height: normal !important;
+    }
+      
+    .testimonial-card p{
+        font-size: 1.1em !important;
+    }
     .product-top-image-section .product_image_right span {
         width: 100%;
         max-width: 400px;
@@ -3651,14 +3676,13 @@ h5.title_heading_c {
     }
 
     .testimonial_section_inner .card-content h1 {
-        font-size: 2.6666666666666665em;
+        font-size: 1.125em;
         color: #000;
     }
 
     .testimonial-right-section {
         .testimonial-card {
-            padding: 2.5em !important;
-            margin-left: 1.8333em !important;
+            padding: 20px !important;
         }
     }
 
@@ -3681,7 +3705,7 @@ h5.title_heading_c {
     .testimonial_section_inner {
         .card-content {
             h3 {
-                font-size: 1.5em !important;
+                font-size: 1em !important;
                 color: #233253;
             }
         }
@@ -3708,7 +3732,7 @@ h5.title_heading_c {
     .testimonial-right-section {
         .dots {
             position: absolute;
-            bottom: -40.25em;
+            bottom: -32.25em;
             left: 50%;
         }
     }
@@ -4114,6 +4138,9 @@ h5.title_heading_c {
         }
     }}
 @media (max-width:568px) {
+    .testimonial_wrapper {
+        grid-template-columns: 1fr !important;
+      }
     .inner_call {
         padding: 0px 10px;
     }
@@ -4181,7 +4208,7 @@ h5.title_heading_c {
     .about_page_testimonial {
         .testimonial-right-section {
             .testimonial-card {
-                width: 70% !important;
+                width: 85% !important;
                 left: -12%;
             }
             .testimonial-card:nth-child(2) {
@@ -4894,13 +4921,13 @@ h5.title_heading_c {
     }
 
     // Service page css by Davinder end
-    .testimonial-right-section {
-        .dots {
-            transform: unset;
-            bottom: -40.25em;
-            left: 38%;
-        }
-    }
+    // .testimonial-right-section {
+    //     .dots {
+    //         transform: unset;
+    //         bottom: -40.25em;
+    //         left: 38%;
+    //     }
+    // }
 
     .menu-right-container-bottom a {
         font-size: 1.2em;
