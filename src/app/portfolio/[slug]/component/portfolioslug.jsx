@@ -1,8 +1,6 @@
 'use client'
 import React, { useState,useRef,useEffect} from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
+
 
 import PortfolioComponent from "../../component/portfolioComponent";
 import Lightbox from '../../Lightbox';
@@ -21,34 +19,7 @@ export default  function Portfolioslug({ data }) {
     };
 
 
-    const triggerRef = useRef(null);
-
-    useEffect(() => {
-        const pin = gsap.fromTo('.portfolio_inner', {
-            translateX: 0
-        }, {
-            xPercent: -100,
-            ease: 'none',
-            duration: 1,
-            scrollTrigger: {
-                trigger: triggerRef.current,
-                start: 'center center',
-                end: '2000 top',
-                scrub: 1,
-                pin: true,
-                pinSpacer: false,
-                pinnedContainer: '#horizontal',
-                invalidateOnRefresh: true,
-                onComplete: function () {
-                    document.querySelector('.pin-spacer').style.display = 'none !important';
-                }
-            }
-        })
-
-        return () => {
-            pin.kill()
-        }
-    }, [])
+    
 
     return (
         <>
@@ -78,7 +49,7 @@ export default  function Portfolioslug({ data }) {
                                 </div>
                             </div>
                         </div>
-                        <section ref={triggerRef} id='horizontal' style={{ width: '100%', height: '90vh', margin: 'auto', overflow: 'hidden', zIndex: '99999' }}>
+                        <section id='horizontal' style={{ width: '100%', height: '90vh', margin: 'auto', overflow: 'hidden', zIndex: '99999' }}>
                         <div className="portfolio_project">
                             <div className="portfolio_projects_flex">
                                 <div className="portfolio_project_heading">
@@ -97,7 +68,7 @@ export default  function Portfolioslug({ data }) {
                         </div>
                         </section>
 
-                        <marquee  behavior="scroll"  direction="left" scrollamount="15">
+                       
                         <div className="portfolio_slider">
                             {ele.acf.portfolio_gallery.map((image, index) => (
                                 <div className="portfolio_gallery_wrapper" key={index} onClick={() => openLightbox(image)}>
@@ -105,7 +76,7 @@ export default  function Portfolioslug({ data }) {
                                 </div>
                             ))}
                         </div>
-                        </marquee>
+                  
                         {lightboxImage && <Lightbox image={lightboxImage} onClose={closeLightbox} />}
                     </div>
 

@@ -454,6 +454,10 @@ p {
     text-align: left;
 }
 
+.contacts_infos a {
+    font-size: 3.125em;
+}
+
 .scrolling_portfolio_section {
     position: absolute;
     width: 100%;
@@ -494,6 +498,38 @@ p {
     justify-content: center;
     align-items: center;
 }
+
+
+.hide_seek_wrapper button {
+    background: transparent;
+    border: none;
+    padding: 0px;
+    padding-left: 13px;
+    top: -1px;
+    position: relative;
+}
+
+.navbar_toggle_navigation {
+    display: flex;
+  }
+
+
+
+.blogs {
+    position: absolute;
+    top: 2px;
+    left: 22%;
+    display: none;
+    flex-direction: column;
+}
+.navbar_toggle_navigation:hover .blogs {
+ 
+    display: flex;
+    
+}
+
+
+
 
 .step-initial p {
     font-size: 1.75em;
@@ -609,6 +645,10 @@ h6.user_name_c {
     align-items: center;
 }
 
+
+.contacts_infos a {
+    font-size: 3.125em;
+}
 
 .our_location li {
     list-style-type: none;
@@ -1008,9 +1048,7 @@ h1 {
 
 }
 
-.blogs{
-display: show;
-}
+
 .hide_seek{
     display: none;
 }
@@ -1543,6 +1581,7 @@ ul.course li:nth-child(4) {
     justify-content: space-between;
     column-gap: 20px;
     row-gap: 20px;
+    overflow: hidden;
 }
 
 .portfolio_slider img {
@@ -1560,7 +1599,7 @@ ul.course li:nth-child(4) {
     max-width: 1520px;
     margin: auto;
     padding-bottom: 100px;
-    padding: 108px 10px;
+    padding: 108px 20px;
 }
 
 .arrow_slider {
@@ -1737,7 +1776,7 @@ span.cline:after {
 
 .nav-right {
     padding-left: 5%;
-    width: 50%;
+    width: 55%;
 
     .header_contact_section {
         h2 {
@@ -1765,7 +1804,7 @@ span.cline:after {
 }
 
 .menu-right-container-bottom a {
-    font-size: 1.375em;
+    font-size: 1.875em;
     font-weight: 500;
 }
 
@@ -2594,10 +2633,11 @@ p .testimonial_wrap {
     .menu-right-container-bottom {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 25px;
         text-transform: uppercase;
         overflow-y: auto;
         height: 80vh;
+        position: relative;
 
         a {
             color: #0C171F;
@@ -2614,7 +2654,7 @@ p .testimonial_wrap {
 .nav-left {
     background-color: #191C1B;
     height: 100vh;
-    width: 50%;
+    width: 45%;
 }
 
 
@@ -3091,6 +3131,11 @@ h5.title_heading_c {
         display: block;
         padding: 15px 0px;
     }
+    .port_description p {
+        font-size: 1.175em;
+        margin-bottom: 10px;
+        line-height: 30px;
+    }
     .product-top-image-section .product_image_right img {
         width: 100%;
         height: 514px;
@@ -3284,7 +3329,16 @@ h5.title_heading_c {
 }
 
 
-
+@media only screen and (max-width:1268px) {
+    .trans_left_section h1, .development_left_section h1 {
+        font-size: 4em;
+        text-decoration: underline;
+        text-decoration-color: #EAAA00;
+        text-transform: capitalize;
+        color: #3D3A3A;
+        line-height: 82px;
+    }
+}
 
 @media (max-width:1024px) {
     .course_page_faq_inner{
@@ -3408,6 +3462,15 @@ h5.title_heading_c {
 
 
 @media (max-width:768px) {
+    .product-top-image-section .product_image_right span {
+        width: 100%;
+        max-width: 400px;
+        height: 51px;
+        background: #EAAA00;
+        position: absolute;
+        left: 10%;
+        bottom: -12px;
+    }
     .page_top {
         padding: 100px 20px 50px 20px;
     }
@@ -4969,7 +5032,7 @@ textarea::placeholder {
 }
 
 .form_button button {
-    background: $black;
+    background: $primaryyellow;
 }
 
 .form_button button {
