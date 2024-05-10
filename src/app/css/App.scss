@@ -94,6 +94,7 @@ span.input-error {
 
 }
 
+
 .call_outer {
     background: $primaryyellow;
     @extend %section_top_bottom_padding;
@@ -1744,9 +1745,8 @@ span.cline:after {
 
 .company_right_section {
     background: $primaryyellow;
-    @extend %section_top_bottom_padding;
     display: flex;
-    padding: 0px;
+    padding: 0px 20px;
     justify-content: space-evenly;
 }
 
@@ -3307,7 +3307,7 @@ h5.title_heading_c {
     }
 
     .company_question h4 {
-        height: 50%;
+        height: 100%;
         writing-mode: tb-rl;
         font-size: 2.125em;
         margin-top: 0vh;
@@ -3459,6 +3459,12 @@ h5.title_heading_c {
 
 
 @media (max-width:768px) {
+    ul.transformation_wrapper img {
+        top: 20px;
+        max-width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
     .portfolio_left_section h1{
         margin: 0 !important;
     }
@@ -4134,6 +4140,12 @@ h5.title_heading_c {
         }
     }}
 @media (max-width:568px) {
+    ul.transformation_wrapper img {
+        top: 0;
+        max-width: 80px;
+        height: 60px;
+        object-fit: cover;
+    }
     .testimonial_wrapper {
         grid-template-columns: 1fr !important;
       }
@@ -4686,7 +4698,13 @@ h5.title_heading_c {
 }
 
 @media (max-width:468px) {
-
+    ul.transformation_wrapper img {
+        bottom: 0;
+        max-width: 30px;
+        height: 30px;
+        object-fit: cover;
+        top: 17px;
+    }
     .services_inner_heading h1,
     .inner_process_heading h1,
     .services_missout_heading h1,
