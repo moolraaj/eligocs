@@ -2257,7 +2257,9 @@ span.vison_c {
     z-index: 999999;
     top: 0;
 }
-
+.footer_outer{
+    z-index: 99999 !important;
+}
 .nav_outer ul {
     padding: 0px;
     margin: 0px;
@@ -3509,7 +3511,7 @@ h5.title_heading_c {
         margin-top: 50px !important;
     }
     .parallax-container:last-child .content {
-        height: 500px !important;
+        height: 440px !important;
       }
     .testimonial-left-section {
         h1 {
@@ -3751,9 +3753,11 @@ h5.title_heading_c {
     }
 
     .testimonial_service.content {
-        height: 500px;
+        height: 440px;
         margin: 0;
         width: 100%;
+        position: relative;
+        overflow-x: scroll;
     }
 
     .show_all_services_section {
@@ -3771,7 +3775,7 @@ h5.title_heading_c {
     .testimonial-right-section {
         .dots {
             position: absolute;
-            bottom: -32.25em;
+            bottom: -29.25em;
             left: 50%;
         }
     }
@@ -4043,7 +4047,7 @@ h5.title_heading_c {
 
     .blog_img_heading_wrapper span {
         width: 60%;
-        height: 60px;
+        height: 40px;
     }
 
     .blog_img_heading_wrapper img {
@@ -4859,9 +4863,7 @@ h5.title_heading_c {
         }
     }
 
-    .blog-page-outer.page_top {
-        padding: 10em 1.667em 4.167em 1.667em;
-    }
+   
 
     .blog-header-description {
         padding: 0 !important;
