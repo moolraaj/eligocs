@@ -460,6 +460,13 @@ button:disabled {
 
 }
 
+
+.page_outer.portfolio_section_outer .portfolio_left_section {
+    width: 48%;
+    text-align: left;
+}
+
+
 .portfolio {
 
     a.portfolio-post {
@@ -1885,7 +1892,7 @@ span.cline:after {
 }
 
 .menu-right-container-bottom a {
-    font-size: 1.475em;
+    font-size: 1.875em;
     font-weight: 500;
 }
 
@@ -3395,8 +3402,8 @@ h5.title_heading_c {
     }
 
     .form_button button {
-        padding: 11px 17px !important;
-        font-size: 1em;
+        padding: 11px 45px !important;
+        font-size: 1.8em;
     }
 
     .company_flex {
@@ -3440,6 +3447,10 @@ h5.title_heading_c {
         text-transform: capitalize;
         color: #3D3A3A;
         line-height: 82px;
+    }
+    .form_button button {
+        padding: 11px 39px !important;
+        font-size: 1em;
     }
     .our_products_wrapper .our_product {
         height: 280px;
@@ -3574,7 +3585,24 @@ h5.title_heading_c {
 
 
 
-@media (max-width:768px) {.blogs {
+@media (max-width:768px) 
+{
+    .header-menu-seperate-container-right .menu-right-container-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        text-transform: uppercase;
+        overflow-y: auto;
+        height: 80vh;
+        position: relative;
+        width: 100%;
+    }
+    .menu-right-container-bottom a {
+        font-size: 1.8em;
+    }
+    
+    
+    .blogs {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -3977,9 +4005,6 @@ h5.title_heading_c {
         margin: 0px;
     }
 
-    body.__className_aaf875 {
-        font-size: 12px;
-    }
 
     .innovation_right {
         button {
@@ -4882,6 +4907,10 @@ h5.title_heading_c {
         height: 30px;
         object-fit: cover;
         top: 17px;
+    }
+    .form_button button {
+        padding: 11px 35px !important;
+        font-size: 1em;
     }
     .header-menu-seperate-container-right .menu-right-container-bottom {
         display: flex;
