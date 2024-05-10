@@ -3962,8 +3962,8 @@ h5.title_heading_c {
     }
 
     .divider-yellow {
-        height: 60px;
-        left: 6%;
+        height: 40px;
+        left: 0%;
         bottom: -25px;
     }
 
@@ -4177,7 +4177,18 @@ h5.title_heading_c {
         }
     }}
 @media (max-width:568px) {
-    
+    .blog_post_header{
+        h1 {
+            font-size: 1.25em;
+        }
+        p{
+            font-size: 1.1em;
+           span:first-child {
+                padding: 0px 5px 0px 10px;
+            }
+        }
+    }
+   
     ul.transformation_wrapper img {
         top: 0;
         max-width: 80px;
@@ -4207,8 +4218,10 @@ h5.title_heading_c {
         width: 70%;
     }
     .blog_itenary img {
-    width: 100% ;
-}
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
 .blog_itenary p{
     font-size: 1em;
 }
@@ -4216,14 +4229,15 @@ h5.title_heading_c {
    padding: 0;
 }
 .blog_itenary strong {
-    font-size: 1em;
+    font-size: .9em;
 }
 .blog_post_header img {
     margin-bottom: 40px;
+    height: auto;
 }
 
 .blog_itenary h3 strong{
-    font-size: 1em;
+    font-size: .8em;
 }
     .port_description p {
         font-size: 1em;
@@ -4749,12 +4763,14 @@ h5.title_heading_c {
     .inner_process_heading h1,
     .services_missout_heading h1,
     .call_left_section h1 {
-        font-size: 1.7em !important;
+        font-size: 1.4em !important;
     }
-
+    .call_left_section p{
+        font-size: 1em !important;
+        line-height: normal !important;
+    }
     .serices_flex_template .services_inner_description p,
-    .servives_missout_description p,
-    .call_left_section p {
+    .servives_missout_description p{
         font-size: 1.2em !important;
         line-height: normal;
     }
@@ -4829,9 +4845,13 @@ h5.title_heading_c {
     .blog_img_heading_wrapper {
         h2 {
             left: 0;
-            bottom: 10em;
+            font-size: 1em;
         }
     }
+    .portfolio_page_top_heading h1{
+        font-size: 1em;
+    }
+
 
     .blog_page_heading_wrapper {
         h1 {
