@@ -15,12 +15,12 @@
 }
 
 //mixin for grid property
-@mixin grid-property($grid,$grid-columns,$grid-items:unset,$grid-gap:0px,$grid-row-gap:0px){
+@mixin grid-property($grid,$grid-columns,$grid-items:unset,$grid-column-gap:0px,$grid-row-gap:0px){
     display: $grid;
     grid-template-columns: $grid-columns;
     align-items: $grid-items;
-    column-gap: $grid-gap;
-    row-gap: grid-row-gap;
+    column-gap: $grid-column-gap;
+    row-gap: $grid-row-gap;
 }
 
 @mixin font_color-y {

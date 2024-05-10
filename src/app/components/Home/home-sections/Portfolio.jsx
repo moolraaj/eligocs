@@ -71,69 +71,30 @@
 
 'use client'
 
-import React, { useRef } from 'react';
+ 
 
 import PortfolioComponent from '@/app/portfolio/component/portfolioComponent';
 
 function PortfolioSection() {
-    const scrollContainerRef = useRef(null);
+   
 
-    const scrollLeft = () => {
-        if (scrollContainerRef.current) {
-            scrollContainerRef.current.scrollTo({
-                left: scrollContainerRef.current.scrollLeft - 500, 
-                scroll: 'smooth'
-            });
-        }
-    };
-
-    const scrollRight = () => {
-        if (scrollContainerRef.current) {
-            scrollContainerRef.current.scrollTo({
-                left: scrollContainerRef.current.scrollLeft + 500, 
-                scroll: 'smooth' 
-            });
-        }
-    };
+   
 
     return (
         <>
-            <section
-                id='horizontal'
-                style={{
-                    position: 'relative',
-                    width: '100%',
-                    height: '90vh',
-                    margin: 'auto',
-                    overflow: 'hidden',
-                    zIndex: '99999',
-                    background: '#ffffff' // Set background color here
-                }}
-            >
-                <div className='portfolio_section_inner' >
-                    <button className='arrow_slider'
-                        onClick={scrollLeft}
-                        style={{
-                            position: 'absolute',
-                            left: '0',
-                            top: '50%',
-                            transform: 'translateY(-50%)',
-                            width: '50px',
-                            height: '50px',
-                            borderRadius: '50%',
-                            zIndex: '99999'
-                        }}
-                    >
-                        {'<'}
-                    </button>
+            
+                
+                 
                     <div className='page_outer portfolio_section_outer scrolling' >
+
+                    
 
 
                         <div className='portfolio_wrapper' >
                             <div className='portfolio_left_section'>
                                 <h1>Explore Our Work</h1>
                             </div>
-                            <div className='scrolling_portfolio_section'ref={scrollContainerRef} style={{ overflowX: 'auto', width: '100%', scrollBehavior: 'smooth' }} >
+                            <div className='scrolling_portfolio_section' >
                                 <div className='portfolio_inner'>
                                     <PortfolioComponent />
                                 </div>
@@ -141,25 +102,10 @@ function PortfolioSection() {
                         </div>
 
 
-                    </div>
-                    <button className='arrow_slider'
-                        onClick={scrollRight}
-                        style={{
-                            position: 'absolute',
-                            right: '0',
-                            top: '50%',
-                            transform: 'translateY(-50%)',
-                            width: '50px',
-                            height: '50px',
-                            borderRadius: '50%',
-                            zIndex: '99999'
-                        }}
-                    >
-                        {'>'}
-                    </button>
+                     
+                
                 </div>
-            </section>
-        </>
+           </>
     );
 }
 
