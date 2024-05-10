@@ -86,7 +86,7 @@ function HomeCompo({ result }) {
           {/*quote section ends*/}
           <QuoteSection ele={ele} />
           {/*quote section ends*/}
-
+          
 
         </div>
       ))}
