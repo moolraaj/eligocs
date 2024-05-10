@@ -594,11 +594,11 @@ h6.user_name_c {
     transition: 2s;
 }
 
-.content {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-}
+// .content {
+//     width: 100%;
+//     display: flex;
+//     justify-content: flex-start;
+// }
 
 
 
@@ -3469,6 +3469,10 @@ h5.title_heading_c {
 
 
 @media (max-width:768px) {
+   
+    .testimonial-right-section .testimonial-card{
+        margin-top: 50px !important;
+    }
     .parallax-container:last-child .content {
         height: 500px !important;
       }
@@ -3712,7 +3716,7 @@ h5.title_heading_c {
     }
 
     .testimonial_service.content {
-        height: 55em;
+        height: 500px;
         margin: 0;
         width: 100%;
     }
@@ -4199,12 +4203,7 @@ h5.title_heading_c {
         margin-top: 20px;
     }
 
-    .services_page_testimonials{
-        .testimonial-card {
-            width: 60% !important;
-        }
-        
-    }
+    
     .about_page_testimonial {
         .testimonial-right-section {
             .testimonial-card {
@@ -4920,14 +4919,7 @@ h5.title_heading_c {
         margin-bottom: 1.25em;
     }
 
-    // Service page css by Davinder end
-    // .testimonial-right-section {
-    //     .dots {
-    //         transform: unset;
-    //         bottom: -40.25em;
-    //         left: 38%;
-    //     }
-    // }
+   
 
     .menu-right-container-bottom a {
         font-size: 1.2em;
