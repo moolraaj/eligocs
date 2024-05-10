@@ -464,7 +464,7 @@ p {
     position: absolute;
     width: 100%;
     overflow: auto;
-    padding-bottom: 60px;
+ 
 
     .portfolio_inner {
         position: relative;
@@ -481,7 +481,7 @@ p {
     display: flex;
     column-gap: 38px;
     align-items: center;
-    height: 100vh;
+    height: 800px;
 }
 
 .page_inner.portfolio_section_inner {
@@ -1728,7 +1728,7 @@ span.cline:after {
 
 .company_flex {
     @include grid-property(grid, 40% 1fr, unset, unset);
-    height: 80vh;
+    height: 700px;
     overflow: auto;
 }
 
@@ -2288,7 +2288,7 @@ span.vison_c {
     color: rgba(255, 255, 255, 0.2705882353);
     font-size: 9.375em;
     text-transform: capitalize;
-    margin: 0px;
+    margin: 0px 0px 0px 60px;
 }
 
 
@@ -3205,15 +3205,7 @@ h5.title_heading_c {
         line-height: 45px !important;
     }
 
-    .page_outer.about_section_outer.scrolling,
-    .trans_flex,
-    .development_flex,
-    .portfolio_wrapper,
-    .testimonial_flex,
-    .page_outer.quote_section_outer.scrolling {
-     padding-left: 20px;
-     padding-right: 20px;
-    }
+    
 
     .our_products_wrapper>ul.our_product.even li:nth-child(2) img,
     .our_products_wrapper>ul.our_product.odd li:nth-child(2) img {
@@ -3330,9 +3322,7 @@ h5.title_heading_c {
         bottom: 25px;
     }
 
-    .company_flex {
-        height: auto;
-    }
+  
 }
 
 
@@ -3469,7 +3459,9 @@ h5.title_heading_c {
 
 
 @media (max-width:768px) {
-   
+    .portfolio_left_section h1{
+        margin: 0 !important;
+    }
     .testimonial-right-section .testimonial-card{
         margin-top: 50px !important;
     }
@@ -4383,10 +4375,12 @@ h5.title_heading_c {
         flex-wrap: wrap;
 
     }
-
+    .portfolio_left_section{
+        width: max-content;
+    }
     .portfolio_left_section h1 {
         font-size: 3.125em;
-        width: 90%;
+        
         padding-bottom: 48px;
     }
 
