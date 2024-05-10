@@ -12,7 +12,7 @@ function HeroSection({ ele, ParallaxContainer }) {
   const [isApplyJobVisible, setIsApplyJobVisible] = useState(false);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [currentWord, setCurrentWord] = useState('');
-  const [isRemoving, setIsRemoving] = useState(false);
+  const [revealIndex, setRevealIndex] = useState(0);  
 
   useEffect(() => {
     setAnimateButton(true);
@@ -36,30 +36,28 @@ function HeroSection({ ele, ParallaxContainer }) {
   }, []);
 
   useEffect(() => {
+    
+    setRevealIndex(0);
     setCurrentWord(ele.acf.home_page_typing_repeater[currentTextIndex].home_page_typing_text);
-    setIsRemoving(false);  
   }, [currentTextIndex, ele.acf.home_page_typing_repeater]);
 
   useEffect(() => {
-    const typingInterval = setInterval(() => {
-      if (!isRemoving) {
-        if (currentWord.length < ele.acf.home_page_typing_repeater[currentTextIndex].home_page_typing_text.length) {
-          setCurrentWord((prevWord) => prevWord + ele.acf.home_page_typing_repeater[currentTextIndex].home_page_typing_text[currentWord.length]);
-        } else {
-          setIsRemoving(true);
-        }
-      } else {
-        if (currentWord.length > 0) {
-          setCurrentWord((prevWord) => prevWord.slice(0, -1));
-        } else {
-          setIsRemoving(false);
-          setCurrentTextIndex((prevIndex) => (prevIndex + 1) % ele.acf.home_page_typing_repeater.length);
-        }
-      }
-    }, 200);  
+    
+    const revealInterval = setInterval(() => {
+      setRevealIndex((prevIndex) => Math.min(prevIndex + 1, currentWord.length));
+    }, 150);  
 
-    return () => clearInterval(typingInterval);
-  }, [currentWord, currentTextIndex, ele.acf.home_page_typing_repeater, isRemoving]);
+    return () => clearInterval(revealInterval);
+  }, [currentWord]);
+
+  useEffect(() => {
+   
+    const interval = setInterval(() => {
+      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % ele.acf.home_page_typing_repeater.length);
+    }, 3000); 
+
+    return () => clearInterval(interval);
+  }, [ele.acf.home_page_typing_repeater]);
 
   const showApplyJob = () => {
     setIsApplyJobVisible(true);
@@ -106,25 +104,31 @@ function HeroSection({ ele, ParallaxContainer }) {
             <div className="page_inner home_section_inner">
               <div className="home_slider_wrapper">
                 <h1>{ele.acf.slider_heading_first}</h1>
-                <h1>{ele.acf.slider_heading_second} <span>{currentWord}<span style={{color:'#191C1B'}}>|</span></span></h1>
+                <h1>
+                  {ele.acf.slider_heading_second}{' '}
+                  <span className="typing-text">{currentWord.slice(0, revealIndex)}</span>
+                  <span style={{ color: '#191C1B' }}>|</span>
+                </h1>
                 <div dangerouslySetInnerHTML={{ __html: ele.acf.slider_para }}></div>
               </div>
               <div className="home_slider_animate">
                 <div className="innovation_wrapper">
-                  <h1 className={`innovation-heading ${showInnovation ? "hide" : ""}`}>
+                  <h1 className={`innovation-heading ${showInnovation ? 'hide' : ''}`}>
                     {ele.acf.innovation}
                   </h1>
                   <div
-                    className={`innovation_content innovation_right ${showInnovation ? "show" : "hide"}`}
+                    className={`innovation_content innovation_right ${showInnovation ? 'show' : 'hide'}`}
                     style={{
-                      transform: showInnovation ? "translateX(-35%)" : "translateX(100%)",
+                      transform: showInnovation ? 'translateX(-35%)' : 'translateX(100%)',
                       opacity: showInnovation ? 1 : 0,
-                      pointerEvents: showInnovation ? "auto" : "none",
+                      pointerEvents: showInnovation ? 'auto' : 'none',
                     }}
                   >
                     {showInnovation && (
                       <>
-                        <button type="button" className={animateButton ? "animate" : ""} onClick={showApplyJob}>Apply Now</button>
+                        <button type="button" className={animateButton ? 'animate' : ''} onClick={showApplyJob}>
+                          Apply Now
+                        </button>
                         <p>{ele.acf.innovation_heading}</p>
                       </>
                     )}
