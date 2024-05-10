@@ -2276,15 +2276,6 @@ h1.innovation-heading {
 }
 
 
-.innovation_left.hide {
-    transform: translateX(-100000%);
-}
-
-.innovation_right.show {
-
-    transform: translateX(-84%);
-}
-
 
 .innovation_left,
 .innovation_right {
@@ -2590,10 +2581,8 @@ p .testimonial_wrap {
     transform: translateX(100%);
 }
 
-.collapse.navbar-collapse.show {
-    transform: translateX(0%);
 
-}
+
 
 .header-menu-seperate-container-right {
     display: flex;
@@ -3271,7 +3260,6 @@ h5.title_heading_c {
 
     .company_left_section {
         background: #191C1B;
-        height:35vh;
     }
 
     .company_question h4 {
@@ -3281,7 +3269,6 @@ h5.title_heading_c {
         margin-top: 0vh;
         position: relative;
         font-weight: 400;
-        padding-top: 30px;
         margin:0px;
     }
     .company_scroll_wrapper h4:after {
@@ -3734,6 +3721,7 @@ h5.title_heading_c {
     }
 
     .testimonial_flex {
+        grid-template-columns: 1fr;
         padding: 0px 20px;
     }
 
@@ -3761,10 +3749,7 @@ h5.title_heading_c {
         grid-auto-columns: 1fr;
     }
 
-    .innovation_content {
-        right: 70%;
-    }
-
+   
     .page_inner {
         margin: 0px;
     }
@@ -4360,7 +4345,6 @@ h5.title_heading_c {
 
     .company_left_section {
         display: block;
-        padding-bottom: 60px;
     }
 
     .company_question h4 {
@@ -4406,7 +4390,7 @@ h5.title_heading_c {
     .company_left_section h1 {
         line-height: 48px;
         margin: 0;
-        width: min-content;
+        width: 82%;
         font-size: 2.5em;
     }
 
