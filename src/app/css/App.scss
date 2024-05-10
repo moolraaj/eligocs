@@ -549,7 +549,7 @@ p {
   
   .hide_seek.blogs {
     position: absolute;
-    top: 0%;
+    top: 0;
     left: 211px;
     display: none;
     flex-direction: column;
@@ -3224,8 +3224,8 @@ h5.title_heading_c {
       display: none;
     }
     .blogs {
-        top: 10%;
-        left: 50%;
+        top: 7% ;
+        left: 40% ;
     }
     .content_mission_our.content {
         display: block;
@@ -3562,7 +3562,13 @@ h5.title_heading_c {
 
 
 
-@media (max-width:768px) {
+@media (max-width:768px) {.blogs {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 10% ;
+    left: 50% !important ;
+}
     .apply_now_navgation{
         place-items: baseline;
     }
@@ -5110,7 +5116,7 @@ h5.title_heading_c {
    
 
     .menu-right-container-bottom a {
-        font-size: 1.8em;
+        font-size: 1.5em;
     }
 
     
