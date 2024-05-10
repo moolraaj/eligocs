@@ -86,10 +86,6 @@ function PortfolioSection() {
                 
                  
                     <div className='page_outer portfolio_section_outer scrolling' >
-
-                    
-
-
                         <div className='portfolio_wrapper' >
                             <div className='portfolio_left_section'>
                                 <h1>Explore Our Work</h1>
@@ -100,10 +96,6 @@ function PortfolioSection() {
                                 </div>
                             </div>
                         </div>
-
-
-                     
-                
                 </div>
            </>
     );

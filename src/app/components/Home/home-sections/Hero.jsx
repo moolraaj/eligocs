@@ -19,36 +19,10 @@ function HeroSection({ ele, ParallaxContainer }) {
   const [showButton, setShowButton] = useState(false);
   const [animateButton, setAnimateButton] = useState(false);
   const [isApplyJobVisible, setIsApplyJobVisible] = useState(false);
-  const [text, setText] = useState('');
-  const [reverse, setReverse] = useState(false);
-  const typingSpeed = 250; 
 
-  useEffect(() => {
-    const originalText = ele.acf.home_page_typing_text;
-    let index = reverse ? originalText.length : 0;
+  console.log(ele)
+  
 
-    const typeText = () => {
-      setText(originalText.substring(0, index) + (reverse ? "" : ""));
-
-      if (reverse) {
-        index--;
-        if (index < 0) {
-          setReverse(false);
-          return;
-        }
-      } else {
-        index++;
-        if (index > originalText.length) {
-          setReverse(true);
-          return;
-        }
-      }
-
-      setTimeout(typeText, typingSpeed);
-    };
-
-    typeText();
-  }, [reverse]);
 
 
 
@@ -76,7 +50,7 @@ function HeroSection({ ele, ParallaxContainer }) {
     return () => clearTimeout(timer);
   }, []);
 
-
+ 
 
   const showApplyJob = () => {
     setIsApplyJobVisible(true);
@@ -109,8 +83,6 @@ function HeroSection({ ele, ParallaxContainer }) {
                 </div>
 
 
-
-
               </div>
 
               <div className="cf7_right_section">
@@ -133,31 +105,19 @@ function HeroSection({ ele, ParallaxContainer }) {
       <div className="parallax-container">
         <div className="container-1">
 
-
-
           <div className="page_outer home_section_outer">
             <div className="page_inner home_section_inner">
 
               <div className="home_slider_wrapper">
-
                 <h1>{ele.acf.slider_heading_first}</h1>
-                <h1>{ele.acf.slider_heading_second} <span>{text}</span><span style={{color:"#191C1B"}}>|</span>
-                </h1>
-
+                <h1>{ele.acf.slider_heading_second}</h1>
                 <div dangerouslySetInnerHTML={{ __html: ele.acf.slider_para }}></div>
               </div>
-
-
-
-
-
-
               <div className="home_slider_animate">
                 <div className="innovation_wrapper">
                   <h1 className={`innovation-heading ${showInnovation ? "hide" : ""}`}>
                     {ele.acf.innovation}
                   </h1>
-
                   <div
                     className={`innovation_content innovation_right ${showInnovation ? "show" : "hide"}`}
                     style={{
@@ -173,7 +133,6 @@ function HeroSection({ ele, ParallaxContainer }) {
                       </>
                     )}
                   </div>
-
                 </div>
               </div>
             </div>
