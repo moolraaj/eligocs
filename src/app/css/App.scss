@@ -1870,7 +1870,7 @@ span.cline:after {
 }
 
 .menu-right-container-bottom a {
-    font-size: 1.875em;
+    font-size: 1.475em;
     font-weight: 500;
 }
 
@@ -2700,7 +2700,7 @@ p .testimonial_wrap {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    padding: 20px;
+    padding: 20px 20px 20px 10px;
     cursor: pointer;
 
     .menu-right-container-bottom {
@@ -3218,7 +3218,7 @@ h5.title_heading_c {
 
 @media only screen and (max-width:1500px) {
     .menu-right-container-bottom a {
-        font-size: 1.875em;
+        font-size: 1.2em;
     }
     .lower_sec_c:before {
       display: none;
@@ -3383,7 +3383,8 @@ h5.title_heading_c {
     }
 
     .form_button button {
-        padding: 11px 51px !important;
+        padding: 11px 17px !important;
+        font-size: 1em;
     }
 
     .company_flex {
@@ -3562,6 +3563,9 @@ h5.title_heading_c {
 
 
 @media (max-width:768px) {
+    .apply_now_navgation{
+        place-items: baseline;
+    }
     .nav_left_section a.navbar-brand img {
         width: 75% !important;
         height: auto !important;
@@ -4251,6 +4255,12 @@ h5.title_heading_c {
         }
     }}
 @media (max-width:568px) {
+    .nav-right .navbar_social_media{
+        column-gap: 10px;
+    }
+    .nav-right .header_contact_section h2 {
+        font-size: 1.2em;
+    }
     .form_fields_wrapper input{
         width: 89% !important;
         font-size: 1em;
@@ -4309,8 +4319,9 @@ h5.title_heading_c {
         font-size: 1.2em;
     }
     .header_bottom_social_icons img{
-        width: 22px !important;
-        height: 22px !important;
+        width: 17px !important;
+        height: 17px !important;
+        object-fit: cover !important;
     }
     .product-top-image-section .product_image_right span{
         width: 70%;
@@ -4672,7 +4683,7 @@ h5.title_heading_c {
     }
 
     .nav-right {
-        width: 90%;
+        width: 100%;
     }
 
     .lightbox-container {
@@ -5089,9 +5100,7 @@ h5.title_heading_c {
         font-size: 1.2em;
     }
 
-    .form_button button {
-        padding: 11px 45px;
-    }
+    
 }
 
 @media (max-width:375px) {
