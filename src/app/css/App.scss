@@ -3148,7 +3148,13 @@ h5.title_heading_c {
 
 
 @media only screen and (max-width:1500px) {
-
+    .menu-right-container-bottom a {
+        font-size: 1em;
+    }
+    .blogs {
+        top: 10%;
+        left: 50%;
+    }
     .content_mission_our.content {
         display: block;
         padding: 15px 0px;
@@ -3350,14 +3356,21 @@ h5.title_heading_c {
         color: #3D3A3A;
         line-height: 82px;
     }
-    .blogs {
-        top: 10%;
-        left: 40%;
+    .our_products_wrapper .our_product {
+        height: 280px;
     }
+    .our_products_wrapper .our_product li:nth-child(1) {
+        height: 220px;
+    }
+    
 }
 
 @media (max-width:1024px) {
-    
+    .team_banner_image img {
+        width: 80vw;
+        height: 300px !important;
+        object-fit: cover;
+    }
     .course_page_faq_inner{
         padding: 0px 10px 40px 10px !important;
     }
@@ -3418,9 +3431,7 @@ h5.title_heading_c {
         width: 100% !important;
     }
 
-    .menu-right-container-bottom a {
-        font-size: 1.275em;
-    }
+    
 
     .portfolio a.portfolio-post {
         width: 240px;
@@ -3479,6 +3490,10 @@ h5.title_heading_c {
 
 
 @media (max-width:768px) {
+    
+    .product-top-image-section .product_image_right img{
+        height: auto;
+    }
     ul.transformation_wrapper img {
         top: 20px;
         max-width: 100px;
