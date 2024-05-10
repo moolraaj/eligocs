@@ -3294,8 +3294,8 @@ h5.title_heading_c {
     }
 
     .form_slides {
-        font-size: 24px !important;
-
+        font-size: 16px !important;
+        margin-top: 10px;
     }
 
 
@@ -3605,11 +3605,11 @@ h5.title_heading_c {
     }
 
     button.close_button img {
-        width: 74px;
+        width: 40px;
     }
 
     .cf7_form_outer {
-        width: auto;
+        width: 100%;
         height: auto !important;
         position: fixed !important;
         overflow: auto;
@@ -4187,6 +4187,22 @@ h5.title_heading_c {
         }
     }}
 @media (max-width:568px) {
+    .form_fields_wrapper input{
+        width: 89% !important;
+        font-size: 1em;
+    }
+    .form_fields_wrapper input::placeholder {
+        font-size: 1.125em !important;
+    }
+    .form_fields_wrapper textarea{
+        font-size: 1em;
+    }
+    .form_fields_wrapper:nth-child(7){
+        padding: 20px 0px 0px 0px  !important;
+    }
+    .form_fields_wrapper:nth-child(7) textarea::placeholder{
+        font-size: 1.125em !important;
+    }
     .testimonial-right-section .testimonial-card:nth-child(2) {
         top: 30px !important;
         left: 30px !important;
