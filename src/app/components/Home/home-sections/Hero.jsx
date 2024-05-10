@@ -104,12 +104,12 @@ function HeroSection({ ele, ParallaxContainer }) {
             <div className="page_inner home_section_inner">
               <div className="home_slider_wrapper">
                 <h1>{ele.acf.slider_heading_first}</h1>
-                <h1>
+                <h1 className='type_text_wrapper'>
                   {ele.acf.home_page_heading_second}
-                  <div>
+                  
                   <span className="typing-text" style={{ color: '#191C1B' }}>{currentWord.slice(0, revealIndex)} | </span>
                  
-                  </div>
+                  
                 </h1>
                 <div dangerouslySetInnerHTML={{ __html: ele.acf.slider_para }}></div>
               </div>
