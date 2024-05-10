@@ -110,6 +110,22 @@ span.input-error {
 }
 
 
+
+
+
+
+h1.type_text_wrapper {
+    text-align: end!important;
+    @include grid-property(grid,1fr 1fr,center,20px)
+}
+
+h1.type_text_wrapper span {
+    text-align: left;
+}
+
+
+
+
 .call_outer {
     background: $primaryyellow;
     @extend %section_top_bottom_padding;
@@ -1766,7 +1782,7 @@ ul.transformation_wrapper li h4 {
 }
 
 .home_slider_wrapper h1:nth-child(2) {
-    font-size: 5.625em;
+    font-size: 4.625em;
     color: $primaryyellow;
     text-transform: capitalize;
 }
@@ -3457,6 +3473,18 @@ h5.title_heading_c {
     }
     .our_products_wrapper .our_product li:nth-child(1) {
         height: 220px;
+    }
+    
+}
+
+@media only screen and (max-width:1068px) {
+    h1.type_text_wrapper {
+        text-align: center;
+        @include grid-property(grid,1fr,center,0px);
+    }
+    
+    h1.type_text_wrapper span {
+        text-align: center;
     }
     
 }
