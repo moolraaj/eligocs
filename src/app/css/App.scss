@@ -564,7 +564,7 @@ p {
   
   .hide_seek.blogs {
     position: absolute;
-    top: 0%;
+    top: 0;
     left: 211px;
     display: none;
     flex-direction: column;
@@ -3238,10 +3238,7 @@ h5.title_heading_c {
     .lower_sec_c:before {
       display: none;
     }
-    .blogs {
-        top: 10%;
-        left: 50%;
-    }
+    
     .content_mission_our.content {
         display: block;
         padding: 15px 0px;
@@ -3577,7 +3574,14 @@ h5.title_heading_c {
 
 
 
-@media (max-width:768px) {
+@media (max-width:768px) {.blogs {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 10% !important;
+    left: 50% !important ;
+    gap: 15px !important;
+}
     .apply_now_navgation{
         place-items: baseline;
     }
@@ -3980,10 +3984,11 @@ h5.title_heading_c {
     .innovation_right {
         button {
             font-size: 1.1em;
+            padding: 12px 30px;
         }
 
         p {
-            font-size: 1.4em !important;
+            font-size: 1.2em !important;
         }
     }
 
@@ -4878,6 +4883,19 @@ h5.title_heading_c {
         object-fit: cover;
         top: 17px;
     }
+    .header-menu-seperate-container-right .menu-right-container-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-transform: uppercase;
+        overflow-y: auto;
+        height: 80vh;
+        position: relative;
+        width: 100%;
+    }       
+ 
+
+
     .services_inner_heading h1,
     .inner_process_heading h1,
     .services_missout_heading h1,
@@ -5112,7 +5130,7 @@ h5.title_heading_c {
    
 
     .menu-right-container-bottom a {
-        font-size: 1.2em;
+        font-size: 1.5em;
     }
 
     
