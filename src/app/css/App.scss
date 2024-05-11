@@ -3775,7 +3775,7 @@ h5.title_heading_c {
 
 @media (max-width:768px) {
     .about-top-content button{
-        float: left;
+        float: left !important;
     }
     .services_page_testimonials  .testimonial-card{
         margin-left: 20px;
