@@ -3479,7 +3479,7 @@ h5.title_heading_c {
 
 @media only screen and (max-width:1068px) {
     h1.type_text_wrapper {
-        text-align: center;
+        text-align: center!important;
         @include grid-property(grid,1fr,center,0px);
     }
     
