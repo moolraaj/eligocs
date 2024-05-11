@@ -2617,7 +2617,7 @@ p .testimonial_wrap {
 
 .dots {
     position: absolute;
-    bottom: -62px;
+    bottom: -50%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -4684,7 +4684,7 @@ h5.title_heading_c {
     }
 
     .home_testimonial_wrapper {
-        height: 90vh;
+        height: 80vh;
     }
 
 
@@ -4778,7 +4778,7 @@ h5.title_heading_c {
 
 
     .testimonial_left_section h1 {
-        font-size: 2.5em;
+        font-size: 2.125em;
         line-height: normal;
         width: 100%;
     }
