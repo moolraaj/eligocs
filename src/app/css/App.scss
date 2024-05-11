@@ -76,6 +76,7 @@ $font: font-family;
 }
   
   @media screen and (max-width: 768px) {
+    
     .portfolio_slider {
       scroll-snap-type: x none;  
       overflow-x: scroll;  
@@ -1089,7 +1090,7 @@ form#applyforjob textarea {
             padding: 10px 20px;
             border-radius: 35px;
             margin-top: 20px;
-            font-size: 1.3em;
+            font-size: 1.125em;
         }
 
         a:hover {
@@ -3505,8 +3506,8 @@ h5.title_heading_c {
     .our_products_wrapper .our_product li:nth-child(1) {
         h1 {
             margin-top: 0;
-            font-size: 1.6em;
-            padding: 5px;
+            font-size: 1.5em;
+            padding: 7px;
         }
 
         a {
@@ -3877,7 +3878,7 @@ h5.title_heading_c {
     }
 
     .product-top-info-section .product-page-left-info h1 {
-        font-size: 2em;
+        font-size: 1.875em;
     }
 
     .product-top-info-section {
@@ -3921,11 +3922,13 @@ h5.title_heading_c {
     }
 
     .our_products_wrapper .our_product {
-        height: 230px;
+        height: 260px;
+        padding: 0;
     }
 
     .our_products_wrapper .our_product li:nth-child(1) {
         height: 75%;
+        padding-bottom: 10px;
     }
 
     .scrolling_portfolio_section .portfolio_inner {
@@ -5153,7 +5156,7 @@ h5.title_heading_c {
         margin-top: 40px;
 
         h1 {
-            font-size: 2em;
+            font-size: 1.875em;
             padding-left: 10px;
         }
     }
@@ -5165,7 +5168,7 @@ h5.title_heading_c {
     .port_showcase_title h2,
     .port_showcase_short_description h4,
     .port_showcase_category {
-        font-size: 1.125em;
+        font-size: 1em;
     }
 
     .port_showcase_hove_effect {
@@ -5300,7 +5303,7 @@ h5.title_heading_c {
     .blog_img_heading_wrapper {
         h2 {
             left: 0;
-            font-size: 1em;
+            font-size: .75em;
         }
     }
 
