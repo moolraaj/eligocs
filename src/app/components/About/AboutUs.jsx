@@ -149,7 +149,7 @@ const AboutUs = ({ result }) => {
               <div className="parallax-container" style={{background: "#fff"}}>
             <div className="container-5">
               <div className="content about_page_testimonial">
-                <Testimoinals />
+             
               </div>
               </div>
               </div>

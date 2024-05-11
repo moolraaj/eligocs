@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useRef, useEffect } from 'react';
+import arrow from '../../../assets/headerAssets/arrow.png' 
 
 
 import PortfolioComponent from "../../component/portfolioComponent";
@@ -31,7 +32,7 @@ export default function Portfolioslug({ data }) {
     useEffect(() => {
         const interval = setInterval(() => {
             nextSlide();
-        }, 2500);
+        }, 2000);
         return () => clearInterval(interval);
     }, [currentIndex]);
 
@@ -112,31 +113,34 @@ export default function Portfolioslug({ data }) {
 
 
 
-<div className="slider_wrapper">
+                        <div className="slider_wrapper">
 
 
-                        <div className="portfolio_slider">
-                            {imagesToShow.map((image, index) => (
-                                <div className="portfolio_gallery_wrapper" key={index} onClick={() => openLightbox(image)}>
-                                    <img src={image} alt={`portfolio-image-${index}`} />
+                            <div className="portfolio_slider">
+                                {imagesToShow.map((image, index) => (
+                                    <div className="portfolio_gallery_wrapper" key={index} onClick={() => openLightbox(image)}>
+                                        <img src={image} alt={`portfolio-image-${index}`} />
 
-                                </div>
-                            ))}
-                        
+                                    </div>
+                                ))}
+
+                            </div>
+
+                          
+                            <div className="slider_buttons">
+                                <button className="prev" onClick={prevSlide} aria-level='toggle_left_button'>
+                                <img src={arrow.src} alt='left-icons'/>
+                                </button>
+                                <button className="next" onClick={nextSlide} aria-level='toggle_right_button'>
+                                <img src={arrow.src} alt='left-icons'/>
+                                </button>
+                               
+
+
+                            </div>
                         </div>
-                        
-                        <div className="slider_bittons">
-                        <button className="prev" onClick={prevSlide}>
-                            previous
-                        </button>
-                        <button className="next" onClick={nextSlide}>
-                           next
-                        </button>
-                        </div>
 
-                        </div>
-                        
-                       
+
 
 
                         {lightboxImage && <Lightbox image={lightboxImage} onClose={closeLightbox} />}
