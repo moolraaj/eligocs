@@ -9,6 +9,7 @@ import WorkingProcess from "./WorkingProcess";
 
  
 import CallToAction from "@/app/call-to-action/callToAction";
+import Testimonials from "@/app/common/Testimoinals";
 import { useRouter } from "next/navigation";
 import TestimonialSection from "../Home/home-sections/Testimonial";
  
@@ -149,6 +150,7 @@ const AboutUs = ({ result }) => {
               <div className="parallax-container" style={{background: "#fff"}}>
             <div className="container-5">
               <div className="content about_page_testimonial">
+                {/* <Testimonials /> */}
                 <TestimonialSection ele={ele}/>
               </div>
               </div>

@@ -572,6 +572,7 @@ button {
 
   
   .parallax-container:last-child .content {
+    height: 100vh !important;
     margin: auto;
     width: 90%;
   }

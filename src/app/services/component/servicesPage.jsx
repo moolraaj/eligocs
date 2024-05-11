@@ -8,6 +8,7 @@ import Testimonials from "@/app/common/Testimoinals"
 import '../../about/AboutPage.scss'
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
+import TestimonialSection from "@/app/components/Home/home-sections/Testimonial"
 
 
 
@@ -128,7 +129,8 @@ export default function ServicesPage() {
 
                         <div className="testimonial_service content">
                             <div className="services_page_testimonials">
-                            <Testimonials />
+                            {/* <Testimonials /> */}
+                            <TestimonialSection ele={ele}/>
                             </div>
                         </div>
 
