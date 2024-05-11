@@ -4555,6 +4555,16 @@ h5.title_heading_c {
         width: 20px;
         height: 20px;
     }
+    .form_fields_wrapper {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2px;
+    }
+    span.error_fields {
+        color: red;
+        font-size: 14px!important;
+        text-transform: capitalize;
+    }
     .footer_wrapper .footer-center-bottom-section {
         border-top: 1px solid #808080;
         margin: 20px 0px;
