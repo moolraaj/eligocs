@@ -1,14 +1,55 @@
 'use client'
-import React, { useState,useRef,useEffect} from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 
 import PortfolioComponent from "../../component/portfolioComponent";
 import Lightbox from '../../Lightbox';
 
-export default  function Portfolioslug({ data }) {
+export default function Portfolioslug({ data }) {
+    console.log(data)
 
 
     const [lightboxImage, setLightboxImage] = useState(null);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [imagesToShow, setImagesToShow] = useState([]);
+
+    useEffect(() => {
+        setImagesToShow(getImagesToShow());
+    }, [currentIndex, data]);
+
+    const getImagesToShow = () => {
+        const images = data.flatMap(ele => ele.acf.portfolio_gallery);
+        const firstIndex = currentIndex % images.length;
+        const lastIndex = (firstIndex + 3) % images.length;
+        if (lastIndex >= firstIndex) {
+            return images.slice(firstIndex, lastIndex + 1);
+        } else {
+            return [...images.slice(firstIndex), ...images.slice(0, lastIndex + 1)];
+        }
+    };
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            nextSlide();
+        }, 2500);
+        return () => clearInterval(interval);
+    }, [currentIndex]);
+
+    const nextSlide = () => {
+        setCurrentIndex((currentIndex + 1) % data.flatMap(ele => ele.acf.portfolio_gallery).length);
+    };
+
+    const prevSlide = () => {
+        setCurrentIndex((currentIndex - 1 + data.flatMap(ele => ele.acf.portfolio_gallery).length) % data.flatMap(ele => ele.acf.portfolio_gallery).length);
+    };
+
+
+
+
+
+
+
+
 
     const openLightbox = (image) => {
         setLightboxImage(image);
@@ -19,7 +60,7 @@ export default  function Portfolioslug({ data }) {
     };
 
 
-    
+
 
     return (
         <>
@@ -49,34 +90,55 @@ export default  function Portfolioslug({ data }) {
                                 </div>
                             </div>
                         </div>
-                        <section id='horizontal' style={{ width: '100%', height: '90vh', margin: 'auto', overflow: 'hidden', zIndex: '99999' }}>
+
                         <div className="portfolio_project">
                             <div className="portfolio_projects_flex">
                                 <div className="portfolio_project_heading">
                                     <h1>{ele.acf.portfolio_projects_heading}</h1>
                                 </div>
-                                
+
 
                                 <div className="portfolio_showcase_right">
-                                <div className="portfolio_inner">
-                                    <PortfolioComponent />
+                                    <div className="portfolio_inner">
+                                        <PortfolioComponent />
                                     </div>
                                 </div>
-                               
+
                             </div>
 
                         </div>
-                        </section>
 
-                       
+
+
+
+
+<div className="slider_wrapper">
+
+
                         <div className="portfolio_slider">
-                            {ele.acf.portfolio_gallery.map((image, index) => (
+                            {imagesToShow.map((image, index) => (
                                 <div className="portfolio_gallery_wrapper" key={index} onClick={() => openLightbox(image)}>
                                     <img src={image} alt={`portfolio-image-${index}`} />
+
                                 </div>
                             ))}
+                        
                         </div>
-                  
+                        
+                        <div className="slider_bittons">
+                        <button className="prev" onClick={prevSlide}>
+                            previous
+                        </button>
+                        <button className="next" onClick={nextSlide}>
+                           next
+                        </button>
+                        </div>
+
+                        </div>
+                        
+                       
+
+
                         {lightboxImage && <Lightbox image={lightboxImage} onClose={closeLightbox} />}
                     </div>
 
