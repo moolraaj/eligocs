@@ -48,12 +48,52 @@
 
 
 
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Euclid Circular A' !important;
+    font-size: 16px;
+    overflow-x: hidden !important;
+    cursor: auto !important;
+
+    button {
+        cursor: pointer;
+    }
+
+    input:focus-visible {
+        outline: unset;
+    }
+
+    textarea:focus-visible {
+        outline: unset;
+    }
+    li{
+        list-style: none;
+    }
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+    background-color: $white;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: $primaryyellow;
+    border-radius: 10px;
+}
+
+
+
 $font: font-family;
 
 
 
  
- 
+.footer_ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+} 
 
 .portfolio_slider {
     display: flex;
@@ -146,36 +186,7 @@ $font: font-family;
 
 
 
-body {
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Euclid Circular A' !important;
-    font-size: 16px;
-    overflow-x: hidden !important;
-    cursor: auto !important;
 
-    button {
-        cursor: pointer;
-    }
-
-    input:focus-visible {
-        outline: unset;
-    }
-
-    textarea:focus-visible {
-        outline: unset;
-    }
-}
-
-body::-webkit-scrollbar {
-    width: 12px;
-    background-color: $white;
-}
-
-body::-webkit-scrollbar-thumb {
-    background-color: $primaryyellow;
-    border-radius: 10px;
-}
 
 
 span.input-error {
@@ -260,7 +271,7 @@ button#sucess-journy-btn {
 }
 
 button#sucess-journy-btn:hover {
-    background: $black;
+    background: $primaryblack!important;
     color: $white;
 }
 
@@ -2774,9 +2785,7 @@ p .testimonial_wrap {
             @include flex-property(flex, flex-start, column, flex-start)
         }
 
-        .center-section-third-inner-wrapper li {
-            margin-bottom: 20px;
-        }
+        
 
     }
 
@@ -4543,6 +4552,10 @@ h5.title_heading_c {
         width: 20px;
         height: 20px;
     }
+    .footer_wrapper .footer-center-bottom-section {
+        border-top: 1px solid #808080;
+        margin: 20px 0px;
+    }
 
     .member_designation p,
     .member_name h4 {
@@ -4763,6 +4776,7 @@ h5.title_heading_c {
     .testi_image img {
         width: 60px;
         height: 60px;
+        object-fit: contain;
     }
 
     .testimonial_address p {
