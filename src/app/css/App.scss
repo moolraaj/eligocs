@@ -1925,7 +1925,7 @@ span.cline:after {
 .company_right_section {
     background: $primaryyellow;
     display: flex;
-    padding: 0px 20px 30px 20px;
+    padding: 20px 20px 40px 20px;
     justify-content: space-evenly;
 }
 
@@ -3685,6 +3685,7 @@ h5.title_heading_c {
 
     .scrolling_portfolio_section {
         position: relative;
+        padding-bottom: 40px;
     }
 
     .portfolio_left_section {
@@ -4198,8 +4199,7 @@ h5.title_heading_c {
 
     .company_left_section {
         height: auto;
-        padding: 20px;
-        height: auto;
+        padding: 50px 20px 80px 20px;;
     }
 
     .testimonial_service {
@@ -4816,7 +4816,7 @@ h5.title_heading_c {
     }
 
     .portfolio_left_section {
-        width: 100%;
+        width: 100% !important;
     }
 
     .portfolio_left_section h1 {
@@ -4843,7 +4843,7 @@ h5.title_heading_c {
     }
 
     .trans_right_section {
-        margin-top: 20px;
+        margin: 55px auto 30px auto;
     }
 
     ul.transformation_wrapper li h4 {
@@ -4930,9 +4930,12 @@ h5.title_heading_c {
 
     .home_slider_wrapper h1:first-child,
     .home_slider_wrapper h1:nth-child(2) {
-        font-size: 2em;
+        font-size: 1.875em;
     }
-
+    .home_slider_wrapper p,
+    .innovation_right p{
+        font-size: 1.125em;
+    }
     .all-blog-posts-outer {
         @include grid-property(grid, repeat(1, 1fr));
 
