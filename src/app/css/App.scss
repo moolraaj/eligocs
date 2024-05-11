@@ -4035,12 +4035,12 @@ h5.title_heading_c {
 
     .innovation_right {
         button {
-            font-size: 1.1em;
+            font-size: 1.125em;
             padding: 12px 30px;
         }
 
         p {
-            font-size: 1.2em !important;
+            font-size: 1.125em !important;
         }
     }
 
@@ -4728,7 +4728,7 @@ h5.title_heading_c {
 
     .home_slider_wrapper h1:first-child,
     .home_slider_wrapper h1:nth-child(2) {
-        font-size: 2em;
+        font-size: 1.875em;
     }
 
     .all-blog-posts-outer {
@@ -4736,7 +4736,9 @@ h5.title_heading_c {
 
     }
 
-
+.home_slider_wrapper p {
+    font-size: 1.125em;
+}
 
     .protfolio_items {
         padding: 0;
