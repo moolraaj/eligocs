@@ -1975,7 +1975,7 @@ span.cline:after {
 .company_right_section {
     background: $primaryyellow;
     display: flex;
-    padding: 0px 20px 30px 20px;
+    padding: 20px 20px 40px 20px;
     justify-content: space-evenly;
 }
 
@@ -2374,7 +2374,8 @@ span.vison_c {
     background: $white;
     box-shadow: $shadow;
     padding: 20px;
-    border-radius: 4px;
+    border-radius: 10px;
+    
 }
 
 .testimonial_flex {
@@ -2666,7 +2667,7 @@ p .testimonial_wrap {
 
 .dots {
     position: absolute;
-    bottom: -62px;
+    bottom: -50%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -3462,7 +3463,7 @@ h5.title_heading_c {
     }
 
     .service_page_right_section,
-    .show_all_services_section{
+    .show_all_services_section {
         padding: 0px 20px;
     }
 
@@ -3734,6 +3735,7 @@ h5.title_heading_c {
 
     .scrolling_portfolio_section {
         position: relative;
+        padding-bottom: 40px;
     }
 
     .portfolio_left_section {
@@ -3772,10 +3774,14 @@ h5.title_heading_c {
 
 
 @media (max-width:768px) {
-    .home_testimonial_wrapper .dots {
-        bottom: -62% !important;
+    .services_page_testimonials  .testimonial-card{
+        margin-left: 20px;
     }
-
+    .testimonial-card{
+        width: 60%;
+       
+    }
+    
     .header-menu-seperate-container-right .menu-right-container-bottom {
         display: flex;
         flex-direction: column;
@@ -3790,15 +3796,17 @@ h5.title_heading_c {
     .menu-right-container-bottom a {
         font-size: 1.25em;
     }
-    .nav-right .header_bottom_social_icons{
+
+    .nav-right .header_bottom_social_icons {
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
 
-    .nav-right .navbar_social_media{
+    .nav-right .navbar_social_media {
         justify-content: left;
     }
+
     .blogs {
         display: flex;
         flex-direction: column;
@@ -3846,7 +3854,7 @@ h5.title_heading_c {
         }
     }
 
-    
+
     .testimonial-card p {
         font-size: 0.938em !important;
     }
@@ -4077,7 +4085,7 @@ h5.title_heading_c {
     }
 
     .testimonial_service.content {
-        height: 100vh;
+        // height: 100vh;
         margin: 0;
         width: 100%;
     }
@@ -4241,8 +4249,7 @@ h5.title_heading_c {
 
     .company_left_section {
         height: auto;
-        padding: 20px;
-        height: auto;
+        padding: 50px 20px 80px 20px;;
     }
 
     .testimonial_service {
@@ -4386,27 +4393,32 @@ h5.title_heading_c {
     .contact_usform_inner_section {
         display: block;
     }
+
     h5.user_name_c,
     h5.title_heading_c,
     .contact_input_wrapper label,
     .both_location h6,
-    .contact_mail a{
+    .contact_mail a {
         font-size: 1.125em;
     }
+
     h6.user_name_c a,
-    .contact_twins_inner_r .our_location li{
+    .contact_twins_inner_r .our_location li {
         font-size: 1em;
     }
-    .contact_number a{
+
+    .contact_number a {
         font-size: 1.25em;
     }
-    .social_icons .contact_social_wrapper img{
+
+    .social_icons .contact_social_wrapper img {
         width: 20px;
         height: 20px;
     }
+
     .contact_us_l h1,
     .right_c_form h4,
-    .lower_sec_c .left_lower_s h3{
+    .lower_sec_c .left_lower_s h3 {
         font-size: 1.875em !important;
         font-weight: 600;
         margin: 0px;
@@ -4522,25 +4534,18 @@ h5.title_heading_c {
 
 }
 
-.about_page_testimonial,
-.services_page_testimonials {
-    .testimonial-right-section {
-        .testimonial-card {
-            width: 60%;
-
-        }
-    }
-}
 
 @media (max-width:568px) {
     .member_social_icons img {
         width: 20px;
         height: 20px;
     }
+
     .member_designation p,
-    .member_name h4{
+    .member_name h4 {
         font-size: 1.125em;
     }
+
     .nav-right .navbar_social_media {
         column-gap: 10px;
     }
@@ -4603,6 +4608,7 @@ h5.title_heading_c {
 
     .testimonial_wrapper {
         grid-template-columns: 1fr !important;
+        
     }
 
     .inner_call {
@@ -4621,7 +4627,7 @@ h5.title_heading_c {
         font-size: 1.2em;
     }
 
-    
+
 
     .product-top-image-section .product_image_right span {
         width: 70%;
@@ -4728,7 +4734,7 @@ h5.title_heading_c {
     }
 
     .home_testimonial_wrapper {
-        height: 90vh;
+        height: 80vh;
     }
 
 
@@ -4822,7 +4828,7 @@ h5.title_heading_c {
 
 
     .testimonial_left_section h1 {
-        font-size: 2.5em;
+        font-size: 2.125em;
         line-height: normal;
         width: 100%;
     }
@@ -4860,7 +4866,7 @@ h5.title_heading_c {
     }
 
     .portfolio_left_section {
-        width: 100%;
+        width: 100% !important;
     }
 
     .portfolio_left_section h1 {
@@ -4887,7 +4893,7 @@ h5.title_heading_c {
     }
 
     .trans_right_section {
-        margin-top: 20px;
+        margin: 55px auto 30px auto;
     }
 
     ul.transformation_wrapper li h4 {
@@ -4938,6 +4944,7 @@ h5.title_heading_c {
 
     .home_about_left h1 {
         font-size: 3.125em;
+        padding: 15px 0px 29px 0px;
     }
 
     .home_about_right p {
@@ -4973,9 +4980,12 @@ h5.title_heading_c {
 
     .home_slider_wrapper h1:first-child,
     .home_slider_wrapper h1:nth-child(2) {
-        font-size: 2em;
+        font-size: 1.875em;
     }
-
+    .home_slider_wrapper p,
+    .innovation_right p{
+        font-size: 1.125em;
+    }
     .all-blog-posts-outer {
         @include grid-property(grid, repeat(1, 1fr));
 
@@ -5435,7 +5445,7 @@ h5.title_heading_c {
 
 
 
-   
+
 }
 
 @media (max-width:375px) {
