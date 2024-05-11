@@ -572,7 +572,7 @@ button {
 
   
   .parallax-container:last-child .content {
-    height: 90vh !important;
+    height: 100vh !important;
     margin: auto;
     width: 90%;
   }
@@ -593,12 +593,7 @@ button {
     justify-content: center;
   }
 
-  .mission-left p {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 35px;
-  }
-
+  
   .our-misson {
     font-size: 50px;
     font-weight: 700;
@@ -670,20 +665,24 @@ button {
   .about-working-process{
 
     h3{
-      font-size: 1.875em;
+      font-size: 2.5em;
     }
   }
+  .step-initial h3,
+  .steps-content-after.restart-workprocess.active h3{
+    font-size: 1.875em;
+}
   .process-step.active{
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     .process-steps-content{
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr !important;
       gap: 15px;
       .step-initial{
         p {
           font-size: 1.125em;
       }
       h1 {
-    font-size: 1.875em;
+    font-size: 2.5em;
       }
       }
       .step-after {
@@ -706,9 +705,10 @@ button {
     }
   }
   .mission-left p {
-    font-size: 1.188em;
+    line-height: 30px !important;
     span{
-      line-height: 5px;
+      border-bottom: none;
+      display: contents;
     }
   }
   

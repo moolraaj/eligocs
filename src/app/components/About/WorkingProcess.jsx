@@ -29,7 +29,7 @@ const WorkingProcess = ({ result }) => {
       gsap.to(".restart-workprocess.active h3,.restart-workprocess.active h1", {
         duration: 0.8,
         x: window.innerWidth <= 568 ? 0 : "-510px",
-        y: window.innerWidth <= 568 ? "-168px" : "-310px",
+        y: window.innerWidth <= 568 ? "-240px" : "-310px",
         opacity: 1,
         onComplete: () => {
           setCurrentStep((prevStep) => prevStep + 1);
@@ -43,7 +43,7 @@ const WorkingProcess = ({ result }) => {
     gsap.to(".restart-workprocess.active h3,.restart-workprocess.active h1", {
       duration: 0.8,
       x: window.innerWidth <= 568 ? 0 : "-510px",
-      y: window.innerWidth <= 568 ? "-168px" : "-310px",
+      y: window.innerWidth <= 568 ? "-280px" : "-310px",
       opacity: 1,
       onComplete: () => {
         setCurrentStep(0);
