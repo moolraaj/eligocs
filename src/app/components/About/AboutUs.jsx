@@ -6,11 +6,11 @@
 
 
 import WorkingProcess from "./WorkingProcess";
-import Testimoinals from "../../common/Testimoinals";
 
  
 import CallToAction from "@/app/call-to-action/callToAction";
 import { useRouter } from "next/navigation";
+import TestimonialSection from "../Home/home-sections/Testimonial";
  
 
 
@@ -149,7 +149,7 @@ const AboutUs = ({ result }) => {
               <div className="parallax-container" style={{background: "#fff"}}>
             <div className="container-5">
               <div className="content about_page_testimonial">
-                <Testimoinals />
+                <TestimonialSection ele={ele}/>
               </div>
               </div>
               </div>

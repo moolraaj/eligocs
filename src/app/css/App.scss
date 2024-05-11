@@ -3360,7 +3360,7 @@ h5.title_heading_c {
     }
 
     .service_page_right_section,
-    .show_all_services_section{
+    .show_all_services_section {
         padding: 0px 20px;
     }
 
@@ -3688,15 +3688,17 @@ h5.title_heading_c {
     .menu-right-container-bottom a {
         font-size: 1.25em;
     }
-    .nav-right .header_bottom_social_icons{
+
+    .nav-right .header_bottom_social_icons {
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
 
-    .nav-right .navbar_social_media{
+    .nav-right .navbar_social_media {
         justify-content: left;
     }
+
     .blogs {
         display: flex;
         flex-direction: column;
@@ -3744,7 +3746,7 @@ h5.title_heading_c {
         }
     }
 
-    
+
     .testimonial-card p {
         font-size: 0.938em !important;
     }
@@ -4284,27 +4286,32 @@ h5.title_heading_c {
     .contact_usform_inner_section {
         display: block;
     }
+
     h5.user_name_c,
     h5.title_heading_c,
     .contact_input_wrapper label,
     .both_location h6,
-    .contact_mail a{
+    .contact_mail a {
         font-size: 1.125em;
     }
+
     h6.user_name_c a,
-    .contact_twins_inner_r .our_location li{
+    .contact_twins_inner_r .our_location li {
         font-size: 1em;
     }
-    .contact_number a{
+
+    .contact_number a {
         font-size: 1.25em;
     }
-    .social_icons .contact_social_wrapper img{
+
+    .social_icons .contact_social_wrapper img {
         width: 20px;
         height: 20px;
     }
+
     .contact_us_l h1,
     .right_c_form h4,
-    .lower_sec_c .left_lower_s h3{
+    .lower_sec_c .left_lower_s h3 {
         font-size: 1.875em !important;
         font-weight: 600;
         margin: 0px;
@@ -4420,14 +4427,8 @@ h5.title_heading_c {
 
 }
 
-.about_page_testimonial,
-.services_page_testimonials {
-    .testimonial-right-section {
-        .testimonial-card {
-            width: 60%;
-
-        }
-    }
+.about_page_testimonial .home_testimonial_wrapper {
+    height: 70vh;
 }
 
 @media (max-width:568px) {
@@ -4435,10 +4436,12 @@ h5.title_heading_c {
         width: 20px;
         height: 20px;
     }
+
     .member_designation p,
-    .member_name h4{
+    .member_name h4 {
         font-size: 1.125em;
     }
+
     .nav-right .navbar_social_media {
         column-gap: 10px;
     }
@@ -4519,7 +4522,7 @@ h5.title_heading_c {
         font-size: 1.2em;
     }
 
-    
+
 
     .product-top-image-section .product_image_right span {
         width: 70%;
@@ -4836,6 +4839,7 @@ h5.title_heading_c {
 
     .home_about_left h1 {
         font-size: 3.125em;
+        padding: 15px 0px 29px 0px;
     }
 
     .home_about_right p {
@@ -5338,7 +5342,7 @@ h5.title_heading_c {
 
 
 
-   
+
 }
 
 @media (max-width:375px) {
