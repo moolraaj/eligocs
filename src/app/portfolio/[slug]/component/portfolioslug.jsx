@@ -1,13 +1,14 @@
-'use client'
+'use client';
 import React, { useState, useRef, useEffect } from 'react';
-import arrow from '../../../assets/headerAssets/arrow.png' 
+import arrow from '../../../assets/headerAssets/arrow.png'
 
 
 import PortfolioComponent from "../../component/portfolioComponent";
 import Lightbox from '../../Lightbox';
+import Link from 'next/link';
 
-export default function Portfolioslug({ data }) {
-  
+export default function Portfolioslug({ data, relatedPOrtfolio }) {
+
 
 
     const [lightboxImage, setLightboxImage] = useState(null);
@@ -68,6 +69,7 @@ export default function Portfolioslug({ data }) {
 
             {
                 data.map((ele) => {
+                    const Portfolio = relatedPOrtfolio.filter(relatedPortfolio => relatedPortfolio.slug !== ele.slug);
                     return <div className="portfolio_inner_template" key={ele.id}>
                         <div className="portfolio_inner_section">
                             <div className="portfolio_top_section">
@@ -101,7 +103,44 @@ export default function Portfolioslug({ data }) {
 
                                 <div className="portfolio_showcase_right">
                                     <div className="portfolio_inner">
-                                        <PortfolioComponent />
+                                        <div
+                                            className="portfolio_right_section"
+
+                                        >
+                                            {Portfolio && Portfolio.map((ele) => (
+                                                <div
+                                                    className="portfolio"
+                                                    key={ele.id}
+
+                                                >
+                                                    <Link href={`/portfolio/${ele.slug}`} className='portfolio-post'>
+                                                        <div className="portfolio_image">
+                                                            <img src={ele.acf.portfolio_image} alt="" srcSet="" />
+                                                        </div>
+                                                        <div className="portfolio_flex">
+                                                            <div className="portfolio_inner_left_section">
+                                                                <div className="portfolio_title">
+                                                                    <h4>{ele.acf.portfolio_heading}</h4>
+                                                                </div>
+                                                                <div className="portfolio_short_description">
+                                                                    <p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_short_description }}></p>
+                                                                </div>
+                                                                <div className="portfolio_technology">
+                                                                    <p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_technology }}></p>
+                                                                </div>
+                                                            </div>
+                                                            <div className="portfolio_inner_right_section">
+                                                                <div className="port_showcase_category">
+                                                                    {ele.category.map((cat, index) => {
+                                                                        return <p key={index}>{cat}</p>
+                                                                    })}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </Link>
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
 
@@ -126,15 +165,15 @@ export default function Portfolioslug({ data }) {
 
                             </div>
 
-                          
+
                             <div className="slider_buttons">
                                 <button className="prev" onClick={prevSlide} aria-level='toggle_left_button'>
-                                <img src={arrow.src} alt='left-icons'/>
+                                    <img src={arrow.src} alt='left-icons' />
                                 </button>
                                 <button className="next" onClick={nextSlide} aria-level='toggle_right_button'>
-                                <img src={arrow.src} alt='left-icons'/>
+                                    <img src={arrow.src} alt='left-icons' />
                                 </button>
-                               
+
 
 
                             </div>
