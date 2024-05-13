@@ -1,6 +1,7 @@
 'use client'
 import { allExportedApi } from '@/utils/apis/Apis';
 import React, { useState } from 'react';
+import { toast } from 'sonner';
 
 function JobForm() {
     let api = allExportedApi();
@@ -63,7 +64,8 @@ function JobForm() {
                     body: formData
                 });
                 
-                alert('Data submitted');
+                toast('Mail hase been sent')
+                console.log(response)
 
                 setUser({
                     firstname: '',
@@ -75,7 +77,7 @@ function JobForm() {
                     yourmessage: ''
                 });
             } catch (error) {
-                console.error('Error:', error);
+                toast.error('Mail not send')
             }
         }
     };

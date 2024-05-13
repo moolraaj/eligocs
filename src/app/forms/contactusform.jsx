@@ -1,7 +1,7 @@
 'use client'
 import { allExportedApi } from '@/utils/apis/Apis';
 import React, { useState } from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
+import {toast } from 'sonner';
 
 function ContactUsForm() {
   let api = allExportedApi()
@@ -10,13 +10,7 @@ function ContactUsForm() {
     youremail: '',
     yournumber: '',
     yourmessage: '',
-     
   });
-  const [recaptchaToken, setRecaptchaToken] = useState(null);
-
-  const handleRecaptchaVerify = (token) => {
-    setRecaptchaToken(token);
-  };
 
   const [errors, setErrors] = useState({
     yourname: false,
@@ -40,10 +34,6 @@ function ContactUsForm() {
 
   const submitUserData = async (e) => {
     e.preventDefault();
-    if (!recaptchaToken) {
-      console.error('reCAPTCHA verification required');
-      return;
-    }
     let formData = new FormData();
 
     formData.append('_wpcf7_unit_tag', 942);
@@ -51,7 +41,6 @@ function ContactUsForm() {
     formData.append('youremail', user.youremail);
     formData.append('yournumber', user.yournumber);
     formData.append('yourmessage', user.yourmessage);
-    formData.append('recaptcha', recaptchaToken);
 
     // Validation for required fields
     let formValid = true;
@@ -72,9 +61,10 @@ function ContactUsForm() {
           method: 'POST',
           body: formData
         })
-      
-        alert('Data submitted');
         console.log(response)
+        toast.success('Mail has been sent!')
+      
+        
 
         setUser({
           yourname: '',
@@ -83,7 +73,7 @@ function ContactUsForm() {
           yourmessage: ''
         });
       } catch (error) {
-        console.error('Error:', error);
+        toast.error('mail not send!')
        
       }
     }
@@ -91,6 +81,7 @@ function ContactUsForm() {
 
   return (
     <>
+   
       <div className="contact_us_form_outer">
         <div className="contact_us_form_inner">
           <div className="contact_us_form_wrapper">
@@ -138,11 +129,6 @@ function ContactUsForm() {
                   </div>
 
                 </div>
-
-                <ReCAPTCHA
-                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                onChange={handleRecaptchaVerify}
-              />
 
                 <div className="form_button">
                   <button onClick={submitUserData}>Submit</button>
