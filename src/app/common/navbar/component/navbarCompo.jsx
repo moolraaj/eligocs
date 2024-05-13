@@ -63,9 +63,12 @@ function NavbarCompo({ data }) {
 
 
   const NavigationLink = ({ href, children }) => (
-    <Link href={href} className="nav-link" onClick={closeMenu}>
+    <ul>
+<Link href={href} className="nav-link" onClick={closeMenu}>
       {children}
     </Link>
+    </ul>
+    
   );
 
 
