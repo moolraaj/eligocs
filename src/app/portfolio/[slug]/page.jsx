@@ -12,11 +12,12 @@ export default async function Page({ params }) {
 
 
     let data = await api.fetchSingleportFolio(slug)
+    let relatedPOrtfolio = await api.fetchAllportFolio();
      
 
     return (
         <>
-            <Portfolioslug data={data} />
+            <Portfolioslug data={data} relatedPOrtfolio={relatedPOrtfolio}/>
         </>
     );
 }
