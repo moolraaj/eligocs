@@ -1,17 +1,20 @@
 'use client'
+import { allExportedApi } from '@/utils/apis/Apis';
 import React, { useEffect, useState } from 'react';
 
 
  
 function Testimonial() {
     const [testimonials, setTestimonials] = useState([]);
-    const [currentSlide, setCurrentSlide] = useState(0);
+    const [currentSlide, setCurrentSlide] = useState(0); 
+    let api=allExportedApi()
+    
 
     const loadTestimonials = async () => {
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/testimonial`);
-            const data = await response.json();
-            setTestimonials(data.map(ele => ele.acf.testimonials));
+            const response = await api.fetchTestimonial()
+            console.log(response)
+            setTestimonials(response);
         } catch (error) {
             console.error('Error fetching testimonials:', error);
         }
@@ -32,28 +35,28 @@ function Testimonial() {
 
     return (
         <div className="testimonial_slider">
-            {testimonials.map((testimonialsArr, index) => (
-                testimonialsArr.map((testimonial, innerIndex) => (
-                    <div
+            {testimonials.map((ele, index) => (
+                 
+                     <div
                         className={`testimonial_wrap ${index === currentSlide ? 'active' : ''}`}
-                        key={innerIndex}
+                        key={index}
                         
                     >
                         <div className="testi_image">
-                            <img src={testimonial.client_image} alt={testimonial.client_name} />
+                            <img src={ele.acf.client_image} alt={ele.acf.client_name} />
                             
                         </div>
                         <div className="testimonial_asking">
-                            <p>{testimonial.client_description}</p>
+                            <p>{ele.acf.client_description}</p>
                         </div>
                         <div className="testimonial_name">
-                            <h1>{testimonial.client_name}</h1>
+                            <h1>{ele.acf.client_name}</h1>
                         </div>
                         <div className="testimonial_address">
-                            <p>{testimonial.client_location}</p>
+                            <p>{ele.acf.client_location}</p>
                         </div>
                     </div>
-                ))
+                 
             ))}
             <div className="dots">
                 {testimonials.map((_, index) => (

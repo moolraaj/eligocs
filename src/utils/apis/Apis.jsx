@@ -3,6 +3,13 @@ export const allExportedApi = () => {
   //fetch call to action api for all pages
 
 
+  const fetchTestimonial=async()=>{
+    let response=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/testimonial?fields=acf&acf_format=standard`)
+    let data=await response.json()
+    return data
+  }
+
+
   const fetchCallToAction=async()=>{
     let response=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/call_to_action?fields=acf&acf_format=standard`)
     let data=await response.json()
@@ -199,6 +206,7 @@ const SingleBlogPost = async (slug) => {
 
 
   return {
+    fetchTestimonial,
     fetchCallToAction,
     HomeApi,
     AboutApi,
