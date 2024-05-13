@@ -69,7 +69,7 @@ function ApplyForJob() {
                     body: formData,
                 });
               
-                toast.success('Mail has been sent')
+                toast.success(`<div style='font-size:16px'>Thank you, <span style="font-weight: bold; color: #EAAA00;">${user.yourname}</span> , for contacting us! Our team will be in touch with you soon.</div>`);
 
                 setUser({
                     yourname: '',

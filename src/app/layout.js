@@ -30,15 +30,6 @@ export default function RootLayout({ children }) {
           {children}
           <Toaster richColors
             position='top-right'
-            
-            toastOptions={{
-              style: {
-                background: '#EAAA00',
-                color:'#191C1B',
-                fontWeight:600
-              },
-             
-            }}
           />
         </Layout>
 
