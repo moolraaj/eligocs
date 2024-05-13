@@ -60,7 +60,7 @@ function ContactUsForm() {
           method: 'POST',
           body: formData
         })
-        console.log('response', response);
+      
         alert('Data submitted');
 
         setUser({
@@ -71,7 +71,7 @@ function ContactUsForm() {
         });
       } catch (error) {
         console.error('Error:', error);
-        alert('Data not submitted');
+       
       }
     }
   };

@@ -62,7 +62,7 @@ function JobForm() {
                     method: 'POST',
                     body: formData
                 });
-                console.log('response', response);
+                
                 alert('Data submitted');
 
                 setUser({
@@ -76,7 +76,6 @@ function JobForm() {
                 });
             } catch (error) {
                 console.error('Error:', error);
-                alert('Data not submitted');
             }
         }
     };

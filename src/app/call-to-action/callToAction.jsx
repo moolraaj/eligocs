@@ -17,7 +17,7 @@ function CallToAction() {
     const fetchCallToAction = async () => {
         let response = await api.fetchCallToAction()
         setData(response)
-        console.log(response)
+       
 
     }
     useEffect(() => {

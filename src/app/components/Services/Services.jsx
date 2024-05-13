@@ -13,12 +13,12 @@ export default function  Services() {
     const loadServices = async () => {
         let url = await  fetchAllServices()
         setServices(url)  
-        console.log(url)
+       
     };
     const loadServicesdata = async () => {
         let url = await  ServiceApi();
         setServicesdata(url)  
-        console.log(url)
+       
     };
     useEffect(() => {
         loadServices()

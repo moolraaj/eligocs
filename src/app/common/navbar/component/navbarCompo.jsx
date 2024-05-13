@@ -212,7 +212,7 @@ function NavbarCompo({ data }) {
                     <div className="hide_seek_wrapper">
 
                     <button ref={additionalLinksRef} onClick={toggleAdditionalLinks} aria-label='toggle_navlinks'>
-                      <img src={arrow.src} alt="arrow" srcset="" />
+                      <img src={arrow.src} alt="arrow" />
                     </button>
             
                     
@@ -253,7 +253,7 @@ function NavbarCompo({ data }) {
                           {
                             socialLinks.map((ele, index) => {
                               return <div key={index} className='header_media_icons'>
-                                <a href={ele.iconUrl} target='_blank'><img src={ele.imageUrl} alt='spcial-icons' /></a>
+                                <Link href={ele.iconUrl} target='_blank'><img src={ele.imageUrl} alt='spcial-icons' /></Link>
                               </div>
                             })
                           }

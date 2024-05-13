@@ -8,12 +8,12 @@ export default async function Page({ params }) {
     let api=allExportedApi()
    
 
-    console.log(slug)
+ 
 
 
     let data = await api.fetchSingleCourse(slug)
     let courseFaq = await api.CoursesPageApi();
-    console.log(data)
+ 
 
     return (
         <>

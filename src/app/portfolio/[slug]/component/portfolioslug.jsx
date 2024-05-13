@@ -7,7 +7,7 @@ import PortfolioComponent from "../../component/portfolioComponent";
 import Lightbox from '../../Lightbox';
 
 export default function Portfolioslug({ data }) {
-    console.log(data)
+  
 
 
     const [lightboxImage, setLightboxImage] = useState(null);

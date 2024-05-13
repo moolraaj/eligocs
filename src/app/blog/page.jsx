@@ -33,7 +33,7 @@ export async function generateMetadata(){
       description:ele.acf.blog_page_description
     }
   })
-  console.log(result[0])
+
   return{
     title:result[0].title,
     description:result[0].description,

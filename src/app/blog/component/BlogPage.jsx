@@ -19,7 +19,7 @@ function BlogPage({ blogPageData }) {
   const loadAllBolgPosts = async () => {
     let api = allExportedApi()
     let response = await api.AllBlogPOsts();
-    console.log(response)
+  
     const totalServices = response.length;
     const totalPages = Math.ceil(totalServices / BLOG_PAGE_SIZE);
     setTotalPages(totalPages);

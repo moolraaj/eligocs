@@ -67,7 +67,7 @@ function ApplyForJob() {
                     method: 'POST',
                     body: formData,
                 });
-                console.log('response', response);
+              
                 alert('Data submitted');
 
                 setUser({
@@ -81,7 +81,7 @@ function ApplyForJob() {
                 });
             } catch (error) {
                 console.error('Error:', error);
-                alert('Data not submitted');
+                
             }
         }
     };

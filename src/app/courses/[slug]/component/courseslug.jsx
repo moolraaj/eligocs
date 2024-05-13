@@ -11,7 +11,7 @@ export default function CourseSlug({ data, courseFaq }) {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-  console.log(courseFaq)
+ 
   return (
     <>
       <div className="single_course_outer page_top">

@@ -12,7 +12,7 @@ export default async function Page({ params }) {
 
 
     let data = await api.SingleBlogPost(slug)
-    console.log(data)
+  
 
     return (
         <>
@@ -35,14 +35,14 @@ export async function generateMetadata({params}){
     let {slug}=params
     let api=allExportedApi()
     let data = await api.SingleBlogPost(slug)
-    console.log(data)
+  
     let result=data.map((ele)=>{
       return{
         title:ele.title.rendered,
         description:ele.acf.blog_post_tittle
       }
     })
-    console.log(result[0])
+  
     return{
       title:result[0].title,
       description:result[0].description,
