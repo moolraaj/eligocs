@@ -64,7 +64,7 @@ function JobForm() {
                     body: formData
                 });
                 
-                toast('Mail hase been sent')
+                toast('Mail has been sent')
                 console.log(response)
 
                 setUser({
