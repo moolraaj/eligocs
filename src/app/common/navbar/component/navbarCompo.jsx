@@ -143,7 +143,7 @@ function NavbarCompo({ data }) {
 
               <div className="cf7_right_section">
                 <div className="close_button">
-                  <button onClick={closeApplyJob} className="close_button">
+                  <button onClick={closeApplyJob} className="close_button" aria-label='close poup form'>
                     <img src={formClose.src} alt="" srcset="" />
                   </button>
                 </div>
@@ -174,7 +174,7 @@ function NavbarCompo({ data }) {
               <button onClick={toggleFormVisibility} aria-label="show form">
                 <img src={FormLogo.src} alt="formLogo" />
               </button>
-              <button className="nav-toggler" onClick={toggleMenu} aria-label="toggle_navigation_menu">
+              <button className="nav-toggler" onClick={toggleMenu} aria-label="toggle navigation menu">
                 <span className="nav-toggler-icon"></span>
                 <span className="nav-toggler-icon"></span>
                 <span className="nav-toggler-icon"></span>
@@ -211,7 +211,7 @@ function NavbarCompo({ data }) {
                     <NavigationLink href={'/about'}>about</NavigationLink>
                     <div className="hide_seek_wrapper">
 
-                    <button ref={additionalLinksRef} onClick={toggleAdditionalLinks} aria-level='toggle navlinks'>
+                    <button ref={additionalLinksRef} onClick={toggleAdditionalLinks} aria-label='toggle navlinks'>
                       <img src={arrow.src} alt="arrow" srcset="" />
                     </button>
             

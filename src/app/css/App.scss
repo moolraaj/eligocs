@@ -1297,7 +1297,18 @@ h1 {
 .team_banner_image img {
     width: 100%;
 }
+h1.type_text_wrapper {
+    text-align: end!important;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    column-gap: 20px;
+    row-gap: 0
+}
 
+h1.type_text_wrapper span {
+    text-align: left
+}
 
 .team_member_section:hover .memebr_left_section {
     opacity: 1;
@@ -1839,7 +1850,7 @@ ul.transformation_wrapper li h4 {
 }
 
 .home_slider_wrapper h1:nth-child(2) {
-    font-size: 5.625em;
+    font-size: 4.215em;
     color: $primaryyellow;
     text-transform: capitalize;
 }
@@ -3605,6 +3616,11 @@ h5.title_heading_c {
       flex: 0 0 50%;  
 
     }
+
+    body.__className_aaf875 {
+    font-size: 12px;
+}
+       
     .company_faq_wrapper {
         cursor: pointer;
         display: flex;
@@ -3686,6 +3702,16 @@ h5.title_heading_c {
         height: 300px !important;
         object-fit: cover;
     }
+
+     h1.type_text_wrapper {
+         grid-template-columns: 1fr;
+         text-align: center !important;       
+    }
+
+     h1.type_text_wrapper span{
+         text-align: center !important;       
+    }
+   
     .company_scroll_wrapper h4:after {
         content: "+";
         position: absolute;
@@ -3827,6 +3853,15 @@ h5.title_heading_c {
     .about-top-content button{
         float: left !important;
     }
+    .footer_wrapper .footer-center-bottom-section p {
+        color: #808080;
+        margin: 20px 20px 20px 20px;
+    }
+    
+    
+    body.__className_aaf875 {
+    font-size: 16px !important;
+}
 
 
     .slider_buttons button {
