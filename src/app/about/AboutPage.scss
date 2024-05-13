@@ -556,7 +556,7 @@ button {
 
 @media (max-width: 1024px) {
   .process-step.active{
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     .process-steps-content{
       grid-template-columns: 1fr 1fr;
       gap: 15px;
@@ -599,7 +599,6 @@ button {
     font-weight: 700;
   }
   .working_bottom_rurlar_bar {
-    bottom: 0 !important;
     .working_bottom_dot{
       width: 40px !important;
       height: 12px !important;
@@ -719,7 +718,7 @@ button {
 .working_bottom_rurlar_bar {
   position: absolute;
   width: 100%;
-  bottom: 10px;
+  bottom: 0;
   left: 0;
   display: flex;
   align-items: center;

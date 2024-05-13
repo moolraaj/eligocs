@@ -2401,7 +2401,7 @@ span.vison_c {
 }
 
 .testimonial_asking p {
-    font-size: 20px;
+    font-size: 1.25em;
     text-transform: capitalize;
     margin: 0px 0px 50px 0px;
     line-height: 36px;
@@ -3119,6 +3119,7 @@ p:empty {
 
 .blog_page_heading_wrapper h1 {
     font-size: 4em;
+    margin: 0;
 }
 
 .blog-header-description p {
@@ -3350,17 +3351,16 @@ h5.title_heading_c {
         font-size: 1.2em;
     }
     
-
     .company_question h4 {
-        height: auto;
+        height: 50% !important;
         writing-mode: tb-rl;
         font-size: 2.125em;
         margin-top: 0vh;
         position: relative;
         font-weight: 400;
-        margin: 0px;
+        margin: 45px !important;
     }
-  
+    
 
 
 
@@ -3612,9 +3612,7 @@ h5.title_heading_c {
              font-size: 1em;
     }
 
-    .company_question h4 {
-        height: 45% !important;
-     }
+    
 
     .company_flex {
               height: auto !important;
@@ -3741,15 +3739,7 @@ h5.title_heading_c {
         right: -10px;
         bottom: 25px;
     }
-    .company_question h4 {
-        height: 45% !important;
-        writing-mode: tb-rl;
-        font-size: 2.125em;
-        margin-top: 0vh;
-        position: relative;
-        font-weight: 400;
-        margin: 0px;
-    }
+    
     .portfolio_gallery_wrapper {
         flex: 0 0 33.33%;  
       }
@@ -3771,7 +3761,6 @@ h5.title_heading_c {
 
     .blog-header-description {
         width: 90%;
-        padding: 0px 20px;
 
         p {
             font-size: 18px;
@@ -3780,7 +3769,7 @@ h5.title_heading_c {
     }
 
     .all-blog-posts-outer ul.blog-post {
-        padding: 10px 20px;
+        padding: 10px 20px !important;
 
     }
 
@@ -4277,7 +4266,7 @@ h5.title_heading_c {
     }
 
     .company_question h4 {
-        margin: 20px 20px 20px 0px;
+        margin: 20px 20px 20px 0px !important;
         position: relative;
         width: 90%;
         writing-mode: inherit;
@@ -4650,7 +4639,34 @@ h5.title_heading_c {
 }
 
    
- 
+ @media (min-width:769px) and (max-width: 999px) {
+    .our-mission-outer{
+        grid-template-columns: 1fr 1fr !important;
+        .mission-right{
+            align-items: center;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .testimonial_wrap{
+        width: 80%;
+    }
+    .testimonial_flex{
+        grid-template-columns: 1fr;
+        .testimonial_left_section h1{
+            margin: 0px 0px 100px 0px !important;
+            line-height: 75px;
+        }
+        .testimonial_slider{
+            height: 50vh;
+            .dots{
+                bottom: -10%;
+            }
+        }
+        
+    }
+ }
 
 
 @media (max-width:768px) {
@@ -4909,7 +4925,8 @@ h5.title_heading_c {
 
     .testimonial_wrap {
         position: absolute;
-        width: 100%;
+        max-width: 80% !important;
+        width: 80%;
         height: auto;
         margin: 0 auto 0 auto;
         right: -15%;
