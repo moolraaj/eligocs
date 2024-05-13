@@ -973,6 +973,13 @@ form#applyforjob textarea {
 
 
 
+.form_fields_wrapper {
+    @include flex-property(flex,flex-start,column,flex-start);
+}
+
+
+
+
 .product-top-info-section {
     display: grid;
     grid-template-columns: 60% 40%;
