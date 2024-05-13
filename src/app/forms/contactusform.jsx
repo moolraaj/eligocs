@@ -1,7 +1,6 @@
 'use client'
 import { allExportedApi } from '@/utils/apis/Apis';
 import React, { useState } from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
 
 function ContactUsForm() {
   let api = allExportedApi()
@@ -12,11 +11,7 @@ function ContactUsForm() {
     yourmessage: '',
      
   });
-  const [recaptchaToken, setRecaptchaToken] = useState(null);
-
-  const handleRecaptchaVerify = (token) => {
-    setRecaptchaToken(token);
-  };
+ ;
 
   const [errors, setErrors] = useState({
     yourname: false,
@@ -51,7 +46,7 @@ function ContactUsForm() {
     formData.append('youremail', user.youremail);
     formData.append('yournumber', user.yournumber);
     formData.append('yourmessage', user.yourmessage);
-    formData.append('recaptcha', recaptchaToken);
+   
 
     // Validation for required fields
     let formValid = true;
@@ -139,10 +134,7 @@ function ContactUsForm() {
 
                 </div>
 
-                <ReCAPTCHA
-                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                onChange={handleRecaptchaVerify}
-              />
+               
 
                 <div className="form_button">
                   <button onClick={submitUserData}>Submit</button>
