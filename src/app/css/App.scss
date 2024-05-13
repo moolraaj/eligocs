@@ -1923,7 +1923,7 @@ span.cline:after {
 
 .company_flex {
     @include grid-property(grid, 40% 1fr, unset, unset);
-    height: 750px;
+    height: 785px;
 }
 
 .company_left_section {
@@ -3352,7 +3352,7 @@ h5.title_heading_c {
     }
     
     .company_question h4 {
-        height: 50% !important;
+        height: 60% !important;
         writing-mode: tb-rl;
         font-size: 2.125em;
         margin-top: 0vh;
@@ -4637,9 +4637,14 @@ h5.title_heading_c {
         }
     }
 }
-
+@media (min-width:769px) and (max-width: 1024px) {
+    .company_question h4{
+        height: 380px !important;
+    }
+}
    
  @media (min-width:769px) and (max-width: 999px) {
+    
     .our-mission-outer{
         grid-template-columns: 1fr 1fr !important;
         .mission-right{
