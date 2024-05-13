@@ -65,33 +65,38 @@ function Footer({ response }) {
               </div>
               <div className='center-section-second-inner-wrapper'>
                 <h1 className='footer-top-headings'>Our Services</h1>
-                <div className="footer_ul">
+                <div className="footer_ul_wrapper">
+                  <menu className="footer_ul">
                   {result.map((ele) => (
                     <li key={ele.id}>
                       <Link href={`/services/${ele.slug}`}><p dangerouslySetInnerHTML={{ __html: ele.acf.services_title }}></p></Link>
                     </li>
                   ))}
+                  </menu>
                 </div>
               </div>
               <div className='center-section-third-inner-wrapper'>
                 <h1 className='footer-top-headings'>Our Products</h1>
-                <div className="footer_ul">
+                <div className="footer_ul_wrapper">
+                <menu className="footer_ul">
                   {data.map((ele) => (
                     <li key={ele.id}>
                       <Link href={`/portfolio/${ele.slug}`}><p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_title }}></p></Link>
                     </li>
                   ))}
+                  </menu>
                 </div>
               </div>
               <div className='center-section-fourth-inner-wrapper'>
                 <h1 className='footer-top-headings'>Contacts</h1>
-                <div className="footer_ul">
+                <div className="footer_wrapper">
+                  <menu className="footer_ul">
+
                   <li><a href={`mailto:${footerEmail}`}>{footerEmail}</a></li>
                   <li><a href={`tel:${footerPhoneNumberFirst}`}>{footerPhoneNumberFirst}</a></li>
                   <li><a href={`tel:${footerPhoneNumberSecond}`}>{footerPhoneNumberSecond}</a></li>
-                  <li className="social_links">
-
-                  </li>
+                  </menu>
+                 
                 </div>
                 <div className="footer_social_links">
                   {

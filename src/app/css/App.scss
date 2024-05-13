@@ -92,6 +92,8 @@ $font: font-family;
     display: flex;
     flex-direction: column;
     row-gap: 18px;
+    padding: 0px;
+    margin: 0;
 } 
 
 .portfolio_slider {
@@ -2663,6 +2665,7 @@ p .testimonial_wrap {
     .footer_social_links {
         display: flex;
         gap: 10px;
+        padding-top: 20px;
 
         .footer_social_wrapper a img {
             width: 30px;
