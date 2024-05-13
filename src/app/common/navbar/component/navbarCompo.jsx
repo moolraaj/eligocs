@@ -106,7 +106,7 @@ function NavbarCompo({ data }) {
               <div className="cf7_right_section">
                 <div className="close_button">
                   <button onClick={toggleFormVisibility} className="close_button">
-                    <img src={formClose.src} alt="" srcset="" />
+                    <img src={formClose.src} alt="" />
                   </button>
                 </div>
               </div>
