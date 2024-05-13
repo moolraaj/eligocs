@@ -409,11 +409,13 @@ form#jobform textarea {
     display: block;
     transition: transform 0.3s ease-in-out;
 }
-
-.portfolio_page_top_image img {
+.portfolio_page_top_image {
     width: 100%;
-    height: -webkit-fill-available;
-    object-fit: cover;
+    img {
+        width: 100%;
+        height: 35vw;
+        object-fit: cover;
+    }
 }
 
 .portfolio_posts_wrapper h1 {
@@ -3567,6 +3569,9 @@ h5.title_heading_c {
 
 
 @media screen and (max-width: 768px) {
+    .portfolio_page_top_image img{
+        height: -webkit-fill-available;
+    }
     .product-top-image-section .product_image_right span{
         height: 40px;
         bottom: -10px;
