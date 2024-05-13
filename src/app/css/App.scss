@@ -1899,8 +1899,7 @@ span.cline:after {
 
 .company_flex {
     @include grid-property(grid, 40% 1fr, unset, unset);
-    height: 700px;
-    overflow: auto;
+    height: 750px;
 }
 
 .company_left_section {
@@ -1917,7 +1916,6 @@ span.cline:after {
 .company_right_section {
     background: $primaryyellow;
     display: flex;
-    padding: 20px 20px 40px 20px;
     justify-content: space-evenly;
 }
 
@@ -1928,7 +1926,7 @@ span.cline:after {
     margin-left: 35px;
     height: 64%;
     writing-mode: tb-rl;
-    margin-top: 8vh;
+    margin-top: 5vh;
     position: relative;
     font-weight: 400;
 }
@@ -3892,7 +3890,7 @@ h5.title_heading_c {
         width: 100%;
     }
     .menu-right-container-bottom a {
-        font-size: 1.4em !important;
+        font-size: 1.25em !important;
     }
     
 
@@ -3958,9 +3956,7 @@ h5.title_heading_c {
     .testimonial-right-section .testimonial-card{
         margin-top: 50px !important;
     }
-    .parallax-container:last-child .content {
-        height: 440px !important;
-      }
+    
     .testimonial-left-section {
         h1 {
           font-size: 1.125em !important;
@@ -4266,7 +4262,7 @@ h5.title_heading_c {
 
     .company_right_section {
         display: block;
-
+        padding: 20px 20px 40px 20px;
         .company_scroll_wrapper {
             position: relative;
             border: none;
@@ -4348,12 +4344,12 @@ h5.title_heading_c {
 
     .innovation_right {
         button {
-            font-size: 1.1em;
+            font-size: 1em;
             padding: 12px 30px;
         }
 
         p {
-            font-size: 1.2em !important;
+            font-size: 1.125em !important;
         }
     }
 
@@ -4895,9 +4891,12 @@ h5.title_heading_c {
     }
 
     .testimonial_asking p {
-        font-size: 1.125em;
+        font-size: 0.938em;
         line-height: normal;
         margin-bottom: 5px;
+    }
+    .testimonial_address p{
+        font-size: 0.875em;
     }
 
     .testi_image img {
@@ -4919,7 +4918,7 @@ h5.title_heading_c {
     }
     .dots {
         position: absolute;
-        bottom: -10%;
+        bottom: -50%;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -5129,7 +5128,7 @@ h5.title_heading_c {
 
     .home_slider_wrapper h1:first-child,
     .home_slider_wrapper h1:nth-child(2) {
-        font-size: 2em;
+        font-size: 1.875em;
     }
     .home_slider_wrapper p,
     .innovation_right p{
