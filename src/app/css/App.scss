@@ -6136,4 +6136,10 @@ span.error_fields {
         grid-template-columns: 1fr 1fr;
         column-gap: 30px;
     }
+    .home_slider_wrapper h1:first-child{
+        font-size: 3.25em;
+    }
+    .testimonial_flex .testimonial_slider{
+        height: 100vh !important;
+    }
 }
