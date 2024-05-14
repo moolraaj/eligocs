@@ -3,7 +3,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import arrow from '../../../assets/headerAssets/arrow.png'
 
 
-import PortfolioComponent from "../../component/portfolioComponent";
 import Lightbox from '../../Lightbox';
 import Link from 'next/link';
 
@@ -46,13 +45,6 @@ export default function Portfolioslug({ data, relatedPOrtfolio }) {
     };
 
 
-
-
-
-
-
-
-
     const openLightbox = (image) => {
         setLightboxImage(image);
     };
@@ -61,6 +53,36 @@ export default function Portfolioslug({ data, relatedPOrtfolio }) {
         setLightboxImage(null);
     };
 
+
+    const itemRef = useRef(null);
+    const [mouseDown, setMouseDown] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+    const [zIndex, setZIndex] = useState(0);
+
+    const handleMouseDown = (e) => {
+        e.stopPropagation(); // Stop the propagation of the click event
+        setMouseDown(true);
+        setStartX(e.pageX - itemRef.current.offsetLeft);
+        setScrollLeft(itemRef.current.scrollLeft);
+    }
+
+    const handleMouseLeave = () => {
+        setMouseDown(false);
+        setZIndex(999);
+    }
+
+    const handleMouseUp = () => {
+        setMouseDown(false);
+    }
+
+    const handleMouseMove = (e) => {
+        if (!mouseDown) return;
+        e.preventDefault();
+        const X = e.pageX - itemRef.current.offsetLeft;
+        const walk = (X - startX) * 2;
+        itemRef.current.scrollLeft = scrollLeft - walk;
+    }
 
 
 
@@ -101,12 +123,14 @@ export default function Portfolioslug({ data, relatedPOrtfolio }) {
                                 </div>
 
 
-                                <div className="portfolio_showcase_right">
-                                    <div className="portfolio_inner">
-                                        <div
-                                            className="portfolio_right_section"
 
-                                        >
+                                <div className='scrolling_portfolio_section' style={{ zIndex: zIndex}} ref={itemRef}
+                                    onMouseDown={handleMouseDown}
+                                    onMouseLeave={handleMouseLeave}
+                                    onMouseUp={handleMouseUp}
+                                    onMouseMove={handleMouseMove}>
+                                    <div className='portfolio_inner' style={{ zIndex: '-999' }}>
+                                        <div className="portfolio_right_section" >
                                             {Portfolio && Portfolio.map((ele) => (
                                                 <div
                                                     className="portfolio"
@@ -143,6 +167,7 @@ export default function Portfolioslug({ data, relatedPOrtfolio }) {
                                         </div>
                                     </div>
                                 </div>
+
 
                             </div>
 
