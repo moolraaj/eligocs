@@ -3824,6 +3824,16 @@ h5.title_heading_c {
 }
 
 @media (max-width:1024px) {
+    .portfolio_project_heading h1 {
+        font-size: 4.375em;
+        margin: 0px 0px 0px 40px;
+    }
+    .portfolio_inner_template .scrolling_portfolio_section{
+        position: relative !important;
+    }
+    .portfolio_projects_flex{
+        grid-template-columns: 1fr ;
+    }
     .team_banner_image img {
         width: 80vw;
         height: 300px !important;
