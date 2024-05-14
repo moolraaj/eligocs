@@ -17,6 +17,7 @@
     "gsap": "^3.12.5",
     "next": "14.2.2",
     "next-images": "^1.8.5",
+    "nextjs-progressbar": "^0.0.16",
     "primereact": "^10.6.5",
     "prop-types": "^15.8.1",
     "react": "^18",
