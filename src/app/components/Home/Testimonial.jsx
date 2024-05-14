@@ -13,7 +13,7 @@ function Testimonial() {
     const loadTestimonials = async () => {
         try {
             const response = await api.fetchTestimonial()
-            console.log(response)
+           
             setTestimonials(response);
         } catch (error) {
             console.error('Error fetching testimonials:', error);

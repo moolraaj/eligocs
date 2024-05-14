@@ -114,7 +114,7 @@ $font: font-family;
 }
 
 .portfolio_gallery_wrapper {
-    flex: 0 0 auto;
+    flex: 0 0 33%;
     scroll-snap-align: start;
 
 }
@@ -3726,7 +3726,7 @@ h5.title_heading_c {
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .portfolio_gallery_wrapper {
-        flex: 0 0 50%;
+        flex: 0 0 50%!important;
 
     }
 
@@ -3788,6 +3788,8 @@ h5.title_heading_c {
         left: 0;
     }
 }
+
+
 
 
 @media only screen and (max-width:1268px) {
