@@ -917,11 +917,10 @@ form#applyforjob textarea {
 .company_scroll_wrapper h4:after {
     content: "+";
     position: absolute;
-    right: 0;
+    right: -18px;
     bottom: 0;
     font-size: 1.8em;
     color: white;
-    left: 29%;
     font-weight: 200;
     font-family: ui-monospace;
 }
@@ -1973,7 +1972,7 @@ span.cline:after {
 
 .company_flex {
     @include grid-property(grid, 40% 1fr, unset, unset);
-    height: 785px;
+    height: 720px;
 }
 
 .company_left_section {
@@ -1998,7 +1997,7 @@ span.cline:after {
     font-size: 3.125em;
     margin-right: 10px;
     margin-left: 35px;
-    height: 64%;
+    height: 585px;
     writing-mode: tb-rl;
     margin-top: 5vh;
     position: relative;
@@ -3402,12 +3401,18 @@ h5.title_heading_c {
 
 
 @media only screen and (max-width:1500px) {
+    .call_wrapper{
+        grid-template-columns: 1fr 1fr;
+    }
+    .company_flex{
+        height: 830px;
+    }
     .menu-right-container-bottom a {
         font-size: 1.2em;
     }
 
     .company_question h4 {
-        height: 60% !important;
+        height: 420px !important;
         writing-mode: tb-rl;
         font-size: 2.125em;
         margin-top: 0vh;
@@ -3547,7 +3552,6 @@ h5.title_heading_c {
 
     span.wrap_nmae_btn {
         flex-wrap: wrap;
-        margin-top: 0 !important;
     }
 
     #horizontal {
@@ -3629,7 +3633,7 @@ h5.title_heading_c {
     .company_scroll_wrapper h4:after {
         content: "+";
         position: absolute;
-        right: 0;
+        right: -10px;
         bottom: 25px;
     }
 
@@ -3639,6 +3643,9 @@ h5.title_heading_c {
 
 
 @media screen and (max-width: 768px) {
+    .portfolio_inner_section{
+        width: 87% ;
+    }
     .portfolio_page_top_image img {
         height: -webkit-fill-available;
     }
@@ -3824,6 +3831,9 @@ h5.title_heading_c {
 }
 
 @media (max-width:1024px) {
+    .service_top_sub_heading h1{
+        width: 100%;
+    }
     .portfolio_project_heading h1 {
         font-size: 4.375em;
         margin: 0px 0px 0px 40px;
@@ -4443,7 +4453,6 @@ h5.title_heading_c {
             font-family: ui-monospace;
             position: absolute;
             left: auto;
-            right: 0;
             top: -7px;
         }
     }
@@ -4643,6 +4652,11 @@ h5.title_heading_c {
 
 
 @media (max-width:767px) {
+    .testimonial_asking p {
+        font-size: 0.938em;
+        line-height: normal;
+        margin-bottom: 5px;
+    }
 
     .related_product_wrapper {
         padding: 20px 40px;
@@ -4781,6 +4795,7 @@ h5.title_heading_c {
 }
 
 @media (min-width:769px) and (max-width: 1024px) {
+    
     .company_question h4 {
         height: 380px !important;
     }
@@ -5130,12 +5145,7 @@ h5.title_heading_c {
         right: -15%;
     }
 
-    .testimonial_asking p {
-        font-size: 0.938em;
-        line-height: normal;
-        margin-bottom: 5px;
-    }
-
+    
     .testimonial_address p {
         font-size: 0.875em;
     }
@@ -5158,12 +5168,7 @@ h5.title_heading_c {
 
     }
 
-    .dots {
-        position: absolute;
-        bottom: -50%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
+    
 
     %section_top_bottom_padding {
         padding: 35px 20px;
@@ -5317,6 +5322,7 @@ h5.title_heading_c {
 
     .company_question h4 {
         font-size: 1.688em;
+        height: auto !important;
     }
 
 
@@ -5578,6 +5584,16 @@ h5.title_heading_c {
 }
 
 @media (max-width:468px) {
+    .our_products_wrapper .our_product li:nth-child(1) a{
+        padding: 10px 12px;
+    }
+    .member_top_heading h1,
+    .right_banner_heading h1{
+    font-size: 1.875em;    
+    }
+    .dots {
+        bottom: -50%;
+    }
     .portfolio_title h4 {
         font-size: 1em;
     }
