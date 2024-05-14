@@ -5584,6 +5584,20 @@ h5.title_heading_c {
 }
 
 @media (max-width:468px) {
+    .nav-right{
+        .header_bottom_social_icons{
+            grid-template-columns: 1fr;
+            gap: 20px;
+            img{
+                width: 25px !important;
+                height: 25px !important;
+            }
+        }
+        .navbar_social_media{
+            justify-content: flex-start;
+            
+        }
+    }
     .our_products_wrapper .our_product li:nth-child(1) a{
         padding: 10px 12px;
     }
