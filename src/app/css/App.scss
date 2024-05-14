@@ -98,7 +98,6 @@ $font: font-family;
 
 
 
-
 .footer_ul {
     display: flex;
     flex-direction: column;
@@ -6113,4 +6112,28 @@ span.error_fields {
     position: fixed;
     height: 100vh;
     width: 100%;
+}
+
+
+@media screen and (orientation: landscape) {
+    .cf7_form_outer{
+        height: 100vh !important;
+        overflow-y: scroll;
+        padding-bottom: 50px;
+    }
+    .cf7_form_inner{
+        margin-bottom: 70px;
+    }
+    .portfolio a.portfolio-post{
+        height: 70vh !important;
+    }
+    .nav-right {
+        height: 100vh !important;
+        overflow-y: scroll !important;
+    }
+    .all-blog-posts-outer,
+    .portfolio_showcase_wrapper{
+        grid-template-columns: 1fr 1fr;
+        column-gap: 30px;
+    }
 }
