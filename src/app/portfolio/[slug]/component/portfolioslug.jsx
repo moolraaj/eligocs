@@ -101,9 +101,17 @@ export default function Portfolioslug({ data, relatedPOrtfolio }) {
                             <div className="portfolio_top_section">
                                 <div className="portfolio_top_flex">
                                     <div className="portfolio_top_left_section">
+                                        <div className="portfolio_inner_page_image_heading_section">
+                                        <div className="portfolio_top_left_heading">
+                                            <h3>{ele.acf.portfolio_heading}</h3>
+                                        </div>
                                         <div className="portfolio_top_image">
                                             <img src={ele.acf.portfolio_inner_image} />
+                                            <span></span>
                                         </div>
+                                        </div>
+                                       
+
                                         <div className="portfolio_top_right_section">
                                             <h1>{ele.acf.portfolio_heading}</h1>
                                         </div>
@@ -113,11 +121,28 @@ export default function Portfolioslug({ data, relatedPOrtfolio }) {
                                 <div className="top_bottom_bar"></div>
                             </div>
 
+                            <div className='portfolio_inner_intenary_related_posts'>
                             <div className="portfolio_relative_description">
                                 <div className="port_description">
                                     <p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_description }}></p>
                                 </div>
                             </div>
+                            <div className="portfolio_inner_related_posts">
+                                <div className="portfolio_related_posts_inner">
+                                <h3>Related Posts</h3>
+                                {Portfolio.map((e,index)=>{
+                                    return <Link key={index} href={`/portfolio`}>{e.acf.portfolio_projects_heading}</Link>
+                                })}
+                                
+                                </div>
+                               
+                            </div>
+                            </div>
+
+
+
+
+
                         </div>
 
                         <div className="portfolio_project">

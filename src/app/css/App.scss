@@ -1918,16 +1918,62 @@ ul.course li:nth-child(4) {
 }
 
 /*portfolio inner page */
-
-
+.portfolio_top_left_section{
+    display: flex;
+    column-gap: 50px;
+    align-items: center;
+    position: relative;
+    .portfolio_inner_page_image_heading_section {
+        display: flex;
+        align-items: flex-end;
+        .portfolio_top_left_heading h3{
+            writing-mode:tb;
+            transform: rotate(180deg);
+            margin-left: 0;
+            margin-bottom: 40px;
+        }
+        img{
+            width: 100%;
+            max-width: 669px;
+            height: 747px;
+        }
+        span{
+            position: absolute;
+            left: 10%;
+            bottom: -20px;
+            max-width: 840px;
+            height: 103px;
+            width: 100%;
+            background: $primaryyellow;
+        }
+    }
+    .portfolio_top_right_section h1{
+        font-size: 6.25em;
+    }
+}
+.portfolio_inner_intenary_related_posts{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    column-gap: 10px;
+}
 
 .service_both_sections {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
+    gap: 30px;
+    
 }
-
-
+.port_description p p{
+    font-size: 1.375em;
+}
+.portfolio_related_posts_inner{
+    background: $primaryyellow;
+    display: flex;
+    flex-direction: column;
+    padding: 60px;
+}
 .trans_redirecttion {
     font-size: 1.875em;
     text-decoration: none;
@@ -2197,7 +2243,10 @@ menu.footer_ul li a {
     border-top: 1px solid $primaryyellow;
     padding-bottom: 70px;
 }
-
+.services_gif img{
+        width: 70px;
+        height: 70px;
+    }
 .service_content_heading h1 {
     font-size: 2.5em;
     text-transform: uppercase;

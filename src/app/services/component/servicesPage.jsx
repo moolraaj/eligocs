@@ -93,7 +93,11 @@ export default function ServicesPage() {
                                                     </div>
 
                                                     <div className="service_both_sections">
+                                                    <div className="services_gif">
+                                                                <img src={e.acf.service_gif.url} alt="service_gif" />
+                                                            </div>
                                                         <div className="services_content_area">
+                                                            
                                                             <div className="service_content_heading">
                                                                 <h1>{e.acf.services_title}</h1>
 
