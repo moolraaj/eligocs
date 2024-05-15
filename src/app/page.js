@@ -19,24 +19,24 @@ export default function Home() {
   );
 }
 
-export async function generateMetadata(){
+// export async function generateMetadata(){
  
-  let api=allExportedApi()   
-  let data = await api.HomeApi() 
+//   let api=allExportedApi()   
+//   let data = await api.HomeApi() 
   
-  const result=data.map((ele)=>{
-      return{
-          title:ele.title.rendered,
-          description:ele.acf.about_para_first
+//   const result=data.map((ele)=>{
+//       return{
+//           title:ele.title.rendered,
+//           description:ele.acf.about_para_first
            
-      }
-  })
+//       }
+//   })
   
-  return{
-      title:result[0].title,
-      description:result[0].description,
-      openGraph:{
+//   return{
+//       title:result[0].title,
+//       description:result[0].description,
+//       openGraph:{
         
-      }
-  }
-}
+//       }
+//   }
+// }

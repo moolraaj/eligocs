@@ -319,7 +319,32 @@ ul.transformation_wrapper li:nth-child(1) {
     margin-left: -38px;
 }
 
+ 
 
+.custom-file-upload::before {
+    content: "Upload a resume";
+    background: #fff;
+    color: #191C1B;
+    border: none;
+    outline: none;
+    white-space: nowrap;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    position: absolute;
+    width: 100%;
+    text-align: left;
+    height: 52px;
+    top: 25px;
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+     
+}
+
+ 
+
+  
 
 .trans_number:last-child {
     border-bottom: unset;
@@ -1004,11 +1029,15 @@ form#applyforjob textarea {
     width: 90% !important;
 }
 
-.product_heading_left {
-    position: absolute;
-    left: -4%;
-    bottom: 10%;
+.products_inner_description p{
+    p{
+        font-size: 1.375em;
+    }
 }
+.related_product_wrapper h2{
+    font-size: 2.375em;
+}
+
 
 .product-top-image-section {
     display: flex;
@@ -1022,6 +1051,8 @@ form#applyforjob textarea {
         h3 {
             writing-mode: tb-rl;
             transform: rotate(180deg);
+            margin-left: 0;
+            font-size: 1.25em;
         }
     }
 
@@ -1056,6 +1087,7 @@ form#applyforjob textarea {
 
 .form_fields_wrapper {
     @include flex-property(flex, flex-start, column, flex-start);
+    position: relative;
 }
 
 
@@ -1118,6 +1150,7 @@ form#applyforjob textarea {
     li:first-child {
         align-items: flex-end;
         background-color: $primaryyellow;
+        margin-top: 101px;
 
         a {
             background-color: $white;
@@ -1132,9 +1165,9 @@ form#applyforjob textarea {
     li:nth-child(2) {
         img {
             top: 0;
-            width: 70%;
-            left: 30%;
-            height: 250px;
+            width: 646px;
+            left: 80px;
+            height: 368px;
         }
     }
 }
@@ -1158,10 +1191,9 @@ form#applyforjob textarea {
 
     li:nth-child(2) {
         img {
-            max-width: 646px;
-            left: 50px;
+            width: 646px;
+            left: -20px;
             height: 368px;
-            bottom: -60px;
         }
     }
 
@@ -1171,6 +1203,7 @@ form#applyforjob textarea {
 .our_products_wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    place-items: center;
     gap: 0px;
     position: relative;
     margin: 120px 0px;
@@ -1204,14 +1237,19 @@ form#applyforjob textarea {
 
         span.wrap_nmae_btn {
             @include grid-property(grid,1fr 1fr,center);
+            padding: 0px 20px;
+            span:last-child {
+                display: flex;
+                justify-content: flex-end;
+            }
         }
 
         img {
-            width: 70%;
+           
             z-index: 1;
             position: absolute;
-            bottom: 0;
             left: 0;
+            bottom: -100px;
         }
     }
 
@@ -1819,8 +1857,8 @@ ul.course li:nth-child(4) {
 
 .portfolio_project {
     background: #191C1B;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 150px;
+    padding-bottom: 150px;
     overflow: hidden;
 }
 
@@ -3180,9 +3218,10 @@ p:empty {
     @include flex-property(flex, unset, unset, flex-end);
 
     img {
-        width: 90%;
-        height: 65vh;
+        width: 100%;
+        height: 847px;
         position: relative;
+        max-width: 669px;
     }
 
     h2 {
@@ -3211,7 +3250,7 @@ p:empty {
 }
 
 .blog_page_heading_wrapper h1 {
-    font-size: 4em;
+    font-size: 6.25em;
     margin: 0;
 }
 
@@ -3482,7 +3521,9 @@ h5.title_heading_c {
         margin-bottom: 10px;
         line-height: 30px;
     }
-
+    .product-top-image-section .product_heading_left h3{
+        display: none;
+    }
     .product-top-image-section .product_image_right img {
         width: 100%;
         height: 514px;
@@ -3558,24 +3599,7 @@ h5.title_heading_c {
     }
 
 
-
-    .our_products_wrapper>ul.our_product.even li:nth-child(2) img,
-    .our_products_wrapper>ul.our_product.odd li:nth-child(2) img {
-        .scrolling {
-            position: relative;
-            z-index: 999;
-        }
-
-    }
-
-
-
-
-
-    .our_products_wrapper>ul.our_product.even li:nth-child(2) img,
-    .our_products_wrapper>ul.our_product.odd li:nth-child(2) img {
-        height: auto;
-    }
+    
 
     .our_products_wrapper .our_product li:nth-child(1) {
         h1 {
@@ -3686,6 +3710,11 @@ h5.title_heading_c {
 }
 
 @media screen and (max-width: 768px) {
+    .our_product li:nth-child(1) a,
+   .product_right_info_inner a{
+        padding: 10px 12px !important;
+        font-size: 1.063em !important;
+    }
     .dots {
         bottom: -80%;
     }
@@ -3702,7 +3731,9 @@ h5.title_heading_c {
     }
 
     .product-top-image-section .product_image_right span {
-        height: 40px;
+        max-width: 255px;
+        width: 100%;
+        height: 50px;
         bottom: -10px;
     }
 
@@ -3860,13 +3891,7 @@ h5.title_heading_c {
         font-size: 1em;
     }
 
-    .our_products_wrapper .our_product {
-        height: 280px;
-    }
-
-    .our_products_wrapper .our_product li:nth-child(1) {
-        height: 220px;
-    }
+   
 
 }
 
@@ -3885,6 +3910,12 @@ h5.title_heading_c {
 }
 
 @media (max-width:1024px) {
+    .our_products_wrapper>ul.our_product.even li:nth-child(2) img,
+    .our_products_wrapper>ul.our_product.odd li:nth-child(2) img {
+        height: 224px;
+        width: 100%;
+        max-width: 315px;
+    }
     .service_top_sub_heading h1{
         width: 100%;
     }
@@ -4236,16 +4267,35 @@ h5.title_heading_c {
 
     }
 
-    .our_products_wrapper .our_product {
-        height: 350px;
-        padding: 0;
-    }
+    
 
     .our_products_wrapper .our_product li:nth-child(1) {
-        height: 75%;
+        height: 250px;
+        max-width: 310px;
+        width: 100%;
         padding-bottom: 10px;
+        h1{
+            font-size: 1.5em;
+        }
     }
-
+    .our_products_wrapper{
+        margin: 50px 0px ;
+    }
+    .our_products_wrapper > ul.our_product.odd {
+        li:first-child{
+            align-items: flex-start;
+        }
+        li:nth-child(2) img{
+            bottom: -60px !important;
+            top: auto;
+            left: 40px;
+        }
+    }
+    .our_products_wrapper > ul.our_product.even{
+        li:nth-child(2) img{
+            bottom: -60px;
+        }
+    }
     .scrolling_portfolio_section .portfolio_inner {
         left: 20% !important;
     }
@@ -4712,6 +4762,7 @@ h5.title_heading_c {
 
 
 @media (max-width:767px) {
+    
     .testimonial_asking p {
         font-size: 0.938em;
         line-height: normal;
@@ -4827,6 +4878,7 @@ h5.title_heading_c {
 
     .product-top-info-section .product_right_info_inner {
         padding: 30px;
+        display: none;
     }
 
     // 06-05-2024 Davinder css start
@@ -4854,7 +4906,33 @@ h5.title_heading_c {
     }
 }
 
+@media (min-width:1025px) and (max-width: 1440px) {
+    .our_products_wrapper > ul.our_product.odd li:nth-child(2) img,
+    .our_products_wrapper > ul.our_product.even li:nth-child(2) img{
+        max-width: 390px;
+    }
+    .our_products_wrapper .our_product li:nth-child(1){
+        max-width: 400px;
+        width: 100%;
+    }
+}
 @media (min-width:769px) and (max-width: 1024px) {
+    .our_products_wrapper .our_product img,
+    .our_products_wrapper{
+        grid-template-columns: 1fr !important;
+    }
+    .our_products_wrapper > ul.our_product.even li:nth-child(2) img,
+    .our_products_wrapper > ul.our_product.odd li:nth-child(2) img{
+        width: 100%;
+        max-width: 646px;
+        height: 368px;
+    }
+    .our_products_wrapper .our_product img{
+        bottom: -40px;
+    }
+    .our_products_wrapper > ul.our_product.odd li:nth-child(2) img{
+        top: 40px;
+    }
     
     .company_question h4 {
         height: 380px !important;
@@ -4905,6 +4983,9 @@ h5.title_heading_c {
 
 
 @media (max-width:768px) {
+    .products_inner_description p p{
+        font-size: 1em;
+    }
     .member_social_icons img {
         width: 20px;
         height: 20px;
@@ -5614,6 +5695,7 @@ h5.title_heading_c {
 
     .our_products_wrapper {
         grid-template-columns: 1fr;
+        place-items: center;
     }
 }
 
@@ -5640,9 +5722,7 @@ h5.title_heading_c {
             
         }
     }
-    .our_products_wrapper .our_product li:nth-child(1) a{
-        padding: 10px 12px;
-    }
+    
     .member_top_heading h1,
     .right_banner_heading h1{
     font-size: 1.875em;    
@@ -5661,10 +5741,7 @@ h5.title_heading_c {
         font-size: .875em;
     }
 
-    .our_products_wrapper .our_product {
-        height: 260px;
-        padding: 0;
-    }
+  
 
     ul.transformation_wrapper img {
         bottom: 0;
