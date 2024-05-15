@@ -695,7 +695,7 @@ button {
     }
     .steps-content-after h1{
       font-size: 1.875em;
-      white-space: nowrap;
+      white-space: wrap !important;
     }
   }
   
