@@ -112,7 +112,7 @@ function ApplyForJob() {
                                     <input type="text" name="applyingfor" placeholder='applying for' value={user.applyingfor} onChange={getUserData} />
                                 </div>
                                 <div className="form_fields_wrapper">
-                                    <input type="file" name="uploadresume" onChange={getUserData} />
+                                    <input type="file" name="uploadresume" class="custom-file-upload" onChange={getUserData} />
                                     {errors.uploadresume && <span className='error_fields'>This field is required</span>}
                                 </div>
                                 <div className="form_fields_wrapper">
