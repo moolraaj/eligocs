@@ -506,7 +506,7 @@ button:disabled {
 
 .testimonial_wrap {
     position: absolute;
-    max-width: 528px;
+    max-width: 80%;
     margin-bottom: 60px;
 }
 
@@ -991,7 +991,6 @@ form#applyforjob textarea {
 
 .product-top-image-section {
     display: flex;
-    justify-content: space-between;
     position: relative;
 
     .product_heading_left {
@@ -1015,12 +1014,13 @@ form#applyforjob textarea {
         }
 
         span {
-            width: 70%;
-            height: 80px;
+            max-width: 750px;
+            height: 128px;
             background: $primaryyellow;
             position: absolute;
             left: 10%;
             bottom: -47px;
+            width: 100%;
         }
     }
 
@@ -1049,12 +1049,12 @@ form#applyforjob textarea {
 
     .product-page-left-info {
         h1 {
-            font-size: 4em;
+            font-size: 6.25em;
             margin: 20px 0px;
         }
 
         p {
-            font-size: $primary-font;
+            font-size: 1.563em;
             letter-spacing: 2px;
             line-height: 45px;
             width: 90%;
@@ -1068,7 +1068,7 @@ form#applyforjob textarea {
         p {
             color: $white;
             margin-bottom: 20px;
-            font-size: $primary-font;
+            font-size: 1.875em;
 
         }
 
@@ -1078,7 +1078,7 @@ form#applyforjob textarea {
             padding: 10px 20px;
             border-radius: 35px;
             margin-top: 20px;
-            font-size: 1.125em;
+            font-size: 1.563em;
         }
 
         a:hover {
@@ -1093,7 +1093,7 @@ form#applyforjob textarea {
 .our_products_wrapper>ul.our_product.odd {
     display: flex;
     flex-direction: column-reverse;
-
+    padding: 0;
     li:first-child {
         align-items: flex-end;
         background-color: $primaryyellow;
@@ -1137,10 +1137,10 @@ form#applyforjob textarea {
 
     li:nth-child(2) {
         img {
-            bottom: 0;
-            width: 70%;
-            left: 0;
-            height: 250px;
+            max-width: 646px;
+            left: 50px;
+            height: 368px;
+            bottom: -60px;
         }
     }
 
@@ -1150,25 +1150,27 @@ form#applyforjob textarea {
 .our_products_wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 0px;
+    position: relative;
+    margin: 120px 0px;
 
     .our_product {
         position: relative;
-        margin-top: 50px;
-        height: 400px;
 
         li:nth-child(1) {
-            margin-left: 10%;
             position: absolute;
-            width: 70%;
-            height: 80%;
+            max-width: 654px;
+            width: 100%;
+            height: 501px;
             position: inherit;
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             align-items: baseline;
             padding: 0px 10px;
 
             h1 {
                 color: $white;
+                font-size: 3.938em;
             }
 
             a {
@@ -1180,11 +1182,7 @@ form#applyforjob textarea {
         }
 
         span.wrap_nmae_btn {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 90%;
-            margin: 20px;
+            @include grid-property(grid,1fr 1fr,center);
         }
 
         img {
@@ -2698,6 +2696,7 @@ p .testimonial_wrap {
     background-color: $primaryyellow;
 }
 
+
 .testimonial_right_section {
     width: 80%;
     margin: 0px auto 0px;
@@ -3540,12 +3539,12 @@ h5.title_heading_c {
     .our_products_wrapper .our_product li:nth-child(1) {
         h1 {
             margin-top: 0;
-            font-size: 1.5em;
+            font-size: 3.938em;
             padding: 7px;
         }
 
         a {
-            font-size: 1em;
+            font-size: 1.25em;
         }
     }
 
@@ -3639,9 +3638,21 @@ h5.title_heading_c {
 
 }
 
-
+.testimonial_wrap.active,
+.testimonial_wrap,
+.testimonial_wrap.active ~ .testimonial_wrap{
+    top: 10%;
+}
 
 @media screen and (max-width: 768px) {
+    .dots {
+        bottom: -80%;
+    }
+    .about_page_testimonial{
+        .testimonial_right_section {
+            width: 100%;
+        }
+    }
     .portfolio_inner_section{
         width: 87% ;
     }
@@ -3818,7 +3829,8 @@ h5.title_heading_c {
 
 }
 
-.portfolio_inner_template {
+.portfolio_inner_template,
+.product_inner_Page{
     .scrolling_portfolio_section {
         position: absolute !important;
         width: 100%;
@@ -3839,8 +3851,12 @@ h5.title_heading_c {
         font-size: 4.375em;
         margin: 0px 0px 0px 40px;
     }
-    .portfolio_inner_template .scrolling_portfolio_section{
-        position: relative !important;
+    .portfolio_inner_template,
+    .product_inner_Page{
+        .scrolling_portfolio_section{
+            position: relative !important;
+            padding-bottom: 40px;
+        }
     }
     .portfolio_projects_flex{
         grid-template-columns: 1fr ;
@@ -5078,26 +5094,7 @@ h5.title_heading_c {
     }
 
 
-    .about_page_testimonial {
-        .testimonial-right-section {
-            .testimonial-card {
-                width: 85% !important;
-                left: -12%;
-            }
-
-            .testimonial-card:nth-child(2) {
-                top: 25px !important;
-                left: 0px !important;
-            }
-
-            .testimonial-card:nth-child(3) {
-                top: 50px !important;
-                left: 25px !important;
-            }
-        }
-
-
-    }
+   
 
     .testimonial_flex {
         row-gap: 30px;
@@ -5128,7 +5125,7 @@ h5.title_heading_c {
     }
 
     .home_testimonial_wrapper {
-        height: 550px;
+        height: 650px;
     }
 
 
@@ -5137,14 +5134,7 @@ h5.title_heading_c {
         margin-top: -36px;
     }
 
-    .testimonial_wrap {
-        position: absolute;
-        max-width: 80% !important;
-        width: 80%;
-        height: auto;
-        margin: 0 auto 0 auto;
-        right: -15%;
-    }
+    
 
     
     .testimonial_address p {
@@ -5585,6 +5575,14 @@ h5.title_heading_c {
 }
 
 @media (max-width:468px) {
+    .testimonial_wrap {
+        position: absolute;
+        max-width: 90% !important;
+        width: 90%;
+        height: auto;
+        margin: 0 auto 0 auto;
+        right: -15%;
+    }
     .nav-right{
         .header_bottom_social_icons{
             grid-template-columns: 1fr;
@@ -5606,9 +5604,7 @@ h5.title_heading_c {
     .right_banner_heading h1{
     font-size: 1.875em;    
     }
-    .dots {
-        bottom: -50%;
-    }
+   
     .portfolio_title h4 {
         font-size: 1em;
     }
@@ -6115,16 +6111,16 @@ span.error_fields {
 }
 
 
-@media screen and (orientation: landscape) {
-    .cf7_form_outer{
+@media screen and (max-width: 770px) and (orientation: landscape) {
+    .cf7_form_outer {
         height: 100vh !important;
         overflow-y: scroll;
         padding-bottom: 50px;
     }
-    .cf7_form_inner{
+    .cf7_form_inner {
         margin-bottom: 70px;
     }
-    .portfolio a.portfolio-post{
+    .portfolio a.portfolio-post {
         height: 70vh !important;
     }
     .nav-right {
@@ -6132,14 +6128,14 @@ span.error_fields {
         overflow-y: scroll !important;
     }
     .all-blog-posts-outer,
-    .portfolio_showcase_wrapper{
+    .portfolio_showcase_wrapper {
         grid-template-columns: 1fr 1fr;
         column-gap: 30px;
     }
-    .home_slider_wrapper h1:first-child{
-        font-size: 3.25em;
+    .home_slider_wrapper h1:first-child {
+        font-size: 4.25em;
     }
-    .testimonial_flex .testimonial_slider{
+    .testimonial_flex .testimonial_slider {
         height: 100vh !important;
     }
 }

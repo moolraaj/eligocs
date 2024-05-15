@@ -18,9 +18,10 @@ export default async function Page({ params }) {
 
     let data = await api.fetchSigleProducts(slug)
     let allProducts = await api.AllProducts(slug)
+    let simlimarProducts = await api.fetchAllportFolio();
     return (
         <>
-            <Productslug data={data} allProducts={allProducts} />
+            <Productslug data={data} allProducts={allProducts} simlimarProducts={simlimarProducts} />
         </>
     );
 }
