@@ -35,7 +35,7 @@ export default function CourseSlug({ data, courseFaq }) {
                     <div className="course_join_wrapper">
                       <div className="course_join_inner">
                         <p>{singleCourse.acf.join_course_heading}</p>
-                        <Link href={`/`}>JOin Course Now</Link>
+                        <Link href={`/`}>Join Course Now</Link>
                       </div>
                     </div>
                   </div>

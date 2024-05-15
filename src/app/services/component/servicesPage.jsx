@@ -38,7 +38,7 @@ export default function ServicesPage() {
 
 
 
-
+    const allServices = [...services].reverse();
 
 
 
@@ -84,7 +84,7 @@ export default function ServicesPage() {
                                 </div>
                                 <div className="all_services_right_section">
                                     {
-                                        services.map((e) => {
+                                        allServices.map((e) => {
                                             return <div className="services_flex_wrapper" key={e.id}>
 
                                                 <div className="all_services_outer">

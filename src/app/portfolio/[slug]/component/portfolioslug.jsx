@@ -72,12 +72,11 @@ export default function Portfolioslug({ data, relatedPOrtfolio }) {
     const handleMouseLeave = () => {
         setMouseDown(false);
         setZIndex(999);
-        setLinkZIndex(9999); 
+        
     }
 
     const handleMouseUp = () => {
         setMouseDown(false);
-        setLinkZIndex(9999); 
     }
 
     const handleMouseMove = (e) => {

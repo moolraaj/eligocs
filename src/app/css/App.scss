@@ -3778,9 +3778,7 @@ h5.title_heading_c {
     .portfolio_title h4 {
         font-size: 1em;
     }
-    .dots {
-        bottom: -80%;
-    }
+   
     .about_page_testimonial{
         .testimonial_right_section {
             width: 100%;
@@ -4549,7 +4547,7 @@ h5.title_heading_c {
     .testimonial-right-section {
         .dots {
             position: absolute;
-            bottom: -29.25em;
+            bottom: 50%;
             left: 50%;
         }
     }
@@ -4825,7 +4823,13 @@ h5.title_heading_c {
 
 
 @media (max-width:767px) {
-    
+    .page_outer.portfolio_section_outer.scrolling{
+        padding: 15px 0px !important;
+    }
+    .home_slider_wrapper h1:first-child,
+    .home_slider_wrapper h1:nth-child(2) {
+        font-size: 1.875em !important;
+    }
     .testimonial_asking p {
         font-size: 0.938em;
         line-height: normal;
@@ -5555,10 +5559,7 @@ h5.title_heading_c {
         padding: 120px 20px 0px 20px !important;
     }
 
-    .home_slider_wrapper h1:first-child,
-    .home_slider_wrapper h1:nth-child(2) {
-        font-size: 1.875em;
-    }
+    
 
     .home_slider_wrapper p,
     .innovation_right p {
@@ -5763,6 +5764,7 @@ h5.title_heading_c {
 }
 
 @media (max-width:468px) {
+    
     .testimonial_wrap {
         position: absolute;
         max-width: 90% !important;
@@ -6308,22 +6310,12 @@ span.error_fields {
     .cf7_form_inner {
         margin-bottom: 70px;
     }
-    .portfolio a.portfolio-post {
-        height: 70vh !important;
-    }
     .nav-right {
         height: 100vh !important;
         overflow-y: scroll !important;
     }
-    .all-blog-posts-outer,
-    .portfolio_showcase_wrapper {
-        grid-template-columns: 1fr 1fr;
-        column-gap: 30px;
-    }
     .home_slider_wrapper h1:first-child {
         font-size: 4.25em;
     }
-    .testimonial_flex .testimonial_slider {
-        height: 100vh !important;
-    }
+  
 }

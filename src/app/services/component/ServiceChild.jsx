@@ -2,10 +2,12 @@
  
 import Link from 'next/link';
 export default function  ServiceChild({services}) {
+    // Reverse the services array
+    const reversedServices = [...services].reverse();
 
     return (
         <>
-            {services.map((item, index) => (
+            {reversedServices.map((item, index) => (
                 <div className="trans_number" key={index}>
                     <Link href={`services/${item.slug}`}>
                         <ul className='transformation_wrapper'  >
