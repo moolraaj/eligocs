@@ -140,7 +140,22 @@ $font: font-family;
 
 
 
+.apply_now_navgation .form_button button {
+    background:$primaryyellow !important;
+    font-weight: 600;
+    font-size: 1.125em;
+}
 
+.apply_now_navgation .form_button button:hover {
+    background:$black !important;
+    font-weight: 600;
+}
+
+
+.portfolio_inner_template .portfolio_project_heading {
+    width: 75%;
+    margin-left: auto;
+}
 
 
 
@@ -430,7 +445,7 @@ form#jobform textarea {
 }
 
 .portfolio_image img {
-    max-width: 454px;
+    width: 453px;
     height: 585px;
     object-fit: cover;
     object-position: top;
@@ -540,6 +555,7 @@ button:disabled {
     height: 100%;
     overflow-y: hidden;
     overflow-x: hidden;
+    padding: 120px 0px;
 }
 
 .portfolio_right_section {
@@ -551,8 +567,9 @@ button:disabled {
 
 
 .page_outer.portfolio_section_outer .portfolio_left_section {
-    width: 48%;
+    width: 92%;
     text-align: left;
+    margin-left: auto;
 }
 
 
@@ -595,7 +612,7 @@ p {
 
         .portfolio_inner {
             position: relative;
-            left: 50%;
+            left: 40%;
         }
     }
 
@@ -914,6 +931,10 @@ form#applyforjob textarea {
     position: relative;
     display: flex;
     align-items: center;
+    margin-top: 50px;
+}
+.innovation_right button:hover {
+    background: black !important;
 }
 
 .innovation-heading {
@@ -1880,6 +1901,7 @@ ul.course li:nth-child(4) {
     margin: auto;
     padding-bottom: 100px;
     padding: 108px 20px;
+    max-width: 1468px;
 }
 
 .arrow_slider {
@@ -2042,6 +2064,15 @@ span.cline:after {
 .company_answers p {
     font-size: 1.25em;
     width: 320px;
+    line-height: 33px;
+}
+.footer-center-bottom-section p {
+    max-width: 393px;
+    text-align: center;
+    line-height: 30px;
+}
+menu.footer_ul li a {
+    text-transform: capitalize;
 }
 
 
@@ -2070,7 +2101,7 @@ span.cline:after {
         img {
             width: 32px;
             object-fit: none;
-            filter: invert(1);
+            filter: hue-rotate(22917deg);;
         }
     }
 
@@ -2571,6 +2602,7 @@ span.vison_c {
     font-size: 9.375em;
     text-transform: capitalize;
     margin: 0px 0px 0px 60px;
+    max-width: 600px;
 }
 
 
@@ -2584,12 +2616,14 @@ h1.innovation-heading {
     font-size: 2.188em;
     text-transform: capitalize;
     margin-top: 21px;
+    font-weight: 500;
 }
 
 .innovation_right button {
     @extend %button;
     background: #EAAA00 !important;
     color: #fff !important;
+    font-weight: 600;
 }
 
 .innovation_right {
@@ -2784,6 +2818,7 @@ p .testimonial_wrap {
     .footer-center-section {
 
         margin: auto;
+        grid-template-columns: 30% repeat(3, 1fr) !important;
         @include grid-property(grid, repeat(4, 1fr), unset, 65px);
 
 
@@ -2803,6 +2838,7 @@ p .testimonial_wrap {
                 font-weight: 700;
                 font-size: 20px;
                 white-space: nowrap;
+                display: table;
             }
 
             #eligo-creative {
@@ -2960,7 +2996,7 @@ p .testimonial_wrap {
     }
 
     .portfolio {
-        width: 80%;
+        width: 90%;
         overflow: hidden;
 
         .portfolio_image img {
@@ -2977,6 +3013,7 @@ p .testimonial_wrap {
 .menu-right-container-bottom span.form_button {
     display: flex;
     place-content: flex-end;
+    margin-top: -10px;
 }
 
 .apply_now_navgation {
@@ -2997,6 +3034,10 @@ p .testimonial_wrap {
         border: none;
         width: 64px;
         cursor: pointer;
+    }
+
+    img{
+        width: 54px;
     }
 
 }
@@ -3934,6 +3975,8 @@ h5.title_heading_c {
 
     .footer_wrapper .footer-center-section {
         @include grid-property(grid, repeat(2, 1fr), unset, 20px, 20px);
+
+
     }
 
     .blog-header-description {
@@ -4550,6 +4593,7 @@ h5.title_heading_c {
         position: inherit !important;
         display: grid !important;
         grid-auto-columns: 1fr;
+       margin-top: 0px;
     }
 
 
@@ -6071,7 +6115,7 @@ textarea::placeholder {
     outline: unset;
     border-bottom: 1px solid $primaryyellow !important;
     width: 100%;
-    height: 12vh;
+    height: 8vh;
     border: unset;
     @extend %cf7_form_placeholder;
 
@@ -6082,7 +6126,7 @@ textarea::placeholder {
 }
 
 .form_button button {
-    background: $primaryyellow;
+    background: $black;
 }
 
 .form_button button {
@@ -6120,8 +6164,9 @@ textarea::placeholder {
 
 ._form_paragraph p {
     font-size: 35px;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: 500;
+    color: $primaryyellow;
 }
 
 .form_banner_heading h1 {

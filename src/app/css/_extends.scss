@@ -44,7 +44,7 @@
 
 %cf7_form_input{
     width: 100%;
-    padding: 36px 0px;
+    padding: 26px 0px;
     border: unset;
     border-bottom: 1px solid $primaryyellow;
     font-size: 28px; 
@@ -54,8 +54,9 @@
     border-radius: 30px;
     border: unset;
     text-transform: capitalize;
-    font-size: 1.25em;
+    font-size: 1.815em;
     color: $white;
+    font-family: 'Euclid Circular A';
 }
 %cf7_form_placeholder{
     font-size: 28px;
