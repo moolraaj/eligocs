@@ -335,6 +335,7 @@ button {
   h1 {
     font-size: 2em;
     font-weight: $secondory-font-weight;
+    white-space: nowrap;
   }
 
   button {
@@ -694,6 +695,7 @@ button {
     }
     .steps-content-after h1{
       font-size: 1.875em;
+      white-space: nowrap;
     }
   }
   

@@ -153,7 +153,7 @@ $font: font-family;
 
 
 .portfolio_inner_template .portfolio_project_heading {
-    width: 75%;
+    width: 68%;
     margin-left: auto;
 }
 
@@ -221,17 +221,19 @@ span.input-error {
 }
 
 button#sucess-journy-btn {
-    background: $white;
-    padding: 15px 45px;
+    background: $primaryyellow;
+    padding: 15px 40px;
     border-radius: 30px !important;
     border: none;
+    color:$white;
     text-transform: capitalize;
     font-size: 25px;
+    margin-top: 20px;
 }
 
 button#sucess-journy-btn:hover {
-    background: $primaryblack !important;
-    color: $white;
+    background: $white !important;
+    color: $black;
 }
 
 
@@ -602,6 +604,10 @@ p {
 .contacts_infos a {
     font-size: 3.125em;
 }
+.call_outer.inner_services button#sucess-journy-btn {
+    background:black;
+}
+
 
 .home_wrapper {
     .scrolling_portfolio_section {
@@ -675,6 +681,7 @@ button.prev {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 999;
 }
 
 
@@ -894,10 +901,12 @@ form#contactus {
 
 .about_call_action .call_left_section h1 {
     color: white;
+    margin: 0px;
 }
 
 .about_call_action .call_left_section p {
     color: white;
+    padding: 10px 0px;
 }
 
 
@@ -1870,13 +1879,13 @@ ul.course li:nth-child(4) {
 
 .portfolio_top_image img {
     width: 100%;
-    max-width: 450px;
+    object-fit: contain;
 }
 
 .port_description p {
-    font-size: 1.375em;
+    font-size: 1.175em;
     margin-bottom: 10px;
-    line-height: 51px;
+    line-height: 32px;
 }
 
 
@@ -3396,9 +3405,10 @@ form#contactus .form_button button:hover {
 }
 
 h5.user_name_c {
-    font-size: 1.275em;
+    font-size: 1.875em;
     margin: 0px;
     font-weight: 300;
+    text-transform:capitalize;
 }
 
 
@@ -3435,7 +3445,7 @@ form#contactus .contact_input_wrapper input,
 textarea {
     background: #F4F4F4;
     border: none;
-    padding: 9px;
+    padding: 19px 0px;
 }
 
 
@@ -3764,6 +3774,9 @@ h5.title_heading_c {
         padding: 10px 12px !important;
         font-size: 1.063em !important;
     }
+    .portfolio_title h4 {
+        font-size: 1em;
+    }
     .dots {
         bottom: -80%;
     }
@@ -3954,7 +3967,7 @@ h5.title_heading_c {
 
     .portfolio_inner {
         position: relative;
-        left: 50%;
+        left: 40%;
     }
 }
 
@@ -4023,7 +4036,7 @@ h5.title_heading_c {
     }
 
     .footer_wrapper .footer-center-section {
-        @include grid-property(grid, repeat(2, 1fr), unset, 20px, 20px);
+        @include grid-property(grid, repeat(2, 1fr) !important, unset, 20px, 20px);
 
 
     }
@@ -5327,7 +5340,7 @@ h5.title_heading_c {
     }
 
     .footer_wrapper .footer-center-section {
-        @include grid-property(grid, repeat(1, 1fr));
+        @include grid-property(grid, repeat(1, 1fr) !important);
         padding: 0px 0px;
 
     }
@@ -5757,6 +5770,9 @@ h5.title_heading_c {
         margin: 0 auto 0 auto;
         right: -15%;
     }
+    h5.user_name_c {
+        font-size: 1.175em;
+      }
     .nav-right{
         .header_bottom_social_icons{
             grid-template-columns: 1fr;
@@ -6180,6 +6196,7 @@ textarea::placeholder {
 
 .form_button button {
     @extend %cf7_form_button;
+
 }
 
 
@@ -6281,7 +6298,7 @@ span.error_fields {
 }
 
 
-@media screen and (max-width: 770px) and (orientation: landscape) {
+@media screen and (max-width: 770px) and (orientation: portrait) {
     .cf7_form_outer {
         height: 100vh !important;
         overflow-y: scroll;
