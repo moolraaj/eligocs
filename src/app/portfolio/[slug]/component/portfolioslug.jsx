@@ -131,7 +131,7 @@ export default function Portfolioslug({ data, relatedPOrtfolio }) {
                                 <div className="portfolio_related_posts_inner">
                                 <h3>Related Posts</h3>
                                 {Portfolio.map((e,index)=>{
-                                    return <Link key={index} href={`/portfolio`}>{e.acf.portfolio_projects_heading}</Link>
+                                    return <Link key={index} href={`/portfolio/${e.slug}`}>{e.acf.portfolio_projects_heading}</Link>
                                 })}
                                 
                                 </div>
