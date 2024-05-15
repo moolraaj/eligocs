@@ -132,10 +132,29 @@ $font: font-family;
 
 
 
+// Davinder css start
 
+.course_call_to_action {
+    .call_left_section {
+        p {
+            font-size:1.1em !important;
+            font-weight:500;
+        }
+    } 
+}
+.form_fields_wrapper input::placeholder 
+{
+    color:#666363 !important;
+}
 
-
-
+.course_call_to_action {
+    .call_left_section {
+        #sucess-journy-btn{
+            background-color: #191C1B;
+                        }
+                    }
+    }
+// Davinder css end
 
 
 
@@ -1788,11 +1807,11 @@ ul.course li:nth-child(4) {
 
         p {
             font-size: 1.4em;
-            letter-spacing: 2px;
+            // letter-spacing: 2px;
             line-height: 45px;
         }
     }
-
+  
     .course_join_wrapper {
         width: 95%;
 
@@ -4555,7 +4574,14 @@ h5.title_heading_c {
             cursor: pointer;
         }
     }
-
+  .course_call_to_action {
+             .call_left_section {
+                 p {
+                    font-size:1.118em !important;
+                    font-weight:500;
+                    }
+                 } 
+    }
     .testimonial_section_inner .card-content h1 {
         font-size: 1.125em;
         color: #000;
@@ -4865,7 +4891,7 @@ h5.title_heading_c {
 }
 
 .course_faq_heading {
-    font-size: 2.75em;
+    font-size: 3.75em;
     width: 40%;
 
     span {
