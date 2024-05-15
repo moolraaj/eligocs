@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.cart-menu {
+    display: flex;
+    align-items: center;
+}
+
+.cart-menu img {
+    height: 30px;
+    margin-right: 20px;
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 3px 0;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    filter: brightness(50%);
+}
+
+.hero h1 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    margin: 0;
+}
+
+.hero p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+.gallery-item {
+    margin: 0 10px;
+}
+
+.gallery-item img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Broker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="EligoCS Logo">
+            <span>Your Trusted IT Partner</span>
+        </div>
+        <div class="cart-menu">
+            <img src="cart-icon.png" alt="Cart">
+            <div class="menu-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <img src="laptop-coding.jpg" alt="Laptop with coding screen">
+            <h1>Mortgage Broker</h1>
+            <p>Mortgage Broker</p>
+        </section>
+        <section class="gallery">
+            <div class="gallery-item">
+                <img src="image1.jpg" alt="Image 1">
+            </div>
+            <div class="gallery-item">
+                <img src="image2.jpg" alt="Image 2">
+            </div>
+            <div class="gallery-item">
+                <img src="image3.jpg" alt="Image 3">
+            </div>
+        </section>
+    </main>
+</body>
+</html>

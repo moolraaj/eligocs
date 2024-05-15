@@ -1016,12 +1016,13 @@ form#applyforjob textarea {
         }
 
         span {
-            width: 70%;
-            height: 80px;
+            max-width: 750px;
+            height: 128px;
             background: $primaryyellow;
             position: absolute;
             left: 10%;
             bottom: -47px;
+            width: 100%;
         }
     }
 
@@ -4165,7 +4166,6 @@ h5.title_heading_c {
 
 
     }
-
     .process_flex_template {
         grid-template-columns: 1fr;
 
