@@ -30,11 +30,11 @@ function NavbarCompo({ data }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [isApplyJobVisible, setIsApplyJobVisible] = useState(false);
-  const additionalLinksRef = useRef(null);
+  // const additionalLinksRef = useRef(null);
 
-  const toggleAdditionalLinks = () => {
-      additionalLinksRef.current.classList.toggle('hide_seek');  
-  };
+  // const toggleAdditionalLinks = () => {
+  //     additionalLinksRef.current.classList.toggle('hide_seek');  
+  // };
 
 
 
@@ -215,12 +215,12 @@ function NavbarCompo({ data }) {
                     <NavigationLink href={'/about'}>about</NavigationLink>
                     <div className="hide_seek_wrapper">
 
-                    <button ref={additionalLinksRef} onClick={toggleAdditionalLinks} aria-label='toggle_navlinks'>
+                    <button   aria-label='toggle_navlinks'>
                       <img src={arrow.src} alt="arrow" />
                     </button>
             
                     
-                    <div className="hide_seek blogs" ref={additionalLinksRef}>
+                    <div className="hide_seek blogs" >
                         <NavigationLink href={'/meet-our-team'}>our team</NavigationLink>
                         <NavigationLink href={'/blog'}>blog</NavigationLink>
                       </div>
@@ -233,19 +233,19 @@ function NavbarCompo({ data }) {
 
 
 
+                    
+
+
+
+
+                    <NavigationLink href={'/our-products'}>our products</NavigationLink>
+
                     <div className='apply_now_navgation'>
                       <NavigationLink href={'/contact'}>contact us</NavigationLink>
                       <span className="form_button">
                         <button onClick={showApplyJob}>apply now</button>
                       </span>
                     </div>
-
-
-
-
-                    <NavigationLink href={'/our-products'}>our-products</NavigationLink>
-
-
                     <div className="header_contact_section">
                       <h2>Connect here with us :</h2>
 
