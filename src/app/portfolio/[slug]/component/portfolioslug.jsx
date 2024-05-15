@@ -59,21 +59,25 @@ export default function Portfolioslug({ data, relatedPOrtfolio }) {
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
     const [zIndex, setZIndex] = useState(0);
+    const [linkZIndex, setLinkZIndex] = useState(99999);
 
     const handleMouseDown = (e) => {
         e.stopPropagation(); // Stop the propagation of the click event
         setMouseDown(true);
         setStartX(e.pageX - itemRef.current.offsetLeft);
         setScrollLeft(itemRef.current.scrollLeft);
+        setLinkZIndex(0);
     }
 
     const handleMouseLeave = () => {
         setMouseDown(false);
         setZIndex(999);
+        setLinkZIndex(9999); 
     }
 
     const handleMouseUp = () => {
         setMouseDown(false);
+        setLinkZIndex(9999); 
     }
 
     const handleMouseMove = (e) => {
@@ -120,6 +124,7 @@ export default function Portfolioslug({ data, relatedPOrtfolio }) {
                             <div className="portfolio_projects_flex">
                                 <div className="portfolio_project_heading">
                                     <h1>{ele.acf.portfolio_projects_heading}</h1>
+                                    <Link className='back-to-projects' href={`/portfolio`} style={{position: 'absolute',padding:'15px 20px',background: '#EAAA00',borderRadius: "20px",display: 'inline-flex',alignItems: 'center',justifyContent: 'center',zIndex: linkZIndex }}>Back To All Project</Link>
                                 </div>
 
 
@@ -145,6 +150,7 @@ export default function Portfolioslug({ data, relatedPOrtfolio }) {
                                                             <div className="portfolio_inner_left_section">
                                                                 <div className="portfolio_title">
                                                                     <h4>{ele.acf.portfolio_heading}</h4>
+                                                                    
                                                                 </div>
                                                                 <div className="portfolio_short_description">
                                                                     <p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_short_description }}></p>

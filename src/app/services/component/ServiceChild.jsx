@@ -2,10 +2,12 @@
  
 import Link from 'next/link';
 export default function  ServiceChild({services}) {
+    const sortedServices = [...services].sort((a, b) => new Date(a.dateAdded) - new Date(b.dateAdded));
+
 
     return (
         <>
-            {services.map((item, index) => (
+            {sortedServices.map((item, index) => (
                 <div className="trans_number" key={index}>
                     <Link href={`services/${item.slug}`}>
                         <ul className='transformation_wrapper'  >
