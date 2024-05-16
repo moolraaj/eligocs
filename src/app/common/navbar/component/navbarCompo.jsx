@@ -89,8 +89,8 @@ function NavbarCompo({ data }) {
 
                   <h1>hello</h1>
                 </div>
-
-                <div className="form_slider_wrapper">
+                
+                <div className="form_slider_wrapper apply_for_job">
                   <div className="_form_paragraph">
                     <p>
                       Let's work on

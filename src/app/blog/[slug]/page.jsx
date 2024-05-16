@@ -11,12 +11,12 @@ export default async function Page({ params }) {
      
 
 
-    let data = await api.SingleBlogPost(slug)
-  
+    let data = await api.SingleBlogPost(slug);
+    const blogShare = await api.fetchHeaderFooter();
 
     return (
         <>
-            <BlogSlug data={data} />
+            <BlogSlug data={data} blogShare={blogShare} />
         </>
     );
 }

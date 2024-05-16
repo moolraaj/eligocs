@@ -41,27 +41,27 @@ const AboutUs = ({ result }) => {
                           <div className="slider">
                             <div style={{ display: "flex" }}>
                               <img
-                                src={slider.top_slider_image_first}
+                                src={slider.top_slider_image_first.url}
                                 alt={`img${index + 1}`}
                               />
                               <div className="images-outer">
                                 <div></div>
                                 <div>
                                   <img
-                                    src={slider.top_slider_image_second}
+                                    src={slider.top_slider_image_second.url}
                                     alt={`img${index + 2}`}
                                   />
                                 </div>
                                 <div>
                                   <img
-                                    src={slider.top_slider_image_third}
+                                    src={slider.top_slider_image_third.url}
                                     alt={`img${index + 3}`}
                                   />
                                 </div>
                                 <div></div>
                               </div>
                               <img
-                                src={slider.top_slider_image_fourth}
+                                src={slider.top_slider_image_fourth.url}
                                 alt={`img${index + 4}`}
                               />
                             </div>
