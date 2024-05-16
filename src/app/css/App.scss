@@ -116,7 +116,7 @@ $font: font-family;
 .portfolio_gallery_wrapper {
     flex: 0 0 33%;
     scroll-snap-align: start;
-   
+
 }
 
 .portfolio_gallery_wrapper img {
@@ -126,7 +126,7 @@ $font: font-family;
     max-width: 100%;
     z-index: 9999 !important;
     border-radius: 8px;
-  
+
 }
 
 
@@ -374,7 +374,8 @@ ul.transformation_wrapper li:nth-child(1) {
     top: 18px;
     display: flex;
     align-items: center;
-    font-size: 22px;
+    font-size: 28px;
+    text-transform: capitalize;
 
 }
 
@@ -756,8 +757,9 @@ button.prev {
     animation: shake 0.5s ease;
 
 }
+
 .footer-center-bottom-section p:nth-child(2) {
-    margin: 6px  0px 0px 0px;
+    margin: 6px 0px 0px 0px;
 }
 
 
@@ -1102,7 +1104,8 @@ form#applyforjob textarea {
     h2 {
         font-size: 2.375em;
     }
-    a{
+
+    a {
         color: $white;
         font-size: 1.875em;
         font-weight: 600;
@@ -1884,13 +1887,15 @@ ul.course li:nth-child(4) {
     p {
         font-size: 1.3em;
     }
-    ul.course_points li:last-child{
-        ul li{
+
+    ul.course_points li:last-child {
+        ul li {
             list-style: disc;
             margin-left: 20px;
         }
-        
+
     }
+
     ul.course_points li {
         position: relative;
 
@@ -2720,7 +2725,7 @@ span.vison_c {
     background-color: $white;
     margin-top: 20px;
     display: inline-block;
-    font-family: 'Euclid Circular A',sans-serif;
+    font-family: 'Euclid Circular A', sans-serif;
 }
 
 .meet_our_team:hover {
@@ -3191,7 +3196,7 @@ p .testimonial_wrap {
 
     img {
         height: 44px !important;
-        
+
     }
 
 }
@@ -3314,8 +3319,8 @@ p .testimonial_wrap {
 
 }
 
-.apply_for_job{
-    ._form_paragraph p{
+.apply_for_job {
+    ._form_paragraph p {
         color: #000 !important;
     }
 }
@@ -3326,9 +3331,11 @@ p .testimonial_wrap {
 .blog_descritpion ul {
     padding: 0;
 }
+
 .blog_descritpion img {
     display: block;
 }
+
 p:empty {
     display: none !important;
 }
@@ -3418,6 +3425,17 @@ p:empty {
 .blog-header-description p {
     font-size: $primary-font;
     line-height: 45px;
+}
+
+.share_blog_post {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-width: 1px 0px 1px 0px;
+    border-style: solid;
+    border-color: rgba(159, 163, 173, .2);
+    padding: 20px 0px;
+    margin-bottom: 40px;
 }
 
 .all-blog-posts-outer {
@@ -3633,6 +3651,7 @@ h5.title_heading_c {
             border-right: 1px solid;
             padding-right: 20px;
         }
+
         span:last-child {
             padding-left: 15px;
         }
@@ -3895,18 +3914,19 @@ h5.title_heading_c {
 
 .testimonial_wrap.active,
 .testimonial_wrap,
-.testimonial_wrap.active ~ .testimonial_wrap{
+.testimonial_wrap.active~.testimonial_wrap {
     top: -30px;
 }
 
 @media screen and (max-width: 768px) {
-    ul.course_points li:last-child{
-        ul li{
+    ul.course_points li:last-child {
+        ul li {
             list-style: none !important;
             margin-left: 0px !important;
         }
-        
+
     }
+
     .custom-file-upload::before {
         align-items: center;
         top: 6px;
@@ -3915,7 +3935,7 @@ h5.title_heading_c {
 
     .slider_buttons {
         bottom: 84px;
-       
+
     }
 
     .nav_right_section button img {
@@ -3961,7 +3981,7 @@ h5.title_heading_c {
 
     .portfolio_top_left_section .portfolio_top_right_section h1 {
         font-size: 1.875em;
-        margin: 50px 0px 0px 0px ;
+        margin: 50px 0px 0px 0px;
     }
 
     .portfolio_project_heading {
@@ -4160,18 +4180,22 @@ h5.title_heading_c {
         max-width: 70%;
         margin-bottom: 60px;
     }
+
     .testimonial_left_section h1 {
         line-height: 90px;
     }
+
     .testimonial_section_outer {
         padding: 96px 0px;
     }
+
     .dots {
         position: absolute;
         bottom: -50%;
         left: 50%;
         transform: translateX(-50%);
     }
+
     .our_products_wrapper>ul.our_product.even li:nth-child(2) img,
     .our_products_wrapper>ul.our_product.odd li:nth-child(2) img {
         height: 224px;
@@ -4367,9 +4391,10 @@ h5.title_heading_c {
 
 
 @media (max-width:768px) {
-    .port_description p p{
+    .port_description p p {
         font-size: 1em !important;
     }
+
     .about-top-content button {
         float: left !important;
     }
@@ -5091,8 +5116,9 @@ h5.title_heading_c {
 
     .related_product_wrapper {
         padding: 20px;
-        a{
-        font-size: 1.25em;
+
+        a {
+            font-size: 1.25em;
         }
     }
 
@@ -5528,9 +5554,10 @@ h5.title_heading_c {
 
     .portfolio_project {
         padding: 50px 0px;
-      .portfolio_project_heading{
-        padding-left: 20px;
-      }
+
+        .portfolio_project_heading {
+            padding-left: 20px;
+        }
     }
 
     .portfolio_inner_section {
@@ -6028,12 +6055,13 @@ h5.title_heading_c {
     }
 }
 
-@media only screen and (max-width:480px){
+@media only screen and (max-width:480px) {
     .testimonial_wrap {
         position: absolute;
         max-width: 70%;
         margin-bottom: 60px;
     }
+
     .home_testimonial_wrapper {
         height: auto;
         padding-bottom: 150px;
@@ -6041,8 +6069,8 @@ h5.title_heading_c {
 
 }
 
-@media only screen and (max-width:473px){
-    
+@media only screen and (max-width:473px) {
+
     .home_testimonial_wrapper {
         height: auto;
         padding-bottom: 120px;
@@ -6051,7 +6079,7 @@ h5.title_heading_c {
 }
 
 @media (max-width:468px) {
-    
+
     // .testimonial_wrap {
     //     position: absolute;
     //     max-width: 90% !important;
@@ -6212,7 +6240,8 @@ h5.title_heading_c {
             margin-bottom: 2.1em;
         }
     }
-    .related_product_wrapper h2{
+
+    .related_product_wrapper h2 {
         margin: auto;
         font-size: 1.875em;
     }
@@ -6381,7 +6410,7 @@ h5.title_heading_c {
 
 }
 
-@media only screen and (max-width:430px){
+@media only screen and (max-width:430px) {
     .testimonial_right_section {
         width: 90%;
         margin: 0px auto 0px;
