@@ -71,12 +71,13 @@ export default function Portfolioslug({ data, relatedPOrtfolio }) {
 
     const handleMouseLeave = () => {
         setMouseDown(false);
-        setZIndex(999);
+        setZIndex(99);
         
     }
 
     const handleMouseUp = () => {
         setMouseDown(false);
+        setLinkZIndex(99);
     }
 
     const handleMouseMove = (e) => {
@@ -85,6 +86,7 @@ export default function Portfolioslug({ data, relatedPOrtfolio }) {
         const X = e.pageX - itemRef.current.offsetLeft;
         const walk = (X - startX) * 2;
         itemRef.current.scrollLeft = scrollLeft - walk;
+        setLinkZIndex(0);
     }
 
 
