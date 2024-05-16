@@ -47,7 +47,15 @@ function BlogPage({ blogPageData }) {
 
 
 
+  // const categories = ['All Blogs', ...new Set(allBlogPosts.map(blog => blog.course_category))];
 
+
+  // const handleCategoryChange = (category) => {
+  //   setSelectedCategory(category);
+  // };
+
+
+  // const filteredCourses = selectedCategory === 'All Courses' ? AllCourses : AllCourses.filter(course => course.course_category.includes(selectedCategory));
 
 
 

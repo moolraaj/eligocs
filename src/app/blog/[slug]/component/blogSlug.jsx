@@ -13,7 +13,7 @@ export default function BlogSlug({data}) {
                             <p><span>{blogPost.acf.post_by_}</span> <span>{blogPost.acf.blog_post_date}</span></p>
                             <img src={blogPost.acf.blog_post_image.url} alt="blog_post_image" />
                             </div>
-                            <div className="blog_itenary" dangerouslySetInnerHTML={{__html: blogPost.acf.blog_itenary}}></div>
+                            <div className="blog_descritpion" dangerouslySetInnerHTML={{__html: blogPost.acf.blog_descritpion}}></div>
                         </div>
                     )
                 })}
