@@ -5,12 +5,15 @@ import { useEffect, useState } from "react"
 
 function PortfolioPage() {
 
+    
+
     let api = allExportedApi()
     const [data, setData] = useState([])
 
     const [portfolio, setPortfolio] = useState([])
     const [totalPages, setTotalPages] = useState(1);
     const [currentPage, setCurrentPage] = useState(1);
+    let portfolioReversed=[...portfolio].reverse()
 
 
 
@@ -80,7 +83,7 @@ function PortfolioPage() {
 
 
                                     {
-                                        portfolio.map((e) => {
+                                        portfolioReversed.map((e) => {
                                             return <Link href={`/portfolio/${e.slug}`} key={e.id}>
 
                                                 <div className="protfolio_items" >

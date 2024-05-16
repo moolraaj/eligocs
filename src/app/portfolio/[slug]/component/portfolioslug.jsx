@@ -13,6 +13,7 @@ export default function Portfolioslug({ data, relatedPOrtfolio }) {
     const [lightboxImage, setLightboxImage] = useState(null);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [imagesToShow, setImagesToShow] = useState([]);
+    
 
     useEffect(() => {
         setImagesToShow(getImagesToShow());
@@ -89,6 +90,7 @@ export default function Portfolioslug({ data, relatedPOrtfolio }) {
         setLinkZIndex(0);
     }
 
+    let relatedreversedPortpolio=[...relatedPOrtfolio].reverse()
 
 
     return (
@@ -96,7 +98,7 @@ export default function Portfolioslug({ data, relatedPOrtfolio }) {
 
             {
                 data.map((ele) => {
-                    const Portfolio = relatedPOrtfolio.filter(relatedPortfolio => relatedPortfolio.slug !== ele.slug);
+                    const Portfolio = relatedreversedPortpolio.filter(relatedreversedPortpolio => relatedreversedPortpolio.slug !== ele.slug);
                     return <div className="portfolio_inner_template" key={ele.id}>
                         <div className="portfolio_inner_section">
                             <div className="portfolio_top_section">

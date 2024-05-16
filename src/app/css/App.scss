@@ -80,6 +80,7 @@ body {
     li {
         list-style: none;
     }
+    
 }
 
 body::-webkit-scrollbar {
@@ -4329,6 +4330,21 @@ h5.title_heading_c {
 
 
 @media (max-width:768px) {
+    .servives_missout_description p {
+        font-size: 1em;
+        line-height: 36px;
+    }
+    .process_description p {
+        font-size: 1em;
+        line-height: 32px;
+        width: 94%;
+    }
+    .call_outer.inner_services .call_left_section p {
+        color: white;
+        font-size: 1em;
+        padding: 7px 0px;
+        line-height: 28px;
+    }
     .port_description p p{
         font-size: 1em !important;
     }
@@ -4498,8 +4514,8 @@ h5.title_heading_c {
         }
 
         .services_inner_description p {
-            font-size: 1.4em;
-            line-height: 49px;
+            font-size: 1em;
+            line-height: 32px;
             width: 100%;
         }
 

@@ -2,7 +2,7 @@
  
 import Link from 'next/link';
 export default function  ServiceChild({services}) {
-    // Reverse the services array
+
     const reversedServices = [...services].reverse();
 
     return (

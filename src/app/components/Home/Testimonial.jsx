@@ -111,9 +111,9 @@ function Testimonial() {
         } else if (relativeIndex === 1) {
             return { opacity: 1, zIndex: 2, marginTop: '30px', marginLeft: '35px' };
         } else if (relativeIndex === 2) {
-            return { opacity: 1, zIndex: 1, marginTop: '65px', marginLeft: '74px' };
+            return { opacity: 1, zIndex: 1, marginTop: '65px', marginLeft: '70px' };
         } else {
-            return { opacity: 0, zIndex: 1, marginTop: '65px', marginLeft: '74px' };
+            return { opacity: 0, zIndex: 1, marginTop: '65px', marginLeft: '70px' };
         }
     };
 
