@@ -59,25 +59,27 @@ export default function Portfolioslug({ data, relatedPOrtfolio }) {
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
     const [zIndex, setZIndex] = useState(0);
-    const [linkZIndex, setLinkZIndex] = useState(99999);
+    const [backButtonOpacity, setBackButtonOpacity] = useState(1); 
+
 
     const handleMouseDown = (e) => {
         e.stopPropagation(); // Stop the propagation of the click event
         setMouseDown(true);
         setStartX(e.pageX - itemRef.current.offsetLeft);
         setScrollLeft(itemRef.current.scrollLeft);
-        setLinkZIndex(0);
+        setBackButtonOpacity(0); // Set opacity to 0 when mouse is down
+
     }
 
     const handleMouseLeave = () => {
         setMouseDown(false);
         setZIndex(99);
-        
+      
     }
 
     const handleMouseUp = () => {
         setMouseDown(false);
-        setLinkZIndex(99);
+       
     }
 
     const handleMouseMove = (e) => {
@@ -86,9 +88,19 @@ export default function Portfolioslug({ data, relatedPOrtfolio }) {
         const X = e.pageX - itemRef.current.offsetLeft;
         const walk = (X - startX) * 2;
         itemRef.current.scrollLeft = scrollLeft - walk;
-        setLinkZIndex(0);
-    }
-
+        
+        // Calculate the scroll position as a percentage of container width
+        const containerWidth = itemRef.current.offsetWidth;
+        const scrollPercentage = ((scrollLeft - itemRef.current.scrollLeft) / containerWidth) * 100;
+    
+        // Check if the user has scrolled to the right by 50%
+        if (scrollPercentage >= 40) {
+            setBackButtonOpacity(1);
+        } else {
+            setBackButtonOpacity(0);
+        }
+    };
+    
 
 
     return (
@@ -150,7 +162,7 @@ export default function Portfolioslug({ data, relatedPOrtfolio }) {
                             <div className="portfolio_projects_flex">
                                 <div className="portfolio_project_heading">
                                     <h1>{ele.acf.portfolio_projects_heading}</h1>
-                                    <Link className='back-to-projects' href={`/portfolio`} style={{position: 'absolute',padding:'15px 20px',background: '#EAAA00',borderRadius: "20px",display: 'inline-flex',alignItems: 'center',justifyContent: 'center',zIndex: linkZIndex }}>Back To All Project</Link>
+                                    <Link className='back-to-projects' href={`/portfolio`} style={{opacity: backButtonOpacity,position: 'absolute',padding:'15px 20px',background: '#EAAA00',borderRadius: "20px",display: 'inline-flex',alignItems: 'center',justifyContent: 'center',zIndex: 99999 }}>Back To All Project</Link>
                                 </div>
 
 

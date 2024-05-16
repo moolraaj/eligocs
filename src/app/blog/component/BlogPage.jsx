@@ -45,17 +45,10 @@ function BlogPage({ blogPageData }) {
     }
   };
 
-
-
-  // const categories = ['All Blogs', ...new Set(allBlogPosts.map(blog => blog.course_category))];
-
-
-  // const handleCategoryChange = (category) => {
-  //   setSelectedCategory(category);
-  // };
-
-
-  // const filteredCourses = selectedCategory === 'All Courses' ? AllCourses : AllCourses.filter(course => course.course_category.includes(selectedCategory));
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+};
 
 
 
@@ -91,11 +84,10 @@ function BlogPage({ blogPageData }) {
                   <ul key={index} className="blog-post">
                     <Link href={`/blog/${blogPost.slug}`}>
                       <li className="blog-post-img"><img src={blogPost.acf.blog_post_image.url} alt="blog_post_image" />
-
                       </li>
                       <li className="blog-post-info-wrapper">
                         <h2>{blogPost.acf.blog_post_tittle}</h2>
-                        <p><span>{blogPost.acf.post_by_}</span>  <span>{blogPost.acf.blog_post_date}</span></p>
+                        <p><span>{blogPost.acf.post_by_}</span><span>{formatDate(blogPost.date)}</span></p>
                       </li>
                     </Link>
                   </ul>

@@ -147,7 +147,7 @@ $font: font-family;
 }
 
 .form_fields_wrapper input::placeholder {
-    color: #666363 !important;
+    color: $placeholder-color !important;
 }
 
 .course_call_to_action {
@@ -360,7 +360,7 @@ ul.transformation_wrapper li:nth-child(1) {
 .custom-file-upload::before {
     content: "Upload a resume";
     background: #fff;
-    color: #191C1B;
+    color: $placeholder-color;
     border: none;
     outline: none;
     white-space: nowrap;
@@ -1880,7 +1880,13 @@ ul.course li:nth-child(4) {
     p {
         font-size: 1.3em;
     }
-
+    ul.course_points li:last-child{
+        ul li{
+            list-style: disc;
+            margin-left: 20px;
+        }
+        
+    }
     ul.course_points li {
         position: relative;
 
@@ -3618,7 +3624,10 @@ h5.title_heading_c {
 
         span:first-child {
             border-right: 1px solid;
-            padding: 15px;
+            padding-right: 20px;
+        }
+        span:last-child {
+            padding-left: 15px;
         }
     }
 }
@@ -3884,6 +3893,13 @@ h5.title_heading_c {
 }
 
 @media screen and (max-width: 768px) {
+    ul.course_points li:last-child{
+        ul li{
+            list-style: none !important;
+            margin-left: 0px !important;
+        }
+        
+    }
     .custom-file-upload::before {
         align-items: center;
         top: 6px;
@@ -4139,7 +4155,7 @@ h5.title_heading_c {
     }
     .dots {
         position: absolute;
-        bottom: -150%;
+        bottom: -50%;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -4651,8 +4667,9 @@ h5.title_heading_c {
 
 
     .form_fields_wrapper textarea {
-        width: 93% !important;
+        width: 89% !important;
         height: 7vh !important;
+        padding: 0;
     }
 
     .job_form_flex_wrapper {
@@ -5423,10 +5440,6 @@ h5.title_heading_c {
 
         p {
             font-size: 1.1em;
-
-            span:first-child {
-                padding: 0px 5px 0px 10px;
-            }
         }
     }
 
