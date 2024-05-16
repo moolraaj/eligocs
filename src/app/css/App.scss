@@ -599,6 +599,8 @@ button:disabled {
     padding: 120px 0px;
 }
 
+
+
 .portfolio_right_section {
     display: flex;
     gap: 20px;
@@ -682,14 +684,16 @@ p {
     display: flex;
     justify-content: space-between;
     position: absolute;
-    top: 224px;
+    bottom: 60px;
     right: 0;
     left: 0;
+    max-width: 400px;
 }
 
 .slider_wrapper {
     position: relative;
     padding: 10px;
+    padding-bottom: 50px;
 }
 
 .slider_buttons button {
@@ -2015,7 +2019,7 @@ a.back-to-projects {
 
         img {
             width: 100%;
-            max-width: 669px;
+            max-width: 670px;
             height: 747px;
             object-fit: cover;
         }
@@ -3180,7 +3184,8 @@ p .testimonial_wrap {
     }
 
     img {
-        width: 54px;
+        height: 44px !important;
+        
     }
 
 }
@@ -3371,6 +3376,7 @@ p:empty {
         height: 847px;
         position: relative;
         max-width: 669px;
+        object-fit: cover;
     }
 
     h2 {
@@ -3416,7 +3422,8 @@ p:empty {
 
     li.blog-post-img img {
         width: 100%;
-        height: auto;
+        height: 300px;
+        object-fit: cover;
     }
 
     ul.blog-post {
@@ -3890,8 +3897,14 @@ h5.title_heading_c {
         font-size: 1em;
     }
 
+    .slider_buttons {
+        bottom: 84px;
+       
+    }
+
     .nav_right_section button img {
         max-width: 40px;
+        height: auto !important;
     }
 
     .our_product li:nth-child(1) a,
@@ -3956,7 +3969,7 @@ h5.title_heading_c {
 
     .portfolio_slider {
         scroll-snap-type: x none;
-        overflow-x: scroll;
+        overflow-x: hidden;
         white-space: nowrap;
     }
 
@@ -6367,6 +6380,7 @@ h5.title_heading_c {
 
     .nav_right_section button {
         width: 50px;
+        height: auto !important;
     }
 }
 
