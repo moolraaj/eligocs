@@ -3343,6 +3343,9 @@ p .testimonial_wrap {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    border-width: 1px 0px 1px 0px;
+    border-style: solid;
+    border-color: rgba(159, 163, 173, .2);
 }
 /* Container for the dropdown */
 #category {
