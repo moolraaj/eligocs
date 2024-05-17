@@ -180,7 +180,7 @@ $font: font-family;
     width: 77%;
     margin-left: auto;
     padding-bottom: 150px;
-
+    position: relative;
 }
 
 
@@ -262,7 +262,13 @@ button#sucess-journy-btn:hover {
     color: $black;
 }
 
-
+.blog_page_call_to_action{
+    button{
+        background-color: $white !important;
+        color: $black !important;
+    }
+   
+}
 
 ul {
     list-style: none;
@@ -2058,6 +2064,10 @@ a.back-to-projects {
     display: grid;
     grid-template-columns: 70% 30%;
     column-gap: 10px;
+    margin-top: 80px;
+    .port_description p ol,ul{
+        font-size: 1.375em;
+    }
 }
 
 .service_both_sections {
@@ -3925,6 +3935,7 @@ h5.title_heading_c {
         ul li {
             list-style: none !important;
             margin-left: 0px !important;
+            padding: 0 !important;
         }
 
     }
@@ -3972,6 +3983,7 @@ h5.title_heading_c {
 
     .portfolio_inner_intenary_related_posts {
         grid-template-columns: 1fr;
+        margin-top: 0;
     }
 
     .portfolio_top_left_section .portfolio_inner_page_image_heading_section img {
@@ -4614,7 +4626,7 @@ h5.title_heading_c {
         li:nth-child(2) img {
             bottom: -60px !important;
             top: auto;
-            left: 35px;
+            left: 30px;
         }
     }
 
@@ -5017,7 +5029,9 @@ h5.title_heading_c {
     }
 
     .course_image img {
-        height: auto;
+        height: 210px;
+        max-width: 320px;
+        width: 100%;
     }
 
     .divider-yellow {
@@ -5207,7 +5221,7 @@ h5.title_heading_c {
     .course_intro_wrapper p {
         font-size: 1em !important;
         letter-spacing: normal !important;
-        line-height: normal !important;
+        line-height: 36px !important;
     }
 
     .product-page-left-info {
@@ -5215,7 +5229,7 @@ h5.title_heading_c {
     }
 
     .course_join_inner {
-        padding: 20px 10px !important;
+        padding: 40px 16px !important;
 
         p,
         a {
@@ -5497,7 +5511,7 @@ h5.title_heading_c {
     }
 
     .inner_call {
-        padding: 0px 10px;
+        padding: 30px 20px;
     }
 
     .course_faq_heading {
@@ -5506,6 +5520,7 @@ h5.title_heading_c {
 
     .course_faq_title_btn h2 {
         font-size: 1.25em;
+        text-transform: capitalize;
     }
 
     .faq_ans_section p {
@@ -5552,8 +5567,12 @@ h5.title_heading_c {
         font-size: 1em;
         margin-bottom: 10px;
         line-height: normal;
+        
     }
-
+.portfolio_inner_template.port_description p ol,ul{
+    padding: 0;
+    font-size: 1em;
+}
     .portfolio_project {
         padding: 50px 0px;
 
@@ -5573,7 +5592,7 @@ h5.title_heading_c {
 
     .course_intro_join_section .course_intro_wrapper h1 {
         font-size: 1.875em;
-        margin-top: 20px;
+        margin-top: 50px;
     }
 
 
@@ -6081,7 +6100,13 @@ h5.title_heading_c {
 }
 
 @media (max-width:468px) {
-
+    .course_faq_heading,
+    .course_join_wrapper {
+        width: 100% !important;
+    }
+    .our_products_wrapper>ul.our_product.even li:nth-child(2) img{
+        left: -12px !important;
+    }
     .our_products_wrapper .our_product{
         padding: 0px !important;
     }

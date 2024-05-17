@@ -83,7 +83,7 @@ function BlogPage({ blogPageData }) {
                 return (
                   <ul key={index} className="blog-post">
                     <Link href={`/blog/${blogPost.slug}`}>
-                      <li className="blog-post-img"><img src={blogPost.acf.blog_post_image.url} alt="blog_post_image" />
+                      <li className="blog-post-img"><img src={blogPost.acf.blog_post_image} alt="blog_post_image" />
                       </li>
                       <li className="blog-post-info-wrapper">
                         <h2>{blogPost.acf.blog_post_tittle}</h2>
@@ -102,7 +102,7 @@ function BlogPage({ blogPageData }) {
           </div>
         </div>
       </div>
-      <div className="call_outer inner_blogs">
+      <div className="call_outer inner_blogs blog_page_call_to_action">
         <div className="inner_call">
           <CallToAction />
         </div>

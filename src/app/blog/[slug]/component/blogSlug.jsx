@@ -31,7 +31,7 @@ export default function BlogSlug({ data, blogShare }) {
                             <div className="blog_post_header">
                                 <h1>{blogPost.acf.blog_post_tittle}</h1>
                                 <p><span>{blogPost.acf.post_by_}</span> <span>{formatDate(blogPost.date)}</span></p>
-                                <img src={blogPost.acf.blog_post_image.url} alt="blog_post_image" />
+                                <img src={blogPost.acf.blog_post_image} alt="blog_post_image" />
                             </div>
                             <div className="share_blog_post">
                                 <div className="share_blog_heading">
