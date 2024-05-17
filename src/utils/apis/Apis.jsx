@@ -130,7 +130,7 @@ export const allExportedApi = () => {
 
  // fetch all courses api
  const AllCourses = async () => {
-  let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/course?fields=acf&acf_format=standard`);
+  let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/course?course_categories=true&fields=acf&acf_format=standard`);
   let response = await data.json();
   return response;
 };
