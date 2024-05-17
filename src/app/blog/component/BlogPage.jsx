@@ -83,10 +83,10 @@ function BlogPage({ blogPageData }) {
           ))}
           <div className="filter_blog_posts">
             <div className="filter_blog_heading">
-              <h2>Filter Blogs</h2>
+              <h2>Blogs</h2>
             </div>
             <div className="blog_filter_dropdown">
-              <select name="category" id="category" onChange={handleCategoryChange}>
+              <select name="category" id="blog_category" onChange={handleCategoryChange}>
                 <option value="">All Blogs</option>
                 {all_categories && all_categories.map((category, index) => (
                   <option value={category} key={index}>{category}</option>
@@ -113,7 +113,7 @@ function BlogPage({ blogPageData }) {
                   </Link>
                 </ul>
               )) : (
-                <p>No blog posts available.</p>
+                <p id="no_blogs_found">No blogs available.</p>
               )}
             </div>
           </div>
