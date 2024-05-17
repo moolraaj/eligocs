@@ -12,14 +12,9 @@ function BlogPage({ blogPageData }) {
   const { all_categories, blogs } = allBlogPosts;
 
   const loadAllBlogPosts = async () => {
-    try {
-      let api = allExportedApi();
-      let response = await api.AllBlogPOsts();
-      console.log('Blog posts loaded:', response); // Debugging line
-      setAllBlogPosts(response);
-    } catch (error) {
-      console.error("Error loading blog posts:", error);
-    }
+    let api = allExportedApi();
+    let response = await api.AllBlogPOsts();
+    setAllBlogPosts(response);
   };
 
   useEffect(() => {
@@ -28,14 +23,12 @@ function BlogPage({ blogPageData }) {
 
   const handleCategoryChange = (e) => {
     setSelectedCategory(e.target.value);
-    setCurrentPage(1); 
+    setCurrentPage(1); // Reset to first page when category changes
   };
 
   const filteredBlogs = selectedCategory
     ? blogs.filter(blog => blog.blog_category.includes(selectedCategory))
     : blogs;
-
-  console.log('Filtered blogs:', filteredBlogs); // Debugging line
 
   const totalPages = Math.ceil(filteredBlogs.length / BLOG_PAGE_SIZE);
 
@@ -58,8 +51,6 @@ function BlogPage({ blogPageData }) {
 
   const paginatedBlogs = filteredBlogs.slice((currentPage - 1) * BLOG_PAGE_SIZE, currentPage * BLOG_PAGE_SIZE);
 
-  console.log('Paginated blogs:', paginatedBlogs); // Debugging line
-
   return (
     <>
       <div className="blog-page-outer page_top">
@@ -81,23 +72,17 @@ function BlogPage({ blogPageData }) {
               </div>
             </div>
           ))}
-          <div className="filter_blog_posts">
-            <div className="filter_blog_heading">
-              <h2>Blogs</h2>
-            </div>
-            <div className="blog_filter_dropdown">
-              <select name="category" id="blog_category" onChange={handleCategoryChange}>
-                <option value="">All Blogs</option>
-                {all_categories && all_categories.map((category, index) => (
-                  <option value={category} key={index}>{category}</option>
-                ))}
-              </select>
-            </div>
-          </div>
+
+          <select name="category" id="category" onChange={handleCategoryChange}>
+            <option value="">All Blogs</option>
+            {all_categories && all_categories.map((category, index) => (
+              <option value={category} key={index}>{category}</option>
+            ))}
+          </select>
 
           <div className="blog-posts-section">
             <div className="all-blog-posts-outer">
-              {paginatedBlogs.length > 0 ? paginatedBlogs.map((blog) => (
+              {paginatedBlogs && paginatedBlogs.map((blog) => (
                 <ul className="blog-post" key={blog.id}>
                   <Link href={`/blog/${blog.slug}`}>
                     <li className="blog-post-img">
@@ -112,9 +97,7 @@ function BlogPage({ blogPageData }) {
                     </li>
                   </Link>
                 </ul>
-              )) : (
-                <p id="no_blogs_found">No blogs available.</p>
-              )}
+              ))}
             </div>
           </div>
 
@@ -130,13 +113,13 @@ function BlogPage({ blogPageData }) {
           </div>
         </div>
       </div>
-      <div className="call_outer inner_blogs blog_page_call_to_action">
+      <div className="call_outer inner_blogs">
         <div className="inner_call">
           <CallToAction />
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default BlogPage;
+export default BlogPage

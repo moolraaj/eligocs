@@ -26,7 +26,8 @@ export default async function Page({ params }) {
 export async function generateStaticParams() {
     let api=allExportedApi()
     let data = await api.AllCourses();
-    return data.map((ele) => ({
+    let {courses}=data
+    return courses.map((ele) => ({
         slug: ele.slug
     }));
 }
