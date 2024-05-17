@@ -123,7 +123,7 @@ export const allExportedApi = () => {
 
   // fetch all blog posts api
   const AllBlogPOsts = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog?fields=acf&acf_format=standard`);
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog?all_categories=true&fields=acf&acf_format=standard`);
     let response = await data.json();
     return response;
   };
