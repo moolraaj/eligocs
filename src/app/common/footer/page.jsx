@@ -16,12 +16,13 @@ function Footer({ response }) {
     let response = await api.fetchAllServices()
     setResult(response)
   }
+   const allServicesLink = [...result].reverse();
   const fetchPortfolio = async () => {
 
-    let response = await api.fetchAllportFolio()
+    let response = await api.AllProducts()
     setData(response)
   }
-
+  const allProductsLink = [...data].reverse();
   useEffect(() => {
     fetchServices()
     fetchPortfolio()
@@ -67,7 +68,7 @@ function Footer({ response }) {
                 <h1 className='footer-top-headings'>Our Services</h1>
                 <div className="footer_ul_wrapper">
                   <menu className="footer_ul">
-                  {result.map((ele) => (
+                  {allServicesLink.map((ele) => (
                     <li key={ele.id}>
                       <Link href={`/services/${ele.slug}`}><p dangerouslySetInnerHTML={{ __html: ele.acf.services_title }}></p></Link>
                     </li>
@@ -79,9 +80,9 @@ function Footer({ response }) {
                 <h1 className='footer-top-headings'>Our Products</h1>
                 <div className="footer_ul_wrapper">
                 <menu className="footer_ul">
-                  {data.map((ele) => (
+                  {allProductsLink.map((ele) => (
                     <li key={ele.id}>
-                      <Link href={`/portfolio/${ele.slug}`}><p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_title }}></p></Link>
+                      <Link href={`/portfolio/${ele.slug}`}><p dangerouslySetInnerHTML={{ __html: ele.acf.product_name }}></p></Link>
                     </li>
                   ))}
                   </menu>
