@@ -1600,6 +1600,7 @@ h1.type_text_wrapper span {
 }
 
 .call_slider_image img {
+   
     max-width: 468px;
     height: 370px;
     object-fit: cover;
@@ -6081,14 +6082,9 @@ h5.title_heading_c {
 
 @media (max-width:468px) {
 
-    // .testimonial_wrap {
-    //     position: absolute;
-    //     max-width: 90% !important;
-    //     width: 90%;
-    //     height: auto;
-    //     margin: 0 auto 0 auto;
-    //     right: -15%;
-    // }
+    .our_products_wrapper .our_product{
+        padding: 0px !important;
+    }
     .menu-right-container-bottom span.form_button {
         display: flex;
         place-content: flex-end;
@@ -6423,7 +6419,7 @@ h5.title_heading_c {
 
     .nav_right_section button {
         width: 50px;
-        height: auto !important;
+        
     }
 }
 
