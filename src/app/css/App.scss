@@ -1744,6 +1744,10 @@ select.filter_course_top_right {
 .courses-posts-outer.no-courses {
     grid-template-columns: 1fr;
     place-items: center;
+    p{
+        font-size: 2em;
+        color: $white;
+    }
   }
   
 ul.course {
@@ -4000,7 +4004,8 @@ h5.title_heading_c {
             padding: 0 !important;
         }
     }
-    p#no_blogs_found{
+    p#no_blogs_found,
+    .courses-posts-outer.no-courses p{
         font-size: 1em !important;
     }
     .custom-file-upload::before {
@@ -6024,7 +6029,7 @@ h5.title_heading_c {
     }
 
     .filter_course_top_left h1 {
-        font-size: 2em;
+        font-size: 1.875em;
     }
 
     ul.course {
@@ -6084,9 +6089,9 @@ h5.title_heading_c {
     }
 
     select.filter_course_top_right {
-        padding: 12px 20px;
+        padding: 8px 15px;
         max-width: 90%;
-        font-size: 1.2em;
+        font-size: 1.188em;
     }
 
     .what_u_learn_section p {
