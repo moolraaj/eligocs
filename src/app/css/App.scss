@@ -1741,7 +1741,11 @@ select.filter_course_top_right {
     column-gap: 48px;
     width: 100% !important;
 }
-
+.courses-posts-outer.no-courses {
+    grid-template-columns: 1fr;
+    place-items: center;
+  }
+  
 ul.course {
     box-shadow: 2px 3px 19px #00000026;
     padding: 15px;

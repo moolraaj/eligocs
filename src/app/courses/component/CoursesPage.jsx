@@ -11,6 +11,8 @@ function CoursesPage() {
   const [result, setResult] = useState({ course_categories: [], courses: [] });
   const [selectedCategory, setSelectedCategory] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
+  const [noCoursesFound, setNoCoursesFound] = useState(false);
+  const [filteredCoursesData, setFilteredCoursesData] = useState([]);
 
   const loadCoursePageData = async () => {
     let data = await api.CoursesPageApi();
@@ -27,6 +29,10 @@ function CoursesPage() {
     loadAllCourses();
   }, []);
 
+  useEffect(() => {
+    setFilteredCoursesData(filteredCourses());
+  }, [result, selectedCategory]); // Update filtered courses when result or selectedCategory changes
+
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
     setCurrentPage(1); // Reset page to 1 when category changes
@@ -40,19 +46,20 @@ function CoursesPage() {
     setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages()));
   };
 
-  const totalPages = () => Math.ceil(filteredCourses().length / COURSE_PAGE_SIZE);
+  const totalPages = () => Math.ceil(filteredCoursesData.length / COURSE_PAGE_SIZE);
 
   const filteredCourses = () => {
     let filtered = selectedCategory
       ? result.courses.filter((course) => course.course_category.includes(selectedCategory))
       : result.courses;
+    setNoCoursesFound(filtered.length === 0); // Update state based on filtered courses
     return filtered;
   };
 
   const renderCourses = () => {
     const startIndex = (currentPage - 1) * COURSE_PAGE_SIZE;
     const endIndex = startIndex + COURSE_PAGE_SIZE;
-    return filteredCourses().slice(startIndex, endIndex).map((course, index) => (
+    return filteredCoursesData.slice(startIndex, endIndex).map((course, index) => (
       <ul key={index} className="course">
         <li>
           <img src={course.acf.course_logo.url} alt="course_logo" />
@@ -114,8 +121,8 @@ function CoursesPage() {
             </div>
           </div>
 
-          <div className="courses-posts-outer">
-            {filteredCourses().length > 0 ? (
+          <div className={`courses-posts-outer ${noCoursesFound ? 'no-courses' : ''}`}>
+            {filteredCoursesData.length > 0 ? (
               renderCourses()
             ) : (
               <p>No courses found for selected category.</p>
@@ -123,7 +130,7 @@ function CoursesPage() {
           </div>
 
           {/* Pagination Controls */}
-          {filteredCourses().length >= COURSE_PAGE_SIZE && (
+          {filteredCoursesData.length >= COURSE_PAGE_SIZE && (
             <div className="Previous_next_button">
               <button onClick={handlePreviousPage} disabled={isPrevPageDisabled()}>
                 Previous
