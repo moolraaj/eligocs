@@ -9,13 +9,7 @@ export default async function page() {
   let api=allExportedApi()
 
  
-    let blogPageData = await api.BlogPageApi();   
-    
- 
-
- 
-    
- 
+    let blogPageData = await api.BlogPageApi(); 
   
   return (
    <>
