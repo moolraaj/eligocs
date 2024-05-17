@@ -2,7 +2,7 @@
 import CallToAction from '@/app/call-to-action/callToAction';
 import React from 'react';
 
-export default function BlogSlug({ data, blogShare }) {
+export default function BlogSlug({ data }) {
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });

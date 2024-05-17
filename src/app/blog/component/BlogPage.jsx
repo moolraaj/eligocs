@@ -12,9 +12,14 @@ function BlogPage({ blogPageData }) {
   const { all_categories, blogs } = allBlogPosts;
 
   const loadAllBlogPosts = async () => {
-    let api = allExportedApi();
-    let response = await api.AllBlogPOsts();
-    setAllBlogPosts(response);
+    try {
+      let api = allExportedApi();
+      let response = await api.AllBlogPOsts();
+      console.log('Blog posts loaded:', response); // Debugging line
+      setAllBlogPosts(response);
+    } catch (error) {
+      console.error("Error loading blog posts:", error);
+    }
   };
 
   useEffect(() => {
@@ -29,6 +34,8 @@ function BlogPage({ blogPageData }) {
   const filteredBlogs = selectedCategory
     ? blogs.filter(blog => blog.blog_category.includes(selectedCategory))
     : blogs;
+
+  console.log('Filtered blogs:', filteredBlogs); // Debugging line
 
   const totalPages = Math.ceil(filteredBlogs.length / BLOG_PAGE_SIZE);
 
@@ -51,6 +58,8 @@ function BlogPage({ blogPageData }) {
 
   const paginatedBlogs = filteredBlogs.slice((currentPage - 1) * BLOG_PAGE_SIZE, currentPage * BLOG_PAGE_SIZE);
 
+  console.log('Paginated blogs:', paginatedBlogs); // Debugging line
+
   return (
     <>
       <div className="blog-page-outer page_top">
@@ -72,17 +81,23 @@ function BlogPage({ blogPageData }) {
               </div>
             </div>
           ))}
-
-          <select name="category" id="category" onChange={handleCategoryChange}>
-            <option value="">All Blogs</option>
-            {all_categories && all_categories.map((category, index) => (
-              <option value={category} key={index}>{category}</option>
-            ))}
-          </select>
+          <div className="filter_blog_posts">
+            <div className="filter_blog_heading">
+              <h2>Filter Blogs</h2>
+            </div>
+            <div className="blog_filter_dropdown">
+              <select name="category" id="category" onChange={handleCategoryChange}>
+                <option value="">All Blogs</option>
+                {all_categories && all_categories.map((category, index) => (
+                  <option value={category} key={index}>{category}</option>
+                ))}
+              </select>
+            </div>
+          </div>
 
           <div className="blog-posts-section">
             <div className="all-blog-posts-outer">
-              {paginatedBlogs && paginatedBlogs.map((blog) => (
+              {paginatedBlogs.length > 0 ? paginatedBlogs.map((blog) => (
                 <ul className="blog-post" key={blog.id}>
                   <Link href={`/blog/${blog.slug}`}>
                     <li className="blog-post-img">
@@ -97,7 +112,9 @@ function BlogPage({ blogPageData }) {
                     </li>
                   </Link>
                 </ul>
-              ))}
+              )) : (
+                <p>No blog posts available.</p>
+              )}
             </div>
           </div>
 
@@ -119,7 +136,7 @@ function BlogPage({ blogPageData }) {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default BlogPage
+export default BlogPage;

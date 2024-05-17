@@ -3338,7 +3338,50 @@ p .testimonial_wrap {
 }
 
 // Blog page css start...........
-
+.filter_blog_posts{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+/* Container for the dropdown */
+#category {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin: 20px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><path fill="none" stroke="%23333" stroke-width="2" d="M1 1l4 4-4 4"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+  }
+  
+  /* Style for the dropdown options */
+  #category option {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  /* Hover effect */
+  #category:hover {
+    border-color: #888;
+    background-color: #fff;
+  }
+  
+  /* Focus effect */
+  #category:focus {
+    border-color: #555;
+    outline: none;
+    box-shadow: 0 0 5px rgba(85, 85, 85, 0.5);
+  }
+  
 
 .blog_descritpion ul {
     padding: 0;
@@ -6100,7 +6143,14 @@ h5.title_heading_c {
 }
 
 @media (max-width:468px) {
-    .course_faq_heading,
+    .filter_blog_posts{
+        display: block;
+        padding: 0;
+        .filter_blog_heading{
+            display: none;
+        }
+    }
+   course_faq_heading,
     .course_join_wrapper {
         width: 100% !important;
     }
