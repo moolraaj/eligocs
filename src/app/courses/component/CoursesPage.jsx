@@ -78,19 +78,21 @@ function CoursesPage() {
     const totalPagesCount = totalPages();
     const pageNumbers = Array.from({ length: totalPagesCount }, (_, i) => i + 1);
 
+    const handleClick = (pageNumber) => {
+      setCurrentPage(pageNumber);
+    };
+
     return (
       <div className="pagination-buttons">
         {pageNumbers.map((pageNumber) => (
           <button
             key={pageNumber}
-            onClick={() => setCurrentPage(pageNumber)}
+            onClick={() => handleClick(pageNumber)}
             className={pageNumber === currentPage ? 'active' : ''}
-            disabled={pageNumber === currentPage}
           >
             {pageNumber}
           </button>
         ))}
-       
       </div>
     );
   };
