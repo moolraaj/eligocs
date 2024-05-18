@@ -2,14 +2,14 @@
  
  
 import HomePage from "./_home/homepage";
-import ShowFrom from "./_step-up-form/showForm";
+ 
 import './globals.css'
  
  
 export default function Home() {   
   return (
     <>
-    <ShowFrom/>
+ 
     <HomePage />
 
     
