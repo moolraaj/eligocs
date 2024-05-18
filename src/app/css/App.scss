@@ -699,7 +699,6 @@ p {
     bottom: 60px;
     right: 0;
     left: 0;
-    max-width: 400px;
 }
 
 .slider_wrapper {
@@ -840,6 +839,25 @@ h6.user_name_c {
         height: 100%;
         object-fit: cover;
     }
+}
+.pagination-buttons button.active {
+    background: #eaaa00;
+    color: #3D3A3A;
+}
+a.footer_mail {
+    text-transform: lowercase!important;
+}
+.pagination-buttons button {
+    border: unset;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+.pagination-buttons {
+    display: flex;
+    column-gap: 14px;
+    padding-top: 20px;
+    justify-content: center;
 }
 
 .close-btn {
@@ -2883,7 +2901,7 @@ h1.innovation-heading {
 
 .nav_flex {
     @include flex-property(flex, space-between, row, center);
-    padding: 0px 20px;
+    padding: 0px 0px;
 
 }
 
@@ -3746,6 +3764,10 @@ h5.title_heading_c {
 
 
 @media only screen and (max-width:1500px) {
+    .nav_flex {
+
+        padding: 0px 15px;
+    }
     .custom-file-upload::before {
         content: "Upload a resume";
         background: #fff;
@@ -3909,7 +3931,7 @@ h5.title_heading_c {
     }
 
     .footer_outer {
-        padding-left: 30px;
+        padding-left: 15px;
     }
 
     ._form_paragraph p {

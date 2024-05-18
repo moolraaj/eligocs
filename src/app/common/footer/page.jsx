@@ -93,7 +93,7 @@ function Footer({ response }) {
                 <div className="footer_wrapper">
                   <menu className="footer_ul">
 
-                  <li><a href={`mailto:${footerEmail}`}>{footerEmail}</a></li>
+                  <li><a className='footer_mail' href={`mailto:${footerEmail}`}>{footerEmail}</a></li>
                   <li><a href={`tel:${footerPhoneNumberFirst}`}>{footerPhoneNumberFirst}</a></li>
                   <li><a href={`tel:${footerPhoneNumberSecond}`}>{footerPhoneNumberSecond}</a></li>
                   </menu>
