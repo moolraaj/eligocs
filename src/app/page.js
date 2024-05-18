@@ -1,13 +1,15 @@
  
  
-import { allExportedApi } from "@/utils/apis/Apis";
-import HomePage from "./home/homepage";
+ 
+import HomePage from "./_home/homepage";
+import ShowFrom from "./_step-up-form/showForm";
+import './globals.css'
  
  
 export default function Home() {   
   return (
     <>
-    
+    <ShowFrom/>
     <HomePage />
 
     

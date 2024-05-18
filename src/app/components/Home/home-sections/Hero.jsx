@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
  
 
 import Formclose from '../../../assets/headerAssets/formclose.png';
-import ApplyForJob from '@/app/forms/applyForJob';
+import ApplyForJob from '@/app/_forms/applyForJob';
 
 function HeroSection({ ele, ParallaxContainer }) {
   const [showInnovation, setShowInnovation] = useState(false);

@@ -6,9 +6,9 @@ import formClose from '../../../assets/headerAssets/formclose.png'
 import arrow from '../../../assets/headerAssets/arrow.png'
 import Link from 'next/link';
 import PortfolioComponent from '@/app/portfolio/component/portfolioComponent';
-import JobForm from '@/app/forms/jobForm';
+import JobForm from '@/app/_forms/jobForm';
 import RerenderCompo from './formAnimationCompo';
-import ApplyForJob from '@/app/forms/applyForJob';
+import ApplyForJob from '@/app/_forms/applyForJob';
 
 
 

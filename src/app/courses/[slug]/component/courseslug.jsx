@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import CallToAction from "@/app/call-to-action/callToAction";
+import CallToAction from "@/app/_call-to-action/callToAction";
 import Link from "next/link";
 
 export default function CourseSlug({ data, courseFaq }) {

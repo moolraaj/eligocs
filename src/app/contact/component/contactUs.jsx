@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Map from '../map'
-import ContactUsForm from '@/app/forms/contactusform'
+import ContactUsForm from '@/app/_forms/contactusform'
 
 
 function ContactUs({ data }) {
