@@ -3518,6 +3518,24 @@ p:empty {
     border-color: rgba(159, 163, 173, .2);
     padding: 20px 0px;
     margin-bottom: 40px;
+
+    .share_blog_heading h2 {
+        font-size: 1.875em;
+    }
+    .share_with_social_platforms{
+        button {
+            border: none;
+            padding: 20px 40px;
+            border-radius: 50px;
+            background-color: $primaryyellow;
+            color: $white;
+            font-size: 1.188em;
+        }
+        button:hover{
+            background-color: $black;
+        }
+    }
+    
 }
 
 .all-blog-posts-outer {
@@ -5192,6 +5210,16 @@ h5.title_heading_c {
 
 
 @media (max-width:767px) {
+    .share_blog_post {
+        .share_blog_heading h2{
+            font-size: 1.2em !important;
+        }
+        .share_with_social_platforms button{
+        font-size: 1em !important;
+        padding: 8px 22px;
+        }
+    }
+    
     .page_outer.portfolio_section_outer.scrolling {
         padding: 15px 0px !important;
     }
