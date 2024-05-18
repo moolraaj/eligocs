@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { COURSE_PAGE_SIZE, allExportedApi } from '@/utils/apis/Apis';
@@ -31,19 +31,11 @@ function CoursesPage() {
 
   useEffect(() => {
     setFilteredCoursesData(filteredCourses());
-  }, [result, selectedCategory]); // Update filtered courses when result or selectedCategory changes
+  }, [result, selectedCategory]);
 
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
-    setCurrentPage(1); // Reset page to 1 when category changes
-  };
-
-  const handlePreviousPage = () => {
-    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
-  };
-
-  const handleNextPage = () => {
-    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages()));
+    setCurrentPage(1);
   };
 
   const totalPages = () => Math.ceil(filteredCoursesData.length / COURSE_PAGE_SIZE);
@@ -52,7 +44,7 @@ function CoursesPage() {
     let filtered = selectedCategory
       ? result.courses.filter((course) => course.course_category.includes(selectedCategory))
       : result.courses;
-    setNoCoursesFound(filtered.length === 0); // Update state based on filtered courses
+    setNoCoursesFound(filtered.length === 0);
     return filtered;
   };
 
@@ -82,8 +74,26 @@ function CoursesPage() {
     ));
   };
 
-  const isNextPageDisabled = () => currentPage === totalPages();
-  const isPrevPageDisabled = () => currentPage === 1;
+  const renderPaginationButtons = () => {
+    const totalPagesCount = totalPages();
+    const pageNumbers = Array.from({ length: totalPagesCount }, (_, i) => i + 1);
+
+    return (
+      <div className="pagination-buttons">
+        {pageNumbers.map((pageNumber) => (
+          <button
+            key={pageNumber}
+            onClick={() => setCurrentPage(pageNumber)}
+            className={pageNumber === currentPage ? 'active' : ''}
+            disabled={pageNumber === currentPage}
+          >
+            {pageNumber}
+          </button>
+        ))}
+       
+      </div>
+    );
+  };
 
   return (
     <>
@@ -111,7 +121,7 @@ function CoursesPage() {
                 onChange={handleCategoryChange}
                 value={selectedCategory}
               >
-                <option value="">All Categories</option>
+                <option value="">All Courses</option>
                 {result.course_categories.map((category, index) => (
                   <option value={category} key={index}>
                     {category}
@@ -129,18 +139,7 @@ function CoursesPage() {
             )}
           </div>
 
-          {/* Pagination Controls */}
-          {filteredCoursesData.length >= COURSE_PAGE_SIZE && (
-            <div className="Previous_next_button">
-              <button onClick={handlePreviousPage} disabled={isPrevPageDisabled()}>
-                Previous
-              </button>
-              <span>{`Page ${currentPage} of ${totalPages()}`}</span>
-              <button onClick={handleNextPage} disabled={isNextPageDisabled()}>
-                Next
-              </button>
-            </div>
-          )}
+          {filteredCoursesData.length >= COURSE_PAGE_SIZE && renderPaginationButtons()}
         </div>
       </div>
     </>

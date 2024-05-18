@@ -1,8 +1,8 @@
-'use client'
-import CallToAction from "@/app/call-to-action/callToAction"
-import { BLOG_PAGE_SIZE, allExportedApi } from "@/utils/apis/Apis"
-import Link from "next/link"
-import { useEffect, useState } from "react"
+'use client';
+import CallToAction from "@/app/call-to-action/callToAction";
+import { BLOG_PAGE_SIZE, allExportedApi } from "@/utils/apis/Apis";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 function BlogPage({ blogPageData }) {
   const [allBlogPosts, setAllBlogPosts] = useState({ all_categories: [], blogs: [] });
@@ -43,14 +43,6 @@ function BlogPage({ blogPageData }) {
     setCurrentPage(page);
   };
 
-  const handlePrevPage = () => {
-    setCurrentPage((prev) => Math.max(prev - 1, 1));
-  };
-
-  const handleNextPage = () => {
-    setCurrentPage((prev) => Math.min(prev + 1, totalPages));
-  };
-
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -59,6 +51,27 @@ function BlogPage({ blogPageData }) {
   const paginatedBlogs = filteredBlogs.slice((currentPage - 1) * BLOG_PAGE_SIZE, currentPage * BLOG_PAGE_SIZE);
 
   console.log('Paginated blogs:', paginatedBlogs); // Debugging line
+
+  const renderPaginationButtons = () => {
+    const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+
+    return (
+      <div className="pagination-buttons">
+        {pageNumbers.map((pageNumber) => (
+          <button
+            key={pageNumber}
+            onClick={() => handleClick(pageNumber)}
+            className={pageNumber === currentPage ? 'active' : ''}
+            disabled={pageNumber === currentPage}
+          >
+            {pageNumber}
+          </button>
+        ))}
+         
+        
+      </div>
+    );
+  };
 
   return (
     <>
@@ -119,14 +132,8 @@ function BlogPage({ blogPageData }) {
           </div>
 
           {/* Pagination Controls */}
-          <div className="Previous_next_button">
-            {filteredBlogs.length > BLOG_PAGE_SIZE && (
-              <>
-                <button onClick={handlePrevPage} disabled={currentPage === 1}>Previous</button>
-                <span>Page {currentPage} of {totalPages}</span>
-                <button onClick={handleNextPage} disabled={currentPage === totalPages}>Next</button>
-              </>
-            )}
+          <div className="pagination-controls">
+            {filteredBlogs.length > BLOG_PAGE_SIZE && renderPaginationButtons()}
           </div>
         </div>
       </div>
