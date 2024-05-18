@@ -4181,12 +4181,10 @@ h5.title_heading_c {
 
     }
 
-    .portfolio_gallery_wrapper {
-        margin-right: 5px;
-    }
+     
 
     .portfolio_gallery_wrapper img {
-        width: auto;
+        width: 100%;
         height: auto;
         height: 200px;
         max-width: 100%;
@@ -4251,10 +4249,17 @@ h5.title_heading_c {
 
     .slider_buttons {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         position: absolute;
         right: 0;
         left: 0;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .portfolio_gallery_wrapper {
+        flex: 0 0 50% !important;
+
     }
 }
 
