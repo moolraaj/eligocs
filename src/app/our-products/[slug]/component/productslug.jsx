@@ -73,6 +73,7 @@ export default function Poductslug({ data, allProducts, simlimarProducts }) {
                   </div>
                   <div className="blog_page_heading_wrapper">
                     <h1>{product.acf.product_name}</h1>
+                    <p dangerouslySetInnerHTML={{__html: product.acf.product_inner_page_top_heading}}></p>
                   </div>
                 </div>
                 <div className="course_intro_join_section">

@@ -128,6 +128,7 @@ export default function Portfolioslug({ data, relatedPOrtfolio }) {
 
                                         <div className="portfolio_top_right_section">
                                             <h1>{ele.acf.portfolio_heading}</h1>
+                                            <p dangerouslySetInnerHTML={{__html : ele.acf.portfolio_inner_page_top__description}}></p>
                                         </div>
                                     </div>
 

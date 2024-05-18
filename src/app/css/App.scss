@@ -431,7 +431,7 @@ ul.transformation_wrapper li:nth-child(1) {
 
 .portfolio_heading_image_wrapper {
     display: flex;
-    align-items: flex-end;
+    align-items: center !important;
     position: relative;
 }
 
@@ -1127,6 +1127,7 @@ form#applyforjob textarea {
 .products_inner_description p {
     p {
         font-size: 1.375em;
+        margin-bottom: 20px;
     }
 }
 
@@ -1146,7 +1147,7 @@ form#applyforjob textarea {
 .product-top-image-section {
     display: flex;
     position: relative;
-
+    align-items: center;
     .product_heading_left {
         display: flex;
         align-items: flex-end;
@@ -1162,10 +1163,10 @@ form#applyforjob textarea {
 
     .product_image_right {
         position: relative;
-
+        width: 100%;
         img {
             width: 100%;
-            height: 708px;
+            height: 450px;
             object-fit: cover;
         }
 
@@ -1987,16 +1988,18 @@ a.back-to-projects {
 
 .portfolio_project {
     background: #191C1B;
-    padding-top: 150px;
-    padding-bottom: 150px;
+    padding-top: 80px;
+    padding-bottom: 100px;
     overflow: hidden;
+    height: 680px;
+    position: relative;
 }
 
 .portfolio_project_heading h1 {
     font-size: 9.375em;
     color: #ffffff57;
     text-transform: capitalize;
-    margin-top: 40px;
+    margin: 0;
 }
 
 .portfolio_top_image img {
@@ -2068,7 +2071,7 @@ a.back-to-projects {
         }
 
         img {
-            width: 100%;
+            width: 600px;
             max-width: 670px;
             height: 747px;
             object-fit: cover;
@@ -2085,8 +2088,13 @@ a.back-to-projects {
         }
     }
 
-    .portfolio_top_right_section h1 {
-        font-size: 6.25em;
+    .portfolio_top_right_section {
+        h1 {
+            font-size: 6.25em;
+        }
+        p p{
+            font-size: 1.375em;
+        }
     }
 }
 
@@ -3598,6 +3606,10 @@ p:empty {
     }
 }
 
+.blog_page_heading_wrapper p p {
+    font-size: 1.375em;
+    margin-bottom: 20px;
+}
 // Blog page css end
 
 
@@ -4037,6 +4049,12 @@ h5.title_heading_c {
 }
 
 @media screen and (max-width: 768px) {
+    .portfolio_top_right_section p p{
+        font-size: 1em !important;
+    }
+    .portfolio_project{
+        height: auto !important;
+    }
     ul.course_points li:last-child {
         ul li {
             list-style: none !important;
@@ -4045,7 +4063,8 @@ h5.title_heading_c {
         }
     }
     p#no_blogs_found,
-    .courses-posts-outer.no-courses p{
+    .courses-posts-outer.no-courses p,
+    .blog_page_heading_wrapper p p{
         font-size: 1em !important;
     }
     .custom-file-upload::before {
@@ -5272,6 +5291,7 @@ h5.title_heading_c {
 
     .blog_page_heading_wrapper h1 {
         font-size: 2em;
+        margin: 10px 0px  20px 0px;
     }
 
     .blog_img_heading_wrapper span {
@@ -5404,6 +5424,10 @@ h5.title_heading_c {
 }
 
 @media (min-width:1025px) and (max-width: 1440px) {
+    .portfolio_top_left_section .portfolio_top_right_section h1{
+        margin: 0;
+        font-size: 5em !important;
+    }
 
     .our_products_wrapper>ul.our_product.odd li:nth-child(2) img,
     .our_products_wrapper>ul.our_product.even li:nth-child(2) img {
@@ -5530,7 +5554,7 @@ h5.title_heading_c {
         grid-template-columns: 1fr;
 
     }
-
+    
     .right_c_form h4 {
         grid-column-start: 1;
         grid-column-end: 2;
@@ -6181,7 +6205,7 @@ h5.title_heading_c {
     }
 
     .portfolio_heading_image_wrapper {
-        align-items: stretch;
+        align-items: stretch !important;
     }
 
     .port_showcase_title h2,
@@ -6232,6 +6256,7 @@ h5.title_heading_c {
 }
 
 @media (max-width:468px) {
+   
     .filter_blog_posts{
         display: block;
         padding: 0px 10px;
@@ -6399,7 +6424,7 @@ h5.title_heading_c {
 
     .related_product_wrapper h2 {
         margin: auto;
-        font-size: 1.875em;
+        font-size: 1.588em;
     }
 
     .blog_img_heading_wrapper {
