@@ -1256,7 +1256,7 @@ form#applyforjob textarea {
         align-items: flex-end;
         background-color: $primaryyellow;
         margin-top: 101px;
-
+        width: 654px;
         a {
             background-color: $white;
             color: $primaryyellow;
@@ -1282,7 +1282,7 @@ form#applyforjob textarea {
 
     li:first-child {
         background-color: $black;
-
+        width: 654px;
         a {
             background-color: $primaryyellow;
             color: $white;
@@ -4756,12 +4756,14 @@ h5.title_heading_c {
     }
 
     .our_products_wrapper {
+        gap: 90px !important;
         margin: 50px 0px;
     }
 
     .our_products_wrapper>ul.our_product.odd {
         li:first-child {
             align-items: flex-start;
+            margin-top: auto !important;
         }
 
         li:nth-child(2) img {
