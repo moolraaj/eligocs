@@ -175,6 +175,7 @@ function NavbarCompo({ data }) {
             </div>
 
             <div className="nav_right_section">
+              <Link href={`/our-internship`} id='go_to_internship_page'  aria-label="internship_page">Skill Up Course</Link>
               <button onClick={toggleFormVisibility} aria-label="show form">
                 <img src={FormLogo.src} alt="formLogo" />
               </button>
@@ -230,16 +231,11 @@ function NavbarCompo({ data }) {
                     <NavigationLink href={'/services'}>services</NavigationLink>
                     <NavigationLink href={'/courses'}>courses</NavigationLink>
                     <NavigationLink href={'/portfolio'}>portfolio</NavigationLink>
-
-
-
-                    
-
-
-
-
                     <NavigationLink href={'/our-products'}>our products</NavigationLink>
-
+                    <div className="our_internship_link">
+                    <NavigationLink  href={'/our-internship'} >our internship</NavigationLink>
+                    </div>
+                   
                     <div className='apply_now_navgation'>
                       <NavigationLink href={'/contact'}>contact us</NavigationLink>
                       <span className="form_button">
