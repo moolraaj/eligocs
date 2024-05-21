@@ -85,6 +85,15 @@ export const allExportedApi = () => {
     return response
   }
 
+  // fetch our internship page api
+  const internshipPageApi=async ()=>{
+    let data=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pages?slug=internship&fields=acf&acf_format=standard`)
+    let response=await data.json()
+    return response
+  }
+
+
+
 
   // fetch all services template api
   const fetchAllServices = async () => {
@@ -142,6 +151,20 @@ const AllProducts = async ()=>{
   return response;
 }
 
+//fetch all internships api
+const ourInternships = async ()=>{
+  let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/internship?fields=acf&acf_format=standard`);
+  let response = await data.json();
+  return response;
+}
+
+// fetch Single Internships api
+const fetchSigleInternship = async (slug)=>{
+  let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/internship?slug=${slug}&fields=acf&acf_format=standard`);
+  let response = await data.json();
+  return response;``
+}
+
 // fetch Single product api
 const fetchSigleProducts = async (slug)=>{
   let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/product?slug=${slug}&fields=acf&acf_format=standard`);
@@ -162,6 +185,9 @@ const SingleBlogPost = async (slug) => {
   let result = await response.json();
   return result;
 };
+
+
+
 
   // fetch header footer
   const fetchHeaderFooter = async () => {
@@ -219,6 +245,7 @@ const SingleBlogPost = async (slug) => {
     ProductPageApi,
     CoursesPageApi,
     contactUsPageApi,
+    internshipPageApi,
     fetchAllServices,
     fetchSingleService,
     fetchAllportFolio,
@@ -228,6 +255,8 @@ const SingleBlogPost = async (slug) => {
     AllBlogPOsts,
     AllCourses,
     AllProducts,
+    ourInternships,
+    fetchSigleInternship,
     fetchSigleProducts,
     fetchSingleCourse,
     fetchHeaderFooter,
@@ -243,3 +272,4 @@ export const BLOG_PAGE_SIZE=6;
 export const PRODUCTS_PAGE_SIZE=4;
 export const PORTFOLIO_PAGE_SIZE=6;
 export const COURSE_PAGE_SIZE=6;
+export const INTERNSHIP_PAGE_SIZE=4;

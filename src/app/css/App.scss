@@ -615,7 +615,7 @@ button:disabled {
     height: 100%;
     overflow-y: hidden;
     overflow-x: hidden;
-    padding: 120px 0px;
+    padding: 80px 0px;
 }
 
 
@@ -1127,9 +1127,7 @@ form#applyforjob textarea {
 
 
 // Our Product page css....
-.product-page-right-info {
-    width: 90% !important;
-}
+
 
 .products_inner_description p {
     p {
@@ -1263,7 +1261,7 @@ form#applyforjob textarea {
         align-items: flex-end;
         background-color: $primaryyellow;
         margin-top: 101px;
-
+        width: 654px;
         a {
             background-color: $white;
             color: $primaryyellow;
@@ -1289,7 +1287,7 @@ form#applyforjob textarea {
 
     li:first-child {
         background-color: $black;
-
+        width: 654px;
         a {
             background-color: $primaryyellow;
             color: $white;
@@ -1377,11 +1375,64 @@ form#applyforjob textarea {
 
 }
 
-
-
 // prodcut inner page css end.......... 
 
 
+// Our Internships page css start
+
+.internship-page-inner{
+    .product-page-left-info p {
+        font-size: 1em;
+        p{
+            font-size: 1.563em;
+        }
+    }
+    .internship-page-right-info img{
+        width: 100%;
+    }
+    
+}
+.internship_points_inner {
+    ul {
+        padding: 0;
+        position: relative;
+        list-style: none;
+        li {
+            position: relative;
+            p{
+                
+            li{
+                padding-left: 20px;
+                font-size: 1.563em;
+            }
+            li::before {
+                content: '';
+                width: 12px;
+                height: 12px;
+                background-color: $primaryyellow;
+                font-size: 1.5em; 
+                position: absolute;
+                left: 0; 
+                top: 0.3em; 
+                
+            }
+        }
+        }
+    }
+    h1,
+    .internship_bullet_points h2{
+        font-size: 3.125em;
+    }
+    .internship_bullet_points p p{
+        font-size: 1.563em;
+    }
+    .internship_bullet_points h2{
+            color: $primaryyellow;
+    }
+  
+}
+
+// our internship page css end
 
 
 /* team section */
@@ -2917,7 +2968,7 @@ h1.innovation-heading {
 .nav_flex {
     @include flex-property(flex, space-between, row, center);
     padding: 0px 0px;
-
+    flex-wrap: nowrap;
 }
 
 
@@ -3240,6 +3291,12 @@ p .testimonial_wrap {
 
 
 .nav_right_section {
+    #go_to_internship_page{
+        padding: 18px 36px;
+        background-color: $primaryyellow;
+        border-radius: 50px;
+        width: auto;
+    }
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -4056,6 +4113,7 @@ h5.title_heading_c {
 }
 
 @media screen and (max-width: 768px) {
+    
     .portfolio_top_right_section p p{
         font-size: 1em !important;
     }
@@ -4763,12 +4821,14 @@ h5.title_heading_c {
     }
 
     .our_products_wrapper {
+        gap: 90px !important;
         margin: 50px 0px;
     }
 
     .our_products_wrapper>ul.our_product.odd {
         li:first-child {
             align-items: flex-start;
+            margin-top: auto !important;
         }
 
         li:nth-child(2) img {
@@ -5260,9 +5320,17 @@ h5.title_heading_c {
     }
 }
 
-
+.our_internship_link{
+    display: none;
+}
 
 @media (max-width:767px) {
+    #go_to_internship_page{
+      display: none;
+    }
+    .our_internship_link{
+        display: block !important;
+    }
     .share_blog_post {
         .share_blog_heading h2{
             font-size: 1.2em !important;

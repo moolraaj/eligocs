@@ -82,7 +82,7 @@ function Footer({ response }) {
                 <menu className="footer_ul">
                   {allProductsLink.map((ele) => (
                     <li key={ele.id}>
-                      <Link href={`/portfolio/${ele.slug}`}><p dangerouslySetInnerHTML={{ __html: ele.acf.product_name }}></p></Link>
+                      <Link href={`/our-products/${ele.slug}`}><p dangerouslySetInnerHTML={{ __html: ele.acf.product_name }}></p></Link>
                     </li>
                   ))}
                   </menu>
