@@ -3702,6 +3702,7 @@ p:empty {
         li.blog-post-img:hover+.blog-post-info-wrapper {
             bottom: 0%;
             opacity: 1;
+            width: -webkit-fill-available;
         }
 
     }
