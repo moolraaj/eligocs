@@ -3,16 +3,42 @@ import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import arrow from '../../../assets/headerAssets/arrow.png'
 import Lightbox from "@/app/portfolio/Lightbox";
+import { allExportedApi } from "@/utils/apis/Apis";
 
 
 
-export default function Poductslug({ data, allProducts, simlimarProducts }) {
-
+export default function Poductslug({slug}) {  
+  let api = allExportedApi()
 
 
   const [lightboxImage, setLightboxImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [imagesToShow, setImagesToShow] = useState([]);
+  const [data, setData] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
+  const [simlimarProducts, setSimlimarProducts] = useState([]);
+
+
+
+const loadSingleProduct=async()=>{
+  let response = await api.fetchSigleProducts(slug)
+  setData(response)
+}
+const loadAllProducts=async()=>{
+  let response = await api.AllProducts()
+  setAllProducts(response)
+}
+const loadSimilarProjects=async()=>{
+  let response = await api.fetchAllportFolio();
+  setSimlimarProducts(response)
+}
+  
+  
+ useEffect(()=>{
+  loadSingleProduct()
+  loadAllProducts()
+  loadSimilarProjects()
+ },[])
 
   useEffect(() => {
       setImagesToShow(getImagesToShow());

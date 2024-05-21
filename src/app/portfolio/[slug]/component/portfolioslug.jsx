@@ -5,15 +5,38 @@ import arrow from '../../../assets/headerAssets/arrow.png'
 
 import Lightbox from '../../Lightbox';
 import Link from 'next/link';
+import { allExportedApi } from '@/utils/apis/Apis';
 
-export default function Portfolioslug({ data, relatedPOrtfolio }) {
+export default function Portfolioslug({ slug }) {  
 
-
+    let api=allExportedApi()
 
     const [lightboxImage, setLightboxImage] = useState(null);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [imagesToShow, setImagesToShow] = useState([]);
+    const [data, setData] = useState([]);
+    const [relatedPOrtfolio, setRelatedPOrtfolio] = useState([]);
+
+
+
     
+   
+     
+
+    const loadSinglePortfolio=async()=>{
+        let response = await api.fetchSingleportFolio(slug)
+        setData(response)
+    }
+    const loadAllPortfolio=async()=>{
+        let response = await api.fetchAllportFolio();
+        setRelatedPOrtfolio(response)
+    }
+
+     
+    useEffect(()=>{
+        loadSinglePortfolio()
+        loadAllPortfolio()
+    },[])
 
     useEffect(() => {
         setImagesToShow(getImagesToShow());

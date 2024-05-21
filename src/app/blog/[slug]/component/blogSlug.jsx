@@ -1,8 +1,21 @@
 'use client'
 import CallToAction from '@/app/_call-to-action/callToAction';
-import React from 'react';
+import { allExportedApi } from '@/utils/apis/Apis';
+import React, { useEffect, useState } from 'react';
 
-export default function BlogSlug({ data }) {
+export default function BlogSlug({ slug }) {
+    let api=allExportedApi() 
+    const[data,setData]=useState([])
+
+    const fetchdynamicBlogs=async()=>{
+        let response = await api.SingleBlogPost(slug);
+        setData(response)
+
+    }
+
+    useEffect(()=>{
+        fetchdynamicBlogs()
+    },[])
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });

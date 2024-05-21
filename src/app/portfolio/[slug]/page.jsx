@@ -5,19 +5,17 @@ import Portfolioslug from "./component/portfolioslug";
 
 
 export default async function Page({ params }) {
-    let api=allExportedApi()
+   
     const { slug } = params;
 
   
 
 
-    let data = await api.fetchSingleportFolio(slug)
-    let relatedPOrtfolio = await api.fetchAllportFolio();
      
 
     return (
         <>
-            <Portfolioslug data={data} relatedPOrtfolio={relatedPOrtfolio}/>
+            <Portfolioslug slug={slug}/>
         </>
     );
 }

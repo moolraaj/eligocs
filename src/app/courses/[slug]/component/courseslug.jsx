@@ -1,15 +1,40 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CallToAction from "@/app/_call-to-action/callToAction";
 import Link from "next/link";
+import { allExportedApi } from '@/utils/apis/Apis';
 
-export default function CourseSlug({ data, courseFaq }) {
-
+export default function CourseSlug({ slug }) {
+  let api=allExportedApi()  
   const [activeIndex, setActiveIndex] = useState(null);
+  const[data,setData]=useState([])
+  const[courseFaq,setCourseFaq]=useState([])
+
+
+ 
+   
+
+ const loadSingleCourse=async()=>{
+  let response = await api.fetchSingleCourse(slug)
+  setData(response)
+ }
+ const loadCoursePage=async()=>{
+  let response = await api.CoursesPageApi();
+  setCourseFaq(response)
+ }
+
+
+   
+   
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
+
+  useEffect(()=>{
+    loadSingleCourse()
+    loadCoursePage()
+  },[])
 
  
   return (

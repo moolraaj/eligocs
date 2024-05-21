@@ -5,18 +5,18 @@ import BlogSlug from "./component/blogSlug";
 
 
 export default async function Page({ params }) {
-    let api=allExportedApi()
+ 
     const { slug } = params;
 
      
 
 
-    let data = await api.SingleBlogPost(slug);
+    
 
 
     return (
         <>
-            <BlogSlug data={data} />
+            <BlogSlug slug={slug} />
         </>
     );
 }

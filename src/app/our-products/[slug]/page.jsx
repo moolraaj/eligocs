@@ -1,27 +1,19 @@
 
-import dynamic from 'next/dynamic';
+
 
 import { allExportedApi } from "@/utils/apis/Apis";
+import Productslug from './component/productslug'
 
-
-const Productslug = dynamic(
-    () => import('../[slug]/component/productslug'),
-    {
-        ssr: false
-    }
-)
+ 
 
 
 export default async function Page({ params }) {
-    let api = allExportedApi()
+    
     const { slug } = params;
-
-    let data = await api.fetchSigleProducts(slug)
-    let allProducts = await api.AllProducts(slug)
-    let simlimarProducts = await api.fetchAllportFolio();
+   
     return (
         <>
-            <Productslug data={data} allProducts={allProducts} simlimarProducts={simlimarProducts} />
+            <Productslug slug={slug} />
         </>
     );
 }

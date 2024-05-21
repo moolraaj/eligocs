@@ -4,7 +4,13 @@ import { BLOG_PAGE_SIZE, allExportedApi } from "@/utils/apis/Apis";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-function BlogPage({ blogPageData }) {
+function BlogPage() {
+  let api=allExportedApi() 
+  const[blogPageData,setBlogPageData]=useState([])
+ 
+
+ 
+  
   const [allBlogPosts, setAllBlogPosts] = useState({ all_categories: [], blogs: [] });
   const [selectedCategory, setSelectedCategory] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
@@ -15,15 +21,22 @@ function BlogPage({ blogPageData }) {
     try {
       let api = allExportedApi();
       let response = await api.AllBlogPOsts();
-      console.log('Blog posts loaded:', response); // Debugging line
+      console.log('Blog posts loaded:', response); 
       setAllBlogPosts(response);
     } catch (error) {
       console.error("Error loading blog posts:", error);
     }
   };
 
+  const fetchBlogPageData=async()=>{
+    let data = await api.BlogPageApi(); 
+    setBlogPageData(data)
+
+  }
+
   useEffect(() => {
     loadAllBlogPosts();
+    fetchBlogPageData()
   }, []);
 
   const handleCategoryChange = (e) => {

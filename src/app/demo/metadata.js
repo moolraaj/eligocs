@@ -20,7 +20,7 @@ export async function fetchscodata() {
         twitterDescription: scoData.head.match(/<meta name="twitter:description" content="([^"]+)"/)?.[1] || ''
     };
 
-    console.log(metadata);
+   
 
     return metadata;
 }

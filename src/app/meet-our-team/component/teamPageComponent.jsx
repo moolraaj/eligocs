@@ -1,10 +1,39 @@
  
  
+'use client'
+import { useEffect, useState } from "react"
 import TeamComponent from "./teamComponent"
+import { allExportedApi } from "@/utils/apis/Apis"
  
 
 
-export default  function TeamPageComponent({data,result}) {
+export default  function TeamPageComponent() {
+
+  const[data,setData]=useState([])
+  const[result,setResult]=useState([])
+  
+
+  let api = allExportedApi() 
+  
+ 
+ 
+
+   const loadMeetTeamPage=async()=>{
+     let response = await api.meetOurTeamPage()
+     setData(response)
+   }
+   const loadMeetTeamPageLists=async()=>{
+    let response = await api.fetchMeetOurTeam()
+    setResult(response)
+   }
+   
+ 
+    
+
+    useEffect(()=>{
+      loadMeetTeamPage()
+      loadMeetTeamPageLists()
+    },[])
  
 
   return (
