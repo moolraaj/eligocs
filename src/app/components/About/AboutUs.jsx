@@ -12,12 +12,25 @@ import WorkingProcess from "./WorkingProcess";
 import CallToAction from "@/app/_call-to-action/callToAction";
 import { useRouter } from "next/navigation";
 import TestimonialSection from "../Home/home-sections/Testimonial";
+import { allExportedApi } from "@/utils/apis/Apis";
+import { useEffect, useState } from "react";
  
 
 
 
 
-const AboutUs = ({ result }) => {
+const AboutUs = () => {
+  const [result,setResult]=useState([]) 
+  const api=allExportedApi()
+
+  const loadAboutPage=async()=>{
+    
+    let data = await api.AboutApi();
+    setResult(data)
+  }
+  useEffect(()=>{
+    loadAboutPage()
+  },[])
   let router=useRouter()
 
 
