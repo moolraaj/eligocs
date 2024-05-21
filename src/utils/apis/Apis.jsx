@@ -93,6 +93,13 @@ export const allExportedApi = () => {
   }
 
 
+// fetch our internship page api
+const multistepFormApi=async ()=>{
+  let data=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=multistep-popup-form&fields=acf&acf_format=standard`)
+  let response=await data.json()
+  return response;
+}
+
 
 
   // fetch all services template api
@@ -246,6 +253,7 @@ const SingleBlogPost = async (slug) => {
     CoursesPageApi,
     contactUsPageApi,
     internshipPageApi,
+    multistepFormApi,
     fetchAllServices,
     fetchSingleService,
     fetchAllportFolio,

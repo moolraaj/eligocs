@@ -15,6 +15,7 @@ import HeroSection from "./home-sections/Hero";
 import TestimonialSection from "./home-sections/Testimonial";
 import PortfolioSection from "./home-sections/Portfolio";
 import TransformationSection from "./home-sections/Transformation";
+import PopupForm from "./home-sections/popupForm";
  
 
  
@@ -87,7 +88,7 @@ function HomeCompo({ result }) {
           <QuoteSection ele={ele} />
           {/*quote section ends*/}
           
-
+          <PopupForm/>
         </div>
       ))}
     </>

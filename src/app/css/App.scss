@@ -4901,9 +4901,9 @@ h5.title_heading_c {
 
     .cf7_form_outer {
         width: 100%;
-        height: auto !important;
+        height: 100vh !important;
         position: fixed !important;
-        overflow: auto;
+        overflow: auto !important;
         z-index: 99999999;
         background: #fff;
         padding: 50px 30px;
@@ -5376,10 +5376,12 @@ h5.title_heading_c {
         h1 {
             font-size: 1.563em !important;
         }
-        .internship_bullet_points h2{
+
+        .internship_bullet_points h2 {
             font-size: 1.25em !important;
         }
-        p{
+
+        p {
             font-size: 1em !important;
         }
     }
@@ -6802,8 +6804,8 @@ h5.title_heading_c {
 
 
 
-  
-  .internship_popup_form{
+
+.internship_popup_form {
     position: fixed;
     top: 0;
     left: 50%;
@@ -6814,10 +6816,10 @@ h5.title_heading_c {
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 9999999;
-    
-  }
-  
-  
+
+}
+
+
 
 
 
@@ -7040,4 +7042,87 @@ span.error_fields {
         font-size: 4.25em;
     }
 
+}
+
+
+
+.multistep_popup_form {
+    .form_heading_section {
+        h3 {
+            font-size: 1.563em;
+            color: $primaryyellow;
+        }
+        p{
+            font-size: 1.375em;
+        }
+        .form_heading_close_btn {
+            h2 {
+                font-size: 4.375em;
+                margin: 0;
+            }
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            button.close_button img {
+                width: 100px;
+            }
+        }
+    }
+    .form_questions_section{
+        .form_question_block{
+            h4{
+                font-size: 1.563em;
+            }
+            .form_options{
+                font-size: 1.25em;
+            }
+            .form_option {
+                .nested_options {
+                    padding-left: 20px;
+                    margin-top: 10px;
+                    .nested_option{
+                        margin-bottom: 10px;
+                       
+                    }
+                }
+                margin-bottom: 12px;
+                
+                label{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    input[type="radio"]{
+                        border: 2px solid;
+                    }
+                }
+            }
+        }
+    }
+
+    .form_redirection_btn {
+        margin-top: 40px;
+        a {
+            padding: 10px 30px;
+            background: $black;
+            display: inline;
+            border-radius: 50px;
+            color: $white;
+            font-size: 1.375em;
+        }
+    }
+
+    .cf7_form_outer {
+        width: 80%;
+        height: 70vh;
+        position: fixed;
+        overflow: auto;
+        z-index: 9999;
+        background: #fff;
+        padding: 50px;
+        top: 12%;
+        left: 8%;
+        box-shadow: 1px 8px 17px 15px rgba(0, 0, 0, 0.1);
+    }
 }
