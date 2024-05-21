@@ -87,9 +87,9 @@ export const allExportedApi = () => {
 
   // fetch our internship page api
   const internshipPageApi=async ()=>{
-    let data=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pages?slug=internship&fields=acf&acf_format=standard`)
+    let data=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=our-internship&fields=acf&acf_format=standard`)
     let response=await data.json()
-    return response
+    return response;
   }
 
 
@@ -153,14 +153,14 @@ const AllProducts = async ()=>{
 
 //fetch all internships api
 const ourInternships = async ()=>{
-  let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/internship?fields=acf&acf_format=standard`);
+  let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/internship?fields=acf&acf_format=standard`);
   let response = await data.json();
   return response;
 }
 
 // fetch Single Internships api
 const fetchSigleInternship = async (slug)=>{
-  let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/internship?slug=${slug}&fields=acf&acf_format=standard`);
+  let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/internship?slug=${slug}&fields=acf&acf_format=standard`);
   let response = await data.json();
   return response;``
 }
