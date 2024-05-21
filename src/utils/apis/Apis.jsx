@@ -93,13 +93,19 @@ export const allExportedApi = () => {
   }
 
 
-// fetch our internship page api
+// fetch our multistepFormApi page api
 const multistepFormApi=async ()=>{
   let data=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=multistep-popup-form&fields=acf&acf_format=standard`)
   let response=await data.json()
   return response;
 }
 
+// fetch our Career page api
+const careerPageApi=async ()=>{
+  let data=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=career&fields=acf&acf_format=standard`)
+  let response=await data.json()
+  return response;
+}
 
 
   // fetch all services template api
@@ -254,6 +260,7 @@ const SingleBlogPost = async (slug) => {
     contactUsPageApi,
     internshipPageApi,
     multistepFormApi,
+    careerPageApi,
     fetchAllServices,
     fetchSingleService,
     fetchAllportFolio,
