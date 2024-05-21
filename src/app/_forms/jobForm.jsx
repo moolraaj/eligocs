@@ -4,13 +4,15 @@ import React, { useState } from 'react';
 import { toast } from 'sonner';
 
 function JobForm() {
-    let api = allExportedApi();
+    const api = allExportedApi();
     const [user, setUser] = useState({
         firstname: '',
         lastname: '',
         youremail: '',
         phone: '',
-
+        companyname: '',  
+        budget: '',  
+        yourmessage: ''  
     });
 
     const [errors, setErrors] = useState({
@@ -22,6 +24,9 @@ function JobForm() {
 
     const getUserData = (e) => {
         const { name, value } = e.target;
+        if (name === 'phone' && value.length > 10) {
+            return;
+          }
         setUser({
             ...user,
             [name]: value
@@ -84,46 +89,38 @@ function JobForm() {
 
     return (
         <>
-           
-           
-                        
-                        <form id='jobform'>
-                            <div className="job_form_flex_wrapper">
-                                <div className="form_fields_wrapper">
-                                    <input type="text" name="firstname" placeholder='first name' value={user.firstname} onChange={getUserData} />
-                                    {errors.firstname && <span className='error_fields'>first name is required</span>}
-                                </div>
-                                <div className="form_fields_wrapper">
-                                    <input type="text" name="lastname" placeholder='last name' value={user.lastname} onChange={getUserData} />
-                                    {errors.lastname && <span className='error_fields'>last name is required</span>}
-                                </div>
-                                <div className="form_fields_wrapper">
-                                    <input type="email" name="youremail" placeholder='email address' value={user.youremail} onChange={getUserData} />
-                                    {errors.youremail && <span className='error_fields'>email is required</span>}
-                                </div>
-                                <div className="form_fields_wrapper">
-                                    <input type="number" name="phone" placeholder='phone number' value={user.phone} onChange={getUserData} />
-                                    {errors.phone && <span className='error_fields'>phone number is required</span>}
-                                </div>
-                                <div className="form_fields_wrapper">
-                                    <input type="text" name="companyname" placeholder='company name' value={user.companyname} onChange={getUserData} />
-                                
-                                </div>
-                                <div className="form_fields_wrapper">
-                                    <input type="text" name="budget" placeholder='budget' value={user.budget} onChange={getUserData} />
-                                    
-                                </div>
-                                <div className="form_fields_wrapper">
-                                    <textarea name="yourmessage" placeholder="Enter your message" value={user.yourmessage} onChange={getUserData} cols="30" rows="50"></textarea>
-                                   
-                                </div>
-                                <div className="form_button">
-                                    <button onClick={submitUserData}>Submit</button>
-                                </div>
-                            </div>  
-                        </form>
-               
-               
+            <form id='jobform'>
+                <div className="job_form_flex_wrapper">
+                    <div className="form_fields_wrapper">
+                        <input type="text" name="firstname" placeholder='first name' value={user.firstname} onChange={getUserData} />
+                        {errors.firstname && <span className='error_fields'>first name is required</span>}
+                    </div>
+                    <div className="form_fields_wrapper">
+                        <input type="text" name="lastname" placeholder='last name' value={user.lastname} onChange={getUserData} />
+                        {errors.lastname && <span className='error_fields'>last name is required</span>}
+                    </div>
+                    <div className="form_fields_wrapper">
+                        <input type="email" name="youremail" placeholder='email address' value={user.youremail} onChange={getUserData} />
+                        {errors.youremail && <span className='error_fields'>email is required</span>}
+                    </div>
+                    <div className="form_fields_wrapper">
+                        <input type="number" name="phone" placeholder='phone number' value={user.phone} onChange={getUserData} />
+                        {errors.phone && <span className='error_fields'>phone number is required</span>}
+                    </div>
+                    <div className="form_fields_wrapper">
+                        <input type="text" name="companyname" placeholder='company name' value={user.companyname} onChange={getUserData} />
+                    </div>
+                    <div className="form_fields_wrapper">
+                        <input type="text" name="budget" placeholder='budget' value={user.budget} onChange={getUserData} />
+                    </div>
+                    <div className="form_fields_wrapper">
+                        <textarea name="yourmessage" placeholder="Enter your message" value={user.yourmessage} onChange={getUserData} cols="30" rows="50"></textarea>
+                    </div>
+                    <div className="form_button">
+                        <button onClick={submitUserData}>Submit</button>
+                    </div>
+                </div>  
+            </form>
         </>
     );
 }

@@ -21,6 +21,9 @@ function ContactUsForm() {
 
   const getUserData = (e) => {
     const { name, value } = e.target;
+    if (name === 'yournumber' && value.length > 10) {
+      return;
+    }
     setUser({
       ...user,
       [name]: value
