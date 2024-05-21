@@ -4,6 +4,7 @@ import { allExportedApi } from '@/utils/apis/Apis';
 import Navbar from '../navbar/page';
 import Footer from '../footer/page';
 import Loader from './component/loader';
+ 
 
 export default function Layout({ children }) {
     const [isLoading, setIsLoading] = useState(true);
@@ -31,6 +32,7 @@ export default function Layout({ children }) {
                 <Loader/>
             ) : (
                 <>
+                
                     <Navbar data={data} />
                     {children}
                     <Footer response={data}/>

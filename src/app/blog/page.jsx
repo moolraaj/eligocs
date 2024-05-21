@@ -1,8 +1,19 @@
 
 import React from 'react'
-import BlogPage from './component/BlogPage'
 import { allExportedApi } from '@/utils/apis/Apis';
+import { BlogScoData } from './component/blogScoMetaData';
+
+import dynamic from "next/dynamic";
  
+
+ 
+ 
+const BlogPage=dynamic(
+  ()=> import  ("./component/BlogPage"),
+  {
+    ssr:true
+  }
+)
 
 export default async function page() {
 
@@ -18,24 +29,5 @@ export default async function page() {
   )
 }
 
-export async function generateMetadata(){
-  let api=allExportedApi()
-  let data = await api.BlogPageApi(); 
- 
-  let result=data.map((ele)=>{
-    return{
-      title:ele.title.rendered,
-      description:ele.acf.blog_page_description
-    }
-  })
 
-  return{
-    title:result[0].title,
-    description:result[0].description,
-    openGraph:{
-
-    }
-  }
-
-}
 

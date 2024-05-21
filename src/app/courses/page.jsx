@@ -1,6 +1,7 @@
  
-import { allExportedApi } from "@/utils/apis/Apis";
+
 import CoursesPage from "./component/CoursesPage";
+import { CourseScoData } from "./component/courseScoMetaData";
 
 
 export default async function page() {
@@ -14,24 +15,7 @@ export default async function page() {
 }
 
 export async function generateMetadata(){
-  let api=allExportedApi() 
-  let data = await api.CoursesPageApi() 
- 
-   
-  const result=data.map((ele)=>{
-      return{
-          title:ele.title.rendered,
-          description:ele.acf.courses_page_description
-           
-      }
-  })
- 
-  return{
-      title:result[0].title,
-      description:result[0].description,
-      openGraph:{
-        
-      }
-  }
+  let metadata=await CourseScoData()
+  return metadata
 }
 
