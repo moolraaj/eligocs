@@ -1,16 +1,26 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import {  INTERNSHIP_PAGE_SIZE, allExportedApi } from '@/utils/apis/Apis';
+import { INTERNSHIP_PAGE_SIZE, allExportedApi } from '@/utils/apis/Apis';
 import { useRouter } from 'next/navigation';
+import Internship from '@/app/_forms/internship';
+import RerenderCompo from '@/app/common/navbar/component/formAnimationCompo';
+import formClose from '../../assets/headerAssets/formclose.png'
+
 
 function OurInternshipsPage() {
   let api = allExportedApi();
   const [InternshipPageApiData, setInternshipPageApiData] = useState([]);
   const [internship, setInternship] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [isMounted, setIsMounted] = useState(false);
+
 
   const router = useRouter();
+
+  const toggleFormVisibility = () => {
+    setIsMounted(!isMounted);
+  };
 
   const loadInternshipData = async () => {
     let data = await api.internshipPageApi();
@@ -25,6 +35,10 @@ function OurInternshipsPage() {
   useEffect(() => {
     loadInternshipData();
     loadInternships();
+    const timer = setTimeout(() => {
+      setIsMounted(true); 
+    }, 1000); 
+    return () => clearTimeout(timer); 
   }, []);
 
   const totalPages = Math.ceil(internship.length / INTERNSHIP_PAGE_SIZE);
@@ -37,7 +51,7 @@ function OurInternshipsPage() {
         <li>
           <span className="wrap_nmae_btn">
             <span><h1>{internship.acf.internship_tittle}</h1></span>
-            <span><Link href={`/our-internship/${internship.slug}`}>Start Your Task</Link></span>
+            <span><Link href={internship.acf.internship_form_link} target='_blank'>Start Your Task</Link></span>
           </span>
         </li>
         <li><img src={internship.acf.internship_image} alt="portfolio_image" /></li>
@@ -83,10 +97,10 @@ function OurInternshipsPage() {
               <div className="product-top-info-section">
                 <div className="product-page-left-info">
                   <h1>{ele.acf.internship_page_tittle}</h1>
-                  <p dangerouslySetInnerHTML={{__html: ele.acf.internship_page_description}}></p>
+                  <p dangerouslySetInnerHTML={{ __html: ele.acf.internship_page_description }}></p>
                 </div>
                 <div className="internship-page-right-info">
-                    <img src={ele.acf.internship_description_image} alt="internship_description_image" />
+                  <img src={ele.acf.internship_description_image} alt="internship_description_image" />
                 </div>
               </div>
             </div>
@@ -97,26 +111,68 @@ function OurInternshipsPage() {
           {totalPages > 1 && renderPaginationButtons()}
         </div>
         <div className="internship_training_points">
-          {
-            InternshipPageApiData.map((ele,index)=>{
-              return <div  key={index} className="internship_points_inner">
+          {InternshipPageApiData.map((ele, index) => {
+            return (
+              <div key={index} className="internship_points_inner">
                 <h1>{ele.acf.internship_training_heading}</h1>
                 <p>{ele.acf.internship_training_short_description}</p>
-                {
-                  ele.acf.internship_training_points.map((ele,index)=>{
-                    return <ul key={index} className="internship_bullet_points">
-                      <h2>{ele.training_tittle}</h2>
-                      <li>
-                        <p dangerouslySetInnerHTML={{__html: ele.training_description}}></p>
-                        </li>
+                {ele.acf.internship_training_points.map((point, pointIndex) => (
+                  <ul key={pointIndex} className="internship_bullet_points">
+                    <h2>{point.training_tittle}</h2>
+                    <li>
+                      <p dangerouslySetInnerHTML={{ __html: point.training_description }}></p>
+                    </li>
                   </ul>
-                  })
-                 
-                }
+                ))}
               </div>
-            })
-          }
+            );
+          })}
         </div>
+        {isMounted && (
+          <>
+            
+            <div className="internship_popup_form">
+            <div className="cf7_form_outer" style={{ animation: isMounted ? 'slide-down 0.5s' : 'slide-up 0.5s' }}>
+            <div className="cf7_form_inner">
+              <div className="cf7_top_banner">
+                <div className="cf7_left_section">
+                  <div className="form_banner_heading">
+
+                    <h1>Industrial Training</h1>
+                  </div>
+
+                  <div className="form_slider_wrapper apply_for_job">
+                    <div className="_form_paragraph">
+                      <p>
+                        Let's work on
+                      </p>
+                    </div>
+                    <div className="form_slides">
+                      <RerenderCompo />
+                    </div>
+                  </div>
+
+
+                </div>
+
+                <div className="cf7_right_section">
+                  <div className="close_button">
+                    <button onClick={toggleFormVisibility} className="close_button">
+                      <img src={formClose.src} alt="" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="cf7_form_wrapper">
+                <Internship />
+              </div>
+              </div>
+              </div>
+            </div>
+          </>
+        )}
+
+        
       </div>
     </>
   );

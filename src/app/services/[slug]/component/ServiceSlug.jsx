@@ -37,8 +37,7 @@ function ServiceSlug({ data, services }) {
                         </div>
                      </div>
                      <div className="services_right_sec">
-                        <h1>{ele.acf.related_services_heading}</h1>
-
+                     <h1>Related Services</h1>
                         <div className="related-services">
                            {
                               relatedServices.map((items) => {

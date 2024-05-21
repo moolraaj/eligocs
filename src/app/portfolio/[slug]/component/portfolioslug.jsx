@@ -117,7 +117,7 @@ export default function Portfolioslug({ data, relatedPOrtfolio }) {
                                     <div className="portfolio_top_left_section">
                                         <div className="portfolio_inner_page_image_heading_section">
                                         <div className="portfolio_top_left_heading">
-                                            <h3>{ele.acf.portfolio_heading}</h3>
+                                            <h3>{ele.acf.portfolio_title}</h3>
                                         </div>
                                         <div className="portfolio_top_image">
                                             <img src={ele.acf.portfolio_inner_image} />
@@ -127,7 +127,7 @@ export default function Portfolioslug({ data, relatedPOrtfolio }) {
                                        
 
                                         <div className="portfolio_top_right_section">
-                                            <h1>{ele.acf.portfolio_heading}</h1>
+                                            <h1>{ele.acf.portfolio_title}</h1>
                                             <p dangerouslySetInnerHTML={{__html : ele.acf.portfolio_inner_page_top__description}}></p>
                                         </div>
                                     </div>
@@ -146,7 +146,7 @@ export default function Portfolioslug({ data, relatedPOrtfolio }) {
                                 <div className="portfolio_related_posts_inner">
                                 <h3>Related Posts</h3>
                                 {Portfolio.map((e,index)=>{
-                                    return <Link key={index} href={`/portfolio/${e.slug}`}>{e.acf.portfolio_projects_heading}</Link>
+                                    return <Link key={index} href={`/portfolio/${e.slug}`}>{e.acf.portfolio_title}</Link>
                                 })}
                                 
                                 </div>

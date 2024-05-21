@@ -19,7 +19,7 @@ const PortfolioChild = ({ data = [] }) => {
                                 <div className="portfolio_flex">
                                     <div className="portfolio_inner_left_section">
                                         <div className="portfolio_title">
-                                            <h4>{ele.acf.portfolio_heading}</h4>
+                                            <h4>{ele.acf.portfolio_title}</h4>
                                         </div>
                                         <div className="portfolio_short_description">
                                             <p dangerouslySetInnerHTML={{ __html: ele.acf.portfolio_short_description }}></p>

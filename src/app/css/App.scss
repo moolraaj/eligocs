@@ -80,7 +80,7 @@ body {
     li {
         list-style: none;
     }
-    
+
 }
 
 body::-webkit-scrollbar {
@@ -96,6 +96,9 @@ body::-webkit-scrollbar-thumb {
 
 
 $font: font-family;
+
+
+
 
 
 
@@ -139,11 +142,12 @@ $font: font-family;
 // Davinder css start
 
 .course_call_to_action {
-    .inner_call{
+    .inner_call {
         padding: 30px 20px !important;
     }
-    
+
 }
+
 .call_left_section {
     p {
         font-size: 1.188em !important;
@@ -266,12 +270,12 @@ button#sucess-journy-btn:hover {
     color: $black;
 }
 
-.blog_page_call_to_action{
-    button{
+.blog_page_call_to_action {
+    button {
         background-color: $white !important;
         color: $black !important;
     }
-   
+
 }
 
 ul {
@@ -840,19 +844,23 @@ h6.user_name_c {
         object-fit: cover;
     }
 }
+
 .pagination-buttons button.active {
     background: #eaaa00;
     color: #3D3A3A;
 }
+
 a.footer_mail {
-    text-transform: lowercase!important;
+    text-transform: lowercase !important;
 }
+
 .pagination-buttons button {
     border: unset;
     padding: 10px 20px;
     border-radius: 4px;
     font-size: 16px;
 }
+
 .pagination-buttons {
     display: flex;
     column-gap: 14px;
@@ -1146,6 +1154,7 @@ form#applyforjob textarea {
     display: flex;
     position: relative;
     align-items: center;
+
     .product_heading_left {
         display: flex;
         align-items: flex-end;
@@ -1162,6 +1171,7 @@ form#applyforjob textarea {
     .product_image_right {
         position: relative;
         width: 100%;
+
         img {
             width: 100%;
             height: 450px;
@@ -1255,6 +1265,7 @@ form#applyforjob textarea {
         background-color: $primaryyellow;
         margin-top: 101px;
         width: 654px;
+
         a {
             background-color: $white;
             color: $primaryyellow;
@@ -1281,6 +1292,7 @@ form#applyforjob textarea {
     li:first-child {
         background-color: $black;
         width: 654px;
+
         a {
             background-color: $primaryyellow;
             color: $white;
@@ -1307,7 +1319,7 @@ form#applyforjob textarea {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     place-items: center;
-    gap: 0px;
+    row-gap: 50px;
     position: relative;
     margin: 120px 0px;
 
@@ -1372,57 +1384,70 @@ form#applyforjob textarea {
 
 
 // Our Internships page css start
-
-.internship-page-inner{
+.internship-page-inner {
     .product-page-left-info p {
         font-size: 1em;
-        p{
+
+        p {
             font-size: 1.563em;
         }
     }
-    .internship-page-right-info img{
+
+    .internship-page-right-info img {
         width: 100%;
     }
-    
+
 }
+
 .internship_points_inner {
+    p {
+        font-size: 1.563em;
+    }
+
+    margin-top: 80px;
+
     ul {
         padding: 0;
         position: relative;
         list-style: none;
+
         li {
             position: relative;
-            p{
-                
-            li{
-                padding-left: 20px;
-                font-size: 1.563em;
+
+            p {
+                li {
+                    padding-left: 20px;
+                    font-size: 1em;
+                }
+
+                li::before {
+                    content: '';
+                    width: 12px;
+                    height: 12px;
+                    background-color: $primaryyellow;
+                    font-size: 1.5em;
+                    position: absolute;
+                    left: 0;
+                    top: 0.3em;
+
+                }
             }
-            li::before {
-                content: '';
-                width: 12px;
-                height: 12px;
-                background-color: $primaryyellow;
-                font-size: 1.5em; 
-                position: absolute;
-                left: 0; 
-                top: 0.3em; 
-                
-            }
-        }
         }
     }
-    h1,
-    .internship_bullet_points h2{
+
+    h1 {
         font-size: 3.125em;
     }
-    .internship_bullet_points p p{
-        font-size: 1.563em;
+
+    .internship_bullet_points p p {
+        font-size: 1em;
     }
-    .internship_bullet_points h2{
-            color: $primaryyellow;
+
+    .internship_bullet_points h2 {
+        color: $primaryyellow;
+        font-size: 1.875em;
     }
-  
+
 }
 
 // our internship page css end
@@ -1681,7 +1706,7 @@ h1.type_text_wrapper span {
 }
 
 .call_slider_image img {
-   
+
     max-width: 468px;
     height: 370px;
     object-fit: cover;
@@ -1811,15 +1836,17 @@ select.filter_course_top_right {
     column-gap: 48px;
     width: 100% !important;
 }
+
 .courses-posts-outer.no-courses {
     grid-template-columns: 1fr;
     place-items: center;
-    p{
+
+    p {
         font-size: 2em;
         color: $white;
     }
-  }
-  
+}
+
 ul.course {
     box-shadow: 2px 3px 19px #00000026;
     padding: 15px;
@@ -2143,7 +2170,8 @@ a.back-to-projects {
         h1 {
             font-size: 6.25em;
         }
-        p p{
+
+        p p {
             font-size: 1.375em;
         }
     }
@@ -2155,7 +2183,9 @@ a.back-to-projects {
     grid-template-columns: 70% 30%;
     column-gap: 10px;
     margin-top: 80px;
-    .port_description p ol,ul{
+
+    .port_description p ol,
+    ul {
         font-size: 1.375em;
     }
 }
@@ -3284,12 +3314,13 @@ p .testimonial_wrap {
 
 
 .nav_right_section {
-    #go_to_internship_page{
+    #go_to_internship_page {
         padding: 18px 36px;
         background-color: $primaryyellow;
         border-radius: 50px;
         width: auto;
     }
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -3434,7 +3465,7 @@ p .testimonial_wrap {
 }
 
 // Blog page css start...........
-.filter_blog_posts{
+.filter_blog_posts {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -3444,11 +3475,13 @@ p .testimonial_wrap {
     border-style: solid;
     border-color: rgba(159, 163, 173, .2);
 }
+
 .blog-posts-section {
     display: flex;
     align-items: center;
     justify-content: center;
-    p#no_blogs_found{
+
+    p#no_blogs_found {
         color: $primaryyellow;
         font-size: 2em;
     }
@@ -3470,28 +3503,30 @@ p .testimonial_wrap {
     background-repeat: no-repeat;
     background-position: right 10px center;
     background-size: 10px;
-  }
-  
-  /* Style for the dropdown options */
-  #blog_category option {
+}
+
+/* Style for the dropdown options */
+#blog_category option {
     padding: 10px;
     font-size: 16px;
-  }
-  #blog_category option:hover{
+}
+
+#blog_category option:hover {
     background-color: $primaryyellow !important;
-  }
-  #blog_category:hover {
+}
+
+#blog_category:hover {
     border-color: #888;
     background-color: #fff;
-  }
-  
+}
 
-  #blog_category:focus {
+
+#blog_category:focus {
     border-color: #555;
     outline: none;
     box-shadow: 0 0 5px rgba(85, 85, 85, 0.5);
-  }
-  
+}
+
 
 .blog_descritpion ul {
     padding: 0;
@@ -3605,7 +3640,8 @@ p:empty {
     .share_blog_heading h2 {
         font-size: 1.875em;
     }
-    .share_with_social_platforms{
+
+    .share_with_social_platforms {
         button {
             border: none;
             padding: 20px 40px;
@@ -3614,11 +3650,12 @@ p:empty {
             color: $white;
             font-size: 1.188em;
         }
-        button:hover{
+
+        button:hover {
             background-color: $black;
         }
     }
-    
+
 }
 
 .all-blog-posts-outer {
@@ -3667,6 +3704,7 @@ p:empty {
     font-size: 1.375em;
     margin-bottom: 20px;
 }
+
 // Blog page css end
 
 
@@ -3855,6 +3893,7 @@ h5.title_heading_c {
 
         padding: 0px 15px;
     }
+
     .custom-file-upload::before {
         content: "Upload a resume";
         background: #fff;
@@ -3992,7 +4031,7 @@ h5.title_heading_c {
         object-fit: cover;
     }
 
-    
+
 
 
 
@@ -4106,13 +4145,15 @@ h5.title_heading_c {
 }
 
 @media screen and (max-width: 768px) {
-    
-    .portfolio_top_right_section p p{
+
+    .portfolio_top_right_section p p {
         font-size: 1em !important;
     }
-    .portfolio_project{
+
+    .portfolio_project {
         height: auto !important;
     }
+
     ul.course_points li:last-child {
         ul li {
             list-style: none !important;
@@ -4120,11 +4161,13 @@ h5.title_heading_c {
             padding: 0 !important;
         }
     }
+
     p#no_blogs_found,
     .courses-posts-outer.no-courses p,
-    .blog_page_heading_wrapper p p{
+    .blog_page_heading_wrapper p p {
         font-size: 1em !important;
     }
+
     .custom-file-upload::before {
         align-items: center;
         top: 6px;
@@ -4258,7 +4301,7 @@ h5.title_heading_c {
 
     }
 
-     
+
 
     .portfolio_gallery_wrapper img {
         width: 100%;
@@ -4597,9 +4640,11 @@ h5.title_heading_c {
     .mission-left p {
         font-size: 1.125em !important;
     }
-    .Previous_next_button{
-        padding: 0  !important;
+
+    .Previous_next_button {
+        padding: 0 !important;
     }
+
     .port_description p p {
         font-size: 1em !important;
     }
@@ -4626,12 +4671,12 @@ h5.title_heading_c {
 
     .slider_buttons button {
         padding: 0px !important;
-       
+
     }
 
     .slider_buttons button img {
         border-radius: 100%;
-        
+
     }
 
 
@@ -4760,9 +4805,11 @@ h5.title_heading_c {
     .product-top-info-section {
         padding: 0;
     }
-    .inner_process_heading h1{
+
+    .inner_process_heading h1 {
         font-size: 1.875em !important;
     }
+
     .serices_flex_template {
         grid-template-columns: 1fr;
         padding: 50px 0px 20px 0px;
@@ -4813,21 +4860,20 @@ h5.title_heading_c {
         }
     }
 
-    .our_products_wrapper {
-        gap: 90px !important;
-        margin: 50px 0px;
-    }
+
 
     .our_products_wrapper>ul.our_product.odd {
         li:first-child {
             align-items: flex-start;
             margin-top: auto !important;
+            position: relative;
+            left: -10px;
         }
 
         li:nth-child(2) img {
             bottom: -60px !important;
             top: auto;
-            left: 30px;
+            left: 20px;
         }
     }
 
@@ -5313,27 +5359,71 @@ h5.title_heading_c {
     }
 }
 
-.our_internship_link{
+.our_internship_link {
     display: none;
 }
 
 @media (max-width:767px) {
-    #go_to_internship_page{
-      display: none;
+    .internship_points_inner {
+        h1 {
+            font-size: 1.563em !important;
+        }
+        .internship_bullet_points h2{
+            font-size: 1.25em !important;
+        }
+        p{
+            font-size: 1em !important;
+        }
     }
-    .our_internship_link{
+
+    .internship-page-inner {
+        span.wrap_nmae_btn {
+            padding: 0 !important;
+        }
+
+        .our_product li:nth-child(1) a {
+            font-size: .875em !important;
+        }
+
+    }
+
+    .internship_points_inner {
+
+        ul li p li,
+        .internship_bullet_points p p {
+            font-size: 1em;
+        }
+    }
+
+    .our_products_wrapper {
+        gap: 90px !important;
+        margin: 50px 0px;
+    }
+
+    .our_products_wrapper {
+        grid-template-columns: 1fr;
+        place-items: center;
+    }
+
+    #go_to_internship_page {
+        display: none;
+    }
+
+    .our_internship_link {
         display: block !important;
     }
+
     .share_blog_post {
-        .share_blog_heading h2{
+        .share_blog_heading h2 {
             font-size: 1.2em !important;
         }
-        .share_with_social_platforms button{
-        font-size: 1em !important;
-        padding: 8px 22px;
+
+        .share_with_social_platforms button {
+            font-size: 1em !important;
+            padding: 8px 22px;
         }
     }
-    
+
     .page_outer.portfolio_section_outer.scrolling {
         padding: 15px 0px !important;
     }
@@ -5359,7 +5449,7 @@ h5.title_heading_c {
 
     .blog_page_heading_wrapper h1 {
         font-size: 2em;
-        margin: 10px 0px  20px 0px;
+        margin: 10px 0px 20px 0px;
     }
 
     .blog_img_heading_wrapper span {
@@ -5492,7 +5582,7 @@ h5.title_heading_c {
 }
 
 @media (min-width:1025px) and (max-width: 1440px) {
-    .portfolio_top_left_section .portfolio_top_right_section h1{
+    .portfolio_top_left_section .portfolio_top_right_section h1 {
         margin: 0;
         font-size: 5em !important;
     }
@@ -5622,7 +5712,7 @@ h5.title_heading_c {
         grid-template-columns: 1fr;
 
     }
-    
+
     .right_c_form h4 {
         grid-column-start: 1;
         grid-column-end: 2;
@@ -5791,12 +5881,15 @@ h5.title_heading_c {
         font-size: 1em;
         margin-bottom: 10px;
         line-height: normal;
-        
+
     }
-.portfolio_inner_template.port_description p ol,ul{
-    padding: 0;
-    font-size: 1em;
-}
+
+    .portfolio_inner_template.port_description p ol,
+    ul {
+        padding: 0;
+        font-size: 1em;
+    }
+
     .portfolio_project {
         padding: 15px 0px;
 
@@ -6294,10 +6387,7 @@ h5.title_heading_c {
     }
 
 
-    .our_products_wrapper {
-        grid-template-columns: 1fr;
-        place-items: center;
-    }
+
 }
 
 @media only screen and (max-width:480px) {
@@ -6324,24 +6414,33 @@ h5.title_heading_c {
 }
 
 @media (max-width:468px) {
-   
-    .filter_blog_posts{
+    .internship_points_inner ul li p li::before {
+        width: 8px !important;
+        height: 8px !important;
+    }
+
+    .filter_blog_posts {
         display: block;
         padding: 0px 10px;
-        .filter_blog_heading{
+
+        .filter_blog_heading {
             display: none;
         }
     }
-   course_faq_heading,
+
+    course_faq_heading,
     .course_join_wrapper {
         width: 100% !important;
     }
-    .our_products_wrapper>ul.our_product.even li:nth-child(2) img{
+
+    .our_products_wrapper>ul.our_product.even li:nth-child(2) img {
         left: -12px !important;
     }
-    .our_products_wrapper .our_product{
+
+    .our_products_wrapper .our_product {
         padding: 0px !important;
     }
+
     .menu-right-container-bottom span.form_button {
         display: flex;
         place-content: flex-end;
@@ -6420,7 +6519,7 @@ h5.title_heading_c {
 
 
 
-   
+
 
     .call_left_section p {
         font-size: 1em !important;
@@ -6671,7 +6770,7 @@ h5.title_heading_c {
 
     .nav_right_section button {
         width: 50px;
-        
+
     }
 }
 
@@ -6691,6 +6790,27 @@ h5.title_heading_c {
 
 
 //contact form 7 css 
+
+
+
+
+  
+  .internship_popup_form{
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    margin: auto;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999999;
+    
+  }
+  
+  
+
 
 
 .show_form {

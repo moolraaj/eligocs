@@ -2,13 +2,7 @@
 import React from "react";
 import Link from "next/link";
 
-
-
-
 export default function Internshipslug({ data, allInternship }) {
-
-
-
 
   return (
 
@@ -28,7 +22,7 @@ export default function Internshipslug({ data, allInternship }) {
                   </div>
                   <div className="blog_page_heading_wrapper">
                     <h1>{internship.acf.internship_tittle}</h1>
-                    {/* <p dangerouslySetInnerHTML={{__html: product.acf.product_inner_page_top_heading}}></p> */}
+                    <p >{internship.acf.internship_inner_page_top_description_}</p>
                   </div>
                 </div>
                 <div className="course_intro_join_section">
