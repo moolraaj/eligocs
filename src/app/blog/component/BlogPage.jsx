@@ -81,7 +81,7 @@ function BlogPage({ blogPageData }) {
             <div key={index} className="blog-header-section">
               <div className="blog-header-image-heading">
                 <div className="blog_img_heading_wrapper">
-                  <h2>Our Blog</h2>
+                  <h2>{data.acf.blog_page_heading}</h2>
                   <img src={data.acf.blog_page_image} alt="blogPageImage" />
                   <span></span>
                 </div>
