@@ -107,7 +107,12 @@ $font: font-family;
 }
 
 
-
+.not_found_inner {
+   @extend %max-width;
+}
+.not_found_outer {
+    padding: 120px 20px 50px 20px;
+}
 
 .footer_ul {
     display: flex;

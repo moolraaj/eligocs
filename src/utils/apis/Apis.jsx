@@ -39,7 +39,7 @@ export const allExportedApi = () => {
 
   // fetch Our Service page api
   const ServiceApi = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=our_services&fields=acf&acf_format=standard`);
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=our-services&fields=acf&acf_format=standard`);
     let response = await data.json();
     return response;
   };

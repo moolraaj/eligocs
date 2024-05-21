@@ -1,10 +1,27 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 
 import Map from '../map'
 import ContactUsForm from '@/app/_forms/contactusform'
+import { allExportedApi } from '@/utils/apis/Apis'
 
 
-function ContactUs({ data }) {
+
+function ContactUs() {
+
+    let api = allExportedApi()
+    const [data, setData] = useState([])
+
+    const loadContactusPage = async () => {
+        let response = await api.contactUsPageApi()
+        setData(response)
+
+    }
+
+    useEffect(() => {
+        loadContactusPage()
+    }, [])
+
     return (
         <>
             {data.map((ele) => {
@@ -51,7 +68,7 @@ function ContactUs({ data }) {
                         <div className='right_lowe_s'>
                             <div className='location_b_c'>
                                 <Map />
-                                
+
 
                                 <div className='contact_both_sec'>
                                     <div className='contact_twins_inner_l'>
@@ -74,20 +91,20 @@ function ContactUs({ data }) {
                                                 <a href={`mailto:${ele.acf.contact_with_mail}`}>{ele.acf.contact_with_mail}</a>
                                             </div>
                                             <div className='social_icons'>
-                                                {ele.acf.contact_services_social_icons.map((icons,index)=>{
-                                                    return   <div className="contact_social_wrapper" key={index}>
+                                                {ele.acf.contact_services_social_icons.map((icons, index) => {
+                                                    return <div className="contact_social_wrapper" key={index}>
 
                                                         <div className="contact_social_link">
                                                             <li>
                                                                 <a href={icons.icon_link} target='_blank'>
-                                                                <img src={icons.social_media} alt="" srcset="" />
+                                                                    <img src={icons.social_media} alt="" srcset="" />
                                                                 </a>
                                                             </li>
                                                         </div>
 
                                                     </div>
                                                 })}
-                                                
+
                                             </div>
                                         </div>
                                     </div>
