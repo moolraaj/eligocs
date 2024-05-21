@@ -25,6 +25,9 @@ function Internship() {
 
     const getUserData = (e) => {
         const { name, value } = e.target;
+        if (name === 'mobileNumber' && value.length > 10) {
+            return;
+          }
         setUser({
             ...user,
             [name]: value,
