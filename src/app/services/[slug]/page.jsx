@@ -1,5 +1,7 @@
 import { allExportedApi } from "@/utils/apis/Apis.jsx";
 import Serviceslug from "./component/Serviceslug";
+import { ExportScoApiData } from "@/utils/apis/scoApi";
+import { LoadscoData } from "@/app/_metadata/metadata";
  
 
 
@@ -36,23 +38,27 @@ export async function generateStaticParams() {
 // generate dynamic sco title and desriptions
 export async function generateMetadata({params}){
     const { slug } = params;
-    let api=allExportedApi()
-    const data = await api.fetchSingleService(slug);
-    let result =data.map((ele)=>{
-        return{
-            title:ele.slug,
-            description:ele.acf.services_inner_heading, 
-        }
-    })
-   
-    return{
-        title:result[0].title,
-        description:result[0].description,
-        openGraph:{
-        type:'website',
-        url:'https://www.eligo.cloud/',
-        }
-    }
+    let api=ExportScoApiData()
+    const data = await api.fetchdynamicServicesScoData(slug);
+    const metadata = await LoadscoData({ data });
+
+  return {
+      title: metadata.title,
+      description: metadata.description,
+      openGraph: {
+          title: metadata.title,
+          description: metadata.description,
+          locale: metadata.locale,
+          type: metadata.type,
+          url: metadata.url,
+          siteName: metadata.siteName,
+          updatedTime: metadata.updatedTime,
+          card: metadata.card,
+          twitterTitle: metadata.twitterTitle,
+          twitterDescription: metadata.twitterDescription
+      }
+  };
+    
 }
 
 

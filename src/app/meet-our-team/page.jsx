@@ -1,6 +1,8 @@
  
-import { allExportedApi } from "@/utils/apis/Apis"
+ 
+import { LoadscoData } from "../_metadata/metadata"
 import TeamPageComponent from "./component/teamPageComponent"
+import { ExportScoApiData } from "@/utils/apis/scoApi"
 async function MeetOurTeam() {
   
    
@@ -24,27 +26,27 @@ export default MeetOurTeam
 
 
 export async function generateMetadata(){
-  let api=allExportedApi() 
-  let data = await api.meetOurTeamPage()
- 
-   
-  const result=data.map((ele)=>{
-    let description=ele.acf.team_description.replace(/<[^>]+>|&[^;]+;/g, '');
-    
-      return{
-          title:ele.title.rendered,
-          description
-           
+  let api=ExportScoApiData() 
+  let data=await api.fetchMeetOurteamScoData()
+  const metadata = await LoadscoData({ data });
+
+  return {
+      title: metadata.title,
+      description: metadata.description,
+      openGraph: {
+          title: metadata.title,
+          description: metadata.description,
+          locale: metadata.locale,
+          type: metadata.type,
+          url: metadata.url,
+          siteName: metadata.siteName,
+          updatedTime: metadata.updatedTime,
+          card: metadata.card,
+          twitterTitle: metadata.twitterTitle,
+          twitterDescription: metadata.twitterDescription
       }
-  })
+  };
  
-  return{
-      title:result[0].title,
-      description:result[0].description,
-      openGraph:{
-        
-      }
-  }
 }
 
  

@@ -1,14 +1,15 @@
-import { allExportedApi } from '@/utils/apis/Apis'
+ 
 import React from 'react'
 import ContactPage from './component/contactUs'
+import { ExportScoApiData } from '@/utils/apis/scoApi'
+import { LoadscoData } from '../_metadata/metadata'
 
 async function page() {
-  let api=allExportedApi()
-  let data=await api.contactUsPageApi()
+
   
   return (
     <>
-    <ContactPage data={data}/>
+    <ContactPage/>
     </>
   )
 }
@@ -18,23 +19,27 @@ export default page
 
 export async function generateMetadata(){
  
-  let api=allExportedApi()    
-  let data = await api.contactUsPageApi() 
-  
-  const result=data.map((ele)=>{
-      return{
-          title:ele.title.rendered,
-          description:'this is contact us page'
-           
+  let api=ExportScoApiData()    
+  let data = await api.fetchContactUsScoData() 
+  const metadata = await LoadscoData({ data });
+
+  return {
+      title: metadata.title,
+      description: metadata.description,
+      openGraph: {
+          title: metadata.title,
+          description: metadata.description,
+          locale: metadata.locale,
+          type: metadata.type,
+          url: metadata.url,
+          siteName: metadata.siteName,
+          updatedTime: metadata.updatedTime,
+          card: metadata.card,
+          twitterTitle: metadata.twitterTitle,
+          twitterDescription: metadata.twitterDescription
       }
-  })
+  };
   
-  return{
-      title:result[0].title,
-      description:result[0].description,
-      openGraph:{
-        
-      }
-  }
+  
 }
 

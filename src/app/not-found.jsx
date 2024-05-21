@@ -4,11 +4,18 @@ import Link from "next/link"
 
 function NotFound() {
   return (
-    <div style={{paddingTop:'100px'}}>
-      <h1>page not found </h1>
+    <div className="not_found_outer">
+      <div className="not_found_inner">
 
-      <Link href={'/'}>go to home page</Link>
+    <div className='not_found_wrapper'>
+      <h1>Ooops.</h1>
+      <p>I Think You Got Lost Between The Shapes.</p>
+      <p>The Page You Were Looking For Couldn't Be Found.</p>
+
+      <Link href={'/'}>go back to home page</Link>
         
+    </div>
+      </div>
     </div>
   )
 }

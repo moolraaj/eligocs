@@ -69,6 +69,7 @@ function HeroSection({ ele, ParallaxContainer }) {
 
   return (
     <>
+    
       {isApplyJobVisible && (
         <div className="cf7_form_outer" style={{ animation: isApplyJobVisible ? 'slide-down 0.5s' : 'slide-up 0.5s' }}>
           <div className="cf7_form_inner">
@@ -76,10 +77,12 @@ function HeroSection({ ele, ParallaxContainer }) {
               <div className="cf7_left_section">
                 <div className="form_banner_heading">
                   <h1>apply now</h1>
+                  
                 </div>
                 <div className="form_slider_wrapper">
                   <div className="_form_paragraph">
                     <p>apply for job</p>
+                  
                   </div>
                 </div>
               </div>
@@ -130,6 +133,7 @@ function HeroSection({ ele, ParallaxContainer }) {
                       <>
                         <button type="button" className={animateButton ? 'animate' : ''} onClick={showApplyJob}>
                           Apply Now
+                           
                         </button>
                         <p>{ele.acf.innovation_heading}</p>
                       </>
