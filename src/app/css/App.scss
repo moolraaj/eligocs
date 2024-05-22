@@ -3918,7 +3918,7 @@ h5.title_heading_c {
      .job_form_flex_wrapper{
         column-gap: 0 !important;
      }
-     .form_fields_wrapper input{
+     .internship_popup_form .form_fields_wrapper input{
         width: 80% !important;
      }
     .form_options {
@@ -5866,7 +5866,7 @@ h5.title_heading_c {
     }
 
     .form_fields_wrapper input {
-        width: 85% !important;
+        
         font-size: 1em;
     }
 
@@ -6542,6 +6542,9 @@ h5.title_heading_c {
 }
 
 @media (max-width:468px) {
+    .internship_radio{
+        font-size: 1em !important;
+    }
     .multistep_form_inner {
         input.popup_radioboxes::after {
             top: 27.5px !important;
@@ -7503,7 +7506,7 @@ input.nexted_inputs:checked {
     flex-direction: column;
     margin-top: 26px;
     .internship_select_box {
-        width: 95%;
+        width: 100%;
     }
     .form_fields_wrapper{
         display: flex;
@@ -7515,7 +7518,9 @@ input.nexted_inputs:checked {
         .internship_radio {
             display: flex;
             flex-direction: row-reverse;
+            align-items: baseline;
             font-size: 1.25em;
+            column-gap: 5px;
         }
         select.select_duration {
             width: 100%;
