@@ -242,6 +242,12 @@ const SingleBlogPost = async (slug) => {
   }
 
 
+  const fetchInternShipForApi=async(userData)=>{
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/contact-form-7/v1/contact-forms/1376/feedback`,userData)
+    let response=await data.json()
+    return response
+  }
+
 
   
 
@@ -278,6 +284,7 @@ const SingleBlogPost = async (slug) => {
     fetchJobFormApi,
     fetchContactFormApi,
     fetchApplyForJobApi,
+    fetchInternShipForApi
    
   };
   
