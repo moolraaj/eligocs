@@ -359,7 +359,7 @@ a {
 }
 
 .home_about_wrapper {
-    @include grid-property(grid,  30% 70%, unset, 20px)
+    @include grid-property(grid, 30% 70%, unset, 20px)
 }
 
 
@@ -536,10 +536,11 @@ form#jobform textarea {
 }
 
 .portfolio_posts_wrapper {
-    p p{
+    p p {
         font-size: 1.563em;
         padding-left: 20px;
     }
+
     h1 {
         font-size: 4em;
         padding-left: 20px;
@@ -1656,6 +1657,7 @@ h1.type_text_wrapper span {
     height: 300px;
     object-fit: cover;
 }
+
 .our_team_description p p {
     font-size: 1.563em;
 }
@@ -3906,13 +3908,16 @@ h5.title_heading_c {
 
 
 @media only screen and (max-width:1630px) {
-    .blog_img_heading_wrapper h2{
+    .blog_img_heading_wrapper h2 {
         display: none;
     }
 }
 
 @media only screen and (max-width:1500px) {
-   
+    .form_options {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
     .nav_flex {
 
         padding: 0px 15px;
@@ -4170,14 +4175,15 @@ h5.title_heading_c {
 
 @media screen and (max-width: 768px) {
     .multistep_popup_form {
-        .close_button{
+        .close_button {
             left: 0 !important;
         }
     }
 
-    .filter_blog_posts{
+    .filter_blog_posts {
         margin: 35px auto 30px auto;
     }
+
     .portfolio_top_right_section p p {
         font-size: 1em !important;
     }
@@ -4348,6 +4354,10 @@ h5.title_heading_c {
     .portfolio_gallery_wrapper {
         flex: 0 0 50% !important;
 
+    }
+
+    .nested_options {
+        grid-template-columns: repeat(3, 1fr) !important;
     }
 
     body.__className_aaf875 {
@@ -5396,7 +5406,10 @@ h5.title_heading_c {
 }
 
 @media (max-width:767px) {
-   
+    .nested_options {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
     .internship_points_inner {
         h1 {
             font-size: 1.563em !important;
@@ -5636,7 +5649,7 @@ h5.title_heading_c {
 @media (min-width:769px) and (max-width: 1024px) {
     .multistep_popup_form .cf7_form_outer {
         top: 18% !important;
-        left: 5% !important;
+        left: 15% !important;
         height: 60vh !important;
         overflow-y: scroll !important;
     }
@@ -5672,6 +5685,10 @@ h5.title_heading_c {
 }
 
 @media (min-width:769px) and (max-width: 999px) {
+    
+    .form_options {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
 
     .our-mission-outer {
         grid-template-columns: 1fr 1fr !important;
@@ -5710,6 +5727,9 @@ h5.title_heading_c {
 
 
 @media (max-width:768px) {
+    .form_options {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
 
     .products_inner_description p p {
         font-size: 1em;
@@ -6456,7 +6476,7 @@ h5.title_heading_c {
 }
 
 @media (min-width:469px) and (max-width:768px) {
-   
+
     .multistep_popup_form {
         .cf7_form_outer {
             top: 15% !important;
@@ -6465,19 +6485,23 @@ h5.title_heading_c {
             padding: 36px !important;
             height: 60vh !important;
         }
-        .form_heading_section{
+
+        .form_heading_section {
             .form_heading_close_btn {
                 h2 {
                     font-size: 2.5em !important;
                 }
+
                 button.close_button img {
                     width: 55px !important;
                 }
-            } 
+            }
+
             h3 {
                 font-size: 1.125em !important;
             }
-            p{
+
+            p {
                 font-size: 1.125em !important;
             }
         }
@@ -6486,47 +6510,76 @@ h5.title_heading_c {
 }
 
 @media (max-width:468px) {
-    .our_team_description p p{
+    .multistep_form_inner {
+        input.popup_radioboxes::after {
+            top: 27.5px !important;
+            right: 25.5px !important;
+        }
+
+        input.popup_radioboxes::before {
+            top: 22px !important;
+        }
+
+        input.popup_radioboxes,
+        .form_option label {
+            height: 70% !important;
+        }
+
+        .form_options {
+            row-gap: 0px !important;
+        }
+    }
+
+    .our_team_description p p {
         font-size: 1.125em !important;
     }
+
     .multistep_popup_form {
         .form_redirection_btn a {
             padding: 5px 25px !important;
         }
-        .cf7_form_outer{
+
+        .cf7_form_outer {
             top: 15% !important;
             width: 80% !important;
-        left: 5% !important;
-        padding: 20px !important;
-        height: 65vh !important;
+            left: 5% !important;
+            padding: 20px !important;
+            height: 65vh !important;
         }
-        .form_heading_section{
+
+        .form_heading_section {
 
             h3 {
                 font-size: 1.125em !important;
             }
-            p{
+
+            p {
                 font-size: 1em !important;
             }
+
             .form_heading_close_btn {
                 h2 {
                     font-size: 2em !important;
                 }
+
                 button.close_button img {
                     width: 40px !important;
                 }
             }
-            
+
         }
+
         .form_question_block {
             h4 {
                 font-size: 1.125em !important;
             }
-            .form_options{
+
+            .form_options {
                 font-size: 1em !important;
             }
         }
     }
+
     .internship_points_inner ul li p li::before {
         width: 8px !important;
         height: 8px !important;
@@ -6879,7 +6932,9 @@ h5.title_heading_c {
 }
 
 @media (max-width:375px) {
-
+    .nested_options {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
 
     .nav_right_section button {
         width: 50px;
@@ -7193,10 +7248,10 @@ span.error_fields {
                     display: flex;
                     flex-wrap: wrap;
                     column-gap: 10px;
-                    
+
                 }
 
-              
+
 
                 label {
                     display: flex;
@@ -7235,7 +7290,7 @@ span.error_fields {
         background: #fff;
         padding: 50px;
         top: 12%;
-        left: 15% ;
+        left: 15%;
         box-shadow: 1px 8px 17px 15px rgba(0, 0, 0, 0.1);
     }
 }
@@ -7245,17 +7300,20 @@ span.error_fields {
     height: 100px;
     position: relative;
 }
+
 .form_options {
     display: grid;
     column-gap: 20px;
     grid-template-columns: repeat(4, 1fr);
     row-gap: 20px;
 }
+
 input.popup_radioboxes {
     height: 100% !important;
     width: 100% !important;
     margin: 0px;
 }
+
 input.popup_radioboxes::before {
     content: "";
     position: absolute;
@@ -7267,6 +7325,7 @@ input.popup_radioboxes::before {
     top: 35px;
     right: 20px;
 }
+
 input.popup_radioboxes::after {
     content: "";
     position: absolute;
@@ -7277,14 +7336,17 @@ input.popup_radioboxes::after {
     top: 40.5px;
     right: 26px;
 }
+
 input.popup_radioboxes:checked:after {
-    background-color: $primaryblack   !important;
+    background-color: $primaryblack !important;
 }
+
 input.popup_radioboxes:checked {
     border: 1px solid $primaryyellow !important;
     border-radius: 4px;
     background: #EAAA00 !important;
 }
+
 input.popup_radioboxes {
     appearance: none;
     background: #fff !important;
@@ -7295,9 +7357,11 @@ input.popup_radioboxes {
     border: 1px solid #191C1B;
     border-radius: 4px;
 }
+
 .form_option label {
     position: relative;
 }
+
 .form_option label {
     justify-content: left;
     height: 100%;
@@ -7312,11 +7376,13 @@ input.popup_radioboxes {
     height: 60px;
     position: relative;
 }
+
 input.nexted_inputs {
     height: 100% !important;
     width: 100% !important;
     margin: 0px;
 }
+
 input.nexted_inputs::before {
     content: "";
     position: absolute;
@@ -7328,6 +7394,7 @@ input.nexted_inputs::before {
     top: 16px;
     right: 16px;
 }
+
 input.nexted_inputs::after {
     content: "";
     position: absolute;
@@ -7338,9 +7405,11 @@ input.nexted_inputs::after {
     top: 21.6px;
     right: 21.5px;
 }
+
 input.nexted_inputs:checked:after {
     background-color: #EAAA00;
 }
+
 input.nexted_inputs {
     appearance: none;
     background: #fff !important;
@@ -7352,6 +7421,7 @@ input.nexted_inputs {
     border: 1px solid #191C1B;
     border-radius: 4px;
 }
+
 .nested_option label {
     position: relative;
     display: flex;
@@ -7360,12 +7430,14 @@ input.nexted_inputs {
     width: 60%;
     padding-left: 12px;
 }
+
 input.nexted_inputs:checked {
     border: 2px solid #EAAA00 !important;
 }
+
 .nested_options {
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(5, 1fr);
     row-gap: 20px;
     column-gap: 20px;
 }
