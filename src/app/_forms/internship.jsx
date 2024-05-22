@@ -44,7 +44,7 @@ function Internship() {
         e.preventDefault();
         let formData = new FormData();
 
-        formData.append('_wpcf7_unit_tag', 1376);
+        formData.append('_wpcf7_unit_tag',1376);
         formData.append('student-name', user.studentName);
         formData.append('mobile-number', user.mobileNumber);
         formData.append('email-address', user.emailAddress);
