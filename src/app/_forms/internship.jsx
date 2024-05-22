@@ -107,7 +107,13 @@ function Internship() {
                         <input type="text" name="collegeUniversity" placeholder='College/University*' value={user.collegeUniversity} onChange={getUserData} />
                         {errors.collegeUniversity && <span className='error_fields'>Field is required</span>}
                     </div>
+                    
+                    
+                </div>
+                <div className="form_fields_wrapper_radio_select">
+                    <label htmlFor="stream" className='stream_label'>Stream</label>
                     <div className="form_fields_wrapper">
+                      
                         <div className="internship_radio">
                             <label htmlFor="BSc">BSc</label>
                             <input type="radio" name="stream" value='BSc' checked={user.stream === 'BSc'} onChange={getUserData} />
@@ -140,8 +146,7 @@ function Internship() {
                     </div>
                     <div className="form_fields_wrapper">
                         <div className="internship_select_box">
-                            <select name="duration" value={user.duration} onChange={getUserData}>
-                                <option value="">Select Duration*</option>
+                            <select className='select_duration' name="duration" value={user.duration} onChange={getUserData}>
                                 <option value="4 Weeks">4 Weeks</option>
                                 <option value="3 Months">3 Months</option>
                                 <option value="6 Months">6 Months</option>
@@ -150,10 +155,10 @@ function Internship() {
                             {errors.duration && <span className='error_fields'>This field is required</span>}
                         </div>
                     </div>
-                    <div className="form_button">
+                    </div>
+                <div className="form_button">
                         <button onClick={submitUserData}>Register Now</button>
                     </div>
-                </div>
             </form>
         </>
     );

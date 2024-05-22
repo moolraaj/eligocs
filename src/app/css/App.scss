@@ -3914,6 +3914,13 @@ h5.title_heading_c {
 }
 
 @media only screen and (max-width:1500px) {
+    
+     .job_form_flex_wrapper{
+        column-gap: 0 !important;
+     }
+     .form_fields_wrapper input{
+        width: 80% !important;
+     }
     .form_options {
         grid-template-columns: repeat(3, 1fr) !important;
     }
@@ -4464,6 +4471,9 @@ h5.title_heading_c {
 }
 
 @media (max-width:1024px) {
+    select.select_duration{
+        width: 90% !important;
+     }
     .testimonial_wrap {
         max-width: 70%;
         margin-bottom: 60px;
@@ -5029,7 +5039,7 @@ h5.title_heading_c {
     // form css 
 
     .cf7_form_outer {
-
+        padding: 32px 0px 30px 10px;
         .form_banner_heading h1 {
             font-size: 3.125em !important;
 
@@ -5631,7 +5641,7 @@ h5.title_heading_c {
 
 @media (min-width:1025px) and (max-width: 1440px) {
     .multistep_popup_form .cf7_form_outer{
-        top: 112px !important;
+        top: 120px !important;
     }
     .portfolio_top_left_section .portfolio_top_right_section h1 {
         margin: 0;
@@ -5668,8 +5678,9 @@ h5.title_heading_c {
 }
 
 @media (min-width:769px) and (max-width: 1024px) {
+     
     .multistep_popup_form .cf7_form_outer {
-        top: 18% !important;
+        top: 120px !important;
         left: 15% !important;
         height: 60vh !important;
         overflow-y: scroll !important;
@@ -5855,7 +5866,7 @@ h5.title_heading_c {
     }
 
     .form_fields_wrapper input {
-        width: 89% !important;
+        width: 85% !important;
         font-size: 1em;
     }
 
@@ -6500,7 +6511,7 @@ h5.title_heading_c {
 
     .multistep_popup_form {
         .cf7_form_outer {
-            top: 15% !important;
+            top: 100px !important;
             left: 7% !important;
             width: 75% !important;
             padding: 36px !important;
@@ -6561,7 +6572,7 @@ h5.title_heading_c {
         }
 
         .cf7_form_outer {
-            top: 15% !important;
+            top: 95px !important;
             width: 80% !important;
             left: 5% !important;
             padding: 20px !important;
@@ -7475,4 +7486,45 @@ input.nexted_inputs:checked {
     grid-template-columns: repeat(5, 1fr);
     row-gap: 20px;
     column-gap: 20px;
+}
+
+
+
+// internship form css.............
+.form_fields_wrapper_radio_select {
+    width: 100%;
+    .stream_label{
+        color: $placeholder-color;
+        font-size: 28px;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+    display: flex;
+    flex-direction: column;
+    margin-top: 26px;
+    .internship_select_box {
+        width: 95%;
+    }
+    .form_fields_wrapper{
+        display: flex;
+        flex-direction: row;
+        column-gap: 17px;
+        flex-wrap: wrap;
+        padding: 20px 0px 10px 0px;
+        width: 90%;
+        .internship_radio {
+            display: flex;
+            flex-direction: row-reverse;
+            font-size: 1.25em;
+        }
+        select.select_duration {
+            width: 100%;
+            padding: 18px;
+            border-radius: 14px;
+            border: 1px solid $primaryyellow;
+        }
+        select.select_duration:focus-visible{
+            border-color: $black;
+        }
+    }
 }
