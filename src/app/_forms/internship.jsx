@@ -10,6 +10,7 @@ function Internship() {
         emailAddress: '',
         collegeUniversity: '',
         stream: '',
+        streamotheroption: '',
         duration: '',
     });
 
@@ -19,6 +20,7 @@ function Internship() {
         emailAddress: false,
         collegeUniversity: false,
         stream: false,
+        streamotheroption: false,
         duration: false,
     });
 
@@ -48,6 +50,7 @@ function Internship() {
         formData.append('email-address', user.emailAddress);
         formData.append('college-university', user.collegeUniversity);
         formData.append('stream', user.stream);
+        formData.append('streamotheroption', user.streamotheroption);
         formData.append('duration', user.duration);
 
         let formValid = true;
@@ -79,6 +82,7 @@ function Internship() {
                     emailAddress: '',
                     collegeUniversity: '',
                     stream: '',
+                    streamotheroption: '',
                     duration: '',
                 });
             } catch (error) {
@@ -107,13 +111,7 @@ function Internship() {
                         <input type="text" name="collegeUniversity" placeholder='College/University*' value={user.collegeUniversity} onChange={getUserData} />
                         {errors.collegeUniversity && <span className='error_fields'>Field is required</span>}
                     </div>
-                    
-                    
-                </div>
-                <div className="form_fields_wrapper_radio_select">
-                    <label htmlFor="stream" className='stream_label'>Stream</label>
                     <div className="form_fields_wrapper">
-                      
                         <div className="internship_radio">
                             <label htmlFor="BSc">BSc</label>
                             <input type="radio" name="stream" value='BSc' checked={user.stream === 'BSc'} onChange={getUserData} />
@@ -142,11 +140,19 @@ function Internship() {
                             <label htmlFor="Others">Others</label>
                             <input type="radio" name="stream" value='Others' checked={user.stream === 'Others'} onChange={getUserData} />
                         </div>
+                        
                         {errors.stream && <span className='error_fields'>This field is required</span>}
                     </div>
+                    {user.stream === 'Others' && (
+                        <div className="form_fields_wrapper">
+                            <input type="text" name="streamotheroption" placeholder='Other' value={user.streamotheroption} onChange={getUserData} />                  
+                            {errors.streamotheroption && <span className='error_fields'>This field is required</span>}
+                        </div>
+                    )}
                     <div className="form_fields_wrapper">
                         <div className="internship_select_box">
-                            <select className='select_duration' name="duration" value={user.duration} onChange={getUserData}>
+                            <select name="duration" value={user.duration} onChange={getUserData}>
+                                <option value="">Select Duration*</option>
                                 <option value="4 Weeks">4 Weeks</option>
                                 <option value="3 Months">3 Months</option>
                                 <option value="6 Months">6 Months</option>
@@ -155,10 +161,10 @@ function Internship() {
                             {errors.duration && <span className='error_fields'>This field is required</span>}
                         </div>
                     </div>
-                    </div>
-                <div className="form_button">
+                    <div className="form_button">
                         <button onClick={submitUserData}>Register Now</button>
                     </div>
+                </div>
             </form>
         </>
     );
