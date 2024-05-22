@@ -6480,6 +6480,7 @@ h5.title_heading_c {
         }
         .cf7_form_outer{
             top: 15% !important;
+            width: 80% !important;
         left: 5% !important;
         padding: 20px !important;
         height: 65vh !important;
@@ -7174,7 +7175,9 @@ span.error_fields {
                 .nested_options {
                     padding-left: 20px;
                     margin-top: 10px;
-
+                    display: flex;
+                    flex-wrap: wrap;
+                    column-gap: 10px;
                     .nested_option {
                         margin-bottom: 10px;
 
@@ -7211,16 +7214,16 @@ span.error_fields {
     }
 
     .cf7_form_outer {
-        width: 80%;
-        height: 70vh;
+        width: 60%;
+        height: 60vh;
         position: fixed;
-        overflow-y: scroll !important;
+        overflow-y: auto !important;
         overflow-x: hidden !important;
         z-index: 9999;
         background: #fff;
         padding: 50px;
         top: 12%;
-        left: 8%;
+        left: 15% ;
         box-shadow: 1px 8px 17px 15px rgba(0, 0, 0, 0.1);
     }
 }
