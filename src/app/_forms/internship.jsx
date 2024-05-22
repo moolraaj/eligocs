@@ -155,6 +155,7 @@ function Internship() {
                             {errors.streamotheroption && <span className='error_fields'>This field is required</span>}
                         </div>
                     )}
+                    <div></div>
                     <div className="form_fields_wrapper">
                         <div className="internship_select_box">
                             <select className='select_duration' name="duration" value={user.duration} onChange={getUserData}>
