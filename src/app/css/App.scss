@@ -3483,7 +3483,7 @@ p .testimonial_wrap {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    margin: 20px auto;
+    margin: 70px auto 40px auto;
     border-width: 1px 0px 1px 0px;
     border-style: solid;
     border-color: rgba(159, 163, 173, .2);
@@ -3900,9 +3900,14 @@ h5.title_heading_c {
 
 
 
-
+@media only screen and (max-width:1630px) {
+    .blog_img_heading_wrapper h2{
+        display: none;
+    }
+}
 
 @media only screen and (max-width:1500px) {
+   
     .nav_flex {
 
         padding: 0px 15px;
@@ -4165,7 +4170,9 @@ h5.title_heading_c {
         }
     }
 
-    
+    .filter_blog_posts{
+        margin: 35px auto 30px auto;
+    }
     .portfolio_top_right_section p p {
         font-size: 1em !important;
     }
