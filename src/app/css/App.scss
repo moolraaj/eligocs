@@ -5630,19 +5630,40 @@ h5.title_heading_c {
 }
 
 @media (min-width:1025px) and (max-width: 1440px) {
+    .multistep_popup_form .cf7_form_outer{
+        top: 112px !important;
+    }
     .portfolio_top_left_section .portfolio_top_right_section h1 {
         margin: 0;
         font-size: 5em !important;
     }
-
+    
+    .our_products_wrapper {
+        column-gap: 50px !important;
+        .our_product span.wrap_nmae_btn{
+            padding: 0 !important;
+        }
+    }
+    .our_products_wrapper > ul.our_product.even li:first-child,
+    .our_products_wrapper > ul.our_product.odd li:first-child{
+        max-width: 500px !important;
+        width: 100% !important;
+    }
+    
     .our_products_wrapper>ul.our_product.odd li:nth-child(2) img,
     .our_products_wrapper>ul.our_product.even li:nth-child(2) img {
-        max-width: 390px;
+        max-width: 500px;
+        width: 100%;
+        height: 300px;
     }
 
     .our_products_wrapper .our_product li:nth-child(1) {
-        max-width: 400px;
+        max-width: 550px;
         width: 100%;
+        height: 410px;
+        h1{
+            font-size: 2.938em !important;
+        }
     }
 }
 
