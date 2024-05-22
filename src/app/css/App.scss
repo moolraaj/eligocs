@@ -5685,7 +5685,7 @@ h5.title_heading_c {
 }
 
 @media (min-width:769px) and (max-width: 999px) {
-    
+
     .form_options {
         grid-template-columns: repeat(2, 1fr) !important;
     }
@@ -7293,6 +7293,20 @@ span.error_fields {
         left: 15%;
         box-shadow: 1px 8px 17px 15px rgba(0, 0, 0, 0.1);
     }
+
+    .cf7_form_outer::-webkit-scrollbar {
+        width: 12px;
+        background-color: $white;
+    }
+
+    .cf7_form_outer::-webkit-scrollbar-thumb {
+        background-color: $primaryyellow;
+        border-radius: 10px;
+    }
+
+
+
+
 }
 
 .form_option {
