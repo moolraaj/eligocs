@@ -1,10 +1,9 @@
-
 import { allExportedApi } from "@/utils/apis/Apis";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import formClose from '../assets/headerAssets/formclose.png'
 
-export default function MultistepForm({onHideForm }) {
+export default function MultistepForm({ onHideForm, onCompleteForm }) {
     const [formData, setFormData] = useState(null);
     const [selectedOptions, setSelectedOptions] = useState({});
     const [selectedRedirection, setSelectedRedirection] = useState(null);
@@ -23,9 +22,8 @@ export default function MultistepForm({onHideForm }) {
         setSelectedOptions((prev) => ({
             ...prev,
             [index]: optIndex,
-            
         }));
-        
+
         if (redirectionLink) {
             setSelectedRedirection(redirectionLink);
         } else if (redirectOption) {
@@ -44,14 +42,14 @@ export default function MultistepForm({onHideForm }) {
             <div className="multistep_form_inner">
                 <div className="form_heading_section">
                     <div className="form_heading_close_btn">
-                    <h2>{formData.form_heading_one}</h2>
-                    <div className="cf7_right_section">
-                  <div className="close_button">
-                    <button onClick={onHideForm} className="close_button">
-                      <img src={formClose.src} alt="" />
-                    </button>
-                  </div>
-                </div>
+                        <h2>{formData.form_heading_one}</h2>
+                        <div className="cf7_right_section">
+                            <div className="close_button">
+                                <button onClick={onHideForm} className="close_button">
+                                    <img src={formClose.src} alt="" />
+                                </button>
+                            </div>
+                        </div>
                     </div>
                     <h3>{formData.form_heading_two}</h3>
                     <p>{formData.form_heading_three}</p>
@@ -99,7 +97,7 @@ export default function MultistepForm({onHideForm }) {
                             </div>
                             <div className="form_redirection_btn">
                                 {selectedOptions[index] !== undefined && selectedRedirection && (
-                                    <Link href={selectedRedirection} onClick={onHideForm}>Next</Link>
+                                    <Link href={selectedRedirection} onClick={onCompleteForm}>Next</Link>
                                 )}
                             </div>
                         </div>

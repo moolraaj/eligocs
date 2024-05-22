@@ -108,8 +108,9 @@ $font: font-family;
 
 
 .not_found_inner {
-   @extend %max-width;
+    @extend %max-width;
 }
+
 .not_found_outer {
     padding: 120px 20px 50px 20px;
 }
@@ -4158,7 +4159,13 @@ h5.title_heading_c {
 }
 
 @media screen and (max-width: 768px) {
+    .multistep_popup_form {
+        .close_button{
+            left: 0 !important;
+        }
+    }
 
+    
     .portfolio_top_right_section p p {
         font-size: 1em !important;
     }
@@ -5377,6 +5384,7 @@ h5.title_heading_c {
 }
 
 @media (max-width:767px) {
+   
     .internship_points_inner {
         h1 {
             font-size: 1.563em !important;
@@ -5614,6 +5622,12 @@ h5.title_heading_c {
 }
 
 @media (min-width:769px) and (max-width: 1024px) {
+    .multistep_popup_form .cf7_form_outer {
+        top: 18% !important;
+        left: 5% !important;
+        height: 60vh !important;
+        overflow-y: scroll !important;
+    }
 
     .our_products_wrapper .our_product img,
     .our_products_wrapper {
@@ -5684,6 +5698,7 @@ h5.title_heading_c {
 
 
 @media (max-width:768px) {
+
     .products_inner_description p p {
         font-size: 1em;
     }
@@ -6428,7 +6443,74 @@ h5.title_heading_c {
 
 }
 
+@media (min-width:469px) and (max-width:768px) {
+   
+    .multistep_popup_form {
+        .cf7_form_outer {
+            top: 15% !important;
+            left: 7% !important;
+            width: 75% !important;
+            padding: 36px !important;
+            height: 60vh !important;
+        }
+        .form_heading_section{
+            .form_heading_close_btn {
+                h2 {
+                    font-size: 2.5em !important;
+                }
+                button.close_button img {
+                    width: 55px !important;
+                }
+            } 
+            h3 {
+                font-size: 1.125em !important;
+            }
+            p{
+                font-size: 1.125em !important;
+            }
+        }
+    }
+
+}
+
 @media (max-width:468px) {
+    .multistep_popup_form {
+        .form_redirection_btn a {
+            padding: 5px 25px !important;
+        }
+        .cf7_form_outer{
+            top: 15% !important;
+        left: 5% !important;
+        padding: 20px !important;
+        height: 65vh !important;
+        }
+        .form_heading_section{
+
+            h3 {
+                font-size: 1.125em !important;
+            }
+            p{
+                font-size: 1em !important;
+            }
+            .form_heading_close_btn {
+                h2 {
+                    font-size: 2em !important;
+                }
+                button.close_button img {
+                    width: 40px !important;
+                }
+            }
+            
+        }
+        .form_question_block {
+            h4 {
+                font-size: 1.125em !important;
+            }
+            .form_options{
+                font-size: 1em !important;
+            }
+        }
+    }
     .internship_points_inner ul li p li::before {
         width: 8px !important;
         height: 8px !important;
@@ -7057,9 +7139,11 @@ span.error_fields {
             font-size: 1.563em;
             color: $primaryyellow;
         }
-        p{
+
+        p {
             font-size: 1.375em;
         }
+
         .form_heading_close_btn {
             h2 {
                 font-size: 4.375em;
@@ -7075,31 +7159,37 @@ span.error_fields {
             }
         }
     }
-    .form_questions_section{
-        .form_question_block{
-            h4{
+
+    .form_questions_section {
+        .form_question_block {
+            h4 {
                 font-size: 1.563em;
             }
-            .form_options{
+
+            .form_options {
                 font-size: 1.25em;
             }
+
             .form_option {
                 .nested_options {
                     padding-left: 20px;
                     margin-top: 10px;
-                    .nested_option{
+
+                    .nested_option {
                         margin-bottom: 10px;
-                       
+
                     }
                 }
+
                 margin-bottom: 12px;
-                
-                label{
+
+                label {
                     display: flex;
                     align-items: center;
                     gap: 10px;
                     cursor: pointer;
-                    input[type="radio"]{
+
+                    input[type="radio"] {
                         border: 2px solid;
                     }
                 }
@@ -7109,6 +7199,7 @@ span.error_fields {
 
     .form_redirection_btn {
         margin-top: 40px;
+
         a {
             padding: 10px 30px;
             background: $black;
@@ -7123,7 +7214,8 @@ span.error_fields {
         width: 80%;
         height: 70vh;
         position: fixed;
-        overflow: auto;
+        overflow-y: scroll !important;
+        overflow-x: hidden !important;
         z-index: 9999;
         background: #fff;
         padding: 50px;
