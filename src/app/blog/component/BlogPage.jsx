@@ -100,11 +100,12 @@ function BlogPage() {
                 </div>
                 <div className="blog_page_heading_wrapper">
                   <h1>{data.acf.blog_page_heading}</h1>
-                </div>
-              </div>
-              <div className="blog-header-description">
+                  <div className="blog-header-description">
                 <p>{data.acf.blog_page_description}</p>
               </div>
+                </div>
+              </div>
+              
             </div>
           ))}
           <div className="filter_blog_posts">
