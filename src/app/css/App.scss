@@ -3914,6 +3914,10 @@ h5.title_heading_c {
 }
 
 @media only screen and (max-width:1500px) {
+    .form_fields_wrapper_radio_select .form_fields_wrapper select.select_duration,
+    .form_fields_wrapper_radio_select .radio_select_box{
+        width: 90% !important;
+    }
     
      .job_form_flex_wrapper{
         column-gap: 0 !important;
@@ -4181,6 +4185,10 @@ h5.title_heading_c {
 }
 
 @media screen and (max-width: 768px) {
+    .form_fields_wrapper_radio_select .form_fields_wrapper select.select_duration,
+    .form_fields_wrapper_radio_select .radio_select_box{
+        width: 80% !important;
+    }
     .multistep_popup_form {
         .close_button {
             left: 0 !important;
@@ -5640,6 +5648,7 @@ h5.title_heading_c {
 }
 
 @media (min-width:1025px) and (max-width: 1440px) {
+    
     .multistep_popup_form .cf7_form_outer{
         top: 120px !important;
     }
@@ -7514,7 +7523,7 @@ input.nexted_inputs:checked {
         column-gap: 17px;
         flex-wrap: wrap;
         padding: 20px 0px 10px 0px;
-        width: 90%;
+        width: 100%;
         .internship_radio {
             display: flex;
             flex-direction: row-reverse;

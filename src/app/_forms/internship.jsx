@@ -117,7 +117,7 @@ function Internship() {
                 </div>
                 <div className="form_fields_wrapper_radio_select">
                     <label htmlFor="stream" className='stream_label'>Stream</label>
-                    <div className="form_fields_wrapper">
+                    <div className="form_fields_wrapper radio_select_box">
                       
                         <div className="internship_radio">
                             <label htmlFor="BSc">BSc</label>
