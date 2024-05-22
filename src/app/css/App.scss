@@ -7098,6 +7098,7 @@ span.error_fields {
                     display: flex;
                     align-items: center;
                     gap: 10px;
+                    cursor: pointer;
                     input[type="radio"]{
                         border: 2px solid;
                     }

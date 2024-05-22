@@ -186,7 +186,7 @@ export default function Portfolioslug({ slug }) {
                         <div className="portfolio_project">
                             <div className="portfolio_projects_flex">
                                 <div className="portfolio_project_heading">
-                                    <h1>{ele.acf.portfolio_projects_heading}</h1>
+                                    <h1>{ele.acf.portfolio_title}</h1>
                                     <Link className='back-to-projects' href={`/portfolio`} style={{opacity: backButtonOpacity,position: 'absolute',padding:'15px 20px',background: '#EAAA00',borderRadius: "20px",display: 'inline-flex',alignItems: 'center',justifyContent: 'center',zIndex: 99999 }}>Back To All Project</Link>
                                 </div>
 
@@ -212,7 +212,7 @@ export default function Portfolioslug({ slug }) {
                                                         <div className="portfolio_flex">
                                                             <div className="portfolio_inner_left_section">
                                                                 <div className="portfolio_title">
-                                                                    <h4>{ele.acf.portfolio_heading}</h4>
+                                                                    <h4>{ele.acf.portfolio_title}</h4>
                                                                     
                                                                 </div>
                                                                 <div className="portfolio_short_description">
