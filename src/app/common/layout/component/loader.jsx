@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import { Hourglass } from 'react-loader-spinner'
+ 
 
 function Loader() {
   return (
@@ -15,6 +16,7 @@ function Loader() {
         wrapperClass=""
         colors={['#191C1B', 'blue']}
       />
+  
     </div>
 
 

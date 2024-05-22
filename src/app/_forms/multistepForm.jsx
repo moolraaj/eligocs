@@ -1,12 +1,13 @@
 import { allExportedApi } from "@/utils/apis/Apis";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import formClose from '../assets/headerAssets/formclose.png'
+import formClose from '../assets/headerAssets/formclose.png';
 
 export default function MultistepForm({ onHideForm, onCompleteForm }) {
     const [formData, setFormData] = useState(null);
     const [selectedOptions, setSelectedOptions] = useState({});
     const [selectedRedirection, setSelectedRedirection] = useState(null);
+    const [selectedLabels, setSelectedLabels] = useState({}); // New state for storing selected labels
     const api = allExportedApi();
 
     useEffect(() => {
@@ -18,10 +19,15 @@ export default function MultistepForm({ onHideForm, onCompleteForm }) {
         fetchData();
     }, []);
 
-    const handleOptionClick = (index, optIndex, redirectionLink, redirectOption) => {
+    const handleOptionClick = (index, optIndex, redirectionLink, redirectOption, label) => {
         setSelectedOptions((prev) => ({
             ...prev,
             [index]: optIndex,
+        }));
+
+        setSelectedLabels((prev) => ({
+            ...prev,
+            [index]: label,
         }));
 
         if (redirectionLink) {
@@ -58,50 +64,63 @@ export default function MultistepForm({ onHideForm, onCompleteForm }) {
                     {formData.form_questions_outer.map((question, index) => (
                         <div key={index} className="form_question_block">
                             <h4>{question.form_question}</h4>
+                            
                             <div className="form_options">
                                 {question.options_for_question.map((option, optIndex) => (
                                     <div key={optIndex} className="form_option">
-                                        <label>
-                                            <input
-                                                type="radio"
-                                                name={`question-${index}`}
-                                                onClick={() =>
-                                                    handleOptionClick(
-                                                        index,
-                                                        optIndex,
-                                                        option.nested_options ? null : option.nested_option_redirection,
-                                                        option.redirect_main_option
-                                                    )
-                                                }
-                                            />
-                                            {option.choose_one_options_for_question}
-                                        </label>
-                                        {selectedOptions[index] === optIndex && option.nested_options && (
-                                            <div className="nested_options">
-                                                {option.nested_options.map((nestedOption, nestedIndex) => (
-                                                    <div key={nestedIndex} className="nested_option">
-                                                        <label>
-                                                            <input
-                                                                type="radio"
-                                                                name={`nested-question-${index}-${optIndex}`}
-                                                                onClick={() => setSelectedRedirection(nestedOption.nested_option_redirection)}
-                                                            />
-                                                            {nestedOption.nested_options_tittle}
-                                                        </label>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        )}
+                                        <input
+                                            className="popup_radioboxes"
+                                            type="radio"
+                                            name={`question-${index}`}
+                                            onClick={() =>
+                                                handleOptionClick(
+                                                    index,
+                                                    optIndex,
+                                                    option.nested_options ? null : option.nested_option_redirection,
+                                                    option.redirect_main_option,
+                                                    option.choose_one_options_for_question // Pass the label to handleOptionClick
+                                                )
+                                            }
+                                        />
+                                        <label>{option.choose_one_options_for_question}</label>
                                     </div>
                                 ))}
                             </div>
-                            <div className="form_redirection_btn">
-                                {selectedOptions[index] !== undefined && selectedRedirection && (
-                                    <Link href={selectedRedirection} onClick={onCompleteForm}>Next</Link>
-                                )}
-                            </div>
                         </div>
                     ))}
+                </div>
+
+                <div className="nested_options_section">
+                    {formData.form_questions_outer.map((question, index) => (
+                        selectedOptions[index] !== undefined &&
+                        question.options_for_question[selectedOptions[index]].nested_options && (
+                            <div key={`nested-${index}`} className="nested_options_block">
+                                <h4>{selectedLabels[index]}</h4>
+                                <div className="nested_options">
+                                    {question.options_for_question[selectedOptions[index]].nested_options.map((nestedOption, nestedIndex) => (
+                                        <div key={nestedIndex} className="nested_option">
+                                             <input
+                                                className="nexted_inputs"
+                                                    type="radio"
+                                                    name={`nested-question-${index}-${selectedOptions[index]}`}
+                                                    onClick={() => setSelectedRedirection(nestedOption.nested_option_redirection)}
+                                                />
+                                            <label>  {nestedOption.nested_options_tittle}
+                                            </label>
+                                               
+                                              
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )
+                    ))}
+                </div>
+
+                <div className="form_redirection_btn">
+                    {Object.keys(selectedOptions).some(index => selectedOptions[index] !== undefined && selectedRedirection) && (
+                        <Link href={selectedRedirection} onClick={onCompleteForm}>Next</Link>
+                    )}
                 </div>
             </div>
         </div>
