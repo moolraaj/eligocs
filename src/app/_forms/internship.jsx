@@ -10,6 +10,7 @@ function Internship() {
         emailAddress: '',
         collegeUniversity: '',
         stream: '',
+        streamotheroption: '',
         duration: '',
     });
 
@@ -19,6 +20,7 @@ function Internship() {
         emailAddress: false,
         collegeUniversity: false,
         stream: false,
+        streamotheroption: false,
         duration: false,
     });
 
@@ -42,12 +44,13 @@ function Internship() {
         e.preventDefault();
         let formData = new FormData();
 
-        formData.append('_wpcf7_unit_tag', 1376);
+        formData.append('_wpcf7_unit_tag',1376);
         formData.append('student-name', user.studentName);
         formData.append('mobile-number', user.mobileNumber);
         formData.append('email-address', user.emailAddress);
         formData.append('college-university', user.collegeUniversity);
         formData.append('stream', user.stream);
+        formData.append('streamotheroption', user.streamotheroption);
         formData.append('duration', user.duration);
 
         let formValid = true;
@@ -79,6 +82,7 @@ function Internship() {
                     emailAddress: '',
                     collegeUniversity: '',
                     stream: '',
+                    streamotheroption: '',
                     duration: '',
                 });
             } catch (error) {
@@ -86,6 +90,7 @@ function Internship() {
             }
         }
     };
+
 
     return (
         <>
@@ -144,6 +149,12 @@ function Internship() {
                         </div>
                         {errors.stream && <span className='error_fields'>This field is required</span>}
                     </div>
+                    {user.stream === 'Others' && (
+                        <div className="form_fields_wrapper">
+                            <input type="text" name="streamotheroption" placeholder='Other' value={user.streamotheroption} onChange={getUserData} />                  
+                            {errors.streamotheroption && <span className='error_fields'>This field is required</span>}
+                        </div>
+                    )}
                     <div className="form_fields_wrapper">
                         <div className="internship_select_box">
                             <select className='select_duration' name="duration" value={user.duration} onChange={getUserData}>
