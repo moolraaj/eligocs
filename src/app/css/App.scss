@@ -234,7 +234,7 @@ span.input-error {
 }
 
 .call_wrapper {
-    @include grid-property(grid, 70% 1fr, unset, 20px);
+    @include grid-property(grid, 70% 1fr, unset);
 }
 
 .call_slider_image img {
@@ -359,7 +359,7 @@ a {
 }
 
 .home_about_wrapper {
-    @include grid-property(grid, 26% 1fr, flex-start unset, unset)
+    @include grid-property(grid,  30% 70%, unset, 20px)
 }
 
 
@@ -535,10 +535,15 @@ form#jobform textarea {
     }
 }
 
-.portfolio_posts_wrapper h1 {
-    font-size: 4em;
-    padding-left: 40px;
-    padding-left: 20px;
+.portfolio_posts_wrapper {
+    p p{
+        font-size: 1.563em;
+        padding-left: 20px;
+    }
+    h1 {
+        font-size: 4em;
+        padding-left: 20px;
+    }
 }
 
 .protfolio_items {
@@ -1651,11 +1656,14 @@ h1.type_text_wrapper span {
     height: 300px;
     object-fit: cover;
 }
-
+.our_team_description p p {
+    font-size: 1.563em;
+}
 
 .right_banner_heading h1 {
-    font-size: 5em;
+    font-size: 6em;
     width: 90%;
+    margin-top: 0;
 }
 
 .right_banner_heading {
@@ -1755,8 +1763,7 @@ h1.innovation-heading {
 .course-page-top-section h1 {
     font-size: 5em;
     color: #eaaa00;
-    margin-bottom: 10px;
-
+    margin: 0;
 }
 
 .course-page-top-section img {
@@ -2281,7 +2288,7 @@ ul.transformation_wrapper li h4 {
 
 .home_section_outer {
     @extend %section_top_bottom_padding;
-    padding: 160px 0px 60px !important;
+    padding: 120px 0px 60px !important;
 }
 
 
@@ -2486,8 +2493,7 @@ menu.footer_ul li a {
 
 .service_top_heading_first h1 {
     @include font_color-y;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin: 0;
 }
 
 .all_services_outer {
@@ -6481,6 +6487,9 @@ h5.title_heading_c {
 }
 
 @media (max-width:468px) {
+    .our_team_description p p{
+        font-size: 1.125em !important;
+    }
     .multistep_popup_form {
         .form_redirection_btn a {
             padding: 5px 25px !important;

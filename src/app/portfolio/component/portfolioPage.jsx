@@ -69,8 +69,11 @@ function PortfolioPage() {
                 </div>
               </div>
             </div>
-
+           
             <div className="portfolio_posts_wrapper">
+            <div className="portfolio_page_description">
+              <p dangerouslySetInnerHTML={{__html: ele.acf.portfolio_page_description}}></p>
+            </div>
               <h1>Our Projects</h1>
               <div className="portfolio_showcase_wrapper">
                 {portfolioReversed.map((e) => (
