@@ -6,7 +6,7 @@ import Link from "next/link";
 
 
 
-function ServiceSlug({ data, services }) {
+function ServicesInnerSlug({ data, services }) {
 
    return (
       <>
@@ -99,4 +99,4 @@ function ServiceSlug({ data, services }) {
    );
 }
 
-export default ServiceSlug;
+export default ServicesInnerSlug;

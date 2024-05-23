@@ -48,6 +48,7 @@ export default function ServicesPage() {
         <>
             {
                 data.map((ele) => {
+                    
                     return <div className="service_main_div" key={ele.id}>
                         <div className="service_page_wrapper">
 
@@ -85,7 +86,7 @@ export default function ServicesPage() {
                                 <div className="all_services_right_section">
                                     {
                                         allServices.map((e) => {
-                                            
+
                                             return <div className="services_flex_wrapper" key={e.id}>
 
                                                 <div className="all_services_outer">
