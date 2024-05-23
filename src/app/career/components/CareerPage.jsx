@@ -6,7 +6,7 @@ function CareerPage({data}) {
   return (
    <>
    <div className="page_top">
-    <div className="career_page_outer">
+    <div id="career_section" className="career_page_outer">
         <div className="career_page_inner">
             {data.map((ele,index)=>{
                 return  <div key={index} className="product-page-top-section">
@@ -31,13 +31,17 @@ function CareerPage({data}) {
                 </div>
                 <div className="current_opening_section_wrapper">
                     <h2>{ele.acf.current_openings_points_heading}</h2>
+                    <div className='covering_both'>
                     <div className="current_opening_left">
                         <p dangerouslySetInnerHTML={{__html: ele.acf.current_openings_points}}></p>
+
+                        <Link className='apply_now_career' href={`/career`} >{ele.acf.button_name}</Link>
                     </div>
                     <div className="current_opening_right">
                         <img src={ele.acf.current_openings_image} alt="current_openings_image" />
                     </div>
-                    <Link href={`/career`} >{ele.acf.button_name}</Link>
+                    </div>
+                 
                 </div>
                 <div className="experience_section_wrapper">
                     <h2>{ele.acf.require_experience_skills_heading}</h2>
@@ -56,7 +60,7 @@ function CareerPage({data}) {
                     <div className="apply_left">
                         <p>{ele.acf.how_to_apply_description}</p>
                     </div>
-                    <Link href={`/career`} >{ele.acf.button_name}</Link>
+                    <Link className='apply_now_career' href={`/career`} >{ele.acf.button_name}</Link>
                 </div>
               </div>
             }) 
