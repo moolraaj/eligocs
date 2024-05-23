@@ -3721,6 +3721,7 @@ p:empty {
 
 .blog_descritpion p {
     font-size: 1.25em;
+    line-height: 34px;
 }
 
 .blog_post_header img {
@@ -3734,10 +3735,14 @@ p:empty {
 .blog_descritpion ol li {
     list-style-type: none;
     padding: 0px !important;
+    font-size: 1.25em;
 }
 
 .blog_descritpion ol {
     padding: 0px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
 }
 
 
@@ -3822,6 +3827,7 @@ p:empty {
             background-color: $primaryyellow;
             color: $white;
             font-size: 1.188em;
+            font-family: $Euclidfont;
         }
 
         button:hover {
@@ -6296,6 +6302,13 @@ h5.title_heading_c {
 
     .blog_descritpion ul {
         padding: 0;
+        display: flex;
+       flex-direction: column;
+       row-gap: 10px;
+    }
+    .blog_descritpion ul li {
+     
+       font-size: 1.25em;
     }
 
     .blog_descritpion strong {
