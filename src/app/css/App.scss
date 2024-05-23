@@ -7830,3 +7830,46 @@ input.nexted_inputs:checked {
     row-gap: 20px;
     column-gap: 20px;
 }
+
+
+// internship form css.............
+.form_fields_wrapper_radio_select {
+    width: 100%;
+    .stream_label{
+        color: $input-placeholder-color;
+        font-size: 28px;
+        font-family: 'Euclid Circular A';
+        text-transform: capitalize;
+    }
+    display: flex;
+    flex-direction: column;
+    margin-top: 26px;
+    .internship_select_box {
+        width: 50%;
+    }
+    .form_fields_wrapper{
+        display: flex;
+        flex-direction: row;
+        column-gap: 17px;
+        flex-wrap: wrap;
+        padding: 20px 0px 10px 0px;
+        width: 100%;
+        color: $input-placeholder-color;
+        .internship_radio {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: baseline;
+            font-size: 1.25em;
+            column-gap: 5px;
+        }
+        select.select_duration {
+            width: 100%;
+            padding: 18px;
+            border-radius: 14px;
+            border: 1px solid $primaryyellow;
+        }
+        select.select_duration:focus-visible{
+            border-color: $black;
+        }
+    }
+}
