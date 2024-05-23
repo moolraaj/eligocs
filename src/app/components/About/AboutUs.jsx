@@ -28,6 +28,7 @@ const AboutUs = () => {
     let data = await api.AboutApi();
     setResult(data)
   }
+  
   useEffect(()=>{
     loadAboutPage()
   },[])
@@ -45,14 +46,12 @@ const AboutUs = () => {
               <div className="contents">
                 <div className="img-slider-container">
                   <div className="slider-inner">
-                    <marquee
-                      behavior="scroll"
-                      direction="left"
-                      scrollamount="11">
+                  <div className="marquee-container">
+      <div className="marquee">
                       {ele.acf.about_top_slider.map((slider, index) => (
                         <span key={index} style={{ display: "inline-block" }}>
                           <div className="slider">
-                            <div style={{ display: "flex" }}>
+                            <div style={{ display: "flex", }}>
                               <img
                                 src={slider.top_slider_image_first.url}
                                 alt={`img${index + 1}`}
@@ -81,7 +80,8 @@ const AboutUs = () => {
                           </div>
                         </span>
                       ))}
-                    </marquee>
+                    </div>
+                    </div>
 
                     <div className="about-top-content">
                       <h1 className="uderline-text">

@@ -110,6 +110,43 @@ button {
   }
 }
 
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.marquee {
+  display: flex;
+  width: max-content; /* Ensure the container width fits content */
+  animation: marquee 10s linear infinite;
+}
+
+.slider {
+  display: flex;
+  margin-right: 20px; /* Adjust the margin as needed */
+}
+
+.images-outer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 10px; /* Adjust spacing between images */
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+
+
 // About top content
 .about-top-content {
   position: absolute;

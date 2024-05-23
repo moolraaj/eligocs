@@ -162,7 +162,7 @@ function Internship() {
                                 <option value="4 Weeks">4 Weeks</option>
                                 <option value="3 Months">3 Months</option>
                                 <option value="6 Months">6 Months</option>
-                                <option value="1 Year">1 Year</option>
+                                <option value="1 Year">12 Months</option>
                             </select>
                             {errors.duration && <span className='error_fields'>This field is required</span>}
                         </div>

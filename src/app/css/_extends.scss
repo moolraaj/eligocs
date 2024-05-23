@@ -47,7 +47,9 @@
     padding: 26px 0px;
     border: unset;
     border-bottom: 1px solid $primaryyellow;
-    font-size: 28px; 
+    font-size: 28px;
+    text-transform: capitalize;
+    color: $input-placeholder-color;
 }
 %cf7_form_button{
     padding: 15px 30px;
@@ -61,7 +63,7 @@
 %cf7_form_placeholder{
     font-size: 28px;
     text-transform: capitalize;
-    color: $placeholder-color;
+    color: $input-placeholder-color;
 }
 
 

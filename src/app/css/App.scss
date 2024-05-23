@@ -169,7 +169,7 @@ $font: font-family;
 }
 
 .form_fields_wrapper input::placeholder {
-    color: $placeholder-color !important;
+    color: $input-placeholder-color !important;
 }
 
 .course_call_to_action {
@@ -320,6 +320,8 @@ a {
     font-size: 2em;
     margin: 0px;
     line-height: 60px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
 }
 
 .home_about_left h1 {
@@ -388,7 +390,7 @@ ul.transformation_wrapper li:nth-child(1) {
 .custom-file-upload::before {
     content: "Upload a resume";
     background: #fff;
-    color: $placeholder-color;
+    color: $input-placeholder-color;
     border: none;
     outline: none;
     white-space: nowrap;
@@ -663,6 +665,7 @@ button:disabled {
         padding: 20px;
         @include flex-property(flex, space-between, center);
         flex-wrap: nowrap;
+        text-transform: capitalize;
     }
 }
 
@@ -2822,6 +2825,7 @@ span.vison_c {
     color: $primaryyellow;
     font-size: 30px;
     text-transform: capitalize;
+    font-family: 'Euclid Circular A' ;
 }
 
 .testimonial_asking p {
@@ -2954,7 +2958,6 @@ h1.innovation-heading {
     align-items: center;
     justify-content: center;
     margin-bottom: 50px;
-    margin-top: 40px;
 }
 
 .footer_inner {
@@ -4185,8 +4188,10 @@ h5.title_heading_c {
 }
 
 @media screen and (max-width: 768px) {
-    .form_fields_wrapper_radio_select .form_fields_wrapper select.select_duration,
     .form_fields_wrapper_radio_select .radio_select_box{
+        width: 80% !important;
+    }
+    .internship_select_box{
         width: 80% !important;
     }
     .multistep_popup_form {
@@ -5648,6 +5653,13 @@ h5.title_heading_c {
 }
 
 @media (min-width:1025px) and (max-width: 1440px) {
+    .portfolio_left_section {
+        width: 100% !important;
+        margin-left: 0px !important;
+        h1{
+            margin: 0;
+        }
+    }
     
     .multistep_popup_form .cf7_form_outer{
         top: 120px !important;
@@ -6265,6 +6277,7 @@ h5.title_heading_c {
         color: #fff;
         font-size: 1.125em;
         line-height: 38px;
+      
     }
 
     .trans_redirecttion {
@@ -7506,16 +7519,16 @@ input.nexted_inputs:checked {
 .form_fields_wrapper_radio_select {
     width: 100%;
     .stream_label{
-        color: $placeholder-color;
+        color: $input-placeholder-color;
         font-size: 28px;
-        font-weight: 500;
+        font-family: 'Euclid Circular A';
         text-transform: capitalize;
     }
     display: flex;
     flex-direction: column;
     margin-top: 26px;
     .internship_select_box {
-        width: 100%;
+        width: 50%;
     }
     .form_fields_wrapper{
         display: flex;
@@ -7524,6 +7537,7 @@ input.nexted_inputs:checked {
         flex-wrap: wrap;
         padding: 20px 0px 10px 0px;
         width: 100%;
+        color: $input-placeholder-color;
         .internship_radio {
             display: flex;
             flex-direction: row-reverse;
@@ -7542,3 +7556,5 @@ input.nexted_inputs:checked {
         }
     }
 }
+
+
