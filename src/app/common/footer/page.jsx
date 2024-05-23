@@ -90,15 +90,19 @@ function Footer({ response }) {
               </div>
               <div className='center-section-fourth-inner-wrapper'>
                 <h1 className='footer-top-headings'>Contacts</h1>
-                <div className="footer_wrapper">
                   <menu className="footer_ul">
 
                   <li><a className='footer_mail' href={`mailto:${footerEmail}`}>{footerEmail}</a></li>
-                  <li><a href={`tel:${footerPhoneNumberFirst}`}>{footerPhoneNumberFirst}</a></li>
-                  <li><a href={`tel:${footerPhoneNumberSecond}`}>{footerPhoneNumberSecond}</a></li>
-                  </menu>
-                 
+                  <div className="footer_contact_one">
+                  <li>For General Queries:  </li>
+                  <li><a href={`tel:${footerPhoneNumberFirst}`}>+91 {footerPhoneNumberFirst}</a></li>
+                  </div>
+                <div className="footer_contact_second">
+                <li>For Human Resources:  </li>
+                  <li><a href={`tel:${footerPhoneNumberSecond}`}>+91 {footerPhoneNumberSecond}</a></li>
                 </div>
+                  </menu>
+                
                 <div className="footer_social_links">
                   {
                     socialLinks.map((ele, index) => {

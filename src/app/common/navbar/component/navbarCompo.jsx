@@ -1,5 +1,5 @@
 'use client'
-import React, {  useState } from 'react';
+import React, { useState } from 'react';
 import closeMenuIcon from '../../../assets/headerAssets/closeMenu.png'
 import FormLogo from '../../../assets/headerAssets/formsvggif.gif'
 import formClose from '../../../assets/headerAssets/formclose.png'
@@ -23,7 +23,7 @@ function NavbarCompo({ data }) {
 
 
   const { siteLogoUrl, siteTitle, headerMenuItems, socialLinks } = data.header
- 
+
 
 
 
@@ -64,12 +64,12 @@ function NavbarCompo({ data }) {
 
 
   const NavigationLink = ({ href, children }) => (
-     
-<Link href={href} className="nav-link" onClick={closeMenu}>
+
+    <Link href={href} className="nav-link" onClick={closeMenu}>
       {children}
     </Link>
-     
-    
+
+
   );
 
 
@@ -89,7 +89,7 @@ function NavbarCompo({ data }) {
 
                   <h1>hello</h1>
                 </div>
-                
+
                 <div className="form_slider_wrapper apply_for_job">
                   <div className="_form_paragraph">
                     <p>
@@ -175,7 +175,7 @@ function NavbarCompo({ data }) {
             </div>
 
             <div className="nav_right_section">
-              <Link href={`/our-internship`} id='go_to_internship_page'  aria-label="internship_page">Skill Up Course</Link>
+              <Link href={`/our-internship`} id='go_to_internship_page' aria-label="internship_page">Skill Up Course</Link>
               <button onClick={toggleFormVisibility} aria-label="show form">
                 <img src={FormLogo.src} alt="formLogo" />
               </button>
@@ -213,20 +213,21 @@ function NavbarCompo({ data }) {
 
                     <NavigationLink href={'/'}>home</NavigationLink>
                     <div className="navbar_toggle_navigation">
-                    <NavigationLink href={'/about'}>about</NavigationLink>
-                    <div className="hide_seek_wrapper">
+                      <NavigationLink href={'/about'}>about us</NavigationLink>
+                      <div className="hide_seek_wrapper">
 
-                    <button   aria-label='toggle_navlinks'>
-                      <img src={arrow.src} alt="arrow" />
-                    </button>
-            
-                    
-                    <div className="hide_seek blogs" >
-                        <NavigationLink href={'/meet-our-team'}>our team</NavigationLink>
-                        <NavigationLink href={'/blog'}>blog</NavigationLink>
-                        <NavigationLink href={'/career'}>carrer</NavigationLink>
+                        <button aria-label='toggle_navlinks'>
+                          <img src={arrow.src} alt="arrow" />
+                        </button>
+
+
+                        <div className="hide_seek blogs" >
+                          <NavigationLink href={'/meet-our-team'}>our team</NavigationLink>
+                          <NavigationLink href={'/career'}>career</NavigationLink>
+                          <NavigationLink href={'/blog'}>blog</NavigationLink>
+
+                        </div>
                       </div>
-                    </div>
 
                     </div>
                     <NavigationLink href={'/services'}>services</NavigationLink>
@@ -234,9 +235,9 @@ function NavbarCompo({ data }) {
                     <NavigationLink href={'/portfolio'}>portfolio</NavigationLink>
                     <NavigationLink href={'/our-products'}>our products</NavigationLink>
                     <div className="our_internship_link">
-                    <NavigationLink  href={'/our-internship'} >our internship</NavigationLink>
+                      <NavigationLink href={'/our-internship'} >our internship</NavigationLink>
                     </div>
-                   
+
                     <div className='apply_now_navgation'>
                       <NavigationLink href={'/contact'}>contact us</NavigationLink>
                       <span className="form_button">
