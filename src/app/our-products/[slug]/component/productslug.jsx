@@ -98,8 +98,13 @@ const loadSimilarProjects=async()=>{
                     <span></span>
                   </div>
                   <div className="blog_page_heading_wrapper">
+                    <div className="inner_portfolio_tittle_Section">
                     <h1>{product.acf.product_name}</h1>
                     <p dangerouslySetInnerHTML={{__html: product.acf.product_inner_page_top_heading}}></p>
+                    </div>
+                   <div className="inner_portfolio_link_section">
+                   <Link href={product.acf.visit_product}>Visit</Link>
+                   </div>
                   </div>
                 </div>
                 <div className="course_intro_join_section">

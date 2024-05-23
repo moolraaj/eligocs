@@ -1,7 +1,9 @@
 import { allExportedApi } from "@/utils/apis/Apis.jsx";
-import Serviceslug from "./component/Serviceslug";
+ 
 import { ExportScoApiData } from "@/utils/apis/scoApi";
 import { LoadscoData } from "@/app/_metadata/metadata";
+import ServicesInnerSlug from "./component/ServiceSlug";
+ 
  
 
 
@@ -20,7 +22,7 @@ export default async function Page({ params }) {
 
     return (
         <>
-             <Serviceslug data={data} services={services} />
+             <ServicesInnerSlug  data={data} services={services} />
         </>
     );
 }
