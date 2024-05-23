@@ -117,7 +117,10 @@ $font: font-family;
 .not_found_outer {
     padding: 120px 20px 50px 20px;
 }
-
+.footer_contact_one li ,
+.footer_contact_second li{
+    margin-bottom: 7px;
+}
 .footer_ul {
     display: flex;
     flex-direction: column;
