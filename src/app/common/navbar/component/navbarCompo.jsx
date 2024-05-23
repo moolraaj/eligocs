@@ -223,8 +223,9 @@ function NavbarCompo({ data }) {
                     
                     <div className="hide_seek blogs" >
                         <NavigationLink href={'/meet-our-team'}>our team</NavigationLink>
+                        <NavigationLink href={'/career'}>career</NavigationLink>
                         <NavigationLink href={'/blog'}>blog</NavigationLink>
-                        <NavigationLink href={'/career'}>carrer</NavigationLink>
+                        
                       </div>
                     </div>
 
