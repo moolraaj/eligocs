@@ -2,7 +2,10 @@
 @import "mixins";
 @import "extends";
 
-
+.loader img {
+    width: 100%;
+    max-width: 1050px;
+}
 
 @font-face {
     font-family: 'bebas';
@@ -3109,7 +3112,7 @@ h1.innovation-heading {
     align-items: center;
     justify-content: center;
     margin-bottom: 50px;
-    margin-top: 40px;
+
 }
 
 .footer_inner {
@@ -4645,6 +4648,7 @@ h5.title_heading_c {
         flex: 0 0 50% !important;
 
     }
+    
 }
 
 
@@ -6898,7 +6902,9 @@ h5.title_heading_c {
 }
 
 @media (max-width:468px) {
-    
+    .loader img {
+        width: 100%;
+    }
     .internship_radio{
         font-size: 1em !important;
     }

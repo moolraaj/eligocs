@@ -17,7 +17,7 @@ export default function Layout({ children }) {
                 const response = await api.fetchHeaderFooter();
                 const data = await response.data;
                 setData(data);
-                setIsLoading(false);
+                setIsLoading(true);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
