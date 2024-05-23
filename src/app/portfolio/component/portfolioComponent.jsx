@@ -31,26 +31,28 @@
 
  
 
-
-
 import { allExportedApi } from "@/utils/apis/Apis.jsx";
 import PortfolioChild from "./portfolioChild";
 import { useEffect, useState } from "react";
 
 export default function PortfolioComponent({ setFirstPortfolioSlug }) {
     const api = allExportedApi();
-    const [data, setData] = useState();
+    const [data, setData] = useState([]);
 
     const loadPortfolio = async () => {
-        let result = await api.fetchAllportFolio();
-        setData(result);
+        try {
+            const result = await api.fetchAllportFolio();
+            setData(result);
 
-        // Pass the first item's slug to the parent component
-        if (result.length > 0) {
-            setFirstPortfolioSlug(result[0].slug);
+            if (result.length > 0) {
+                // Reversing the setting of the first portfolio slug
+                setFirstPortfolioSlug(result[result.length - 1].slug);
+            }
+        } catch (error) {
+            // Handle errors here
         }
     }
-
+    
     useEffect(() => {
         loadPortfolio();
     }, []);

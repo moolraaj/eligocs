@@ -79,6 +79,7 @@ body {
 
     li {
         list-style: none;
+
     }
 
 }
@@ -1030,7 +1031,7 @@ form#contactus {
     text-transform: capitalize;
     border-radius: 26px;
     border: none;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 
@@ -1275,6 +1276,8 @@ form#applyforjob textarea {
         }
     }
 }
+
+ 
 
 /* Styles for odd indexed product lists */
 .our_products_wrapper>ul.our_product.odd {
@@ -1697,6 +1700,8 @@ h1.type_text_wrapper span {
     display: block;
     position: relative;
     height: 400px;
+    width: 100%;
+    height: 100%;
 }
 
 .call_outer {
@@ -2809,7 +2814,7 @@ span.vison_c {
 .qoute_para p {
     font-size: 2.1875em;
     line-height: 68px;
-    margin: 0px 0px 80px 0px;
+    margin: 0px 0px 60px 0px;
 }
 
 .home_quote_wrapper {
@@ -2823,7 +2828,7 @@ span.vison_c {
     border-radius: 30px;
     border: unset;
     color: $primaryyellow;
-    font-size: 30px;
+    font-size: 20px;
     text-transform: capitalize;
     font-family: 'Euclid Circular A' ;
 }
@@ -2958,6 +2963,7 @@ h1.innovation-heading {
     align-items: center;
     justify-content: center;
     margin-bottom: 50px;
+    margin-top: 0px;
 }
 
 .footer_inner {
@@ -3342,6 +3348,7 @@ p .testimonial_wrap {
         background-color: $primaryyellow;
         border-radius: 50px;
         width: auto;
+        font-size: 1.25em;
     }
 
     display: flex;
@@ -3553,6 +3560,9 @@ p .testimonial_wrap {
 
 .blog_descritpion ul {
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
 }
 
 .blog_descritpion img {
@@ -3571,6 +3581,7 @@ p:empty {
 
 .blog_descritpion p {
     font-size: 1.25em;
+    line-height: 34px;
 }
 
 .blog_post_header img {
@@ -3584,6 +3595,12 @@ p:empty {
 .blog_descritpion ol li {
     list-style-type: none;
     padding: 0px !important;
+    font-size: 1.25em;
+}
+.blog_descritpion ul li {
+    list-style-type: none;
+    padding: 0px !important;
+    font-size: 1.25em;
 }
 
 .blog_descritpion ol {
@@ -3672,6 +3689,7 @@ p:empty {
             background-color: $primaryyellow;
             color: $white;
             font-size: 1.188em;
+            font-family:$Euclidfont;
         }
 
         button:hover {
@@ -7121,6 +7139,7 @@ textarea::placeholder {
     width: 100%;
     height: 8vh;
     border: unset;
+    color: $primaryblack;
     @extend %cf7_form_placeholder;
 
 }

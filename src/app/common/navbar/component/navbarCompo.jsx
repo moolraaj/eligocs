@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useRef, useState } from 'react';
+import React, {  useState } from 'react';
 import closeMenuIcon from '../../../assets/headerAssets/closeMenu.png'
 import FormLogo from '../../../assets/headerAssets/formsvggif.gif'
 import formClose from '../../../assets/headerAssets/formclose.png'

@@ -69,11 +69,11 @@
 // export default PortfolioSection;
 
 
-
 'use client'
 import React, { useRef, useState } from 'react';
 import PortfolioComponent from '@/app/portfolio/component/portfolioComponent';
 import Link from 'next/link';
+import nextClick from '../../../assets/headerAssets/arrow.png'
 
 function PortfolioSection() {
     const itemRef = useRef(null);
@@ -94,7 +94,7 @@ function PortfolioSection() {
         setMouseDown(false);
         setZIndex(999);
     }
-
+ 
     const handleMouseUp = () => {
         setMouseDown(false);
     }
@@ -128,25 +128,24 @@ function PortfolioSection() {
                         </div>
                     </div>
                     <div className="portfolion_btn_section">
-                    {firstPortfolioSlug && (
-                        <Link href={`/portfolio/${firstPortfolioSlug}`}>
-                            <button
-                                style={{
-                                    position: 'absolute',
-                                    right: '10px',
-                                    top: '50%',
-                                    transform: 'translateY(-50%)',
-                                    zIndex: '9999999999999',
-                                    background: 'yellow',
-                                    color: '#fff'
-                                }}
-                            >
-                                Open First Post
-                            </button>
-                        </Link>
-                    )}
+                        {firstPortfolioSlug && (
+                            <Link href={`/portfolio/${firstPortfolioSlug}`}>
+                                <button
+                                    style={{
+                                        position: 'absolute',
+                                        right: '10px',
+                                        top: '50%',
+                                        transform: 'translateY(-50%)',
+                                        zIndex: '9999999999999',
+                                        background: 'yellow',
+                                        color: '#fff'
+                                    }}
+                                >
+                                   <img src={nextClick.src} alt="nextClick" />
+                                </button>
+                            </Link>
+                        )}
                     </div>
-                    
                 </div>
             </div>
         </>

@@ -7,14 +7,12 @@ import Internship from '@/app/_forms/internship';
 import RerenderCompo from '@/app/common/navbar/component/formAnimationCompo';
 import formClose from '../../assets/headerAssets/formclose.png'
 
-
 function OurInternshipsPage() {
   let api = allExportedApi();
   const [InternshipPageApiData, setInternshipPageApiData] = useState([]);
   const [internship, setInternship] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [isMounted, setIsMounted] = useState(false);
-
 
   const router = useRouter();
 
@@ -35,9 +33,19 @@ function OurInternshipsPage() {
   useEffect(() => {
     loadInternshipData();
     loadInternships();
-    const timer = setTimeout(() => {
+
+    const formShown = sessionStorage.getItem('formShown');
+    if (!formShown) {
       setIsMounted(true); 
+      sessionStorage.setItem('formShown', 'true');
+    }
+
+    const timer = setTimeout(() => {
+      if (!formShown) {
+        setIsMounted(true); 
+      }
     }, 1000); 
+
     return () => clearTimeout(timer); 
   }, []);
 
@@ -130,49 +138,41 @@ function OurInternshipsPage() {
         </div>
         {isMounted && (
           <>
-            
             <div className="internship_popup_form">
-            <div className="cf7_form_outer" style={{ animation: isMounted ? 'slide-down 0.5s' : 'slide-up 0.5s' }}>
-            <div className="cf7_form_inner">
-              <div className="cf7_top_banner">
-                <div className="cf7_left_section">
-                  <div className="form_banner_heading">
-
-                    <h1>Industrial Training</h1>
-                  </div>
-
-                  <div className="form_slider_wrapper apply_for_job">
-                    <div className="_form_paragraph">
-                      <p>
-                        Let's work on
-                      </p>
+              <div className="cf7_form_outer" style={{ animation: isMounted ? 'slide-down 0.5s' : 'slide-up 0.5s' }}>
+                <div className="cf7_form_inner">
+                  <div className="cf7_top_banner">
+                    <div className="cf7_left_section">
+                      <div className="form_banner_heading">
+                        <h1>Industrial Training</h1>
+                      </div>
+                      <div className="form_slider_wrapper apply_for_job">
+                        <div className="_form_paragraph">
+                          <p>
+                            Let's work on
+                          </p>
+                        </div>
+                        <div className="form_slides">
+                          <RerenderCompo />
+                        </div>
+                      </div>
                     </div>
-                    <div className="form_slides">
-                      <RerenderCompo />
+                    <div className="cf7_right_section">
+                      <div className="close_button">
+                        <button onClick={toggleFormVisibility} className="close_button">
+                          <img src={formClose.src} alt="" />
+                        </button>
+                      </div>
                     </div>
                   </div>
-
-
-                </div>
-
-                <div className="cf7_right_section">
-                  <div className="close_button">
-                    <button onClick={toggleFormVisibility} className="close_button">
-                      <img src={formClose.src} alt="" />
-                    </button>
+                  <div className="cf7_form_wrapper">
+                    <Internship />
                   </div>
                 </div>
-              </div>
-              <div className="cf7_form_wrapper">
-                <Internship />
-              </div>
-              </div>
               </div>
             </div>
           </>
         )}
-
-        
       </div>
     </>
   );
