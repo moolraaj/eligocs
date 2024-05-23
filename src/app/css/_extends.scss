@@ -64,6 +64,24 @@
     color: $placeholder-color;
 }
 
+%site_all_buttons{
+    font-size: 20px;
+    padding: 12px 30px;
+    border-radius: 40px;
+    border: none;
+    text-transform: capitalize;
+    font-family: "Euclid Circular A", sans-serif;
+}
+
+%site_service_page_buttun{
+    font-size: 20px;
+    padding: 12px 44px;
+    border-radius: 40px;
+    border: none;
+    text-transform: capitalize;
+    font-family: "Euclid Circular A", sans-serif;
+}
+
 
 
 

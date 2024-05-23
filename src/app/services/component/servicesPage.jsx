@@ -85,6 +85,7 @@ export default function ServicesPage() {
                                 <div className="all_services_right_section">
                                     {
                                         allServices.map((e) => {
+                                            
                                             return <div className="services_flex_wrapper" key={e.id}>
 
                                                 <div className="all_services_outer">

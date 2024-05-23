@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "a65d3adb-a5ec-4a99-b0e3-5536f9fd07ec",
+		"name": "trackitinerary",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17804265"
+	},
+	"item": [
+		{
+			"name": "get all package ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://staging.trackitinerary.com/apis/packages/index",
+					"protocol": "https",
+					"host": [
+						"staging",
+						"trackitinerary",
+						"com"
+					],
+					"path": [
+						"apis",
+						"packages",
+						"index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "details ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://staging.trackitinerary.com/apis/packages/details/8/rcW6OkIG_20240229_1709195196",
+					"protocol": "https",
+					"host": [
+						"staging",
+						"trackitinerary",
+						"com"
+					],
+					"path": [
+						"apis",
+						"packages",
+						"details",
+						"8",
+						"rcW6OkIG_20240229_1709195196"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://staging.trackitinerary.com/apis/packages/category",
+					"protocol": "https",
+					"host": [
+						"staging",
+						"trackitinerary",
+						"com"
+					],
+					"path": [
+						"apis",
+						"packages",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get package on the base of category ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "category_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://staging.trackitinerary.com/apis/packages/categorybased",
+					"protocol": "https",
+					"host": [
+						"staging",
+						"trackitinerary",
+						"com"
+					],
+					"path": [
+						"apis",
+						"packages",
+						"categorybased"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "filter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "keyword",
+							"value": "Dubai",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://staging.trackitinerary.com/apis/packages/packagefilter",
+					"protocol": "https",
+					"host": [
+						"staging",
+						"trackitinerary",
+						"com"
+					],
+					"path": [
+						"apis",
+						"packages",
+						"packagefilter"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
