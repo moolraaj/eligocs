@@ -533,7 +533,7 @@ form#jobform textarea {
 
     img {
         width: 100%;
-        height: 35vw;
+        height: 450px;
         object-fit: cover;
     }
 }
@@ -612,7 +612,9 @@ button:disabled {
     padding: 0px !important;
 
 }
-
+li.blog-post-info-wrapper span:last-child {
+    margin-left: 20px;
+}
 .Portfolio_left_section {
     z-index: -1;
     position: relative;
@@ -696,6 +698,7 @@ p {
         width: 100%;
         overflow: auto;
 
+       
 
         .portfolio_inner {
             position: relative;
@@ -704,7 +707,16 @@ p {
     }
 
 }
-
+.scroll-button{
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: $white;
+    z-index: 999999;
+    position: absolute;
+    box-shadow: 0px 0px 2px 1px;
+}
 
 .scrolling_portfolio_section::-webkit-scrollbar {
     opacity: 0;
@@ -2077,6 +2089,11 @@ ul.course li:nth-child(4) {
 
 
 /*portfolio inner template */
+.inner_portfolio_link_section a{
+    @extend %site_all_buttons;
+    background-color: $primaryyellow;
+    color: $black;
+}
 .portfolio_projects_flex {
     display: grid;
     width: 100%;
@@ -2180,7 +2197,7 @@ a.back-to-projects {
         img {
             width: 600px;
             max-width: 670px;
-            height: 747px;
+            height: 700px;
             object-fit: cover;
         }
 
@@ -4502,6 +4519,9 @@ h5.title_heading_c {
 }
 
 @media (max-width:1024px) {
+    .scroll-button{
+        display: none;
+    }
     select.select_duration{
         width: 90% !important;
      }
@@ -4661,7 +4681,8 @@ h5.title_heading_c {
 
     .portfolio a.portfolio-post {
         width: 240px;
-        height: 50vh;
+        min-height: 100px;
+        height: 100%;
     }
 
     .portfolio_wrapper {
@@ -5671,6 +5692,24 @@ h5.title_heading_c {
 }
 
 @media (min-width:1025px) and (max-width: 1440px) {
+    .home_slider_animate{
+        margin: 0 !important;
+    }
+    
+    .scroll-button{
+    width: 50px !important;
+    height: 50px !important;
+    }
+    .portfolio_wrapper{
+        height: 700px !important;
+    }
+    .page_outer.portfolio_section_outer.scrolling{
+        padding: 0 !important;
+    }
+    .portfolio_image img {
+        width: 400px !important;
+        height: 450px !important;
+    }
     .portfolio_left_section {
         width: 100% !important;
         margin-left: 0px !important;
@@ -6582,6 +6621,7 @@ h5.title_heading_c {
 }
 
 @media (max-width:468px) {
+    
     .internship_radio{
         font-size: 1em !important;
     }
