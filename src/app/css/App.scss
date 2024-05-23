@@ -3284,7 +3284,7 @@ p .testimonial_wrap {
 
         margin: auto;
         grid-template-columns: 30% repeat(3, 1fr) !important;
-        @include grid-property(grid, repeat(4, 1fr), unset, 65px);
+        @include grid-property(grid, repeat(4, 1fr), unset,);
 
 
         .center-section-first-inner-wrapper {
