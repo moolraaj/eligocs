@@ -1,13 +1,14 @@
 'use client'
 import React from 'react'
-import { Hourglass } from 'react-loader-spinner'
- 
+// import { Hourglass } from 'react-loader-spinner'
+import ddd from '../../../assets/loader/loader.gif';
+
 
 function Loader() {
   return (
 
     <div className="loader">
-      <Hourglass
+      {/* <Hourglass
         visible={true}
         height="80"
         width="80"
@@ -15,8 +16,10 @@ function Loader() {
         wrapperStyle={{}}
         wrapperClass=""
         colors={['#191C1B', 'blue']}
-      />
-  
+      /> */}
+
+      <img src={ddd.src} alt='loader' />
+
     </div>
 
 
