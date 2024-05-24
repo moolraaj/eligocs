@@ -212,7 +212,7 @@ const SingleBlogPost = async (slug) => {
 
 
 
-  //***************************   fetch forms apis  ****************************//
+  //**************************   fetch forms apis  ***************************//
 
 
   // job form api

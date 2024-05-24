@@ -1,7 +1,7 @@
 'use client'
 import { allExportedApi } from '@/utils/apis/Apis';
 import React, { useState } from 'react';
-import { toast } from 'sonner';
+ 
 
 function ApplyForJob() {
     let api = allExportedApi();
