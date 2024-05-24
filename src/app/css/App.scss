@@ -6934,6 +6934,12 @@ h6.user_name_c a {
     .dots{
         bottom: -90% !important;
     }
+
+        .form_option {
+        width: 100%;
+        height: 60px !important;
+        position: relative;
+    }
 	.cf7_top_banner {
 		display: flex !important;
 		align-items: baseline !important;
@@ -6979,11 +6985,11 @@ h6.user_name_c a {
 	}
 
 	.multistep_form_inner input.popup_radioboxes:before {
-		top: 5px !important
+		top: 7px !important
 	}
 
 	.multistep_form_inner input.popup_radioboxes:after {
-		top: 12px !important
+		top: 13px !important
 	}
 
 	.multistep_form_inner .form_option label,
