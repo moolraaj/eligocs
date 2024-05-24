@@ -17,7 +17,7 @@ export const HomeApi = async () => {
   
 // fetch services page api
 
-export const fetchServices = async () =>{
+export const fetchAllServices = async () =>{
   let response=await fetch('https://api.eligo.cloud/wp-json/wp/v2/services?fields=acf&acf_format=standard')
   let data=await response.json()
   return data
@@ -42,6 +42,13 @@ export const fetchSingleService = async(slug)=> {
       console.error('Error fetching service data:', error);
       return null;
   }
+}
+
+
+export const fetchAllportFolio = async () =>{
+  let response=await fetch('https://api.eligo.cloud/wp-json/wp/v2/portfolio?fields=acf&acf_format=standard')
+  let data=await response.json()
+  return data
 }
 
 

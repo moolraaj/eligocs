@@ -15,7 +15,7 @@
 }
 
 //mixin for grid property
-@mixin grid-property($grid,$grid-columns,$grid-items,$grid-gap:0px,$grid-row-gap:0px){
+@mixin grid-property($grid,$grid-columns,$grid-items:unset,$grid-gap:0px,$grid-row-gap:0px){
     display: $grid;
     grid-template-columns: $grid-columns;
     align-items: $grid-items;

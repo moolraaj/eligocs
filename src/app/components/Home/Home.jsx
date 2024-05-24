@@ -22,7 +22,7 @@ import TestimonialSection from "./home-sections/Testimonial";
 
 
 
-function Home({ result, isScrolled }) {
+function HomePage({ result, isScrolled }) {
 
   const [showInnovation, setShowInnovation] = useState(false);
 
@@ -109,4 +109,4 @@ function Home({ result, isScrolled }) {
   );
 }
 
-export default Home;
+export default HomePage;

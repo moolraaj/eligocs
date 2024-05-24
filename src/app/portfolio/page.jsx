@@ -1,4 +1,4 @@
-
+'use client'
 import Link from 'next/link';
 import React, { useEffect, useState, useRef } from 'react';
 
@@ -9,7 +9,7 @@ function Portfolio() {
     useEffect(() => {
         const loadPortfolio = async () => {
             try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/portfolio?fields=acf&acf_format=standard`);
+                const response = await fetch(`https://api.eligo.cloud/wp-json/wp/v2/portfolio?fields=acf&acf_format=standard`);
                 if (response.ok) {
                     const result = await response.json();
                     setData(result);
