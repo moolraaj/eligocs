@@ -647,6 +647,10 @@ button {
 .about-top-content p {
   line-height: 35px;
 }
+.content.about_page_testimonial .home_testimonial_wrapper  {
+  padding-bottom:0px !important;
+}
+
 
 
   
@@ -654,7 +658,9 @@ button {
 
 @media (max-width: 768px) {
 
-  
+  .content.about_page_testimonial .home_testimonial_wrapper  {
+    padding-bottom:130px !important;
+  } 
   .parallax-container:last-child .content {
  
     margin: auto;
