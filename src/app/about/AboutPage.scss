@@ -602,13 +602,53 @@ button {
   .process-step.active{
     grid-template-columns: 1fr !important;
     .process-steps-content{
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 15px;
     }
   }
   .step-image-container {
     display: none;
   }
+  
+  .mission-left p {
+    font-size: 1.875em;
+    font-weight: 500;
+    line-height: 36px;
+}
+.content_mission_our.content {
+  display: block;
+  padding: 10px 0px;
+}
+.about-top-content {
+  width: 90%;
+  padding: 25px 20px !important;
+}
+.about-top-content h3 {
+  color: #eaaa00;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: auto;
+  line-height: 34.72px;
+}
+.about-top-content h1 {
+  font-size: 2.813em;
+  font-weight: 800;
+  color: #191c1b;
+  line-height: 25px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.uderline-text {
+  display: inline-flex;
+  border-bottom: 4px solid #eaaa00;
+  line-height: 40px;
+}
+
+.about-top-content p {
+  line-height: 35px;
+}
+
+
   
 }
 
@@ -620,12 +660,32 @@ button {
     margin: auto;
     width: 90%;
   }
+  .about-working-process h3 {
+    font-size: 3em;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 20px;
+}
+.step-initial p {
+  font-size: 1.25em;
+}
+
+  .working-process-container {
+    display: block;
+    
+}
+  
 
   .testimonial_section_outer {
     padding: 0;
   }
 
-  
+  .about-top-content p {
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 31px;
+    margin-bottom: 30px;
+  }
 
   
 
@@ -659,6 +719,9 @@ button {
   .step-image-container {
     display: none;
   }
+  .about_vs {
+    padding: 0px 20px;
+}
   .parallax-container{
     padding: 0px 0px 40px 0px;
   }

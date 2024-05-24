@@ -4413,6 +4413,25 @@ h5.title_heading_c {
 }
 
 @media screen and (max-width: 768px) {
+    .multistep_popup_form .cf7_form_inner {
+        margin-bottom:25px;
+    }
+
+    .nested_option {
+        width: 100% !important;
+        height: 50px !important;
+        position: relative;
+    }
+
+    .multistep_popup_form .form_questions_section .form_question_block .form_option label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        display: inline;
+        top: 10px;
+        font-size: 16px;
+    }
     .multistep_popup_form {
         .close_button {
             left: 0 !important;
@@ -5759,12 +5778,27 @@ h5.title_heading_c {
 
 @media (max-width:767px) {
     .nested_options {
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: repeat(1, 1fr) !important;
     }
 
     .product-page-left-info p {
                width: 100% !important;
         line-height: 30px !important;
+    }
+    .nested_option label {
+              display: inline !important;
+              top:14px !important;
+    }
+
+    input.nexted_inputs::before {
+    
+        top: 11px !important;
+        right: 16px;
+    }
+
+    input.nexted_inputs::after {
+          top: 16.6px !important;
+        right: 21.5px !important;
     }
 
     .internship_points_inner {
@@ -6058,7 +6092,7 @@ h5.title_heading_c {
     .multistep_popup_form .cf7_form_outer {
         top: 18% !important;
         left: 15% !important;
-        height: 60vh !important;
+        height: 470px !important;
         overflow-y: scroll !important;
     }
 
@@ -6141,6 +6175,34 @@ h5.title_heading_c {
 
     .products_inner_description p p {
         font-size: 1em;
+    }
+
+    .multistep_popup_form .form_heading_section h3 {
+        font-size: 1.125em !important;
+        margin: 5px 0px;
+    }
+    .multistep_popup_form .form_question_block h4 {
+        font-size: 1.125em !important;
+        margin: 13px 0px;
+    }
+    .multistep_popup_form .form_questions_section .form_question_block .form_option label {
+       display: inline !important;
+        width: 100%;
+    }
+    .multistep_form_inner input.popup_radioboxes::before {
+        top: 12px !important;
+    }
+    .multistep_form_inner input.popup_radioboxes::after {
+        top: 18px !important;
+    }
+
+    .multistep_popup_form .form_heading_section p {
+        font-size: 1em !important;
+    }
+    .form_option {
+        width: 100%;
+        height: 50px !important;
+        position: relative;
     }
 
     .member_social_icons img {
@@ -6335,11 +6397,11 @@ h5.title_heading_c {
         padding: 0;
         display: flex;
        flex-direction: column;
-       row-gap: 10px;
+       row-gap: 0px;
     }
     .blog_descritpion ul li {
-     
-       font-size: 1.25em;
+        line-height: 27px;
+       font-size: 1em;
     }
 
     .blog_descritpion strong {
@@ -6895,14 +6957,17 @@ h5.title_heading_c {
 
 @media (min-width:469px) and (max-width:768px) {
 
+   
+
     .multistep_popup_form {
         .cf7_form_outer {
             top: 15% !important;
             left: 7% !important;
             width: 75% !important;
             padding: 36px !important;
-            height: 60vh !important;
+            height: 560px !important;
         }
+
 
         .form_heading_section {
             .form_heading_close_btn {
@@ -6931,6 +6996,12 @@ h5.title_heading_c {
     .loader img {
         width: 100%;
     }
+
+    .form_option {
+        width: 100%;
+        height: 60px !important;
+        position: relative;
+    }
     .internship_radio{
         font-size: 1em !important;
     }
@@ -6941,7 +7012,11 @@ h5.title_heading_c {
         }
 
         input.popup_radioboxes::before {
-            top: 22px !important;
+            top: 5px !important;
+        }
+        input.popup_radioboxes::after {
+            top: 12px !important;
+        
         }
 
         input.popup_radioboxes,
@@ -6968,7 +7043,7 @@ h5.title_heading_c {
             width: 80% !important;
             left: 5% !important;
             padding: 20px !important;
-            height: 65vh !important;
+            height: 485px !important;
         }
 
         .form_heading_section {
@@ -7707,7 +7782,7 @@ span.error_fields {
 
     .cf7_form_outer {
         width: 60%;
-        height: 60vh;
+        height: 500px;
         position: fixed;
         overflow-y: auto !important;
         overflow-x: hidden !important;
@@ -7720,7 +7795,7 @@ span.error_fields {
     }
 
     .cf7_form_outer::-webkit-scrollbar {
-        width: 12px;
+        width: 8px;
         background-color: $white;
     }
 
@@ -7812,7 +7887,7 @@ input.popup_radioboxes {
 
 .nested_option {
     width: 100%;
-    height: 60px;
+    height: 50px !important;
     position: relative;
 }
 
@@ -7830,7 +7905,7 @@ input.nexted_inputs::before {
     background-color: #f9fafd;
     border: 1px solid #EAAA00 !important;
     border-radius: 50%;
-    top: 16px;
+    top: 12px;
     right: 16px;
 }
 
@@ -7841,8 +7916,8 @@ input.nexted_inputs::after {
     width: 12px;
     background-color: transparent;
     border-radius: 50%;
-    top: 21.6px;
-    right: 21.5px;
+    top: 17.6px;
+    right: 22.5px;
 }
 
 input.nexted_inputs:checked:after {
