@@ -4,7 +4,7 @@ import { allExportedApi } from "@/utils/apis/Apis.jsx"
 import Link from "next/link"
 import ServicesFaq from "./ServicesFaq"
 
-import Testimonials from "@/app/common/Testimoinals"
+
 import '../../about/AboutPage.scss'
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
