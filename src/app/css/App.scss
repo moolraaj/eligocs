@@ -4315,6 +4315,9 @@ input.nexted_inputs:checked {
 	border-color: #000
 }
 
+h6.user_name_c a {
+    font-size: 16px;
+}
 
 
 
@@ -4322,6 +4325,16 @@ input.nexted_inputs:checked {
 	.blog_img_heading_wrapper h2 {
 		display: none
 	}
+    .lower_sec_c:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        height: 50vh;
+        width: 17px;
+        background: #eaaa00;
+    }
+    
+    
 }
 @media only screen and (max-width:1500px) {
 	.form_options {
