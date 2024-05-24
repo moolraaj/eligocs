@@ -1,7 +1,7 @@
 'use client'
 import { allExportedApi } from '@/utils/apis/Apis';
 import React, { useState } from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
+ 
 import {toast } from 'sonner';
 
 function ContactUsForm() {
@@ -37,28 +37,8 @@ function ContactUsForm() {
     });
   };
 
-
-  async function verifyCaptcha() {
-    try {
-    
-      recaptchaToken.value = await context.$recaptcha.execute(cap);
-
-  const response = await axios.post(
-    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}&response=${cap}`
-  );
-  return response;
-} catch (error) {
-  return error;
-}
-}
-
   const submitUserData = async (e) => {
-    const recaptchaResponse = await verifyCaptcha(cap);
-
-    if (!recaptchaResponse) {
-      context.$recaptcha.reset()
-      return;
-    }
+    console.log( cap)
     e.preventDefault();
     let formData = new FormData();
 
@@ -67,11 +47,6 @@ function ContactUsForm() {
     formData.append('youremail', user.youremail);
     formData.append('yournumber', user.yournumber);
     formData.append('yourmessage', user.yourmessage);
-    formData.append("_wpcf7_recaptcha_response" , cap,)
-    formData.append("wpcf7_recaptcha_response" , cap,)
-    formData.append("recaptcha_response" , cap,)
-    formData.append("recaptcha" , cap,)
-    formData.append("token" , cap)
 
     // Validation for required fields
     let formValid = true;
@@ -106,7 +81,6 @@ function ContactUsForm() {
           yournumber: '',
           yourmessage: ''
         });
-        await submit(e);
       } catch (error) {
         toast.error('mail not send!')
        
@@ -120,7 +94,7 @@ function ContactUsForm() {
       <div className="contact_us_form_outer">
         <div className="contact_us_form_inner">
           <div className="contact_us_form_wrapper">
-            <form style={{ marginTop: '100px' }} id='contactus' onSubmit={submitUserData}>
+            <form style={{ marginTop: '100px' }} id='contactus'>
 
 
               <div className="contact_us_flex_wrapper">
@@ -165,10 +139,10 @@ function ContactUsForm() {
 
                 </div>
 
-                <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}  onChange={setCap}/>
+                
 
                 <div className="form_button">
-                  <button >Submit</button>
+                  <button onClick={submitUserData}>Submit</button>
                 </div>
               </div>
             </form>
