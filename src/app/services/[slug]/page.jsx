@@ -1,45 +1,66 @@
-import { fetchAllServices } from "@/utils/apis/Apis";
-
+import { allExportedApi } from "@/utils/apis/Apis.jsx";
+ 
+import { ExportScoApiData } from "@/utils/apis/scoApi";
+import { LoadscoData } from "@/app/_metadata/metadata";
+import ServicesInnerSlug from "./component/ServiceSlug";
+ 
  
 
-async function fetchServices(slug) {
-  try {
-    let data = await fetch(`https://api.eligo.cloud/wp-json/wp/v2/services?slug=${slug}&fields=acf&acf_format=standard`);
-    let result = await data.json();
-    return result;
-  } catch (error) {
-    console.error('Error fetching service:', error);
-    return null;
-  }
-}
 
 export default async function Page({ params }) {
-  const { slug } = params;
-  console.log(slug);
-
-  const data = await fetchServices(slug);
-  console.log(data);
-
-  return (
-    <>
-       {
-        data.map((ele)=>{
-          return <div>
-            <h1 key={ele.id}>{ele.acf.services_title}</h1>
-            <img src={ele.acf.services_image}/>
-          </div>
+    let api=allExportedApi()
+    const { slug } = params;
     
-          
+    const data = await api.fetchSingleService(slug);
+    
 
-        })
-       } 
-    </>
-  );
+    let services=await api.fetchAllServices()
+    
+
+
+    
+
+    return (
+        <>
+             <ServicesInnerSlug  data={data} services={services} />
+        </>
+    );
 }
+
 
 export async function generateStaticParams() {
-  const result = await fetchAllServices();
-  return result.map(ele => ({
-    slug: ele.slug
-  }));
+    const api = allExportedApi();
+    const result = await api.fetchAllServices();
+    return result.map(ele => ({
+        slug: ele.slug
+    }));
 }
+
+
+// generate dynamic sco title and desriptions
+export async function generateMetadata({params}){
+    const { slug } = params;
+    let api=ExportScoApiData()
+    const data = await api.fetchdynamicServicesScoData(slug);
+    const metadata = await LoadscoData({ data });
+
+  return {
+      title: metadata.title,
+      description: metadata.description,
+      openGraph: {
+          title: metadata.title,
+          description: metadata.description,
+          locale: metadata.locale,
+          type: metadata.type,
+          url: metadata.url,
+          siteName: metadata.siteName,
+          updatedTime: metadata.updatedTime,
+          card: metadata.card,
+          twitterTitle: metadata.twitterTitle,
+          twitterDescription: metadata.twitterDescription
+      }
+  };
+    
+}
+
+

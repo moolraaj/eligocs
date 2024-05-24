@@ -1,45 +1,31 @@
-"use client";
-
-
-import React, { useState, useEffect } from "react";
+ 
 
 import ParallaxContainer from "../About/ParallaxContainer";
 import AboutSection from "./home-sections/About";
 import QuoteSection from "./home-sections/Quote";
 import CompanySection from "./home-sections/Company";
 import DevelopmentSection from "./home-sections/Development";
-import TransformationSection from "./home-sections/Transformation";
+ 
 
 import '../../about/AboutPage.scss'
-import PortfolioSection from "./home-sections/Portfolio";
+ 
 
  
 import HeroSection from "./home-sections/Hero";
 import TestimonialSection from "./home-sections/Testimonial";
+import PortfolioSection from "./home-sections/Portfolio";
+import TransformationSection from "./home-sections/Transformation";
+import PopupForm from "./home-sections/popupForm";
+ 
 
  
 
 
 
 
-function HomePage({ result, isScrolled }) {
+function HomeCompo({ result }) {
 
-  const [showInnovation, setShowInnovation] = useState(false);
-
-  useEffect(() => {
-    setShowInnovation(isScrolled);
-  }, [isScrolled]);
-
-  const handleScroll = () => {
-    setShowInnovation(window.scrollY > 0);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+ 
 
 
 
@@ -50,9 +36,9 @@ function HomePage({ result, isScrolled }) {
         <div className="home_wrapper" key={ele.id}>
 
 
-          <ParallaxContainer speed={0.5} className="container-1">
-           <HeroSection  ele={ele} isScrolled={isScrolled}/>
-          </ParallaxContainer>
+        
+           <HeroSection  ele={ele} ParallaxContainer={ParallaxContainer}/>
+        
 
           {/*about us section starts*/}
           <AboutSection ele={ele} />
@@ -101,12 +87,12 @@ function HomePage({ result, isScrolled }) {
           {/*quote section ends*/}
           <QuoteSection ele={ele} />
           {/*quote section ends*/}
-
-
+          
+          <PopupForm/>
         </div>
       ))}
     </>
   );
 }
 
-export default HomePage;
+export default HomeCompo;

@@ -1,6 +1,10 @@
+ 
+'use client'
 import React from 'react'
+import { useRouter } from 'next/navigation'
 
 function AboutSection({ele}) {
+  let router=useRouter()
   return (
     <>
     
@@ -20,7 +24,7 @@ function AboutSection({ele}) {
                       __html: ele.acf.about_para_second,
                     }}></p>
 
-                  <a className="meet_our_team" href="/team">Meet Our Team</a>
+                  <button className="meet_our_team" onClick={()=>router.push("/meet-our-team")}>Meet Our Team</button>
 
                 </div>
               </div>

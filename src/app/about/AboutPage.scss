@@ -25,9 +25,11 @@ button {
   margin: 0;
   padding: 0;
 }
+
 .contents {
-  margin: 200px auto 90px auto !important;
+  margin: 120px auto 90px auto !important;
 }
+
 .content {
   max-width: $max-width;
   margin: auto;
@@ -37,20 +39,21 @@ button {
 
 // ParallaxContainer styles
 
-.parallax-container:first-child{
+.parallax-container:first-child {
   padding: 0px;
 }
 
 .parallax-container {
   position: sticky;
-  top:30px;
+  top: 30px;
   height: auto;
   overflow: hidden;
   scroll-behavior: smooth;
   padding: 0px 40px;
+
   .content {
     height: 100%;
-   
+
   }
 }
 
@@ -82,6 +85,7 @@ button {
   gap: 29px;
   flex-wrap: nowrap;
   margin: 0px 50px;
+
   &:nth-child(1) img,
   &:last-child img {
     width: 300px;
@@ -100,10 +104,48 @@ button {
     position: relative;
     width: 100%;
   }
+
   img {
     object-fit: cover;
   }
 }
+
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.marquee {
+  display: flex;
+  width: max-content; /* Ensure the container width fits content */
+  animation: marquee 10s linear infinite;
+}
+
+.slider {
+  display: flex;
+  margin-right: 20px; /* Adjust the margin as needed */
+}
+
+.images-outer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 10px; /* Adjust spacing between images */
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+
 
 // About top content
 .about-top-content {
@@ -113,12 +155,13 @@ button {
   margin: auto;
   width: 100%;
   height: auto;
-  top: 60%; /* Move top edge to the center */
-  left: 50%; /* Move left edge to the center */
-  transform: translate(
-    -50%,
-    -50%
-  ); /* Translate back by half of its own width and height */
+  top: 50%;
+  /* Move top edge to the center */
+  left: 50%;
+  /* Move left edge to the center */
+  transform: translate(-50%,
+      -50%);
+  /* Translate back by half of its own width and height */
   opacity: 0.9;
   border-radius: $border-radius;
   padding: 30px 60px;
@@ -129,6 +172,7 @@ button {
     font-weight: 800;
     color: #191c1b;
     line-height: 25px;
+    text-transform: uppercase;
   }
 
   h3 {
@@ -138,13 +182,15 @@ button {
     margin: auto;
     line-height: 50.72px;
   }
+
   p {
     font-size: 1.875em;
     font-weight: 500;
     line-height: 55px;
   }
+
   button {
-    padding: $padding 40px;
+    padding: 15px 35px;
     border-radius: $border-radius;
     text-align: right;
     float: right;
@@ -153,11 +199,17 @@ button {
     font-size: 20px;
   }
 }
+
+
+.nav_right_section button img {
+  width: 44px;
+}
 .uderline-text {
   display: inline-flex;
   border-bottom: 10px solid #eaaa00;
   line-height: 40px;
 }
+
 .uderline-para {
   display: inline-flex;
   border-bottom: 6px solid #eaaa00;
@@ -170,6 +222,9 @@ button {
     font-size: $primary-font-size;
     font-weight: $secondory-font-weight;
     color: $secondory-color;
+    margin-bottom: 20px;
+
+
   }
 }
 
@@ -177,6 +232,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   h3 {
     margin: auto;
   }
@@ -184,6 +240,7 @@ button {
 
 .process-step {
   display: none;
+
   &.active {
     display: block;
   }
@@ -192,10 +249,12 @@ button {
 .arrow-buttons {
   display: flex;
   justify-content: space-between;
-  width: 300px; /* Adjust as needed */
+  width: 300px;
+  /* Adjust as needed */
   margin-top: 20px;
   border: none;
   background-color: transparent;
+
   button {
     padding: 10px 20px;
     border: none;
@@ -203,12 +262,15 @@ button {
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
+
     img {
       height: 100px;
       width: 100px;
     }
+
     .nextStep {
-      transform: scaleX(-1); /* Flips the image horizontally */
+      transform: scaleX(-1);
+      /* Flips the image horizontally */
     }
   }
 }
@@ -233,6 +295,8 @@ button {
   position: relative;
   width: 100%;
   top: -50px;
+  z-index: 1;
+
   img {
     max-width: 100%;
     height: 200px;
@@ -241,19 +305,25 @@ button {
 }
 
 .main-image {
-  height: 550px !important; /* Set the main image height */
-  width: 400px !important; /* Set the main image width */
+  height: 550px !important;
+  /* Set the main image height */
+  width: 400px !important;
+  /* Set the main image width */
   border-radius: 12px;
-  object-fit: cover; /* Maintain aspect ratio */
+  object-fit: cover;
+  /* Maintain aspect ratio */
 }
 
 .image-upper,
 .image-lower {
   position: absolute;
-  width: 50%; /* Set the width to 50% to take up half of the main image */
-  height: 50%; /* Set the height to 50% to take up half of the main image */
+  width: 50%;
+  /* Set the width to 50% to take up half of the main image */
+  height: 50%;
+  /* Set the height to 50% to take up half of the main image */
   border-radius: 12px;
-  transition: all 0.3s ease; /* Add transition effect */
+  transition: all 0.3s ease;
+  /* Add transition effect */
 }
 
 .image-upper {
@@ -265,9 +335,12 @@ button {
   bottom: -10%;
   right: -10%;
 }
+
 .content_mission_our.content {
   display: block;
+  padding: 70px 0px;
 }
+
 .testimonial_wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -275,6 +348,7 @@ button {
 
 .process-steps-content {
   transition: opacity 0.3s ease;
+
   h1 {
     font-size: 3.438em;
     font-weight: $font-weight;
@@ -282,6 +356,7 @@ button {
     margin-top: 0px;
     margin-bottom: 10px;
   }
+
   h3 {
     font-size: 2.5em;
     font-weight: $font-weight;
@@ -293,16 +368,21 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+
   h1 {
     font-size: 2em;
     font-weight: $secondory-font-weight;
+    white-space: nowrap;
   }
+
   button {
     background: transparent;
     border: none;
     float: left;
+
     .nextStep {
-      transform: scaleX(-1); /* Flips the image horizontally */
+      transform: scaleX(-1);
+      /* Flips the image horizontally */
     }
   }
 }
@@ -311,25 +391,32 @@ button {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+
 .play-again-container {
   div {
     width: 100%;
     text-align: right;
   }
+
   h3 {
     font-size: 25px;
   }
+
   h1 {
     font-size: 24px;
   }
 }
 
 
+
+
+
+
 .our-misson {
-    font-size: $primary-font-size;
-    font-weight: $secondory-font-weight;
-  }
-  
+  font-size: $primary-font-size;
+  font-weight: $secondory-font-weight;
+}
+
 
 .mission-left {
 
@@ -339,6 +426,7 @@ button {
     line-height: 60px;
   }
 }
+
 .mission-right {
   display: flex;
   align-items: flex-end;
@@ -349,12 +437,19 @@ button {
   margin-top: 80px;
 }
 
+.testimonial-card p {
+  font-size: 1.25em;
+}
+
+
 .success-journy-left {
   h2 {
     font-size: 2.5em;
     font-weight: $font-weight;
     line-height: 60.4px;
+    margin-bottom: 80px;
   }
+
   button {
     padding: $padding 40px;
     font-size: 20px;
@@ -369,6 +464,7 @@ button {
 
 .success-journy-right {
   overflow: hidden;
+
   img {
     width: 469px !important;
     height: 370px !important;
@@ -378,7 +474,8 @@ button {
 
 .journy-image-container {
   .journy-img-slider {
-    opacity: 1; /* Start with full opacity */
+    opacity: 1;
+    /* Start with full opacity */
     transition: opacity 1s ease-in-out;
   }
 }
@@ -387,17 +484,20 @@ button {
   h1 {
     font-size: $primary-font-size;
     font-weight: $secondory-font-weight;
-    line-height: 96px;
+    line-height: normal;
     color: #3d3a3a;
+
     span {
       margin: 40px 0px;
     }
   }
 }
+
 .images-outer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: 0px 50px;
+
   img {
     width: 338px !important;
     height: 244px !important;
@@ -415,9 +515,8 @@ button {
 
 .testimonial-right-section {
   position: relative;
-
+ 
   .testimonial-card {
-    max-width: 60%;
     border-radius: 10px;
     display: flex;
     position: absolute;
@@ -425,15 +524,16 @@ button {
     background: #ffffff;
     margin-top: 80px;
   }
+
   .testimonial-card:nth-child(1),
   .testimonial-card:nth-child(2),
-  .testimonial-card:nth-child(3){
+  .testimonial-card:nth-child(3) {
     box-shadow: -1px -3px 6px 9px rgba(0, 0, 0, 0.01),
-    1px -8px 6.52px 0px rgba(0, 0, 0, 0.02),
-    -2px -20px 13px 0px rgba(0, 0, 0, 0.03),
-    0px 38.52px 25.48px 0px rgba(0, 0, 0, 0.03),
-    -2px -5px 46.85px 0px rgba(0, 0, 0, 0.04),
-    0px 100px 80px 0px rgba(0, 0, 0, 0.05);
+      1px -8px 6.52px 0px rgba(0, 0, 0, 0.02),
+      -2px -20px 13px 0px rgba(0, 0, 0, 0.03),
+      0px 38.52px 25.48px 0px rgba(0, 0, 0, 0.03),
+      -2px -5px 46.85px 0px rgba(0, 0, 0, 0.04),
+      0px 100px 80px 0px rgba(0, 0, 0, 0.05);
   }
 
   .client-img {
@@ -446,39 +546,43 @@ button {
     top: -38px;
     object-fit: cover;
   }
+
   .testimonial-card:nth-child(1) {
     top: 0;
   }
-  
+
   .testimonial-card:nth-child(2) {
     top: 40px;
     left: 40px;
   }
-  
+
   .testimonial-card:nth-child(3) {
     top: 70px;
     left: 70px;
   }
- 
+
 }
 
 .dot {
   height: 12px;
   width: 12px;
-  background-color: #f7db96;
+  background-color: #E2E2E2;
   border-radius: 50%;
   display: inline-block;
   margin: 0 5px;
-  cursor: pointer;
-  box-shadow: 1px 0px 0px  0px #3b3b3b ;
 }
+
 
 .active-dot {
-  background-color: #eaaa00;
+  background-color: #F7D117;
 }
 
-
-
+.slider-inner {
+  position: relative;
+}
+.content_mission_our.content img{
+  width: 100%;
+}
 
 
 
@@ -487,31 +591,193 @@ button {
   .parallax-container {
     position: static;
   }
+
+  .about-top-content {
+    width: 90%;
+  }
+
+}
+
+@media (max-width: 1024px) {
+  .process-step.active{
+    grid-template-columns: 1fr !important;
+    .process-steps-content{
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+  }
+  .step-image-container {
+    display: none;
+  }
   
 }
+
 @media (max-width: 768px) {
 
-  .testimonial_wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-}
+  
+  .parallax-container:last-child .content {
+ 
+    margin: auto;
+    width: 90%;
+  }
 
-  .our-mission-outer, .success-journy-outer {
+  .testimonial_section_outer {
+    padding: 0;
+  }
+
+  
+
+  
+
+  .our-mission-outer,
+  .success-journy-outer {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
+  }
+
+  
+  .our-misson {
+    font-size: 50px;
+    font-weight: 700;
+  }
+  .working_bottom_rurlar_bar {
+    .working_bottom_dot{
+      width: 40px !important;
+      height: 12px !important;
+    }
+    .working_bottom_bar{
+      width: 450px !important;
+      height: 2px !important;
+    }
+  }
 }
-.mission-left p {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 35px;
+
+@media (max-width: 568px) {
+ 
+  .step-image-container {
+    display: none;
+  }
+  .parallax-container{
+    padding: 0px 0px 40px 0px;
+  }
+  .content{
+    margin-bottom: 20px;
+  }
+
+  .about-top-content {
+    top: 45%;
+    h1 {
+      font-size: 2.01em;
+      line-height: 10px !important;
+    }
+
+    h3 {
+      line-height: normal;
+      font-size: 1.875em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: normal;
+      font-size: 1.125em;
+    }
+
+    button {
+      margin-top: 10px;
+      font-size: 1.2em;
+    }
+  }
+
+  .slider:nth-child(1) img,
+  .slider:last-child img {
+    width: 250px;
+    height: 390px;
+  }
+
+  .images-outer img {
+    width: 280px !important;
+    height: 180px !important;
+  }
+
+  .contents {
+    margin-bottom: 40px !important;
+  }
+
+  .about-working-process{
+
+    h3{
+      font-size: 2.5em;
+    }
+  }
+  .step-initial h3,
+  .steps-content-after.restart-workprocess.active h3{
+    font-size: 1.875em;
 }
-.our-misson {
-  font-size: 50px;
-  font-weight: 700;
+  .process-step.active{
+    grid-template-columns: 1fr !important;
+    .process-steps-content{
+      grid-template-columns: 1fr !important;
+      gap: 15px;
+      .step-initial{
+        p {
+          font-size: 1.125em;
+      }
+      h1 {
+    font-size: 2.5em;
+      }
+      }
+      .step-after {
+        display: flex;
+    }
+    }
+    .steps-content-after h1{
+      font-size: 1.875em;
+      white-space: wrap !important;
+    }
+  }
+  
+  .content_mission_our.content{
+    padding: 0;
+    h1{
+      font-size: 2.5em;
+      line-height: 10px !important;
+    }
+    img{
+      width: 100%;
+    }
+  }
+  .mission-left p {
+    line-height: 30px !important;
+    span{
+      border-bottom: none;
+      display: contents;
+    }
+  }
+  
+
 }
-h3{
-  font-size: 30px !important;
-}
+
+
+.working_bottom_rurlar_bar {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  .working_bottom_dot{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #000000;
+    object-fit: cover;
+  }
+  .working_bottom_bar{
+    width: 500px;
+    height: 3px;
+    background-color: #000000;
+  }
 }

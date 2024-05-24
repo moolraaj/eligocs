@@ -1,5 +1,8 @@
-
-import Services from "@/app/services/page";
+ 
+ 
+ import ServicesComponent from '@/app/services/component/ServicesComponent'
+import React from 'react'
+ 
 function TransformationSection({ele}) {
 
   return (
@@ -12,7 +15,8 @@ function TransformationSection({ele}) {
                     <h1>{ele.acf.transformation_top_heading}</h1>
                   </div>
                   <div className="trans_right_section">
-                    <Services />
+                    <ServicesComponent/>
+               
                   </div>
                 </div>
               </div>

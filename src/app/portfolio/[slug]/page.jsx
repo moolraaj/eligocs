@@ -1,45 +1,61 @@
-import {  fetchAllportFolio } from "@/utils/apis/Apis";
 
- 
+import { allExportedApi } from "@/utils/apis/Apis";
+import Portfolioslug from "./component/portfolioslug";
 
-async function fetchServices(slug) {
-  try {
-    let data = await fetch(`https://api.eligo.cloud/wp-json/wp/v2/portfolio?slug=${slug}&fields=acf&acf_format=standard`);
-    let result = await data.json();
-    return result;
-  } catch (error) {
-    console.error('Error fetching service:', error);
-    return null;
-  }
-}
+
 
 export default async function Page({ params }) {
-  const { slug } = params;
-  console.log(slug);
+   
+    const { slug } = params;
 
-  const data = await fetchServices(slug);
-  console.log(data);
+  
 
-  return (
-    <>
-       {
-        data.map((ele)=>{
-          return <div key={ele.id}>
-            <h1 key={ele.id}>{ele.acf.portfolio_title}</h1>
-            <img src={ele.acf.portfolio_image}/>
-          </div>
-    
-          
 
-        })
-       } 
-    </>
-  );
+     
+
+    return (
+        <>
+            <Portfolioslug slug={slug}/>
+        </>
+    );
 }
+
 
 export async function generateStaticParams() {
-  const result = await fetchAllportFolio();
-  return result.map(ele => ({
-    slug: ele.slug
-  }));
+    let api=allExportedApi()
+    let data = await api.fetchAllportFolio();
+    return data.map((ele) => ({
+        slug: ele.slug
+    }));
 }
+
+// generate dynamic sco title and desriptions
+export async function generateMetadata({params}){
+    let {slug}=params
+    let api=allExportedApi() 
+    const data = await api.fetchSingleportFolio(slug);
+     
+    
+    const result=data.map((ele)=>{
+        let description=ele.acf.portfolio_description.replace(/<[^>]+>|&[^;]+;/g, '');
+        return{
+            title:ele.title.rendered,
+            description
+             
+        }
+    })
+    
+    return{
+        title:result[0].title,
+        description:result[0].description,
+        openGraph:{
+
+        }
+        
+    }
+}
+
+
+
+
+

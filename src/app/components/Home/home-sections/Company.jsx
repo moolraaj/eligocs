@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from 'react'
 
 function CompanySection({ele}) {
@@ -32,7 +33,7 @@ function CompanySection({ele}) {
                             <h4>{items.faq_question}</h4>
                             <i
                               className={`fa ${activeIndex === index ? "fa-minus" : "fa-plus"
-                                }`}></i>
+                                }`}> </i>
                           </div>
                           {activeIndex === index && (
                             <div className="company_answers">
