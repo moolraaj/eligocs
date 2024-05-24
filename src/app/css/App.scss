@@ -850,6 +850,7 @@ p {
     z-index: 999999;
     position: absolute;
     box-shadow: 0px 0px 2px 1px;
+    object-fit: scale-down;
 }
 
 .scrolling_portfolio_section::-webkit-scrollbar {
@@ -867,11 +868,12 @@ p {
 .slider_buttons {
     @extend %max-width;
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     position: absolute;
     bottom: 60px;
     right: 0;
     left: 0;
+
 }
 
 .slider_wrapper {
@@ -882,12 +884,13 @@ p {
 
 .slider_buttons button {
     border: unset;
-    background: $white;
-    padding: 0px;
+    background: #fff;
     padding: 10px;
-    box-shadow: 0px 0px 2px 1px;
+    box-shadow: 0px 0px 5px 1px #80808047;
     border-radius: 100%;
     margin: 0px 24px;
+    width: 61px;
+    height: 60px;
 }
 
 button.prev {
@@ -971,7 +974,7 @@ button.prev {
 .hide_seek.blogs {
     position: absolute;
     top: 0;
-    left: 211px;
+    left: 250px;
     display: none;
     flex-direction: column;
     gap: 15px;
@@ -1181,10 +1184,25 @@ form#contactus {
 }
 
 
+.blog_descritpion ul {
+    margin: 20px 24px;
+}
+
+.blog_descritpion ul li {
+    margin-bottom: 10px;
+    font-size: 20px;
+    list-style-type: square;
+}
+
+.blog_descritpion ul li::marker {
+    color: $primaryyellow;
+}
+
 
 form#applyforjob textarea {
     background: transparent;
     font-family: 'Euclid Circular A';
+    padding-left: 0px;
 }
 
 
@@ -3378,6 +3396,7 @@ p .testimonial_wrap {
     .footer-center-bottom-section {
         border-top: 1px solid $borderSecondary;
         margin: 20px 50px;
+        margin-top: 50px;
         @include flex-property(flex, center, column, center);
         ;
 
@@ -3723,6 +3742,8 @@ p:empty {
 
 .blog_descritpion h3 {
     font-size: 1.125em;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .blog_descritpion p {
@@ -3818,7 +3839,7 @@ p:empty {
     border-width: 1px 0px 1px 0px;
     border-style: solid;
     border-color: rgba(159, 163, 173, .2);
-    padding: 20px 0px;
+    padding: 10px 0px;
     margin-bottom: 40px;
 
     .share_blog_heading h2 {
@@ -3828,7 +3849,7 @@ p:empty {
     .share_with_social_platforms {
         button {
             border: none;
-            padding: 20px 40px;
+            padding: 10px 40px;
             border-radius: 50px;
             background-color: $primaryyellow;
             color: $white;
@@ -3960,6 +3981,7 @@ form#contactus .form_button button {
     background: $primaryyellow;
     padding: 17px 60px !important;
     color: $black;
+    border-radius: 50px;
 }
 
 form#contactus .form_button button:hover {
@@ -3978,7 +4000,7 @@ form#contactus .contact_input_wrapper input,
 textarea {
     background: #F4F4F4;
     border: none;
-    padding: 19px 0px;
+    padding: 19px 15px;
 }
 
 
@@ -5043,6 +5065,7 @@ h5.title_heading_c {
 
     .slider_buttons button {
         padding: 0px !important;
+        width: 70px;
 
     }
 
@@ -5111,12 +5134,12 @@ h5.title_heading_c {
     }
 
 
-    .blogs {
+    .hide_seek_wrapper .blogs {
         display: flex;
         flex-direction: column;
         position: absolute;
         top: 10% !important;
-        left: 50% !important;
+        left: 55% !important;
         gap: 15px !important;
     }
 
@@ -5802,6 +5825,7 @@ h5.title_heading_c {
     .share_blog_post {
         .share_blog_heading h2 {
             font-size: 1.2em !important;
+            padding: 20px 0px;
         }
 
         .share_with_social_platforms button {
@@ -6144,6 +6168,7 @@ h5.title_heading_c {
     .footer_wrapper .footer-center-bottom-section {
         border-top: 1px solid #808080;
         margin: 20px 0px;
+        
     }
 
     .member_designation p,
@@ -6851,6 +6876,8 @@ h5.title_heading_c {
         margin-bottom: 60px;
     }
 
+
+
     .home_testimonial_wrapper {
         height: auto;
         padding-bottom: 150px;
@@ -7436,6 +7463,7 @@ h5.title_heading_c {
 
 .form_fields_wrapper input {
     @extend %cf7_form_input;
+    font-family: 'Euclid Circular A';;
 }
 
 .form_fields_wrapper:nth-child(7) {

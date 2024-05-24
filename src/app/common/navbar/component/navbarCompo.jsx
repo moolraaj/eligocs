@@ -249,7 +249,8 @@ function NavbarCompo({ data }) {
 
                       <div className="header_bottom_social_icons">
                         <div className="contacts_infos">
-                          <Link href={`tel: 9317215300`}>+ 9317215300</Link>
+                          <Link href={`tel: 9317215300`}>+91 9317215300</Link>
+                         
                         </div>
                         <div className='navbar_social_media'>
                           {
