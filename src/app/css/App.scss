@@ -1248,7 +1248,8 @@ form#applyforjob textarea {
 
 .products_inner_description p p {
 	font-size: 1.375em;
-	margin-bottom: 20px
+	margin-bottom: 20px;
+    line-height: 40px;
 }
 
 .related_product_wrapper h2 {
@@ -3602,7 +3603,8 @@ p:empty {
 
 .blog_page_heading_wrapper p p {
 	font-size: 1.375em;
-	margin-bottom: 20px
+	margin-bottom: 20px;
+    line-height: 40px;
 }
 
 .contact_usform_top_section {
@@ -4398,7 +4400,6 @@ h6.user_name_c a {
 	.custom-file-upload:before {
 		content: "Upload a resume";
 		background: #fff;
-		color: #191c1b;
 		border-bottom: 1px solid #eaaa00;
 		outline: none;
 		white-space: nowrap;
@@ -5335,7 +5336,8 @@ h6.user_name_c a {
 	}
 
 	.products_inner_description p p {
-		font-size: 1em
+		font-size: 1em;
+        line-height: 30px;
 	}
 
 	.multistep_popup_form .form_heading_section h3 {
@@ -6107,7 +6109,8 @@ h6.user_name_c a {
 	.blog_page_heading_wrapper p p,
 	.courses-posts-outer.no-courses p,
 	p#no_blogs_found {
-		font-size: 1em !important
+		font-size: 1em !important;
+        line-height: 30px;
 	}
 
 	.custom-file-upload:before {

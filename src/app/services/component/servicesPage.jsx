@@ -3,8 +3,7 @@
 import { allExportedApi } from "@/utils/apis/Apis.jsx"
 import Link from "next/link"
 import ServicesFaq from "./ServicesFaq"
-
-
+ 
 import '../../about/AboutPage.scss'
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
@@ -105,7 +104,7 @@ export default function ServicesPage() {
 
                                                             </div>
                                                             <div className="service_content_description">
-                                                                <p>{e.acf.services_description.slice(0, 150)}</p>
+                                                                <span dangerouslySetInnerHTML={{__html:e.acf.services_description.slice(0, 150)}}></span>
 
                                                             </div>
                                                         </div>

@@ -1,5 +1,5 @@
 'use client'
-import CallToAction from '@/app/_call-to-action/callToAction';
+import CallToAction from '@/app/call-to-action/callToAction';
 import { allExportedApi } from '@/utils/apis/Apis';
 import React, { useEffect, useState } from 'react';
 
