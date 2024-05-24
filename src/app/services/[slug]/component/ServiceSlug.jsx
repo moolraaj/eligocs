@@ -58,7 +58,7 @@ function ServicesInnerSlug({ slug }) {
                            <h1>{ele.acf.services_inner_heading}</h1>
                         </div>
                         <div className="services_inner_description">
-                           <p>{ele.acf.services_description}</p>
+                           <span dangerouslySetInnerHTML={{__html:ele.acf.services_description}}></span>
                         </div>
                      </div>
                      <div className="services_right_sec">

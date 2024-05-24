@@ -37,8 +37,28 @@ function ContactUsForm() {
     });
   };
 
+
+  async function verifyCaptcha() {
+    try {
+    
+      recaptchaToken.value = await context.$recaptcha.execute(cap);
+
+  const response = await axios.post(
+    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}&response=${cap}`
+  );
+  return response;
+} catch (error) {
+  return error;
+}
+}
+
   const submitUserData = async (e) => {
-    console.log( cap)
+    const recaptchaResponse = await verifyCaptcha(cap);
+
+    if (!recaptchaResponse) {
+      context.$recaptcha.reset()
+      return;
+    }
     e.preventDefault();
     let formData = new FormData();
 
@@ -86,6 +106,7 @@ function ContactUsForm() {
           yournumber: '',
           yourmessage: ''
         });
+        await submit(e);
       } catch (error) {
         toast.error('mail not send!')
        
@@ -99,7 +120,7 @@ function ContactUsForm() {
       <div className="contact_us_form_outer">
         <div className="contact_us_form_inner">
           <div className="contact_us_form_wrapper">
-            <form style={{ marginTop: '100px' }} id='contactus'>
+            <form style={{ marginTop: '100px' }} id='contactus' onSubmit={submitUserData}>
 
 
               <div className="contact_us_flex_wrapper">
@@ -147,7 +168,7 @@ function ContactUsForm() {
                 <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}  onChange={setCap}/>
 
                 <div className="form_button">
-                  <button onClick={submitUserData}>Submit</button>
+                  <button >Submit</button>
                 </div>
               </div>
             </form>
