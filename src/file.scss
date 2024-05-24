@@ -99,45 +99,51 @@ textarea::placeholder {
 	max-width: 1050px
 }
 
+
 @font-face {
-	font-family: bebas;
-	src: url(/_next/static/media/BebasNeue-Regular.f8cd6b7d.ttf) format("truetype")
+    font-family: 'bebas';
+    src: url('../font-family/BebasNeue-Regular.ttf') format('truetype');
 }
 
 @font-face {
-	font-family: Audiowide;
-	src: url(/_next/static/media/Audiowide-Regular.bda2189c.ttf) format("truetype")
+    font-family: 'Audiowide';
+    src: url('../font-family/Audiowide-Regular.ttf') format('truetype');
 }
 
 @font-face {
-	font-family: Euclid Circular A;
-	src: url("/_next/static/media/Euclid Circular A Regular.ab5669bb.ttf") format("truetype");
-	font-weight: 400
+    font-family: 'Euclid Circular A';
+    src: url('../font-family/Euclid Circular A Regular.ttf') format('truetype');
+    font-weight: normal;
+   
 }
 
 @font-face {
-	font-family: Euclid Circular A;
-	src: url("/_next/static/media/Euclid Circular A Light.ba379420.ttf") format("truetype");
-	font-weight: 300
+    font-family: 'Euclid Circular A';
+    src: url('../font-family/Euclid Circular A Light.ttf') format('truetype');
+    font-weight: 300;
+ 
 }
 
 @font-face {
-	font-family: Euclid Circular A;
-	src: url("/_next/static/media/Euclid Circular A Bold.debf64bb.ttf") format("truetype");
-	font-weight: 700
+    font-family: 'Euclid Circular A';
+    src: url('../font-family/Euclid Circular A Bold.ttf') format('truetype');
+    font-weight: bold;
+   
 }
 
 @font-face {
-	font-family: Euclid Circular A;
-	src: url("/_next/static/media/Euclid Circular A Medium.3b077a60.ttf") format("truetype");
-	font-weight: 500
+    font-family: 'Euclid Circular A';
+    src: url('../font-family/Euclid Circular A Medium.ttf') format('truetype');
+    font-weight: 500;
+    
 }
 
 @font-face {
-	font-family: Euclid Circular A;
-	src: url("/_next/static/media/Euclid Circular A Bold Italic.9a76297a.ttf") format("truetype");
-	font-weight: 700;
-	font-style: italic
+    font-family: 'Euclid Circular A';
+    src: url('../font-family/Euclid Circular A Bold Italic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    
 }
 
 ::selection {
