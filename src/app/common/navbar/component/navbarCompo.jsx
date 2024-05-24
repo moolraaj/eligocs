@@ -219,7 +219,7 @@ function NavbarCompo({ data }) {
                         <button aria-label='toggle_navlinks'>
                           <img src={arrow.src} alt="arrow" />
                         </button>
-                        <div></div>
+                       <div></div>
                         <div className="hide_seek blogs" >
                           <NavigationLink href={'/meet-our-team'}>our team</NavigationLink>
                           <NavigationLink href={'/career'}>career</NavigationLink>
@@ -248,7 +248,8 @@ function NavbarCompo({ data }) {
 
                       <div className="header_bottom_social_icons">
                         <div className="contacts_infos">
-                          <Link href={`tel: 9317215300`}>+ 9317215300</Link>
+                          <Link href={`tel: 9317215300`}>+91 9317215300</Link>
+                         
                         </div>
                         <div className='navbar_social_media'>
                           {

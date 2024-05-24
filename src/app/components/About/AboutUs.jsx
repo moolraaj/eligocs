@@ -39,7 +39,7 @@ const AboutUs = () => {
     <>
     
       {result.map((ele, index) => (
-        <div className="aboutpage-outer" key={index}>
+        <div id="about_us_cust" className="aboutpage-outer" key={index}>
           <div className="pages-inner about-inner">
            <div className="parallax-container">
             <div className="container-1">
@@ -97,7 +97,7 @@ const AboutUs = () => {
             </div>
             </div>
             <div className="parallax-container" style={{background: '#EAAA00'}}>
-            <div className="container-2" >
+            <div className="container-2 about_vs" >
               <div className="content">
                 <div className="about-working-process">
                   <h3>
@@ -109,7 +109,7 @@ const AboutUs = () => {
             </div>
             </div>
             <div className="parallax-container" style={{background: "#fff"}}>
-            <div className="container-3" >
+            <div className="container-3 about_vs" >
               <div className="content_mission_our content">
                 <h1 className="uderline-text our-misson">
                   {ele.acf.our_mission_heading}
@@ -150,7 +150,7 @@ const AboutUs = () => {
             </div>
             </div>
             <div className="parallax-container" style={{background: "#191C1B"}}>
-            <div className="container-4">
+            <div className="container-4 about_vs">
               <div className="content call_action_wrapper">
                 <div className="about_call_action">
                   <div className="inner_call">

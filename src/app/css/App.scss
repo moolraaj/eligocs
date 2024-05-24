@@ -396,12 +396,10 @@ ul.transformation_wrapper li:nth-child(1) {
     content: "Upload a resume";
     background: #fff;
     color: $input-placeholder-color;
-    border: none;
     outline: none;
     white-space: nowrap;
     cursor: pointer;
     text-align: center;
-    border-radius: 5px;
     position: absolute;
     width: 100%;
     text-align: left;
@@ -436,7 +434,9 @@ ul.transformation_wrapper li:nth-child(1) {
     column-gap: 20px;
 }
 
-
+span.typing-text {
+    color: #191C1B !important;
+}
 
 
 .development_left_section {
@@ -803,6 +803,7 @@ li.blog-post-info-wrapper span:last-child {
         padding: 20px;
         @include flex-property(flex, space-between, center);
         flex-wrap: nowrap;
+        text-transform: capitalize;
     }
 }
 
@@ -843,13 +844,14 @@ p {
 }
 .scroll-button{
     cursor: pointer;
-    width: 60px;
-    height: 60px;
+    width: 40px;
     border-radius: 50%;
-    background-color: $white;
+    background-color: #fff;
     z-index: 999999;
+    padding: 9px;
     position: absolute;
     box-shadow: 0px 0px 2px 1px;
+   
 }
 
 .scrolling_portfolio_section::-webkit-scrollbar {
@@ -867,11 +869,12 @@ p {
 .slider_buttons {
     @extend %max-width;
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     position: absolute;
     bottom: 60px;
     right: 0;
     left: 0;
+
 }
 
 .slider_wrapper {
@@ -882,12 +885,13 @@ p {
 
 .slider_buttons button {
     border: unset;
-    background: $white;
-    padding: 0px;
+    background: #fff;
     padding: 10px;
-    box-shadow: 0px 0px 2px 1px;
+    box-shadow: 0px 0px 5px 5px rgba(128, 128, 128, 0.2784313725);
     border-radius: 100%;
     margin: 0px 24px;
+    width: 61px;
+    height: 60px;
 }
 
 button.prev {
@@ -971,7 +975,7 @@ button.prev {
 .hide_seek.blogs {
     position: absolute;
     top: 0;
-    left: 211px;
+    left: 250px;
     display: none;
     flex-direction: column;
     gap: 15px;
@@ -1181,10 +1185,25 @@ form#contactus {
 }
 
 
+.blog_descritpion ul {
+    margin: 20px 24px;
+}
+
+.blog_descritpion ul li {
+    margin-bottom: 10px;
+    font-size: 20px;
+    list-style-type: square;
+}
+
+.blog_descritpion ul li::marker {
+    color: $primaryyellow;
+}
+
 
 form#applyforjob textarea {
     background: transparent;
     font-family: 'Euclid Circular A';
+    padding-left: 0px;
 }
 
 
@@ -3377,6 +3396,7 @@ p .testimonial_wrap {
     .footer-center-bottom-section {
         border-top: 1px solid $borderSecondary;
         margin: 20px 50px;
+        margin-top: 50px;
         @include flex-property(flex, center, column, center);
         ;
 
@@ -3496,6 +3516,10 @@ p .testimonial_wrap {
         background-color: $primaryyellow;
         border-radius: 50px;
         width: auto;
+        color: $white;
+    }
+    #go_to_internship_page:hover{
+        background-color: $black;
         color: $white;
     }
 
@@ -3722,6 +3746,8 @@ p:empty {
 
 .blog_descritpion h3 {
     font-size: 1.125em;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .blog_descritpion p {
@@ -3817,7 +3843,7 @@ p:empty {
     border-width: 1px 0px 1px 0px;
     border-style: solid;
     border-color: rgba(159, 163, 173, .2);
-    padding: 20px 0px;
+    padding: 10px 0px;
     margin-bottom: 40px;
 
     .share_blog_heading h2 {
@@ -3827,7 +3853,7 @@ p:empty {
     .share_with_social_platforms {
         button {
             border: none;
-            padding: 20px 40px;
+            padding: 10px 40px;
             border-radius: 50px;
             background-color: $primaryyellow;
             color: $white;
@@ -3959,6 +3985,7 @@ form#contactus .form_button button {
     background: $primaryyellow;
     padding: 17px 60px !important;
     color: $black;
+    border-radius: 50px;
 }
 
 form#contactus .form_button button:hover {
@@ -3977,7 +4004,7 @@ form#contactus .contact_input_wrapper input,
 textarea {
     background: #F4F4F4;
     border: none;
-    padding: 19px 0px;
+    padding: 19px 15px;
 }
 
 
@@ -4144,14 +4171,13 @@ h5.title_heading_c {
         content: "Upload a resume";
         background: #fff;
         color: #191C1B;
-        border: none;
+        border-bottom: 1px solid $primaryyellow;
         outline: none;
         white-space: nowrap;
         cursor: pointer;
         text-align: center;
-        border-radius: 5px;
         position: absolute;
-        width: 100%;
+        width: 90%;
         text-align: left;
         height: 52px;
         top: 14px;
@@ -4332,10 +4358,12 @@ h5.title_heading_c {
         left: -15px;
         position: relative;
     }
-
+    .cf7_left_section{
+        column-gap: 0px !important;
+    }
     .form_fields_wrapper input {
         width: 89%;
-        padding: 20px 0px;
+        padding: 15px 0px;
         border: unset;
         border-bottom: 1px solid #EAAA00;
         font-size: 22px;
@@ -4391,10 +4419,32 @@ h5.title_heading_c {
 }
 
 @media screen and (max-width: 768px) {
+    .multistep_popup_form .cf7_form_inner {
+        margin-bottom:25px;
+    }
+
+    .nested_option {
+        width: 100% !important;
+        height: 50px !important;
+        position: relative;
+    }
+
+    .multistep_popup_form .form_questions_section .form_question_block .form_option label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        display: inline;
+        top: 10px;
+        font-size: 16px;
+    }
     .multistep_popup_form {
         .close_button {
             left: 0 !important;
         }
+    }
+    .inner_portfolio_link_section{
+        margin-bottom: 20px;
     }
 
     .experience_skill_left, .duties_left ul li {
@@ -4437,7 +4487,7 @@ h5.title_heading_c {
     }
 
     .slider_buttons {
-        bottom: 84px;
+        bottom: 18px;
 
     }
 
@@ -4511,6 +4561,10 @@ h5.title_heading_c {
         scroll-snap-type: x none;
         overflow-x: hidden;
         white-space: nowrap;
+        padding: 35px 0px !important;
+    }
+    .our_product_inner_page .portfolio_slider {
+        padding: 0px 0px 35px 0px !important;
     }
 
     .button_global {
@@ -4693,7 +4747,7 @@ h5.title_heading_c {
         display: none;
     }
     select.select_duration{
-        width: 90% !important;
+        width: 80% !important;
      }
     .testimonial_wrap {
         max-width: 70%;
@@ -5042,6 +5096,7 @@ h5.title_heading_c {
 
     .slider_buttons button {
         padding: 0px !important;
+        width: 60px;
 
     }
 
@@ -5110,12 +5165,9 @@ h5.title_heading_c {
     }
 
 
-    .blogs {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
+    .hide_seek_wrapper .blogs {
         top: 10% !important;
-        left: 50% !important;
+        left: 55% !important;
         gap: 15px !important;
     }
 
@@ -5269,7 +5321,7 @@ h5.title_heading_c {
         overflow: auto !important;
         z-index: 99999999;
         background: #fff;
-        padding: 50px 30px;
+        padding: 40px 22px;
         top: 0;
     }
 
@@ -5360,7 +5412,7 @@ h5.title_heading_c {
     .cf7_form_outer {
 
         .form_banner_heading h1 {
-            font-size: 3.125em !important;
+            font-size: 2.813em !important;
 
         }
 
@@ -5736,12 +5788,27 @@ h5.title_heading_c {
 
 @media (max-width:767px) {
     .nested_options {
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: repeat(1, 1fr) !important;
     }
 
     .product-page-left-info p {
                width: 100% !important;
         line-height: 30px !important;
+    }
+    .nested_option label {
+              display: inline !important;
+              top:14px !important;
+    }
+
+    input.nexted_inputs::before {
+    
+        top: 11px !important;
+        right: 16px;
+    }
+
+    input.nexted_inputs::after {
+          top: 16.6px !important;
+        right: 21.5px !important;
     }
 
     .internship_points_inner {
@@ -5801,6 +5868,7 @@ h5.title_heading_c {
     .share_blog_post {
         .share_blog_heading h2 {
             font-size: 1.2em !important;
+            padding: 20px 0px;
         }
 
         .share_with_social_platforms button {
@@ -5967,6 +6035,7 @@ h5.title_heading_c {
 }
 
 @media (min-width:1025px) and (max-width: 1440px) {
+   
     .home_slider_animate{
         margin: 0 !important;
     }
@@ -5981,8 +6050,21 @@ h5.title_heading_c {
     .page_outer.portfolio_section_outer.scrolling{
         padding: 0 !important;
     }
-    .portfolio_image img {
+    .portfolio a.portfolio-post{
         width: 400px !important;
+    }
+     
+    .portfolio_project{
+        padding-bottom: 0 !important;
+        h1{
+            font-size: 8.375em !important;
+        }
+    }
+    .portfolio_project_heading{
+        width: 95% !important;
+    }
+    .portfolio_image img {
+        width: 100% !important;
         height: 450px !important;
     }
     .portfolio_left_section {
@@ -6034,7 +6116,7 @@ h5.title_heading_c {
     .multistep_popup_form .cf7_form_outer {
         top: 18% !important;
         left: 15% !important;
-        height: 60vh !important;
+        height: 470px !important;
         overflow-y: scroll !important;
     }
 
@@ -6119,6 +6201,34 @@ h5.title_heading_c {
         font-size: 1em;
     }
 
+    .multistep_popup_form .form_heading_section h3 {
+        font-size: 1.125em !important;
+        margin: 5px 0px;
+    }
+    .multistep_popup_form .form_question_block h4 {
+        font-size: 1.125em !important;
+        margin: 13px 0px;
+    }
+    .multistep_popup_form .form_questions_section .form_question_block .form_option label {
+       display: inline !important;
+        width: 100%;
+    }
+    .multistep_form_inner input.popup_radioboxes::before {
+        top: 12px !important;
+    }
+    .multistep_form_inner input.popup_radioboxes::after {
+        top: 18px !important;
+    }
+
+    .multistep_popup_form .form_heading_section p {
+        font-size: 1em !important;
+    }
+    .form_option {
+        width: 100%;
+        height: 50px !important;
+        position: relative;
+    }
+
     .member_social_icons img {
         width: 20px;
         height: 20px;
@@ -6143,6 +6253,7 @@ h5.title_heading_c {
     .footer_wrapper .footer-center-bottom-section {
         border-top: 1px solid #808080;
         margin: 20px 0px;
+        
     }
 
     .member_designation p,
@@ -6310,11 +6421,11 @@ h5.title_heading_c {
         padding: 0;
         display: flex;
        flex-direction: column;
-       row-gap: 10px;
+       row-gap: 0px;
     }
     .blog_descritpion ul li {
-     
-       font-size: 1.25em;
+        line-height: 27px;
+       font-size: 1em;
     }
 
     .blog_descritpion strong {
@@ -6850,6 +6961,8 @@ h5.title_heading_c {
         margin-bottom: 60px;
     }
 
+
+
     .home_testimonial_wrapper {
         height: auto;
         padding-bottom: 150px;
@@ -6868,14 +6981,17 @@ h5.title_heading_c {
 
 @media (min-width:469px) and (max-width:768px) {
 
+   
+
     .multistep_popup_form {
         .cf7_form_outer {
             top: 15% !important;
             left: 7% !important;
             width: 75% !important;
             padding: 36px !important;
-            height: 60vh !important;
+            height: 560px !important;
         }
+
 
         .form_heading_section {
             .form_heading_close_btn {
@@ -6901,12 +7017,42 @@ h5.title_heading_c {
 }
 
 @media (max-width:468px) {
-    .loader img {
+    .cf7_top_banner {
+        display: flex !important;
+        align-items: baseline !important;
+        justify-content: space-between;
+    }
+    .related_product_wrapper{
+        width: 90% !important;
+    }
+    .internship_popup_form{
+        .cf7_form_outer{
+            padding: 40px 0px 40px 20px !important;
+        }
+        .cf7_top_banner{
+            width: 90% !important;
+            align-items: baseline;
+        }
+        .radio_select_box,
+     .form_fields_wrapper input{
+        width: 80% !important;
+    }
+
+    .form_option {
         width: 100%;
+        height: 60px !important;
+        position: relative;
     }
     .internship_radio{
         font-size: 1em !important;
     }
+    }
+    
+    .loader img,
+    .internship_select_box{
+        width: 100% !important;
+    }
+    
     .multistep_form_inner {
         input.popup_radioboxes::after {
             top: 27.5px !important;
@@ -6914,7 +7060,11 @@ h5.title_heading_c {
         }
 
         input.popup_radioboxes::before {
-            top: 22px !important;
+            top: 5px !important;
+        }
+        input.popup_radioboxes::after {
+            top: 12px !important;
+        
         }
 
         input.popup_radioboxes,
@@ -6941,7 +7091,7 @@ h5.title_heading_c {
             width: 80% !important;
             left: 5% !important;
             padding: 20px !important;
-            height: 65vh !important;
+            height: 485px !important;
         }
 
         .form_heading_section {
@@ -7435,6 +7585,7 @@ h5.title_heading_c {
 
 .form_fields_wrapper input {
     @extend %cf7_form_input;
+    font-family: 'Euclid Circular A';;
 }
 
 .form_fields_wrapper:nth-child(7) {
@@ -7606,10 +7757,12 @@ span.error_fields {
         h3 {
             font-size: 1.563em;
             color: $primaryyellow;
+            margin-bottom: 10px;
+            margin-top: 10px;
         }
 
         p {
-            font-size: 1.375em;
+            font-size: 1.125em;
         }
 
         .form_heading_close_btn {
@@ -7679,7 +7832,7 @@ span.error_fields {
 
     .cf7_form_outer {
         width: 60%;
-        height: 60vh;
+        height: 500px;
         position: fixed;
         overflow-y: auto !important;
         overflow-x: hidden !important;
@@ -7692,7 +7845,7 @@ span.error_fields {
     }
 
     .cf7_form_outer::-webkit-scrollbar {
-        width: 12px;
+        width: 8px;
         background-color: $white;
     }
 
@@ -7784,7 +7937,7 @@ input.popup_radioboxes {
 
 .nested_option {
     width: 100%;
-    height: 60px;
+    height: 50px !important;
     position: relative;
 }
 
@@ -7802,7 +7955,7 @@ input.nexted_inputs::before {
     background-color: #f9fafd;
     border: 1px solid #EAAA00 !important;
     border-radius: 50%;
-    top: 16px;
+    top: 12px;
     right: 16px;
 }
 
@@ -7813,8 +7966,8 @@ input.nexted_inputs::after {
     width: 12px;
     background-color: transparent;
     border-radius: 50%;
-    top: 21.6px;
-    right: 21.5px;
+    top: 17.6px;
+    right: 22.5px;
 }
 
 input.nexted_inputs:checked:after {
