@@ -107,6 +107,13 @@ const careerPageApi=async ()=>{
   return response;
 }
 
+// fetch pageNotFound api
+const pageNotFound=async ()=>{
+  let data=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=page-not-found&fields=acf&acf_format=standard`)
+  let response=await data.json()
+  return response;
+}
+
 
   // fetch all services template api
   const fetchAllServices = async () => {
@@ -267,6 +274,7 @@ const SingleBlogPost = async (slug) => {
     internshipPageApi,
     multistepFormApi,
     careerPageApi,
+    pageNotFound,
     fetchAllServices,
     fetchSingleService,
     fetchAllportFolio,
