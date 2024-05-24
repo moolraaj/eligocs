@@ -104,7 +104,7 @@ export default function ProductSlug({ slug }) {
                                         <p dangerouslySetInnerHTML={{ __html: product.acf.product_inner_page_top_heading }}></p>
                                     </div>
                                     <div className="inner_portfolio_link_section">
-                                        <Link href={product.acf.visit_product}>Visit</Link>
+                                        <Link href={product.acf.visit_product} target='_blank'>Visit</Link>
                                     </div>
                                 </div>
                             </div>

@@ -396,12 +396,10 @@ ul.transformation_wrapper li:nth-child(1) {
     content: "Upload a resume";
     background: #fff;
     color: $input-placeholder-color;
-    border: none;
     outline: none;
     white-space: nowrap;
     cursor: pointer;
     text-align: center;
-    border-radius: 5px;
     position: absolute;
     width: 100%;
     text-align: left;
@@ -4173,14 +4171,13 @@ h5.title_heading_c {
         content: "Upload a resume";
         background: #fff;
         color: #191C1B;
-        border: none;
+        border-bottom: 1px solid $primaryyellow;
         outline: none;
         white-space: nowrap;
         cursor: pointer;
         text-align: center;
-        border-radius: 5px;
         position: absolute;
-        width: 100%;
+        width: 90%;
         text-align: left;
         height: 52px;
         top: 14px;
@@ -5324,7 +5321,7 @@ h5.title_heading_c {
         overflow: auto !important;
         z-index: 99999999;
         background: #fff;
-        padding: 50px 30px;
+        padding: 40px 22px;
         top: 0;
     }
 
@@ -5415,7 +5412,7 @@ h5.title_heading_c {
     .cf7_form_outer {
 
         .form_banner_heading h1 {
-            font-size: 3.125em !important;
+            font-size: 2.813em !important;
 
         }
 
@@ -7020,6 +7017,11 @@ h5.title_heading_c {
 }
 
 @media (max-width:468px) {
+    .cf7_top_banner {
+        display: flex !important;
+        align-items: baseline !important;
+        justify-content: space-between;
+    }
     .related_product_wrapper{
         width: 90% !important;
     }
