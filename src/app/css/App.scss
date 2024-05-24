@@ -478,15 +478,24 @@ div#career_section p {
     color:$primaryyellow;
 }
 
-a.apply_now_career {
+.apply_now_career {
     padding: 12px 35px;
-    background: #eaaa00;
+    background: $primaryyellow;
     border-radius: 35px;
-    color: white;
+    color:$white;
     margin-top: 25px;
     display: inline-block;
+    border: none;
 }
-
+.apply_now_career_btn{
+    padding: 12px 35px;
+    background: $white;
+    border-radius: 35px;
+    color: $black;
+    margin-top: 25px;
+    display: inline-block;
+    border: none;
+}
 
 
 
@@ -5002,7 +5011,7 @@ h5.title_heading_c {
         row-gap: 30px;
     }
 
-    a.apply_now_career {    
+    .apply_now_career {    
         margin-top: 0px;   
     }
     .apply_left {

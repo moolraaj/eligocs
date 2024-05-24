@@ -110,7 +110,7 @@ function HeroSection({ ele, ParallaxContainer }) {
                 <h1 className='type_text_wrapper'>
                   {ele.acf.home_page_heading_second}
                   
-                  <span className="typing-text" style={{ color: '#191C1B' }}>{currentWord.slice(0, revealIndex)} | </span>
+                  <span className="typing-text">{currentWord.slice(0, revealIndex)} | </span>
                  
                   
                 </h1>

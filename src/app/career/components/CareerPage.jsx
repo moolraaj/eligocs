@@ -1,11 +1,60 @@
+'use client'
+import ApplyForJob from '@/app/_forms/applyForJob';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
+import formClose from '../../assets/headerAssets/formclose.png'
 
 
 
 function CareerPage({data}) {
+  
+  const [isFormVisible, setIsFormVisible] = useState(false);
+  const [isApplyJobVisible, setIsApplyJobVisible] = useState(false);
+  const toggleFormVisibility = () => {
+    setIsFormVisible(!isFormVisible);
+  };
   return (
    <>
+
+{isApplyJobVisible && (
+        <div className="cf7_form_outer" style={{ animation: isApplyJobVisible ? 'slide-down 0.5s' : 'slide-up 0.5s' }}>
+          <div className="cf7_form_inner">
+            <div className="cf7_top_banner">
+
+              <div className="cf7_left_section">
+                <div className="form_banner_heading">
+
+                  <h1>apply now</h1>
+                </div>
+
+                <div className="form_slider_wrapper">
+                  <div className="_form_paragraph">
+                    <p>
+                      apply for job
+                    </p>
+                  </div>
+                </div>
+
+
+              </div>
+
+              <div className="cf7_right_section">
+                <div className="close_button">
+                  <button onClick={closeApplyJob} className="close_button" aria-label='close poup form'>
+                    <img src={formClose.src} alt="" srcset="" />
+                  </button>
+                </div>
+              </div>
+
+            </div>
+            <div className="cf7_form_wrapper">
+              <ApplyForJob/>
+            </div>
+          </div>
+        </div>
+      )}
+
+
    <div className="page_top">
     <div id="career_section" className="career_page_outer">
         <div className="career_page_inner">
@@ -26,7 +75,7 @@ function CareerPage({data}) {
                   <div className="product-page-right-info">
                     <div className="product_right_info_inner">
                       <p>{ele.acf.button_heading}</p>
-                      <Link href={`/career`} >{ele.acf.button_name}</Link>
+                      <button className='apply_now_career_btn' onClick={toggleFormVisibility} >{ele.acf.button_name}</button>
                     </div>
                   </div>
                 </div>
@@ -36,7 +85,7 @@ function CareerPage({data}) {
                     <div className="current_opening_left">
                         <p dangerouslySetInnerHTML={{__html: ele.acf.current_openings_points}}></p>
 
-                        <Link className='apply_now_career' href={`/career`} >{ele.acf.button_name}</Link>
+                        <button className='apply_now_career' onClick={toggleFormVisibility} >{ele.acf.button_name}</button>
                     </div>
                     <div className="current_opening_right">
                         <img src={ele.acf.current_openings_image} alt="current_openings_image" />
@@ -61,7 +110,7 @@ function CareerPage({data}) {
                     <div className="apply_left">
                         <p>{ele.acf.how_to_apply_description}</p>
                     </div>
-                    <Link className='apply_now_career' href={`/career`} >{ele.acf.button_name}</Link>
+                    <button className='apply_now_career' onClick={toggleFormVisibility} >{ele.acf.button_name}</button>
                 </div>
               </div>
             }) 
