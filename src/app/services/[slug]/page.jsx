@@ -8,13 +8,10 @@ import ServicesInnerSlug from "./component/ServiceSlug";
 
 
 export default async function Page({ params }) {
-    let api=allExportedApi()
+   
     const { slug } = params;
     
-    const data = await api.fetchSingleService(slug);
-    
-
-    let services=await api.fetchAllServices()
+   
     
 
 
@@ -22,7 +19,7 @@ export default async function Page({ params }) {
 
     return (
         <>
-             <ServicesInnerSlug  data={data} services={services} />
+             <ServicesInnerSlug  slug={slug} />
         </>
     );
 }

@@ -1,6 +1,7 @@
 'use client'
 import { allExportedApi } from '@/utils/apis/Apis';
 import React, { useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import {toast } from 'sonner';
 
 function ContactUsForm() {
@@ -11,6 +12,7 @@ function ContactUsForm() {
     yournumber: '',
     yourmessage: '',
   });
+  const [cap,setCap]=useState(null)
 
   const [errors, setErrors] = useState({
     yourname: false,
@@ -36,6 +38,7 @@ function ContactUsForm() {
   };
 
   const submitUserData = async (e) => {
+    console.log( cap)
     e.preventDefault();
     let formData = new FormData();
 
@@ -44,6 +47,11 @@ function ContactUsForm() {
     formData.append('youremail', user.youremail);
     formData.append('yournumber', user.yournumber);
     formData.append('yourmessage', user.yourmessage);
+    formData.append("_wpcf7_recaptcha_response" , cap,)
+    formData.append("wpcf7_recaptcha_response" , cap,)
+    formData.append("recaptcha_response" , cap,)
+    formData.append("recaptcha" , cap,)
+    formData.append("token" , cap)
 
     // Validation for required fields
     let formValid = true;
@@ -58,11 +66,14 @@ function ContactUsForm() {
       }
     });
 
+   
+
     if (formValid) {
       try {
         let response = await api.fetchContactFormApi({
           method: 'POST',
-          body: formData
+          body: formData,
+          
         })
         console.log(response)
         toast.success(`<div style='font-size:16px'>Thank you, <span style="font-weight: bold; color: #EAAA00;">${user.yourname}</span> , for contacting us! Our team will be in touch with you soon.</div>`);
@@ -132,6 +143,8 @@ function ContactUsForm() {
                   </div>
 
                 </div>
+
+                <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}  onChange={setCap}/>
 
                 <div className="form_button">
                   <button onClick={submitUserData}>Submit</button>

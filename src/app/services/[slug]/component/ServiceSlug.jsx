@@ -1,12 +1,37 @@
 
 
-
+'use client'
 import CallToAction from "@/app/_call-to-action/callToAction";
+import { allExportedApi } from "@/utils/apis/Apis";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 
 
-function ServicesInnerSlug({ data, services }) {
+function ServicesInnerSlug({ slug }) {
+   let api=allExportedApi()
+
+   
+    
+
+ 
+
+   let[data,setData]=useState([])
+   let[services,setServices]=useState([])
+
+
+   const funcLoadSingleSrvices=async()=>{
+      const response = await api.fetchSingleService(slug);
+      setData(response)
+   }
+   const funcLoadAllSrvices=async()=>{
+      let response=await api.fetchAllServices()
+      setServices(response)
+   }
+   useEffect(()=>{
+      funcLoadSingleSrvices()
+      funcLoadAllSrvices()
+   },[])
 
    return (
       <>
