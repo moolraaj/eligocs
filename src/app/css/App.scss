@@ -803,6 +803,7 @@ li.blog-post-info-wrapper span:last-child {
         padding: 20px;
         @include flex-property(flex, space-between, center);
         flex-wrap: nowrap;
+        text-transform: capitalize;
     }
 }
 
@@ -847,7 +848,7 @@ p {
     height: 60px;
     border-radius: 50%;
     background-color: $white;
-    z-index: 999999;
+    z-index: 9999;
     position: absolute;
     box-shadow: 0px 0px 2px 1px;
     object-fit: scale-down;
@@ -886,7 +887,7 @@ p {
     border: unset;
     background: #fff;
     padding: 10px;
-    box-shadow: 0px 0px 5px 1px #80808047;
+    box-shadow: 0px 0px 5px 5px rgba(128, 128, 128, 0.2784313725);
     border-radius: 100%;
     margin: 0px 24px;
     width: 61px;
@@ -3517,6 +3518,10 @@ p .testimonial_wrap {
         width: auto;
         color: $white;
     }
+    #go_to_internship_page:hover{
+        background-color: $black;
+        color: $white;
+    }
 
     display: flex;
     align-items: center;
@@ -4354,10 +4359,12 @@ h5.title_heading_c {
         left: -15px;
         position: relative;
     }
-
+    .cf7_left_section{
+        column-gap: 0px !important;
+    }
     .form_fields_wrapper input {
         width: 89%;
-        padding: 20px 0px;
+        padding: 15px 0px;
         border: unset;
         border-bottom: 1px solid #EAAA00;
         font-size: 22px;
@@ -4418,6 +4425,9 @@ h5.title_heading_c {
             left: 0 !important;
         }
     }
+    .inner_portfolio_link_section{
+        margin-bottom: 20px;
+    }
 
     .experience_skill_left, .duties_left ul li {
         list-style-type: square;
@@ -4459,7 +4469,7 @@ h5.title_heading_c {
     }
 
     .slider_buttons {
-        bottom: 84px;
+        bottom: 18px;
 
     }
 
@@ -4533,6 +4543,10 @@ h5.title_heading_c {
         scroll-snap-type: x none;
         overflow-x: hidden;
         white-space: nowrap;
+        padding: 35px 0px !important;
+    }
+    .our_product_inner_page .portfolio_slider {
+        padding: 0px 0px 35px 0px !important;
     }
 
     .button_global {
@@ -4715,7 +4729,7 @@ h5.title_heading_c {
         display: none;
     }
     select.select_duration{
-        width: 90% !important;
+        width: 80% !important;
      }
     .testimonial_wrap {
         max-width: 70%;
@@ -5064,7 +5078,7 @@ h5.title_heading_c {
 
     .slider_buttons button {
         padding: 0px !important;
-        width: 70px;
+        width: 60px;
 
     }
 
@@ -5134,9 +5148,6 @@ h5.title_heading_c {
 
 
     .hide_seek_wrapper .blogs {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
         top: 10% !important;
         left: 55% !important;
         gap: 15px !important;
@@ -5991,6 +6002,7 @@ h5.title_heading_c {
 }
 
 @media (min-width:1025px) and (max-width: 1440px) {
+   
     .home_slider_animate{
         margin: 0 !important;
     }
@@ -6005,8 +6017,21 @@ h5.title_heading_c {
     .page_outer.portfolio_section_outer.scrolling{
         padding: 0 !important;
     }
-    .portfolio_image img {
+    .portfolio a.portfolio-post{
         width: 400px !important;
+    }
+     
+    .portfolio_project{
+        padding-bottom: 0 !important;
+        h1{
+            font-size: 8.375em !important;
+        }
+    }
+    .portfolio_project_heading{
+        width: 95% !important;
+    }
+    .portfolio_image img {
+        width: 100% !important;
         height: 450px !important;
     }
     .portfolio_left_section {
@@ -6928,12 +6953,31 @@ h5.title_heading_c {
 }
 
 @media (max-width:468px) {
-    .loader img {
-        width: 100%;
+    .related_product_wrapper{
+        width: 90% !important;
+    }
+    .internship_popup_form{
+        .cf7_form_outer{
+            padding: 40px 0px 40px 20px !important;
+        }
+        .cf7_top_banner{
+            width: 90% !important;
+            align-items: baseline;
+        }
+        .radio_select_box,
+     .form_fields_wrapper input{
+        width: 80% !important;
     }
     .internship_radio{
         font-size: 1em !important;
     }
+    }
+    
+    .loader img,
+    .internship_select_box{
+        width: 100% !important;
+    }
+    
     .multistep_form_inner {
         input.popup_radioboxes::after {
             top: 27.5px !important;
