@@ -219,8 +219,7 @@ function NavbarCompo({ data }) {
                         <button aria-label='toggle_navlinks'>
                           <img src={arrow.src} alt="arrow" />
                         </button>
-
-
+                        <div></div>
                         <div className="hide_seek blogs" >
                           <NavigationLink href={'/meet-our-team'}>our team</NavigationLink>
                           <NavigationLink href={'/career'}>career</NavigationLink>
