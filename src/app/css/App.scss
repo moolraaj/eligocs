@@ -1226,7 +1226,11 @@ form#applyforjob textarea {
 	position: relative;
 	display: flex;
 	align-items: center;
-	margin-top: 50px
+	margin-top: 50px;
+	width:100%;
+	height: auto;
+	justify-content: center;
+
 }
 
 .innovation_right button:hover {
@@ -2873,6 +2877,7 @@ span.vison_c {
 
 .footer_outer {
 	z-index: 99999 !important
+	
 }
 
 .nav_outer ul {
@@ -2963,12 +2968,24 @@ h1.innovation-heading {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-bottom: 50px
+	margin-bottom: 50px;
+	width:100%;
+	height: auto !important;
+}
+
+span.typing-text {
+    display: inline;
+    min-width: 110px !important;
+}
+.page_outer.about_section_outer.scrolling {
+    width: 100%;
+    min-height: auto;
 }
 
 .footer_outer {
 	background: #191c1b;
-	padding: 80px 0 20px
+	padding: 80px 0 20px;
+	width: 100% !important;
 }
 
 .company_faq_wrapper {
@@ -4845,6 +4862,9 @@ h6.user_name_c a {
 @media(max-width:1024px) {
 	.scroll-button {
 		display: none
+	}
+	.spacer {
+		height: 30px;
 	}
 
 	.righ-top_black span {
@@ -7490,6 +7510,10 @@ h6.user_name_c a {
 	.nested_options {
 		grid-template-columns: repeat(1, 1fr) !important
 	}
+	.spacer {
+        height: 0px;
+    }
+
 
 	.nav_right_section button {
 		width: 50px
