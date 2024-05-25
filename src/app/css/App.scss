@@ -843,7 +843,9 @@ li.blog-post-info-wrapper span:last-child {
 .portfolio a.portfolio-post {
 	display: flex;
 	flex-direction: column;
-	background: #fff
+	background: #fff;
+	min-height: 100px;
+	height: 100%
 }
 
 .portfolio .portfolio_flex {
@@ -889,7 +891,7 @@ p {
 	width: 40px;
 	border-radius: 50%;
 	background-color: #fff;
-	z-index: 999999;
+	z-index: 9999;
 	padding: 9px;
 	position: absolute;
 	box-shadow: 0 0 2px 1px
@@ -1275,7 +1277,7 @@ form#applyforjob textarea {
 }
 
 .contact_number a {
-	font-size: 1.845em;
+	font-size: 1.75em;
 	margin-bottom: 10px;
 	display: block
 }
@@ -2232,7 +2234,9 @@ a.back-to-projects {
 .portfolio_top_left_section .portfolio_top_right_section p p {
 	font-size: 1.375em
 }
-
+.portfolio_top_right_section p p{
+	line-height: 40px;
+}
 .portfolio_inner_intenary_related_posts {
 	display: grid;
 	grid-template-columns: 70% 30%;
@@ -2588,7 +2592,6 @@ menu.footer_ul li a {
 	padding-top: 100px;
 	padding-bottom: 80px
 }
-
 .services_right_sec {
 	padding: 20px 47px;
 	background: #eaaa00
@@ -2629,8 +2632,9 @@ menu.footer_ul li a {
 
 .services_inner_description p {
 	font-size: 1.75em;
-	line-height: 49px;
-	width: 90%
+	line-height: 50px;
+	width: 90%;
+	margin-bottom: 20px;
 }
 
 .service_page_wrapper {
@@ -3690,6 +3694,14 @@ form#contactus .form_button button:hover {
 .both_location {
 	margin-bottom: 30px
 }
+.contact_number {
+    margin-top: 20px;
+	label{
+		font-size: 1.25em;
+		color: #000;
+	}
+
+}
 
 .contact_us_l h1 {
 	font-size: 6.875em;
@@ -3750,7 +3762,8 @@ textarea {
 h5.title_heading_c {
 	margin: 0;
 	text-transform: uppercase;
-	color: #eaaa00
+	color: #eaaa00;
+	font-size: 17px;
 }
 
 .contact_us_l h1 span {
@@ -4375,7 +4388,7 @@ input.nexted_inputs:checked {
 }
 
 h6.user_name_c a {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 
@@ -7040,21 +7053,20 @@ h6.user_name_c a {
 	}
 
 	.multistep_form_inner input.popup_radioboxes:after {
-		top: 27.5px !important;
 		right: 25.5px !important
 	}
 
 	.multistep_form_inner input.popup_radioboxes:before {
-		top: 7px !important
+		top: 9px !important
 	}
 
 	.multistep_form_inner input.popup_radioboxes:after {
-		top: 13px !important
+		top: 15px !important
 	}
 
 	.multistep_form_inner .form_option label,
 	.multistep_form_inner input.popup_radioboxes {
-		height: 70% !important
+		height: 75% !important
 	}
 
 	.multistep_form_inner .form_options {

@@ -23,12 +23,9 @@ import callIconTwo from '../../../assets/headerAssets/smartphone-call.png'
 
 function NavbarCompo({ data }) {
 
-  const {footerEmail,
-    footerPhoneNumberFirst,
-    footerPhoneNumberSecond,
-  } = data.footer
+ 
 
-  const { siteLogoUrl, siteTitle, headerMenuItems, socialLinks } = data.header
+  const { siteLogoUrl, siteTitle, headerMenuItems, socialLinks,footerPhoneNumberFirst,footerPhoneNumberSecond,footerEmail} = data.header
 
 
 
