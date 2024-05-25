@@ -8,11 +8,14 @@ import formClose from '../../assets/headerAssets/formclose.png'
 
 function CareerPage({data}) {
   
-  const [isFormVisible, setIsFormVisible] = useState(false);
   const [isApplyJobVisible, setIsApplyJobVisible] = useState(false);
   const toggleFormVisibility = () => {
-    setIsFormVisible(!isFormVisible);
+    setIsApplyJobVisible(!isApplyJobVisible);
   };
+  const closeApplyJob = () => {
+    setIsApplyJobVisible(false);
+  };
+
   return (
    <>
 
