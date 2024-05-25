@@ -166,25 +166,35 @@ function NavbarCompo({ data }) {
 
 
 
+<div className='top_bar_black'>
+<div className="contacts_top_header">
+                <div className='righ-top_black'>
+              <div className="header_contact_one">
+                  <li><img src={callIconOne.src} alt="callIconOne" /><span>For General Queries</span> </li>
+                  <li><a href={`tel:${footerPhoneNumberFirst}`}>+91 {footerPhoneNumberFirst}</a></li>
+                  </div>
+                <div className="header_contact_second">
+                <li><img src={callIconTwo.src} alt="callIconTwo" /><span>For Human Resources:</span></li>
+                  <li><a href={`tel:${footerPhoneNumberSecond}`}>+91 {footerPhoneNumberSecond}</a></li>
+                </div>
+              </div>
+
+             
+              <div className="mail_header">
+                <li><img src={mailIcon.src} alt="mailIcon" /></li>
+                <li><a  href={`mailto:${footerEmail}`}>{footerEmail}</a></li>
+                </div>
+  
+
+
+</div>
+</div>
 
       <div className="nav_outer">
         <div className="nav_inner">
           <div className="nav_flex">
             <div className="nav_left_section">
-              <div className="contacts_top_header">
-                <div className="mail_header">
-                <li><img src={mailIcon.src} alt="mailIcon" /></li>
-                <li><a  href={`mailto:${footerEmail}`}>{footerEmail}</a></li>
-                </div>
-              <div className="header_contact_one">
-                  <li><img src={callIconOne.src} alt="callIconOne" /></li>
-                  <li><a href={`tel:${footerPhoneNumberFirst}`}>+91 {footerPhoneNumberFirst}</a></li>
-                  </div>
-                <div className="header_contact_second">
-                <li><img src={callIconTwo.src} alt="callIconTwo" /></li>
-                  <li><a href={`tel:${footerPhoneNumberSecond}`}>+91 {footerPhoneNumberSecond}</a></li>
-                </div>
-              </div>
+           
               <Link className="navbar-brand" href="/">
                 <img src={siteLogoUrl} alt={siteTitle} style={{ width: '9.25rem', height: '3.5625rem', objectFit: 'cover' }} />
               </Link>
@@ -294,6 +304,9 @@ function NavbarCompo({ data }) {
 
         </div>
       </div>
+
+
+      <div className='spacer'></div>
     </>
 
 

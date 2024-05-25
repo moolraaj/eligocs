@@ -183,23 +183,19 @@ h1,h2,h3,h4,h5,h6,p,span,li,ol,ul{
     justify-content: space-between;
     flex-direction: row-reverse;
     gap: 20px;
+	
 }
 .contacts_top_header {
     display: flex;
-    gap: 10px;
+    gap: 20px;
 }
-.contacts_top_header{
-	img{
-		width: 30px;
-		height: 30px;
-	}
-}
+
 .mail_header,
 .header_contact_one,
 .header_contact_second{
 	display: flex;
 	align-items: center;
-	gap: 10px;
+	gap: 5px;
 	flex-wrap: wrap;
 }
 
@@ -473,6 +469,11 @@ ul.transformation_wrapper {
 	row-gap: unset;
 	margin: 0
 }
+.nav_left_section .contacts_top_header img {
+    height: 18px;
+    object-fit: contain;
+}
+
 
 .trans_number ul li {
 	list-style: none
@@ -735,6 +736,10 @@ form#jobform textarea {
 	object-fit: cover
 }
 
+.spacer {
+    height: 70px;
+}
+
 .portfolio_posts_wrapper p p {
 	font-size: 1.563em;
 	padding-left: 20px
@@ -949,6 +954,10 @@ button.prev {
 	justify-content: center;
 	align-items: center;
 	z-index: 999
+}
+
+.header_contact_one span {
+    margin-left: 10px;
 }
 
 .hide_seek_wrapper button {
@@ -2817,14 +2826,49 @@ span.vison_c {
 	width: 100%
 }
 
+.righ-top_black {
+    display: flex;
+    column-gap: 40px;
+}
+
+.top_bar_black {
+    background: black;
+    color: white;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99999;
+}
+
+.top_bar_black img {
+    filter: invert(1);
+    height: 19px;
+    object-fit:contain;
+    margin-bottom: -3px;
+}
+.contacts_top_header {
+    display: flex;
+    gap: 20px;
+    max-width: 1524px;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.contacts_top_header a {
+    font-size: 17px;
+    line-height: 3px;
+}
+
+
 .nav_outer {
 	background: #fff;
 	box-shadow: 0 15px 50px 1px rgba(0, 0, 0, .1);
-	padding: 15px 0;
+	padding: 10px 0;
 	position: fixed;
 	width: 100%;
 	z-index: 999999;
-	top: 0
+	top: 30px;
 }
 
 .footer_outer {
@@ -4412,6 +4456,9 @@ h6.user_name_c a {
 	.form_options {
 		grid-template-columns: repeat(3, 1fr) !important
 	}
+	.contacts_top_header {
+			padding: 0px 20px;
+	}
 
 	.nav_flex {
 		padding: 0 15px
@@ -4800,6 +4847,18 @@ h6.user_name_c a {
 		display: none
 	}
 
+	.righ-top_black span {
+		display: none;
+	}
+	.contacts_top_header {
+        padding: 0px 20px;
+        padding-left: 0px;
+    }
+	.contacts_top_header a {
+		font-size: 15px;
+		line-height: 3px;
+	}
+
 	select.select_duration {
 		width: 80% !important
 	}
@@ -5183,6 +5242,9 @@ h6.user_name_c a {
 @media(max-width:768px) {
     .nested_options {
 		grid-template-columns: repeat(1, 1fr) !important
+	}
+	.header_contact_second {
+		display: none;
 	}
 
 	.product-page-left-info p {
@@ -7008,6 +7070,10 @@ h6.user_name_c a {
         bottom: -90% !important;
     }
 
+	.header_contact_second {
+		display: none;
+	}
+
         .form_option {
         width: 100%;
         height: 60px !important;
@@ -7427,6 +7493,14 @@ h6.user_name_c a {
 
 	.nav_right_section button {
 		width: 50px
+	}
+
+	.top_bar_black {
+			display: none;
+	}
+	.nav_outer {
+	
+		top: 0px;
 	}
 }
 @media screen and (max-width:770px)and (orientation:portrait) {
