@@ -146,6 +146,63 @@ textarea::placeholder {
     
 }
 
+h1,h2,h3,h4,h5,h6,p,span,li,ol,ul{
+	font-family: 'Euclid Circular A';
+}
+
+.process_left_section{
+	overflow: hidden;
+}
+
+.process_description li,
+.process_left_section{
+    position: relative;
+}
+
+.process_description li::before {
+    content: "\2713"; 
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background: #4B69C6;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; 
+    left: -30px; 
+    top: 11px; 
+    font-size: .675em; 
+	font-weight: 600;
+	transform: rotate(7deg);
+	padding: .6px;
+}
+
+.nav_left_section {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    gap: 20px;
+}
+.contacts_top_header {
+    display: flex;
+    gap: 10px;
+}
+.contacts_top_header{
+	img{
+		width: 30px;
+		height: 30px;
+	}
+}
+.mail_header,
+.header_contact_one,
+.header_contact_second{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
 ::selection {
 	color: #eaaa00;
 	background-color: #191c1b

@@ -9,6 +9,9 @@ import PortfolioComponent from '@/app/portfolio/component/portfolioComponent';
 import JobForm from '@/app/_forms/jobForm';
 import RerenderCompo from './formAnimationCompo';
 import ApplyForJob from '@/app/_forms/applyForJob';
+import mailIcon from '../../../assets/headerAssets/mail.png';
+import callIconOne from '../../../assets/headerAssets/phone-call.png';
+import callIconTwo from '../../../assets/headerAssets/smartphone-call.png'
 
 
 
@@ -20,7 +23,10 @@ import ApplyForJob from '@/app/_forms/applyForJob';
 
 function NavbarCompo({ data }) {
 
-
+  const {footerEmail,
+    footerPhoneNumberFirst,
+    footerPhoneNumberSecond,
+  } = data.footer
 
   const { siteLogoUrl, siteTitle, headerMenuItems, socialLinks } = data.header
 
@@ -168,6 +174,20 @@ function NavbarCompo({ data }) {
         <div className="nav_inner">
           <div className="nav_flex">
             <div className="nav_left_section">
+              <div className="contacts_top_header">
+                <div className="mail_header">
+                <li><img src={mailIcon.src} alt="mailIcon" /></li>
+                <li><a  href={`mailto:${footerEmail}`}>{footerEmail}</a></li>
+                </div>
+              <div className="header_contact_one">
+                  <li><img src={callIconOne.src} alt="callIconOne" /></li>
+                  <li><a href={`tel:${footerPhoneNumberFirst}`}>+91 {footerPhoneNumberFirst}</a></li>
+                  </div>
+                <div className="header_contact_second">
+                <li><img src={callIconTwo.src} alt="callIconTwo" /></li>
+                  <li><a href={`tel:${footerPhoneNumberSecond}`}>+91 {footerPhoneNumberSecond}</a></li>
+                </div>
+              </div>
               <Link className="navbar-brand" href="/">
                 <img src={siteLogoUrl} alt={siteTitle} style={{ width: '9.25rem', height: '3.5625rem', objectFit: 'cover' }} />
               </Link>
