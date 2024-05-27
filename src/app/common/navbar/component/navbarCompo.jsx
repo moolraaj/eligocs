@@ -211,7 +211,7 @@ function NavbarCompo({ data }) {
             <div className="nav_left_section">
            
               <Link className="navbar-brand" href="/">
-                <img src={siteLogoUrl} alt={siteTitle} loading="lazy" style={{maxWidth:'100%', width: '9.25rem', height: '3.5625rem', objectFit: 'cover' }} />
+                <img src={siteLogoUrl} alt={siteTitle}  style={{ width: '9.25rem', height: '3.5625rem', objectFit: 'cover' }} />
               </Link>
 
             </div>
@@ -219,7 +219,7 @@ function NavbarCompo({ data }) {
             <div className="nav_right_section">
               <button onClick={multisepPopupForm} id='go_to_internship_page' aria-label="internship_page">Enquire Now</button>
               <button onClick={toggleFormVisibility} aria-label="show form">
-                <img src={FormLogo.src} loading="lazy" style={{maxWidth:'100%'}} alt="formLogo" />
+                <img src={FormLogo.src} alt="formLogo" />
               </button>
               <button className="nav-toggler" onClick={toggleMenu} aria-label="toggle_navigation_menu">
                 <span className="nav-toggler-icon"></span>
@@ -242,7 +242,7 @@ function NavbarCompo({ data }) {
                 <div className="header-menu-seperate-container-right">
                   <div className="menu-right-container-top">
 
-                    <img src={closeMenuIcon.src} alt="closeMenuIcon" loading="lazy" style={{maxWidth:'100%',float: 'right' }}  onClick={closeMenu} />
+                    <img src={closeMenuIcon.src} alt="closeMenuIcon" style={{ float: 'right' }} onClick={closeMenu} />
                   </div>
                   <div className="menu-right-container-bottom">
                     {/* {
@@ -259,7 +259,7 @@ function NavbarCompo({ data }) {
                       <div className="hide_seek_wrapper">
 
                         <button aria-label='toggle_navlinks'>
-                          <img src={arrow.src} alt="arrow" loading="lazy" style={{maxWidth:'100%'}} />
+                          <img src={arrow.src} alt="arrow" />
                         </button>
                        <div></div>
                         <div className="hide_seek blogs" >
@@ -297,7 +297,7 @@ function NavbarCompo({ data }) {
                           {
                             socialLinks.map((ele, index) => {
                               return <div key={index} className='header_media_icons'>
-                                <Link href={ele.iconUrl} target='_blank'><img src={ele.imageUrl} alt='spcial-icons' loading="lazy" style={{maxWidth:'100%'}}/></Link>
+                                <Link href={ele.iconUrl} target='_blank'><img src={ele.imageUrl} alt='spcial-icons' /></Link>
                               </div>
                             })
                           }
@@ -321,7 +321,6 @@ function NavbarCompo({ data }) {
       </div>
 
 
-      <div className='spacer'></div>
     </>
 
 
