@@ -2445,7 +2445,7 @@ menu.footer_ul li a {
 }
 
 .process_flex_template {
-	@include grid-property(grid,54% 1fr, unset,);
+	@include grid-property(grid,54% 1fr, center,);
 }
 
 .process_left_section {
@@ -2460,6 +2460,8 @@ menu.footer_ul li a {
 }
 
 .process_right_section .process_image img {
+	position: relative;
+	z-index: 1;
 	height: 483px;
 	margin-left: -43px;
 	width: 100%;
@@ -3307,7 +3309,8 @@ p .testimonial_wrap {
 	background-color: $primaryyellow;
 	border-radius: 50px;
 	width: auto;
-	color: $white
+	color: $white;
+	font-family: $Euclidfont;
 }
 
 .nav_right_section #go_to_internship_page:hover {
@@ -6317,6 +6320,10 @@ h6.user_name_c a {
 		margin-bottom: 13px
 	}
 
+	.services_navigation {
+		max-width: fit-content;
+		width: 100%;
+	}
 	.services_navigation a {
 		font-size: 1em;
 		$white-space: nowrap;
