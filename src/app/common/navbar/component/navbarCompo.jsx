@@ -9,6 +9,10 @@ import PortfolioComponent from '@/app/portfolio/component/portfolioComponent';
 import JobForm from '@/app/_forms/jobForm';
 import RerenderCompo from './formAnimationCompo';
 import ApplyForJob from '@/app/_forms/applyForJob';
+// import mailIcon from '../../../assets/headerAssets/mail.png';
+// import callIconOne from '../../../assets/headerAssets/phone-call.png';
+// import callIconTwo from '../../../assets/headerAssets/smartphone-call.png'
+import MultistepForm from '@/app/_forms/multistepForm';
 
 
 
@@ -20,15 +24,16 @@ import ApplyForJob from '@/app/_forms/applyForJob';
 
 function NavbarCompo({ data }) {
 
+ 
 
-
-  const { siteLogoUrl, siteTitle, headerMenuItems, socialLinks } = data.header
+  const { siteLogoUrl, siteTitle, headerMenuItems, socialLinks,footerPhoneNumberFirst,footerPhoneNumberSecond,footerEmail} = data.header
 
 
 
 
   const [isOpen, setIsOpen] = useState(false);
   const [isFormVisible, setIsFormVisible] = useState(false);
+  const [ismultisepPopupForm, setIsMultisepPopupForm] = useState(false);
   const [isApplyJobVisible, setIsApplyJobVisible] = useState(false);
   // const additionalLinksRef = useRef(null);
 
@@ -48,6 +53,9 @@ function NavbarCompo({ data }) {
     setIsApplyJobVisible(false);
   };
 
+  const multisepPopupForm = () => {
+    setIsMultisepPopupForm(!ismultisepPopupForm);
+  }
 
   const toggleFormVisibility = () => {
     setIsFormVisible(!isFormVisible);
@@ -161,13 +169,47 @@ function NavbarCompo({ data }) {
         </div>
       )}
 
+      {ismultisepPopupForm &&(
+          <div className="multistep_popup_form">
+          <div className="cf7_form_outer" style={{ animation: ismultisepPopupForm ? 'slide-down 0.5s' : 'slide-up 0.5s' }}>
+          <div className="cf7_form_inner">
+            <div className="cf7_form_wrapper">
+              <MultistepForm onHideForm={multisepPopupForm} />
+            </div>
+            </div>
+            </div>
+            </div>
+      )}
+
+{/* <div className='top_bar_black'>
+<div className="contacts_top_header">
+                <div className='righ-top_black'>
+              <div className="header_contact_one">
+                  <li><img src={callIconOne.src} alt="callIconOne" /><span>For General Queries</span> </li>
+                  <li><a href={`tel:${footerPhoneNumberFirst}`}>+91 {footerPhoneNumberFirst}</a></li>
+                  </div>
+                <div className="header_contact_second">
+                <li><img src={callIconTwo.src} alt="callIconTwo" /><span>For Human Resources:</span></li>
+                  <li><a href={`tel:${footerPhoneNumberSecond}`}>+91 {footerPhoneNumberSecond}</a></li>
+                </div>
+              </div>
+
+             
+              <div className="mail_header">
+                <li><img src={mailIcon.src} alt="mailIcon" /></li>
+                <li><a  href={`mailto:${footerEmail}`}>{footerEmail}</a></li>
+                </div>
+  
 
 
+</div>
+</div> */}
 
       <div className="nav_outer">
         <div className="nav_inner">
           <div className="nav_flex">
             <div className="nav_left_section">
+           
               <Link className="navbar-brand" href="/">
                 <img src={siteLogoUrl} alt={siteTitle} style={{ width: '9.25rem', height: '3.5625rem', objectFit: 'cover' }} />
               </Link>
@@ -175,7 +217,7 @@ function NavbarCompo({ data }) {
             </div>
 
             <div className="nav_right_section">
-              <Link href={`/our-internship`} id='go_to_internship_page' aria-label="internship_page">Skill Up Course</Link>
+              <button onClick={multisepPopupForm} id='go_to_internship_page' aria-label="internship_page">Enquire Now</button>
               <button onClick={toggleFormVisibility} aria-label="show form">
                 <img src={FormLogo.src} alt="formLogo" />
               </button>
@@ -248,8 +290,8 @@ function NavbarCompo({ data }) {
 
                       <div className="header_bottom_social_icons">
                         <div className="contacts_infos">
-                          <Link href={`tel: 9317215300`}>+91 9317215300</Link>
-                         
+                          <Link href={`tel: ${footerPhoneNumberFirst}`}>+91 {footerPhoneNumberFirst}</Link>
+                          <Link href={`tel: ${footerPhoneNumberSecond}`}>+91 {footerPhoneNumberSecond}</Link>
                         </div>
                         <div className='navbar_social_media'>
                           {
@@ -277,6 +319,9 @@ function NavbarCompo({ data }) {
 
         </div>
       </div>
+
+
+      <div className='spacer'></div>
     </>
 
 

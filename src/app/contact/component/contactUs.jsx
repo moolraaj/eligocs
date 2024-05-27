@@ -77,7 +77,8 @@ function ContactUs() {
                                             {
                                                 ele.acf.contact_number.map((number, index) => {
                                                     return <div className='contact_number' key={index}>
-                                                        <a href={`tel:${number.call_number_first}`}>{number.call_number_first}</a>
+                                                        <label htmlFor={number.number_label}>{number.number_label}</label>
+                                                        <a href={`tel:${number.call_number}`}>+91 {number.call_number}</a>
                                                     </div>
 
                                                 })

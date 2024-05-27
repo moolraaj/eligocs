@@ -29,15 +29,7 @@ function PopupForm() {
     <>
     {isMounted && (
           <>
-            <div className="multistep_popup_form">
-            <div className="cf7_form_outer" style={{ animation: isMounted ? 'slide-down 0.5s' : 'slide-up 0.5s' }}>
-            <div className="cf7_form_inner">
-              <div className="cf7_form_wrapper">
-                <MultistepForm onHideForm={toggleFormVisibility} />
-              </div>
-              </div>
-              </div>
-              </div>
+           <h1>this is popup form</h1>
           </>
         )}
     </>
