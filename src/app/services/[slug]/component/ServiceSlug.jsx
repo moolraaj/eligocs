@@ -82,7 +82,8 @@ function ServicesInnerSlug({ slug }) {
                   </div>
 
                   {ele.acf.inner_development_process.map((ele, index) => (
-                     <div className="process_flex_template" key={index}>
+                     <div className={`process_flex_template process_template-${index % 2 === 0 ? "even" : "odd"}`}
+                     key={index}>
                         <div className="process_left_section">
                            <div className="inner_process_heading">
                               <h1>{ele.services_process_heading}</h1>
