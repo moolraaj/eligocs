@@ -165,13 +165,16 @@ h1,h2,h3,h4,h5,h6,p,span,li,ol,ul{
 .process_left_section{
     position: relative;
 }
-
+.process_description ul {
+	@include grid-property(grid, repeat(2, 1fr),unset,20px,20px);
+	
+}
 .process_description li::before {
     content: "\2713"; 
     width: 20px;
     height: 20px;
     position: absolute;
-    background: #4B69C6;
+    background: $green;
     color: $white;
     display: flex;
     justify-content: center;
@@ -5146,7 +5149,7 @@ h6.user_name_c a {
 	.portfolio_gallery_wrapper {
 		flex: 0 0 50% !important
 	}
-
+	
 	.nested_options {
 		grid-template-columns: repeat(3, 1fr) !important
 	}
@@ -5203,15 +5206,20 @@ h6.user_name_c a {
 	}
 }
 @media(max-width:768px) {
-  
-	.page_outer.about_section_outer.scrolling{
-		width: fit-content;
-        box-sizing: border-box;
-        margin: auto;
-        min-height: fit-content;
-        height: 100%;
-	
+	.process_description ul {
+		@include grid-property(grid, repeat(1, 1fr),unset,20px,20px);
+		margin-left: 30px;
+		
 	}
+	
+	.page_outer.about_section_outer.scrolling {
+        width: 100%; 
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden; 
+        min-height: auto; 
+        height: auto; 
+    }
     .nested_options {
 		grid-template-columns: repeat(1, 1fr) !important
 	}
@@ -5501,8 +5509,10 @@ h6.user_name_c a {
 
 	.footer_wrapper .footer-center-bottom-section {
 		border-top: 1px solid gray;
-		margin: 20px 0;
+		margin: auto;
 		width: 100%;
+		max-width: 100%;
+		box-sizing: border-box;
 	}
 
 	.member_designation p,
@@ -5940,14 +5950,15 @@ h6.user_name_c a {
 		width: 100%;
 		display: inline;
 	}
-
+	.home_about_right {
+		width: 100% !important;
+	}
 	.home_about_right p {
 		color: $white;
 		font-size: 1.125em;
 		line-height: 38px;
 		max-width: fit-content;
         width: 100%;
-		display: inline;
 	}
 
 	.trans_redirecttion {
@@ -6442,7 +6453,12 @@ h6.user_name_c a {
 
 	.slider_buttons button {
 		padding: 0 !important;
-		width: 60px
+		width: 45px;
+		height: 45px;
+		img{
+			width: 35px;
+			height: 35px;
+		}
 	}
 
 	.slider_buttons button img {
@@ -6995,7 +7011,7 @@ h6.user_name_c a {
 	}
 }
 @media(min-width:469px)and (max-width:768px) {
-
+	
     .dots{
         bottom: -90% !important;
     }
@@ -7038,6 +7054,11 @@ h6.user_name_c a {
 	}
 }
 @media(max-width:468px) {
+	.process_description li::before{
+		top: 2px;
+		width: 16px;
+		height: 16px;
+	}
 	.center-section-fourth-inner-wrapper li{
 		font-size: 0.875em;
 	}
