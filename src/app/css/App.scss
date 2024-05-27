@@ -2937,7 +2937,10 @@ span.typing-text {
 .footer_outer {
 	background: $primaryblack;
 	padding: 80px 0 20px;
-	width: 100% !important;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+
 }
 
 .company_faq_wrapper {
@@ -4909,6 +4912,7 @@ h6.user_name_c a {
 
 	h1.type_text_wrapper,
 	h1.type_text_wrapper span {
+		width: 100%;
 		text-align: center !important;
 		display: flex;
 		flex-direction: column;
@@ -5175,9 +5179,11 @@ h6.user_name_c a {
 @media(max-width:768px) {
   
 	.page_outer.about_section_outer.scrolling{
-		width: auto;
-		height: 100%;
-		box-sizing: border-box;
+		width: fit-content;
+        box-sizing: border-box;
+        margin: auto;
+        min-height: fit-content;
+        height: 100%;
 	
 	}
     .nested_options {
@@ -5469,7 +5475,8 @@ h6.user_name_c a {
 
 	.footer_wrapper .footer-center-bottom-section {
 		border-top: 1px solid gray;
-		margin: 20px 0
+		margin: 20px 0;
+		width: 100%;
 	}
 
 	.member_designation p,
@@ -5897,16 +5904,24 @@ h6.user_name_c a {
 	.home_slider_wrapper p {
 		font-size: 1.5em
 	}
+	.home_about_left {
+		margin-bottom: 10px;
+	}
 
 	.home_about_left h1 {
 		font-size: 3.125em;
-		padding: 0px 0 15px
+		max-width: fit-content;
+		width: 100%;
+		display: inline;
 	}
 
 	.home_about_right p {
 		color: $white;
 		font-size: 1.125em;
-		line-height: 38px
+		line-height: 38px;
+		max-width: fit-content;
+        width: 100%;
+		display: inline;
 	}
 
 	.trans_redirecttion {
@@ -7316,7 +7331,7 @@ h6.user_name_c a {
 	}
 
 	.footer_wrapper .footer-center-section {
-		padding: 5em 0 0 1.6666666667em
+		padding: 50px 0px 0px 20px;
 	}
 
 	.service_navigate_button button {
