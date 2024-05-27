@@ -3994,6 +3994,29 @@ h5.title_heading_c {
 	animation: slide-down .5s ease forwards
 }
 
+.services_development_process_wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+}
+.process_template-odd .process_left_section {
+    order: 2;
+    padding-left: 80px;
+}
+.process_template-odd {
+    grid-template-columns: 1fr 54%;
+    align-items: center;
+}
+.process_template-odd .process_image img {
+    margin-left: 43px;
+    z-index: 2;
+    position: relative;
+}
+.process_template-odd .process_left_section p {
+    width: 100%;
+}
+
+
 .close_button button {
 	border: unset;
 	background: unset
