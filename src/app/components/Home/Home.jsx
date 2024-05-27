@@ -88,7 +88,7 @@ function HomeCompo({ result }) {
           <QuoteSection ele={ele} />
           {/*quote section ends*/}
           
-          <PopupForm/>
+          
         </div>
       ))}
     </>

@@ -1,3 +1,6 @@
+@import "variables";
+@import "mixins";
+
 .cf7_form_inner,
 .footer_inner,
 .inner_call,
@@ -6,16 +9,20 @@
 .page_top,
 .slider_buttons {
 	max-width: 1520px;
-	margin: auto
+	margin: auto;
+	box-sizing: border-box;
 }
 
+img{
+	box-sizing: border-box;
+}
 .development_left_section h1,
 .trans_left_section h1 {
 	font-size: 5em;
 	text-decoration: underline;
-	text-decoration-color: #eaaa00;
+	text-decoration-color: $primaryyellow;
 	text-transform: capitalize;
-	color: #3d3a3a;
+	color: $blackgrey;
 	line-height: 1.7em
 }
 
@@ -33,15 +40,15 @@
 .development_section_outer,
 .testimonial_section_outer,
 .transform_section_outer {
-	background-color: #fff
+	background-color: $white
 }
 
 .innovation_right button {
-	background: #191c1b;
+	background: $primaryblack;
 	padding: 14px 50px;
 	border-radius: 30px;
 	border: unset;
-	color: #eaaa00;
+	color: $primaryyellow;
 	font-size: 1.875em;
 	text-transform: capitalize
 }
@@ -52,7 +59,7 @@
 	position: fixed;
 	overflow: auto;
 	z-index: 99999999;
-	background: #fff;
+	background: $white;
 	padding: 50px 30px;
 	top: 0
 }
@@ -61,10 +68,10 @@
 	width: 100%;
 	padding: 26px 0;
 	border: unset;
-	border-bottom: 1px solid #eaaa00;
+	border-bottom: 1px solid $primaryyellow;
 	font-size: 28px;
 	text-transform: capitalize;
-	color: #585757
+	color: $input-placeholder-color
 }
 
 .form_button button {
@@ -73,8 +80,8 @@
 	border: unset;
 	text-transform: capitalize;
 	font-size: 1.815em;
-	color: #fff;
-	font-family: Euclid Circular A
+	color: $white;
+	font-family: $Euclidfont;
 }
 
 .form_fields_wrapper textarea,
@@ -82,7 +89,7 @@ input::placeholder,
 textarea::placeholder {
 	font-size: 28px;
 	text-transform: capitalize;
-	color: #585757
+	color: $input-placeholder-color
 }
 
 .inner_portfolio_link_section a {
@@ -91,7 +98,7 @@ textarea::placeholder {
 	border-radius: 40px;
 	border: none;
 	text-transform: capitalize;
-	font-family: Euclid Circular A, sans-serif
+	font-family: $Euclidfont;
 }
 
 .loader img {
@@ -147,7 +154,7 @@ textarea::placeholder {
 }
 
 h1,h2,h3,h4,h5,h6,p,span,li,ol,ul{
-	font-family: 'Euclid Circular A';
+	font-family: $Euclidfont;
 }
 
 .process_left_section{
@@ -165,7 +172,7 @@ h1,h2,h3,h4,h5,h6,p,span,li,ol,ul{
     height: 20px;
     position: absolute;
     background: #4B69C6;
-    color: white;
+    color: $white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -200,17 +207,18 @@ h1,h2,h3,h4,h5,h6,p,span,li,ol,ul{
 }
 
 ::selection {
-	color: #eaaa00;
-	background-color: #191c1b
+	color: $primaryyellow;
+	background-color: $primaryblack
 }
 
 body {
 	margin: 0;
 	padding: 0;
-	font-family: Euclid Circular A !important;
+	font-family: $Euclidfont !important;
 	font-size: 16px;
 	overflow-x: hidden !important;
-	cursor: auto !important
+	cursor: auto !important;
+	box-sizing: border-box;
 }
 
 body button {
@@ -231,16 +239,16 @@ body li {
 
 body::-webkit-scrollbar {
 	width: 12px;
-	background-color: #fff
+	background-color: $white
 }
 
 body::-webkit-scrollbar-thumb {
-	background-color: #eaaa00;
+	background-color: $primaryyellow;
 	border-radius: 10px
 }
 
 .popup-content {
-	background: #000;
+	background: $black;
 	width: 100%;
 	height: 100%;
 	position: fixed;
@@ -295,21 +303,21 @@ body::-webkit-scrollbar-thumb {
 }
 
 .form_fields_wrapper input::placeholder {
-	color: #585757 !important
+	color: $input-placeholder-color !important
 }
 
 .course_call_to_action .call_left_section #sucess-journy-btn {
-	background-color: #191c1b
+	background-color: $primaryblack
 }
 
 .apply_now_navgation .form_button button {
-	background: #eaaa00 !important;
+	background: $primaryyellow !important;
 	font-weight: 600;
 	font-size: 1.125em
 }
 
 .apply_now_navgation .form_button button:hover {
-	background: #000 !important;
+	background: $black !important;
 	font-weight: 600
 }
 
@@ -335,7 +343,7 @@ span.input-error {
 	flex-wrap: wrap;
 	height: 100vh;
 	z-index: 999;
-	background: #eaaa00
+	background: $primaryyellow
 }
 
 .call_wrapper {
@@ -360,7 +368,7 @@ span.input-error {
 }
 
 .call_left_section h1 {
-	color: #fff;
+	color: $white;
 	font-size: 1.875em
 }
 
@@ -369,28 +377,28 @@ span.input-error {
 }
 
 .menu-right-container-bottom a.nav-link:hover {
-	color: #eaaa00
+	color: $primaryyellow
 }
 
 button#sucess-journy-btn {
-	background: #eaaa00;
+	background: $primaryyellow;
 	padding: 15px 40px;
 	border-radius: 30px !important;
 	border: none;
-	color: #fff;
+	color: $white;
 	text-transform: capitalize;
 	font-size: 25px;
 	margin-top: 20px
 }
 
 button#sucess-journy-btn:hover {
-	background: #fff !important;
-	color: #000
+	background: $white !important;
+	color: $black
 }
 
 .blog_page_call_to_action button {
-	background-color: #fff !important;
-	color: #000 !important
+	background-color: $white !important;
+	color: $black !important
 }
 
 ul {
@@ -407,11 +415,11 @@ a {
 }
 
 .about_section_outer {
-	background: #191c1b
+	background: $primaryblack
 }
 
 .home_about_right p {
-	color: #fff;
+	color: $white;
 	font-size: 2em;
 	margin: 0;
 	line-height: 60px
@@ -439,34 +447,23 @@ a {
 
 .portfolio_related_posts_inner a {
 	font-size: 1.825em;
-	color: #fff;
+	color: $white;
 	font-weight: 600;
 	margin-bottom: 10px;
 	text-transform: capitalize
 }
 
 .home_about_wrapper {
-	display: grid;
-	grid-template-columns: 30% 70%;
-	align-items: unset;
-	column-gap: 20px;
-	row-gap: 0
+	@include grid-property(grid,30% 70%, unset,20px,0px);
+
 }
 
 .trans_flex {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	align-items: flex-start;
-	column-gap: unset;
-	row-gap: unset
+	@include grid-property(grid,1fr 1fr,flex-start,unset, unset);
 }
 
 ul.transformation_wrapper {
-	display: grid;
-	grid-template-columns: 10% 1fr;
-	align-items: center;
-	column-gap: 20px;
-	row-gap: unset;
+	@include grid-property(grid,10% 1fr, center,20px, unset);
 	margin: 0
 }
 .nav_left_section .contacts_top_header img {
@@ -487,10 +484,10 @@ ul.transformation_wrapper li:first-child {
 
 .custom-file-upload:before {
 	content: "Upload a resume";
-	background: #fff;
-	color: #585757;
+	background: $white;
+	color: $input-placeholder-color;
 	outline: none;
-	white-space: nowrap;
+	$white-space: nowrap;
 	cursor: pointer;
 	text-align: center;
 	position: absolute;
@@ -513,11 +510,7 @@ ul.transformation_wrapper li:first-child {
 }
 
 .development_flex {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	align-items: flex-start;
-	column-gap: 200px;
-	row-gap: unset;
+	@include grid-property(grid,1fr 1fr, flex-start,200px,unset);
 	padding-top: 75px
 }
 
@@ -527,7 +520,7 @@ ul.transformation_wrapper li:first-child {
 }
 
 span.typing-text {
-	color: #191c1b !important
+	color: $primaryblack !important
 }
 
 .development_left_section {
@@ -542,7 +535,7 @@ div#career_section p {
 
 .current_opening_section_wrapper h2 {
 	font-size: 3.125em;
-	color: #eaaa00;
+	color: $primaryyellow;
 	margin-bottom: 0
 }
 
@@ -559,12 +552,12 @@ div#career_section p {
 }
 
 .current_opening_left ul li::marker {
-	color: #eaaa00
+	color: $primaryyellow
 }
 
 .apply_now_career {
-	background: #eaaa00;
-	color: #fff
+	background: $primaryyellow;
+	color: $white
 }
 
 .apply_now_career,
@@ -577,8 +570,8 @@ div#career_section p {
 }
 
 .apply_now_career_btn {
-	background: #fff;
-	color: #000
+	background: $white;
+	color: $black
 }
 
 .experience_skill_left ul li::marker {
@@ -595,8 +588,7 @@ div#career_section p {
 
 .covering_both,
 .experience_skill_left ul {
-	display: grid;
-	grid-template-columns: 1fr 1fr
+	@include grid-property(grid, 1fr 1fr);
 }
 
 .experience_skill_left ul {
@@ -627,9 +619,7 @@ div#career_section p {
 }
 
 .duties_left ul {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-row-gap: 20px
+	@include grid-property(grid, 1fr 1fr, unset, unset, 20px);
 }
 
 .experience_section_wrapper {
@@ -640,7 +630,7 @@ div#career_section p {
 
 .duties_left ul li:marker,
 .experience_skill_left {
-	color: #eaaa00
+	color: $primaryyellow
 }
 
 .Previous_next_button {
@@ -660,7 +650,7 @@ div#career_section p {
 }
 
 .unlock_success_btn a {
-	background: #eaaa00;
+	background: $primaryyellow;
 	padding: 15px 45px;
 	border-radius: 30px !important;
 	border: none;
@@ -681,17 +671,13 @@ div#career_section p {
 }
 
 form#jobform textarea {
-	background: #fff;
-	font-family: Euclid Circular A;
+	background: $white;
+	font-family: $Euclidfont;
 	padding: 0
 }
 
 .portfolio_showcase_wrapper {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	align-items: unset;
-	row-gap: 0;
-	column-gap: 50px !important
+	@include grid-property(grid, repeat(3, 1fr), unset,50px, 0px);
 }
 
 .port_showcase_image img {
@@ -780,8 +766,8 @@ form#jobform textarea {
 .Previous_next_button button {
 	padding: 9px 30px;
 	margin: 10px;
-	background: #eaaa00;
-	color: #fff;
+	background: $primaryyellow;
+	color: $white;
 	border: none;
 	border-radius: 7px
 }
@@ -826,7 +812,7 @@ li.blog-post-info-wrapper span:last-child {
 }
 
 .page_outer.portfolio_section_outer.scrolling {
-	background: #191c1b;
+	background: $primaryblack;
 	height: 100%;
 	overflow-y: hidden;
 	overflow-x: hidden;
@@ -848,7 +834,7 @@ li.blog-post-info-wrapper span:last-child {
 .portfolio a.portfolio-post {
 	display: flex;
 	flex-direction: column;
-	background: #fff;
+	background: $white;
 	min-height: 100px;
 	height: 100%
 }
@@ -877,7 +863,7 @@ p {
 }
 
 .call_outer.inner_services button#sucess-journy-btn {
-	background: #000
+	background: $black
 }
 
 .home_wrapper .scrolling_portfolio_section {
@@ -893,9 +879,10 @@ p {
 
 .scroll-button {
 	cursor: pointer;
-	width: 40px;
+	width: 60px;
+	height: 60px;
 	border-radius: 50%;
-	background-color: #fff;
+	background-color: $white;
 	z-index: 9999;
 	padding: 9px;
 	position: absolute;
@@ -930,7 +917,7 @@ p {
 
 .slider_buttons button {
 	border: unset;
-	background: #fff;
+	background: $white;
 	padding: 10px;
 	box-shadow: 0 0 5px 5px hsla(0, 0%, 50%, .278);
 	border-radius: 100%;
@@ -1054,8 +1041,8 @@ h6.user_name_c {
 }
 
 .pagination-buttons button.active {
-	background: #eaaa00;
-	color: #3d3a3a
+	background: $primaryyellow;
+	color: $blackgrey
 }
 
 a.footer_mail {
@@ -1088,7 +1075,7 @@ a.footer_mail {
 }
 
 .portpolio_flex {
-	background: #fff;
+	background: $white;
 	padding: 20px
 }
 
@@ -1109,7 +1096,9 @@ a.footer_mail {
 .testi_image img {
 	width: 85px;
 	height: 85px;
-	border-radius: 100%
+	border-radius: 100%;
+	box-sizing: border-box;
+	max-width: fit-content;
 }
 
 .testimonial_wrap {
@@ -1128,9 +1117,7 @@ a.footer_mail {
 }
 
 .right_c_form {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	row-gap: 25px
+	@include grid-property(grid, 1fr 1fr, unset, unset, 25px);
 }
 
 .lower_sec_c .left_lower_s h3 {
@@ -1174,12 +1161,12 @@ form#contactus {
 }
 
 .about_call_action .call_left_section h1 {
-	color: #fff;
+	color: $white;
 	margin: 0
 }
 
 .about_call_action .call_left_section p {
-	color: #fff;
+	color: $white;
 	padding: 10px 0;
 	font-size: 1.188em
 }
@@ -1203,12 +1190,12 @@ form#contactus {
 }
 
 .blog_descritpion ul li::marker {
-	color: #eaaa00
+	color: $primaryyellow
 }
 
 form#applyforjob textarea {
 	background: transparent;
-	font-family: Euclid Circular A;
+	font-family: $Euclidfont;
 	padding-left: 0
 }
 
@@ -1234,7 +1221,7 @@ form#applyforjob textarea {
 }
 
 .innovation_right button:hover {
-	background: #000 !important
+	background: $black !important
 }
 
 .innovation-heading,
@@ -1265,14 +1252,14 @@ form#applyforjob textarea {
 	right: -18px;
 	bottom: 0;
 	font-size: 1.8em;
-	color: #fff;
+	color: $white;
 	font-weight: 200;
 	font-family: ui-monospace
 }
 
 .company_scroll_wrapper {
 	position: relative;
-	border-right: 1px solid #fff;
+	border-right: 1px solid $white;
 	width: 100%;
 	display: flex;
 	justify-content: center
@@ -1281,7 +1268,7 @@ form#applyforjob textarea {
 .develop_heading h4 {
 	font-size: 3.125em;
 	text-transform: capitalize;
-	color: #eaaa00;
+	color: $primaryyellow;
 	margin: 0
 }
 
@@ -1297,7 +1284,7 @@ form#applyforjob textarea {
 
 .develop_para {
 	font-size: 22px;
-	color: #000;
+	color: $black;
 	margin-bottom: 25px
 }
 
@@ -1315,7 +1302,7 @@ form#applyforjob textarea {
 	left: 0;
 	height: 50vh;
 	width: 50px;
-	background: #eaaa00
+	background: $primaryyellow
 }
 
 .products_inner_description p p {
@@ -1329,7 +1316,7 @@ form#applyforjob textarea {
 }
 
 .related_product_wrapper a {
-	color: #fff;
+	color: $white;
 	font-size: 1.875em;
 	font-weight: 600
 }
@@ -1367,7 +1354,7 @@ form#applyforjob textarea {
 .product-top-image-section .product_image_right span {
 	max-width: 750px;
 	height: 128px;
-	background: #eaaa00;
+	background: $primaryyellow;
 	position: absolute;
 	left: 10%;
 	bottom: -47px;
@@ -1390,9 +1377,7 @@ form#applyforjob textarea {
 }
 
 .product-top-info-section {
-	display: grid;
-	grid-template-columns: 60% 40%;
-	place-items: flex-end;
+	@include grid-property(grid 60% 40%, flex-end,unset);
 	padding: 120px 0 20px 2px;
 	text-transform: capitalize
 }
@@ -1409,19 +1394,19 @@ form#applyforjob textarea {
 }
 
 .product-top-info-section .product_right_info_inner {
-	background: #eaaa00;
+	background: $primaryyellow;
 	padding: 60px 30px
 }
 
 .product-top-info-section .product_right_info_inner p {
-	color: #fff;
+	color: $white;
 	margin-bottom: 20px;
 	font-size: 1.875em
 }
 
 .product-top-info-section .product_right_info_inner a {
-	color: #eaaa00;
-	background-color: #fff;
+	color: $primaryyellow;
+	background-color: $white;
 	padding: 10px 20px;
 	border-radius: 35px;
 	margin-top: 20px;
@@ -1429,8 +1414,8 @@ form#applyforjob textarea {
 }
 
 .product-top-info-section .product_right_info_inner a:hover {
-	background-color: #191c1b;
-	color: #fff;
+	background-color: $primaryblack;
+	color: $white;
 	transition: transform .3s ease-in-out
 }
 
@@ -1442,18 +1427,18 @@ form#applyforjob textarea {
 
 .our_products_wrapper>ul.our_product.odd li:first-child {
 	align-items: flex-end;
-	background-color: #eaaa00;
+	background-color: $primaryyellow;
 	margin-top: 101px;
 	width: 654px
 }
 
 .our_products_wrapper>ul.our_product.odd li:first-child a {
-	background-color: #fff;
-	color: #eaaa00
+	background-color: $white;
+	color: $primaryyellow
 }
 
 .our_products_wrapper>ul.our_product.odd li:first-child a:hover {
-	background-color: #000
+	background-color: $black
 }
 
 .our_products_wrapper>ul.our_product.odd li:nth-child(2) img {
@@ -1464,18 +1449,18 @@ form#applyforjob textarea {
 }
 
 .our_products_wrapper>ul.our_product.even li:first-child {
-	background-color: #000;
+	background-color: $black;
 	width: 654px
 }
 
 .our_products_wrapper>ul.our_product.even li:first-child a {
-	background-color: #eaaa00;
-	color: #fff
+	background-color: $primaryyellow;
+	color: $white
 }
 
 .our_products_wrapper>ul.our_product.even li:first-child a:hover {
-	background-color: #fff;
-	color: #000
+	background-color: $white;
+	color: $black
 }
 
 .our_products_wrapper>ul.our_product.even li:nth-child(2) img {
@@ -1485,10 +1470,8 @@ form#applyforjob textarea {
 }
 
 .our_products_wrapper {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	@include grid-property(grid, repeat(2, 1fr),center, unset, 50px );
 	place-items: center;
-	row-gap: 50px;
 	position: relative;
 	margin: 120px 0
 }
@@ -1510,7 +1493,7 @@ form#applyforjob textarea {
 }
 
 .our_products_wrapper .our_product li:first-child h1 {
-	color: #fff;
+	color: $white;
 	font-size: 3.938em
 }
 
@@ -1521,11 +1504,7 @@ form#applyforjob textarea {
 }
 
 .our_products_wrapper .our_product span.wrap_nmae_btn {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	align-items: center;
-	column-gap: 0;
-	row-gap: 0;
+	@include grid-property(grid, 1fr 1fr, center, 0px , 0px);
 	padding: 0 20px
 }
 
@@ -1542,7 +1521,7 @@ form#applyforjob textarea {
 }
 
 .related_product_wrapper {
-	background-color: #eaaa00;
+	background-color: $primaryyellow;
 	padding: 40px 60px;
 	width: 75%
 }
@@ -1588,7 +1567,7 @@ form#applyforjob textarea {
 	content: "";
 	width: 12px;
 	height: 12px;
-	background-color: #eaaa00;
+	background-color: $primaryyellow;
 	font-size: 1.5em;
 	position: absolute;
 	left: 0;
@@ -1604,7 +1583,7 @@ form#applyforjob textarea {
 }
 
 .internship_points_inner .internship_bullet_points h2 {
-	color: #eaaa00;
+	color: $primaryyellow;
 	font-size: 1.875em
 }
 
@@ -1632,7 +1611,7 @@ form#applyforjob textarea {
 }
 
 h1 {
-	color: #3d3a3a
+	color: $blackgrey
 }
 
 .team_header-wrapper {
@@ -1669,11 +1648,7 @@ h1 {
 }
 
 .team_member_section {
-	display: grid;
-	grid-template-columns: 1fr 60%;
-	align-items: unset;
-	column-gap: 12%;
-	row-gap: 0
+	@include grid-property(grid, 1fr 60%, unset, 12%, 0px);
 }
 
 .member_informations_section {
@@ -1684,7 +1659,7 @@ h1 {
 	column-gap: 0;
 	row-gap: 0;
 	flex-wrap: wrap;
-	border-bottom: 1px solid #191c1b;
+	border-bottom: 1px solid $primaryblack;
 	height: 156px;
 	cursor: pointer;
 	display: grid;
@@ -1737,7 +1712,7 @@ h1 {
 	width: 100%;
 	position: absolute;
 	height: 103px;
-	background: #eaaa00;
+	background: $primaryyellow;
 	bottom: -5%;
 	left: 13%
 }
@@ -1748,15 +1723,13 @@ h1 {
 
 h1.type_text_wrapper {
 	text-align: end !important;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	align-items: center;
-	column-gap: 20px;
-	row-gap: 0
+	@include grid-property(grid, 1fr 1fr, center, 20px 0px);
 }
 
 h1.type_text_wrapper span {
-	text-align: left
+	text-align: left;
+	display: flex;
+	width: fit-content;
 }
 
 .team_member_section:hover .memebr_left_section {
@@ -1806,7 +1779,7 @@ h1.type_text_wrapper span {
 }
 
 .call_outer {
-	background: #eaaa00
+	background: $primaryyellow
 }
 
 .call_wrapper {
@@ -1816,23 +1789,20 @@ h1.type_text_wrapper span {
 
 .call_outer.inner_services .call_left_section h1 {
 	font-size: 3.125em;
-	color: #fff;
+	color: $white;
 	margin-top: 0;
 	margin-bottom: 0
 }
 
 .call_outer.inner_services .call_left_section p {
-	color: #fff;
+	color: $white;
 	font-size: 1.25em;
 	padding: 7px 0
 }
 
 .call_wrapper {
-	display: grid;
-	grid-template-columns: 2fr 1fr;
+	@include grid-property(grid, 2fr 1fr, center, 50px , unset);
 	justify-content: space-between;
-	column-gap: 50px;
-	align-items: center
 }
 
 .call_slider_image img {
@@ -1863,7 +1833,7 @@ h1.innovation-heading {
 
 .course-page-top-section h1 {
 	font-size: 5em;
-	color: #eaaa00;
+	color: $primaryyellow;
 	margin: 0
 }
 
@@ -1872,7 +1842,7 @@ h1.innovation-heading {
 	max-width: 800px;
 	margin: auto;
 	padding-bottom: 50px;
-	color: #3d3a3a
+	color: $blackgrey
 }
 
 .course-page-top-section p {
@@ -1884,7 +1854,7 @@ h1.innovation-heading {
 
 .button_global {
 	padding: 20px 80px;
-	background: #eaaa00;
+	background: $primaryyellow;
 	display: inline-block;
 	margin-bottom: 60px;
 	font-size: 1.563em;
@@ -1893,8 +1863,8 @@ h1.innovation-heading {
 }
 
 .button_global:hover {
-	background: #000;
-	color: #fff
+	background: $black;
+	color: $white
 }
 
 .course-page-top-section img {
@@ -1907,7 +1877,7 @@ ul.course li:first-child img {
 
 .filter_courses_outer {
 	width: 85%;
-	background: #eaaa00;
+	background: $primaryyellow;
 	padding: 35px;
 	display: flex;
 	align-items: flex-start;
@@ -1919,7 +1889,7 @@ ul.course li:first-child img {
 select.filter_course_top_right {
 	padding: 13px 27px;
 	border-radius: 40px;
-	color: #eaaa00;
+	color: $primaryyellow;
 	font-size: 1.563em;
 	max-width: 225px;
 	width: 100%
@@ -1937,7 +1907,7 @@ select.filter_course_top_right {
 	height: 80px;
 	max-width: 840px;
 	position: absolute;
-	background: #eaaa00;
+	background: $primaryyellow;
 	left: 12%;
 	z-index: 9999;
 	bottom: -32px;
@@ -1945,9 +1915,7 @@ select.filter_course_top_right {
 }
 
 .courses-posts-outer {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	column-gap: 48px;
+	@include grid-property(grid,1fr 1fr 1fr,unset, 48px, );
 	width: 100% !important
 }
 
@@ -1958,14 +1926,14 @@ select.filter_course_top_right {
 
 .courses-posts-outer.no-courses p {
 	font-size: 2em;
-	color: #fff
+	color: $white
 }
 
 ul.course {
 	box-shadow: 2px 3px 19px rgba(0, 0, 0, .149);
 	padding: 15px;
 	text-align: center;
-	background: #fff;
+	background: $white;
 	position: relative;
 	height: auto
 }
@@ -2034,20 +2002,18 @@ ul.course li:nth-child(4) {
 .course_image span {
 	width: 30%;
 	height: 60px;
-	background: #eaaa00;
+	background: $primaryyellow;
 	position: absolute;
 	left: 10%;
 	bottom: -15px
 }
 
 .course_intro_join_section {
-	display: grid;
-	grid-template-columns: 60% 40%;
+	@include grid-property(grid, 60% 40%,unset, 20px, 20px);
 	place-items: flex-start;
 	padding: 40px 0 20px;
 	margin-top: 30px;
 	text-transform: capitalize;
-	gap: 20px
 }
 
 .course_intro_join_section .course_intro_wrapper h1 {
@@ -2065,19 +2031,19 @@ ul.course li:nth-child(4) {
 }
 
 .course_intro_join_section .course_join_wrapper .course_join_inner {
-	background: #eaaa00;
+	background: $primaryyellow;
 	padding: 60px 30px
 }
 
 .course_intro_join_section .course_join_wrapper .course_join_inner p {
-	color: #fff;
+	color: $white;
 	margin-bottom: 20px;
 	font-size: 1.4em
 }
 
 .course_intro_join_section .course_join_wrapper .course_join_inner a {
-	color: #eaaa00;
-	background-color: #fff;
+	color: $primaryyellow;
+	background-color: $white;
 	padding: 10px 20px;
 	border-radius: 35px;
 	margin-top: 20px;
@@ -2085,14 +2051,14 @@ ul.course li:nth-child(4) {
 }
 
 .course_intro_join_section .course_join_wrapper .course_join_inner a:hover {
-	background-color: #191c1b;
-	color: #fff;
+	background-color: $primaryblack;
+	color: $white;
 	transition: transform .3s ease-in-out
 }
 
 .what_u_learn_section h2 {
 	font-size: 3em;
-	color: #eaaa00
+	color: $primaryyellow
 }
 
 .what_u_learn_section p {
@@ -2120,24 +2086,22 @@ ul.course li:nth-child(4) {
 	content: "";
 	width: 10px;
 	height: 10px;
-	background-color: #eaaa00;
+	background-color: $primaryyellow;
 	position: absolute;
 	margin-left: -26px;
 	top: 10px
 }
 
 .inner_portfolio_link_section a {
-	background-color: #eaaa00;
-	color: #000
+	background-color: $primaryyellow;
+	color: $black
 }
 
 .portfolio_projects_flex {
-	display: grid;
+	@include grid-property(grid,1fr 3fr,flex-start,);
 	width: 100%;
 	margin: auto;
-	grid-template-columns: 1fr 3fr;
 	justify-content: space-between;
-	align-items: flex-start;
 	overflow: hidden
 }
 
@@ -2148,7 +2112,7 @@ a.back-to-projects {
 }
 
 .portfolio_project {
-	background: #191c1b;
+	background: $primaryblack;
 	padding-top: 80px;
 	padding-bottom: 100px;
 	overflow: hidden;
@@ -2192,21 +2156,21 @@ a.back-to-projects {
 }
 
 .arrow_slider {
-	background-color: #eaaa00;
-	color: #fff;
+	background-color: $primaryyellow;
+	color: $white;
 	font-size: 1.5em;
 	display: none
 }
 
 .arrow_slider:hover {
-	background-color: #fff;
-	color: #000
+	background-color: $white;
+	color: $black
 }
 
 .portfolio_top_left_section {
 	display: flex;
 	column-gap: 50px;
-	align-items: center;
+	align-items: flex-start;
 	position: relative
 }
 
@@ -2237,7 +2201,7 @@ a.back-to-projects {
 	max-width: 840px;
 	height: 103px;
 	width: 100%;
-	background: #eaaa00
+	background: $primaryyellow
 }
 
 .portfolio_top_left_section .portfolio_top_right_section h1 {
@@ -2251,9 +2215,7 @@ a.back-to-projects {
 	line-height: 40px;
 }
 .portfolio_inner_intenary_related_posts {
-	display: grid;
-	grid-template-columns: 70% 30%;
-	column-gap: 10px;
+	@include grid-property(grid,70% 30%, unset, 10px ,);
 	margin-top: 80px
 }
 
@@ -2274,7 +2236,7 @@ a.back-to-projects {
 }
 
 .portfolio_related_posts_inner {
-	background: #eaaa00;
+	background: $primaryyellow;
 	display: flex;
 	flex-direction: column;
 	padding: 60px 45px
@@ -2285,19 +2247,19 @@ a.back-to-projects {
 	text-decoration: none;
 	text-transform: uppercase;
 	font-weight: 500;
-	color: #191c1b;
+	color: $primaryblack;
 	margin: 0
 }
 
 .all_services_right_section .service_content_description p {
 	font-size: 1.25em;
-	color: #000;
+	color: $black;
 	width: 94%
 }
 
 .services_navigation a {
 	font-size: 1.375em;
-	white-space: nowrap;
+	$white-space: nowrap;
 	text-transform: uppercase;
 	font-weight: 500
 }
@@ -2305,7 +2267,7 @@ a.back-to-projects {
 ul.transformation_wrapper li h4 {
 	font-size: 3.75em;
 	margin: .8em 0;
-	color: #eaaa00;
+	color: $primaryyellow;
 	font-family: bebas
 }
 
@@ -2318,18 +2280,18 @@ ul.transformation_wrapper li h4 {
 .home_slider_wrapper>h1 {
 	text-align: center;
 	margin: 0 0 14px;
-	text-shadow: 1px 1px 3px rgba(0, 0, 0, .38)
+	text-shadow: $textshadow;
 }
 
 .home_slider_wrapper h1:first-child {
 	font-size: 6.25em;
-	color: #191c1b;
+	color: $primaryblack;
 	text-transform: capitalize
 }
 
 .home_slider_wrapper h1:nth-child(2) {
 	font-size: 4.215em;
-	color: #eaaa00;
+	color: $primaryyellow;
 	text-transform: capitalize
 }
 
@@ -2340,7 +2302,7 @@ ul.transformation_wrapper li h4 {
 .home_slider_wrapper p {
 	text-align: center;
 	font-size: 1.875em;
-	text-decoration-color: #eaaa00
+	text-decoration-color: $primaryyellow
 }
 
 span.cline {
@@ -2349,7 +2311,7 @@ span.cline {
 
 span.cline:after {
 	content: "";
-	border-bottom: 3px solid #eaaa00;
+	border-bottom: 3px solid $primaryyellow;
 	border-block-width: 16px;
 	line-height: 4px !important;
 	width: 100%;
@@ -2367,22 +2329,18 @@ span.cline:after {
 .development_scroll {
 	position: sticky;
 	top: 40px;
-	background: #fff;
+	background: $white;
 	z-index: 99;
 	padding-top: 7px
 }
 
 .company_flex {
-	display: grid;
-	grid-template-columns: 40% 1fr;
-	align-items: unset;
-	column-gap: unset;
-	row-gap: 0;
+	@include grid-property(grid,40% 1fr,unset,unset,0px);
 	height: 720px
 }
 
 .company_left_section {
-	background: #191c1b;
+	background: $primaryblack;
 	height: 100%;
 	display: flex;
 	align-items: center;
@@ -2392,7 +2350,7 @@ span.cline:after {
 }
 
 .company_right_section {
-	background: #eaaa00;
+	background: $primaryyellow;
 	display: flex;
 	justify-content: space-evenly
 }
@@ -2435,16 +2393,20 @@ menu.footer_ul li a {
 }
 
 .nav-right .header_contact_section h2 {
-	color: #eaaa00
+	color: $primaryyellow
 }
 
 .nav-right .header_bottom_social_icons {
-	display: grid;
-	grid-template-columns: 1fr 1fr
+	@include grid-property(grid,1fr 1fr,unset,);
+	.contacts_infos {
+		display: flex;
+		flex-direction: column;
+	}
 }
 
 .nav-right .header_bottom_social_icons img {
 	width: 32px;
+	height: 32px;
 	object-fit: none;
 	filter: hue-rotate(22917deg)
 }
@@ -2472,7 +2434,7 @@ menu.footer_ul li a {
 
 .header-menu-seperate-container-left h1 {
 	font-size: 2em;
-	color: #fff;
+	color: $white;
 	margin: 0;
 	padding-top: 60px;
 	padding-bottom: 10px
@@ -2483,13 +2445,11 @@ menu.footer_ul li a {
 }
 
 .process_flex_template {
-	display: grid;
-	grid-template-columns: 54% 1fr;
-	align-items: center
+	@include grid-property(grid,54% 1fr, unset,);
 }
 
 .process_left_section {
-	background: #eaaa00;
+	background: $primaryyellow;
 	padding: 30px 40px
 }
 
@@ -2517,13 +2477,13 @@ menu.footer_ul li a {
 }
 
 .service_top_heading_first h1 {
-	color: #eaaa00;
+	color: $primaryyellow;
 	font-size: 5em;
 	margin: 0
 }
 
 .all_services_outer {
-	border-top: 1px solid #eaaa00;
+	border-top: 1px solid $primaryyellow;
 	padding-bottom: 70px
 }
 
@@ -2535,7 +2495,7 @@ menu.footer_ul li a {
 .service_content_heading h1 {
 	font-size: 2.5em;
 	text-transform: uppercase;
-	color: #eaaa00
+	color: $primaryyellow
 }
 
 .service_page_right_section img {
@@ -2546,14 +2506,14 @@ menu.footer_ul li a {
 }
 
 .all_services_left_section h1 {
-	color: #3d3a3a;
+	color: $blackgrey;
 	font-size: 5em;
-	text-decoration-color: #eaaa00 !important;
+	text-decoration-color: $primaryyellow !important;
 	text-decoration: underline
 }
 
 .service_top_sub_heading h1 {
-	color: #3d3a3a;
+	color: $blackgrey;
 	width: 64%;
 	margin: auto;
 	font-size: 5em;
@@ -2569,7 +2529,7 @@ menu.footer_ul li a {
 }
 
 .service_navigate_button button {
-	background: #eaaa00;
+	background: $primaryyellow;
 	padding: 15px 45px;
 	border-radius: 30px !important;
 	border: none;
@@ -2578,15 +2538,15 @@ menu.footer_ul li a {
 }
 
 .service_navigate_button button:hover {
-	background: #000;
-	color: #fff
+	background: $black;
+	color: $white
 }
 
 .servies_barrner_bar {
 	writing-mode: tb;
 	font-size: 10px;
 	position: absolute;
-	white-space: nowrap;
+	$white-space: nowrap;
 	left: -3%;
 	top: 16%;
 	transform: rotate(180deg)
@@ -2599,15 +2559,14 @@ menu.footer_ul li a {
 }
 
 .serices_flex_template {
-	display: grid;
-	grid-template-columns: 68% 1fr;
+	@include grid-property(grid,68% 1fr,unset,);
 	justify-content: space-between;
 	padding-top: 100px;
 	padding-bottom: 80px
 }
 .services_right_sec {
 	padding: 20px 47px;
-	background: #eaaa00
+	background: $primaryyellow
 }
 
 .services_banner_section img {
@@ -2628,7 +2587,7 @@ menu.footer_ul li a {
 }
 
 .related-services ul li a {
-	color: #fff;
+	color: $white;
 	font-size: 1.875em;
 	text-transform: capitalize;
 	padding-bottom: 15px
@@ -2672,7 +2631,7 @@ menu.footer_ul li a {
 
 .services_faq_heading h1 {
 	text-transform: uppercase;
-	color: #fff
+	color: $white
 }
 
 ul.transformation_wrapper:hover img {
@@ -2696,13 +2655,12 @@ ul.transformation_wrapper {
 }
 
 .services_faqs_wrapper {
-	background: #191c1b;
+	background: $primaryblack;
 	max-width: 1520px;
 	margin: auto;
 	padding: 50px;
-	display: grid;
+	@include grid-property(grid,1fr 2fr,unset,);
 	justify-content: space-between;
-	grid-template-columns: 1fr 2fr
 }
 
 .services_faq_left_section h1 {
@@ -2710,12 +2668,12 @@ ul.transformation_wrapper {
 }
 
 .services_show_servicefaqs {
-	background: #191c1b
+	background: $primaryblack
 }
 
 .services_faq_left_section h1,
 .services_faq_right_section {
-	color: #fff
+	color: $white
 }
 
 .servies_question {
@@ -2726,23 +2684,23 @@ ul.transformation_wrapper {
 }
 
 .services_faqs_wrapper .arrow-icon {
-	border: solid #fff !important;
+	border: solid $white !important;
 	border-width: 0 2px 2px 0 !important
 }
 
 .company_left_section h1 {
 	font-size: 4em;
-	color: #fff;
+	color: $white;
 	line-height: 100px;
 	margin: 0
 }
 
 span.vison_c {
-	color: #eaaa00
+	color: $primaryyellow
 }
 
 .company_left_section p {
-	color: #fff;
+	color: $white;
 	font-size: 1.625em
 }
 
@@ -2751,18 +2709,14 @@ span.vison_c {
 }
 
 .testimonial_wrap {
-	background: #fff;
+	background: $white;
 	box-shadow: 0 15px 50px 1px rgba(0, 0, 0, .1);
 	padding: 20px;
 	border-radius: 10px
 }
 
 .testimonial_flex {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	align-items: center;
-	column-gap: unset;
-	row-gap: 0
+	@include grid-property(grid,1fr 1fr,center,unset,0px);
 }
 
 .testimonial_slider {
@@ -2774,16 +2728,16 @@ span.vison_c {
 .testimonial_left_section h1 {
 	font-size: 5em;
 	text-decoration: underline;
-	text-decoration-color: #eaaa00;
+	text-decoration-color: $primaryyellow;
 	text-transform: capitalize;
-	color: #3d3a3a;
+	color: $blackgrey;
 	line-height: 120px;
 	margin: 40px 0;
 	width: 80%
 }
 
 .quote_section_outer {
-	background: #eaaa00
+	background: $primaryyellow
 }
 
 .qoute_para p {
@@ -2798,11 +2752,11 @@ span.vison_c {
 }
 
 .quote_redirection {
-	background: #191c1b;
+	background: $primaryblack;
 	padding: 14px 50px;
 	border-radius: 30px;
 	border: unset;
-	color: #eaaa00;
+	color: $primaryyellow;
 	font-size: 30px;
 	text-transform: capitalize
 }
@@ -2837,7 +2791,7 @@ span.vison_c {
 
 .top_bar_black {
     background: black;
-    color: white;
+    color: $white;
     padding: 5px;
     position: fixed;
     width: 100%;
@@ -2847,6 +2801,7 @@ span.vison_c {
 
 .top_bar_black img {
     filter: invert(1);
+	width: 19px;
     height: 19px;
     object-fit:contain;
     margin-bottom: -3px;
@@ -2866,13 +2821,13 @@ span.vison_c {
 
 
 .nav_outer {
-	background: #fff;
+	background: $white;
 	box-shadow: 0 15px 50px 1px rgba(0, 0, 0, .1);
 	padding: 10px 0;
 	position: fixed;
 	width: 100%;
 	z-index: 999999;
-	top: 30px;
+	top: 0;
 }
 
 .footer_outer {
@@ -2883,11 +2838,7 @@ span.vison_c {
 .nav_outer ul {
 	padding: 0;
 	margin: 0;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	align-items: center;
-	column-gap: 0;
-	row-gap: 0
+	@include grid-property(grid,1fr 1fr,center,0px , 0px);
 }
 
 .meet_our_team {
@@ -2895,14 +2846,14 @@ span.vison_c {
 	padding: 20px 40px;
 	border-radius: 41px;
 	border: none;
-	background-color: #fff;
+	background-color: $white;
 	margin-top: 20px;
 	display: inline-block;
-	font-family: Euclid Circular A, sans-serif
+	font-family: $Euclidfont;
 }
 
 .meet_our_team:hover {
-	background: #eaaa00;
+	background: $primaryyellow;
 	pointer-events: all
 }
 
@@ -2948,8 +2899,8 @@ h1.innovation-heading {
 }
 
 .innovation_right button {
-	background: #eaaa00 !important;
-	color: #fff !important;
+	background: $primaryyellow !important;
+	color: $white !important;
 	font-weight: 600
 }
 
@@ -2979,11 +2930,12 @@ span.typing-text {
 }
 .page_outer.about_section_outer.scrolling {
     width: 100%;
-    min-height: auto;
+    min-height: fit-content;
+	box-sizing: border-box;
 }
 
 .footer_outer {
-	background: #191c1b;
+	background: $primaryblack;
 	padding: 80px 0 20px;
 	width: 100% !important;
 }
@@ -3050,7 +3002,7 @@ button.nav-toggler {
 span.nav-toggler-icon {
 	height: 4px;
 	width: 100%;
-	background-color: #000;
+	background-color: $black;
 	border-radius: 30px
 }
 
@@ -3096,7 +3048,7 @@ p .testimonial_wrap {
 }
 
 .dot.active {
-	background-color: #eaaa00
+	background-color: $primaryyellow
 }
 
 .testimonial_right_section {
@@ -3110,12 +3062,9 @@ p .testimonial_wrap {
 }
 
 .footer_wrapper {
-	color: #fff;
-	display: grid;
-	grid-template-columns: 0 95% 5%;
-	align-items: unset;
-	column-gap: 0;
-	row-gap: 0
+	color: $white;
+	@include grid-property(grid,0 95% 5%,unset, 0px , 0px);
+
 }
 
 .footer_wrapper .center-section-second-inner-wrapper ul li {
@@ -3157,10 +3106,10 @@ p .testimonial_wrap {
 .footer_wrapper .footer-center-section .center-section-first-inner-wrapper ul li.common-btns {
 	padding: 10px 20px;
 	margin-bottom: 20px;
-	color: #000;
+	color: $black;
 	font-weight: 700;
 	font-size: 20px;
-	white-space: nowrap;
+	$white-space: nowrap;
 	display: table
 }
 
@@ -3173,7 +3122,7 @@ p .testimonial_wrap {
 }
 
 .footer_wrapper .footer-center-section .center-section-first-inner-wrapper ul #dev-company {
-	background-color: #eaaa00
+	background-color: $primaryyellow
 }
 
 .footer_wrapper .footer-center-section .center-section-fourth-inner-wrapper,
@@ -3255,7 +3204,7 @@ p .testimonial_wrap {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: #fff;
+	background: $white;
 	height: 100vh;
 	width: 100% !important;
 	margin: auto;
@@ -3293,7 +3242,7 @@ p .testimonial_wrap {
 
 .header-menu-seperate-container-right .menu-right-container-bottom a {
 	color: #0c171f;
-	white-space: nowrap
+	$white-space: nowrap
 }
 
 .header-menu-seperate-container-right .menu-right-container-bottom::-webkit-scrollbar {
@@ -3301,7 +3250,7 @@ p .testimonial_wrap {
 }
 
 .nav-left {
-	background-color: #191c1b;
+	background-color: $primaryblack;
 	height: 100vh;
 	width: 45%
 }
@@ -3312,8 +3261,7 @@ p .testimonial_wrap {
 }
 
 .header-portfolio-section .portfolio_right_section {
-	gap: 40px;
-	display: grid;
+	@include grid-property(grid,unset,unset,40px, 40px);
 	place-items: center;
 	margin: 40px 0
 }
@@ -3338,28 +3286,30 @@ p .testimonial_wrap {
 }
 
 .apply_now_navgation {
-	display: grid;
-	grid-template-columns: 1fr 1fr
+	@include grid-property(grid,1fr 1fr, unset);
 }
 
 .nav_right_section {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: 20px
+	gap: 10px;
+	max-width: fit-content;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 .nav_right_section #go_to_internship_page {
 	padding: 11px 20px;
-	background-color: #eaaa00;
+	background-color: $primaryyellow;
 	border-radius: 50px;
 	width: auto;
-	color: #fff
+	color: $white
 }
 
 .nav_right_section #go_to_internship_page:hover {
-	background-color: #000;
-	color: #fff
+	background-color: $black;
+	color: $white
 }
 
 .nav_right_section button {
@@ -3370,7 +3320,9 @@ p .testimonial_wrap {
 }
 
 .nav_right_section img {
-	height: 44px !important
+	height: 44px;
+	box-sizing: border-box;
+    max-width: fit-content;
 }
 
 .WorkForm-container {
@@ -3382,7 +3334,7 @@ p .testimonial_wrap {
 	left: 0;
 	width: 100%;
 	height: 100vh;
-	background: #fff;
+	background: $white;
 	z-index: 9999;
 	transition: top .3s ease
 }
@@ -3447,7 +3399,7 @@ p .testimonial_wrap {
 
 .WorkForm-button {
 	background-color: #333;
-	color: #fff;
+	color: $white;
 	border: none;
 	border-radius: 5px;
 	padding: 10px 20px;
@@ -3468,7 +3420,7 @@ p .testimonial_wrap {
 .servies_question .arrow-icon {
 	width: 10px;
 	height: 10px;
-	border: solid #000;
+	border: solid $black;
 	border-width: 0 2px 2px 0;
 	display: inline-block;
 	padding: 3px;
@@ -3482,7 +3434,7 @@ p .testimonial_wrap {
 }
 
 .apply_for_job ._form_paragraph p {
-	color: #000 !important
+	color: $black !important
 }
 
 .filter_blog_posts {
@@ -3503,7 +3455,7 @@ p .testimonial_wrap {
 }
 
 .blog-posts-section p#no_blogs_found {
-	color: #eaaa00;
+	color: $primaryyellow;
 	font-size: 2em
 }
 
@@ -3530,12 +3482,12 @@ p .testimonial_wrap {
 }
 
 #blog_category option:hover {
-	background-color: #eaaa00 !important
+	background-color: $primaryyellow !important
 }
 
 #blog_category:hover {
 	border-color: #888;
-	background-color: #fff
+	background-color: $white
 }
 
 #blog_category:focus {
@@ -3589,13 +3541,9 @@ p:empty {
 }
 
 .blog-header-image-heading {
-	display: grid;
+	@include grid-property(grid,1fr 1fr,center,40px , 40px);
 	justify-content: unset;
 	flex-direction: unset;
-	align-items: center;
-	column-gap: 40px;
-	row-gap: 40px;
-	grid-template-columns: 1fr 1fr
 }
 
 .blog_img_heading_wrapper {
@@ -3630,7 +3578,7 @@ p:empty {
 	width: 90%;
 	max-width: 840px;
 	height: 103px;
-	background: #eaaa00;
+	background: $primaryyellow;
 	position: absolute;
 	left: 12%;
 	bottom: -20px
@@ -3670,22 +3618,18 @@ p:empty {
 	border: none;
 	padding: 10px 40px;
 	border-radius: 50px;
-	background-color: #eaaa00;
-	color: #fff;
+	background-color: $primaryyellow;
+	color: $white;
 	font-size: 1.188em;
-	font-family: Euclid Circular A, sans-serif
+	font-family: $Euclidfont;
 }
 
 .share_blog_post .share_with_social_platforms button:hover {
-	background-color: #000
+	background-color: $black
 }
 
 .all-blog-posts-outer {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	align-items: unset;
-	row-gap: 0;
-	column-gap: 50px;
+	@include grid-property(grid,repeat(3, 1fr), unset,50px,0px);
 	text-transform: capitalize
 }
 
@@ -3713,7 +3657,7 @@ p:empty {
 .all-blog-posts-outer ul.blog-post .blog-post-info-wrapper h2 {
 	font-size: 1.75em;
 	font-weight: 800;
-	border-bottom: 1px solid #000;
+	border-bottom: 1px solid $black;
 	padding-bottom: 34px
 }
 
@@ -3735,20 +3679,19 @@ p:empty {
 }
 
 form#contactus .form_button button:hover {
-	background: #000
+	background: $black
 }
 
 .both_location h6 {
 	margin: 0;
 	font-size: 1.263em;
 	font-weight: 500;
-	color: #eaaa00;
+	color: $primaryyellow;
 	text-transform: uppercase
 }
 
 .contact_both_sec {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+	@include grid-property(grid,1fr 1fr,unset);
 	margin-top: 80px
 }
 
@@ -3759,7 +3702,7 @@ form#contactus .form_button button:hover {
     margin-top: 20px;
 	label{
 		font-size: 1.25em;
-		color: #000;
+		color: $black;
 	}
 
 }
@@ -3784,23 +3727,21 @@ h5.user_name_c {
 .lower_sec_c {
 	max-width: 1440px;
 	margin: auto;
-	display: grid;
-	grid-template-columns: 1fr 2fr;
-	column-gap: 5%;
+	@include grid-property(grid, 1fr 2fr,unset,5%,unset);
 	justify-content: space-between;
 	padding: 100px 0
 }
 
 form#contactus .form_button button {
-	background: #eaaa00;
+	background: $primaryyellow;
 	padding: 17px 60px !important;
-	color: #000;
+	color: $black;
 	border-radius: 50px
 }
 
 form#contactus .form_button button:hover {
-	background: #eaaa00;
-	color: #fff
+	background: $primaryyellow;
+	color: $white
 }
 
 form#contactus .contact_input_wrapper input,
@@ -3814,7 +3755,7 @@ textarea {
 .contact_input_wrapper label {
 	font-size: 1.563em;
 	text-transform: capitalize;
-	color: #eaaa00;
+	color: $primaryyellow;
 	margin-top: 23px;
 	display: block;
 	margin-bottom: 10px
@@ -3823,20 +3764,18 @@ textarea {
 h5.title_heading_c {
 	margin: 0;
 	text-transform: uppercase;
-	color: #eaaa00;
+	color: $primaryyellow;
 	font-size: 17px;
 }
 
 .contact_us_l h1 span {
 	display: block;
-	color: #eaaa00;
+	color: $primaryyellow;
 	text-align: center
 }
 
 .contact_usform_inner_section {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	column-gap: 5%
+   @include grid-property(grid, 1fr 1fr,unset,5%,unset);
 }
 
 .form_button {
@@ -3852,7 +3791,7 @@ h5.title_heading_c {
 }
 
 .contacts_infos a {
-	font-size: 3.125em
+	font-size: 2em;
 }
 
 .blog_post_header img {
@@ -3913,7 +3852,7 @@ h5.title_heading_c {
 
 
 .course_call_to_action {
-	background-color: #eaaa00
+	background-color: $primaryyellow
 }
 
 .course_page_faq_inner {
@@ -3939,7 +3878,7 @@ h5.title_heading_c {
 }
 
 .course_faq_heading span {
-	color: #eaaa00
+	color: $primaryyellow
 }
 
 .faq_arrow-icon {
@@ -3948,7 +3887,7 @@ h5.title_heading_c {
 
 .faq_arrow-icon,
 .faq_arrow-icon.active {
-	color: #eaaa00;
+	color: $primaryyellow;
 	cursor: pointer;
 	font-weight: 100
 }
@@ -3963,9 +3902,6 @@ h5.title_heading_c {
 	font-size: 2.188em
 }
 
-.our_internship_link {
-	display: none
-}
 
 
 .loader {
@@ -3974,7 +3910,7 @@ h5.title_heading_c {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: #eaaa00
+	background: $primaryyellow
 }
 
 .internship_popup_form {
@@ -3984,7 +3920,7 @@ h5.title_heading_c {
 	width: 100%;
 	margin: auto;
 	transform: translate(-50%, -50%);
-	background-color: #fff;
+	background-color: $white;
 	padding: 20px;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
 	z-index: 9999999
@@ -4028,15 +3964,11 @@ h5.title_heading_c {
 }
 
 .job_form_flex_wrapper {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	align-items: unset;
-	column-gap: 50px;
-	row-gap: 0
+	@include grid-property(grid,1fr 1fr,unset,50px,0px);
 }
 
 .form_fields_wrapper input {
-	font-family: Euclid Circular A
+	font-family: $Euclidfont;
 }
 
 .form_fields_wrapper:nth-child(7) {
@@ -4046,12 +3978,12 @@ h5.title_heading_c {
 
 .form_fields_wrapper input:focus-visible {
 	outline: unset !important;
-	border-bottom: 1px solid #eaaa00 !important
+	border-bottom: 1px solid $primaryyellow !important
 }
 
 .form_fields_wrapper textarea {
 	outline: unset;
-	border-bottom: 1px solid #eaaa00 !important;
+	border-bottom: 1px solid $primaryyellow !important;
 	width: 100%;
 	height: 8vh;
 	border: unset
@@ -4062,7 +3994,7 @@ h5.title_heading_c {
 }
 
 .form_button button {
-	background: #000
+	background: $black
 }
 
 .cf7_left_section {
@@ -4076,9 +4008,7 @@ h5.title_heading_c {
 }
 
 .cf7_top_banner {
-	display: grid;
-	grid-template-columns: 80% 1fr;
-	align-items: flex-start
+	@include grid-property(grid,80% 1fr,flex-start,unset,);
 }
 
 .form_slider_wrapper {
@@ -4094,14 +4024,14 @@ h5.title_heading_c {
 	font-size: 35px;
 	text-transform: uppercase;
 	font-weight: 600;
-	color: #eaaa00
+	color: $primaryyellow
 }
 
 ._form_paragraph p {
 	font-size: 35px;
 	text-transform: capitalize;
 	font-weight: 500;
-	color: #eaaa00
+	color: $primaryyellow
 }
 
 .form_banner_heading h1 {
@@ -4113,7 +4043,11 @@ h5.title_heading_c {
 
 .close_button {
 	display: flex;
-	justify-content: flex-end
+	justify-content: flex-end;
+	 img {
+		width: 100px;
+	}
+	
 }
 
 .cf7_left_section span {
@@ -4160,7 +4094,7 @@ span.error_fields {
 
 .apply-for-job-container {
 	z-index: 999999999;
-	background: #fff;
+	background: $white;
 	position: fixed;
 	height: 100vh;
 	width: 100%
@@ -4170,7 +4104,7 @@ span.error_fields {
 
 .multistep_popup_form .form_heading_section h3 {
 	font-size: 1.563em;
-	color: #eaaa00;
+	color: $primaryyellow;
 	margin-bottom: 10px;
 	margin-top: 10px
 }
@@ -4227,21 +4161,21 @@ span.error_fields {
 
 .multistep_popup_form .form_redirection_btn a {
 	padding: 10px 30px;
-	background: #000;
+	background: $black;
 	display: inline;
 	border-radius: 50px;
-	color: #fff;
+	color: $white;
 	font-size: 1.375em
 }
 
 .multistep_popup_form .cf7_form_outer {
 	width: 60%;
-	height: 500px;
+	height: auto;
 	position: fixed;
 	overflow-y: auto !important;
 	overflow-x: hidden !important;
 	z-index: 9999;
-	background: #fff;
+	background: $white;
 	padding: 50px;
 	top: 13%;
 	left: 15%;
@@ -4250,11 +4184,11 @@ span.error_fields {
 
 .multistep_popup_form .cf7_form_outer::-webkit-scrollbar {
 	width: 8px;
-	background-color: #fff
+	background-color: $white
 }
 
 .multistep_popup_form .cf7_form_outer::-webkit-scrollbar-thumb {
-	background-color: #eaaa00;
+	background-color: $primaryyellow;
 	border-radius: 10px
 }
 
@@ -4265,10 +4199,7 @@ span.error_fields {
 }
 
 .form_options {
-	display: grid;
-	column-gap: 20px;
-	grid-template-columns: repeat(4, 1fr);
-	row-gap: 20px
+	@include grid-property(grid,repeat(4, 1fr),unset,20px,20px);
 }
 
 input.popup_radioboxes {
@@ -4280,7 +4211,7 @@ input.popup_radioboxes {
 input.popup_radioboxes:before {
 	height: 22px;
 	width: 22px;
-	border: 1px solid #191c1b !important;
+	border: 1px solid $primaryblack !important;
 	top: 35px;
 	right: 20px
 }
@@ -4301,23 +4232,23 @@ input.popup_radioboxes:after {
 }
 
 input.popup_radioboxes:checked:after {
-	background-color: #191c1b !important
+	background-color: $primaryblack !important
 }
 
 input.popup_radioboxes:checked {
-	border: 1px solid #eaaa00 !important;
+	border: 1px solid $primaryyellow !important;
 	border-radius: 4px;
-	background: #eaaa00 !important
+	background: $primaryyellow !important
 }
 
 input.popup_radioboxes {
 	appearance: none;
-	background: #fff !important;
+	background: $white !important;
 	width: 100%;
 	position: absolute;
 	cursor: pointer;
 	outline: none !important;
-	border: 1px solid #191c1b;
+	border: 1px solid $primaryblack;
 	border-radius: 4px
 }
 
@@ -4348,7 +4279,7 @@ input.nexted_inputs:before {
 	height: 22px;
 	width: 22px;
 	background-color: #f9fafd;
-	border: 1px solid #eaaa00 !important;
+	border: 1px solid $primaryyellow !important;
 	border-radius: 50%;
 	top: 12px;
 	right: 16px
@@ -4366,18 +4297,18 @@ input.nexted_inputs:after {
 }
 
 input.nexted_inputs:checked:after {
-	background-color: #eaaa00
+	background-color: $primaryyellow
 }
 
 input.nexted_inputs {
 	appearance: none;
-	background: #fff !important;
+	background: $white !important;
 	height: 100%;
 	width: 100%;
 	position: absolute;
 	cursor: pointer;
 	outline: none !important;
-	border: 1px solid #191c1b;
+	border: 1px solid $primaryblack;
 	border-radius: 4px
 }
 
@@ -4391,14 +4322,11 @@ input.nexted_inputs {
 }
 
 input.nexted_inputs:checked {
-	border: 2px solid #eaaa00 !important
+	border: 2px solid $primaryyellow !important
 }
 
 .nested_options {
-	display: grid;
-	grid-template-columns: repeat(5, 1fr);
-	row-gap: 20px;
-	column-gap: 20px
+	@include grid-property(grid,repeat(5, 1fr),unset,20px,20px);
 }
 
 .form_fields_wrapper_radio_select {
@@ -4409,9 +4337,9 @@ input.nexted_inputs:checked {
 }
 
 .form_fields_wrapper_radio_select .stream_label {
-	color: #585757;
+	color: $input-placeholder-color;
 	font-size: 28px;
-	font-family: Euclid Circular A;
+	font-family: $Euclidfont;
 	text-transform: capitalize
 }
 
@@ -4426,7 +4354,7 @@ input.nexted_inputs:checked {
 	flex-wrap: wrap;
 	padding: 20px 0 10px;
 	width: 100%;
-	color: #585757
+	color: $input-placeholder-color
 }
 
 .form_fields_wrapper_radio_select .form_fields_wrapper .internship_radio {
@@ -4441,11 +4369,11 @@ input.nexted_inputs:checked {
 	width: 100%;
 	padding: 18px;
 	border-radius: 14px;
-	border: 1px solid #eaaa00
+	border: 1px solid $primaryyellow
 }
 
 .form_fields_wrapper_radio_select .form_fields_wrapper select.select_duration:focus-visible {
-	border-color: #000
+	border-color: $black
 }
 
 h6.user_name_c a {
@@ -4464,7 +4392,7 @@ h6.user_name_c a {
         left: 0;
         height: 50vh;
         width: 17px;
-        background: #eaaa00;
+        background: $primaryyellow;
     }
     
     
@@ -4493,7 +4421,7 @@ h6.user_name_c a {
 
 	.current_opening_section_wrapper h2 {
 		font-size: 2.125em;
-		color: #eaaa00;
+		color: $primaryyellow;
 		margin-bottom: 0
 	}
 
@@ -4521,9 +4449,7 @@ h6.user_name_c a {
 	}
 
 	.duties_left ul {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-row-gap: 5px
+		@include grid-property(grid,1fr 1fr,unset,unset,5px);
 	}
 
 	.product-top-info-section {
@@ -4533,10 +4459,10 @@ h6.user_name_c a {
 
 	.custom-file-upload:before {
 		content: "Upload a resume";
-		background: #fff;
-		border-bottom: 1px solid #eaaa00;
+		background: $white;
+		border-bottom: 1px solid $primaryyellow;
 		outline: none;
-		white-space: nowrap;
+		$white-space: nowrap;
 		cursor: pointer;
 		text-align: center;
 		position: absolute;
@@ -4626,7 +4552,7 @@ h6.user_name_c a {
 	}
 
 	.call_outer {
-		background: #eaaa00;
+		background: $primaryyellow;
 		padding: 20px
 	}
 
@@ -4654,8 +4580,7 @@ h6.user_name_c a {
 	.our-mission-outer,
 	.process-step.active,
 	.success-journy-outer {
-		display: grid;
-		grid-template-columns: 56% 30% !important;
+		@include grid-property(grid,56% 30%,unset);
 		object-fit: cover
 	}
 
@@ -4711,7 +4636,7 @@ h6.user_name_c a {
 		width: 89%;
 		padding: 15px 0;
 		border: unset;
-		border-bottom: 1px solid #eaaa00;
+		border-bottom: 1px solid $primaryyellow;
 		font-size: 22px
 	}
 
@@ -4725,8 +4650,7 @@ h6.user_name_c a {
 	}
 
 	.company_flex {
-		display: grid;
-		grid-template-columns: 1fr
+		@include grid-property(grid,1fr,unset);
 	}
 
 	button.close_button img {
@@ -4734,7 +4658,7 @@ h6.user_name_c a {
 	}
 
 	.company_left_section {
-		background: #191c1b;
+		background: $primaryblack;
 		padding-bottom: 100px
 	}
 
@@ -4760,9 +4684,9 @@ h6.user_name_c a {
 	.trans_left_section h1 {
 		font-size: 4em;
 		text-decoration: underline;
-		text-decoration-color: #eaaa00;
+		text-decoration-color: $primaryyellow;
 		text-transform: capitalize;
-		color: #3d3a3a;
+		color: $blackgrey;
 		line-height: 82px
 	}
 
@@ -4891,7 +4815,7 @@ h6.user_name_c a {
 	.product-top-image-section .product_image_right span {
 		max-width: 750px;
 		height: 55px;
-		background: #eaaa00;
+		background: $primaryyellow;
 		position: absolute;
 		left: 10%;
 		bottom: -21px;
@@ -4899,7 +4823,7 @@ h6.user_name_c a {
 	}
 
 	.product-top-info-section .product_right_info_inner {
-		background: #eaaa00;
+		background: $primaryyellow;
 		padding: 31px 25px
 	}
 
@@ -4946,7 +4870,7 @@ h6.user_name_c a {
 		max-width: 840px;
 		height: 50px;
 		width: 66%;
-		background: #eaaa00
+		background: $primaryyellow
 	}
 
 	.service_top_sub_heading h1 {
@@ -4985,7 +4909,11 @@ h6.user_name_c a {
 
 	h1.type_text_wrapper,
 	h1.type_text_wrapper span {
-		text-align: center !important
+		text-align: center !important;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
 	}
 
 	.company_scroll_wrapper h4:after {
@@ -5009,19 +4937,11 @@ h6.user_name_c a {
 	}
 
 	.home_about_wrapper {
-		display: grid;
-		grid-template-columns: 1fr;
-		align-items: unset;
-		column-gap: 0;
-		row-gap: 0
+		@include grid-property(grid,1fr,unset,0px ,0px);
 	}
 
 	.footer_wrapper .footer-center-section {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr) !important;
-		align-items: unset;
-		column-gap: 20px;
-		row-gap: 20px
+		@include grid-property(grid,repeat(2, 1fr),unset,20px,20px);
 	}
 
 	.blog-header-description {
@@ -5039,10 +4959,7 @@ h6.user_name_c a {
 
 	.all-blog-posts-outer,
 	.portfolio_showcase_wrapper {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		align-items: unset;
-		row-gap: 0
+		@include grid-property(grid,repeat(2, 1fr),unset,unset,0px);
 	}
 
 	.portfolio_showcase_wrapper {
@@ -5059,7 +4976,7 @@ h6.user_name_c a {
 		width: 90%;
 		position: absolute;
 		height: 50px;
-		background: #eaaa00;
+		background: $primaryyellow;
 		left: -30px
 	}
 
@@ -5235,17 +5152,13 @@ h6.user_name_c a {
 	}
 
 	.development_flex {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		align-items: flex-start;
-		column-gap: 50px !important;
-		row-gap: unset;
+		@include grid-property(grid,1fr 1fr,flex-start,50px,unset);
 		padding: 20px
 	}
 
 	.company_left_section h1 {
 		font-size: 4em;
-		color: #fff;
+		color: $white;
 		line-height: 75px !important;
 		margin: 0;
 		text-align: center
@@ -5260,6 +5173,13 @@ h6.user_name_c a {
 	}
 }
 @media(max-width:768px) {
+  
+	.page_outer.about_section_outer.scrolling{
+		width: auto;
+		height: 100%;
+		box-sizing: border-box;
+	
+	}
     .nested_options {
 		grid-template-columns: repeat(1, 1fr) !important
 	}
@@ -5326,9 +5246,7 @@ h6.user_name_c a {
 		display: none
 	}
 
-	.our_internship_link {
-		display: block !important
-	}
+	
 
 	.share_blog_post .share_blog_heading h2 {
 		font-size: 1.2em !important;
@@ -5346,7 +5264,10 @@ h6.user_name_c a {
 
 	.home_slider_wrapper h1:first-child,
 	.home_slider_wrapper h1:nth-child(2) {
-		font-size: 1.875em !important
+		font-size: 1.875em !important;
+		max-width: fit-content;
+		box-sizing: border-box;
+		margin: auto;
 	}
 
 	.testimonial_asking p {
@@ -5583,8 +5504,7 @@ h6.user_name_c a {
 	}
 
 	.contact_both_sec {
-		display: grid;
-		grid-template-columns: 1fr;
+		@include grid-property(grid,1fr,unset);
 		margin-top: 40px
 	}
 
@@ -5606,9 +5526,7 @@ h6.user_name_c a {
 	}
 
 	.right_c_form {
-		display: grid;
-		grid-template-columns: 1fr !important;
-		row-gap: 25px
+		@include grid-property(grid,1fr ,unset,unset,25px);
 	}
 
 	.right_c_form h4 {
@@ -5816,12 +5734,8 @@ h6.user_name_c a {
 	}
 
 	.footer_wrapper .footer-center-section {
-		display: grid;
-		grid-template-columns: repeat(1, 1fr) !important;
-		align-items: unset;
-		column-gap: 0;
-		row-gap: 0;
-		padding: 0
+		@include grid-property(grid, repeat(1, 1fr) !important,unset,0px,0px);
+		padding: 0;
 	}
 
 	.about_section_outer,
@@ -5937,7 +5851,7 @@ h6.user_name_c a {
 	ul.transformation_wrapper li h4 {
 		font-size: 2.813em;
 		margin: .4em 0;
-		color: #eaaa00;
+		color: $primaryyellow;
 		font-family: bebas
 	}
 
@@ -5961,7 +5875,7 @@ h6.user_name_c a {
 	}
 
 	.company_left_section p {
-		color: #fff;
+		color: $white;
 		font-size: 1.5em
 	}
 
@@ -5986,11 +5900,11 @@ h6.user_name_c a {
 
 	.home_about_left h1 {
 		font-size: 3.125em;
-		padding: 15px 0 29px
+		padding: 0px 0 15px
 	}
 
 	.home_about_right p {
-		color: #fff;
+		color: $white;
 		font-size: 1.125em;
 		line-height: 38px
 	}
@@ -6026,11 +5940,7 @@ h6.user_name_c a {
 	}
 
 	.all-blog-posts-outer {
-		display: grid;
-		grid-template-columns: repeat(1, 1fr);
-		align-items: unset;
-		column-gap: 0;
-		row-gap: 0
+		@include grid-property(grid,repeat(1, 1fr),unset,0px,0px);
 	}
 
 	.protfolio_items {
@@ -6276,8 +6186,9 @@ h6.user_name_c a {
 	}
 
 	.nav_right_section button img {
-		max-width: 40px;
-		height: auto !important
+		width: 100% !important;
+        max-width: 40px;
+        height: 37px;
 	}
 
 	.our_product li:first-child a,
@@ -6341,7 +6252,7 @@ h6.user_name_c a {
 	.portfolio_slider {
 		scroll-snap-type: x none;
 		overflow-x: hidden;
-		white-space: nowrap;
+		$white-space: nowrap;
 		padding: 35px 0 !important
 	}
 
@@ -6363,25 +6274,25 @@ h6.user_name_c a {
 
 	.all_services_right_section .service_content_description p {
 		font-size: 1.2em;
-		color: #000;
+		color: $black;
 		width: 94%;
 		margin-bottom: 13px
 	}
 
 	.services_navigation a {
 		font-size: 1em;
-		white-space: nowrap;
+		$white-space: nowrap;
 		text-transform: uppercase;
 		font-weight: 500
 	}
 
 	.services_faq_left_section h1 {
-		color: #fff;
+		color: $white;
 		font-size: 1.826em
 	}
 
 	.all_services_outer {
-		border-top: 1px solid #eaaa00;
+		border-top: 1px solid $primaryyellow;
 		padding-bottom: 35px
 	}
 
@@ -6404,10 +6315,7 @@ h6.user_name_c a {
 	}
 
 	.covering_both {
-		display: grid;
-		grid-template-columns: 1fr;
-		column-gap: 0;
-		row-gap: 30px
+		@include grid-property(grid,1fr,unset,0px,30px);
 	}
 
 	.apply_now_career {
@@ -6424,7 +6332,7 @@ h6.user_name_c a {
 
 	.current_opening_section_wrapper h2 {
 		font-size: 2.125em;
-		color: #eaaa00;
+		color: $primaryyellow;
 		margin-bottom: 0
 	}
 
@@ -6686,7 +6594,7 @@ h6.user_name_c a {
 		position: fixed !important;
 		overflow: auto !important;
 		z-index: 99999999;
-		background: #fff;
+		background: $white;
 		padding: 40px 22px;
 		top: 0
 	}
@@ -6763,7 +6671,7 @@ h6.user_name_c a {
 	}
 
 	li.common-btns {
-		white-space: break-spaces !important
+		$white-space: break-spaces !important
 	}
 
 	.cf7_form_outer .form_banner_heading h1 {
@@ -6775,9 +6683,9 @@ h6.user_name_c a {
 	}
 
 	.call_button button#sucess-journy-btn {
-		background: #fff;
+		background: $white;
 		cursor: pointer;
-		color: #eaaa00
+		color: $primaryyellow
 	}
 
 	.course_call_to_action .call_left_section p {
@@ -6787,7 +6695,7 @@ h6.user_name_c a {
 
 	.testimonial_section_inner .card-content h1 {
 		font-size: 1.125em;
-		color: #000
+		color: $black
 	}
 
 	.testimonial-right-section .testimonial-card {
@@ -6832,7 +6740,7 @@ h6.user_name_c a {
 
 	.services_faq_heading h1 {
 		text-transform: uppercase;
-		color: #fff;
+		color: $white;
 		font-size: 1.525em !important
 	}
 
@@ -6848,8 +6756,7 @@ h6.user_name_c a {
 	}
 
 	.company_flex {
-		display: grid;
-		grid-template-columns: 1fr
+		@include grid-property(grid,1fr,unset);
 	}
 
 	.development_flex {
@@ -6877,7 +6784,7 @@ h6.user_name_c a {
 
 	.company_right_section .company_faq_wrapper {
 		cursor: pointer;
-		border-bottom: 1px solid #fff;
+		border-bottom: 1px solid $white;
 		width: 100%;
 		display: flex;
 		flex-direction: column
@@ -6902,7 +6809,7 @@ h6.user_name_c a {
 
 	.company_right_section .company_scroll_wrapper h4:after {
 		content: "+";
-		color: #fff;
+		color: $white;
 		font-weight: 200;
 		font-family: ui-monospace;
 		position: absolute;
@@ -7086,8 +6993,11 @@ h6.user_name_c a {
 	}
 }
 @media(max-width:468px) {
+	.center-section-fourth-inner-wrapper li{
+		font-size: 0.875em;
+	}
     .dots{
-        bottom: -90% !important;
+        bottom: -60% !important;
     }
 
 	.header_contact_second {
@@ -7233,8 +7143,7 @@ h6.user_name_c a {
 	}
 
 	.apply_now_navgation {
-		display: grid;
-		grid-template-columns: 1fr
+		@include grid-property(grid,1fr,unset);
 	}
 
 	h5.user_name_c {
@@ -7324,11 +7233,7 @@ h6.user_name_c a {
 	}
 
 	.portfolio_showcase_wrapper {
-		display: grid;
-		grid-template-columns: repeat(1, 1fr);
-		align-items: unset;
-		column-gap: 0;
-		row-gap: 0
+		@include grid-property(grid,repeat(1, 1fr),unset,0px,0px);
 	}
 
 	.contact_both_sec {
@@ -7348,8 +7253,7 @@ h6.user_name_c a {
 	.filter_courses_outer {
 		width: auto;
 		height: auto;
-		display: grid;
-		grid-template-columns: 1fr 1fr
+		@include grid-property(grid,1fr 1fr,unset,);
 	}
 
 	.all_services_left_section h1 {
@@ -7453,7 +7357,7 @@ h6.user_name_c a {
 		width: 25px;
 		height: 25px;
 		border-radius: 50%;
-		background: #eaaa00;
+		background: $primaryyellow;
 		display: flex;
 		justify-content: center;
 		align-items: center
@@ -7463,7 +7367,7 @@ h6.user_name_c a {
 		width: 5px;
 		height: 5px;
 		padding: 1px;
-		border: solid #000 !important;
+		border: solid $black !important;
 		border-width: 0 2px 2px 0 !important
 	}
 
@@ -7516,7 +7420,12 @@ h6.user_name_c a {
 
 
 	.nav_right_section button {
-		width: 50px
+		width: 50px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: row;
 	}
 
 	.top_bar_black {
