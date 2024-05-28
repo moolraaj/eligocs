@@ -958,6 +958,9 @@ button.prev {
     margin-left: 10px;
 }
 
+.course_hide_seek_wrapper{
+	position: relative;
+}
 .hide_seek_wrapper button {
 	background: transparent;
 	border: none;
@@ -1008,11 +1011,15 @@ button.prev {
 		transform: translateX(0)
 	}
 }
-
+.course_toggle {
+    left: 100px !important;
+    top: -6px !important;
+	white-space: nowrap;
+}
 .hide_seek.blogs {
 	position: absolute;
-	top: 0;
-	left: 250px;
+	top: 50px;
+	left: 35%;
 	display: none;
 	flex-direction: column;
 	gap: 15px
@@ -6550,8 +6557,8 @@ h6.user_name_c a {
 	}
 
 	.hide_seek_wrapper .blogs {
-		top: 10% !important;
-		left: 55% !important;
+		top: 9% ;
+		left: 60%;
 		gap: 15px !important
 	}
 
@@ -7075,8 +7082,12 @@ h6.user_name_c a {
 	.portfolio_gallery_wrapper {
 		flex: 0 0 50% !important
 	}
+	.course_toggle{
+		white-space: wrap;
+	}
 }
 @media only screen and (max-width:480px) {
+	
 	.testimonial_wrap {
 		position: absolute;
 		max-width: 70%;

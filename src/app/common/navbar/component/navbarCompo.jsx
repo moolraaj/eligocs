@@ -279,13 +279,13 @@ function NavbarCompo({ data }) {
 
                     <div className="navbar_toggle_navigation">
                     <NavigationLink href={'/courses'}>courses</NavigationLink>
-                      <div className="hide_seek_wrapper">
+                      <div className="hide_seek_wrapper course_hide_seek_wrapper">
 
                         <button aria-label='toggle_navlinks'>
                           <img src={arrow.src} alt="arrow" />
                         </button>
                     
-                        <div className="hide_seek blogs " >
+                        <div className="hide_seek blogs course_toggle " >
                       
                       <NavigationLink href={'/our-internship'} >our internship</NavigationLink>
                    
