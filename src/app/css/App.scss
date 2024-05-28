@@ -138,6 +138,7 @@ textarea::placeholder {
     font-family: 'Euclid Circular A';
     src: url('../font-family/Euclid Circular A Light.ttf') format('truetype');
     font-weight: 300;
+	font-display: swap;
  
 }
 
@@ -145,6 +146,7 @@ textarea::placeholder {
     font-family: 'Euclid Circular A';
     src: url('../font-family/Euclid Circular A Bold.ttf') format('truetype');
     font-weight: bold;
+	font-display: swap;
    
 }
 
@@ -152,6 +154,7 @@ textarea::placeholder {
     font-family: 'Euclid Circular A';
     src: url('../font-family/Euclid Circular A Medium.ttf') format('truetype');
     font-weight: 500;
+	font-display: swap;
     
 }
 
@@ -160,6 +163,7 @@ textarea::placeholder {
     src: url('../font-family/Euclid Circular A Bold Italic.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;
+	font-display: swap;
     
 }
 

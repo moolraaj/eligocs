@@ -1,11 +1,12 @@
+'use client'
 import React, { useState, useEffect, useRef } from 'react';
+
 
 function PortfolioSlider({ data }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slidesToShow, setSlidesToShow] = useState(3);
   const slideInterval = useRef(null);
   const [lightboxImage, setLightboxImage] = useState(null);
-  const sliderRef = useRef(null);
 
   const handleResize = () => {
     const screenWidth = window.innerWidth;
@@ -71,7 +72,7 @@ function PortfolioSlider({ data }) {
       <button className="prev" onClick={goToPrevSlide}>
         &#10094;
       </button>
-      <div className="slides" ref={sliderRef}>
+      <div className="slides">
         {getVisibleSlides().map((imageUrl, index) => (
           <div key={index} className="slide" onClick={() => openLightbox(imageUrl)}>
             <img src={imageUrl} alt={`Slide ${index}`} />
