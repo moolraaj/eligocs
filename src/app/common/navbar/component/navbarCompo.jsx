@@ -264,20 +264,46 @@ function NavbarCompo({ data }) {
                        <div></div>
                         <div className="hide_seek blogs" >
                           <NavigationLink href={'/meet-our-team'}>our team</NavigationLink>
-                          <NavigationLink href={'/career'}>career</NavigationLink>
-                          <NavigationLink href={'/blog'}>blog</NavigationLink>
+                       
 
                         </div>
                       </div>
 
                     </div>
+                    <NavigationLink href={'/career'}>career</NavigationLink>
+                    <NavigationLink href={'/blog'}>blog</NavigationLink>
                     <NavigationLink href={'/services'}>services</NavigationLink>
+
+
+
+
+                    <div className="navbar_toggle_navigation">
                     <NavigationLink href={'/courses'}>courses</NavigationLink>
+                      <div className="hide_seek_wrapper">
+
+                        <button aria-label='toggle_navlinks'>
+                          <img src={arrow.src} alt="arrow" />
+                        </button>
+                    
+                        <div className="hide_seek blogs " >
+                      
+                      <NavigationLink href={'/our-internship'} >our internship</NavigationLink>
+                   
+                       
+
+                        </div>
+                      </div>
+
+                    </div>
+                    
+
+
+
+
+
                     <NavigationLink href={'/portfolio'}>portfolio</NavigationLink>
                     <NavigationLink href={'/our-products'}>our products</NavigationLink>
-                    <div className="our_internship_link">
-                      <NavigationLink href={'/our-internship'} >our internship</NavigationLink>
-                    </div>
+                  
 
                     <div className='apply_now_navgation'>
                       <NavigationLink href={'/contact'}>contact us</NavigationLink>
