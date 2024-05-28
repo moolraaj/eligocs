@@ -20,11 +20,11 @@ function AboutSection({ ele }) {
       <div className="page_inner about_section_inner">
         <div className="home_about_wrapper">
           <div className="home_about_left">
-            <h1>{data.acf.about_heading}</h1>
+            <h1 style={{width: '100%', height: '100%', minHeight: '100px'}}>{data.acf.about_heading}</h1>
           </div>
           <div className="home_about_right">
-            <p dangerouslySetInnerHTML={{ __html: data.acf.about_para_first }}></p>
-            <p dangerouslySetInnerHTML={{ __html: data.acf.about_para_second }}></p>
+            <p style={{width: '100%', height: '100%', minHeight: '100px'}} dangerouslySetInnerHTML={{ __html: data.acf.about_para_first }}></p>
+            <p style={{width: '100%', height: '100%', minHeight: '100px'}} dangerouslySetInnerHTML={{ __html: data.acf.about_para_second }}></p>
 
             <Link href={`/meet-our-team`} className="meet_our_team">
             Meet Our Team

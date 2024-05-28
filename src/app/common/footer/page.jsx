@@ -46,7 +46,7 @@ function Footer({ response }) {
 
 
   return (
-    <div className="footer_outer">
+    <div className="footer_outer" style={{width: '100%', height: '100%', minHeight: '100px'}}>
       <div className="footer_inner">
         <div className="footer_wrapper">
           <div className='footer-left-section'></div>
