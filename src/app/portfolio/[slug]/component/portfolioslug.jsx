@@ -1,16 +1,15 @@
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
 import arrow from '../../../assets/headerAssets/arrow.png';
-import Lightbox from '../../Lightbox';
+ 
 import Link from 'next/link';
 import { allExportedApi } from '@/utils/apis/Apis';
+import PortfolioSlider from './portfolioSlider';
 
 export default function Portfolioslug({ slug }) {
     let api = allExportedApi();
 
-    const [lightboxImage, setLightboxImage] = useState(null);
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [imagesToShow, setImagesToShow] = useState([]);
+ 
     const [data, setData] = useState([]);
     const [relatedPortfolio, setRelatedPortfolio] = useState([]);
 
@@ -29,55 +28,12 @@ export default function Portfolioslug({ slug }) {
         loadAllPortfolio();
     }, []);
 
-    useEffect(() => {
-        setImagesToShow(getImagesToShow());
-    }, [currentIndex, data]);
+    
+  
 
-    const getImagesToShow = () => {
-        const images = data.flatMap(ele => ele.acf.portfolio_gallery);
-        if (images.length === 0) return [];
+  
 
-        const firstIndex = currentIndex % images.length;
-        const lastIndex = (firstIndex + 2) % images.length;
-        if (lastIndex >= firstIndex) {
-            return images.slice(firstIndex, lastIndex + 1);
-        } else {
-            return [...images.slice(firstIndex), ...images.slice(0, lastIndex + 1)];
-        }
-    };
-
-    useEffect(() => {
-        if (data.length > 0) {
-            const interval = setInterval(() => {
-                nextSlide();
-            }, 2000);
-            return () => clearInterval(interval);
-        }
-    }, [currentIndex, data]);
-
-    const nextSlide = () => {
-        const imagesLength = data.flatMap(ele => ele.acf.portfolio_gallery).length;
-        if (imagesLength > 0) {
-            setCurrentIndex((currentIndex + 1) % imagesLength);
-        }
-    };
-
-    const prevSlide = () => {
-        const imagesLength = data.flatMap(ele => ele.acf.portfolio_gallery).length;
-        if (imagesLength > 0) {
-            setCurrentIndex((currentIndex - 1 + imagesLength) % imagesLength);
-        }
-    };
-
-    const openLightbox = (image) => {
-        setLightboxImage(image);
-    };
-
-    const closeLightbox = () => {
-        setLightboxImage(null);
-    };
-
-    // inner portfolio scrolling section
+     
     const itemRef = useRef(null);
     const [scrollLeft, setScrollLeft] = useState(0);
     const [backButtonOpacity, setBackButtonOpacity] = useState(1);
@@ -159,7 +115,7 @@ export default function Portfolioslug({ slug }) {
                                     </Link>
                                 </div>
 
-                                {/* Left Scroll Button */}
+                        
                                 <img src={arrow.src} alt="arrow" className="scroll-button left"
                                     onClick={handleScrollLeft}
                                     style={{
@@ -168,7 +124,7 @@ export default function Portfolioslug({ slug }) {
                                         transform: 'translateY(-50%) rotate(180deg)',
                                     }} />
 
-                                {/* Right Scroll Button */}
+                          
                                 <img src={arrow.src} alt="arrow" className="scroll-button right"
                                     onClick={handleScrollRight}
                                     style={{
@@ -215,26 +171,15 @@ export default function Portfolioslug({ slug }) {
                             </div>
                         </div>
 
-                        <div className="slider_wrapper">
-                            <div className="portfolio_slider">
-                                {imagesToShow.map((image, index) => (
-                                    <div className="portfolio_gallery_wrapper" key={index} onClick={() => openLightbox(image)}>
-                                        <img src={image} alt={`portfolio-image-${index}`} />
-                                    </div>
-                                ))}
-                            </div>
+                        <div className="port_slider_outer">
+                            <div className="port_slider_inner">
 
-                            <div className="slider_buttons">
-                                <button className="prev" onClick={prevSlide} aria-level='toggle_left_button'>
-                                    <img src={arrow.src} alt='left-icons' />
-                                </button>
-                                <button className="next" onClick={nextSlide} aria-level='toggle_right_button'>
-                                    <img src={arrow.src} alt='left-icons' />
-                                </button>
+                        <PortfolioSlider data={ele.acf.portfolio_gallery}/>
                             </div>
                         </div>
 
-                        {lightboxImage && <Lightbox image={lightboxImage} onClose={closeLightbox} />}
+
+                       
                     </div>
                 );
             })}
@@ -242,9 +187,4 @@ export default function Portfolioslug({ slug }) {
     );
 }
 
-export async function generateStaticParams() {
-    let data = await fetchAllportFolio();
-    return data.map((ele) => ({
-        slug: ele.slug
-    }));
-}
+ 
