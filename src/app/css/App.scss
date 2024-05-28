@@ -2250,6 +2250,9 @@ a.back-to-projects {
 	align-items: center;
 	gap: 30px
 }
+.services_content_area {
+    width: -webkit-fill-available;
+}
 .services_navigation {
     max-width: fit-content;
     width: 100%;
