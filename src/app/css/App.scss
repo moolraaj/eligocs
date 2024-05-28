@@ -12,7 +12,12 @@
 	margin: auto;
 	box-sizing: border-box;
 }
-
+.cf7_form_inner {
+    height: 90vh;
+    overflow-y: auto;
+	overflow-x: hidden;
+    margin: auto auto 100px auto;
+}
 img{
 	box-sizing: border-box;
 }
