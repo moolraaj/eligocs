@@ -12,7 +12,12 @@
 	margin: auto;
 	box-sizing: border-box;
 }
-
+.cf7_form_inner {
+    height: 90vh;
+    overflow-y: auto;
+	overflow-x: hidden;
+    margin: auto auto 100px auto;
+}
 img{
 	box-sizing: border-box;
 }
@@ -2249,6 +2254,9 @@ a.back-to-projects {
 	justify-content: space-between;
 	align-items: center;
 	gap: 30px
+}
+.services_content_area {
+    width: -webkit-fill-available;
 }
 .services_navigation {
     max-width: fit-content;
