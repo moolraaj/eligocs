@@ -38,7 +38,7 @@ export default function Portfolioslug({ slug }) {
         if (images.length === 0) return [];
 
         const firstIndex = currentIndex % images.length;
-        const lastIndex = (firstIndex + 3) % images.length;
+        const lastIndex = (firstIndex + 2) % images.length;
         if (lastIndex >= firstIndex) {
             return images.slice(firstIndex, lastIndex + 1);
         } else {

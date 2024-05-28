@@ -15,8 +15,9 @@
 
 img{
 	box-sizing: border-box;
-    height: auto;
-    display: block;
+}
+button{
+	font-family: $Euclidfont;
 }
 .development_left_section h1,
 .trans_left_section h1 {
@@ -27,7 +28,10 @@ img{
 	color: $blackgrey;
 	line-height: 1.7em
 }
-
+.about_section_inner {
+    width: 100%;
+	min-height: 200px;
+}
 .about_section_outer,
 .call_action_wrapper,
 .call_outer,
@@ -272,7 +276,7 @@ body::-webkit-scrollbar-thumb {
 .footer_ul {
 	display: flex;
 	flex-direction: column;
-	row-gap: 18px;
+	row-gap: 10px;
 	padding: 0;
 	margin: 0
 }
@@ -421,7 +425,10 @@ a {
 .about_section_outer {
 	background: $primaryblack
 }
-
+.home_about_right img {
+	width: 100%;
+	height: auto;
+}
 .home_about_right p {
 	color: $white;
 	font-size: 2em;
@@ -944,7 +951,7 @@ button.prev {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index: 999
+	z-index: 99999;
 }
 
 .header_contact_one span {
@@ -1030,9 +1037,10 @@ h6.user_name_c {
 	display: flex;
 	align-items: center;
 	padding: 20px;
-	width: 60%;
-	height: 70%;
-	overflow: auto;
+	width: 75%;
+	height: 75%;
+	overflow-Y: auto;
+	overflow-x: hidden;
 	box-shadow: unset;
 	background: hsla(0, 0%, 100%, .478);
 	border-radius: 10px
@@ -1381,7 +1389,7 @@ form#applyforjob textarea {
 }
 
 .product-top-info-section {
-	@include grid-property(grid 60% 40%, flex-end,unset);
+	@include grid-property(grid,60% 40%, flex-end,unset);
 	padding: 120px 0 20px 2px;
 	text-transform: capitalize
 }
@@ -1727,7 +1735,7 @@ h1 {
 
 h1.type_text_wrapper {
 	text-align: end !important;
-	@include grid-property(grid, 1fr 1fr, center, 20px 0px);
+	@include grid-property(grid, 1fr 1fr, center, 20px, 0px);
 }
 
 h1.type_text_wrapper span {
@@ -2215,8 +2223,9 @@ a.back-to-projects {
 .portfolio_top_left_section .portfolio_top_right_section p p {
 	font-size: 1.375em
 }
-.portfolio_top_right_section p p{
-	line-height: 40px;
+.portfolio_top_right_section p p,
+.port_description p p{
+	line-height: 36px;
 }
 .portfolio_inner_intenary_related_posts {
 	@include grid-property(grid,70% 30%, unset, 10px ,);
@@ -2234,7 +2243,10 @@ a.back-to-projects {
 	align-items: center;
 	gap: 30px
 }
-
+.services_navigation {
+    max-width: fit-content;
+    width: 100%;
+}
 .port_description p p {
 	font-size: 1.375em
 }
@@ -2837,8 +2849,8 @@ span.vison_c {
 }
 
 .footer_outer {
-	z-index: 99999 !important
-	
+	z-index: 99999 !important;
+	min-height: 100px;
 }
 
 .nav_outer ul {
@@ -2856,6 +2868,7 @@ span.vison_c {
 	margin-top: 20px;
 	display: inline-block;
 	font-family: $Euclidfont;
+	font-weight: 500;
 }
 
 .meet_our_team:hover {
@@ -2907,7 +2920,7 @@ h1.innovation-heading {
 .innovation_right button {
 	background: $primaryyellow !important;
 	color: $white !important;
-	font-weight: 600
+	font-weight: 500
 }
 
 .innovation_right {
@@ -2936,11 +2949,14 @@ span.typing-text {
 }
 .page_outer.about_section_outer.scrolling {
     width: 100%;
-    min-height: fit-content;
+    min-height: 100px;
 	box-sizing: border-box;
 	height: auto;
 }
-
+.home_about_left, .home_about_right {
+    width: 100%; 
+	min-height: 140px;
+}
 .footer_outer {
 	background: $primaryblack;
 	padding: 80px 0 20px;
@@ -3095,8 +3111,8 @@ p .testimonial_wrap {
 }
 
 .footer_wrapper .footer_social_links .footer_social_wrapper a img {
-	width: 30px;
-	height: 30px
+	width: 24px;
+	height: 24px
 }
 
 .footer_wrapper .footer-center-section {
@@ -3310,7 +3326,7 @@ p .testimonial_wrap {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: 10px;
+	gap: 20px;
 	max-width: fit-content;
 	width: 100%;
 	box-sizing: border-box;
@@ -3323,6 +3339,8 @@ p .testimonial_wrap {
 	width: auto;
 	color: $white;
 	font-family: $Euclidfont;
+	font-weight: 500;
+	font-size: $--rem;
 }
 
 .nav_right_section #go_to_internship_page:hover {
@@ -3333,7 +3351,7 @@ p .testimonial_wrap {
 .nav_right_section button {
 	background: transparent;
 	border: none;
-	width: 64px;
+	width: 55px;
 	cursor: pointer
 }
 
@@ -5993,7 +6011,11 @@ h6.user_name_c a {
 	}
 
 	.home_section_outer {
-		padding: 120px 20px 0 !important
+		padding: 100px 20px 0 !important;
+
+		.home_slider_wrapper p{
+			line-height: 30px;
+		}
 	}
 
 	.home_slider_wrapper p,
@@ -6026,8 +6048,11 @@ h6.user_name_c a {
 	.lightbox-container {
 		height: 400px;
 		padding: 10px;
-		width: 100%;
+		width: 90%;
 		top: 34px
+	}
+	.close-btn{
+		font-size: 2.5em;
 	}
 
 	.left_banner_heading h1 {
@@ -6289,7 +6314,7 @@ h6.user_name_c a {
 
 	.portfolio_top_left_section .portfolio_top_right_section h1 {
 		font-size: 1.875em;
-		margin: 50px 0 0
+		margin: 45px 0px 15px 0px;
 	}
 
 	.portfolio_project_heading {
@@ -6449,7 +6474,8 @@ h6.user_name_c a {
 
 	.portfolio_project_heading h1 {
 		font-size: 3.175em;
-		margin: 0
+		margin: 0;
+		width: min-content;
 	}
 
 	.footer_wrapper .footer-center-bottom-section p {
@@ -6901,10 +6927,6 @@ h6.user_name_c a {
 		position: relative
 	}
 
-	.home_slider_animate {
-		flex-direction: column
-	}
-
 	.innovation_right.show {
 		transform: translateX(0)
 	}
@@ -6913,7 +6935,8 @@ h6.user_name_c a {
 		position: inherit !important;
 		display: grid !important;
 		grid-auto-columns: 1fr;
-		margin-top: 0
+		margin-top: -25px;
+		align-items: center;
 	}
 
 	.page_inner {
@@ -6934,11 +6957,13 @@ h6.user_name_c a {
 	}
 
 	.home_slider_animate {
-		margin-top: 0
+		margin: 0px 0px 40px 0px;
+		flex-direction: column;
 	}
 
 	h1.innovation-heading {
-		height: 0
+		height: 0;
+		
 	}
 
 	.about_section_outer,
@@ -7064,13 +7089,16 @@ h6.user_name_c a {
 	}
 }
 @media(max-width:468px) {
+	form#applyforjob{
+		margin-bottom: 80px;
+	}
 	.process_description li::before{
 		top: 2px;
 		width: 16px;
 		height: 16px;
 	}
 	.center-section-fourth-inner-wrapper li{
-		font-size: 0.875em;
+		font-size: 1em;
 	}
     .dots{
         bottom: -60% !important;
@@ -7255,9 +7283,17 @@ h6.user_name_c a {
 
 	.portfolio_inner_left_section h4,
 	p {
-		font-size: .875em
+		font-size: 1em;
+		margin-bottom: 10px;
 	}
-
+	.portfolio_posts_wrapper p p{
+		font-size: 1em;
+		line-height: 36px;
+		padding-left: 0;
+	}
+	.portfolio_posts_wrapper h1{
+		padding-left: 0;
+	}
 	ul.transformation_wrapper img {
 		bottom: 0;
 		max-width: 30px;
