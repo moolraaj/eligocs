@@ -106,7 +106,7 @@ function ServicesInnerSlug({ slug }) {
                         <h1>{ele.acf.dont_miss_out_heading}</h1>
                      </div>
                      <div className="servives_missout_description">
-                        <p>{ele.acf.dont_miss_out_description}</p>
+                        <div dangerouslySetInnerHTML={{__html:ele.acf.dont_miss_out_description}}></div>
                      </div>
                   </div>
 
