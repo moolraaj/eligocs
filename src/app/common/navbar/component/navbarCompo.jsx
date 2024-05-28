@@ -211,7 +211,7 @@ function NavbarCompo({ data }) {
             <div className="nav_left_section">
            
               <Link className="navbar-brand" href="/">
-                <img src={siteLogoUrl} alt={siteTitle} style={{ width: '9.25rem', height: '3.5625rem', objectFit: 'cover' }} />
+                <img src={siteLogoUrl} alt={siteTitle}  style={{ width: '9.25rem', height: '3.5625rem', objectFit: 'cover' }} />
               </Link>
 
             </div>
@@ -321,7 +321,6 @@ function NavbarCompo({ data }) {
       </div>
 
 
-      <div className='spacer'></div>
     </>
 
 
