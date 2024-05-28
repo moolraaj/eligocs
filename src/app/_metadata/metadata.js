@@ -1,6 +1,7 @@
 
 
 export async function LoadscoData({data}) {
+    
     const metadata = {
         title: data.head.match(/<meta property="og:title" content="([^"]+)"/)?.[1] || '',
         description: data.head.match(/<meta property="og:description" content="([^"]+)"/)?.[1] || '',
@@ -13,5 +14,6 @@ export async function LoadscoData({data}) {
         twitterTitle: data.head.match(/<meta name="twitter:title" content="([^"]+)"/)?.[1] || '',
         twitterDescription: data.head.match(/<meta name="twitter:description" content="([^"]+)"/)?.[1] || ''
     };
+
     return metadata;
 }

@@ -29,7 +29,7 @@ export async function generateStaticParams() {
     }));
 }
 
-// generate dynamic sco title and desriptions
+
 export async function generateMetadata({params}){
     let {slug}=params
     let api=allExportedApi() 

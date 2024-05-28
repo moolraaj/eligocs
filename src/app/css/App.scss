@@ -7579,3 +7579,79 @@ h6.user_name_c a {
 		font-size: 4.25em
 	}
 }
+
+
+
+
+
+
+
+
+
+.slider-container {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	box-sizing: border-box;
+	padding-top: 50px;
+  }
+  
+  .slides {
+	display: flex;
+	transition: transform 0.5s ease-in-out;
+justify-content: space-between;
+  }
+  
+  .slide {
+	flex: 0 0 calc((100% / 3) - 20px); 
+	box-sizing: border-box;
+  }
+  
+  .slide:last-child {
+	margin-right: 0; 
+  }
+  
+  .slide img {
+	width: 100%;
+	display: block;
+  }
+  
+  @media (max-width: 1024px) {
+	.slide {
+	  flex: 0 0 calc((100% / 2) - 20px); 
+	}
+  }
+  
+  @media (max-width: 600px) {
+	.slide {
+	  flex: 0 0 calc(100% - 20px); 
+	  margin-right: 0; 
+	}
+  }
+  
+  .prev,
+  .next {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: rgba(255, 255, 255, 0.5);
+	border: none;
+	color: black;
+	font-size: 18px;
+	cursor: pointer;
+	padding: 10px;
+	z-index: 1;
+  }
+  
+  .prev {
+	left: 0;
+  }
+  
+  .next {
+	right: 0;
+  }
+  
+  
+  
+  
+  
