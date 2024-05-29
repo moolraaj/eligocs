@@ -24,9 +24,9 @@ import MultistepForm from '@/app/_forms/multistepForm';
 
 function NavbarCompo({ data }) {
 
- 
 
-  const { siteLogoUrl, siteTitle, headerMenuItems, socialLinks,footerPhoneNumberFirst,footerPhoneNumberSecond,footerEmail} = data.header
+
+  const { siteLogoUrl, siteTitle, headerMenuItems, socialLinks, footerPhoneNumberFirst, footerPhoneNumberSecond, footerEmail } = data.header
 
 
 
@@ -56,6 +56,7 @@ function NavbarCompo({ data }) {
   const multisepPopupForm = () => {
     setIsMultisepPopupForm(!ismultisepPopupForm);
   }
+ 
 
   const toggleFormVisibility = () => {
     setIsFormVisible(!isFormVisible);
@@ -80,7 +81,8 @@ function NavbarCompo({ data }) {
 
   );
 
-
+ 
+  
 
 
   return (
@@ -169,19 +171,19 @@ function NavbarCompo({ data }) {
         </div>
       )}
 
-      {ismultisepPopupForm &&(
-          <div className="multistep_popup_form">
+      {ismultisepPopupForm && (
+        <div className="multistep_popup_form">
           <div className="cf7_form_outer" style={{ animation: ismultisepPopupForm ? 'slide-down 0.5s' : 'slide-up 0.5s' }}>
-          <div className="cf7_form_inner">
-            <div className="cf7_form_wrapper">
-              <MultistepForm onHideForm={multisepPopupForm} />
+            <div className="cf7_form_inner">
+              <div className="cf7_form_wrapper">
+                <MultistepForm onHideForm={multisepPopupForm} onCompleteForm={multisepPopupForm} />
+              </div>
             </div>
-            </div>
-            </div>
-            </div>
+          </div>
+        </div>
       )}
 
-{/* <div className='top_bar_black'>
+      {/* <div className='top_bar_black'>
 <div className="contacts_top_header">
                 <div className='righ-top_black'>
               <div className="header_contact_one">
@@ -209,9 +211,9 @@ function NavbarCompo({ data }) {
         <div className="nav_inner">
           <div className="nav_flex">
             <div className="nav_left_section">
-           
+
               <Link className="navbar-brand" href="/">
-                <img src={siteLogoUrl} alt={siteTitle}  style={{ width: '9.25rem', height: '3.5625rem', objectFit: 'cover' }} />
+                <img src={siteLogoUrl} alt={siteTitle} style={{ width: '9.25rem', height: '3.5625rem', objectFit: 'cover' }} />
               </Link>
 
             </div>
@@ -261,10 +263,10 @@ function NavbarCompo({ data }) {
                         <button aria-label='toggle_navlinks'>
                           <img src={arrow.src} alt="arrow" />
                         </button>
-                       <div></div>
+                        <div></div>
                         <div className="hide_seek blogs" >
                           <NavigationLink href={'/meet-our-team'}>our team</NavigationLink>
-                       
+
 
                         </div>
                       </div>
@@ -278,24 +280,24 @@ function NavbarCompo({ data }) {
 
 
                     <div className="navbar_toggle_navigation">
-                    <NavigationLink href={'/courses'}>courses</NavigationLink>
+                      <NavigationLink href={'/courses'}>courses</NavigationLink>
                       <div className="hide_seek_wrapper course_hide_seek_wrapper">
 
                         <button aria-label='toggle_navlinks'>
                           <img src={arrow.src} alt="arrow" />
                         </button>
-                    
+
                         <div className="hide_seek blogs course_toggle " >
-                      
-                      <NavigationLink href={'/our-internship'} >our internship</NavigationLink>
-                   
-                       
+
+                          <NavigationLink href={'/our-internship'} >our internship</NavigationLink>
+
+
 
                         </div>
                       </div>
 
                     </div>
-                    
+
 
 
 
@@ -303,7 +305,7 @@ function NavbarCompo({ data }) {
 
                     <NavigationLink href={'/portfolio'}>portfolio</NavigationLink>
                     <NavigationLink href={'/our-products'}>our products</NavigationLink>
-                  
+
 
                     <div className='apply_now_navgation'>
                       <NavigationLink href={'/contact'}>contact us</NavigationLink>
@@ -316,8 +318,15 @@ function NavbarCompo({ data }) {
 
                       <div className="header_bottom_social_icons">
                         <div className="contacts_infos">
-                          <Link href={`tel: ${footerPhoneNumberFirst}`}>+91 {footerPhoneNumberFirst}</Link>
-                          <Link href={`tel: ${footerPhoneNumberSecond}`}>+91 {footerPhoneNumberSecond}</Link>
+                          <div className="footer_contact_one">
+                            <li>For General Queries:  </li>
+                            <li><a href={`tel:${footerPhoneNumberFirst}`}>+91 {footerPhoneNumberFirst}</a></li>
+                          </div>
+                          <div className="footer_contact_second">
+                            <li>For Human Resources:  </li>
+                            <li><a href={`tel:${footerPhoneNumberSecond}`}>+91 {footerPhoneNumberSecond}</a></li>
+                          </div>
+
                         </div>
                         <div className='navbar_social_media'>
                           {

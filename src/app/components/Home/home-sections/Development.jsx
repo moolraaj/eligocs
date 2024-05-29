@@ -32,15 +32,15 @@ function DevelopmentSection({ele,result}) {
                         return (
                             <div className={`development_scroll ${window.screenY <= scrolling[index] ? "sticky" : ""}`} style={{ top: index * 100 + " vh" }} key={index}>
                                 <div className="develop_number">
-                                    <h4 id={`heading-${index + 1}`}> 
+                                    <h4  id={`heading-${index + 1}`}> 
                                         <span aria-hidden="true">{index + 1}</span> 
                                     </h4>
                                 </div>
                                 <div className="develop_heading">
-                                    <h4>{items.development_heading}</h4>
+                                    <h4 >{items.development_heading}</h4>
                                 </div>
                                 <div className="develop_para">
-                                    <p>{items.development_paragraph}</p>
+                                    <p >{items.development_paragraph}</p>
                                 </div>
                             </div>
                         );

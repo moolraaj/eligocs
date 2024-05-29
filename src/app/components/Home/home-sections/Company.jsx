@@ -14,13 +14,13 @@ function CompanySection({ele}) {
                 <div className="company_flex">
                   <div className="company_left_section">
 
-                    <h1
+                    <h1 
                       dangerouslySetInnerHTML={{
                         __html: ele.acf.our_company_heading,
                       }}></h1>
 
 
-                    <p>{ele.acf.our_company_para}</p>
+                    <p >{ele.acf.our_company_para}</p>
                   </div>
 
                   <div className="company_right_section">
@@ -30,14 +30,14 @@ function CompanySection({ele}) {
                           <div
                             className="company_question"
                             onClick={() => onTitleClick(index)}>
-                            <h4>{items.faq_question}</h4>
+                            <h4 >{items.faq_question}</h4>
                             <i
                               className={`fa ${activeIndex === index ? "fa-minus" : "fa-plus"
                                 }`}> </i>
                           </div>
                           {activeIndex === index && (
                             <div className="company_answers">
-                              <p>{items.faq_answer}</p>
+                              <p >{items.faq_answer}</p>
                             </div>
                           )}
                         </div>

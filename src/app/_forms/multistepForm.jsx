@@ -19,6 +19,8 @@ export default function MultistepForm({ onHideForm, onCompleteForm }) {
         fetchData();
     }, []);
 
+    
+    
     const handleOptionClick = (index, optIndex, redirectionLink, redirectOption, label) => {
         setSelectedOptions((prev) => ({
             ...prev,

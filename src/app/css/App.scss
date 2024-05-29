@@ -12,6 +12,12 @@
 	margin: auto;
 	box-sizing: border-box;
 }
+.multistep_popup_form .cf7_form_inner{
+	height: auto !important;
+	margin: auto !important;
+	padding-bottom: 60px;
+	overflow: hidden !important;
+}
 .cf7_form_inner {
     height: 90vh;
     overflow-y: auto;
@@ -184,22 +190,19 @@ h1,h2,h3,h4,h5,h6,p,span,li,ol,ul{
 	
 }
 .process_description li::before {
-    content: "\2713"; 
+    content: "";
+	background-image: url(../assets/pageAssets/checked.png); 
+	background-repeat: no-repeat;
+	background-size: cover;
     width: 20px;
     height: 20px;
     position: absolute;
-    background: $green;
-    color: $white;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%; 
     left: -30px; 
     top: 11px; 
-    font-size: .675em; 
-	font-weight: 600;
-	transform: rotate(7deg);
-	padding: .6px;
 }
 
 .nav_left_section {
@@ -1025,7 +1028,7 @@ p {
 }
 .hide_seek.blogs {
 	position: absolute;
-	top: 50px;
+	top: 60px;
 	left: 35%;
 	display: none;
 	flex-direction: column;
@@ -2217,7 +2220,7 @@ a.back-to-projects {
 	width: 600px;
 	max-width: 670px;
 	height: 700px;
-	object-fit: cover
+	object-fit: inherit;
 }
 
 .portfolio_top_left_section .portfolio_inner_page_image_heading_section span {
@@ -3844,7 +3847,7 @@ h5.title_heading_c {
 }
 
 .contacts_infos a {
-	font-size: 2em;
+	font-size: 1.75em;
 }
 
 .blog_post_header img {
@@ -4772,6 +4775,12 @@ h6.user_name_c a {
 	}
 }
 @media(min-width:1025px)and (max-width:1440px) {
+	.hide_seek.blogs{
+		top: 50px;
+	}
+	.course_toggle{
+		top: 3px !important;
+	}
 	.home_slider_animate {
 		margin: 0 !important
 	}
@@ -5064,7 +5073,7 @@ h6.user_name_c a {
 	}
 
 	.portfolio a.portfolio-post {
-		width: 240px;
+        width: 270px;
 		min-height: 100px;
 		height: 100%
 	}
@@ -6567,9 +6576,12 @@ h6.user_name_c a {
 	}
 
 	.hide_seek_wrapper .blogs {
-		top: 9% ;
+		top: 47px ;
 		left: 60%;
 		gap: 15px !important
+	}
+	.course_toggle{
+		top: 5px !important;
 	}
 
 	.apply_now_navgation {
