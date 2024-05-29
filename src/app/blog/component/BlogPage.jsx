@@ -131,7 +131,7 @@ function BlogPage() {
                       <img src={blog.acf.blog_post_image || emptyimg.src} alt="blog_post_image" />
                     </li>
                     <li className="blog-post-info-wrapper">
-                      <h2>{blog.acf.blog_post_tittle}</h2>
+                      <h2>{blog.acf.blog_post_tittle.slice(0,60)}...</h2>
                       <p>
                         <span>{blog.acf.post_by_}</span>
                         <span>{formatDate(blog.date)}</span>

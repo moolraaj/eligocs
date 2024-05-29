@@ -999,6 +999,7 @@ p {
 
 .hide_seek_wrapper img {
 	transition: transform .3s ease;
+	width: 25px;
 	height: 25px;
 	transform: scale(1.5)
 }
@@ -2878,10 +2879,6 @@ span.vison_c {
 	top: 0;
 }
 
-.footer_outer {
-	z-index: 99999 !important;
-	min-height: 100px;
-}
 
 .nav_outer ul {
 	padding: 0;
@@ -2993,6 +2990,8 @@ span.typing-text {
 	width: 100%;
 	height: auto;
 	box-sizing: border-box;
+	z-index: 99999 !important;
+	min-height: 100px;
 
 }
 
@@ -6605,7 +6604,7 @@ h6.user_name_c a {
 	}
 
 	.hide_seek_wrapper .blogs {
-		top: 47px ;
+		top: 40px ;
 		left: 60%;
 		gap: 15px !important
 	}
@@ -7377,8 +7376,8 @@ h6.user_name_c a {
 		flex-direction: column;
 		gap: 16px;
 		text-transform: uppercase;
-		overflow-y: auto;
-		height: 100vh;
+		
+		height: 100%;
 		position: relative;
 		width: 100%
 	}
