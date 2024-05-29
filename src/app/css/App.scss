@@ -13,15 +13,10 @@
 	box-sizing: border-box;
 }
 .multistep_popup_form .cf7_form_inner{
-	height: auto !important;
-	margin: auto !important;
 	padding-bottom: 60px;
-	overflow: hidden !important;
+
 }
 .cf7_form_inner {
-    height: 90vh;
-    overflow-y: auto;
-	overflow-x: hidden;
     margin: auto auto 100px auto;
 }
 img{
@@ -80,6 +75,20 @@ button{
 	padding: 50px 30px;
 	top: 0
 }
+.apply_job_select_box_wrapper{
+	margin-top: 5px !important;
+	select {
+		padding: 6px 0px  30px 0px !important;
+		border: none !important; 
+		border-bottom: 1px solid $primaryyellow !important; 
+		outline: none;
+		border-radius: 0 !important;
+		font-size: 28px;
+	    text-transform: capitalize;
+	    color: $input-placeholder-color;
+		padding-left: 0px !important;
+	}
+}
 
 .form_fields_wrapper input {
 	width: 100%;
@@ -88,7 +97,7 @@ button{
 	border-bottom: 1px solid $primaryyellow;
 	font-size: 28px;
 	text-transform: capitalize;
-	color: $input-placeholder-color
+	color: $input-placeholder-color;
 }
 
 .form_button button {
@@ -694,7 +703,9 @@ form#jobform textarea {
 	font-family: $Euclidfont;
 	padding: 0
 }
-
+.applyjob_select_box{
+	width: 100%;
+}
 .portfolio_showcase_wrapper {
 	@include grid-property(grid, repeat(3, 1fr), unset,50px, 0px);
 }
@@ -1987,7 +1998,8 @@ ul.course:nth-child(3n-1) {
 
 .menu-right-container-top {
 	width: 80%;
-	margin-top: 30px
+	margin-top: 30px;
+	height: 0;
 }
 
 .port_showcase_short_description h4,
@@ -2425,11 +2437,12 @@ menu.footer_ul li a {
 }
 
 .nav-right .header_contact_section h2 {
-	color: $primaryyellow
+	color: $primaryyellow;
+	margin-top: 0;
 }
 
 .nav-right .header_bottom_social_icons {
-	@include grid-property(grid,1fr 1fr,unset,);
+	@include grid-property(grid,1fr 1fr,center,);
 	.contacts_infos {
 		display: flex;
 		flex-direction: column;
@@ -2450,7 +2463,7 @@ menu.footer_ul li a {
 }
 
 .menu-right-container-bottom a {
-	font-size: 1.875em;
+	font-size: 1.75em;
 	font-weight: 500
 }
 
@@ -2472,9 +2485,6 @@ menu.footer_ul li a {
 	padding-bottom: 10px
 }
 
-.header-menu-seperate-container-right {
-	padding-left: 20%
-}
 
 .process_flex_template {
 	@include grid-property(grid,54% 1fr, center,);
@@ -3284,7 +3294,7 @@ p .testimonial_wrap {
 	gap: 25px;
 	text-transform: uppercase;
 	overflow-y: auto;
-	height: 80vh;
+	height: 100vh;
 	position: relative;
 	width: 80%
 }
@@ -4473,6 +4483,17 @@ h6.user_name_c a {
     
 }
 @media only screen and (max-width:1500px) {
+
+	.apply_job_select_box_wrapper{
+		margin-top: 0 !important;
+		select.select_duration{
+			width: 90% !important;
+			padding: 18px 0px  20px 0px !important;
+		}
+		.form_fields_wrapper{
+			padding: 0px;
+		}
+	}
 	.form_options {
 		grid-template-columns: repeat(3, 1fr) !important
 	}
@@ -4547,7 +4568,8 @@ h6.user_name_c a {
 		top: 14px;
 		display: flex;
 		align-items: center;
-		font-size: 22px
+		font-size: 28px;
+		font-family: $Euclidfont;
 	}
 
 	.call_wrapper {
@@ -4865,6 +4887,7 @@ h6.user_name_c a {
 	}
 }
 @media(max-width:1024px) {
+	
 	.scroll-button {
 		display: none
 	}
@@ -5255,6 +5278,11 @@ h6.user_name_c a {
 	}
 }
 @media(max-width:768px) {
+	.apply_job_select_box_wrapper select{
+		
+		font-size: 1.125em;
+        font-family: 'Euclid Circular A';
+	}
 	.process_description ul {
 		@include grid-property(grid, repeat(1, 1fr),unset,20px,20px);
 		margin-left: 30px;
@@ -5628,7 +5656,7 @@ h6.user_name_c a {
 	}
 
 	.nav-right .header_contact_section h2 {
-		font-size: 1.2em
+		font-size: 1.2em;
 	}
 
 	.form_fields_wrapper input {
@@ -6537,13 +6565,13 @@ h6.user_name_c a {
 		gap: 25px;
 		text-transform: uppercase;
 		overflow-y: auto;
-		height: 80vh;
+		height: 100vh;
 		position: relative;
 		width: 100%
 	}
 
 	.menu-right-container-bottom a {
-		font-size: 1.25em !important
+		font-size: 1em !important
 	}
 
 	.form_slider_wrapper {
@@ -7118,6 +7146,9 @@ h6.user_name_c a {
 	}
 }
 @media(max-width:468px) {
+	.header-menu-seperate-container-right{
+		gap: 20px;
+	}
 	form#applyforjob{
 		margin-bottom: 80px;
 	}
@@ -7332,17 +7363,17 @@ h6.user_name_c a {
 	}
 
 	.form_button button {
-		padding: 11px 35px !important;
+		padding: 8px 25px !important;
 		font-size: 1em !important
 	}
 
 	.header-menu-seperate-container-right .menu-right-container-bottom {
 		display: flex;
 		flex-direction: column;
-		gap: 20px;
+		gap: 16px;
 		text-transform: uppercase;
 		overflow-y: auto;
-		height: 80vh;
+		height: 100vh;
 		position: relative;
 		width: 100%
 	}

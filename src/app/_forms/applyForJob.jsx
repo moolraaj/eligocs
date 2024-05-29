@@ -108,9 +108,24 @@ function ApplyForJob() {
                                     <input type="text" name="curruntstatus" placeholder='current status' value={user.curruntstatus} onChange={getUserData} />
                                     {errors.curruntstatus && <span className='error_fields'>currunt status is required</span>}
                                 </div>
-                                <div className="form_fields_wrapper">
+                                {/* <div className="form_fields_wrapper">
                                     <input type="text" name="applyingfor" placeholder='applying for' value={user.applyingfor} onChange={getUserData} />
-                                </div>
+                                </div> */}
+                                <div className="form_fields_wrapper_radio_select apply_job_select_box_wrapper">
+                               
+                                <div className="form_fields_wrapper">
+                        <div className="applyjob_select_box">
+                            <select className='select_duration' name="applyingfor" value={user.applyingfor} onChange={getUserData}>
+                                <option value="Applying For">Applying For</option>
+                                <option value="Looking for Web Solutions">Looking for Web Solutions?</option>
+                                <option value="Join Our Team">Join Our Team?</option>
+                                <option value="Lookin for Training">Lookin for Training?</option>
+                                <option value="Looking for Our Products">Looking for Our Products?</option>
+                            </select>
+                            {errors.applyingfor && <span className='error_fields'>This field is required</span>}
+                        </div>
+                    </div>
+                    </div>
                                 <div className="form_fields_wrapper">
                                     <input type="file" name="uploadresume" class="custom-file-upload" onChange={getUserData} />
                                     {errors.uploadresume && <span className='error_fields'>This field is required</span>}
