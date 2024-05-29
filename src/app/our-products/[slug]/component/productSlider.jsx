@@ -1,4 +1,6 @@
+'use client'
 import React, { useState, useEffect, useRef } from 'react';
+
 
 function ProductSlider({ data }) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -73,7 +75,7 @@ function ProductSlider({ data }) {
       <div className="slides">
         {getVisibleSlides().map((imageUrl, index) => (
           <div key={index} className="slide" onClick={() => openLightbox(imageUrl)}>
-            <img src={imageUrl} alt={`Slide ${index}`} style={{ width: '100%', height: 'auto' }} />
+            <img src={imageUrl} alt={`Slide ${index}`} />
           </div>
         ))}
       </div>
