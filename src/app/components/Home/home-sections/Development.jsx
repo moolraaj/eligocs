@@ -25,22 +25,22 @@ function DevelopmentSection({ele,result}) {
         <div className="home_development_wrapper">
             <div className="development_flex">
                 <div className={`development_left_section ${window.scrollY <= scrolling[0] ? "sticky" : ""}`}>
-                    <h1 style={{width: '100%', height: '100%', minHeight: '100px'}}>{ele.acf.our_development_heading}</h1>
+                    <h1>{ele.acf.our_development_heading}</h1>
                 </div>
                 <div className="development_right_section">
                     {ele.acf.our_development_repeater.map((items, index) => {
                         return (
                             <div className={`development_scroll ${window.screenY <= scrolling[index] ? "sticky" : ""}`} style={{ top: index * 100 + " vh" }} key={index}>
                                 <div className="develop_number">
-                                    <h4 style={{width: '100%', height: '100%', minHeight: '100px'}} id={`heading-${index + 1}`}> 
+                                    <h4  id={`heading-${index + 1}`}> 
                                         <span aria-hidden="true">{index + 1}</span> 
                                     </h4>
                                 </div>
                                 <div className="develop_heading">
-                                    <h4 style={{width: '100%', height: '100%', minHeight: '100px'}}>{items.development_heading}</h4>
+                                    <h4 >{items.development_heading}</h4>
                                 </div>
                                 <div className="develop_para">
-                                    <p style={{width: '100%', height: '100%', minHeight: '100px'}}>{items.development_paragraph}</p>
+                                    <p >{items.development_paragraph}</p>
                                 </div>
                             </div>
                         );
