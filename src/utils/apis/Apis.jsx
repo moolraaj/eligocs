@@ -131,7 +131,7 @@ const pageNotFound=async ()=>{
 
   // fetch all portfolio api
   const fetchAllportFolio = async () => {
-    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/portfolio?fields=acf&acf_format=standard`);
+    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/portfolio?per_page=100&fields=acf&acf_format=standard`);
     let result = await response.json();
     return result;
   };
@@ -152,21 +152,21 @@ const pageNotFound=async ()=>{
 
   // fetch all blog posts api
   const AllBlogPOsts = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/blog?all_categories=true&fields=acf&acf_format=standard`);
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/blog?all_categories=true&per_page=100&fields=acf&acf_format=standard`);
     let response = await data.json();
     return response;
   };
 
  // fetch all courses api
  const AllCourses = async () => {
-  let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/course?course_categories=true&fields=acf&acf_format=standard`);
+  let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/course?course_categories=true&per_page=100&fields=acf&acf_format=standard`);
   let response = await data.json();
   return response;
 };
 
 //fetch all Products api
 const AllProducts = async ()=>{
-  let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/product?fields=acf&acf_format=standard`);
+  let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/product?per_page=100&fields=acf&acf_format=standard`);
   let response = await data.json();
   return response;
 }

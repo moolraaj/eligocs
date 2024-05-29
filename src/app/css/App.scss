@@ -3514,11 +3514,11 @@ p .testimonial_wrap {
 	border-width: 1px 0
 }
 
-.blog-posts-section {
-	display: flex;
-	align-items: center;
-	justify-content: center
-}
+// .blog-posts-section {
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center
+// }
 
 .blog-posts-section p#no_blogs_found {
 	color: $primaryyellow;
@@ -3695,7 +3695,7 @@ p:empty {
 }
 
 .all-blog-posts-outer {
-	@include grid-property(grid,repeat(3, 1fr), unset,50px,0px);
+	@include grid-property(grid,repeat(3, 1fr), unset,30px ,30px);
 	text-transform: capitalize
 }
 
@@ -3706,7 +3706,8 @@ p:empty {
 }
 
 .all-blog-posts-outer ul.blog-post {
-	position: relative
+	position: relative;
+	margin:0px;
 }
 
 .all-blog-posts-outer ul.blog-post .blog-post-info-wrapper {

@@ -3,7 +3,7 @@ import CallToAction from "@/app/call-to-action/callToAction";
 import { BLOG_PAGE_SIZE, allExportedApi } from "@/utils/apis/Apis";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
+import emptyimg from '../../assets/empty.jpg'
 function BlogPage() {
   let api=allExportedApi() 
   const[blogPageData,setBlogPageData]=useState([])
@@ -48,7 +48,7 @@ function BlogPage() {
     ? blogs.filter(blog => blog.blog_category.includes(selectedCategory))
     : blogs;
 
-  console.log('Filtered blogs:', filteredBlogs); // Debugging line
+  console.log('Filtered blogs:', filteredBlogs); 
 
   const totalPages = Math.ceil(filteredBlogs.length / BLOG_PAGE_SIZE);
 
@@ -63,7 +63,7 @@ function BlogPage() {
 
   const paginatedBlogs = filteredBlogs.slice((currentPage - 1) * BLOG_PAGE_SIZE, currentPage * BLOG_PAGE_SIZE);
 
-  console.log('Paginated blogs:', paginatedBlogs); // Debugging line
+  console.log('Paginated blogs:', paginatedBlogs); 
 
   const renderPaginationButtons = () => {
     const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
@@ -128,7 +128,7 @@ function BlogPage() {
                 <ul className="blog-post" key={blog.id}>
                   <Link href={`/blog/${blog.slug}`}>
                     <li className="blog-post-img">
-                      <img src={blog.acf.blog_post_image} alt="blog_post_image" />
+                      <img src={blog.acf.blog_post_image || emptyimg.src} alt="blog_post_image" />
                     </li>
                     <li className="blog-post-info-wrapper">
                       <h2>{blog.acf.blog_post_tittle}</h2>
