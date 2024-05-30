@@ -2700,12 +2700,19 @@ menu.footer_ul li a {
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
-.inter_testi_wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    column-gap: 20px;
-    padding-top: 50px;
+
+.interns_info_outer {
+    position: relative;
+}
+.intrns_testimonials_outer{
+	padding-top: 50px;
+	.inter_testi_wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: center;
+		column-gap: 20px;
+	}
+	
 }
 
 
@@ -2904,7 +2911,7 @@ span.vison_c {
 .testimonial_slider {
 	position: relative;
 	width: 100%;
-	height: 30vh
+	height: auto;
 }
 
 .testimonial_left_section h1 {
@@ -5447,6 +5454,9 @@ h6.user_name_c a {
 }
 
 @media(max-width:768px) {
+	.inter_testi_wrapper{
+		@include grid-property(grid,1fr !important,center,20px,20px);
+	}
 	.not_found_outer {
 		padding: 55px 20px 50px;
 	}
@@ -7338,6 +7348,9 @@ h6.user_name_c a {
 }
 
 @media(max-width:468px) {
+	.intrns_testimonials_outer{
+		padding-top: 0;
+	}
 	.not_found_outer {
 		.content img {
 			height: 270px !important;

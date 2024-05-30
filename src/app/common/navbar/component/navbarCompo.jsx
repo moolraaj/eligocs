@@ -322,11 +322,11 @@ function NavbarCompo({ data }) {
                         <div className="contacts_infos">
                           <div className="footer_contact_one">
                             <li>For General Queries:  </li>
-                            <li><a href={`tel:${footerPhoneNumberFirst}`}>+91 {footerPhoneNumberFirst}</a></li>
+                            <li><Link href={`tel:${footerPhoneNumberFirst}`}>+91 {footerPhoneNumberFirst}</Link></li>
                           </div>
                           <div className="footer_contact_second">
                             <li>For Human Resources:  </li>
-                            <li><a href={`tel:${footerPhoneNumberSecond}`}>+91 {footerPhoneNumberSecond}</a></li>
+                            <li><Link href={`tel:${footerPhoneNumberSecond}`}>+91 {footerPhoneNumberSecond}</Link></li>
                           </div>
 
                         </div>

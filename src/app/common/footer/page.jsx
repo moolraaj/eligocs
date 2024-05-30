@@ -92,14 +92,14 @@ function Footer({ response }) {
                 <h1 className='footer-top-headings'>Contacts</h1>
                   <menu className="footer_ul">
 
-                  <li><a className='footer_mail' href={`mailto:${footerEmail}`}>{footerEmail}</a></li>
+                  <li><Link className='footer_mail' href={`mailto:${footerEmail}`}>{footerEmail}</Link></li>
                   <div className="footer_contact_one">
                   <li>For General Queries:  </li>
-                  <li><a href={`tel:${footerPhoneNumberFirst}`}>+91 {footerPhoneNumberFirst}</a></li>
+                  <li><Link href={`tel:${footerPhoneNumberFirst}`}>+91 {footerPhoneNumberFirst}</Link></li>
                   </div>
                 <div className="footer_contact_second">
                 <li>For Human Resources:  </li>
-                  <li><a href={`tel:${footerPhoneNumberSecond}`}>+91 {footerPhoneNumberSecond}</a></li>
+                  <li><Link href={`tel:${footerPhoneNumberSecond}`}>+91 {footerPhoneNumberSecond}</Link></li>
                 </div>
                   </menu>
                 
@@ -107,9 +107,9 @@ function Footer({ response }) {
                   {
                     socialLinks.map((ele, index) => {
                       return <div className="footer_social_wrapper" key={index}>
-                        <a href={ele.iconUrl}>
+                        <Link href={ele.iconUrl}>
                           <img src={ele.imageUrl || emptyImage.src} alt={ele.iconName} />
-                        </a>
+                        </Link>
 
                       </div>
                     })

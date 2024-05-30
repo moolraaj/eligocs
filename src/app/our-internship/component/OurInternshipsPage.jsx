@@ -8,6 +8,7 @@ import RerenderCompo from '@/app/common/navbar/component/formAnimationCompo';
 import formClose from '../../assets/headerAssets/formclose.png'
 import TestimonialSlides from './testimonialSlides';
 import emptyImage from '../../assets/empty.jpg' 
+import InternTestimonial from './testimonials';
  
  
  
@@ -144,21 +145,22 @@ function OurInternshipsPage() {
                     </li>
                   </ul>
                 ))}
-
+                  <div className="intrns_testimonials_outer">
+                <h2> Our Testimonials</h2>
                 <div className="inter_testi_wrapper">
                   <div className="inter_left">
                   <TestimonialSlides slides={ele}/>
                   </div>
                   <div className="inter_testi_right">
-                    
+                    <InternTestimonial testimonials={ele} />
                   </div>
 
                 </div>
-
-                 
-              
+                </div>
                 
+
               </div>
+              
             );
           })}
         </div>
