@@ -134,7 +134,7 @@ function BlogPage() {
                       <h2>{blog.acf.blog_post_tittle.slice(0,60)}...</h2>
                       <p>
                         <span>{blog.acf.post_by_}</span>
-                        <span>{formatDate(blog.date)}</span>
+                        <span>{formatDate(blog.modified_gmt)}</span>
                       </p>
                     </li>
                   </Link>
