@@ -13,6 +13,7 @@ import ApplyForJob from '@/app/_forms/applyForJob';
 // import callIconOne from '../../../assets/headerAssets/phone-call.png';
 // import callIconTwo from '../../../assets/headerAssets/smartphone-call.png'
 import MultistepForm from '@/app/_forms/multistepForm';
+import emptyImage from '../../../assets/empty.jpg'
 
 
 
@@ -117,7 +118,7 @@ function NavbarCompo({ data }) {
               <div className="cf7_right_section">
                 <div className="close_button">
                   <button onClick={toggleFormVisibility} className="close_button">
-                    <img src={formClose.src} alt="" />
+                    <img src={formClose.src || emptyImage.src} alt="" />
                   </button>
                 </div>
               </div>
@@ -158,7 +159,7 @@ function NavbarCompo({ data }) {
               <div className="cf7_right_section">
                 <div className="close_button">
                   <button onClick={closeApplyJob} className="close_button" aria-label='close poup form'>
-                    <img src={formClose.src} alt="" srcset="" />
+                    <img src={formClose.src || emptyImage.src} alt="" srcset="" />
                   </button>
                 </div>
               </div>
@@ -187,18 +188,18 @@ function NavbarCompo({ data }) {
 <div className="contacts_top_header">
                 <div className='righ-top_black'>
               <div className="header_contact_one">
-                  <li><img src={callIconOne.src} alt="callIconOne" /><span>For General Queries</span> </li>
+                  <li><img src={callIconOne.src || emptyImage.src} alt="callIconOne" /><span>For General Queries</span> </li>
                   <li><a href={`tel:${footerPhoneNumberFirst}`}>+91 {footerPhoneNumberFirst}</a></li>
                   </div>
                 <div className="header_contact_second">
-                <li><img src={callIconTwo.src} alt="callIconTwo" /><span>For Human Resources:</span></li>
+                <li><img src={callIconTwo.src || emptyImage.src} alt="callIconTwo" /><span>For Human Resources:</span></li>
                   <li><a href={`tel:${footerPhoneNumberSecond}`}>+91 {footerPhoneNumberSecond}</a></li>
                 </div>
               </div>
 
              
               <div className="mail_header">
-                <li><img src={mailIcon.src} alt="mailIcon" /></li>
+                <li><img src={mailIcon.src || emptyImage.src}  alt="mailIcon" /></li>
                 <li><a  href={`mailto:${footerEmail}`}>{footerEmail}</a></li>
                 </div>
   
@@ -213,7 +214,7 @@ function NavbarCompo({ data }) {
             <div className="nav_left_section">
 
               <Link className="navbar-brand" href="/">
-                <img src={siteLogoUrl} alt={siteTitle} style={{ width: '9.25rem', height: '3.5625rem', objectFit: 'cover' }} />
+                <img src={siteLogoUrl || emptyImage.src} alt={siteTitle} style={{ width: '9.25rem', height: '3.5625rem', objectFit: 'cover' }} />
               </Link>
 
             </div>
@@ -221,7 +222,7 @@ function NavbarCompo({ data }) {
             <div className="nav_right_section">
               <button onClick={multisepPopupForm} id='go_to_internship_page' aria-label="internship_page">Enquire Now</button>
               <button onClick={toggleFormVisibility} aria-label="show form">
-                <img src={FormLogo.src} alt="formLogo" />
+                <img src={FormLogo.src || emptyImage.src} alt="formLogo" />
               </button>
               <button className="nav-toggler" onClick={toggleMenu} aria-label="toggle_navigation_menu">
                 <span className="nav-toggler-icon"></span>
@@ -244,7 +245,7 @@ function NavbarCompo({ data }) {
                 <div className="header-menu-seperate-container-right">
                   <div className="menu-right-container-top">
 
-                    <img src={closeMenuIcon.src} alt="closeMenuIcon" style={{ float: 'right' }} onClick={closeMenu} />
+                    <img src={closeMenuIcon.src || emptyImage.src} alt="closeMenuIcon" style={{ float: 'right' }} onClick={closeMenu} />
                   </div>
                   <div className="menu-right-container-bottom">
                     {/* {
@@ -261,7 +262,7 @@ function NavbarCompo({ data }) {
                       <div className="hide_seek_wrapper">
 
                         <button aria-label='toggle_navlinks'>
-                          <img src={arrow.src} alt="arrow" />
+                          <img src={arrow.src || emptyImage.src} alt="arrow" />
                         </button>
                         <div></div>
                         <div className="hide_seek blogs" >
@@ -284,7 +285,7 @@ function NavbarCompo({ data }) {
                       <div className="hide_seek_wrapper course_hide_seek_wrapper">
 
                         <button aria-label='toggle_navlinks'>
-                          <img src={arrow.src} alt="arrow" />
+                          <img src={arrow.src || emptyImage.src} alt="arrow" />
                         </button>
 
                         <div className="hide_seek blogs course_toggle " >
@@ -332,7 +333,7 @@ function NavbarCompo({ data }) {
                           {
                             socialLinks.map((ele, index) => {
                               return <div key={index} className='header_media_icons'>
-                                <Link href={ele.iconUrl} target='_blank'><img src={ele.imageUrl} alt='spcial-icons' /></Link>
+                                <Link href={ele.iconUrl} target='_blank'><img src={ele.imageUrl || emptyImage.src} alt='spcial-icons' /></Link>
                               </div>
                             })
                           }

@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useEffect } from "react";
-
+import emptyImage from '../assets/empty.jpg'
 function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [testimonials, setTestimonials] = useState([]);
@@ -66,7 +66,7 @@ function Testimonials() {
               style={{ zIndex: testimonials.length - index }}
             >
               <img
-                src={testimonials[activeIndex].client_image.url}
+                src={testimonials[activeIndex].client_image.url || emptyImage.src}
                 alt="clientImg"
                 className="client-img"
               />

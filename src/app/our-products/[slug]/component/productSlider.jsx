@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react';
+import emptyImage from '../../../assets/empty.jpg'
 
 
 function ProductSlider({ data }) {
@@ -75,7 +76,7 @@ function ProductSlider({ data }) {
       <div className="slides">
         {getVisibleSlides().map((imageUrl, index) => (
           <div key={index} className="slide" onClick={() => openLightbox(imageUrl)}>
-            <img src={imageUrl} alt={`Slide ${index}`} />
+            <img src={imageUrl || emptyImage.src} alt={`Slide ${index}`} />
           </div>
         ))}
       </div>
@@ -87,7 +88,7 @@ function ProductSlider({ data }) {
         <div className="lightbox-overlay" onClick={closeLightbox}>
           <div className="lightbox-container" onClick={(e) => e.stopPropagation()}>
             <button className="close-btn" onClick={closeLightbox}>X</button>
-            <img className="lightbox-image" src={lightboxImage} alt="lightbox" />
+            <img className="lightbox-image" src={lightboxImage || emptyImage.src} alt="lightbox" />
           </div>
         </div>
       )}

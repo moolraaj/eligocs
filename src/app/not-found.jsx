@@ -30,6 +30,7 @@
 import { useEffect, useState } from 'react';
 import { allExportedApi } from "@/utils/apis/Apis";
 import Link from "next/link";
+import emptyImage from './assets/empty.jpg'
 
 function NotFound() {
   const [data, setData] = useState([]);
@@ -94,7 +95,7 @@ function NotFound() {
                     )}
                   </div>
                   <div className="image">
-                    {acf.image && <img src={acf.image} alt="Not Found Image" style={{ maxWidth: acf.image_max_width ,width: acf.image_width || '250px', height: acf.image_height || '200px' }} />}
+                    {acf.image && <img src={acf.image || emptyImage.src} alt="Not Found Image" style={{ maxWidth: acf.image_max_width ,width: acf.image_width || '250px', height: acf.image_height || '200px' }} />}
                   </div>
                 </div>
               </div>

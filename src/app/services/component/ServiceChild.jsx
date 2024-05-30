@@ -1,6 +1,8 @@
 
  
 import Link from 'next/link';
+import emptyImage from '../../assets/empty.jpg'
+
 export default function  ServiceChild({services}) {
 
     const reversedServices = [...services].reverse();
@@ -18,7 +20,7 @@ export default function  ServiceChild({services}) {
                                 <p className="trans_redirecttion">{item.acf.services_title}</p>
                             </li>
                             <li>
-                                <img src={item.acf.services_image} alt="" srcSet="" />
+                                <img src={item.acf.services_image || emptyImage.src} alt="services image" />
                             </li>
                         </ul>
                     </Link>

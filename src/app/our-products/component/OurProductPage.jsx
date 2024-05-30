@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { PRODUCTS_PAGE_SIZE, allExportedApi } from '@/utils/apis/Apis';
 import { useRouter } from 'next/navigation';
+import emptyImage from '../../assets/empty.jpg'
 
 function OurProductPage() {
   let api = allExportedApi();
@@ -40,7 +41,7 @@ function OurProductPage() {
             <span><Link href={`/our-products/${product.slug}`}>Read More</Link></span>
           </span>
         </li>
-        <li><img src={product.acf.product_image.url} alt="portfolio_image" /></li>
+        <li><img src={product.acf.product_image.url || emptyImage.src} alt="portfolio_image" /></li>
       </ul>
     ));
   };
@@ -76,7 +77,7 @@ function OurProductPage() {
               <div className="product-top-image-section">
                 <div className="product_heading_left"><h3>{ele.acf.product_page_heading}</h3></div>
                 <div className="product_image_right">
-                  <img src={ele.acf.product_page_image.url} alt="product_page_image" />
+                  <img src={ele.acf.product_page_image.url || emptyImage.src} alt="product_page_image" />
                   <span></span>
                 </div>
               </div>

@@ -5,7 +5,7 @@ import CallToAction from "@/app/call-to-action/callToAction";
 import { allExportedApi } from "@/utils/apis/Apis";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
+import emptyImage from '../../../assets/empty.jpg'
 
 
 function ServicesInnerSlug({ slug }) {
@@ -46,7 +46,7 @@ function ServicesInnerSlug({ slug }) {
                            <h1>{ele.acf.services_title}</h1>
                         </div>
                         <div className="portfolio_page_top_image">
-                           <img src={ele.acf.banner_image} alt={ele.acf.services_title} />
+                           <img src={ele.acf.banner_image || emptyImage.src} alt={ele.acf.services_title} />
                            <div className="divider-yellow"></div>
                         </div>
                      </div>
@@ -95,7 +95,7 @@ function ServicesInnerSlug({ slug }) {
                            </div>
                            <div className="process_right_section">
                               <div className="process_image">
-                                 <img src={ele.services_process_image} alt='' />
+                                 <img src={ele.services_process_image || emptyImage.src} alt='services_process_image' />
                               </div>
                            </div>
                         </div>

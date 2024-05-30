@@ -4,7 +4,7 @@ import { useState } from "react";
 import { gsap } from "gsap";
 import StepGif from "../../assets/aboutpageAssets/next-step.gif";
 import playAgain from "../../assets/aboutpageAssets/playAgain.gif";
-
+import emptyImage from '../../assets/empty.jpg'
 const WorkingProcess = ({ result }) => {
   const workingProcess = result?.acf?.working_process || [];
   const [currentStep, setCurrentStep] = useState(0);
@@ -91,7 +91,7 @@ const WorkingProcess = ({ result }) => {
                       <div>
                         <button onClick={handleNextStep}>
                           <img
-                            src={StepGif.src}
+                            src={StepGif.src || emptyImage.src}
                             style={{ width: "50px", height: "50px" }}
                             alt="nextStep"
                             className="nextStep"
@@ -112,7 +112,7 @@ const WorkingProcess = ({ result }) => {
                         <div>
                           <button onClick={handlePlayAgain}>
                             <img
-                              src={playAgain.src}
+                              src={playAgain.src || emptyImage.src}
                               style={{ width: "40px", height: "40px" }}
                               alt="playAgain"
                               className="playAgain"
@@ -131,14 +131,14 @@ const WorkingProcess = ({ result }) => {
               {step.step_imageupper && (
                 <img
                   className="image-upper"
-                  src={step.step_imageupper.url}
+                  src={step.step_imageupper.url || emptyImage.src}
                   alt={`Step ${index + 1}`}
                 />
               )}
               {step.step_imagemain && (
                 <img
                   className="main-image"
-                  src={step.step_imagemain.url}
+                  src={step.step_imagemain.url || emptyImage.src}
                   alt={`Step ${index + 1}`}
                 />
               )}
@@ -146,7 +146,7 @@ const WorkingProcess = ({ result }) => {
               {step.step_imagelower && (
                 <img
                   className="image-lower"
-                  src={step.step_imagelower.url}
+                  src={step.step_imagelower.url || emptyImage.src}
                   alt={`Step ${index + 1}`}
                 />
               )}

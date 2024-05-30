@@ -2,6 +2,7 @@
 import { PORTFOLIO_PAGE_SIZE, allExportedApi } from "@/utils/apis/Apis";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import emptyImage from '../../assets/empty.jpg'
 
 function PortfolioPage() {
   let api = allExportedApi();
@@ -64,7 +65,7 @@ function PortfolioPage() {
                   <h1>{ele.acf.portfolio_page_heading}</h1>
                 </div>
                 <div className="portfolio_page_top_image">
-                  <img src={ele.acf.portfolio_page_image} alt="" />
+                  <img src={ele.acf.portfolio_page_image || emptyImage.src} alt="portfolio_page_image" />
                   <div className="divider-yellow"></div>
                 </div>
               </div>
@@ -80,7 +81,7 @@ function PortfolioPage() {
                   <Link href={`/portfolio/${e.slug}`} key={e.id}>
                     <div className="protfolio_items">
                       <div className="port_showcase_image">
-                        <img className="showcase_hover_image" src={e.acf.portfolio_image} alt="" />
+                        <img className="showcase_hover_image" src={e.acf.portfolio_image || emptyImage.src} alt="" />
                         <div className="port_showcase_hove_effect">
                           <div className="showcase_wrapper">
                             <div className="port_showcase_left">

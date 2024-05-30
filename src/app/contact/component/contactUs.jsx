@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-
+import emptyImage from '../../assets/empty.jpg'
 import Map from '../map'
 import ContactUsForm from '@/app/_forms/contactusform'
 import { allExportedApi } from '@/utils/apis/Apis'
@@ -98,7 +98,7 @@ function ContactUs() {
                                                         <div className="contact_social_link">
                                                             <li>
                                                                 <a href={icons.icon_link} target='_blank'>
-                                                                    <img src={icons.social_media} alt="" srcset="" />
+                                                                    <img src={icons.social_media || emptyImage.src} alt="" srcset="" />
                                                                 </a>
                                                             </li>
                                                         </div>

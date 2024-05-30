@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { COURSE_PAGE_SIZE, allExportedApi } from '@/utils/apis/Apis';
 import { useRouter } from 'next/navigation';
+import emptyImage from '../../assets/empty.jpg'
+
 
 function CoursesPage() {
   const router = useRouter();
@@ -54,7 +56,7 @@ function CoursesPage() {
     return filteredCoursesData.slice(startIndex, endIndex).map((course, index) => (
       <ul key={index} className="course">
         <li>
-          <img src={course.acf.course_logo.url} alt="course_logo" />
+          <img src={course.acf.course_logo.url || emptyImage.src} alt="course_logo" />
         </li>
         <li>
           <h1>{course.acf.course_tittle}</h1>
@@ -109,7 +111,7 @@ function CoursesPage() {
               <button className="button_global" onClick={() => router.push('/contact')}>
                 Get In Touch
               </button>
-              <img src={coursesData.acf.courses_page_image.url} alt="courses_page_image" />
+              <img src={coursesData.acf.courses_page_image.url || emptyImage.src} alt="courses_page_image" />
             </div>
           ))}
 

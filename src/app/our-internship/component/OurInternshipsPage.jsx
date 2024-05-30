@@ -5,7 +5,8 @@ import { INTERNSHIP_PAGE_SIZE, allExportedApi } from '@/utils/apis/Apis';
 import { useRouter } from 'next/navigation';
 import Internship from '@/app/_forms/internship';
 import RerenderCompo from '@/app/common/navbar/component/formAnimationCompo';
-import formClose from '../../assets/headerAssets/formclose.png'
+import formClose from '../../assets/headerAssets/formclose.png';
+import emptyImage from '../../assets/empty.jpg'
 
 function OurInternshipsPage() {
   let api = allExportedApi();
@@ -62,7 +63,7 @@ function OurInternshipsPage() {
             <span><Link href={internship.acf.internship_form_link} target='_blank'>Start Your Task</Link></span>
           </span>
         </li>
-        <li><img src={internship.acf.internship_image} alt="portfolio_image" /></li>
+        <li><img src={internship.acf.internship_image || emptyImage.src} alt="portfolio_image" /></li>
       </ul>
     ));
   };
@@ -98,7 +99,7 @@ function OurInternshipsPage() {
               <div className="product-top-image-section">
                 <div className="product_heading_left"><h3>{ele.acf.internship_page_tittle}</h3></div>
                 <div className="product_image_right">
-                  <img src={ele.acf.internship_page_banner_image} alt="product_page_image" />
+                  <img src={ele.acf.internship_page_banner_image || emptyImage.src} alt="product_page_image" />
                   <span></span>
                 </div>
               </div>
@@ -108,7 +109,7 @@ function OurInternshipsPage() {
                   <p dangerouslySetInnerHTML={{ __html: ele.acf.internship_page_description }}></p>
                 </div>
                 <div className="internship-page-right-info">
-                  <img src={ele.acf.internship_description_image} alt="internship_description_image" />
+                  <img src={ele.acf.internship_description_image || emptyImage.src} alt="internship_description_image" />
                 </div>
               </div>
             </div>
@@ -160,7 +161,7 @@ function OurInternshipsPage() {
                     <div className="cf7_right_section">
                       <div className="close_button">
                         <button onClick={toggleFormVisibility} className="close_button">
-                          <img src={formClose.src} alt="" />
+                          <img src={formClose.src || emptyImage.src} alt="formClose" />
                         </button>
                       </div>
                     </div>

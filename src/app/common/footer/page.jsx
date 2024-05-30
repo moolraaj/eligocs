@@ -3,7 +3,7 @@
 import { allExportedApi } from "@/utils/apis/Apis";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
+import emptyImage from '../../assets/empty.jpg'
 function Footer({ response }) {
   let api = allExportedApi()
 
@@ -55,7 +55,7 @@ function Footer({ response }) {
               <div className='center-section-first-inner-wrapper'>
                 <div className='footer-top-headings'>
                   <Link href='/'>
-                  <img src={siteLogoUrl} alt="footerLogo" style={{ width: '148px', height: '57px' }} />
+                  <img src={siteLogoUrl || emptyImage.src} alt="footerLogo" style={{ width: '148px', height: '57px' }} />
                   </Link>
                   </div>
                 <ul>
@@ -108,7 +108,7 @@ function Footer({ response }) {
                     socialLinks.map((ele, index) => {
                       return <div className="footer_social_wrapper" key={index}>
                         <a href={ele.iconUrl}>
-                          <img src={ele.imageUrl} alt={ele.iconName} />
+                          <img src={ele.imageUrl || emptyImage.src} alt={ele.iconName} />
                         </a>
 
                       </div>

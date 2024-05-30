@@ -2,7 +2,8 @@
 import ApplyForJob from '@/app/_forms/applyForJob';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import formClose from '../../assets/headerAssets/formclose.png'
+import formClose from '../../assets/headerAssets/formclose.png';
+import emptyImage from '../../assets/empty.jpg'
 
 
 
@@ -44,7 +45,7 @@ function CareerPage({data}) {
               <div className="cf7_right_section">
                 <div className="close_button">
                   <button onClick={closeApplyJob} className="close_button" aria-label='close poup form'>
-                    <img src={formClose.src} alt="" srcset="" />
+                    <img src={formClose.src || emptyImage.src} alt="" srcset="formClose" />
                   </button>
                 </div>
               </div>
@@ -66,7 +67,7 @@ function CareerPage({data}) {
                 <div className="product-top-image-section">
                   <div className="product_heading_left"><h3>{ele.acf.career_page_tittle}</h3></div>
                   <div className="product_image_right">
-                    <img src={ele.acf.career_page_header_image} alt="product_page_image" />
+                    <img src={ele.acf.career_page_header_image || emptyImage.src} alt="product_page_image" />
                     <span></span>
                   </div>
                 </div>
@@ -91,7 +92,7 @@ function CareerPage({data}) {
                         <button className='apply_now_career' onClick={toggleFormVisibility} >{ele.acf.button_name}</button>
                     </div>
                     <div className="current_opening_right">
-                        <img src={ele.acf.current_openings_image} alt="current_openings_image" />
+                        <img src={ele.acf.current_openings_image || emptyImage.src} alt="current_openings_image" />
                     </div>
                     </div>
                  

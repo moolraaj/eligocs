@@ -1,6 +1,7 @@
 'use client'
 import React from "react";
 import Link from "next/link";
+import emptyImage from '../../../assets/empty.jpg'
 
 export default function Internshipslug({ data, allInternship }) {
 
@@ -17,7 +18,7 @@ export default function Internshipslug({ data, allInternship }) {
                 <div className="blog-header-image-heading">
                   <div className="blog_img_heading_wrapper">
                     <h2>{internship.acf.internship_tittle}</h2>
-                    <img src={internship.acf.internship_image} alt="internship_image" />
+                    <img src={internship.acf.internship_image || emptyImage.src} alt="internship_image" />
                     <span></span>
                   </div>
                   <div className="blog_page_heading_wrapper">

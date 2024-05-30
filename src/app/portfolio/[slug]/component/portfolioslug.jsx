@@ -1,10 +1,11 @@
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
 import arrow from '../../../assets/headerAssets/arrow.png';
- 
+import emptyImage from '../../../assets/empty.jpg'
 import Link from 'next/link';
 import { allExportedApi } from '@/utils/apis/Apis';
 import PortfolioSlider from './portfolioSlider';
+
 
 export default function Portfolioslug({ slug }) {
     let api = allExportedApi();
@@ -71,7 +72,7 @@ export default function Portfolioslug({ slug }) {
                                                 <h3>{ele.acf.portfolio_title}</h3>
                                             </div>
                                             <div className="portfolio_top_image">
-                                                <img src={ele.acf.portfolio_inner_image} alt="Portfolio Image" />
+                                                <img src={ele.acf.portfolio_inner_image || emptyImage.src} alt="Portfolio Image" />
                                                 <span></span>
                                             </div>
                                         </div>
@@ -116,7 +117,7 @@ export default function Portfolioslug({ slug }) {
                                 </div>
 
                         
-                                <img src={arrow.src} alt="arrow" className="scroll-button left"
+                                <img src={arrow.src || emptyImage.src} alt="arrow" className="scroll-button left"
                                     onClick={handleScrollLeft}
                                     style={{
                                         top: '50%',
@@ -125,7 +126,7 @@ export default function Portfolioslug({ slug }) {
                                     }} />
 
                           
-                                <img src={arrow.src} alt="arrow" className="scroll-button right"
+                                <img src={arrow.src || emptyImage.src} alt="arrow" className="scroll-button right"
                                     onClick={handleScrollRight}
                                     style={{
                                         top: '50%',
@@ -140,7 +141,7 @@ export default function Portfolioslug({ slug }) {
                                                 <div className="portfolio" key={ele.id}>
                                                     <Link href={`/portfolio/${ele.slug}`} className='portfolio-post'>
                                                         <div className="portfolio_image">
-                                                            <img src={ele.acf.portfolio_image} alt="" />
+                                                            <img src={ele.acf.portfolio_image || emptyImage.src} alt="" />
                                                         </div>
                                                         <div className="portfolio_flex">
                                                             <div className="portfolio_inner_left_section">

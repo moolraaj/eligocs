@@ -1,20 +1,12 @@
 
-
-
- 
- 'use client'
-
-
+'use client'
 import WorkingProcess from "./WorkingProcess";
- 
-
- 
 import CallToAction from "@/app/call-to-action/callToAction";
 import { useRouter } from "next/navigation";
 import TestimonialSection from "../Home/home-sections/Testimonial";
 import { allExportedApi } from "@/utils/apis/Apis";
 import { useEffect, useState } from "react";
- 
+ import emptyImage from '../../assets/empty.jpg'
 
 
 
@@ -53,27 +45,27 @@ const AboutUs = () => {
                           <div className="slider">
                             <div style={{ display: "flex", }}>
                               <img
-                                src={slider.top_slider_image_first.url}
+                                src={slider.top_slider_image_first.url || emptyImage.src}
                                 alt={`img${index + 1}`}
                               />
                               <div className="images-outer">
                                 <div></div>
                                 <div>
                                   <img
-                                    src={slider.top_slider_image_second.url}
+                                    src={slider.top_slider_image_second.url || emptyImage.src}
                                     alt={`img${index + 2}`}
                                   />
                                 </div>
                                 <div>
                                   <img
-                                    src={slider.top_slider_image_third.url}
+                                    src={slider.top_slider_image_third.url || emptyImage.src}
                                     alt={`img${index + 3}`}
                                   />
                                 </div>
                                 <div></div>
                               </div>
                               <img
-                                src={slider.top_slider_image_fourth.url}
+                                src={slider.top_slider_image_fourth.url || emptyImage.src}
                                 alt={`img${index + 4}`}
                               />
                             </div>
@@ -143,7 +135,7 @@ const AboutUs = () => {
                     </p>
                   </div>
                   <div className="mission-right">
-                    <img src={ele.acf.our_mission_image.url} alt="ourMissionImg" />
+                    <img src={ele.acf.our_mission_image.url || emptyImage.src} alt="ourMissionImg" />
                   </div>
                 </div>
               </div>

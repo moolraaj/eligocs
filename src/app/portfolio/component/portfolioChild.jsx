@@ -1,6 +1,7 @@
 'use client'
 import React from 'react';
 import Link from 'next/link';
+import emptyImage from '../../assets/empty.jpg'
 
 const PortfolioChild = ({ data = [] }) => {
     // Ensure data is an array
@@ -14,7 +15,7 @@ const PortfolioChild = ({ data = [] }) => {
                         <div className="portfolio" key={ele.id}>
                             <Link href={`/portfolio/${ele.slug}`} className='portfolio-post'>
                                 <div className="portfolio_image">
-                                    <img src={ele.acf.portfolio_image} alt="" />
+                                    <img src={ele.acf.portfolio_image || emptyImage.src} alt="" />
                                 </div>
                                 <div className="portfolio_flex">
                                     <div className="portfolio_inner_left_section">

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import emptyImage from '../../assets/empty.jpg'
 
 function TeamComponent({ result }) {
      
@@ -10,7 +11,7 @@ function TeamComponent({ result }) {
                     <div className="memebr_left_section">
 
                         <div className="team-member_image">
-                            <img src={ele.acf.our_team_image} alt="" />
+                            <img src={ele.acf.our_team_image || emptyImage.src} alt="" />
                             <p dangerouslySetInnerHTML={{__html:ele.acf.our_team_description.slice(0,70)}}></p>
                             <div className="team_member_description">
                        
@@ -25,7 +26,7 @@ function TeamComponent({ result }) {
 
                         <div className="member_informations_section">
                         <div className='members_image_mobile'>
-                            <img src={ele.acf.our_team_image} alt="our_team_image" style={{width: '100px',height: '100px',objectFit: 'cover'}}/>
+                            <img src={ele.acf.our_team_image || emptyImage.src} alt="our_team_image" style={{width: '100px',height: '100px',objectFit: 'cover'}}/>
                          </div>
                             <div className="member_name">
                                 <h4>{ele.acf.our_team_name}</h4>
@@ -38,7 +39,7 @@ function TeamComponent({ result }) {
                                     return <div className="team_social_icon_wrapper" key={index}>
 
                                         <div className="member_social_icons">
-                                            <a href={icons.social_link} target='_blanck'><img src={icons.our_team_social_media} alt='social icons' /></a>
+                                            <a href={icons.social_link} target='_blanck'><img src={icons.our_team_social_media || emptyImage.src} alt='social icons' /></a>
 
                                         </div>
 

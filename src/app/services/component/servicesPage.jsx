@@ -3,7 +3,7 @@
 import { allExportedApi } from "@/utils/apis/Apis.jsx"
 import Link from "next/link"
 import ServicesFaq from "./ServicesFaq"
- 
+import emptyImage from '../../assets/empty.jpg' 
 import '../../about/AboutPage.scss'
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
@@ -72,7 +72,7 @@ export default function ServicesPage() {
                                 </div>
 
                                 <div className="service_page_right_section">
-                                    <img src={ele.acf.our_service_banner_image} alt="" />
+                                    <img src={ele.acf.our_service_banner_image || emptyImage.src} alt="service_banner_image" />
                                 </div>
 
                             </div>
@@ -95,7 +95,7 @@ export default function ServicesPage() {
 
                                                     <div className="service_both_sections">
                                                     <div className="services_gif">
-                                                                <img src={e.acf.service_gif.url} alt="service_gif" />
+                                                                <img src={e.acf.service_gif.url || emptyImage.src} alt="service_gif" />
                                                             </div>
                                                         <div className="services_content_area">
                                                             

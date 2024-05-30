@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import CallToAction from "@/app/call-to-action/callToAction";
 import Link from "next/link";
 import { allExportedApi } from '@/utils/apis/Apis';
+import emptyImage from '../../../assets/empty.jpg'
 
 export default function CourseSlug({ slug }) {
   let api=allExportedApi()  
@@ -47,7 +48,7 @@ export default function CourseSlug({ slug }) {
                 <div className="course_post_wrapper">
                   <div className="course_image">
                     <img
-                      src={singleCourse.acf.course_image.url}
+                      src={singleCourse.acf.course_image.url || emptyImage.src}
                       alt="course_image"
                     />
                     <span></span>

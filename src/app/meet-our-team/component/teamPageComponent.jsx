@@ -3,7 +3,8 @@
 'use client'
 import { useEffect, useState } from "react"
 import TeamComponent from "./teamComponent"
-import { allExportedApi } from "@/utils/apis/Apis"
+import { allExportedApi } from "@/utils/apis/Apis";
+import emptyImage from '../../assets/empty.jpg'
  
 
 
@@ -49,7 +50,7 @@ export default  function TeamPageComponent() {
               <h1>{ele.acf.team_top_banner_heading}</h1>
             </div>
             <div className="team_banner_image">
-              <img src={ele.acf.team_image} alt="" />
+              <img src={ele.acf.team_image || emptyImage.src} alt="team_image" />
               <div className="bottom_banner"></div>
             </div>
             </div>

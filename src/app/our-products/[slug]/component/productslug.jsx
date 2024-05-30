@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import emptyImage from '../../../assets/empty.jpg'
 
 import { allExportedApi } from '@/utils/apis/Apis';
 import ProductSlider from './productSlider';
@@ -40,7 +41,7 @@ export default function ProductSlug({ slug }) {
                                 <div className="blog-header-image-heading">
                                     <div className="blog_img_heading_wrapper">
                                         <h2>{product.acf.product_name}</h2>
-                                        <img src={product.acf.product_image.url} alt="blogPageImage" />
+                                        <img src={product.acf.product_image.url || emptyImage.src} alt="blogPageImage" />
                                         <span></span>
                                     </div>
                                     <div className="blog_page_heading_wrapper">

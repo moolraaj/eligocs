@@ -1,9 +1,10 @@
 'use client'
 import React, { useEffect, useState } from 'react';
- 
-
 import Formclose from '../../../assets/headerAssets/formclose.png';
 import ApplyForJob from '@/app/_forms/applyForJob';
+import emptyImage from '../../../assets/empty.jpg'
+
+
 
 function HeroSection({ ele, ParallaxContainer }) {
   const [showInnovation, setShowInnovation] = useState(false);
@@ -89,7 +90,7 @@ function HeroSection({ ele, ParallaxContainer }) {
               <div className="cf7_right_section">
                 <div className="close_button">
                   <button onClick={closeApplyJob} className="close_button">
-                    <img src={Formclose.src} alt="" srcSet="" />
+                    <img src={Formclose.src || emptyImage.src} alt="" srcSet="" />
                   </button>
                 </div>
               </div>

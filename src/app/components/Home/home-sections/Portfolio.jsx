@@ -2,6 +2,7 @@
 import React, { useRef, useState } from 'react';
 import PortfolioComponent from '@/app/portfolio/component/portfolioComponent';
 import arrow from '../../../assets/headerAssets/arrow.png'
+import emptyImage from '../../../assets/empty.jpg'
 
 function PortfolioSection() {
     const itemRef = useRef(null);
@@ -30,7 +31,7 @@ function PortfolioSection() {
                     </div>
                 </div>
                 {/* Left Scroll Button */}
-                <img src={arrow.src} alt="arrow" className="scroll-button left"
+                <img src={arrow.src || emptyImage.src} alt="arrow" className="scroll-button left"
                     onClick={handleScrollLeft}
                     style={{
                         top: '50%',
@@ -40,7 +41,7 @@ function PortfolioSection() {
                
                 {/* Right Scroll Button */}
                 
-                    <img src={arrow.src} alt="arrow"  className="scroll-button right"
+                    <img src={arrow.src || emptyImage.src} alt="arrow"  className="scroll-button right"
                     onClick={handleScrollRight}
                     style={{
                        
