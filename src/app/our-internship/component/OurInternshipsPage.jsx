@@ -5,8 +5,12 @@ import { INTERNSHIP_PAGE_SIZE, allExportedApi } from '@/utils/apis/Apis';
 import { useRouter } from 'next/navigation';
 import Internship from '@/app/_forms/internship';
 import RerenderCompo from '@/app/common/navbar/component/formAnimationCompo';
-import formClose from '../../assets/headerAssets/formclose.png';
-import emptyImage from '../../assets/empty.jpg'
+import formClose from '../../assets/headerAssets/formclose.png'
+import TestimonialSlides from './testimonialSlides';
+import emptyImage from '../../assets/empty.jpg' 
+ 
+ 
+ 
 
 function OurInternshipsPage() {
   let api = allExportedApi();
@@ -20,6 +24,7 @@ function OurInternshipsPage() {
   const toggleFormVisibility = () => {
     setIsMounted(!isMounted);
   };
+  
 
   const loadInternshipData = async () => {
     let data = await api.internshipPageApi();
@@ -37,18 +42,20 @@ function OurInternshipsPage() {
 
     const formShown = sessionStorage.getItem('formShown');
     if (!formShown) {
-      setIsMounted(true); 
+      setIsMounted(true);
       sessionStorage.setItem('formShown', 'true');
     }
 
     const timer = setTimeout(() => {
       if (!formShown) {
-        setIsMounted(true); 
+        setIsMounted(true);
       }
-    }, 1000); 
+    }, 1000);
 
-    return () => clearTimeout(timer); 
+    return () => clearTimeout(timer);
   }, []);
+
+  
 
   const totalPages = Math.ceil(internship.length / INTERNSHIP_PAGE_SIZE);
 
@@ -74,6 +81,10 @@ function OurInternshipsPage() {
     const handleClick = (pageNumber) => {
       setCurrentPage(pageNumber);
     };
+
+
+
+
 
     return (
       <div className="pagination-buttons">
@@ -133,6 +144,20 @@ function OurInternshipsPage() {
                     </li>
                   </ul>
                 ))}
+
+                <div className="inter_testi_wrapper">
+                  <div className="inter_left">
+                  <TestimonialSlides slides={ele}/>
+                  </div>
+                  <div className="inter_testi_right">
+                    
+                  </div>
+
+                </div>
+
+                 
+              
+                
               </div>
             );
           })}

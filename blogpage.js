@@ -3,79 +3,87 @@ import CallToAction from "@/app/call-to-action/callToAction";
 import { BLOG_PAGE_SIZE, allExportedApi } from "@/utils/apis/Apis";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import emptyimg from '../../assets/empty.jpg';
-
+import emptyimg from '../../assets/empty.jpg'
 function BlogPage() {
-  const api = allExportedApi();
-  const [blogPageData, setBlogPageData] = useState([]);
+  let api=allExportedApi() 
+  const[blogPageData,setBlogPageData]=useState([])
+ 
+
+ 
+  
   const [allBlogPosts, setAllBlogPosts] = useState({ all_categories: [], blogs: [] });
   const [selectedCategory, setSelectedCategory] = useState('');
-  const [page, setPage] = useState(1);
-  const [totalCount, setTotalCount] = useState(0);
-  const BLOG_PAGE_SIZE = 12; 
-
-  const handlePageChange = (newPage) => {
-    setPage(newPage);
-  };
-
-  const renderPageButtons = () => {
-    const pageCount = Math.ceil(totalCount / BLOG_PAGE_SIZE);
-    const buttons = [];
-    for (let i = 1; i <= pageCount; i++) {
-      buttons.push(
-        <button 
-          key={i}
-          onClick={() => handlePageChange(i)}
-          disabled={totalCount === 0}
-          className={i === page ? "active" : ""}
-        >
-          {i}
-        </button>
-      );
-    }
-    return buttons;
-  };
+  const [currentPage, setCurrentPage] = useState(1);
 
   const { all_categories, blogs } = allBlogPosts;
 
   const loadAllBlogPosts = async () => {
     try {
-      const response = await api.AllBlogPOsts(page, BLOG_PAGE_SIZE);
-    
-      setAllBlogPosts(response.data);
-      setTotalCount(response.totalCount);
+      let api = allExportedApi();
+      let response = await api.AllBlogPOsts();
+      console.log('Blog posts loaded:', response); 
+      setAllBlogPosts(response);
     } catch (error) {
-     
+      console.error("Error loading blog posts:", error);
     }
   };
 
-  const fetchBlogPageData = async () => {
-    try {
-      const data = await api.BlogPageApi();
-      setBlogPageData(data);
-    } catch (error) {
-     
-    }
-  };
+  const fetchBlogPageData=async()=>{
+    let data = await api.BlogPageApi(); 
+    setBlogPageData(data)
+
+  }
 
   useEffect(() => {
     loadAllBlogPosts();
-    fetchBlogPageData();
-  }, [page]);
+    fetchBlogPageData()
+  }, []);
 
   const handleCategoryChange = (e) => {
     setSelectedCategory(e.target.value);
+    setCurrentPage(1); 
   };
 
   const filteredBlogs = selectedCategory
     ? blogs.filter(blog => blog.blog_category.includes(selectedCategory))
     : blogs;
 
- 
+  console.log('Filtered blogs:', filteredBlogs); 
+
+  const totalPages = Math.ceil(filteredBlogs.length / BLOG_PAGE_SIZE);
+
+  const handleClick = (page) => {
+    setCurrentPage(page);
+  };
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  };
+
+  const paginatedBlogs = filteredBlogs.slice((currentPage - 1) * BLOG_PAGE_SIZE, currentPage * BLOG_PAGE_SIZE);
+
+  console.log('Paginated blogs:', paginatedBlogs); 
+
+  const renderPaginationButtons = () => {
+    const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+
+    return (
+      <div className="pagination-buttons">
+        {pageNumbers.map((pageNumber) => (
+          <button
+            key={pageNumber}
+            onClick={() => handleClick(pageNumber)}
+            className={pageNumber === currentPage ? 'active' : ''}
+            disabled={pageNumber === currentPage}
+          >
+            {pageNumber}
+          </button>
+        ))}
+         
+        
+      </div>
+    );
   };
 
   return (
@@ -93,10 +101,11 @@ function BlogPage() {
                 <div className="blog_page_heading_wrapper">
                   <h1>{data.acf.blog_page_heading}</h1>
                   <div className="blog-header-description">
-                    <p>{data.acf.blog_page_description}</p>
-                  </div>
+                <p>{data.acf.blog_page_description}</p>
+              </div>
                 </div>
               </div>
+              
             </div>
           ))}
           <div className="filter_blog_posts">
@@ -115,7 +124,7 @@ function BlogPage() {
 
           <div className="blog-posts-section">
             <div className="all-blog-posts-outer">
-              {filteredBlogs.length > 0 ? filteredBlogs.map((blog) => (
+              {paginatedBlogs.length > 0 ? paginatedBlogs.map((blog) => (
                 <ul className="blog-post" key={blog.id}>
                   <Link href={`/blog/${blog.slug}`}>
                     <li className="blog-post-img">
@@ -125,7 +134,7 @@ function BlogPage() {
                       <h2>{blog.acf.blog_post_tittle.slice(0,60)}...</h2>
                       <p>
                         <span>{blog.acf.post_by_}</span>
-                        <span>{formatDate(blog.modified_gmt)}</span>
+                        <span>{formatDate(blog.date)}</span>
                       </p>
                     </li>
                   </Link>
@@ -135,9 +144,11 @@ function BlogPage() {
               )}
             </div>
           </div>
-          <div className="pagination_button">
-            {renderPageButtons()}
-            </div>
+
+          {/* Pagination Controls */}
+          <div className="pagination-controls">
+            {filteredBlogs.length > BLOG_PAGE_SIZE && renderPaginationButtons()}
+          </div>
         </div>
       </div>
       <div className="call_outer inner_blogs blog_page_call_to_action">

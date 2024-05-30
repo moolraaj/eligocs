@@ -2613,7 +2613,26 @@ menu.footer_ul li a {
 	padding-bottom: 23px;
 	line-height: 170%
 }
+.pagination_button button {
+    border: unset;
+    padding: 14px 23px;
+    border-radius: 4px;
+    font-size: 18px;
+}
+.pagination_button {
+    display: flex;
+    column-gap: 15px;
+    justify-content: center;
+    margin-top: 42px;
+}
 
+
+
+
+.pagination_button button.active {
+    background: #EAAA00;
+    color: #fff;
+}
 .service_navigate_button button {
 	background: $primaryyellow;
 	padding: 15px 45px;
@@ -2622,6 +2641,82 @@ menu.footer_ul li a {
 	text-transform: capitalize;
 	font-size: 25px
 }
+
+//*************************************
+
+.intern_testimonial_slider {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.intern_slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.intern_slide {
+    min-width: 100%;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.intern_slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+.intern_slide img {
+    width: 100%;
+    display: block;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.inter_testi_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    column-gap: 20px;
+    padding-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+
 
 .service_navigate_button button:hover {
 	background: $black;
