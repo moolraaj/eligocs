@@ -130,11 +130,13 @@ const pageNotFound=async ()=>{
   };
 
   // fetch all portfolio api
-  const fetchAllportFolio = async () => {
+   const fetchAllportFolio = async () => {
     let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/portfolio?per_page=100&fields=acf&acf_format=standard`);
-    let result = await response.json();
-    return result;
+    let data = await response.json();
+     
+    return data
   };
+  
 
   // fetch single portfolio api
   const fetchSingleportFolio = async (slug) => {
@@ -151,11 +153,13 @@ const pageNotFound=async ()=>{
   };
 
   // fetch all blog posts api
-  const AllBlogPOsts = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/blog?all_categories=true&per_page=100&fields=acf&acf_format=standard`);
-    let response = await data.json();
-    return response;
+  const AllBlogPOsts = async (page, perPage) => {                                                                      
+    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/blog?all_categories=true&page=${page}&per_page=${perPage}&fields=acf&acf_format=standard`);
+    const data = await response.json();
+    const totalCount = response.headers.get('X-WP-Total');
+    return { data, totalCount };
   };
+  
 
  // fetch all courses api
  const AllCourses = async () => {
@@ -173,7 +177,7 @@ const AllProducts = async ()=>{
 
 //fetch all internships api
 const ourInternships = async ()=>{
-  let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/internship?fields=acf&acf_format=standard`);
+  let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/internship?per_page=100&fields=acf&acf_format=standard`);
   let response = await data.json();
   return response;
 }
@@ -300,6 +304,6 @@ const SingleBlogPost = async (slug) => {
 
 export const BLOG_PAGE_SIZE=12;
 export const PRODUCTS_PAGE_SIZE=12;
-export const PORTFOLIO_PAGE_SIZE=12;
+export const PORTFOLIO_PAGE_SIZE=6;
 export const COURSE_PAGE_SIZE=6;
 export const INTERNSHIP_PAGE_SIZE=6;
