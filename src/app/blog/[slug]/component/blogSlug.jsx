@@ -43,7 +43,7 @@ export default function BlogSlug({ slug }) {
                         <div key={index} className="blog_post">
                             <div className="blog_post_header">
                                 <h1>{blogPost.acf.blog_post_tittle}</h1>
-                                <p><span>{blogPost.acf.post_by_}</span> <span>{formatDate(blogPost.date)}</span></p>
+                                <p><span>{blogPost.acf.post_by_}</span> <span>{formatDate(blogPost.modified_gmt)}</span></p>
                                 <img src={blogPost.acf.blog_post_image || emptyimg.src} alt="blog_post_image" />
                             </div>
                             <div className="share_blog_post">
