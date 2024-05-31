@@ -4643,6 +4643,24 @@ h6.user_name_c a {
 }
 
 @media(min-width:1501px)and (max-width:1540px) {
+	.about-working-process h3{
+		padding: 20px 0px;
+	}
+	.company_left_section{
+		padding-left: 20px;
+	}
+	.page_outer.portfolio_section_outer .portfolio_left_section{
+		width: 100%;
+	}
+	.portfolio_left_section h1{
+		margin-left: 20px;
+	}
+	.development_flex{
+		padding: 75px 20px 20px 20px;
+	}
+	.testimonial_slider{
+		height: 20vw;
+	}
 	.cf7_top_banner{
 		align-items: baseline;
 		.form_banner_heading h1 {
