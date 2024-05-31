@@ -1,5 +1,5 @@
-'use client'
-import { allExportedApi } from '@/utils/apis/Apis';
+'use client';
+import { allExportedApi } from '@/utils/apis/Apis';  
 import React, { useState } from 'react';
 import { toast } from 'sonner';
 
@@ -20,6 +20,7 @@ function ApplyForJob() {
         youremail: false,
         yourlocation: false,
         curruntstatus: false,
+        applyingfor: false,
         uploadresume: false,
     });
 
@@ -40,7 +41,7 @@ function ApplyForJob() {
         e.preventDefault();
         let formData = new FormData();
 
-        formData.append('_wpcf7_unit_tag', 902);
+        formData.append('_wpcf7_unit_tag', 944);
         formData.append('yourname', user.yourname);
         formData.append('youremail', user.youremail);
         formData.append('yourlocation', user.yourlocation);
@@ -48,7 +49,6 @@ function ApplyForJob() {
         formData.append('applyingfor', user.applyingfor);
         formData.append('uploadresume', user.uploadresume);
         formData.append('yourmessage', user.yourmessage);
-
 
         let formValid = true;
         const requiredFields = Object.keys(errors);
@@ -68,6 +68,7 @@ function ApplyForJob() {
                     method: 'POST',
                     body: formData,
                 });
+                console.log(response);
 
                 toast.success(`<div style='font-size:16px'>Thank you, <span style="font-weight: bold; color: #EAAA00;">${user.yourname}</span> , for contacting us! Our team will be in touch with you soon.</div>`);
 
@@ -81,15 +82,13 @@ function ApplyForJob() {
                     yourmessage: '',
                 });
             } catch (error) {
-                toast.error('Mail not sent')
-
+                toast.error('Mail not sent');
             }
         }
     };
 
     return (
         <>
-
             <form id='applyforjob'>
                 <div className="job_form_flex_wrapper">
                     <div className="form_fields_wrapper">
@@ -112,16 +111,15 @@ function ApplyForJob() {
                                     <option value="fresher">Fresher</option>
                                     <option value="experienced">Experienced</option>
                                 </select>
-                                {errors.curruntstatus && <span className='error_fields'>currunt status is required</span>}
+                                {errors.curruntstatus && <span className='error_fields'>current status is required</span>}
                             </div>
                         </div>
                     </div>
                     <div className="form_fields_wrapper_radio_select apply_job_select_box_wrapper">
-
                         <div className="form_fields_wrapper">
                             <div className="applyjob_select_box">
                                 <select className='select_duration' name="applyingfor" value={user.applyingfor} onChange={getUserData}>
-                                    <option value="Applying For">Applying For</option>
+                                    <option value="">Applying For</option>
                                     <option value="Laravel-Vue.js Developer">Laravel-Vue.js Developer</option>
                                     <option value="Sr. WordPress Developer">Sr. WordPress Developer</option>
                                     <option value="Laravel Developer">Laravel Developer</option>
@@ -135,21 +133,21 @@ function ApplyForJob() {
                         </div>
                     </div>
                     <div className="form_fields_wrapper">
-                        <input type="file" name="uploadresume" class="custom-file-upload" onChange={getUserData} />
+                        <input type="file" name="uploadresume" className="custom-file-upload" onChange={getUserData} />
                         {errors.uploadresume && <span className='error_fields'>This field is required</span>}
                     </div>
                     <div className="form_fields_wrapper">
                         <textarea name="yourmessage" placeholder="additional information" value={user.yourmessage} onChange={getUserData} cols="30" rows="10"></textarea>
-
                     </div>
                     <div className="form_button">
                         <button onClick={submitUserData}>Submit</button>
                     </div>
                 </div>
             </form>
-
         </>
     );
 }
 
 export default ApplyForJob;
+
+ 

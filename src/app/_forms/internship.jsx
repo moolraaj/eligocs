@@ -45,10 +45,10 @@ function Internship() {
         let formData = new FormData();
 
         formData.append('_wpcf7_unit_tag',1376);
-        formData.append('student-name', user.studentName);
-        formData.append('mobile-number', user.mobileNumber);
-        formData.append('email-address', user.emailAddress);
-        formData.append('college-university', user.collegeUniversity);
+        formData.append('studentname', user.studentName);
+        formData.append('mobilenumber', user.mobileNumber);
+        formData.append('emailaddress', user.emailAddress);
+        formData.append('collegeuniversity', user.collegeUniversity);
         formData.append('stream', user.stream);
         formData.append('streamotheroption', user.streamotheroption);
         formData.append('duration', user.duration);
@@ -162,7 +162,7 @@ function Internship() {
                                 <option value="4 Weeks">4 Weeks</option>
                                 <option value="3 Months">3 Months</option>
                                 <option value="6 Months">6 Months</option>
-                                <option value="1 Year">12 Months</option>
+                                <option value="12 Months">12 Months</option>
                             </select>
                             {errors.duration && <span className='error_fields'>This field is required</span>}
                         </div>
