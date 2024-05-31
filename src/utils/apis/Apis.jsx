@@ -153,11 +153,11 @@ const pageNotFound=async ()=>{
   };
 
   // fetch all blog posts api
-  const AllBlogPOsts = async (page, perPage) => {                                                                      
-    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/blog?all_categories=true&page=${page}&per_page=${perPage}&fields=acf&acf_format=standard`);
+  const AllBlogPOsts = async () => {                                                                      
+    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/blog?all_categories=true&per_page=100&fields=acf&acf_format=standard`);
     const data = await response.json();
-    const totalCount = response.headers.get('X-WP-Total');
-    return { data, totalCount };
+     
+    return data;
   };
   
 

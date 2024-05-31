@@ -12,7 +12,7 @@ function ContactUsForm() {
     yournumber: '',
     yourmessage: '',
   });
-  const [cap,setCap]=useState(null)
+  
 
   const [errors, setErrors] = useState({
     yourname: false,
@@ -38,7 +38,7 @@ function ContactUsForm() {
   };
 
   const submitUserData = async (e) => {
-    console.log( cap)
+ 
     e.preventDefault();
     let formData = new FormData();
 
