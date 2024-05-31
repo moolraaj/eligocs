@@ -1,9 +1,11 @@
 import { allExportedApi } from '@/utils/apis/Apis';
 import React, { useState } from 'react';
 import { toast } from 'sonner';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 function Internship() {
     let api = allExportedApi();
+    const [recaptchaToken, setRecaptchaToken] = useState(null);
     const [user, setUser] = useState({
         studentName: '',
         mobileNumber: '',
@@ -40,6 +42,12 @@ function Internship() {
         });
     };
 
+    const onReCAPTCHAChange = (token) => {
+        setRecaptchaToken(token);
+        
+      };
+
+
     const submitUserData = async (e) => {
         e.preventDefault();
         let formData = new FormData();
@@ -52,6 +60,7 @@ function Internship() {
         formData.append('stream', user.stream);
         formData.append('streamotheroption', user.streamotheroption);
         formData.append('duration', user.duration);
+        formData.append('g-recaptcha-response', recaptchaToken);
 
         let formValid = true;
         const requiredFields = Object.keys(errors);
@@ -64,6 +73,10 @@ function Internship() {
                 }));
             }
         });
+        if (!recaptchaToken) {
+            formValid = false;
+            toast.error('Please complete the reCAPTCHA');
+          }
 
         if (formValid) {
             try {
@@ -168,6 +181,7 @@ function Internship() {
                         </div>
                     </div>
                     </div>
+                    <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} onChange={onReCAPTCHAChange} />
                 <div className="form_button">
                         <button onClick={submitUserData}>Register Now</button>
                     </div>

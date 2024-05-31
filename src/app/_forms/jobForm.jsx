@@ -2,8 +2,10 @@
 import { allExportedApi } from '@/utils/apis/Apis';
 import React, { useState } from 'react';
  import { toast } from 'sonner';
+ import ReCAPTCHA from 'react-google-recaptcha';
 
 function JobForm() {
+    const [recaptchaToken, setRecaptchaToken] = useState(null);
     const api = allExportedApi();
     const [user, setUser] = useState({
         firstname: '',
@@ -36,6 +38,10 @@ function JobForm() {
             [name]: false,
         });
     };
+    const onReCAPTCHAChange = (token) => {
+        setRecaptchaToken(token);
+         
+      };
 
     const submitUserData = async (e) => {
         e.preventDefault();
@@ -49,6 +55,8 @@ function JobForm() {
         formData.append('companyname', user.companyname);
         formData.append('budget', user.budget);
         formData.append('yourmessage', user.yourmessage);
+        formData.append('g-recaptcha-response', recaptchaToken);
+
 
         let formValid = true;
         const requiredFields = Object.keys(errors);
@@ -61,6 +69,10 @@ function JobForm() {
                 }));
             }
         });
+        if (!recaptchaToken) {
+            formValid = false;
+            toast.error('Please complete the reCAPTCHA');
+          }
 
         if (formValid) {
             try {
@@ -116,6 +128,8 @@ function JobForm() {
                     <div className="form_fields_wrapper">
                         <textarea name="yourmessage" placeholder="Enter your message" value={user.yourmessage} onChange={getUserData} cols="30" rows="50"></textarea>
                     </div>
+                    <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} onChange={onReCAPTCHAChange} />
+
                     <div className="form_button">
                         <button onClick={submitUserData}>Submit</button>
                     </div>
