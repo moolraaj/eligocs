@@ -107,7 +107,7 @@ function ApplyForJob() {
                     <div className="form_fields_wrapper_radio_select apply_job_select_box_wrapper">
                         <div className="form_fields_wrapper">
                             <div className="applyjob_select_box">
-                                <select className='select_duration' name="current status" value={user.curruntstatus} onChange={getUserData}>
+                                <select className='select_duration' name="curruntstatus" value={user.curruntstatus} onChange={getUserData}>
                                     <option value="">current status</option>
                                     <option value="fresher">Fresher</option>
                                     <option value="experienced">Experienced</option>
