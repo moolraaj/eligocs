@@ -65,7 +65,7 @@ function Internship() {
         let formValid = true;
         const requiredFields = Object.keys(errors);
         requiredFields.forEach(field => {
-            if (!user[field]) {
+            if (field !== 'streamotheroption' && !user[field]) {  
                 formValid = false;
                 setErrors(prevErrors => ({
                     ...prevErrors,
@@ -165,7 +165,7 @@ function Internship() {
                     {user.stream === 'Others' && (
                         <div className="form_fields_wrapper">
                             <input type="text" name="streamotheroption" placeholder='Other' value={user.streamotheroption} onChange={getUserData} />                  
-                            {errors.streamotheroption && <span className='error_fields'>This field is required</span>}
+                             
                         </div>
                     )}
                     <div></div>
