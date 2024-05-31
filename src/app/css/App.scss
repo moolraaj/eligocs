@@ -3916,7 +3916,10 @@ form#contactus .form_button button:hover {
 	@include grid-property(grid, 1fr 1fr, unset);
 	margin-top: 80px
 }
-
+.contact_numbers_wrapper {
+    display: flex;
+    gap: 30px;
+}
 .both_location {
 	margin-bottom: 30px
 }
@@ -7409,6 +7412,9 @@ h6.user_name_c a {
 }
 
 @media only screen and (max-width:600px) {
+	.contact_numbers_wrapper{
+		flex-wrap: wrap;
+	}
 	.portfolio_gallery_wrapper {
 		flex: 0 0 50% !important
 	}

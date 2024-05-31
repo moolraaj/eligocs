@@ -66,25 +66,28 @@ function ContactUs() {
                         </div>
 
                         <div className='right_lowe_s'>
+                            <div className='both_location'>
+                            <h6>Give us a Call</h6>
+                                <div className="contact_numbers_wrapper">
+                                    
+                                    {
+                                        ele.acf.contact_number.map((number, index) => {
+                                            return <div className='contact_number' key={index}>
+                                                <label htmlFor={number.number_label}>{number.number_label}</label>
+                                                <a href={`tel:${number.call_number}`}>+91 {number.call_number}</a>
+                                            </div>
+
+                                        })
+                                    }
+                                </div>
+                            </div>
                             <div className='location_b_c'>
                                 <Map />
 
 
                                 <div className='contact_both_sec'>
                                     <div className='contact_twins_inner_l'>
-                                        <div className='both_location'>
-                                            <h6>Give us a Call</h6>
-                                            {
-                                                ele.acf.contact_number.map((number, index) => {
-                                                    return <div className='contact_number' key={index}>
-                                                        <label htmlFor={number.number_label}>{number.number_label}</label>
-                                                        <a href={`tel:${number.call_number}`}>+91 {number.call_number}</a>
-                                                    </div>
 
-                                                })
-                                            }
-
-                                        </div>
 
                                         <div className='both_location'>
                                             <h6>Send us an Message</h6>
