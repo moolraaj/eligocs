@@ -8074,6 +8074,13 @@ h6.user_name_c a {
 	right: 0;
 }
 .footer_pages{
+	a{
+		text-decoration: underline;
+		color: blue;
+	}
+	a:hover{
+		color: $primaryyellow;
+	}
 	.privacy_policies_data p,ul,li,h1,h2,h3,h4,h5,h6,
 	.t_c_data p,ul,li,h1,h2,h3,h4,h5,h6{
 	   padding-left: 0;
