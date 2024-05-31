@@ -107,6 +107,20 @@ const careerPageApi=async ()=>{
   return response;
 }
 
+// fetch Terms and conditions page Api
+const TermsandConditions=async ()=>{
+  let data=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=terms-and-conditions&fields=acf&acf_format=standard`)
+  let response=await data.json()
+  return response;
+}
+// fetch Privacy Policy page Api
+const PrivacyPolicy=async ()=>{
+  let data=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=privacy-policy&fields=acf&acf_format=standard`)
+  let response=await data.json()
+  return response;
+}
+
+
 // fetch pageNotFound api
 const pageNotFound=async ()=>{
   let data=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=page-not-found&fields=acf&acf_format=standard`)
@@ -278,6 +292,8 @@ const SingleBlogPost = async (slug) => {
     internshipPageApi,
     multistepFormApi,
     careerPageApi,
+    TermsandConditions,
+    PrivacyPolicy,
     pageNotFound,
     fetchAllServices,
     fetchSingleService,

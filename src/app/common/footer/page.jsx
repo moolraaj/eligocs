@@ -119,8 +119,11 @@ function Footer({ response }) {
 
             </div>
             <div className="footer-center-bottom-section">
+              <div className="footer_pages_menu">
+                <Link href={`/terms-and-conditions`}>T&C</Link>
+                <Link href={`/privacy-policy`}>Privacy Policy</Link>
+              </div>
               <p>{copyrightTextSecond}</p>
-
             </div>
           </div>
 

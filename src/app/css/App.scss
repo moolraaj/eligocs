@@ -3400,6 +3400,15 @@ p .testimonial_wrap {
 	color: #a6d6c6
 }
 
+.footer_pages_menu {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+	a{
+		text-decoration: underline;
+	}
+}
+
 .footer_wrapper .footer-center-bottom-section {
 	border-top: 1px solid gray;
 	margin: 50px 50px 20px;
