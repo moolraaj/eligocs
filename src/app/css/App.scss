@@ -2726,8 +2726,29 @@ menu.footer_ul li a {
 }
 
 .interns_info_outer {
-    position: relative;
+  position: relative;
 }
+
+.interns_info_outer button {
+  border: none;
+  padding: 10px 20px;
+  margin: 0px 10px;
+  background-color: #ccc;
+}
+
+.interns_info_outer button.prev-btn.active,
+.interns_info_outer button.next-btn.active {
+  background-color: yellow; 
+}
+
+.interns_info_outer button.prev-btn.inactive,
+.interns_info_outer button.next-btn.inactive {
+  opacity: 0.5; 
+  cursor: not-allowed;
+}
+
+  
+  
 .intrns_testimonials_outer{
 	padding-top: 50px;
 	.inter_testi_wrapper {
