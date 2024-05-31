@@ -2911,7 +2911,7 @@ span.vison_c {
 .testimonial_slider {
 	position: relative;
 	width: 100%;
-	height: auto;
+	height: 15vw ;
 }
 
 .testimonial_left_section h1 {
@@ -4642,6 +4642,56 @@ h6.user_name_c a {
 
 }
 
+@media(min-width:1501px)and (max-width:1540px) {
+	.about-working-process h3{
+		padding: 20px 0px;
+	}
+	.company_left_section{
+		padding-left: 20px;
+	}
+	.page_outer.portfolio_section_outer .portfolio_left_section{
+		width: 100%;
+	}
+	.portfolio_left_section h1{
+		margin-left: 20px;
+	}
+	.development_flex{
+		padding: 75px 20px 20px 20px;
+	}
+	.testimonial_slider{
+		height: 20vw;
+	}
+	.cf7_top_banner{
+		align-items: baseline;
+		.form_banner_heading h1 {
+			font-size: 6.125em;
+		}
+	}
+	.header_contact_section {
+		margin-bottom: 50px;
+	}
+	.header-menu-seperate-container-right,
+	.form_fields_wrapper:nth-child(7){
+		gap: 0;
+		padding: 0;
+	}
+	.nav_inner {
+		max-width: -webkit-fill-available;
+		margin: auto;
+		width: 100%;
+	}
+	.cf7_form_outer{
+		width: 95%;
+		padding: 0px 30px;
+	}
+	.nav_inner{
+		padding: 0px 20px;
+	}
+	.footer_outer{
+		padding: 80px 0px 20px 20px;
+	}
+}
+
 @media only screen and (max-width:1500px) {
 
 	.apply_job_select_box_wrapper {
@@ -4959,6 +5009,7 @@ h6.user_name_c a {
 }
 
 @media(min-width:1025px)and (max-width:1440px) {
+	
 	.hide_seek.blogs {
 		top: 50px;
 	}
@@ -5056,7 +5107,9 @@ h6.user_name_c a {
 }
 
 @media(max-width:1024px) {
-
+	.testimonial_slider{
+		height: 26vw;
+	}
 	.scroll-button {
 		display: none
 	}
@@ -7296,7 +7349,9 @@ h6.user_name_c a {
 }
 
 @media(min-width:469px)and (max-width:768px) {
-
+	.testimonial_slider{
+		height: 20vw;
+	}
 	.dots {
 		bottom: -90% !important;
 	}
@@ -7348,6 +7403,9 @@ h6.user_name_c a {
 }
 
 @media(max-width:468px) {
+	.testimonial_slider{
+		height: 50vw;
+	}
 	.intrns_testimonials_outer{
 		padding-top: 0;
 	}
