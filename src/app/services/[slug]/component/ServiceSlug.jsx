@@ -40,7 +40,7 @@ function ServicesInnerSlug({ slug }) {
                const relatedServices = services.filter(relServices => relServices.slug !== ele.slug);
                return <div className="services_inner_template_wrapper" key={ele.id}>
 
-                  <div className="portfolio_page_top_section">
+                  <div className="portfolio_page_top_section career_inner_page_top">
                      <div className="portfolio_heading_image_wrapper">
                         <div className="portfolio_page_top_heading">
                            <h1>{ele.acf.services_title}</h1>

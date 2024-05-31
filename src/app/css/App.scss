@@ -778,18 +778,27 @@ form#jobform textarea {
 	display: block;
 	transition: transform .3s ease-in-out
 }
-.portfolio_page_top_section {
+.career_inner_page_top{
     display: flex;
     justify-content: space-between;
     align-items: center;
 	gap: 40px;
 }
 .portfolio_page_top_image {
-	width: max-content;
+    width: -webkit-fill-available;
 }
-
+.career_inner_page_top{
+	.portfolio_page_top_image {
+		width: max-content;
+	}
+	.portfolio_page_top_image img {
+		max-width: 640px;
+		width: 100%;
+		height: 450px;
+		object-fit: cover
+	}
+}
 .portfolio_page_top_image img {
-	max-width: 640px;
 	width: 100%;
 	height: 450px;
 	object-fit: cover
@@ -5553,7 +5562,7 @@ h6.user_name_c a {
 
 @media(max-width:768px) {
 	.portfolio_page_top_image{
-		width: 100% ;
+		width: 100% !important;
 	}
 	.inter_testi_wrapper{
 		@include grid-property(grid,1fr !important,center,20px,20px);
@@ -6639,7 +6648,7 @@ h6.user_name_c a {
 	}
 
 	.portfolio_page_top_image img {
-		height: 200px;
+		height: 200px !important;
 	}
 
 	.portfolio_inner_intenary_related_posts {
