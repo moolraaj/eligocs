@@ -45,7 +45,7 @@ function CareerPage({data}) {
               <div className="cf7_right_section">
                 <div className="close_button">
                   <button onClick={closeApplyJob} className="close_button" aria-label='close poup form'>
-                    <img src={formClose.src || emptyImage.src} alt="" srcset="formClose" />
+                    <img src={formClose.src || emptyImage.src} alt="formClose"/>
                   </button>
                 </div>
               </div>

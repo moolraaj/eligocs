@@ -773,12 +773,18 @@ form#jobform textarea {
 	display: block;
 	transition: transform .3s ease-in-out
 }
-
+.portfolio_page_top_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+	gap: 40px;
+}
 .portfolio_page_top_image {
-	width: 100%
+	width: max-content;
 }
 
 .portfolio_page_top_image img {
+	max-width: 640px;
 	width: 100%;
 	height: 450px;
 	object-fit: cover
@@ -2283,6 +2289,10 @@ a.back-to-projects {
 
 .portfolio_top_left_section .portfolio_top_right_section p p {
 	font-size: 1.375em
+}
+.portfolio_inner_top_right_section p {
+    font-size: 1.375em;
+    line-height: 40px;
 }
 
 .portfolio_top_right_section p p,
@@ -4643,8 +4653,18 @@ h6.user_name_c a {
 }
 
 @media(min-width:1501px)and (max-width:1540px) {
-	.about-working-process h3{
-		padding: 20px 0px;
+	.menu-right-container-bottom a{
+		font-size: 1.2em;
+	}
+	.hide_seek.blogs{
+		top: 50px;
+	}
+	// .header-menu-seperate-container-right .menu-right-container-bottom{
+	// 	gap: 12px;
+	// }
+	.about-working-process h3,
+	.our-misson{
+		margin: 20px 0px;
 	}
 	.company_left_section{
 		padding-left: 20px;
@@ -5107,6 +5127,10 @@ h6.user_name_c a {
 }
 
 @media(max-width:1024px) {
+	.portfolio_page_top_section{
+		flex-wrap: wrap;
+		
+	}
 	.testimonial_slider{
 		height: 26vw;
 	}
@@ -5348,7 +5372,8 @@ h6.user_name_c a {
 	}
 
 	.services_inner_heading h1 {
-		font-size: 3em
+		font-size: 2em;
+		width: 100%;
 	}
 
 	.services_right_sec h1 {
@@ -5370,6 +5395,9 @@ h6.user_name_c a {
 }
 
 @media(min-width:769px)and (max-width:1024px) {
+	.portfolio_inner_top_right_section{
+		margin-top: 40px;
+	}
 	.multistep_popup_form .cf7_form_outer {
 		top: 18% !important;
 		left: 15% !important;
@@ -5507,6 +5535,9 @@ h6.user_name_c a {
 }
 
 @media(max-width:768px) {
+	.portfolio_page_top_image{
+		width: 100% ;
+	}
 	.inter_testi_wrapper{
 		@include grid-property(grid,1fr !important,center,20px,20px);
 	}
@@ -5651,7 +5682,7 @@ h6.user_name_c a {
 	}
 
 	.blog_img_heading_wrapper img {
-		height: auto
+		height: 200px;
 	}
 
 	.contact_usform_inner_section {
@@ -6055,7 +6086,8 @@ h6.user_name_c a {
 	}
 
 	.all-blog-posts-outer li.blog-post-img img {
-		height: 220px
+		height: 220px;
+		box-shadow: -1px 2px 9px 2px #808080;
 	}
 
 	.all-blog-posts-outer ul.blog-post .blog-post-info-wrapper {
@@ -6317,7 +6349,7 @@ h6.user_name_c a {
 	}
 
 	.all-blog-posts-outer {
-		@include grid-property(grid, repeat(1, 1fr), unset, 0px, 0px);
+		@include grid-property(grid, repeat(1, 1fr), unset, 20px, 20px);
 	}
 
 	.protfolio_items {
@@ -6477,9 +6509,7 @@ h6.user_name_c a {
 		padding-left: 10px
 	}
 
-	.portfolio_heading_image_wrapper {
-		align-items: stretch !important
-	}
+	
 
 	.port_showcase_category,
 	.port_showcase_short_description h4,
@@ -6592,7 +6622,7 @@ h6.user_name_c a {
 	}
 
 	.portfolio_page_top_image img {
-		height: -webkit-fill-available
+		height: 200px;
 	}
 
 	.portfolio_inner_intenary_related_posts {
@@ -6919,7 +6949,7 @@ h6.user_name_c a {
 
 	.serices_flex_template {
 		grid-template-columns: 1fr;
-		padding: 50px 0 20px
+		padding: 20px 0 20px
 	}
 
 	.serices_flex_template .services_inner_heading h1 {
@@ -7327,7 +7357,7 @@ h6.user_name_c a {
 	.divider-yellow {
 		height: 40px;
 		left: 0;
-		bottom: -25px
+		bottom: 0px
 	}
 
 	.call_left_section h1 {
@@ -7349,6 +7379,7 @@ h6.user_name_c a {
 }
 
 @media(min-width:469px)and (max-width:768px) {
+	
 	.testimonial_slider{
 		height: 20vw;
 	}
@@ -7434,10 +7465,13 @@ h6.user_name_c a {
 		height: 16px;
 	}
 
-	.center-section-fourth-inner-wrapper li {
+	.center-section-fourth-inner-wrapper li{
 		font-size: 1em;
 	}
-
+	.portfolio_inner_top_right_section p{
+		font-size: 1em;
+		line-height: 30px;
+	}
 	.dots {
 		bottom: -60% !important;
 	}

@@ -50,6 +50,12 @@ function ServicesInnerSlug({ slug }) {
                            <div className="divider-yellow"></div>
                         </div>
                      </div>
+                     <div className="portfolio_inner_top_right_section">
+                     <div className="services_inner_heading">
+                     <h1>{ele.acf.services_title}</h1>
+                     </div>
+                        <p>{ele.acf.service_inner_page_top_description}</p>
+                     </div>
                   </div>
 
                   <div className="serices_flex_template">
