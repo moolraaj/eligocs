@@ -631,6 +631,11 @@ div#career_section p {
 	background: $white;
 	color: $black
 }
+.apply_now_career:hover,
+.apply_now_career_btn:hover{
+	background: $black;
+	color: $white;
+}
 
 .experience_skill_left ul li::marker {
 	color: #e5a500
