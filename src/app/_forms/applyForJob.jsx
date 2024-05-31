@@ -2,9 +2,11 @@
 import { allExportedApi } from '@/utils/apis/Apis';  
 import React, { useState } from 'react';
 import { toast } from 'sonner';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 function ApplyForJob() {
     let api = allExportedApi();
+    const [recaptchaToken, setRecaptchaToken] = useState(null);
     const [user, setUser] = useState({
         yourname: '',
         youremail: '',
@@ -23,6 +25,10 @@ function ApplyForJob() {
         applyingfor: false,
         uploadresume: false,
     });
+    const onReCAPTCHAChange = (token) => {
+        setRecaptchaToken(token);
+      
+      };
 
     const getUserData = (e) => {
         const { name, value, files } = e.target;
@@ -49,6 +55,7 @@ function ApplyForJob() {
         formData.append('applyingfor', user.applyingfor);
         formData.append('uploadresume', user.uploadresume);
         formData.append('yourmessage', user.yourmessage);
+        formData.append('g-recaptcha-response', recaptchaToken);
 
         let formValid = true;
         const requiredFields = Object.keys(errors);
@@ -61,6 +68,10 @@ function ApplyForJob() {
                 }));
             }
         });
+        if (!recaptchaToken) {
+            formValid = false;
+            toast.error('Please complete the reCAPTCHA');
+          }
 
         if (formValid) {
             try {
@@ -139,6 +150,7 @@ function ApplyForJob() {
                     <div className="form_fields_wrapper">
                         <textarea name="yourmessage" placeholder="additional information" value={user.yourmessage} onChange={getUserData} cols="30" rows="10"></textarea>
                     </div>
+                    <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} onChange={onReCAPTCHAChange} />
                     <div className="form_button">
                         <button onClick={submitUserData}>Submit</button>
                     </div>

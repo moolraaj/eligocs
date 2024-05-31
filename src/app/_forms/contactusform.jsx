@@ -1,18 +1,18 @@
-'use client'
+'use client';
+
 import { allExportedApi } from '@/utils/apis/Apis';
 import React, { useState } from 'react';
- 
-import {toast } from 'sonner';
+import { toast } from 'sonner';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 function ContactUsForm() {
-  let api = allExportedApi()
+  let api = allExportedApi();
   const [user, setUser] = useState({
     yourname: '',
     youremail: '',
     yournumber: '',
     yourmessage: '',
   });
-  
 
   const [errors, setErrors] = useState({
     yourname: false,
@@ -21,6 +21,8 @@ function ContactUsForm() {
     yourmessage: false,
   });
 
+  const [recaptchaToken, setRecaptchaToken] = useState(null);
+
   const getUserData = (e) => {
     const { name, value } = e.target;
     if (name === 'yournumber' && value.length > 10) {
@@ -28,17 +30,20 @@ function ContactUsForm() {
     }
     setUser({
       ...user,
-      [name]: value
+      [name]: value,
     });
-    // Reset error state when user starts typing
     setErrors({
       ...errors,
       [name]: false,
     });
   };
 
+  const onReCAPTCHAChange = (token) => {
+    setRecaptchaToken(token);
+     
+  };
+
   const submitUserData = async (e) => {
- 
     e.preventDefault();
     let formData = new FormData();
 
@@ -47,100 +52,87 @@ function ContactUsForm() {
     formData.append('youremail', user.youremail);
     formData.append('yournumber', user.yournumber);
     formData.append('yourmessage', user.yourmessage);
+    formData.append('g-recaptcha-response', recaptchaToken);
 
-    // Validation for required fields
     let formValid = true;
     const requiredFields = Object.keys(errors);
-    requiredFields.forEach(field => {
+    requiredFields.forEach((field) => {
       if (!user[field]) {
         formValid = false;
-        setErrors(prevErrors => ({
+        setErrors((prevErrors) => ({
           ...prevErrors,
           [field]: true,
         }));
       }
     });
 
-   
+    if (!recaptchaToken) {
+      formValid = false;
+      toast.error('Please complete the reCAPTCHA');
+    }
 
     if (formValid) {
       try {
         let response = await api.fetchContactFormApi({
           method: 'POST',
           body: formData,
-          
-        })
-        console.log(response)
-        toast.success(`<div style='font-size:16px'>Thank you, <span style="font-weight: bold; color: #EAAA00;">${user.yourname}</span> , for contacting us! Our team will be in touch with you soon.</div>`);
-      
-        
+        });
+        console.log(response);
+        toast.success(
+          `<div style='font-size:16px'>Thank you, <span style="font-weight: bold; color: #EAAA00;">${user.yourname}</span> , for contacting us! Our team will be in touch with you soon.</div>`
+        );
 
         setUser({
           yourname: '',
           youremail: '',
           yournumber: '',
-          yourmessage: ''
+          yourmessage: '',
         });
+        setRecaptchaToken(null);
       } catch (error) {
-        toast.error('mail not send!')
-       
+        toast.error('Mail not sent!');
       }
     }
   };
 
   return (
     <>
-   
       <div className="contact_us_form_outer">
         <div className="contact_us_form_inner">
           <div className="contact_us_form_wrapper">
-            <form style={{ marginTop: '100px' }} id='contactus'>
-
-
+            <form style={{ marginTop: '100px' }} id="contactus">
               <div className="contact_us_flex_wrapper">
-
                 <div className="contactus_form_fields_wrapper">
-
                   <div className="contact_input_wrapper">
-                    <label htmlFor="name">name</label>
+                    <label htmlFor="name">Name</label>
                     <input type="text" name="yourname" value={user.yourname} onChange={getUserData} />
-                    {errors.yourname && <span className='input-error'>name field is required</span>}
+                    {errors.yourname && <span className="input-error">Name field is required</span>}
                   </div>
-
                 </div>
-
                 <div className="contactus_form_fields_wrapper">
-
                   <div className="contact_input_wrapper">
-                    <label htmlFor="email">email address</label>
+                    <label htmlFor="email">Email address</label>
                     <input type="email" name="youremail" value={user.youremail} onChange={getUserData} />
-                    {errors.youremail && <span className='input-error'>email is required</span>}
+                    {errors.youremail && <span className="input-error">Email is required</span>}
                   </div>
-
                 </div>
-
                 <div className="contactus_form_fields_wrapper">
-
                   <div className="contact_input_wrapper">
-                    <label htmlFor="phone_number">phone number</label>
+                    <label htmlFor="phone_number">Phone number</label>
                     <input type="number" name="yournumber" value={user.yournumber} onChange={getUserData} />
-                    {errors.yournumber && <span className='input-error'>phone number is required</span>}
+                    {errors.yournumber && <span className="input-error">Phone number is required</span>}
                   </div>
-
                 </div>
-
                 <div className="contactus_form_fields_wrapper">
-
                   <div className="contact_input_wrapper">
-                    <label htmlFor="email">your message</label>
+                    <label htmlFor="message">Your message</label>
                     <textarea name="yourmessage" value={user.yourmessage} onChange={getUserData} cols="30" rows="10"></textarea>
-                   
+                    {errors.yourmessage && <span className="input-error">Message is required</span>}
                   </div>
-
                 </div>
-
-                
-
+                <div className="contactus_form_fields_wrapper">
+                  <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} onChange={onReCAPTCHAChange} />
+                </div>
                 <div className="form_button">
                   <button onClick={submitUserData}>Submit</button>
                 </div>
