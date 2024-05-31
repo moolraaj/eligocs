@@ -7436,6 +7436,25 @@ h6.user_name_c a {
 }
 
 @media only screen and (max-width:600px) {
+	.footer_pages{
+		.privacy_policies_data p,ul,li,h2,h3,h4,h5,h6,
+		.t_c_data p,ul,li,h2,h3,h4,h5,h6{
+		   line-height: 30px !important;
+	   }
+	   .privacy_policies_data p,li,
+	   .t_c_data p,li{
+		   font-size: 16px !important;
+	   }
+	   .privacy_policies_data h2,h3,
+	   .t_c_data h2,h3{
+		   font-size: 22px !important;
+	   }
+	   .privacy_policies_data h1,
+	   .t_c_data h1{
+		   font-size: 30px !important;
+		   margin-top: 0 !important;
+	   }
+	}
 	.contact_numbers_wrapper{
 		flex-wrap: wrap;
 	}
@@ -8054,9 +8073,33 @@ h6.user_name_c a {
 .next {
 	right: 0;
 }
-
-
-
+.footer_pages{
+	a{
+		text-decoration: underline;
+		color: blue;
+	}
+	a:hover{
+		color: $primaryyellow;
+	}
+	.privacy_policies_data p,ul,li,h1,h2,h3,h4,h5,h6,
+	.t_c_data p,ul,li,h1,h2,h3,h4,h5,h6{
+	   padding-left: 0;
+	   text-align: left;
+	   line-height: 40px;
+   }
+   .privacy_policies_data p,li,
+   .t_c_data p,li{
+	   font-size: 22px;
+   }
+   .privacy_policies_data h2,h3,
+   .t_c_data h2,h3{
+	   font-size: 30px;
+   }
+   .privacy_policies_data h1,
+   .t_c_data h1{
+	   font-size: 50px;
+   }
+}
 
 .not_found_outer .content {
 	display: flex;
