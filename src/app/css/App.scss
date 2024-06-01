@@ -5713,12 +5713,6 @@ h6.user_name_c a {
 		place-items: center
 	}
 
-	#go_to_internship_page {
-		display: none
-	}
-
-
-
 	.share_blog_post .share_blog_heading h2 {
 		font-size: 1.2em !important;
 		padding: 20px 0
@@ -7472,11 +7466,11 @@ h6.user_name_c a {
 	}
 
 	.multistep_popup_form .cf7_form_outer {
-		top: 15% !important;
+		top: 75px !important;
 		left: 7% !important;
 		width: 75% !important;
 		padding: 36px !important;
-		height: 560px !important
+		height: 500px !important
 	}
 
 	.multistep_popup_form .form_heading_section .form_heading_close_btn h2 {
@@ -7540,6 +7534,9 @@ h6.user_name_c a {
 }
 
 @media(max-width:468px) {
+	#go_to_internship_page {
+		display: none
+	}
 	.interns_info {
 		gap: 0;
 	}
@@ -8109,6 +8106,7 @@ h6.user_name_c a {
 }
 
 @media (max-width: 600px) {
+	
 	.slide {
 		flex: 0 0 calc(100% - 20px);
 		margin-right: 0;
@@ -8164,9 +8162,7 @@ h6.user_name_c a {
    }
 }
 
-div#rc-anchor-container {
-    margin-top: 18px;
-}
+
 .not_found_outer .content {
 	display: flex;
 	justify-content: center;
