@@ -5614,7 +5614,9 @@ h6.user_name_c a {
 }
 
 @media(max-width:768px) {
-
+	.form_button{
+		text-align: left !important;
+	}
 	.interns_info {
 		flex-wrap: wrap;
 		p{
