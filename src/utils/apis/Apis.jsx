@@ -53,7 +53,7 @@ export const allExportedApi = () => {
 
   // fetch Blog page api
   const BlogPageApi = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=blog&fields=acf&acf_format=standard`);
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=blogs&fields=acf&acf_format=standard`);
     let response = await data.json();
     return response;
   };

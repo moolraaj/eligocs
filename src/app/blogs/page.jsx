@@ -1,28 +1,33 @@
-import { allExportedApi } from "@/utils/apis/Apis";
-import OurInternshipsPage from "./component/OurInternshipsPage";
-import { ExportScoApiData } from "@/utils/apis/scoApi";
-import { LoadscoData } from "../_metadata/metadata";
 
+import React from 'react'
+
+import BlogPage from './component/BlogPage';
+import { ExportScoApiData } from '@/utils/apis/scoApi';
+import { LoadscoData } from '../_metadata/metadata';
  
 
+ 
+ 
  
 
 export default async function page() {
 
  
+  
   return (
-    <>
-      <OurInternshipsPage/>
-    </>
+   <>
+   <BlogPage/>
+   </>
   )
 }
 
 
-// generate dynamic sco title and desriptions
+
 export async function generateMetadata(){
-  let api=ExportScoApiData()  
-  let data=await  api.fetchInternshipScoData()
-  const metadata = await LoadscoData({ data });
+ 
+  let api=ExportScoApiData()     
+  let data = await api.fetchBlogPageScoData() 
+  const metadata = await LoadscoData({ data }); 
 
   return {
       title: metadata.title,
@@ -40,6 +45,6 @@ export async function generateMetadata(){
           twitterDescription: metadata.twitterDescription
       }
   };
- 
+  
+  
 }
-

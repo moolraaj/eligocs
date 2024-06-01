@@ -35,6 +35,31 @@ export const ExportScoApiData=()=>{
         let response=await data.json()
         return response
     }
+    const fetchInternshipScoData=async()=>{
+        let data=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/rankmath/v1/getHead?url=${process.env.NEXT_PUBLIC_API_URL}/our-internship`)
+        let response=await data.json()
+        return response
+    }
+    const fetchCareerScoData=async()=>{
+        let data=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/rankmath/v1/getHead?url=${process.env.NEXT_PUBLIC_API_URL}/career`)
+        let response=await data.json()
+        return response
+    }
+    const fetchTermAndConditionScoData=async()=>{
+        let data=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/rankmath/v1/getHead?url=${process.env.NEXT_PUBLIC_API_URL}/terms-and-conditions`)
+        let response=await data.json()
+        return response
+    }
+    const fetchPrivacyPolicyScoData=async()=>{
+        let data=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/rankmath/v1/getHead?url=${process.env.NEXT_PUBLIC_API_URL}/privacy-policy`)
+        let response=await data.json()
+        return response
+    }
+    const fetchBlogPageScoData=async()=>{
+        let data=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/rankmath/v1/getHead?url=${process.env.NEXT_PUBLIC_API_URL}/blogs`)
+        let response=await data.json()
+        return response
+    }
 
 
 
@@ -58,6 +83,11 @@ export const ExportScoApiData=()=>{
         let response=await data.json()
         return response
     }
+    const fetchdynamicBlogsScoData=async(slug)=>{
+        let data=await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/rankmath/v1/getHead?url=${process.env.NEXT_PUBLIC_API_URL}/blog/${slug}`)
+        let response=await data.json()
+        return response
+    }
      
     
     return{
@@ -68,9 +98,15 @@ export const ExportScoApiData=()=>{
         fetchProductsScoData,
         fetchServiceScoData,
         fetchContactUsScoData,
+        fetchInternshipScoData,
+        fetchCareerScoData,
+        fetchTermAndConditionScoData,
+        fetchPrivacyPolicyScoData,
+        fetchBlogPageScoData,
         fetchdynamicCourseScoData,
         fetchdynamicProductScoData,
-        fetchdynamicServicesScoData
+        fetchdynamicServicesScoData,
+        fetchdynamicBlogsScoData
        
     }
 }

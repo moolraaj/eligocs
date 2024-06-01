@@ -35,29 +35,7 @@ export async function generateStaticParams() {
 }
 
 
-// generate dynamic sco title and desriptions
-export async function generateMetadata({params}){
-    let {slug}=params
-    let api=allExportedApi() 
-    let data = await api.fetchSigleInternship(slug)
-   
-    const result=data.map((ele)=>{
-        let description=ele.acf.internship_description.replace(/<[^>]+>|&[^;]+;/g, '');
-        return{
-            title:ele.title.rendered,
-            description
-             
-        }
-    })
-    
-    return{
-        title:result[0].title,
-        description:result[0].description,
-        openGraph:{
-          
-        }
-    }
-  }
+
 
 
 

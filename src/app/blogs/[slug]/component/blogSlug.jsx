@@ -28,10 +28,10 @@ export default function BlogSlug({ slug }) {
                     url: window.location.href
                 });
             } else {
-                console.log("Web Share API not supported.");
+               
             }
         } catch (error) {
-            console.error('Error sharing:', error.message);
+             
         }
     };
 
