@@ -21,10 +21,10 @@ function BlogPage() {
     try {
       let api = allExportedApi();
       let response = await api.AllBlogPOsts();
-      console.log('Blog posts loaded:', response); 
+     
       setAllBlogPosts(response);
     } catch (error) {
-      console.error("Error loading blog posts:", error);
+    
     }
   };
 
@@ -48,7 +48,7 @@ function BlogPage() {
     ? blogs.filter(blog => blog.blog_category.includes(selectedCategory))
     : blogs;
 
-  console.log('Filtered blogs:', filteredBlogs); 
+  
 
   const totalPages = Math.ceil(filteredBlogs.length / BLOG_PAGE_SIZE);
 
@@ -63,7 +63,7 @@ function BlogPage() {
 
   const paginatedBlogs = filteredBlogs.slice((currentPage - 1) * BLOG_PAGE_SIZE, currentPage * BLOG_PAGE_SIZE);
 
-  console.log('Paginated blogs:', paginatedBlogs); 
+ 
 
   const renderPaginationButtons = () => {
     const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
@@ -126,7 +126,7 @@ function BlogPage() {
             <div className="all-blog-posts-outer">
               {paginatedBlogs.length > 0 ? paginatedBlogs.map((blog) => (
                 <ul className="blog-post" key={blog.id}>
-                  <Link href={`/blog/${blog.slug}`}>
+                  <Link href={`/blogs/${blog.slug}`}>
                     <li className="blog-post-img">
                       <img src={blog.acf.blog_post_image || emptyimg.src} alt="blog_post_image" />
                     </li>

@@ -1,28 +1,40 @@
-'use client'
-import React, { useEffect, useState } from 'react';
-import { allExportedApi } from "@/utils/apis/Apis";
+ 
+ 
+import { ExportScoApiData } from '@/utils/apis/scoApi';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import { LoadscoData } from '../_metadata/metadata';
+ 
 
-function Privacy() {
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const api = allExportedApi();
-                const responseData = await api.PrivacyPolicy();
-                setData(responseData);
-            } catch (error) {
-                console.error("Error fetching Terms and Conditions:", error);
-            }
-        };
-
-        fetchData();
-    }, []);
+export default async function Privacy() {
+   
 
     return (
-        <PrivacyPolicy data={data}/>
+        <PrivacyPolicy/>
     );
 }
 
-export default Privacy;
+ 
+
+
+export async function generateMetadata() {
+    const api = ExportScoApiData();
+    const data = await api.fetchPrivacyPolicyScoData();
+    const metadata = await LoadscoData({ data }); 
+  
+    return {
+        title: metadata.title,
+        description: metadata.description,
+        openGraph: {
+            title: metadata.title,
+            description: metadata.description,
+            locale: metadata.locale,
+            type: metadata.type,
+            url: metadata.url,
+            siteName: metadata.siteName,
+            updatedTime: metadata.updatedTime,
+            card: metadata.card,
+            twitterTitle: metadata.twitterTitle,
+            twitterDescription: metadata.twitterDescription
+        }
+    };
+  }

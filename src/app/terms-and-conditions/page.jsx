@@ -1,28 +1,43 @@
-'use client'
-import React, { useEffect, useState } from 'react';
-import { allExportedApi } from "@/utils/apis/Apis";
+
+ 
 import TermsAndConditions from "./components/TermsAndConditions";
+import { ExportScoApiData } from '@/utils/apis/scoApi';
+import { LoadscoData } from '../_metadata/metadata';
 
 function Terms() {
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const api = allExportedApi();
-                const responseData = await api.TermsandConditions();
-                setData(responseData);
-            } catch (error) {
-                console.error("Error fetching Terms and Conditions:", error);
-            }
-        };
-
-        fetchData();
-    }, []);
+   
 
     return (
-        <TermsAndConditions data={data}/>
+        <TermsAndConditions/>
     );
 }
 
 export default Terms;
+
+
+
+// generate dynamic sco title and desriptions
+export async function generateMetadata(){
+    let api=ExportScoApiData()  
+    let data=await api.fetchTermAndConditionScoData()
+    const metadata = await LoadscoData({ data });
+  
+    return {
+        title: metadata.title,
+        description: metadata.description,
+        openGraph: {
+            title: metadata.title,
+            description: metadata.description,
+            locale: metadata.locale,
+            type: metadata.type,
+            url: metadata.url,
+            siteName: metadata.siteName,
+            updatedTime: metadata.updatedTime,
+            card: metadata.card,
+            twitterTitle: metadata.twitterTitle,
+            twitterDescription: metadata.twitterDescription
+        }
+    };
+  
+     
+  }

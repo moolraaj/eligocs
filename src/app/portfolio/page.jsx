@@ -1,17 +1,8 @@
 import { allExportedApi } from "@/utils/apis/Apis";
 import PortfolioPage from "./component/portfolioPage";
 
- 
 
  
-
-
- 
- 
-
-
-
-
 async function Portfolio() {
 
 
