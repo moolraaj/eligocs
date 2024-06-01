@@ -2725,26 +2725,45 @@ menu.footer_ul li a {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.interns_info_outer {
+.interns_info_outer,
+.testimonial_video_player{
   position: relative;
+  margin-bottom: 10px;
+  overflow: hidden;
+  p{
+	font-size: 1.25em;
+  }
 }
 
+.interns_info {
+    background: black;
+    color: white;
+    padding: 10px;
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	gap: 12px;
+	width: 100%;
+	overflow-x: auto;
+}
 .interns_info_outer button {
   border: none;
   padding: 10px 20px;
-  margin: 0px 10px;
-  background-color: #ccc;
+  margin-right: 20px;
+  background-color: $primaryyellow;
 }
 
 .interns_info_outer button.prev-btn.active,
 .interns_info_outer button.next-btn.active {
-  background-color: yellow; 
+  background-color: $primaryyellow; 
 }
 
 .interns_info_outer button.prev-btn.inactive,
 .interns_info_outer button.next-btn.inactive {
   opacity: 0.5; 
+  pointer-events: none;
   cursor: not-allowed;
+  background-color: #ccc;
 }
 
   
@@ -2756,6 +2775,7 @@ menu.footer_ul li a {
 		grid-template-columns: 1fr 1fr;
 		align-items: center;
 		column-gap: 20px;
+		width: 100%;
 	}
 	
 }
@@ -4051,7 +4071,9 @@ h5.title_heading_c {
 }
 
 .form_button {
-	margin-top: 25px
+	margin-top: 5px;
+	text-align: right;
+	width: 100%;
 }
 
 .menu-right-container-bottom .form_button {
@@ -4245,7 +4267,7 @@ h5.title_heading_c {
 
 .form_fields_wrapper:nth-child(7) {
 	grid-column: 1/3;
-	padding: 36px 0
+	padding: 15px 0
 }
 
 .form_fields_wrapper input:focus-visible {
@@ -4307,7 +4329,7 @@ h5.title_heading_c {
 }
 
 .form_banner_heading h1 {
-	font-size: 8.125em;
+	font-size: 6.125em;
 	margin: 0;
 	text-transform: capitalize;
 	font-weight: 500
@@ -5081,7 +5103,10 @@ h6.user_name_c a {
 }
 
 @media(min-width:1025px)and (max-width:1440px) {
-	
+	.form_fields_wrapper,
+	.form_button{
+		width: 90%;
+	}
 	.hide_seek.blogs {
 		top: 50px;
 	}
@@ -5587,6 +5612,13 @@ h6.user_name_c a {
 }
 
 @media(max-width:768px) {
+
+	.interns_info {
+		flex-wrap: wrap;
+		p{
+			margin: 0;
+		}
+	}
 	.portfolio_page_top_image{
 		width: 100% !important;
 	}
@@ -5988,7 +6020,7 @@ h6.user_name_c a {
 	}
 
 	.form_fields_wrapper input::placeholder {
-		font-size: 1.125em !important
+		font-size: 1em !important
 	}
 
 	.form_fields_wrapper textarea {
@@ -7494,7 +7526,7 @@ h6.user_name_c a {
 }
 
 @media only screen and (max-width:480px) {
-
+	
 	.testimonial_wrap {
 		position: absolute;
 		max-width: 70%;
@@ -7508,6 +7540,9 @@ h6.user_name_c a {
 }
 
 @media(max-width:468px) {
+	.interns_info {
+		gap: 0;
+	}
 	.testimonial_slider{
 		height: 50vw;
 	}
@@ -7966,6 +8001,7 @@ h6.user_name_c a {
 	.home_testimonial_wrapper {
 		height: auto;
 	}
+	
 }
 
 @media only screen and (max-width:430px) {
@@ -7973,6 +8009,7 @@ h6.user_name_c a {
 		width: 90%;
 		margin: 0 auto
 	}
+	
 }
 
 @media(max-width:375px) {
@@ -8127,6 +8164,9 @@ h6.user_name_c a {
    }
 }
 
+div#rc-anchor-container {
+    margin-top: 18px;
+}
 .not_found_outer .content {
 	display: flex;
 	justify-content: center;
@@ -8240,3 +8280,4 @@ h6.user_name_c a {
 		transform: translate3d(4px, 0, 0);
 	}
 }
+

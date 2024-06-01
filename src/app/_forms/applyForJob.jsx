@@ -151,8 +151,10 @@ function ApplyForJob() {
                         <textarea name="yourmessage" placeholder="additional information" value={user.yourmessage} onChange={getUserData} cols="30" rows="10"></textarea>
                     </div>
                     <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} onChange={onReCAPTCHAChange} />
+                    <div className="form_fields_wrapper">
                     <div className="form_button">
                         <button onClick={submitUserData}>Submit</button>
+                        </div>
                     </div>
                 </div>
             </form>
