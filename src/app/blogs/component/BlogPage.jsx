@@ -3,7 +3,7 @@ import CallToAction from "@/app/call-to-action/callToAction";
 import { BLOG_PAGE_SIZE, allExportedApi } from "@/utils/apis/Apis";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import emptyimg from '../../assets/empty.jpg'
+import { emptyImage } from "../../../../public/assets/images";
 function BlogPage() {
   let api=allExportedApi() 
   const[blogPageData,setBlogPageData]=useState([])
@@ -128,7 +128,7 @@ function BlogPage() {
                 <ul className="blog-post" key={blog.id}>
                   <Link href={`/blogs/${blog.slug}`}>
                     <li className="blog-post-img">
-                      <img src={blog.acf.blog_post_image || emptyimg.src} alt="blog_post_image" />
+                      <img src={blog.acf.blog_post_image || emptyImage.src} alt="blog_post_image" />
                     </li>
                     <li className="blog-post-info-wrapper">
                       <h2>{blog.acf.blog_post_tittle.slice(0,60)}...</h2>

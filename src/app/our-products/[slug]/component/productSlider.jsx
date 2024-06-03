@@ -1,7 +1,6 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react';
-import emptyImage from '../../../assets/empty.jpg'
-
+import { emptyImage } from '../../../../../public/assets/images';
 
 function ProductSlider({ data }) {
   const [currentSlide, setCurrentSlide] = useState(0);

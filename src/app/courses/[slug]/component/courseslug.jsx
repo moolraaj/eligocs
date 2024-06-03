@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import CallToAction from "@/app/call-to-action/callToAction";
 import Link from "next/link";
 import { allExportedApi } from '@/utils/apis/Apis';
-import emptyImage from '../../../assets/empty.jpg'
+import { emptyImage } from '../../../../../public/assets/images';
 
 export default function CourseSlug({ slug }) {
   let api=allExportedApi()  

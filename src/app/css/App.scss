@@ -144,26 +144,26 @@ textarea::placeholder {
 
 @font-face {
 	font-family: 'bebas';
-	src: url('../font-family/BebasNeue-Regular.ttf') format('truetype');
+	src: url('../../../public/font-family/BebasNeue-Regular.ttf') format('truetype');
 	font-display: swap;
 }
 
 @font-face {
 	font-family: 'Audiowide';
-	src: url('../font-family/Audiowide-Regular.ttf') format('truetype');
+	src: url('../../../public/font-family/Audiowide-Regular.ttf') format('truetype');
 	font-display: swap;
 }
 
 @font-face {
 	font-family: 'Euclid Circular A';
-	src: url('../font-family/Euclid Circular A Regular.ttf') format('truetype');
+	src: url('../../../public/font-family/Euclid Circular A Regular.ttf') format('truetype');
 	font-weight: normal;
 	font-display: swap;
 }
 
 @font-face {
 	font-family: 'Euclid Circular A';
-	src: url('../font-family/Euclid Circular A Light.ttf') format('truetype');
+	src: url('../../../public/font-family/Euclid Circular A Light.ttf') format('truetype');
 	font-weight: 300;
 	font-display: swap;
 
@@ -171,7 +171,7 @@ textarea::placeholder {
 
 @font-face {
 	font-family: 'Euclid Circular A';
-	src: url('../font-family/Euclid Circular A Bold.ttf') format('truetype');
+	src: url('../../../public/font-family/Euclid Circular A Bold.ttf') format('truetype');
 	font-weight: bold;
 	font-display: swap;
 
@@ -179,7 +179,7 @@ textarea::placeholder {
 
 @font-face {
 	font-family: 'Euclid Circular A';
-	src: url('../font-family/Euclid Circular A Medium.ttf') format('truetype');
+	src: url('../../../public/font-family/Euclid Circular A Medium.ttf') format('truetype');
 	font-weight: 500;
 	font-display: swap;
 
@@ -187,7 +187,7 @@ textarea::placeholder {
 
 @font-face {
 	font-family: 'Euclid Circular A';
-	src: url('../font-family/Euclid Circular A Bold Italic.ttf') format('truetype');
+	src: url('../../../public/font-family/Euclid Circular A Bold Italic.ttf') format('truetype');
 	font-weight: bold;
 	font-style: italic;
 	font-display: swap;
@@ -224,7 +224,7 @@ ul {
 
 .process_description li::before {
 	content: "";
-	background-image: url(../assets/pageAssets/checked.png);
+	background-image: url(../../../public/assets/pageAssets/checked.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 20px;
@@ -3187,7 +3187,6 @@ span.typing-text {
 	width: 100%;
 	min-height: 100px;
 	box-sizing: border-box;
-	height: auto;
 }
 
 .home_about_left,
@@ -3200,11 +3199,9 @@ span.typing-text {
 	background: $primaryblack;
 	padding: 80px 0 20px;
 	width: 100%;
-	height: auto;
+	min-height: 100px;
 	box-sizing: border-box;
 	z-index: 99999 !important;
-	min-height: 100px;
-
 }
 
 .company_faq_wrapper {
@@ -3401,15 +3398,16 @@ p .testimonial_wrap {
 	align-items: flex-start;
 	column-gap: 0;
 	row-gap: 0;
-	flex-wrap: wrap
+	flex-wrap: wrap;
+	max-width:fit-content;
+	width: 100%;
+	height: fit-content;
 }
 
+
 .center-section-fourth-inner-wrapper {
-	width: 100%;
-	max-width: 100%;
 	box-sizing: border-box;
-	min-height: 100px;
-	height: auto;
+	height: fit-content;
 	margin-bottom: 20px
 }
 
@@ -3924,7 +3922,8 @@ p:empty {
 .all-blog-posts-outer li.blog-post-img img {
 	width: 100%;
 	height: 300px;
-	object-fit: cover
+	object-fit: cover;
+	box-shadow: -1px 2px 9px 2px #808080;
 }
 
 .all-blog-posts-outer ul.blog-post {
@@ -4796,6 +4795,7 @@ h6.user_name_c a {
 		select.select_duration {
 			width: 90% !important;
 			padding: 18px 0px 20px 0px !important;
+			background-color: transparent;
 		}
 
 		.form_fields_wrapper {
@@ -5647,11 +5647,9 @@ h6.user_name_c a {
 
 	.page_outer.about_section_outer.scrolling {
 		width: 100%;
-		max-width: 100%;
+		max-width: fit-content;
 		box-sizing: border-box;
 		overflow-x: hidden;
-		min-height: auto;
-		height: auto;
 	}
 
 	.nested_options {
@@ -6169,7 +6167,6 @@ h6.user_name_c a {
 
 	.all-blog-posts-outer li.blog-post-img img {
 		height: 220px;
-		box-shadow: -1px 2px 9px 2px #808080;
 	}
 
 	.all-blog-posts-outer ul.blog-post .blog-post-info-wrapper {
@@ -6889,7 +6886,8 @@ h6.user_name_c a {
 
 	.footer_wrapper .footer-center-bottom-section p {
 		color: gray;
-		margin: 20px
+		margin: 20px;
+		width: 95%;
 	}
 
 	body.__className_aaf875 {

@@ -30,7 +30,7 @@
 import { useEffect, useState } from 'react';
 import { allExportedApi } from "@/utils/apis/Apis";
 import Link from "next/link";
-import emptyImage from './assets/empty.jpg'
+import { emptyImage } from '../../public/assets/images';
 
 function NotFound() {
   const [data, setData] = useState([]);

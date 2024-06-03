@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useEffect } from "react";
-import emptyImage from '../assets/empty.jpg'
+import emptyImage from '../../../public/assets/empty.jpg'
 function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [testimonials, setTestimonials] = useState([]);

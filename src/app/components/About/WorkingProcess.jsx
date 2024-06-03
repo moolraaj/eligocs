@@ -2,9 +2,7 @@
 'use client'
 import { useState } from "react";
 import { gsap } from "gsap";
-import StepGif from "../../assets/aboutpageAssets/next-step.gif";
-import playAgain from "../../assets/aboutpageAssets/playAgain.gif";
-import emptyImage from '../../assets/empty.jpg'
+import { StepGif, emptyImage, playAgain } from "../../../../public/assets/images";
 const WorkingProcess = ({ result }) => {
   const workingProcess = result?.acf?.working_process || [];
   const [currentStep, setCurrentStep] = useState(0);

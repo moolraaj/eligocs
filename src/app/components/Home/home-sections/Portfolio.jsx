@@ -1,8 +1,8 @@
 
 import React, { useRef, useState } from 'react';
 import PortfolioComponent from '@/app/portfolio/component/portfolioComponent';
-import arrow from '../../../assets/headerAssets/arrow.png'
-import emptyImage from '../../../assets/empty.jpg'
+import arrow from '../../../../../public/assets/headerAssets/arrow.png'
+import { emptyImage } from '../../../../../public/assets/images';
 
 function PortfolioSection() {
     const itemRef = useRef(null);

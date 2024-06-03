@@ -2,8 +2,7 @@
 import ApplyForJob from '@/app/_forms/applyForJob';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import formClose from '../../assets/headerAssets/formclose.png';
-import emptyImage from '../../assets/empty.jpg'
+import { emptyImage, formClose } from '../../../../public/assets/images';
 
 
 

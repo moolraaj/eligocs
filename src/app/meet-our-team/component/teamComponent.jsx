@@ -1,5 +1,5 @@
 import React from 'react';
-import emptyImage from '../../assets/empty.jpg'
+import { emptyImage } from '../../../../public/assets/images';
 
 function TeamComponent({ result }) {
      

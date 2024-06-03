@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import TestimonialSection from "../Home/home-sections/Testimonial";
 import { allExportedApi } from "@/utils/apis/Apis";
 import { useEffect, useState } from "react";
- import emptyImage from '../../assets/empty.jpg'
+import { emptyImage } from "../../../../public/assets/images";
 
 
 

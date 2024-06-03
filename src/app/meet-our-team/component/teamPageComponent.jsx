@@ -4,7 +4,7 @@
 import { useEffect, useState } from "react"
 import TeamComponent from "./teamComponent"
 import { allExportedApi } from "@/utils/apis/Apis";
-import emptyImage from '../../assets/empty.jpg'
+import { emptyImage } from "../../../../public/assets/images";
  
 
 

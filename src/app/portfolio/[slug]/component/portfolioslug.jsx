@@ -1,10 +1,9 @@
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
-import arrow from '../../../assets/headerAssets/arrow.png';
-import emptyImage from '../../../assets/empty.jpg'
 import Link from 'next/link';
 import { allExportedApi } from '@/utils/apis/Apis';
 import PortfolioSlider from './portfolioSlider';
+import { arrow, emptyImage } from '../../../../../public/assets/images';
 
 
 export default function Portfolioslug({ slug }) {

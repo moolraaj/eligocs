@@ -5,10 +5,9 @@ import { INTERNSHIP_PAGE_SIZE, allExportedApi } from '@/utils/apis/Apis';
 import { useRouter } from 'next/navigation';
 import Internship from '@/app/_forms/internship';
 import RerenderCompo from '@/app/common/navbar/component/formAnimationCompo';
-import formClose from '../../assets/headerAssets/formclose.png'
 import TestimonialSlides from './testimonialSlides';
-import emptyImage from '../../assets/empty.jpg' 
 import InternTestimonial from './testimonials';
+import { emptyImage, formClose } from '../../../../public/assets/images';
  
  
  

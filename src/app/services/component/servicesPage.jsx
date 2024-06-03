@@ -3,11 +3,11 @@
 import { allExportedApi } from "@/utils/apis/Apis.jsx"
 import Link from "next/link"
 import ServicesFaq from "./ServicesFaq"
-import emptyImage from '../../assets/empty.jpg' 
 import '../../about/AboutPage.scss'
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import TestimonialSection from "@/app/components/Home/home-sections/Testimonial"
+import { emptyImage } from "../../../../public/assets/images"
 
 
 

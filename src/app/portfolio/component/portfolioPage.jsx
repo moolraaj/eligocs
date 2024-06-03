@@ -2,7 +2,7 @@
 import { PORTFOLIO_PAGE_SIZE, allExportedApi } from "@/utils/apis/Apis";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import emptyImage from '../../assets/empty.jpg'
+import { emptyImage } from "../../../../public/assets/images";
 
 function PortfolioPage() {
   let api = allExportedApi();

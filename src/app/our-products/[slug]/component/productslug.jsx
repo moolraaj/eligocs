@@ -1,10 +1,9 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import emptyImage from '../../../assets/empty.jpg'
-
 import { allExportedApi } from '@/utils/apis/Apis';
 import ProductSlider from './productSlider';
+import { emptyImage } from '../../../../../public/assets/images';
 
 export default function ProductSlug({ slug }) {
     const api = allExportedApi();

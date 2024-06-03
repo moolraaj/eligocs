@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { gsap } from "gsap";
-import emptyImage from '../assets/empty.jpg'
-
+import { emptyImage } from "../../../public/assets/images";
 const CallSlider = ({ slider }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 

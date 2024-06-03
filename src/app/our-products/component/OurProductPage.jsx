@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { PRODUCTS_PAGE_SIZE, allExportedApi } from '@/utils/apis/Apis';
 import { useRouter } from 'next/navigation';
-import emptyImage from '../../assets/empty.jpg'
+import { emptyImage } from '../../../../public/assets/images';
 
 function OurProductPage() {
   let api = allExportedApi();

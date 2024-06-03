@@ -1,10 +1,8 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-import Formclose from '../../../assets/headerAssets/formclose.png';
+import Formclose from '../../../../../public/assets/headerAssets/formclose.png';
 import ApplyForJob from '@/app/_forms/applyForJob';
-import emptyImage from '../../../assets/empty.jpg'
-
-
+import { emptyImage } from '../../../../../public/assets/images';
 
 function HeroSection({ ele, ParallaxContainer }) {
   const [showInnovation, setShowInnovation] = useState(false);

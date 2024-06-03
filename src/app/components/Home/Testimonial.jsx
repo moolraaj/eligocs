@@ -1,7 +1,7 @@
 'use client';
 import { allExportedApi } from '@/utils/apis/Apis';
 import React, { useEffect, useState } from 'react';
-import emptyImage from '../../assets/empty.jpg'
+import { emptyImage } from '../../../../public/assets/images';
 
 function Testimonial() {
     const [testimonials, setTestimonials] = useState([]);

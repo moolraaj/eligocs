@@ -5,20 +5,14 @@ import CallToAction from "@/app/call-to-action/callToAction";
 import { allExportedApi } from "@/utils/apis/Apis";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import emptyImage from '../../../assets/empty.jpg'
+import { emptyImage } from "../../../../../public/assets/images";
 
 
 function ServicesInnerSlug({ slug }) {
    let api = allExportedApi()
 
-
-
-
-
-
    let [data, setData] = useState([])
    let [services, setServices] = useState([])
-
 
    const funcLoadSingleSrvices = async () => {
       const response = await api.fetchSingleService(slug);

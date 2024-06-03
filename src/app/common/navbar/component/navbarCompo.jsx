@@ -1,50 +1,24 @@
 'use client'
 import React, { useState } from 'react';
-import closeMenuIcon from '../../../assets/headerAssets/closeMenu.png'
-import FormLogo from '../../../assets/headerAssets/formsvggif.gif'
-import formClose from '../../../assets/headerAssets/formclose.png'
-import arrow from '../../../assets/headerAssets/arrow.png'
 import Link from 'next/link';
 import PortfolioComponent from '@/app/portfolio/component/portfolioComponent';
 import JobForm from '@/app/_forms/jobForm';
 import RerenderCompo from './formAnimationCompo';
 import ApplyForJob from '@/app/_forms/applyForJob';
-// import mailIcon from '../../../assets/headerAssets/mail.png';
-// import callIconOne from '../../../assets/headerAssets/phone-call.png';
-// import callIconTwo from '../../../assets/headerAssets/smartphone-call.png'
 import MultistepForm from '@/app/_forms/multistepForm';
-import emptyImage from '../../../assets/empty.jpg'
-
-
-
-
-
-
+import { emptyImage,closeMenuIcon,FormLogo,formClose,arrow} from '../../../../../public/assets/images';
 
 
 
 function NavbarCompo({ data }) {
 
-
-
   const { siteLogoUrl, siteTitle, headerMenuItems, socialLinks, footerPhoneNumberFirst, footerPhoneNumberSecond, footerEmail } = data.header
-
-
-
 
   const [isOpen, setIsOpen] = useState(false);
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [ismultisepPopupForm, setIsMultisepPopupForm] = useState(false);
   const [isApplyJobVisible, setIsApplyJobVisible] = useState(false);
-  // const additionalLinksRef = useRef(null);
-
-  // const toggleAdditionalLinks = () => {
-  //     additionalLinksRef.current.classList.toggle('hide_seek');  
-  // };
-
-
-
-
+  
 
   const showApplyJob = () => {
     setIsApplyJobVisible(true);

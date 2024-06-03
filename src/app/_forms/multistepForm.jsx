@@ -1,7 +1,7 @@
 import { allExportedApi } from "@/utils/apis/Apis";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import formClose from '../assets/headerAssets/formclose.png';
+import formClose from '../../../public/assets/headerAssets/formclose.png';
 
 export default function MultistepForm({ onHideForm, onCompleteForm }) {
     const [formData, setFormData] = useState(null);

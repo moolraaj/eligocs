@@ -1,7 +1,7 @@
 
  
 import Link from 'next/link';
-import emptyImage from '../../assets/empty.jpg'
+import { emptyImage } from '../../../../public/assets/images';
 
 export default function  ServiceChild({services}) {
 

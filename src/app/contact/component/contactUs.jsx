@@ -1,9 +1,9 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import emptyImage from '../../assets/empty.jpg'
 import Map from '../map'
 import ContactUsForm from '@/app/_forms/contactusform'
 import { allExportedApi } from '@/utils/apis/Apis'
+import { emptyImage } from '../../../../public/assets/images'
 
 
 
