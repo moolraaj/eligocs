@@ -480,7 +480,7 @@ a {
 .home_about_right p {
 	color: $white;
 	font-size: 2em;
-	margin: 0;
+	margin-bottom: 25px;
 	line-height: 60px
 }
 
@@ -746,13 +746,13 @@ form#jobform textarea {
 }
 
 .portfolio_showcase_wrapper {
-	@include grid-property(grid, repeat(3, 1fr), unset, 50px, 0px);
+	@include grid-property(grid, repeat(3, 1fr), unset, 30px, 0px);
 }
 
 .port_showcase_image img {
 	width: 100%;
 	height: 600px;
-	object-fit: cover
+	box-shadow: $box-shadow;
 }
 
 .port_showcase_hove_effect {
@@ -760,7 +760,7 @@ form#jobform textarea {
 	padding: 0 20px;
 	position: absolute;
 	width: -webkit-fill-available;
-	bottom: 25px;
+	bottom: 20px;
 	display: none;
 	pointer-events: none
 }
@@ -768,8 +768,6 @@ form#jobform textarea {
 .portfolio_image img {
 	width: 453px;
 	height: 585px;
-	object-fit: cover;
-	object-position: top
 }
 
 .portfolio_short_description {
@@ -780,32 +778,29 @@ form#jobform textarea {
 	display: block;
 	transition: transform .3s ease-in-out
 }
-.career_inner_page_top{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-	gap: 40px;
-}
-.portfolio_page_top_image {
-    width: -webkit-fill-available;
-}
-.career_inner_page_top{
-	.portfolio_page_top_image {
-		width: max-content;
-	}
-	.portfolio_page_top_image img {
-		max-width: 640px;
-		width: 100%;
-		height: 450px;
-		object-fit: cover
-	}
+
+
+.portfolio_page_top_image{
+	width: -webkit-fill-available;
 }
 .portfolio_page_top_image img {
+	max-width: -webkit-fill-available;
 	width: 100%;
 	height: 450px;
-	object-fit: cover
+	object-fit: cover;
+	opacity: .5;
 }
-
+.portfolio_inner_top_right_section{
+	position: absolute;
+	top: 0;
+	left: 50px;
+	opacity: 1;
+	padding: 20px;
+	h1{
+		margin: 0;
+		width: 100% !important;
+	}
+}
 .spacer {
 	height: 70px;
 }
@@ -1151,10 +1146,12 @@ a.footer_mail {
 }
 
 .pagination-buttons {
-	display: flex;
-	column-gap: 14px;
-	padding-top: 20px;
-	justify-content: center
+    display: flex;
+    padding-top: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
 }
 
 .close-btn {
@@ -1489,7 +1486,8 @@ form#applyforjob textarea {
 
 .product-top-info-section .product_right_info_inner {
 	background: $primaryyellow;
-	padding: 60px 30px
+	padding: 60px 30px;
+	height: fit-content;
 }
 
 .product-top-info-section .product_right_info_inner p {
@@ -1913,9 +1911,6 @@ h1.type_text_wrapper span {
 	font-size: 3.125em
 }
 
-h1.innovation-heading {
-	font-size: 2em !important
-}
 
 .innovation_content {
 	position: relative !important
@@ -2127,7 +2122,8 @@ ul.course li:nth-child(4) {
 
 .course_intro_join_section .course_join_wrapper .course_join_inner {
 	background: $primaryyellow;
-	padding: 60px 30px
+	padding: 60px 30px;
+	height: fit-content;
 }
 
 .course_intro_join_section .course_join_wrapper .course_join_inner p {
@@ -2359,7 +2355,9 @@ a.back-to-projects {
 	text-transform: uppercase;
 	font-weight: 500;
 	color: $primaryblack;
-	margin: 0
+	margin: 0;
+	width: 70%;
+	line-height: 50px;
 }
 
 .all_services_right_section .service_content_description p {
@@ -2560,13 +2558,17 @@ menu.footer_ul li a {
 
 .process_left_section {
 	background: $primaryyellow;
-	padding: 30px 40px
+	padding: 30px 40px;
+}
+.process_description p {
+    margin-bottom: 20px;
 }
 
 .process_description p {
 	font-size: 20px;
 	line-height: 42px;
-	width: 94%
+	width: 94%;
+	margin-bottom: 20px;
 }
 
 .process_right_section .process_image img {
@@ -2583,10 +2585,27 @@ menu.footer_ul li a {
 	padding-bottom: 100px
 }
 
+
 .servives_missout_description p {
 	font-size: 1.75em;
 	line-height: 49px
 }
+.services_inner_page_faq_wrapper {
+	@include grid-property(grid,1fr 1fr,center,70px, 20px);
+}
+.services_inner_question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.inner_service_faq {
+    background: #d5d8dc4f;
+    padding: 10px 30px;
+    border-radius: 20px;
+	cursor: pointer;
+	box-shadow: 0px 0px 30px 0px rgba(0,0,0,.05);
+}
+
 
 .service_top_heading_first h1 {
 	color: $primaryyellow;
@@ -2779,18 +2798,7 @@ menu.footer_ul li a {
 		column-gap: 20px;
 		width: 100%;
 	}
-	
 }
-
-
-
-
-
-
-
-
-
-
 
 .service_navigate_button button:hover {
 	background: $black;
@@ -2822,7 +2830,8 @@ menu.footer_ul li a {
 
 .services_right_sec {
 	padding: 20px 47px;
-	background: $primaryyellow
+	background: $primaryyellow;
+	height: fit-content;
 }
 
 .services_banner_section img {
@@ -3141,8 +3150,8 @@ span.vison_c {
 }
 
 h1.innovation-heading {
-	font-size: 6.25em;
-	font-family: Audiowide
+	font-size: 2.25em;
+	font-family: Audiowide;
 }
 
 .innovation_right p {
@@ -3923,7 +3932,7 @@ p:empty {
 	width: 100%;
 	height: 300px;
 	object-fit: cover;
-	box-shadow: -1px 2px 9px 2px #808080;
+	box-shadow: $box-shadow;
 }
 
 .all-blog-posts-outer ul.blog-post {
@@ -3985,13 +3994,14 @@ form#contactus .form_button button:hover {
 .contact_numbers_wrapper {
     display: flex;
     gap: 30px;
+	margin-top: 20px;
 }
 .both_location {
 	margin-bottom: 30px
 }
 
 .contact_number {
-	margin-top: 20px;
+	
 
 	label {
 		font-size: 1.25em;
@@ -5614,6 +5624,9 @@ h6.user_name_c a {
 }
 
 @media(max-width:768px) {
+	.pagination-buttons button{
+		padding: 7px 15px;
+	}
 	.form_button{
 		text-align: left !important;
 	}
@@ -6312,7 +6325,7 @@ h6.user_name_c a {
 	}
 
 	a.trans_redirecttion {
-		font-size: 1.6667em
+		font-size: 1.6667em;
 	}
 
 	.trans_right_section {
@@ -6394,7 +6407,9 @@ h6.user_name_c a {
 	}
 
 	.trans_redirecttion {
-		font-size: 1.25em
+		font-size: 1.25em;
+		width: 80%;
+		line-height: 30px;
 	}
 
 	ul.transformation_wrapper {
@@ -6701,7 +6716,7 @@ h6.user_name_c a {
 	}
 
 	.portfolio_page_top_image img {
-		height: 200px !important;
+		height: 320px !important;
 	}
 
 	.portfolio_inner_intenary_related_posts {
@@ -6981,7 +6996,7 @@ h6.user_name_c a {
 	}
 
 	ul.transformation_wrapper img {
-		top: 20px;
+		top: 8px;
 		max-width: 100px;
 		height: 100px;
 		object-fit: cover
@@ -7104,7 +7119,7 @@ h6.user_name_c a {
 		overflow: auto !important;
 		z-index: 99999999;
 		background: $white;
-		padding: 40px 22px;
+		padding: 5px 22px;
 		top: 0
 	}
 
@@ -7348,7 +7363,7 @@ h6.user_name_c a {
 		display: grid !important;
 		grid-auto-columns: 1fr;
 		margin-top: -25px;
-		align-items: center;
+		place-items: center;
 	}
 
 	.page_inner {
@@ -7375,7 +7390,7 @@ h6.user_name_c a {
 
 	h1.innovation-heading {
 		height: 0;
-
+		font-size: 2em !important;
 	}
 
 	.about_section_outer,
@@ -7511,6 +7526,7 @@ h6.user_name_c a {
 	}
 	.contact_numbers_wrapper{
 		flex-wrap: wrap;
+		gap: 0;
 	}
 	.portfolio_gallery_wrapper {
 		flex: 0 0 50% !important
@@ -7536,6 +7552,9 @@ h6.user_name_c a {
 }
 
 @media(max-width:468px) {
+	.trans_redirecttion{
+		width: 100%;
+	}
 	#go_to_internship_page {
 		display: none
 	}
@@ -7779,12 +7798,8 @@ h6.user_name_c a {
 	}
 
 	ul.transformation_wrapper img {
-		bottom: 0;
-		max-width: 30px;
-		height: 30px;
-		object-fit: cover;
-		top: 17px
-	}
+		display: none !important;
+    }
 
 	.form_button button {
 		padding: 8px 25px !important;

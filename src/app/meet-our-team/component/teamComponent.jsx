@@ -35,16 +35,22 @@ function TeamComponent({ result }) {
                                 <p>{ele.acf.our_team_designation}</p>
                             </div>
                             <div className="member_name">
-                                {ele.acf.our_team_social_connectivity.map((icons, index) => {
-                                    return <div className="team_social_icon_wrapper" key={index}>
 
-                                        <div className="member_social_icons">
-                                            <a href={icons.social_link} target='_blanck'><img src={icons.our_team_social_media || emptyImage.src} alt='social icons' /></a>
+                            {Array.isArray(ele.acf?.our_team_social_connectivity) ? (
+                           ele.acf.our_team_social_connectivity.map((icons, index) => (
+                            <div className="team_social_icon_wrapper" key={index}>
 
-                                        </div>
+                            <div className="member_social_icons">
+                                <a href={icons.social_link || ""} target='_blanck'><img src={icons.our_team_social_media || emptyImage.src} alt='social icons' /></a>
 
-                                    </div>
-                                })}
+                            </div>
+
+                        </div>
+                           ))
+                        ) : (
+                           ""
+                        )}
+                            
                             </div>
                          
                         </div>
