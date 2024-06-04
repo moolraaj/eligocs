@@ -119,6 +119,46 @@ function ServicesInnerSlug({ slug }) {
                      <ServicesSlugFaq ele={ele}/>
                   </div>
 
+                  <div className="services_inner_packages_serction">
+                     <h2 id="packgae_for">{ele.acf.package_heading || ""}</h2>
+                     <h3>Select Plan</h3>
+                     <div class="package-divider-separator">
+                        <span></span>
+                        <div class="package_divide_icon"> 
+                        <svg  style={{width: '30px',height: '30px'}} aria-hidden="true" class="e-font-icon-svg e-fas-ellipsis-h" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path>
+                           </svg>
+                           </div>
+                           <span></span>
+                           </div>
+                        {Array.isArray(ele.acf?.services_inner_packages_section) ? (
+                ele.acf.services_inner_packages_section.map((packages, index) => (
+                    <div className="services_package" key={index}>
+                        {Object.entries(packages).map(([key, pkg], idx) => {
+                           const firstWord = key.split('_')[0];
+                           return(
+                              <div className="package" key={idx}>
+                              <h3 id="package_type">{firstWord.charAt(0).toUpperCase() + firstWord.slice(1) || ""}</h3>
+                                <div className="package_info">
+                                <img id="service_package_image" src={pkg.package_image || emptyImage.src} alt={`${key} image`} />
+                                <h2>{pkg.package_price || ""}</h2>
+                                <b>{pkg.package_period || ""}</b>
+                                <div className="package_divider_bottom"><span></span></div>
+                                <div dangerouslySetInnerHTML={{ __html: pkg.package__description || ""}}></div>
+                                </div>
+                                <div className="view_more">
+                                <Link href={`/`}>View More</Link>
+                                </div>
+                               
+                            </div>
+                           )
+                        })}
+                    </div>
+                ))
+            ) : (
+                ""
+            )}
+                  </div>
                </div>
             })}
          </div>
