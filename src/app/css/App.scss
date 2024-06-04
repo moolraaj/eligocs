@@ -779,28 +779,34 @@ form#jobform textarea {
 	transition: transform .3s ease-in-out
 }
 
-
+.services_inner_template_wrapper{
+	.portfolio_page_top_image img{
+		opacity: .6;
+	}
+}
 .portfolio_page_top_image{
 	width: -webkit-fill-available;
 }
-.portfolio_page_top_image img {
+.portfolio_page_top_image img{
 	max-width: -webkit-fill-available;
-	width: 100%;
-	height: 450px;
-	object-fit: cover;
-	opacity: .6;
+			width: 100%;
+			height: 450px;
+			object-fit: cover;
 }
-.portfolio_inner_top_right_section{
-	position: absolute;
-	top: 0;
-	left: 50px;
-	opacity: 1;
-	padding: 20px;
-	h1{
-		margin: 0;
-		width: 100% !important;
+.services_inner_template_wrapper{
+	.portfolio_inner_top_right_section{
+		position: absolute;
+		top: 0;
+		left: 50px;
+		opacity: 1;
+		padding: 20px;
+		h1{
+			margin: 0;
+			width: 100% !important;
+		}
 	}
 }
+
 .spacer {
 	height: 70px;
 }
@@ -2578,11 +2584,6 @@ menu.footer_ul li a {
 	margin-left: -43px;
 	width: 100%;
 	object-fit: cover
-}
-
-.services_dont_miss_out {
-	padding-top: 112px;
-	padding-bottom: 100px
 }
 
 
@@ -5115,6 +5116,56 @@ h6.user_name_c a {
 }
 
 @media(min-width:1025px)and (max-width:1440px) {
+	
+	.step-image-container{
+		left: -30px;
+		bottom: -90px;
+		.main-image {
+			height: 500px !important;
+			width: 350px !important;
+		}
+		img.image-upper,
+		img.image-lower{
+			max-width: 180px;
+			height: 140px;
+		}
+	}
+	.process_description ul{
+		column-gap: 60px;
+	  padding-left: 20px;
+
+	}
+	.services_inner_description p,
+	.servives_missout_description p{
+		line-height: 30px;
+	}
+	.process-steps-content h3{
+		font-size: 45px;
+	}
+	.call_outer.inner_services .call_left_section h1,
+	.process-steps-content h3{
+		font-size: 40px;
+	}
+	.step-initial p{
+		font-size: 22px;
+	}
+	.services_inner_heading h1{
+		font-size: 4em;
+	}
+	.serices_flex_template{
+		padding-bottom: 20px;
+	}
+	.services_inner_description p,
+	.related-services ul li a,
+	.servives_missout_description p{
+		font-size: 20px !important;
+	}
+	.services_inner_heading h1,
+	.call_slider_image img,
+	.course_faq_heading{
+		width: 100%;
+		max-width: -webkit-fill-available;
+	}
 	.form_fields_wrapper,
 	.form_button{
 		width: 90%;
@@ -6716,7 +6767,7 @@ h6.user_name_c a {
 	}
 
 	.portfolio_page_top_image img {
-		height: 320px !important;
+		height: 320px;
 	}
 
 	.portfolio_inner_intenary_related_posts {
@@ -7552,6 +7603,12 @@ h6.user_name_c a {
 }
 
 @media(max-width:468px) {
+	.portfolio_page_top_image img{
+		height: 200px;
+	}
+	.portfolio_inner_top_right_section{
+		display: none;
+	}
 	.trans_redirecttion{
 		width: 100%;
 	}
