@@ -9,7 +9,7 @@ export default function  ServiceChild({services}) {
 
     return (
         <>
-            {reversedServices.map((item, index) => (
+            {reversedServices && reversedServices.map((item, index) => (
                 <div className="trans_number" key={index}>
                     <Link href={`services/${item.slug}`}>
                         <ul className='transformation_wrapper'  >

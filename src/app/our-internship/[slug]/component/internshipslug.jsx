@@ -11,7 +11,7 @@ export default function Internshipslug({ data, allInternship }) {
       <div className="page_top">
 
         {
-          data.map((internship, index) => {
+         data && data.map((internship, index) => {
             const relatedInterms = allInternship.filter(relInternship => relInternship.slug !== internship.slug);
             return (
               <div key={index} className="blog-header-section">
@@ -33,7 +33,7 @@ export default function Internshipslug({ data, allInternship }) {
                   <div className="related_product_wrapper">
                     <h2>Related interms</h2>
                     <div className="related_product_inner">
-                      {relatedInterms.map((relinterms, index) => {
+                      {relatedInterms && relatedInterms.map((relinterms, index) => {
                         return <div key={index} className="related_product">
 
                           <Link href={`/our-internship/${relinterms.slug}`}>{relinterms.acf.internship_tittle}</Link>

@@ -6,7 +6,7 @@ function TeamComponent({ result }) {
     return (
         <>
 
-            {result.map((ele) => {
+            {result && result.map((ele) => {
                 return <div className="team_member_section" key={ele.id}>
                     <div className="memebr_left_section">
 

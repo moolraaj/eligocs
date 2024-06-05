@@ -57,7 +57,7 @@ function PortfolioPage() {
   return (
     <>
       <div className="page_top">
-        {data.map((ele) => (
+        {data && data.map((ele) => (
           <div className="portfolio_page_wrapper" key={ele.id}>
             <div className="portfolio_page_top_section">
               <div className="portfolio_heading_image_wrapper">
@@ -77,7 +77,7 @@ function PortfolioPage() {
             </div>
               <h1>Our Projects</h1>
               <div className="portfolio_showcase_wrapper">
-                {portfolioReversed.map((e) => (
+                {portfolioReversed && portfolioReversed.map((e) => (
                   <Link href={`/portfolio/${e.slug}`} key={e.id}>
                     <div className="protfolio_items">
                       <div className="port_showcase_image">

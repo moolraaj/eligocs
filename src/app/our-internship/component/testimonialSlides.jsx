@@ -37,7 +37,7 @@ function TestimonialSlides({ slides }) {
     return (
         <div className="intern_testimonial_slider" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <div className="intern_slider">
-                {slider_images.map((image, index) => (
+                {slider_images && slider_images.map((image, index) => (
                     <div
                         key={index}
                         className={`intern_slide ${index === currentSlide ? 'active' : ''}`}

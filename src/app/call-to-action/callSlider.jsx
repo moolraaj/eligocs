@@ -25,7 +25,7 @@ const CallSlider = ({ slider }) => {
 
   return (
     <div className="journy-image-container">
-      {slider.map((image, index) => (
+      {slider && slider.map((image, index) => (
         <div
           className="call_slider_image"
           key={index}

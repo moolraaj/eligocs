@@ -58,7 +58,7 @@ export default function Portfolioslug({ slug }) {
 
     return (
         <>
-            {data.map((ele) => {
+            {data && data.map((ele) => {
                 const Portfolio = relatedReversedPortfolio.filter(p => p.slug !== ele.slug);
                 return (
                     <div className="portfolio_inner_template" key={ele.id}>
@@ -94,7 +94,7 @@ export default function Portfolioslug({ slug }) {
                                 <div className="portfolio_inner_related_posts">
                                     <div className="portfolio_related_posts_inner">
                                         <h3>Related Posts</h3>
-                                        {Portfolio.map((e, index) => (
+                                        {Portfolio && Portfolio.map((e, index) => (
                                             <Link key={index} href={`/portfolio/${e.slug}`}>{e.acf.portfolio_title}</Link>
                                         ))}
                                     </div>

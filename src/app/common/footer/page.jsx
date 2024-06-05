@@ -68,7 +68,7 @@ function Footer({ response }) {
                 <h1 className='footer-top-headings'>Our Services</h1>
                 <div className="footer_ul_wrapper">
                   <menu className="footer_ul">
-                  {allServicesLink.map((ele) => (
+                  {allServicesLink && allServicesLink.map((ele) => (
                     <li key={ele.id}>
                       <Link href={`/services/${ele.slug}`}><p dangerouslySetInnerHTML={{ __html: ele.acf.services_title }}></p></Link>
                     </li>
@@ -80,7 +80,7 @@ function Footer({ response }) {
                 <h1 className='footer-top-headings'>Our Products</h1>
                 <div className="footer_ul_wrapper">
                 <menu className="footer_ul">
-                  {allProductsLink.map((ele) => (
+                  {allProductsLink && allProductsLink.map((ele) => (
                     <li key={ele.id}>
                       <Link href={`/our-products/${ele.slug}`}><p dangerouslySetInnerHTML={{ __html: ele.acf.product_name }}></p></Link>
                     </li>
@@ -105,7 +105,7 @@ function Footer({ response }) {
                 
                 <div className="footer_social_links">
                   {
-                    socialLinks.map((ele, index) => {
+                   socialLinks && socialLinks.map((ele, index) => {
                       return <div className="footer_social_wrapper" key={index}>
                         <Link href={ele.iconUrl}>
                           <img src={ele.imageUrl || emptyImage.src} alt={ele.iconName} />

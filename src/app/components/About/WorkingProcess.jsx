@@ -53,7 +53,7 @@ const WorkingProcess = ({ result }) => {
   return (
     <div className="working-process-container">
       
-      {workingProcess.map((step, index) => (
+      {workingProcess && workingProcess.map((step, index) => (
         <div
           key={index}
           className={`process-step ${index === currentStep ? "active" : ""}`}

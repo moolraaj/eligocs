@@ -39,7 +39,7 @@ export default function BlogSlug({ slug }) {
         <>
             <div className="blog_post_page_outer page_top">
                 <div className="blog_post_inner">
-                    {data.map((blogPost, index) => (
+                    {data && data.map((blogPost, index) => (
                         <div key={index} className="blog_post">
                             <div className="blog_post_header">
                                 <h1>{blogPost.acf.blog_post_tittle}</h1>

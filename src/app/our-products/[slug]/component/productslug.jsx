@@ -33,7 +33,7 @@ export default function ProductSlug({ slug }) {
         <>
             <div className="our_product_inner_page">
                 <div className="page_top">
-                    {data.map((product, index) => {
+                    {data && data.map((product, index) => {
                         const relatedProducts = allProducts.filter(relProduct => relProduct.slug !== product.slug);
                         return (
                             <div key={index} className="blog-header-section">
@@ -60,7 +60,7 @@ export default function ProductSlug({ slug }) {
                                     <div className="related_product_wrapper">
                                         <h2>Related Products</h2>
                                         <div className="related_product_inner">
-                                            {relatedProducts.map((relProduct, index) => (
+                                            {relatedProducts && relatedProducts.map((relProduct, index) => (
                                                 <div key={index} className="related_product">
                                                     <Link href={`/our-products/${relProduct.slug}`}>{relProduct.acf.product_name}</Link>
                                                 </div>

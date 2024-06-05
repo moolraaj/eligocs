@@ -27,7 +27,7 @@ function CallToAction() {
     return (
         <>
             {
-                data.map((ele) => {
+             data &&   data.map((ele) => {
                     return   <div className="call_wrapper" key={ele.id}>
                     <div className="call_left_section">
                         <h1>{ele.acf.action_heading}</h1>

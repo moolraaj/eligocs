@@ -306,7 +306,7 @@ function NavbarCompo({ data }) {
                         </div>
                         <div className='navbar_social_media'>
                           {
-                            socialLinks.map((ele, index) => {
+                           socialLinks && socialLinks.map((ele, index) => {
                               return <div key={index} className='header_media_icons'>
                                 <Link href={ele.iconUrl} target='_blank'><img src={ele.imageUrl || emptyImage.src} alt='spcial-icons' /></Link>
                               </div>

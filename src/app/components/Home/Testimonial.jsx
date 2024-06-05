@@ -85,7 +85,7 @@ function Testimonial() {
 
     return (
         <div className="testimonial_slider">
-            {testimonials.map((ele, index) => (
+            {testimonials && testimonials.map((ele, index) => (
                 <div
                     key={index}
                     className="testimonial_wrap"
@@ -106,7 +106,7 @@ function Testimonial() {
                 </div>
             ))}
             <div className="dots">
-                {testimonials.map((_, index) => (
+                {testimonials && testimonials.map((_, index) => (
                     <span
                         key={index}
                         className={index === currentSlide ? 'dot active' : 'dot'}

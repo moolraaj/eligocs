@@ -90,7 +90,7 @@ function BlogPage() {
     <>
       <div className="blog-page-outer page_top">
         <div className="blog-page-inner-wrapper">
-          {blogPageData.map((data, index) => (
+          {blogPageData && blogPageData.map((data, index) => (
             <div key={index} className="blog-header-section">
               <div className="blog-header-image-heading">
                 <div className="blog_img_heading_wrapper">

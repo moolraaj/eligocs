@@ -14,7 +14,7 @@ const ServicesFaq = ({ faqs, outerHeading }) => {
                 <h1>{outerHeading}</h1>
             </div>
             <div className="services_faq_right_section">
-                {faqs.map((faq, index) => (
+                {faqs && faqs.map((faq, index) => (
                     <div className="services_faq_outer" key={index}>
                         <div className="servies_question" >
                             <div className="services_faq_heading"><h1>{faq.faq__tittle}</h1></div>

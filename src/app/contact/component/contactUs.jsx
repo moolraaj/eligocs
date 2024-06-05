@@ -24,7 +24,7 @@ function ContactUs() {
 
     return (
         <>
-            {data.map((ele) => {
+            {data && data.map((ele) => {
                 return <div className="contact_wrapper" key={ele.id}>
 
 

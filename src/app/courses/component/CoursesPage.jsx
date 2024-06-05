@@ -103,7 +103,7 @@ function CoursesPage() {
     <>
       <div className="courses-page-outer page_top">
         <div className="courses-page-inner">
-          {coursesPageData.map((coursesData, index) => (
+          {coursesPageData && coursesPageData.map((coursesData, index) => (
             <div key={index} className="course-page-top-section">
               <h1>{coursesData.acf.courses_page_heading_first}</h1>
               <h2>{coursesData.acf.courses_page_heading_second}</h2>

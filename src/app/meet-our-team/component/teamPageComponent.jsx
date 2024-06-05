@@ -40,7 +40,7 @@ export default  function TeamPageComponent() {
   return (
     <>
 
-      {data.map((ele) => {
+      {data && data.map((ele) => {
 
         return <div className="team_outer_wrapper page_top" key={ele.id}>
 

@@ -767,7 +767,7 @@ form#jobform textarea {
 }
 
 .portfolio_image img {
-	width: 453px;
+	max-width: 550px;
 	height: 585px;
 }
 
@@ -1844,15 +1844,27 @@ h1.type_text_wrapper span {
 	padding-top: 50px
 }
 
+// .team_member_section:hover .team-member_image img {
+// 	display: block;
+// 	position: relative;
+// 	max-width: 300px;
+// 	top: -13px;
+// 	z-index: 999999;
+// 	width: 280px;
+// 	height: 300px;
+// 	object-fit: cover
+// }
 .team_member_section:hover .team-member_image img {
-	display: block;
-	position: relative;
-	max-width: 300px;
-	top: -13px;
-	z-index: 999999;
-	width: 280px;
-	height: 300px;
-	object-fit: cover
+    display: block;
+    position: relative;
+    max-width: 300px;
+    top: -13px;
+    z-index: 999999;
+    width: 280px;
+    height: 300px;
+    object-fit: cover;
+    object-position: top -65px left 0;
+    border-radius: 50%;
 }
 
 .our_team_description p p {

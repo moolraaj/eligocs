@@ -31,7 +31,7 @@ function ServicesInnerSlug({ slug }) {
    return (
       <>
          <div className="page_top">
-            {data.map((ele) => {
+            {data && data.map((ele) => {
                const relatedServices = services.filter(relServices => relServices.slug !== ele.slug);
                return <div className="services_inner_template_wrapper" key={ele.id}>
 
@@ -67,7 +67,7 @@ function ServicesInnerSlug({ slug }) {
                         <h1>Related Services</h1>
                         <div className="related-services">
                            {
-                              relatedServices.map((items) => {
+                             relatedServices && relatedServices.map((items) => {
                                  return <div key={items.id}>
 
                                     <ul>
@@ -120,7 +120,11 @@ function ServicesInnerSlug({ slug }) {
                   </div>
 
                   <div className="services_inner_packages_serction">
-                     <h2 id="packgae_for">{ele.acf.package_heading || ""}</h2>
+                    
+                        {Array.isArray(ele.acf?.services_inner_packages_section) ? (
+                ele.acf.services_inner_packages_section.map((packages, index) => (
+                  <>
+                   <h2 id="packgae_for">{ele.acf.package_heading || ""}</h2>
                      <h3>Select Plan</h3>
                      <div class="package-divider-separator">
                         <span></span>
@@ -131,9 +135,7 @@ function ServicesInnerSlug({ slug }) {
                            </div>
                            <span></span>
                            </div>
-                        {Array.isArray(ele.acf?.services_inner_packages_section) ? (
-                ele.acf.services_inner_packages_section.map((packages, index) => (
-                    <div className="services_package" key={index}>
+                           <div className="services_package" key={index}>
                         {Object.entries(packages).map(([key, pkg], idx) => {
                            const firstWord = key.split('_')[0];
                            return(
@@ -154,6 +156,8 @@ function ServicesInnerSlug({ slug }) {
                            )
                         })}
                     </div>
+                  </>
+                    
                 ))
             ) : (
                 ""

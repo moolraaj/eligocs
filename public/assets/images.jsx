@@ -12,7 +12,7 @@ import ECS from '../assets/loader/ECS.gif'
 export {
     emptyImage,
     loader,
-    closeMenuIcon,
+    closeMenuIcon,        
     FormLogo,
     formClose,
     arrow,

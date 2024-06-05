@@ -30,7 +30,7 @@ const AboutUs = () => {
   return (
     <>
     
-      {result.map((ele, index) => (
+      {result && result.map((ele, index) => (
         <div id="about_us_cust" className="aboutpage-outer" key={index}>
           <div className="pages-inner about-inner">
            <div className="parallax-container">

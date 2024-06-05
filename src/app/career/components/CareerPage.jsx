@@ -61,7 +61,7 @@ function CareerPage({data}) {
    <div className="page_top">
     <div id="career_section" className="career_page_outer">
         <div className="career_page_inner">
-            {data.map((ele,index)=>{
+            {data && data.map((ele,index)=>{
                 return  <div key={index} className="product-page-top-section">
                 <div className="product-top-image-section">
                   <div className="product_heading_left"><h3>{ele.acf.career_page_tittle}</h3></div>

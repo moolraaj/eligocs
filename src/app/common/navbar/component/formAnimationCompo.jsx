@@ -21,7 +21,7 @@ function RerenderCompo() {
 
   return (
     <>
-      {spanContents.map((content, index) => (
+      {spanContents && spanContents.map((content, index) => (
         <span key={index} className={currentIndex === index ? "show" : "hide"}>
           {content}
         </span>

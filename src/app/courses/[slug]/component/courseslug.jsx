@@ -42,7 +42,7 @@ export default function CourseSlug({ slug }) {
     <>
       <div className="single_course_outer page_top">
         <div className="single_course_inner">
-          {data.map((singleCourse, index) => {
+          {data && data.map((singleCourse, index) => {
             return (
               <div className="single_course" key={index}>
                 <div className="course_post_wrapper">
@@ -113,7 +113,7 @@ export default function CourseSlug({ slug }) {
           <div className="inner_call">
             <h1 className='course_faq_heading'>Why Choose Our <span>Back-End Development</span> Course</h1>
             {
-              courseFaq.map((ele) => {
+              courseFaq && courseFaq.map((ele) => {
                 return <div key={ele.id} className="course_page_faq_inner">
                   {
                     ele.acf.couerse_page_faq.map((cFaq, index) => {

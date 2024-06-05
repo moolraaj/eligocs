@@ -55,7 +55,7 @@ function OurProductPage() {
 
     return (
       <div className="pagination-buttons">
-        {pageNumbers.map((pageNumber) => (
+        {pageNumbers && pageNumbers.map((pageNumber) => (
           <button
             key={pageNumber}
             onClick={() => handleClick(pageNumber)}
@@ -72,7 +72,7 @@ function OurProductPage() {
     <>
       <div className="Our-product-page-outer page_top">
         <div className="Our-product-page-inner">
-          {ProductPageApiData.map((ele, index) => (
+          {ProductPageApiData && ProductPageApiData.map((ele, index) => (
             <div key={index} className="product-page-top-section">
               <div className="product-top-image-section">
                 <div className="product_heading_left"><h3>{ele.acf.product_page_heading}</h3></div>
