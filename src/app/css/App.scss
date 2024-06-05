@@ -1857,14 +1857,14 @@ h1.type_text_wrapper span {
 .team_member_section:hover .team-member_image img {
     display: block;
     position: relative;
-    max-width: 300px;
-    top: -13px;
+    max-width: 250px;
+    top: -40px;
     z-index: 999999;
-    width: 280px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     object-fit: cover;
-    object-position: top -65px left 0;
     border-radius: 50%;
+	object-position: center;
 }
 
 .our_team_description p p {

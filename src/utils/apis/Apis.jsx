@@ -160,7 +160,7 @@ export const allExportedApi = () => {
 
   // fetch meet our team api
   const fetchMeetOurTeam = async () => {
-    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/meet_our_team?fields=acf&acf_format=standard`);
+    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/meet_our_team?per_page=100&fields=acf&acf_format=standard`);
     let result = await response.json();
     return result;
   };
