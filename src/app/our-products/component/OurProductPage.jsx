@@ -31,9 +31,10 @@ function OurProductPage() {
   const totalPages = Math.ceil(products.length / PRODUCTS_PAGE_SIZE);
 
   const renderProducts = () => {
+    const reversedProducts = [...products].reverse();
     const startIndex = (currentPage - 1) * PRODUCTS_PAGE_SIZE;
     const endIndex = startIndex + PRODUCTS_PAGE_SIZE;
-    return products.slice(startIndex, endIndex).map((product, index) => (
+    return reversedProducts.slice(startIndex, endIndex).map((product, index) => (
       <ul key={index} className={`product${index % 2 === 0 ? " even" : " odd"} our_product`}>
         <li>
           <span className="wrap_nmae_btn">
@@ -106,3 +107,4 @@ function OurProductPage() {
 }
 
 export default OurProductPage;
+
