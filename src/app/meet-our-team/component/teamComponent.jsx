@@ -1,7 +1,22 @@
-import React from 'react';
+'use client'
+import React, { useEffect, useState } from 'react';
 import { emptyImage } from '../../../../public/assets/images';
+import { allExportedApi } from '@/utils/apis/Apis';
 
-function TeamComponent({ result }) {
+function TeamComponent() {
+    let api=allExportedApi()
+    const[result,setResult]=useState([])
+
+    const loadMeetTeamPageLists=async()=>{
+        let response = await api.fetchMeetOurTeam()
+        setResult(response)
+       }
+
+
+       useEffect(()=>{
+        loadMeetTeamPageLists()
+      },[])
+        
      
     return (
         <>

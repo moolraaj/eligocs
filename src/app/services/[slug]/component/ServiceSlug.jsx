@@ -1,5 +1,3 @@
-
-
 'use client'
 import CallToAction from "@/app/call-to-action/callToAction";
 import { allExportedApi } from "@/utils/apis/Apis";

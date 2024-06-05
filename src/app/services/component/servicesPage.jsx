@@ -134,7 +134,7 @@ export default function ServicesPage() {
 
                         <div className="testimonial_service content">
                             <div className="services_page_testimonials">
-                            {/* <Testimonials /> */}
+                           
                             <TestimonialSection ele={ele}/>
                             </div>
                         </div>

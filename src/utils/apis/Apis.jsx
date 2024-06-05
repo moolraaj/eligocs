@@ -131,7 +131,7 @@ export const allExportedApi = () => {
 
   // fetch all services template api
   const fetchAllServices = async () => {
-    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/services?fields=acf&acf_format=standard`);
+    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/services?per_page=100&fields=acf&acf_format=standard`);
     let data = await response.json();
     return data;
   };
@@ -145,8 +145,14 @@ export const allExportedApi = () => {
 
   // fetch all portfolio api
   const fetchAllportFolio = async () => {
+<<<<<<< Updated upstream
     let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/portfolio?fields=acf&acf_format=standard`);
     let data = await response.json();
+=======
+    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/portfolio?per_page=100&fields=acf&acf_format=standard`);
+    let data = await response.json();
+
+>>>>>>> Stashed changes
     return data
   };
 
@@ -160,7 +166,7 @@ export const allExportedApi = () => {
 
   // fetch meet our team api
   const fetchMeetOurTeam = async () => {
-    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/meet_our_team?fields=acf&acf_format=standard`);
+    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/meet_our_team?fields=acf&acf_format=standard&per_page=100`);
     let result = await response.json();
     return result;
   };
@@ -199,7 +205,11 @@ export const allExportedApi = () => {
   const fetchSigleInternship = async (slug) => {
     let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/internship?slug=${slug}&fields=acf&acf_format=standard`);
     let response = await data.json();
+<<<<<<< Updated upstream
     return response; ``
+=======
+    return response; 
+>>>>>>> Stashed changes
   }
 
   // fetch Single product api
@@ -232,6 +242,17 @@ export const allExportedApi = () => {
     let response = await data.json();
     return response;
   };
+
+
+  // fetch all services categories
+
+  const loadAllservicesCategories = async () => {
+    let data = await fetch(`https://api.eligo.cloud/wp-json/wp/v2/services_category?per_page=100&parent=0&fields=acf&acf_format=standard`);
+    let response = await data.json();
+    return response;
+  }
+
+   
 
 
 
@@ -308,6 +329,7 @@ export const allExportedApi = () => {
     fetchSigleProducts,
     fetchSingleCourse,
     fetchHeaderFooter,
+    loadAllservicesCategories,
     fetchJobFormApi,
     fetchContactFormApi,
     fetchApplyForJobApi,
