@@ -11,7 +11,7 @@ import { emptyImage } from "../../../../public/assets/images";
 export default  function TeamPageComponent() {
 
   const[data,setData]=useState([])
-  const[result,setResult]=useState([])
+
   
 
   let api = allExportedApi() 
@@ -23,17 +23,10 @@ export default  function TeamPageComponent() {
      let response = await api.meetOurTeamPage()
      setData(response)
    }
-   const loadMeetTeamPageLists=async()=>{
-    let response = await api.fetchMeetOurTeam()
-    setResult(response)
-   }
-   
- 
-    
-
+  
+  
     useEffect(()=>{
       loadMeetTeamPage()
-      loadMeetTeamPageLists()
     },[])
  
 
@@ -73,7 +66,7 @@ export default  function TeamPageComponent() {
             </div>
 
             <div className="our_memeber_wrapper">
-              <TeamComponent result={result} />
+              <TeamComponent />
             </div>
           </div>
 
