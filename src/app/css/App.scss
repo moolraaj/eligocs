@@ -1433,6 +1433,28 @@ form#applyforjob textarea {
 	margin-bottom: 20px;
 	line-height: 40px;
 }
+.products_inner_description ul{
+	li{
+		margin-bottom: 20px;
+		position: relative;
+		padding-left: 0;
+	}
+
+}
+.products_inner_description li::before{
+	content: "";
+	background-image: url(../../../public/assets/pageAssets/checked.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	left: -30px;
+	}
 
 .related_product_wrapper h2 {
 	font-size: 2.375em
@@ -5934,6 +5956,9 @@ h6.user_name_c a {
 }
 
 @media(max-width:768px) {
+	.products_inner_description ul{
+		padding-left: 30px;
+	}
 	.portfolio_page_top_heading h1{
 		display: none;
 	}
