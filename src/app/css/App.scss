@@ -1415,6 +1415,19 @@ form#applyforjob textarea {
 	background: $primaryyellow
 }
 
+.our_product_inner_page{
+	.blog_img_heading_wrapper {
+		img{
+			object-fit: fill;
+		}
+		 span{
+			bottom: -64px;
+		}
+	}
+	.course_intro_join_section{
+		margin-top: 90px;
+	}
+}
 .products_inner_description p p {
 	font-size: 1.375em;
 	margin-bottom: 20px;
@@ -1742,9 +1755,7 @@ h1 {
 	margin-left: 0
 }
 
-.team_member_lists {
-	padding-left: 10px
-}
+
 
 .member_top_heading h1 {
 	font-size: 6em;
@@ -1758,9 +1769,16 @@ h1 {
 	display: none
 }
 
+
 .team_member_section {
 	@include grid-property(grid, 1fr 60%, unset, 12%, 0px);
+	padding: 20px 20px 20px 40px;
+	border-radius: 4px;
+	background: $white;
+	box-shadow: 0px 15px 50px 1px rgba(0, 0, 0, 0.074);
+	border: 1px solid #80808045;
 }
+
 
 .member_informations_section {
 	display: flex;
@@ -1770,13 +1788,12 @@ h1 {
 	column-gap: 0;
 	row-gap: 0;
 	flex-wrap: wrap;
-	border-bottom: 1px solid $primaryblack;
-	height: 156px;
+	height: 190px;
 	cursor: pointer;
 	display: grid;
 	align-items: center;
 	justify-content: space-between;
-	grid-template-columns: 1fr 1fr 1fr
+	grid-template-columns: 1fr;
 }
 
 .team_member_section img {
@@ -1796,16 +1813,15 @@ h1 {
 .member_designation p,
 .member_name h4 {
 	text-transform: capitalize;
-	font-size: 1.75em;
-	font-weight: 400
+	font-size: 1.5em;
+	font-weight: 400;
+	margin: 0;
 }
 
-.memebr_left_section {
-	opacity: 0
-}
+
 
 .team-member_image {
-	position: absolute;
+	position: relative;
 	z-index: 9;
 	width: min-content
 }
@@ -1827,10 +1843,16 @@ h1 {
 	bottom: -5%;
 	left: 13%
 }
-.category_section h2 {
+.team_component_outer h2 {
     margin: 70px 0px 50px 0px;
     font-size: 40px;
     text-transform: capitalize;
+}
+.category_section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+	gap: 30px;
+	cursor: pointer;
 }
 .team_banner_image img {
     width: 100%;
@@ -1850,26 +1872,28 @@ h1.type_text_wrapper span {
 	width: fit-content;
 }
 
-.team_member_section:hover .memebr_left_section {
-	opacity: 1
-}
+
 
 .our_memeber_wrapper {
 	padding-bottom: 250px;
-	padding-top: 50px
+	padding-top: 50px;
+	select#categoryFilter {
+		padding: 7px;
+	}
 }
 
-.team_member_section:hover .team-member_image img {
+.team-member_image img {
+	cursor: zoom-in;
     display: block;
     position: relative;
-    max-width: 250px;
-    top: -40px;
+    max-width: 130px;
+    top: 20px;
     z-index: 999999;
-    width: 250px;
-    height: 250px;
+    width: 130px;
+    height: 130px;
     object-fit: cover;
     border-radius: 50%;
-	object-position: center;
+    object-position: center;
 }
 
 .our_team_description p p {
@@ -2961,8 +2985,18 @@ menu.footer_ul li a {
 	justify-content: space-between;
 	padding-top: 100px;
 	padding-bottom: 80px
+	
 }
+.services_left_sec {
+	h2, h3, h4, h5, h6 {
+		font-size: 40px;
+	}
+	p,ul,li{
+		font-size: 25px !important;
+		padding-left: 0;
 
+	}
+}
 .services_right_sec {
 	padding: 20px 47px;
 	background: $primaryyellow;
@@ -3164,7 +3198,7 @@ span.vison_c {
 .testimonial_asking p {
 	font-size: 1.25em;
 	text-transform: capitalize;
-	margin: 0 0 50px;
+	margin: 0 0 10px;
 	line-height: 36px
 }
 
@@ -4654,7 +4688,7 @@ span.error_fields {
 }
 
 .multistep_popup_form .cf7_form_outer::-webkit-scrollbar {
-	width: 8px;
+	width: 5px;
 	background-color: $white
 }
 
@@ -5269,7 +5303,15 @@ h6.user_name_c a {
 }
 
 @media(min-width:1025px)and (max-width:1440px) {
-
+	.team_member_section{
+		grid-template-columns: 1fr 1fr;
+		column-gap: 0;
+		padding: 10px;
+		text-wrap: wrap;
+	}
+	.category_section{
+		grid-template-columns: 1fr 1fr;
+	}
 	.step-image-container {
 		left: -30px;
 		bottom: -90px;
@@ -5318,7 +5360,6 @@ h6.user_name_c a {
 		padding-bottom: 20px;
 	}
 
-	.services_inner_description p,
 	.related-services ul li a,
 	.servives_missout_description p {
 		font-size: 20px !important;
@@ -5472,6 +5513,7 @@ h6.user_name_c a {
 		max-width: 70%;
 		margin-bottom: 60px
 	}
+	
 
 	.product-top-image-section .product_image_right span {
 		max-width: 750px;
@@ -5702,6 +5744,16 @@ h6.user_name_c a {
 }
 
 @media(min-width:769px)and (max-width:1024px) {
+	
+	.team_member_section{
+		grid-template-columns: 1fr 1fr;
+		column-gap: 0;
+		padding: 10px;
+		text-wrap: wrap;
+	}
+	.category_section{
+		grid-template-columns: 1fr 1fr;
+	}
 	.portfolio_inner_top_right_section {
 		margin-top: 40px;
 	}
@@ -5843,6 +5895,42 @@ h6.user_name_c a {
 }
 
 @media(max-width:768px) {
+	.portfolio_page_top_heading h1{
+		display: none;
+	}
+	.services_left_sec {
+		 h2, h3, h4, h5, h6 {
+			font-size: 20px;
+		}
+		p,ul,li{
+			font-size: 16px !important;
+		}
+	}
+	.prev, .next{
+		top: 65% !important;
+	}
+	.our_product_inner_page .course_intro_join_section {
+		margin-top: 0;
+	}
+	.our_product_inner_page{
+		.blog_img_heading_wrapper {
+			img{
+				object-fit: inherit;
+			}
+			 span{
+				bottom: -25px;
+			}
+		}
+	}
+	.team-member_image img {
+		display: block;
+		max-width: 180px;
+		width: 100px;
+		height: 100px;
+		object-fit: cover;
+		border-radius: 0%; 
+		object-position: center;
+	}
 	.servives_missout_description img {
 		width: 100%;
 		height: 200px;
@@ -5990,7 +6078,7 @@ h6.user_name_c a {
 	}
 
 	.related_product_wrapper {
-		padding: 20px
+		padding: 15px
 	}
 
 	.related_product_wrapper a {
@@ -6443,7 +6531,7 @@ h6.user_name_c a {
 	.testi_image img {
 		width: 60px;
 		height: 60px;
-		object-fit: contain
+		object-fit: cover;
 	}
 
 	.arrow_slider {
@@ -6686,7 +6774,6 @@ h6.user_name_c a {
 	.port_showcase_image img {
 		width: 100%;
 		height: 500px;
-		object-fit: cover
 	}
 
 	.nav-left {
@@ -6722,20 +6809,15 @@ h6.user_name_c a {
 		padding-top: 20px
 	}
 
-	.team_member_section:hover .memebr_left_section {
-		opacity: 0
-	}
 
 	.team_member_section {
-		grid-template-columns: 1fr
+		grid-template-columns: 1fr;
+		padding: 20px;
 	}
 
 	.our_memeber_wrapper {
-		padding-bottom: 50px
-	}
+		padding-bottom: 50px;
 
-	.members_image_mobile {
-		display: block
 	}
 
 	.courses-posts-outer {
@@ -7647,9 +7729,11 @@ h6.user_name_c a {
 	}
 
 	.member_informations_section {
-		grid-template-columns: 1fr 1fr;
 		height: auto;
-		padding: 10px 0
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+		margin-top: 35px;
 	}
 
 	.our_memeber_wrapper {
@@ -7684,7 +7768,7 @@ h6.user_name_c a {
 
 	.divider-yellow {
 		height: 40px;
-		left: 0;
+		left: 10%;
 		bottom: 0px
 	}
 
@@ -7707,7 +7791,17 @@ h6.user_name_c a {
 }
 
 @media(min-width:469px)and (max-width:768px) {
-
+	.category_section{
+		grid-template-columns: 1fr 1fr;
+		gap: 20px;
+	}
+	.popup_content {
+		padding: 15px !important;
+		img{
+			width: 500px !important;
+			height: 500px !important;
+		}
+	}
 	.testimonial_slider {
 		height: 20vw;
 	}
@@ -7739,8 +7833,10 @@ h6.user_name_c a {
 }
 
 @media only screen and (max-width:600px) {
+	.slides{
+		display: block !important;
+	}
 	.footer_pages {
-
 		.privacy_policies_data p,
 		ul,
 		li,
@@ -7810,9 +7906,20 @@ h6.user_name_c a {
 }
 
 @media(max-width:468px) {
-	.category_section h2 {
-		margin: 10px 0px 20px 0px;;
-		font-size: 30px;
+	.category_section{
+		grid-template-columns: 1fr;
+	}
+	.popup_content {
+		padding: 10px !important;
+		margin: 0px 10px !important;
+		img{
+			width: 400px !important;
+			height: 400px !important;
+		}
+	}
+	.team_component_outer h2 {
+		margin: 20px 0px;;
+		font-size: 20px;
 	}
 	.services_inner_packages_serction {
 		margin-top: 40px;
@@ -8403,11 +8510,20 @@ h6.user_name_c a {
 }
 
 @media (max-width: 1024px) {
+
 	.slide {
 		flex: 0 0 calc((100% / 2) - 20px);
 	}
 }
+@media (min-width: 1000px)and (max-width: 1024px) {
 
+}
+
+
+
+@media (max-width: 999px) {
+
+}
 @media (max-width: 600px) {
 
 	.slide {
@@ -8419,7 +8535,7 @@ h6.user_name_c a {
 .prev,
 .next {
 	position: absolute;
-	top: 50%;
+	top: 60%;
 	transform: translateY(-50%);
 	background-color: rgba(255, 255, 255, 0.5);
 	border: none;
