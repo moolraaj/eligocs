@@ -261,6 +261,43 @@ function TeamComponent() {
                     </div>
                 </div>
             )}
+            <style jsx>{`
+            .popup_overlay {
+                position: fixed;
+                top: 35px;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+            }
+            .popup_content {
+                position: relative;
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+            }
+            .popup_content img {
+                max-width: 100%;
+                max-height: 100%;
+                width: 600px;
+                height: 600px;
+                object-fit: cover;
+                cursor: zoom-out;
+            }
+            .filter_section {
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+            .filter_section label {
+                margin-right: 10px;
+            }
+        `}</style>
         </>
     )
 }
