@@ -1421,12 +1421,20 @@ form#applyforjob textarea {
 			object-fit: fill;
 		}
 		 span{
-			bottom: -64px;
+			bottom: -80px;
 		}
 	}
 	.course_intro_join_section{
 		margin-top: 90px;
 	}
+}
+.our_product_inner_page{
+	.blog_img_heading_wrapper{
+		img{
+			height: 480px;
+		}
+	}
+
 }
 .products_inner_description p p {
 	font-size: 1.375em;
@@ -1434,6 +1442,7 @@ form#applyforjob textarea {
 	line-height: 40px;
 }
 .products_inner_description ul{
+	font-size: 22px;
 	li{
 		margin-bottom: 20px;
 		position: relative;
@@ -1652,6 +1661,9 @@ form#applyforjob textarea {
 .our_products_wrapper .our_product span.wrap_nmae_btn {
 	@include grid-property(grid, 1fr 1fr, center, 0px, 0px);
 	padding: 0 20px
+}
+.coming-soon-btn{
+	pointer-events: none !important;
 }
 
 .our_products_wrapper .our_product span.wrap_nmae_btn span:last-child {
@@ -4070,6 +4082,7 @@ p:empty {
 	@include grid-property(grid, 1fr 1fr, center, 40px, 40px);
 	justify-content: unset;
 	flex-direction: unset;
+	width: 100%;
 }
 
 .blog_img_heading_wrapper {
@@ -4080,14 +4093,16 @@ p:empty {
 	align-items: flex-end;
 	column-gap: 0;
 	row-gap: 0;
-	flex-wrap: wrap
+	flex-wrap: wrap;
+	max-width: max-content;
+	width: 100%;
 }
 
 .blog_img_heading_wrapper img {
 	width: 100%;
 	height: 680px;
 	position: relative;
-	max-width: 669px;
+	max-width: 800px;
 	object-fit: cover
 }
 
@@ -4106,7 +4121,7 @@ p:empty {
 	height: 103px;
 	background: $primaryyellow;
 	position: absolute;
-	left: 12%;
+	left: 20%;
 	bottom: -20px
 }
 
@@ -5956,6 +5971,9 @@ h6.user_name_c a {
 }
 
 @media(max-width:768px) {
+	.our_product_inner_page .blog_img_heading_wrapper img{
+		height: 300px;
+	}
 	.products_inner_description ul{
 		padding-left: 30px;
 	}
@@ -5978,6 +5996,7 @@ h6.user_name_c a {
 	}
 	.our_product_inner_page{
 		.blog_img_heading_wrapper {
+			max-width: 100% !important;
 			img{
 				object-fit: inherit;
 			}
@@ -6159,9 +6178,13 @@ h6.user_name_c a {
 		height: 40px
 	}
 
-	.blog_img_heading_wrapper img {
-		height: 200px;
+	.blog_img_heading_wrapper {
+		max-width: 100% !important;
+		img {
+			height: 300px;
+		}
 	}
+	
 
 	.contact_usform_inner_section {
 		display: block;
@@ -7970,6 +7993,10 @@ h6.user_name_c a {
 }
 
 @media(max-width:468px) {
+	.our_product_inner_page .blog_img_heading_wrapper img,
+	.blog_img_heading_wrapper img{
+		height: 220px;
+	}
 	.category_section{
 		grid-template-columns: 1fr;
 	}
@@ -8337,9 +8364,6 @@ h6.user_name_c a {
 		font-size: 1.588em
 	}
 
-	.blog_img_heading_wrapper span {
-		left: 20%
-	}
 
 	.blog_img_heading_wrapper {
 		justify-content: end
@@ -8574,7 +8598,9 @@ h6.user_name_c a {
 }
 
 @media (max-width: 1024px) {
-
+	.products_inner_description ul{
+	font-size: 16px;
+	}
 	.slide {
 		flex: 0 0 calc((100% / 2) - 20px);
 	}
