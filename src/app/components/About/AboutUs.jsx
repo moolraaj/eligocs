@@ -141,7 +141,7 @@ const AboutUs = () => {
               </div>
             </div>
             </div>
-            <div className="parallax-container" style={{background: "#191C1B"}}>
+            <div className="parallax-container about_call_to_action" style={{background: "#191C1B"}}>
             <div className="container-4 about_vs">
               <div className="content call_action_wrapper">
                 <div className="about_call_action">

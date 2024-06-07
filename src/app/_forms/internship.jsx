@@ -44,15 +44,15 @@ function Internship() {
 
     const onReCAPTCHAChange = (token) => {
         setRecaptchaToken(token);
-        
-      };
+
+    };
 
 
     const submitUserData = async (e) => {
         e.preventDefault();
         let formData = new FormData();
 
-        formData.append('_wpcf7_unit_tag',1376);
+        formData.append('_wpcf7_unit_tag', 1376);
         formData.append('studentname', user.studentName);
         formData.append('mobilenumber', user.mobileNumber);
         formData.append('emailaddress', user.emailAddress);
@@ -65,7 +65,7 @@ function Internship() {
         let formValid = true;
         const requiredFields = Object.keys(errors);
         requiredFields.forEach(field => {
-            if (field !== 'streamotheroption' && !user[field]) {  
+            if (field !== 'streamotheroption' && !user[field]) {
                 formValid = false;
                 setErrors(prevErrors => ({
                     ...prevErrors,
@@ -76,7 +76,7 @@ function Internship() {
         if (!recaptchaToken) {
             formValid = false;
             toast.error('Please complete the reCAPTCHA');
-          }
+        }
 
         if (formValid) {
             try {
@@ -125,13 +125,13 @@ function Internship() {
                         <input type="text" name="collegeUniversity" placeholder='College/University*' value={user.collegeUniversity} onChange={getUserData} />
                         {errors.collegeUniversity && <span className='error_fields'>Field is required</span>}
                     </div>
-                    
-                    
+
+
                 </div>
                 <div className="form_fields_wrapper_radio_select">
                     <label htmlFor="stream" className='stream_label'>Stream</label>
                     <div className="form_fields_wrapper radio_select_box">
-                      
+
                         <div className="internship_radio">
                             <label htmlFor="BSc">BSc</label>
                             <input type="radio" name="stream" value='BSc' checked={user.stream === 'BSc'} onChange={getUserData} />
@@ -164,8 +164,8 @@ function Internship() {
                     </div>
                     {user.stream === 'Others' && (
                         <div className="form_fields_wrapper">
-                            <input type="text" name="streamotheroption" placeholder='Other' value={user.streamotheroption} onChange={getUserData} />                  
-                             
+                            <input type="text" name="streamotheroption" placeholder='Other' value={user.streamotheroption} onChange={getUserData} />
+
                         </div>
                     )}
                     <div></div>
@@ -180,11 +180,13 @@ function Internship() {
                             {errors.duration && <span className='error_fields'>This field is required</span>}
                         </div>
                     </div>
-                    </div>
+                </div>
+                <div className="recaptcha_section">
                     <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} onChange={onReCAPTCHAChange} />
+                </div>
                 <div className="form_button">
-                        <button onClick={submitUserData}>Register Now</button>
-                    </div>
+                    <button onClick={submitUserData}>Register Now</button>
+                </div>
             </form>
         </>
     );

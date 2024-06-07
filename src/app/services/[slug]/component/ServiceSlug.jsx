@@ -28,6 +28,7 @@ function ServicesInnerSlug({ slug }) {
 
    return (
       <>
+      <div className="services_inner_template">
          <div className="page_top">
             {data && data.map((ele) => {
                const relatedServices = services.filter(relServices => relServices.slug !== ele.slug);
@@ -174,7 +175,7 @@ function ServicesInnerSlug({ slug }) {
             </div>
 
          </div>
-
+         </div>
       </>
    );
 }

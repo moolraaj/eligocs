@@ -128,7 +128,9 @@ function JobForm() {
                     <div className="form_fields_wrapper">
                         <textarea name="yourmessage" placeholder="Enter your message" value={user.yourmessage} onChange={getUserData} cols="30" rows="50"></textarea>
                     </div>
+                    <div className="recaptcha_section">
                     <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} onChange={onReCAPTCHAChange} />
+                    </div>
                     <div className="form_fields_wrapper">
                     <div className="form_button">
                         <button onClick={submitUserData}>Submit</button>

@@ -55,33 +55,35 @@ function Testimonial() {
     };
 
     const getMobileSlideStyle320to430 = (index) => {
-    const relativeIndex = (index - currentSlide + testimonials.length) % testimonials.length;
-    let marginTop, marginLeft;
+        const relativeIndex = (index - currentSlide + testimonials.length) % testimonials.length;
+        let marginTop, marginLeft;
 
-    if (window.innerWidth <= 320) {
-        marginTop = relativeIndex === 1 ? '10px' : '20px';
-        marginLeft = relativeIndex === 1 ? '15px' : '30px';
-    } else if (window.innerWidth <= 430) {
-        marginTop = relativeIndex === 1 ? '15px' : '30px';
-        marginLeft = relativeIndex === 1 ? '20px' : '35px';
-    } else {
-        marginTop = '25px';
-        marginLeft = '30px';
-    }
+        if (window.innerWidth <= 320) {
+            marginTop = relativeIndex === 1 ? '10px' : '20px';
+            marginLeft = relativeIndex === 1 ? '15px' : '30px';
+        } else if (window.innerWidth <= 430) {
+            marginTop = relativeIndex === 1 ? '15px' : '30px';
+            marginLeft = relativeIndex === 1 ? '20px' : '35px';
+        } else {
+            marginTop = '25px';
+            marginLeft = '30px';
+        }
 
-    if (relativeIndex === 0) {
-        return { opacity: 1, zIndex: 3, marginTop: '0px', marginLeft: '0px' };
-    } else if (relativeIndex === 1) {
-        return { opacity: 1, zIndex: 2, marginTop, marginLeft };
-    } else if (relativeIndex === 2) {
-        return { opacity: 1, zIndex: 1, marginTop, marginLeft };
-    } else {
-        return { opacity: 0, zIndex: 0, marginTop, marginLeft };
-    }
-};
-
+        if (relativeIndex === 0) {
+            return { opacity: 1, zIndex: 3, marginTop: '0px', marginLeft: '0px' };
+        } else if (relativeIndex === 1) {
+            return { opacity: 1, zIndex: 2, marginTop, marginLeft };
+        } else if (relativeIndex === 2) {
+            return { opacity: 1, zIndex: 1, marginTop, marginLeft };
+        } else {
+            return { opacity: 0, zIndex: 0, marginTop, marginLeft };
+        }
+    };
 
     const getSlideStyle = window.innerWidth <= 430 ? getMobileSlideStyle320to430 : (window.innerWidth <= 600 ? getMobileSlideStyle : getDesktopSlideStyle);
+
+    // Helper function to get the dot index cyclically
+    const getActiveDotIndex = (index) => index % 3;
 
     return (
         <div className="testimonial_slider">
@@ -106,10 +108,10 @@ function Testimonial() {
                 </div>
             ))}
             <div className="dots">
-                {testimonials && testimonials.map((_, index) => (
+                {Array.from({ length: 3 }).map((_, index) => (
                     <span
                         key={index}
-                        className={index === currentSlide ? 'dot active' : 'dot'}
+                        className={getActiveDotIndex(currentSlide) === index ? 'dot active' : 'dot'}
                         onClick={() => setCurrentSlide(index)}
                     ></span>
                 ))}

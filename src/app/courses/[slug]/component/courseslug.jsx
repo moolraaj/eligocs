@@ -40,6 +40,7 @@ export default function CourseSlug({ slug }) {
  
   return (
     <>
+    <div className="course_inner_template">
       <div className="single_course_outer page_top">
         <div className="single_course_inner">
           {data && data.map((singleCourse, index) => {
@@ -135,6 +136,7 @@ export default function CourseSlug({ slug }) {
               })
             }
             </div>
+          </div>
           </div>
     </>
   );

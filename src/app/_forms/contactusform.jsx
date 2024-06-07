@@ -131,7 +131,9 @@ function ContactUsForm() {
                   </div>
                 </div>
                 <div className="contactus_form_fields_wrapper">
-                  <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} onChange={onReCAPTCHAChange} />
+                <div className="recaptcha_section">
+                    <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} onChange={onReCAPTCHAChange} />
+                    </div>
                 </div>
                 <div className="form_button">
                   <button onClick={submitUserData}>Submit</button>
