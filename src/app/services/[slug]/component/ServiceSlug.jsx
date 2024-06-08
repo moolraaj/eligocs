@@ -106,13 +106,36 @@ function ServicesInnerSlug({ slug }) {
                         )}
                   </div>
                   <div className="services_dont_miss_out">
-                     <div className="services_missout_heading">
-                        <h1>{ele.acf.dont_miss_out_heading || ""}</h1>
-                     </div>
-                     <div className="servives_missout_description">
-                        <div dangerouslySetInnerHTML={{__html:ele.acf.dont_miss_out_description || ""}}></div>
-                     </div>
+                  <div className="services_development_process_wrapper">
+                  {Array.isArray(ele.acf?.dont_miss_out_section) ? (
+                           ele.acf.dont_miss_out_section.map((missout, index) => (
+                              <>
+                              <div className="services_missout_heading">
+                              <h1>Don't Miss Out</h1>
+                           </div>
+                              <div className={`process_flex_template process_template-${index % 2 === 0 ? "odd" : "even"}`} key={index}>
+                                 <div className="process_left_section">
+                                    <div className="inner_process_heading">
+                                       <h1>{missout.dont_miss_out_tittle || ""}</h1>
+                                    </div>
+                                    <div className=" servives_missout_description">
+                                       <div dangerouslySetInnerHTML={{ __html: missout.dont_miss_out_description || " Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available" }}></div>
+                                    </div>
+                                 </div>
+                                 <div className="process_right_section">
+                                    <div className="process_image">
+                                       <img src={missout.dont_miss_out_image || emptyImage.src} alt='services_process_image' />
+                                    </div>
+                                 </div>
+                              </div>
+                              </>
+                           ))
+                        ) : (
+                           ""
+                        )}
                   </div>
+                  </div>
+                 
 
                   <div className="services_inner_page_faq">
                      <ServicesSlugFaq ele={ele}/>
