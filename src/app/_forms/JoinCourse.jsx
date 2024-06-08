@@ -70,7 +70,7 @@ function JoinCourse() {
 
         if (formValid) {
             try {
-                let response = await api.fetchJobFormApi({
+                let response = await api.fetchJoinCourseFormApi({
                     method: 'POST',
                     body: formData
                 });

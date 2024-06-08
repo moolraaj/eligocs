@@ -283,6 +283,15 @@ export const allExportedApi = () => {
     return response
   }
 
+  const fetchJoinCourseFormApi = async (userData) => {
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/contact-form-7/v1/contact-forms/2211/feedback`, userData)
+    let response = await data.json()
+    return response
+  }
+
+  
+
+
 
 
 
@@ -323,7 +332,8 @@ export const allExportedApi = () => {
     fetchJobFormApi,
     fetchContactFormApi,
     fetchApplyForJobApi,
-    fetchInternShipForApi
+    fetchInternShipForApi,
+    fetchJoinCourseFormApi
 
   };
 
