@@ -16,9 +16,9 @@ function ServicesSlugFaq({ ele }) {
             {Array.isArray(ele.acf?.services_inner_faq_section) ? (
                 ele.acf.services_inner_faq_section.map((e, index) => (
                     <div key={index} className="inner_service_faq">
-                        <div className="services_inner_question">
-                        <h2 onClick={() => toggleAccordion(index)} 
-                            className={`arrow-icon ${activeIndex === index ? 'open' : 'closed'}`} >{e.faq_tittle}</h2>
+                        <div  onClick={() => toggleAccordion(index)} 
+                            className={`services_inner_question arrow-icon ${activeIndex === index ? 'open' : 'closed'}`}>
+                        <h2  >{e.faq_tittle}</h2>
                         <div 
                             onClick={() => toggleAccordion(index)} 
                             className={`arrow-icon ${activeIndex === index ? 'open' : 'closed'}`}

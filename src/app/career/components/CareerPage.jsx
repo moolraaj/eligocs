@@ -67,7 +67,13 @@ function CareerPage({data}) {
                   <div className="product_heading_left"><h3>{ele.acf.career_page_tittle}</h3></div>
                   <div className="product_image_right">
                     <img src={ele.acf.career_page_header_image || emptyImage.src} alt="product_page_image" />
-                    <span></span>
+                    <span>
+                      <p>
+                        <marquee direction="left" scrollamount="12">
+                        <h3>{ele.acf.divider_heading}</h3>
+                        </marquee>
+                      </p>
+                    </span>
                   </div>
                 </div>
                 <div className="product-top-info-section">
