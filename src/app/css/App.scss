@@ -43,8 +43,7 @@
 .nested_wrapper {
     padding: 16px;
     background: #EAAA00;
-   
- 
+	height: 100%;
 }
 
 .services_nested_image {
@@ -5705,7 +5704,9 @@ h6.user_name_c a {
 }
 
 @media(min-width:1025px)and (max-width:1440px) {
-
+	.nested_services_wrapper{
+		grid-template-columns: repeat(3, 1fr);
+	}
 	.team_member_section {
 		grid-template-columns: 1fr 1fr;
 		column-gap: 0;
@@ -6152,6 +6153,9 @@ h6.user_name_c a {
 }
 
 @media(min-width:769px)and (max-width:1024px) {
+	.nested_services_wrapper{
+		grid-template-columns: repeat(2, 1fr);
+	}
 	.services_inner_template_wrapper p{
 		font-size: 18px !important;
 	}
@@ -8331,7 +8335,9 @@ h6.user_name_c a {
 }
 
 @media(min-width:469px)and (max-width:768px) {
-	
+	.nested_services_wrapper{
+		grid-template-columns: repeat(2, 1fr);
+	}
 	.call_slider_image img,
 	#slide-0, .call_right_section img{
 		height: 400px;
@@ -8462,7 +8468,9 @@ h6.user_name_c a {
 }
 
 @media(max-width:468px) {
-	
+	.nested_services_wrapper{
+		grid-template-columns: repeat(1, 1fr);
+	}
 	.our_product_inner_page .blog_img_heading_wrapper img,
 	.blog_img_heading_wrapper img {
 		height: 220px;
