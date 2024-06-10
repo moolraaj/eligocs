@@ -3178,6 +3178,12 @@ menu.footer_ul li a {
 
 	p {
 		font-size: 1.25em;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		label{
+			margin-bottom: 6px;
+		}
 	}
 }
 
@@ -3188,7 +3194,7 @@ menu.footer_ul li a {
 	position: absolute;
 	bottom: 0;
 	display: flex;
-	gap: 12px;
+	justify-content: space-around;
 	width: 100%;
 	overflow-x: auto;
 }
@@ -6376,7 +6382,7 @@ h6.user_name_c a {
 
 	.interns_info {
 		flex-wrap: wrap;
-
+		justify-content: flex-start;
 		p {
 			margin: 0;
 		}
@@ -6451,7 +6457,9 @@ h6.user_name_c a {
 
 	.internship_points_inner p {
 		font-size: 1em !important;
-		line-height: 25px
+		line-height: 25px;
+		flex-direction: row;
+		gap: 10px;
 	}
 
 	.internship-page-inner span.wrap_nmae_btn {

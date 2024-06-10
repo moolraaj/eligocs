@@ -33,9 +33,9 @@ const InternTestimonial = ({ testimonials }) => {
       
       <div className='testimonial_video_player'>
       <div className="interns_info">
-        <p>Student Name: {testimonial.student_name}</p>
-        <p>Course Name: {testimonial.course_name}</p>
-        <p>Course Period: {testimonial.course_period}</p>
+        <p><label htmlFor="Student-Name">Student Name: </label>{testimonial.student_name}</p>
+        <p> <label htmlFor="Course-Name">Course Name:</label>{testimonial.course_name}</p>
+        <p><label htmlFor="Course-Period">Course Period:</label>{testimonial.course_period}</p>
       </div>
       <div className="tesimonial_video_pannel">
       {youtubeID ? (
