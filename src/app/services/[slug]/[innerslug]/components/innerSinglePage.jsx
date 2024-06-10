@@ -3,7 +3,9 @@ import CallToAction from '@/app/call-to-action/callToAction'
 import { allExportedApi } from '@/utils/apis/Apis'
 import React, { useEffect, useState } from 'react'
 import ServicesSlugFaq from '../../component/ServicesSlugFaq'
-import Link from 'next/link'
+import Link from 'next/link';
+import { emptyImage } from '../../../../../../public/assets/images'
+
 
 function InnerSinglePage({ slug, innerslug }) {
     let api = allExportedApi()
