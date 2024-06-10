@@ -549,7 +549,12 @@ ul.transformation_wrapper {
 	height: 18px;
 	object-fit: contain;
 }
-
+.contact_us_form_inner{
+	.form_button{
+		text-align: left;
+		margin-top: 20px;
+	}
+}
 
 .trans_number ul li {
 	list-style: none
@@ -817,8 +822,7 @@ form#jobform textarea {
 
 .services_inner_template_wrapper {
 	.portfolio_page_top_image img {
-		opacity: .6;
-		
+		opacity: .8;
 	}
 }
 
@@ -845,8 +849,7 @@ form#jobform textarea {
 		margin: 0px 0px 0px auto;
 		h1 {
 			margin: 0;
-			// background-color: $black;
-			// color: $white;
+			font-size: 70px;
 			text-shadow: $textshadow;
 			display: inline;
 			padding: 0px 10px;
@@ -1803,7 +1806,7 @@ form#applyforjob textarea {
 
 .team_top_section {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	position: relative
 }
 
@@ -1817,7 +1820,7 @@ form#applyforjob textarea {
 	align-items: center
 }
 
-h1 {
+h1,h2,h3,h4,h5,h6{
 	color: $blackgrey
 }
 
@@ -2867,7 +2870,8 @@ menu.footer_ul li a {
 
 .process_left_section {
 	background: $primaryyellow;
-	padding: 30px 40px;
+	padding: 30px 40px 0px 30px;
+    margin-bottom: 20px;
 }
 
 .process_description p {
@@ -3231,8 +3235,8 @@ menu.footer_ul li a {
 	transform: rotate(180deg)
 }
 
-.services_inner_heading h1 {
-	font-size: 5em;
+.services_inner_heading h2{
+	font-size: 60px;
 	width: 50%;
 	margin-top: 0
 }
@@ -3245,8 +3249,6 @@ menu.footer_ul li a {
 }
 
 .services_left_sec {
-
-	h2,
 	h3,
 	h4,
 	h5,
@@ -3281,9 +3283,13 @@ menu.footer_ul li a {
 	font-size: 1.75em !important
 }
 
-.services_right_sec h1 {
+.services_right_sec h3 {
 	font-size: 2.375em;
 	text-transform: capitalize
+}
+.services_missout_heading h4{
+	font-size: 40px;
+	margin-top: auto;
 }
 
 .related-services ul li a {
@@ -5642,7 +5648,7 @@ h6.user_name_c a {
 		font-size: 22px;
 	}
 
-	.services_inner_heading h1 {
+	.services_inner_heading h2{
 		font-size: 4em;
 	}
 
@@ -5655,7 +5661,7 @@ h6.user_name_c a {
 		font-size: 20px;
 	}
 
-	.services_inner_heading h1,
+	.services_inner_heading h2,
 	.call_slider_image img,
 	.course_faq_heading {
 		width: 100%;
@@ -6013,7 +6019,7 @@ h6.user_name_c a {
 		font-size: 4em
 	}
 
-	.services_inner_heading h1 {
+	.services_inner_heading h2{
 		font-size: 2em;
 		width: 100%;
 	}
@@ -6206,6 +6212,20 @@ h6.user_name_c a {
 }
 
 @media(max-width:768px) {
+	.process_left_section{
+		margin-bottom: 0;
+	}
+	.map_adress_wrapper h1,
+	.services_missout_heading h4{
+		font-size: 25px;
+	}
+	.contact_wrapper{
+		.contact_number a{
+			font-size: 20px;
+			margin-top: 10px;
+		}
+	}
+	
 	.product_image_right{
 		span p {
 			margin-bottom: 0;
@@ -7762,15 +7782,15 @@ h6.user_name_c a {
 	}
 
 	.inner_process_heading h1 {
-		font-size: 1.875em !important
+		font-size: 25px !important
 	}
 
 	.serices_flex_template {
 		grid-template-columns: 1fr;
-		padding: 20px 0 20px
+		padding: 20px 0px 0px 0px
 	}
 
-	.serices_flex_template .services_inner_heading h1 {
+	.serices_flex_template .services_inner_heading h2{
 		width: 100%;
 		margin-top: 0;
 		font-size: 1.875em

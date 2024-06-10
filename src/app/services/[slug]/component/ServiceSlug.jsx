@@ -56,14 +56,14 @@ function ServicesInnerSlug({ slug }) {
                   <div className="serices_flex_template">
                      <div className="services_left_sec">
                         <div className="services_inner_heading">
-                           <h1>{ele.acf.services_inner_heading || ""}</h1>
+                           <h2>{ele.acf.services_inner_heading || ""}</h2>
                         </div>
                         <div className="services_inner_description">
                            <span dangerouslySetInnerHTML={{ __html: ele.acf.services_description || ""}}></span>
                         </div>
                      </div>
                      <div className="services_right_sec">
-                        <h1>Related Services</h1>
+                        <h3>Related Services</h3>
                         <div className="related-services">
                            {
                              relatedServices && relatedServices.map((items) => {
@@ -86,6 +86,7 @@ function ServicesInnerSlug({ slug }) {
                   {Array.isArray(ele.acf?.inner_development_process) ? (
                            ele.acf.inner_development_process.map((process, index) => (
                               <div className={`process_flex_template process_template-${index % 2 === 0 ? "even" : "odd"}`} key={index}>
+                                 <div className="services_developement_wrapper">
                                  <div className="process_left_section">
                                     <div className="inner_process_heading">
                                        <h1>{process.services_process_heading || "Process Heading"}</h1>
@@ -94,6 +95,13 @@ function ServicesInnerSlug({ slug }) {
                                        <p dangerouslySetInnerHTML={{ __html: process.services_process_description || "" }}></p>
                                     </div>
                                  </div>
+                                 <div className="process_left_section">
+                                    <div className="process_description">
+                                       <p dangerouslySetInnerHTML={{ __html: process.services_description_container_second || "" }}></p>
+                                    </div>
+                                 </div>
+                                 </div>
+                                 
                                  <div className="process_right_section">
                                     <div className="process_image">
                                        <img src={process.services_process_image || emptyImage.src} alt='services_process_image' />
@@ -111,7 +119,7 @@ function ServicesInnerSlug({ slug }) {
                            ele.acf.dont_miss_out_section.map((missout, index) => (
                               <>
                               <div className="services_missout_heading">
-                              <h1>Don't Miss Out</h1>
+                              <h4>Don't Miss Out</h4>
                            </div>
                               <div className={`process_flex_template process_template-${index % 2 === 0 ? "odd" : "even"}`} key={index}>
                                  <div className="process_left_section">
