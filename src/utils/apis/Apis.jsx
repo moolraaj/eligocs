@@ -4,56 +4,56 @@ export const allExportedApi = () => {
 
 
   const fetchTestimonial = async () => {
-    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/testimonial?fields=acf&acf_format=standard`,{ next: { revalidate: 2 }})
+    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/testimonial?fields=acf&acf_format=standard`)
     let data = await response.json()
     return data
   }
 
 
   const fetchCallToAction = async () => {
-    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/call_to_action?fields=acf&acf_format=standard`,{ next: { revalidate: 2 }})
+    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/call_to_action?fields=acf&acf_format=standard`)
     let data = await response.json()
     return data
   }
 
   // fetch home page api
   const HomeApi = async () => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=home&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=home&fields=acf&acf_format=standard`);
     let data = await response.json();
     return data;
   };
 
   // fetch About page api
   const AboutApi = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=about&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=about&fields=acf&acf_format=standard`);
     let response = await data.json();
     return response;
   };
 
   // fetch portfolio page api
   const portfolioApi = async () => {
-    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=portfolio&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=portfolio&fields=acf&acf_format=standard`);
     let result = await response.json();
     return result;
   };
 
   // fetch Our Service page api
   const ServiceApi = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=our-services&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=our-services&fields=acf&acf_format=standard`);
     let response = await data.json();
     return response;
   };
 
   // fetch meet our team page api
   const meetOurTeamPage = async () => {
-    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=meet-our-team&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=meet-our-team&fields=acf&acf_format=standard`);
     let result = await response.json();
     return result;
   };
 
   // fetch Blog page api
   const BlogPageApi = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=blogs&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=blogs&fields=acf&acf_format=standard`);
     let response = await data.json();
     return response;
   };
@@ -62,7 +62,7 @@ export const allExportedApi = () => {
 
   // fetch Our products page api
   const ProductPageApi = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=products&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=products&fields=acf&acf_format=standard`);
     let response = await data.json();
     return response;
   }
@@ -70,7 +70,7 @@ export const allExportedApi = () => {
 
   // fetch Courses page api
   const CoursesPageApi = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=courses&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=courses&fields=acf&acf_format=standard`);
     let response = await data.json();
     return response;
   }
@@ -80,14 +80,14 @@ export const allExportedApi = () => {
 
   // fetch contact us page api
   const contactUsPageApi = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=contact-us&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }})
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=contact-us&fields=acf&acf_format=standard`)
     let response = await data.json()
     return response
   }
 
   // fetch our internship page api
   const internshipPageApi = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=our-internship&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }})
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=our-internship&fields=acf&acf_format=standard`)
     let response = await data.json()
     return response;
   }
@@ -95,27 +95,27 @@ export const allExportedApi = () => {
 
   // fetch our multistepFormApi page api
   const multistepFormApi = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=multistep-popup-form&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }})
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=multistep-popup-form&fields=acf&acf_format=standard`)
     let response = await data.json()
     return response;
   }
 
   // fetch our Career page api
   const careerPageApi = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=career&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }})
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=career&fields=acf&acf_format=standard`)
     let response = await data.json()
     return response;
   }
 
   // fetch Terms and conditions page Api
   const TermsandConditions = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=terms-and-conditions&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }})
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=terms-and-conditions&fields=acf&acf_format=standard`)
     let response = await data.json()
     return response;
   }
   // fetch Privacy Policy page Api
   const PrivacyPolicy = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=privacy-policy&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }})
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=privacy-policy&fields=acf&acf_format=standard`)
     let response = await data.json()
     return response;
   }
@@ -123,7 +123,7 @@ export const allExportedApi = () => {
 
   // fetch pageNotFound api
   const pageNotFound = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=page-not-found&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }})
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=page-not-found&fields=acf&acf_format=standard`)
     let response = await data.json()
     return response;
   }
@@ -131,21 +131,21 @@ export const allExportedApi = () => {
 
   // fetch all services template api
   const fetchAllServices = async () => {
-    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/services?per_page=100&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/services?per_page=100&fields=acf&acf_format=standard`);
     let data = await response.json();
     return data;
   };
 
   // fetch single services template api
   const fetchSingleService = async (slug) => {
-    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/services?slug=${slug}&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/services?slug=${slug}&fields=acf&acf_format=standard`);
     let result = await response.json();
     return result;
   };
 
   // fetch all portfolio api
   const fetchAllportFolio = async () => {
-    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/portfolio?fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/portfolio?fields=acf&acf_format=standard`);
     let data = await response.json();
     return data
   };
@@ -153,21 +153,21 @@ export const allExportedApi = () => {
 
   // fetch single portfolio api
   const fetchSingleportFolio = async (slug) => {
-    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/portfolio?slug=${slug}&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/portfolio?slug=${slug}&fields=acf&acf_format=standard`);
     let result = await response.json();
     return result;
   };
 
   // fetch meet our team api
   const fetchMeetOurTeam = async () => {
-    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/meet_our_team?per_page=100&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/meet_our_team?per_page=100&fields=acf&acf_format=standard`);
     let result = await response.json();
     return result;
   };
 
   // fetch all blog posts api
   const AllBlogPOsts = async () => {
-    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/blog?all_categories=true&per_page=100&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/blog?all_categories=true&per_page=100&fields=acf&acf_format=standard`);
     const data = await response.json();
 
     return data;
@@ -176,35 +176,35 @@ export const allExportedApi = () => {
 
   // fetch all courses api
   const AllCourses = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/course?course_categories=true&per_page=100&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/course?course_categories=true&per_page=100&fields=acf&acf_format=standard`);
     let response = await data.json();
     return response;
   };
 
   //fetch all Products api
   const AllProducts = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/product?per_page=100&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/product?per_page=100&fields=acf&acf_format=standard`);
     let response = await data.json();
     return response;
   }
 
   //fetch all internships api
   const ourInternships = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/internship?per_page=100&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/internship?per_page=100&fields=acf&acf_format=standard`);
     let response = await data.json();
     return response;
   }
 
   // fetch Single Internships api
   const fetchSigleInternship = async (slug) => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/internship?slug=${slug}&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/internship?slug=${slug}&fields=acf&acf_format=standard`);
     let response = await data.json();
     return response;
   }
 
   // fetch Single product api
   const fetchSigleProducts = async (slug) => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/product?slug=${slug}&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/product?slug=${slug}&fields=acf&acf_format=standard`);
     let response = await data.json();
     return response;
   }
@@ -212,13 +212,13 @@ export const allExportedApi = () => {
 
   // fetch single Course api
   const fetchSingleCourse = async (slug) => {
-    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/course?slug=${slug}&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/course?slug=${slug}&fields=acf&acf_format=standard`);
     let result = await response.json();
     return result;
   };
   // fetch single Blog post api
   const SingleBlogPost = async (slug) => {
-    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/blog?slug=${slug}&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/blog?slug=${slug}&fields=acf&acf_format=standard`);
     let result = await response.json();
     return result;
   };
@@ -228,7 +228,7 @@ export const allExportedApi = () => {
 
   // fetch header footer
   const fetchHeaderFooter = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/rae/v1/header-footer?header_location_id=hcms-menu-header&footer_location_id=hcms-menu-footer&portfolio_location_id=hcms-menu-portfolio`,{ next: { revalidate: 2 }});
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/rae/v1/header-footer?header_location_id=hcms-menu-header&footer_location_id=hcms-menu-footer&portfolio_location_id=hcms-menu-portfolio`);
     let response = await data.json();
     return response;
   };
@@ -237,24 +237,24 @@ export const allExportedApi = () => {
   // fetch all services categories
 
   const loadAllservicesCategories = async () => {
-    let data = await fetch(`https://api.eligo.cloud/wp-json/wp/v2/services_category?per_page=100&parent=0&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    let data = await fetch(`https://api.eligo.cloud/wp-json/wp/v2/services_category?per_page=100&parent=0&fields=acf&acf_format=standard`);
     let response = await data.json();
     return response;
   }
 
 
   const fecthAllParentservices = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/services?category=allparent&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/services?category=allparent&fields=acf&acf_format=standard`);
     let response = await data.json();
     return response;
   }
   const fecthAllParentAndchildservices = async (slug) => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/services?category=${slug}&sub-category=all&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/services?category=${slug}&sub-category=all&fields=acf&acf_format=standard`);
     let response = await data.json();
     return response;
   }
   const fecthSinglechildservice = async (slug,innerslug) => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/services?category=${slug}&sub-category=${innerslug}&fields=acf&acf_format=standard`,{ next: { revalidate: 2 }});
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/services?category=${slug}&sub-category=${innerslug}&fields=acf&acf_format=standard`);
     let response = await data.json();
     return response;
   }
