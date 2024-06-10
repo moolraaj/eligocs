@@ -92,33 +92,6 @@ function ContactUs() {
 
 
                                 <div className='contact_both_sec'>
-                                    <div className='contact_twins_inner_l'>
-
-
-                                        <div className='both_location'>
-                                            <h6>Send us an Message</h6>
-                                            <div className="contact_mail">
-                                                <a href={`mailto:${ele.acf.contact_with_mail}`}>{ele.acf.contact_with_mail}</a>
-                                            </div>
-                                            <div className='social_icons'>
-                                                {ele.acf.contact_services_social_icons.map((icons, index) => {
-                                                    return <div className="contact_social_wrapper" key={index}>
-
-                                                        <div className="contact_social_link">
-                                                            <li>
-                                                                <a href={icons.icon_link} target='_blank'>
-                                                                    <img src={icons.social_media || emptyImage.src} alt="" srcset="" />
-                                                                </a>
-                                                            </li>
-                                                        </div>
-
-                                                    </div>
-                                                })}
-
-                                            </div>
-                                        </div>
-                                    </div>
-
                                     <div className='contact_twins_inner_r'>
                                         <div className='both_location'>
                                             <h6>we’re call the map</h6>
@@ -126,8 +99,7 @@ function ContactUs() {
                                                 <li>{ele.acf.main_office_address}</li>
                                             </div>
                                         </div>
-
-                                    </div>
+                                        </div>
                                 </div>
 
 
@@ -139,6 +111,16 @@ function ContactUs() {
 
 
                                 <div className='contact_both_sec'>
+                                    
+                                <div className='contact_twins_inner_r'>
+                                        <div className='both_location'>
+                                            <h6>we’re call the map</h6>
+                                            <div className="our_location">
+                                                <li>{ele.acf.branch_office_location}</li>
+                                            </div>
+                                        </div>
+
+                                    </div>
                                     <div className='contact_twins_inner_l'>
 
 
@@ -164,16 +146,6 @@ function ContactUs() {
 
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div className='contact_twins_inner_r'>
-                                        <div className='both_location'>
-                                            <h6>we’re call the map</h6>
-                                            <div className="our_location">
-                                                <li>{ele.acf.branch_office_location}</li>
-                                            </div>
-                                        </div>
-
                                     </div>
                                 </div>
 

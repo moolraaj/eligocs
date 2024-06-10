@@ -1,11 +1,11 @@
 'use client';
+
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { COURSE_PAGE_SIZE, allExportedApi } from '@/utils/apis/Apis';
 import { useRouter } from 'next/navigation';
 import { emptyImage, formClose } from '../../../../public/assets/images';
 import JoinCourse from '@/app/_forms/JoinCourse';
-
 
 function CoursesPage() {
   const router = useRouter();
@@ -17,24 +17,40 @@ function CoursesPage() {
   const [noCoursesFound, setNoCoursesFound] = useState(false);
   const [filteredCoursesData, setFilteredCoursesData] = useState([]);
   const [isApplyJobVisible, setIsApplyJobVisible] = useState(false);
+  const [loading, setLoading] = useState(true); // Add loading state
+
   const toggleFormVisibility = () => {
     setIsApplyJobVisible(!isApplyJobVisible);
   };
+
   const closeApplyJob = () => {
     setIsApplyJobVisible(false);
   };
 
   const loadCoursePageData = async () => {
-    let data = await api.CoursesPageApi();
-    setCoursesPageData(data);
+    try {
+      let data = await api.CoursesPageApi();
+      setCoursesPageData(data);
+    } catch (error) {
+      // Handle error if needed
+    } finally {
+      setLoading(false); // Set loading to false after data is loaded
+    }
   };
 
   const loadAllCourses = async () => {
-    let response = await api.AllCourses();
-    setResult(response);
+    try {
+      let response = await api.AllCourses();
+      setResult(response);
+    } catch (error) {
+      // Handle error if needed
+    } finally {
+      setLoading(false); // Set loading to false after data is loaded
+    }
   };
 
   useEffect(() => {
+    setLoading(true); // Set loading to true when fetching data
     loadCoursePageData();
     loadAllCourses();
   }, []);
@@ -111,47 +127,36 @@ function CoursesPage() {
 
   return (
     <>
-
-{isApplyJobVisible && (
-  <div className="join_course_form">
-        <div className="cf7_form_outer" style={{ animation: isApplyJobVisible ? 'slide-down 0.5s' : 'slide-up 0.5s' }}>
-          <div className="cf7_form_inner">
-            <div className="cf7_top_banner">
-
-              <div className="cf7_left_section">
-                <div className="form_banner_heading">
-
-                  <h1>Join Course</h1>
-                </div>
-
-                <div className="form_slider_wrapper">
-                  <div className="_form_paragraph">
-                    <p>
-                      apply for join course
-                    </p>
+      {isApplyJobVisible && (
+        <div className="join_course_form">
+          <div className="cf7_form_outer" style={{ animation: isApplyJobVisible ? 'slide-down 0.5s' : 'slide-up 0.5s' }}>
+            <div className="cf7_form_inner">
+              <div className="cf7_top_banner">
+                <div className="cf7_left_section">
+                  <div className="form_banner_heading">
+                    <h1>Join Course</h1>
+                  </div>
+                  <div className="form_slider_wrapper">
+                    <div className="_form_paragraph">
+                      <p>apply for join course</p>
+                    </div>
                   </div>
                 </div>
-
-
-              </div>
-
-              <div className="cf7_right_section">
-                <div className="close_button">
-                  <button onClick={closeApplyJob} className="close_button" aria-label='close poup form'>
-                    <img src={formClose.src || emptyImage.src} alt="formClose"/>
-                  </button>
+                <div className="cf7_right_section">
+                  <div className="close_button">
+                    <button onClick={closeApplyJob} className="close_button" aria-label='close popup form'>
+                      <img src={formClose.src || emptyImage.src} alt="formClose"/>
+                    </button>
+                  </div>
                 </div>
               </div>
-
-            </div>
-            <div className="cf7_form_wrapper">
-              <JoinCourse/>
+              <div className="cf7_form_wrapper">
+                <JoinCourse/>
+              </div>
             </div>
           </div>
         </div>
-        </div>
       )}
-
 
       <div className="courses-page-outer page_top">
         <div className="courses-page-inner">
@@ -187,13 +192,18 @@ function CoursesPage() {
             </div>
           </div>
 
-          <div className={`courses-posts-outer ${noCoursesFound ? 'no-courses' : ''}`}>
-            {filteredCoursesData.length > 0 ? (
-              renderCourses()
-            ) : (
-              <p>No courses found for selected category.</p>
-            )}
-          </div>
+         
+            <div className={`courses-posts-outer ${noCoursesFound ? 'no-courses' : ''}`}>
+            {loading ? ( // Show loading indicator while loading
+            <p className="loading_data">Loading...</p>
+          ) : (
+              filteredCoursesData.length > 0 ? (
+                renderCourses()
+              ) : (
+                <p>No courses found for selected category.</p>
+              ))}
+            </div>
+          
 
           {filteredCoursesData.length >= COURSE_PAGE_SIZE && renderPaginationButtons()}
         </div>
