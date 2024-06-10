@@ -20,7 +20,7 @@ export default function ServicesPage() {
 
 
     const loadAllservices = async () => {
-        let resp = await api.fetchAllServices()
+        let resp = await api.fecthAllParentservices()
         setServices(resp)
     }
 

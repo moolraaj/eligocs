@@ -10,7 +10,7 @@ export default function ServicesComponent() {
     const [services, setServices] = useState([]);
 
     const loadServices = async () => {
-        let url = await api.fetchAllServices()
+        let url = await api.fecthAllParentservices()
         setServices(url)
         
     };

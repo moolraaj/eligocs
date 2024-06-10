@@ -242,6 +242,26 @@ export const allExportedApi = () => {
     return response;
   }
 
+
+  const fecthAllParentservices = async () => {
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/services?category=allparent&fields=acf&acf_format=standard`);
+    let response = await data.json();
+    return response;
+  }
+  const fecthAllParentAndchildservices = async (slug) => {
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/services?category=${slug}&sub-category=all&fields=acf&acf_format=standard`);
+    let response = await data.json();
+    return response;
+  }
+  const fecthSinglechildservice = async (slug,innerslug) => {
+    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/services?category=${slug}&sub-category=${innerslug}&fields=acf&acf_format=standard`);
+    let response = await data.json();
+    return response;
+  }
+
+
+
+
    
 
 
@@ -329,6 +349,9 @@ export const allExportedApi = () => {
     fetchSingleCourse,
     fetchHeaderFooter,
     loadAllservicesCategories,
+    fecthAllParentservices,
+    fecthAllParentAndchildservices,
+    fecthSinglechildservice,
     fetchJobFormApi,
     fetchContactFormApi,
     fetchApplyForJobApi,

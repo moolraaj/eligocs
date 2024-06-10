@@ -7,31 +7,33 @@ import { emptyImage } from "../../../../../public/assets/images";
 import ServicesSlugFaq from "./ServicesSlugFaq";
 
 
-function ServicesInnerSlug({ slug }) {
+function ServicesSecondSlug({ slug }) {
    let api = allExportedApi()
 
    let [data, setData] = useState([])
    let [services, setServices] = useState([])
 
    const funcLoadSingleSrvices = async () => {
-      const response = await api.fetchSingleService(slug);
+      const response = await api.fecthAllParentAndchildservices(slug);
       setData(response)
    }
-   const funcLoadAllSrvices = async () => {
-      let response = await api.fetchAllServices()
-      setServices(response)
-   }
+   
    useEffect(() => {
       funcLoadSingleSrvices()
-      funcLoadAllSrvices()
+     
    }, [])
+
+   let {parent_posts,child_posts}=data
+
+  
+ 
 
    return (
       <>
       <div className="services_inner_template">
          <div className="page_top">
-            {data && data.map((ele) => {
-               const relatedServices = services.filter(relServices => relServices.slug !== ele.slug);
+            {parent_posts && parent_posts.map((ele) => {
+               // const relatedServices = services.filter(relServices => relServices.slug !== ele.slug);
                return <div className="services_inner_template_wrapper" key={ele.id}>
 
                   <div className="portfolio_page_top_section career_inner_page_top">
@@ -66,12 +68,12 @@ function ServicesInnerSlug({ slug }) {
                         <h3>Related Services</h3>
                         <div className="related-services">
                            {
-                             relatedServices && relatedServices.map((items) => {
-                                 return <div key={items.id}>
+                             child_posts && child_posts.map((ele) => {
+                                 return <div key={ele.id}>
 
                                     <ul>
                                        <li>
-                                          <Link href={`/services/${items.slug}`}>{items.acf.services_title || ""}</Link>
+                                          <Link href={`/services/${slug}/${ele.slug}`}>{ele.acf.services_title || ""}</Link>
                                        </li>
                                     </ul>
                                  </div>
@@ -198,6 +200,19 @@ function ServicesInnerSlug({ slug }) {
          </div>
 
 
+         {
+            child_posts?.map((ele)=>{
+               return <div key={ele.id}>
+                   <Link href={`/services/${slug}/${ele.slug}`}>
+                   {ele.slug}
+                   </Link>
+
+               </div>
+
+            })
+         }
+
+
 
 
          <div className="call_outer inner_services">
@@ -211,4 +226,4 @@ function ServicesInnerSlug({ slug }) {
    );
 }
 
-export default ServicesInnerSlug;
+export default ServicesSecondSlug;

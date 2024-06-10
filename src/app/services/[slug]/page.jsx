@@ -2,8 +2,7 @@ import { allExportedApi } from "@/utils/apis/Apis.jsx";
  
 import { ExportScoApiData } from "@/utils/apis/scoApi";
 import { LoadscoData } from "@/app/_metadata/metadata";
-import ServicesInnerSlug from "./component/ServiceSlug";
-import ServicesSlugInner from "./component/servicesSlugInner";
+import ServicesSecondSlug from "./component/ServiceSlug";
  
  
 
@@ -19,19 +18,19 @@ export default async function Page({ params }) {
 
     return (
         <>
-           <ServicesInnerSlug  slug={slug} />  
+           <ServicesSecondSlug  slug={slug} />  
         </>
     );
 }
 
 
-export async function generateStaticParams() {
-    const api = allExportedApi();
-    const result = await api.fetchAllServices();
-    return result.map(ele => ({
-        slug: ele.slug
-    }));
-}
+// export async function generateStaticParams() {
+//     const api = allExportedApi();
+//     const result = await api.fetchAllServices();
+//     return result.map(ele => ({
+//         slug: ele.slug
+//     }));
+// }
 
 
 // generate dynamic sco title and desriptions
