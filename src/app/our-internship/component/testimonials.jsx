@@ -29,16 +29,32 @@ const InternTestimonial = ({ testimonials }) => {
 
   return (
     <div className='interns_info_outer'>
-
-
+      
+      
       <div className='testimonial_video_player'>
       <div className="interns_info">
         <p><label htmlFor="Student-Name">Student Name: </label>{testimonial.student_name}</p>
         <p> <label htmlFor="Course-Name">Course Name:</label>{testimonial.course_name}</p>
         <p><label htmlFor="Course-Period">Course Period:</label>{testimonial.course_period}</p>
       </div>
-
-      <div className='inter-testi-buttons'>
+      <div className="tesimonial_video_pannel">
+      {youtubeID ? (
+          <iframe
+            id={`player-${currentIndex}`}
+            src={`https://www.youtube.com/embed/${youtubeID}?enablejsapi=1`}
+            height="400px"
+            width="100%"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        ) : (
+          <div style={{height: '400px',display: 'flex', justifyContent: 'center', alignItems: 'center',border: '1px solid'}}> No video available.</div> 
+        )}
+      </div>
+       
+      </div>
+      
+      <div>
         <button onClick={handlePrevious} className={currentIndex === 0 ? "prev-btn inactive" : "prev-btn"}>Previous</button>
         <button onClick={handleNext} className={currentIndex === testimonials.acf.internship_testimonials.length - 1 ? "next-btn inactive" : "next-btn"}>Next</button>
       </div>
