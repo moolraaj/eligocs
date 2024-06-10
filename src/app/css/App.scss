@@ -2038,13 +2038,14 @@ h1.type_text_wrapper span {
 }
 
 .our_team_description p p {
-	font-size: 1.563em
+	font-size: 1.563em;
+	height: 300px;
+	overflow: auto;
 }
 
 .right_banner_heading h1 {
 	font-size: 6em;
-	width: 90%;
-	margin-top: 0
+	margin:auto;
 }
 
 .right_banner_heading {
@@ -2611,11 +2612,14 @@ a.back-to-projects {
 }
 
 .portfolio_top_left_section .portfolio_top_right_section h1 {
-	font-size: 6.25em
+	font-size: 6.25em;
+	margin: auto;
 }
 
 .portfolio_top_left_section .portfolio_top_right_section p p {
-	font-size: 1.375em
+	font-size: 1.375em;
+	height: 300px;
+	overflow: auto;
 }
 
 .portfolio_inner_top_right_section p {
@@ -4439,6 +4443,8 @@ p:empty {
 	font-size: 1.375em;
 	margin-bottom: 20px;
 	line-height: 40px;
+	height: 212px;
+    overflow: auto;
 }
 
 .contact_usform_top_section {
@@ -6225,6 +6231,11 @@ h6.user_name_c a {
 }
 
 @media(max-width:768px) {
+	.portfolio_top_left_section .portfolio_top_right_section p p,
+	.blog_page_heading_wrapper p p,
+	.our_team_description p p{
+		height: auto;
+	}
 	.map_adress_wrapper h1,
 	.services_missout_heading h4{
 		font-size: 25px;
@@ -7239,7 +7250,6 @@ h6.user_name_c a {
 
 	.right_banner_heading h1 {
 		font-size: 2em;
-		width: 100%
 	}
 
 	.member_top_heading h1 {
