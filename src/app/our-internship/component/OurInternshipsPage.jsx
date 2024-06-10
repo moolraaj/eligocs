@@ -41,16 +41,12 @@ function OurInternshipsPage() {
     loadInternships();
 
     const formShown = sessionStorage.getItem('formShown');
-    if (!formShown) {
-      setIsMounted(true);
-      sessionStorage.setItem('formShown', 'true');
-    }
-
     const timer = setTimeout(() => {
       if (!formShown) {
         setIsMounted(true);
+        sessionStorage.setItem('formShown', 'true');
       }
-    }, 1000);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);

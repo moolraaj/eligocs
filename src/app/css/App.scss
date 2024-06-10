@@ -251,14 +251,14 @@ ul {
 
 }
 .loading_data {
-	background: linear-gradient(to bottom right, #ff6b6b, #ffd166, #06d6a0, #118ab2);
+	background-image: linear-gradient(to bottom right, #ff6b6b, #ffd166, #06d6a0, #118ab2);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
 	color: transparent;
 	font-size: 40px;
 	font-weight: bold;
-}
+  }
 .contacts_top_header {
 	display: flex;
 	gap: 20px;
@@ -4453,7 +4453,7 @@ form#contactus .form_button button:hover {
 }
 
 .contact_both_sec {
-	@include grid-property(grid, 1fr 1fr, unset);
+	@include grid-property(grid, 60% 1fr, unset,20px,20px);
 	margin-top: 80px
 }
 
@@ -8326,7 +8326,8 @@ h6.user_name_c a {
 
 	.contact_numbers_wrapper {
 		flex-wrap: wrap;
-		gap: 0;
+		column-gap: 20px;
+		row-gap: 0;
 	}
 
 	.portfolio_gallery_wrapper {
