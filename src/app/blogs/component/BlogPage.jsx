@@ -4,51 +4,49 @@ import { BLOG_PAGE_SIZE, allExportedApi } from "@/utils/apis/Apis";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { emptyImage } from "../../../../public/assets/images";
-function BlogPage() {
-  let api=allExportedApi() 
-  const[blogPageData,setBlogPageData]=useState([])
- 
 
- 
-  
+function BlogPage() {
+  let api = allExportedApi();
+  const [blogPageData, setBlogPageData] = useState([]);
   const [allBlogPosts, setAllBlogPosts] = useState({ all_categories: [], blogs: [] });
   const [selectedCategory, setSelectedCategory] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
+  const [loading, setLoading] = useState(true); // Add loading state
 
   const { all_categories, blogs } = allBlogPosts;
 
   const loadAllBlogPosts = async () => {
     try {
-      let api = allExportedApi();
       let response = await api.AllBlogPOsts();
-     
       setAllBlogPosts(response);
     } catch (error) {
-    
+      // Handle error if needed
     }
   };
 
-  const fetchBlogPageData=async()=>{
-    let data = await api.BlogPageApi(); 
-    setBlogPageData(data)
-
-  }
+  const fetchBlogPageData = async () => {
+    let data = await api.BlogPageApi();
+    setBlogPageData(data);
+  };
 
   useEffect(() => {
-    loadAllBlogPosts();
-    fetchBlogPageData()
+    const fetchData = async () => {
+      setLoading(true);
+      await loadAllBlogPosts();
+      await fetchBlogPageData();
+      setLoading(false);
+    };
+    fetchData();
   }, []);
 
   const handleCategoryChange = (e) => {
     setSelectedCategory(e.target.value);
-    setCurrentPage(1); 
+    setCurrentPage(1);
   };
 
   const filteredBlogs = selectedCategory
     ? blogs.filter(blog => blog.blog_category.includes(selectedCategory))
     : blogs;
-
-  
 
   const totalPages = Math.ceil(filteredBlogs.length / BLOG_PAGE_SIZE);
 
@@ -62,8 +60,6 @@ function BlogPage() {
   };
 
   const paginatedBlogs = filteredBlogs.slice((currentPage - 1) * BLOG_PAGE_SIZE, currentPage * BLOG_PAGE_SIZE);
-
- 
 
   const renderPaginationButtons = () => {
     const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
@@ -80,8 +76,6 @@ function BlogPage() {
             {pageNumber}
           </button>
         ))}
-         
-        
       </div>
     );
   };
@@ -101,11 +95,10 @@ function BlogPage() {
                 <div className="blog_page_heading_wrapper">
                   <h1>{data.acf.blog_page_heading}</h1>
                   <div className="blog-header-description">
-                <p>{data.acf.blog_page_description}</p>
-              </div>
+                    <p>{data.acf.blog_page_description}</p>
+                  </div>
                 </div>
               </div>
-              
             </div>
           ))}
           <div className="filter_blog_posts">
@@ -124,23 +117,29 @@ function BlogPage() {
 
           <div className="blog-posts-section">
             <div className="all-blog-posts-outer">
-              {paginatedBlogs.length > 0 ? paginatedBlogs.map((blog) => (
-                <ul className="blog-post" key={blog.id}>
-                  <Link href={`/blogs/${blog.slug}`}>
-                    <li className="blog-post-img">
-                      <img src={blog.acf.blog_post_image || emptyImage.src} alt="blog_post_image" />
-                    </li>
-                    <li className="blog-post-info-wrapper">
-                      <h2>{blog.acf.blog_post_tittle.slice(0,60)}...</h2>
-                      <p>
-                        <span>{blog.acf.post_by_}</span>
-                        <span>{formatDate(blog.date)}</span>
-                      </p>
-                    </li>
-                  </Link>
-                </ul>
-              )) : (
-                <p id="no_blogs_found">No blogs available.</p>
+              {loading ? ( // Show loading indicator while loading
+                <p className="loading_data">Loading...</p>
+              ) : (
+                paginatedBlogs.length > 0 ? (
+                  paginatedBlogs.map((blog) => (
+                    <ul className="blog-post" key={blog.id}>
+                      <Link href={`/blogs/${blog.slug}`}>
+                        <li className="blog-post-img">
+                          <img src={blog.acf.blog_post_image || emptyImage.src} alt="blog_post_image" />
+                        </li>
+                        <li className="blog-post-info-wrapper">
+                          <h2>{blog.acf.blog_post_tittle.slice(0, 60)}...</h2>
+                          <p>
+                            <span>{blog.acf.post_by_}</span>
+                            <span>{formatDate(blog.date)}</span>
+                          </p>
+                        </li>
+                      </Link>
+                    </ul>
+                  ))
+                ) : (
+                  <p id="no_blogs_found">No blogs available.</p>
+                )
               )}
             </div>
           </div>
