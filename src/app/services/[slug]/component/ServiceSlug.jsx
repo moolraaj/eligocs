@@ -88,7 +88,7 @@ function ServicesInnerSlug({ slug }) {
                               <div className={`process_flex_template process_template-${index % 2 === 0 ? "even" : "odd"}`} key={index}>
                                  <div className="process_left_section">
                                     <div className="inner_process_heading">
-                                       <h1>{process.services_process_heading || "Process Heading"}</h1>
+                                       <h1>{process.services_process_heading || ""}</h1>
                                     </div>
                                     <div className="process_description">
                                        <p dangerouslySetInnerHTML={{ __html: process.services_process_description || "" }}></p>
