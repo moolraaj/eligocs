@@ -1349,7 +1349,6 @@ a.footer_mail {
 	height: 85px;
 	border-radius: 100%;
 	box-sizing: border-box;
-	object-fit: cover;
 }
 
 .testimonial_wrap {
@@ -2804,7 +2803,7 @@ ul.transformation_wrapper li h4 {
 
 .home_slider_wrapper h1:first-child {
 	font-size: 6.25em;
-	color: red;
+	color: $primaryblack;
 	text-transform: capitalize
 }
 
