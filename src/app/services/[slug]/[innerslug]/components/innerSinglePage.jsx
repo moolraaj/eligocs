@@ -9,6 +9,7 @@ function InnerSinglePage({ slug, innerslug }) {
     let api = allExportedApi()
     let [data, setData] = useState([])
     let [services, setservices] = useState([])
+    let [resp, setResp] = useState([])
 
     let loadSingleServices = async () => {
         let resp = await api.fecthSinglechildservice(slug, innerslug)
@@ -20,6 +21,13 @@ function InnerSinglePage({ slug, innerslug }) {
         setservices(response)
     }
 
+    const  fetchAllParent=async()=>{
+        let result=await api.fecthAllParentservices()
+        setResp(result)
+         
+
+    }
+
 
     let { child_posts = [] } = services
 
@@ -27,6 +35,7 @@ function InnerSinglePage({ slug, innerslug }) {
     useEffect(() => {
         loadSingleServices()
         funcLoadParentChildSrvices()
+        fetchAllParent()
     }, [])
 
      
@@ -83,8 +92,13 @@ return <div className="services_inner_template_wrapper" key={ele.id}>
 
                })
             }
+             
          </div>
+         <div className="go_back_services">
+      <Link href={`/services`}>go back to services</Link>
       </div>
+      </div>
+     
    </div>
 
    <div className="services_development_process_wrapper">

@@ -13,7 +13,7 @@ function Footer({ response }) {
 
   const fetchServices = async () => {
 
-    let response = await api.loadAllservicesCategories()
+    let response = await api.fecthAllParentservices()
     setResult(response)
   }
    const allServicesLink = [...result].reverse();
@@ -68,9 +68,9 @@ function Footer({ response }) {
                 <h1 className='footer-top-headings'>Our Services</h1>
                 <div className="footer_ul_wrapper">
                   <menu className="footer_ul">
-                  {allServicesLink && allServicesLink.map((ele) => (
+                  {allServicesLink?.map((ele) => (
                     <li key={ele.id}>
-                      <Link href={`/services/${ele.slug}`}>{ele.name}</Link>
+                      <Link href={`/services/${ele.slug}`}>{ele.title.rendered}</Link>
                     </li>
                   ))}
                   </menu>
