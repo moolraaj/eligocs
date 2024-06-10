@@ -19,14 +19,14 @@ export default async function Page({ params }) {
 }
 
 
-export async function generateStaticParams() {
-    let api=allExportedApi()
-    let data = await api.AllCourses();
-    let {courses}=data
-    return courses.map((ele) => ({
-        slug: ele.slug
-    }));
-}
+// export async function generateStaticParams() {
+//     let api=allExportedApi()
+//     let data = await api.AllCourses();
+//     let {courses}=data
+//     return courses.map((ele) => ({
+//         slug: ele.slug
+//     }));
+// }
 
 
 export async function generateMetadata({params}){
