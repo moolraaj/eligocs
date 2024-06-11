@@ -94,7 +94,7 @@ function ContactUs() {
                                 <div className='contact_both_sec'>
                                     <div className='contact_twins_inner_r'>
                                         <div className='both_location'>
-                                            <h6>we’re call the map</h6>
+                                            <h6>we’re on the map</h6>
                                             <div className="our_location">
                                                 <li>{ele.acf.main_office_address}</li>
                                             </div>
@@ -114,7 +114,7 @@ function ContactUs() {
                                     
                                 <div className='contact_twins_inner_r'>
                                         <div className='both_location'>
-                                            <h6>we’re call the map</h6>
+                                            <h6>we’re on the map</h6>
                                             <div className="our_location">
                                                 <li>{ele.acf.branch_office_location}</li>
                                             </div>
