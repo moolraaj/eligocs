@@ -308,7 +308,7 @@ function NavbarCompo({ data }) {
                           <img src={arrow.src || emptyImage.src} alt="arrow" />
                         </button>
 
-                        <div className="hide_seek blogs course_toggle " >
+                        <div className="hide_seek blogs services_toggle " >
                         <div className="services_nested">
                        {nested.map((ele)=>{
 
