@@ -11,15 +11,21 @@ function ServicesSecondSlug({ slug }) {
    let api = allExportedApi()
 
    let [data, setData] = useState([])
+   let [services, setServices] = useState([])
 
 
    const funcLoadSingleSrvices = async () => {
       const response = await api.fecthAllParentAndchildservices(slug);
       setData(response)
    }
+   const funcLoadAllSrvices = async () => {
+      const response = await api.fecthAllParentservices(slug);
+      setServices(response)
+   }
 
    useEffect(() => {
       funcLoadSingleSrvices()
+      funcLoadAllSrvices()
 
    }, [])
 
@@ -67,21 +73,32 @@ function ServicesSecondSlug({ slug }) {
                         <div className="services_right_sec">
                            <h3>Related Services</h3>
                            <div className="related-services">
-                              {
-                                 child_posts && child_posts.map((ele) => {
-                                    return <div key={ele.id}>
-
+                              {child_posts && child_posts.length > 0 ? (
+                                 child_posts.map((ele) => (
+                                    <div key={ele.id}>
                                        <ul>
                                           <li>
                                              <Link href={`/services/${slug}/${ele.slug}`}>{ele.acf.services_title || ""}</Link>
                                           </li>
                                        </ul>
                                     </div>
+                                 ))
+                              ) : (
 
-                                 })
-                              }
+                                 services && services.length > 0 && services.map((service) => (
+                                    <div key={service.id}>
+                                       <ul>
+                                          <li>
+                                             <Link href={`/services/${service.slug}`}>{service.acf.services_title || ""}</Link>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                 ))
+                              )}
                            </div>
                         </div>
+
+
                      </div>
 
                      <div className="services_development_process_wrapper">
@@ -191,43 +208,36 @@ function ServicesSecondSlug({ slug }) {
                })}
 
 
-               {
-                  parent_posts?.map((ele) => {
-                     return <div key={ele.id}>
-                        <h1>{ele.acf.services_title}  related services : </h1>
-                     </div>
-                  })
-               }
-
-               <div className="nested_services_outer">
-                  <div className="nested_services_inner">
-                     <div className="nested_services_wrapper">
-
-
-                        {
-                           child_posts?.map((ele) => {
-                              return <div className="nested_inner_services" key={ele.id} >
-                                 <Link href={`/services/${slug}/${ele.slug}`}>
-                                    <div className="services_nested_image">
-                                       <img src={ele.acf.services_image} alt='nested-service-image' />
-                                    </div>
-
-                                    <div className="nested_wrapper">
-                                       <div className="nested_link">
-
-                                          {ele.slug}
-
+               {child_posts && child_posts.length > 0 && (
+                  <>
+                     {parent_posts?.map((ele) => (
+                        <div key={ele.id}>
+                           <h1>{ele.acf.services_title} related services : </h1>
+                        </div>
+                     ))}
+                     <div className="nested_services_outer">
+                        <div className="nested_services_inner">
+                           <div className="nested_services_wrapper">
+                              {child_posts?.map((ele) => (
+                                 <div className="nested_inner_services" key={ele.id} >
+                                    <Link href={`/services/${slug}/${ele.slug}`}>
+                                       <div className="services_nested_image">
+                                          <img src={ele.acf.services_image} alt='nested-service-image' />
                                        </div>
-
-                                    </div>
-                                 </Link>
-                              </div>
-
-                           })
-                        }
+                                       <div className="nested_wrapper">
+                                          <div className="nested_link">
+                                             {ele.slug}
+                                          </div>
+                                       </div>
+                                    </Link>
+                                 </div>
+                              ))}
+                           </div>
+                        </div>
                      </div>
-                  </div>
-               </div>
+                  </>
+               )}
+
             </div>
 
 
