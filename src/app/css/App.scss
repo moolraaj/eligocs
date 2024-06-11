@@ -305,6 +305,9 @@ ul {
 .process_left_section {
 	overflow: hidden;
 }
+.inner_process_heading h3{
+	font-size: 30px;
+}
 
 .process_description li,
 .process_left_section {
@@ -876,7 +879,7 @@ div#career_section p {
 form#jobform textarea {
 	background: $white;
 	font-family: $Euclidfont;
-	padding: 0
+	padding: 30px 0px 0px 0px;
 }
 
 .applyjob_select_box {
@@ -2812,6 +2815,13 @@ ul.transformation_wrapper li h4 {
 	color: $primaryyellow;
 	text-transform: capitalize
 }
+.home_slider_wrapper p {
+    max-width: 1200px;
+	width: 100%;
+    margin: auto;
+	line-height: 45px;
+	padding: 0;
+}
 
 .home_section_outer {
 	padding: 120px 0 60px !important
@@ -3343,7 +3353,7 @@ menu.footer_ul li a {
 
 .services_inner_heading h2{
 	font-size: 60px;
-	width: 50%;
+	width: 60%;
 	margin-top: 0
 }
 
@@ -5703,7 +5713,16 @@ h6.user_name_c a {
 	}
 }
 
+@media(min-width:1441px)and (max-width:1500px) {
+	.home_slider_wrapper p {
+		max-width: 999px;
+	}
+}
+
 @media(min-width:1025px)and (max-width:1440px) {
+	.home_slider_wrapper p {
+		max-width: 999px;
+	}
 	.nested_services_wrapper{
 		grid-template-columns: repeat(3, 1fr);
 	}
@@ -6370,7 +6389,7 @@ h6.user_name_c a {
 	}
 
 	.servives_missout_description h2, h3, h4, h5, h6 {
-		font-size: 20px;
+		font-size: 20px !important;
 	}
 	.testimonial_wrap, .testimonial_wrap.active, .testimonial_wrap.active ~ .testimonial_wrap{
 		top: -30px !important;

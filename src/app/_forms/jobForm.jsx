@@ -120,12 +120,6 @@ function JobForm() {
                         {errors.phone && <span className='error_fields'>phone number is required</span>}
                     </div>
                     <div className="form_fields_wrapper">
-                        <input type="text" name="companyname" placeholder='company name' value={user.companyname} onChange={getUserData} />
-                    </div>
-                    <div className="form_fields_wrapper">
-                        <input type="text" name="budget" placeholder='budget' value={user.budget} onChange={getUserData} />
-                    </div>
-                    <div className="form_fields_wrapper">
                         <textarea name="yourmessage" placeholder="Enter your message" value={user.yourmessage} onChange={getUserData} cols="30" rows="50"></textarea>
                     </div>
                     <div className="recaptcha_section">

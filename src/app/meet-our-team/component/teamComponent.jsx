@@ -74,7 +74,7 @@ function TeamComponent() {
                         ))}
                     </select>
                 </div>
-                
+                <div className="member_view_section">
                 {loading ? ( // Show loading indicator while loading
                     <p className="loading_data">Loading...</p>
                 ) : (
@@ -139,6 +139,7 @@ function TeamComponent() {
                         </div>
                     </div>
                 )}
+                </div>
             </div>
         </>
     )
