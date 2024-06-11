@@ -7,38 +7,24 @@ import { useRouter } from 'next/navigation';
 import { emptyImage } from '../../../../public/assets/images';
 
 function OurProductPage() {
-  let api = allExportedApi();
+  const api = allExportedApi();
   const [ProductPageApiData, setProductPageApiData] = useState([]);
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [loading, setLoading] = useState(true); // Add loading state
 
   const router = useRouter();
 
   const loadProductPageData = async () => {
-    try {
-      let data = await api.ProductPageApi();
-      setProductPageApiData(data);
-    } catch (error) {
-      // Handle error if needed
-    } finally {
-      setLoading(false); // Set loading to false after data is loaded
-    }
+    const data = await api.ProductPageApi();
+    setProductPageApiData(data);
   };
 
   const loadProducts = async () => {
-    try {
-      let data = await api.AllProducts();
-      setProducts(data);
-    } catch (error) {
-      // Handle error if needed
-    } finally {
-      setLoading(false); // Set loading to false after data is loaded
-    }
+    const data = await api.AllProducts();
+    setProducts(data);
   };
 
   useEffect(() => {
-    setLoading(true); // Set loading to true when fetching data
     loadProductPageData();
     loadProducts();
   }, []);
@@ -54,7 +40,13 @@ function OurProductPage() {
         <li>
           <span className="wrap_nmae_btn">
             <span><h1>{product.acf.product_name}</h1></span>
-            <span><Link href={`/our-products/${product.slug}`}>Read More</Link></span>
+            <span>
+              {product.product_status === 'completed' ? (
+                <Link href={`/our-products/${product.slug}`}>Read More</Link>
+              ) : (
+                <Link href={`/our-products/${product.slug}`} className="coming-soon-btn">Coming Soon..</Link>
+              )}
+            </span>
           </span>
         </li>
         <li><img src={product.acf.product_image.url || emptyImage.src} alt="portfolio_image" /></li>
@@ -88,39 +80,33 @@ function OurProductPage() {
     <>
       <div className="Our-product-page-outer page_top">
         <div className="Our-product-page-inner">
-          {loading ? ( // Show loading indicator while loading
-            <p className="loading_data">Loading...</p>
-          ) : (
-            <>
-              {ProductPageApiData && ProductPageApiData.map((ele, index) => (
-                <div key={index} className="product-page-top-section">
-                  <div className="product-top-image-section">
-                    <div className="product_heading_left"><h3>{ele.acf.product_page_heading}</h3></div>
-                    <div className="product_image_right">
-                      <img src={ele.acf.product_page_image.url || emptyImage.src} alt="product_page_image" />
-                      <span></span>
-                    </div>
-                  </div>
-                  <div className="product-top-info-section">
-                    <div className="product-page-left-info">
-                      <h1>{ele.acf.product_page_heading}</h1>
-                      <p>{ele.acf.product_page_description}</p>
-                    </div>
-                    <div className="product-page-right-info">
-                      <div className="product_right_info_inner">
-                        <p>{ele.acf.product_page__find_product_heading}</p>
-                        <Link href={`/our-products`}>find our products</Link>
-                      </div>
-                    </div>
+          {ProductPageApiData && ProductPageApiData.map((ele, index) => (
+            <div key={index} className="product-page-top-section">
+              <div className="product-top-image-section">
+                <div className="product_heading_left"><h3>{ele.acf.product_page_heading}</h3></div>
+                <div className="product_image_right">
+                  <img src={ele.acf.product_page_image.url || emptyImage.src} alt="product_page_image" />
+                  <span></span>
+                </div>
+              </div>
+              <div className="product-top-info-section">
+                <div className="product-page-left-info">
+                  <h1>{ele.acf.product_page_heading}</h1>
+                  <p>{ele.acf.product_page_description}</p>
+                </div>
+                <div className="product-page-right-info">
+                  <div className="product_right_info_inner">
+                    <p>{ele.acf.product_page__find_product_heading}</p>
+                    <Link href={`/our-products`} >find our products</Link>
                   </div>
                 </div>
-              ))}
-              <div className="our_products_wrapper">
-                {renderProducts()}
               </div>
-              {totalPages > 1 && renderPaginationButtons()}
-            </>
-          )}
+            </div>
+          ))}
+          <div className="our_products_wrapper">
+            {renderProducts()}
+          </div>
+          {totalPages > 1 && renderPaginationButtons()}
         </div>
       </div>
     </>
