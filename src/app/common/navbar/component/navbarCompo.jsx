@@ -300,6 +300,30 @@ function NavbarCompo({ data }) {
 
                     </div>
                     <NavigationLink href={'/services'}>services</NavigationLink>
+                    {/* <div className="navbar_toggle_navigation">
+                    <NavigationLink href={'/services'}>services</NavigationLink>
+                      <div className="hide_seek_wrapper course_hide_seek_wrapper">
+
+                        <button aria-label='toggle_navlinks'>
+                          <img src={arrow.src || emptyImage.src} alt="arrow" />
+                        </button>
+
+                        <div className="hide_seek blogs course_toggle " >
+                        <div className="services_nested">
+                       {nested.map((ele)=>{
+
+                        return <div key={ele.id}>
+                          <NavigationLink href={`/services/${ele.slug}`}>
+                          {ele.title.rendered}
+                          </NavigationLink>
+                        </div>
+
+                       })}
+                    </div>
+                        </div>
+                      </div>
+
+                    </div> */}
                     <div className="navbar_toggle_navigation">
                       <NavigationLink href={'/courses'}>courses</NavigationLink>
                       <div className="hide_seek_wrapper course_hide_seek_wrapper">
@@ -321,27 +345,7 @@ function NavbarCompo({ data }) {
                     <NavigationLink href={'/career'}>career</NavigationLink>
                     <NavigationLink href={'/blogs'}>blog</NavigationLink>
 
-                    {/* <div className="services_nested">
-                       {parent_posts.map((ele)=>{
-
-                        return <div key={e.id}>
-                          <NavigationLink href={`/services/${ele.slug}`}>
-                          {ele.title.rendered}
-                          </NavigationLink>
-                          {
-                            child_posts?.map((e)=>{
-                              return <div key={e.id}>
-                                <NavigationLink href={`/servives/${ele.slug}/${e.slug}`}>
-                                {ele.title.rendered}
-                                </NavigationLink>
-
-                              </div>
-                            })
-                          }
-                        </div>
-
-                       })}
-                    </div> */}
+                    
                     <NavigationLink href={'/portfolio'}>portfolio</NavigationLink>
                     <NavigationLink href={'/our-products'}>our products</NavigationLink>
 
