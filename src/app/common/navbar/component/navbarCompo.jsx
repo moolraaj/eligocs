@@ -22,7 +22,7 @@ const load = async () => {
       const childApi = await fetch(`https://api.eligo.cloud/wp-json/wp/v2/services?category=${slug}&sub-category=all`);
       const childData = await childApi.json();
       childPosts[slug] = childData;
-  
+
     }
 
     return { parentPosts, childPosts };
@@ -64,9 +64,9 @@ function NavbarCompo({ data }) {
   }, []);
 
 
-   
+
   console.log(nested)
-   
+
 
 
 
@@ -299,9 +299,28 @@ function NavbarCompo({ data }) {
                       </div>
 
                     </div>
+                    <NavigationLink href={'/services'}>services</NavigationLink>
+                    <div className="navbar_toggle_navigation">
+                      <NavigationLink href={'/courses'}>courses</NavigationLink>
+                      <div className="hide_seek_wrapper course_hide_seek_wrapper">
+
+                        <button aria-label='toggle_navlinks'>
+                          <img src={arrow.src || emptyImage.src} alt="arrow" />
+                        </button>
+
+                        <div className="hide_seek blogs course_toggle " >
+
+                          <NavigationLink href={'/our-internship'} >our internship</NavigationLink>
+
+
+
+                        </div>
+                      </div>
+
+                    </div>
                     <NavigationLink href={'/career'}>career</NavigationLink>
                     <NavigationLink href={'/blogs'}>blog</NavigationLink>
-                    <NavigationLink href={'/services'}>services</NavigationLink>
+
                     {/* <div className="services_nested">
                        {parent_posts.map((ele)=>{
 
@@ -323,35 +342,6 @@ function NavbarCompo({ data }) {
 
                        })}
                     </div> */}
-
-
-
-
-
-                    <div className="navbar_toggle_navigation">
-                      <NavigationLink href={'/courses'}>courses</NavigationLink>
-                      <div className="hide_seek_wrapper course_hide_seek_wrapper">
-
-                        <button aria-label='toggle_navlinks'>
-                          <img src={arrow.src || emptyImage.src} alt="arrow" />
-                        </button>
-
-                        <div className="hide_seek blogs course_toggle " >
-
-                          <NavigationLink href={'/our-internship'} >our internship</NavigationLink>
-
-
-
-                        </div>
-                      </div>
-
-                    </div>
-
-
-
-
-
-
                     <NavigationLink href={'/portfolio'}>portfolio</NavigationLink>
                     <NavigationLink href={'/our-products'}>our products</NavigationLink>
 
