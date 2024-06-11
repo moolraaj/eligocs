@@ -2081,16 +2081,11 @@ h1,h2,h3,h4,h5,h6{
 
 .category_section {
 	display: grid;
-	grid-template-columns: 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	gap: 30px;
-	
-}
-.member_view_section{
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 40px;
 	cursor: pointer;
 }
+
 .team_banner_image img {
 	width: 100%;
 	height: 640px;
@@ -5740,7 +5735,7 @@ h6.user_name_c a {
 	}
 
 	.category_section {
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr 1fr;
 	}
 
 	.step-image-container {
@@ -6206,7 +6201,7 @@ h6.user_name_c a {
 	}
 
 	.category_section {
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr 1fr;
 	}
 
 	.portfolio_inner_top_right_section {
@@ -6350,9 +6345,6 @@ h6.user_name_c a {
 }
 
 @media(max-width:768px) {
-	.member_view_section{
-		grid-template-columns: 1fr;
-	}
 	.portfolio_top_left_section .portfolio_top_right_section p p,
 	.blog_page_heading_wrapper p p,
 	.our_team_description p p{
