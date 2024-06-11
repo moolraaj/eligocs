@@ -72,7 +72,7 @@ function NotFound() {
               <div className="not_found_wrapper">
                 <div className="content">
                   <div className="text">
-                  <h1 style={{ color: acf.tittle_color || 'black', fontSize: acf.tittle_size || '24px' }}>Ooops!.</h1>
+                  <h1 style={{ color: acf.tittle_color || 'black', fontSize: acf.tittle_size || '60px' }}>Ooops!.</h1>
                     <div
                       style={{ color: acf.description_color || 'grey', fontSize: acf.description_size || '16px' }}
                       dangerouslySetInnerHTML={{ __html: acf.description || 'Sorry, the page you’re looking for isn’t available.' }}

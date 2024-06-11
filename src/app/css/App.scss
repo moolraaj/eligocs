@@ -6449,7 +6449,17 @@ h6.user_name_c a {
 }
 
 @media(max-width:768px) {
-
+	.not_found_outer {
+		.content .text h1{
+			font-size: 50px !important;
+		}
+		p{
+			font-size: 18px !important;
+			span{
+				font-size: 40px !important;
+			}
+		}
+	}
 	.apply_now_career,
 	.apply_now_career_btn,
 	.experience_skill_left li{
@@ -9375,7 +9385,6 @@ h6.user_name_c a {
 
 		h1 {
 			color: black;
-			font-size: 24px;
 			margin-bottom: 20px;
 		}
 
@@ -9387,11 +9396,14 @@ h6.user_name_c a {
 
 		p {
 			margin-top: 20px;
-			line-height: 40px;
+			line-height: 50px;
 
 			span {
 				color: blue;
 				font-size: 16px;
+			}
+			span:hover{
+				color: red !important;
 			}
 		}
 
