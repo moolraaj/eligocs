@@ -1,24 +1,76 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import PortfolioComponent from '@/app/portfolio/component/portfolioComponent';
 import JobForm from '@/app/_forms/jobForm';
 import RerenderCompo from './formAnimationCompo';
 import ApplyForJob from '@/app/_forms/applyForJob';
 import MultistepForm from '@/app/_forms/multistepForm';
-import { emptyImage,closeMenuIcon,FormLogo,formClose,arrow} from '../../../../../public/assets/images';
+import { emptyImage, closeMenuIcon, FormLogo, formClose, arrow } from '../../../../../public/assets/images';
+
+
+const load = async () => {
+  try {
+    const parentApi = await fetch('https://api.eligo.cloud/wp-json/wp/v2/services?category=allparent');
+    const parentPosts = await parentApi.json();
+
+    const parentSlugs = parentPosts.slice(0, 3).map(post => post.slug);
+
+    const childPosts = {};
+
+    for (const slug of parentSlugs) {
+      const childApi = await fetch(`https://api.eligo.cloud/wp-json/wp/v2/services?category=${slug}&sub-category=all`);
+      const childData = await childApi.json();
+      childPosts[slug] = childData;
+  
+    }
+
+    return { parentPosts, childPosts };
+  } catch (error) {
+    console.error('Error loading data:', error);
+    throw error;
+  }
+};
+
+
+
+
+
+
+
 
 
 
 function NavbarCompo({ data }) {
 
-  const { siteLogoUrl, siteTitle, headerMenuItems, socialLinks, footerPhoneNumberFirst, footerPhoneNumberSecond, footerEmail } = data.header
+
+  const { siteLogoUrl, siteTitle, socialLinks, footerPhoneNumberFirst, footerPhoneNumberSecond } = data.header
 
   const [isOpen, setIsOpen] = useState(false);
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [ismultisepPopupForm, setIsMultisepPopupForm] = useState(false);
   const [isApplyJobVisible, setIsApplyJobVisible] = useState(false);
-  
+
+  const [nested, setNested] = useState([]);
+
+  const loadParentChildServices = async () => {
+    const resp = await load();
+    setNested(resp.childPosts);
+    setNested(resp.parentPosts);
+  };
+
+  useEffect(() => {
+    loadParentChildServices();
+  }, []);
+
+
+   
+  console.log(nested)
+   
+
+
+
+
 
   const showApplyJob = () => {
     setIsApplyJobVisible(true);
@@ -31,7 +83,7 @@ function NavbarCompo({ data }) {
   const multisepPopupForm = () => {
     setIsMultisepPopupForm(!ismultisepPopupForm);
   }
- 
+
 
   const toggleFormVisibility = () => {
     setIsFormVisible(!isFormVisible);
@@ -56,8 +108,8 @@ function NavbarCompo({ data }) {
 
   );
 
- 
-  
+
+
 
 
   return (
@@ -250,7 +302,28 @@ function NavbarCompo({ data }) {
                     <NavigationLink href={'/career'}>career</NavigationLink>
                     <NavigationLink href={'/blogs'}>blog</NavigationLink>
                     <NavigationLink href={'/services'}>services</NavigationLink>
-                
+                    {/* <div className="services_nested">
+                       {parent_posts.map((ele)=>{
+
+                        return <div key={e.id}>
+                          <NavigationLink href={`/services/${ele.slug}`}>
+                          {ele.title.rendered}
+                          </NavigationLink>
+                          {
+                            child_posts?.map((e)=>{
+                              return <div key={e.id}>
+                                <NavigationLink href={`/servives/${ele.slug}/${e.slug}`}>
+                                {ele.title.rendered}
+                                </NavigationLink>
+
+                              </div>
+                            })
+                          }
+                        </div>
+
+                       })}
+                    </div> */}
+
 
 
 
@@ -306,7 +379,7 @@ function NavbarCompo({ data }) {
                         </div>
                         <div className='navbar_social_media'>
                           {
-                           socialLinks && socialLinks.map((ele, index) => {
+                            socialLinks && socialLinks.map((ele, index) => {
                               return <div key={index} className='header_media_icons'>
                                 <Link href={ele.iconUrl} target='_blank'><img src={ele.imageUrl || emptyImage.src} alt='spcial-icons' /></Link>
                               </div>
