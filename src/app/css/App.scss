@@ -2987,6 +2987,12 @@ menu.footer_ul li a {
 		font-size: 25px;
 		line-height: 40px;
 		margin-bottom: 20px;
+		a{
+			color: blue;
+		}
+		a:hover{
+			color: red;
+		}
 	}
 }
 
