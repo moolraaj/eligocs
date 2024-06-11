@@ -104,7 +104,7 @@ export default function ServicesPage() {
 
                                                             </div>
                                                             <div className="service_content_description">
-                                                                <span dangerouslySetInnerHTML={{__html:e.acf.services_description.slice(0, 150)}}></span>
+                                                                <div dangerouslySetInnerHTML={{__html:e.acf.services_description.slice(0, 150)}}></div>
 
                                                             </div>
                                                         </div>
