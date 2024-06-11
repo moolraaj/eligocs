@@ -5713,6 +5713,12 @@ h6.user_name_c a {
 	}
 }
 
+@media(min-width:1441px)and (max-width:1500px) {
+	.home_slider_wrapper p {
+		max-width: 999px;
+	}
+}
+
 @media(min-width:1025px)and (max-width:1440px) {
 	.home_slider_wrapper p {
 		max-width: 999px;
