@@ -430,7 +430,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .not_found_outer {
-	padding: 120px 20px 50px
+	padding: 120px 20px 50px;
+	height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
 }
 .not_found_inner {
 	animation: slideIn 1s ease-in-out;
