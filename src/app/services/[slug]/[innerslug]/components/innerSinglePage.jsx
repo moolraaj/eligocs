@@ -108,6 +108,11 @@ function InnerSinglePage({ slug, innerslug }) {
                      <div className="services_development_process_wrapper">
                         {Array.isArray(ele.acf?.inner_development_process) ? (
                            ele.acf.inner_development_process.map((process, index) => (
+                              <>
+                              <div className='process_flex_first_container'>
+                                 <h3>{process.services_post_container_first_heading || ""}</h3>
+                                 <div dangerouslySetInnerHTML={{__html: process.services_post_container_first_description || ""}}></div>
+                              </div>
                               <div className={`process_flex_template process_template-${index % 2 === 0 ? "even" : "odd"}`} key={index}>
                                  <div className="process_left_section">
                                     <div className="inner_process_heading">
@@ -123,6 +128,7 @@ function InnerSinglePage({ slug, innerslug }) {
                                     </div>
                                  </div>
                               </div>
+                              </>
                            ))
                         ) : (
                            ""

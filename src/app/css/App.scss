@@ -2978,7 +2978,16 @@ menu.footer_ul li a {
 	position: relative;
 	overflow: hidden;
 }
-
+.process_flex_first_container {
+    margin: 40px auto;
+	h3{
+		font-size: 30px;
+	}
+	p,li{
+		font-size: 25px;
+		line-height: 40px;
+	}
+}
 
 .process_left_section {
 	background: $primaryyellow;
