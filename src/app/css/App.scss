@@ -1019,7 +1019,8 @@ form#jobform textarea {
 
 .service_page_right_section,
 .show_all_services_section {
-	padding: 0 20px
+	padding: 0 20px;
+	pointer-events: auto;
 }
 
 .Previous_next_button {
@@ -5664,7 +5665,7 @@ h6.user_name_c a {
 
 	.service_page_right_section,
 	.show_all_services_section {
-		padding: 0 20px
+		padding: 0 20px;
 	}
 
 	.our-mission-outer,
