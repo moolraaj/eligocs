@@ -432,26 +432,28 @@ body::-webkit-scrollbar-thumb {
 .not_found_outer {
 	padding: 120px 20px 50px;
 	height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 600px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 600px;
 }
+
 .not_found_inner {
 	animation: slideIn 1s ease-in-out;
-  }
+}
 
-  @keyframes slideIn {
+@keyframes slideIn {
 	from {
-	  transform: translateY(20px);
-	  opacity: 0;
+		transform: translateY(20px);
+		opacity: 0;
 	}
+
 	to {
-	  transform: translateY(0);
-	  opacity: 1;
+		transform: translateY(0);
+		opacity: 1;
 	}
-  }
-  
+}
+
 .footer_contact_one li,
 .footer_contact_second li {
 	margin-bottom: 7px
@@ -5817,11 +5819,13 @@ h6.user_name_c a {
 	.home_slider_wrapper p {
 		max-width: 999px;
 	}
+
 	.current_opening_left ul li,
 	.duties_left ul li,
-	.experience_skill_left li{
+	.experience_skill_left li {
 		font-size: 16px;
 	}
+
 	.nested_services_wrapper {
 		grid-template-columns: repeat(3, 1fr);
 	}
@@ -6449,20 +6453,27 @@ h6.user_name_c a {
 }
 
 @media(max-width:768px) {
+	.trans_number {
+		line-height: 40px;
+	}
+
 	.not_found_outer {
-		.content .text h1{
+		.content .text h1 {
 			font-size: 50px !important;
 		}
-		p{
+
+		p {
 			font-size: 18px !important;
-			span{
+
+			span {
 				font-size: 40px !important;
 			}
 		}
 	}
+
 	.apply_now_career,
 	.apply_now_career_btn,
-	.experience_skill_left li{
+	.experience_skill_left li {
 		font-size: 16px;
 	}
 
@@ -7999,9 +8010,11 @@ h6.user_name_c a {
 	.menu-right-container-bottom a {
 		font-size: 1.8em
 	}
-	.course_toggle{
+
+	.course_toggle {
 		left: 93px !important;
 	}
+
 	.hide_seek_wrapper .blogs {
 		top: 40px;
 		left: 50%;
@@ -9255,14 +9268,17 @@ h6.user_name_c a {
 	width: 100%;
 	display: block;
 }
+
 .current_opening_right img {
-    width: 100%;
+	width: 100%;
 }
+
 @media (max-width: 1024px) {
+
 	.products_inner_description ul,
 	.current_opening_left ul li,
 	.duties_left ul li,
-	.experience_skill_left li{
+	.experience_skill_left li {
 		font-size: 16px;
 	}
 
@@ -9404,7 +9420,8 @@ h6.user_name_c a {
 				color: blue;
 				font-size: 16px;
 			}
-			span:hover{
+
+			span:hover {
 				color: red !important;
 			}
 		}
@@ -9476,7 +9493,3 @@ h6.user_name_c a {
 		transform: translate3d(4px, 0, 0);
 	}
 }
-
-
-
- 
