@@ -5796,7 +5796,11 @@ h6.user_name_c a {
 	.home_slider_wrapper p {
 		max-width: 999px;
 	}
-
+	.current_opening_left ul li,
+	.duties_left ul li,
+	.experience_skill_left li{
+		font-size: 16px;
+	}
 	.nested_services_wrapper {
 		grid-template-columns: repeat(3, 1fr);
 	}
@@ -9220,7 +9224,10 @@ h6.user_name_c a {
 }
 
 @media (max-width: 1024px) {
-	.products_inner_description ul {
+	.products_inner_description ul,
+	.current_opening_left ul li,
+	.duties_left ul li,
+	.experience_skill_left li{
 		font-size: 16px;
 	}
 
