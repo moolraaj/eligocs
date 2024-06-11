@@ -84,6 +84,7 @@ function TeamComponent() {
                             return null; // Skip rendering this category if no members match the filter
                         }
                         return (
+                            <div className="member_view_inner">
                             <React.Fragment key={category}>
                                 <div className="category_header">
                                     <h2>{category}</h2>
@@ -128,6 +129,7 @@ function TeamComponent() {
                                     ))}
                                 </div>
                             </React.Fragment>
+                            </div>
                         );
                     })
                 )}
