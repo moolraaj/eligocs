@@ -2016,8 +2016,19 @@ h6 {
 	background: $white;
 	box-shadow: $box-shadow;
 	border: 1px solid #80808045;
+	position: relative;
 }
-
+.badge {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: #ff9800;
+	color: white;
+	padding: 4px 8px;
+	border-radius: 5px 0px 0px 5px;
+	font-size: 12px;
+	font-weight: bold;
+  }
 
 .member_informations_section {
 	display: flex;
@@ -2030,7 +2041,7 @@ h6 {
 	height: 190px;
 	cursor: pointer;
 	display: grid;
-	align-items: center;
+	align-items: normal;
 	justify-content: space-between;
 	grid-template-columns: 1fr;
 }
@@ -2062,7 +2073,8 @@ h6 {
 .team-member_image {
 	position: relative;
 	z-index: 9;
-	width: min-content
+	width: min-content;
+	pointer-events: none;
 }
 
 .member_social_icons img {
@@ -2174,7 +2186,7 @@ h1.type_text_wrapper span {
 	display: block;
 	position: relative;
 	max-width: 130px;
-	top: 20px;
+	top: 25px;
 	z-index: 999999;
 	width: 130px;
 	height: 130px;
@@ -2300,7 +2312,9 @@ h1.type_text_wrapper span {
 }
 
 .course-page-top-section img {
-	width: 100%
+	width: 100%;
+	height: 400px;
+	object-fit: cover;
 }
 
 ul.course li:first-child img {
@@ -6454,6 +6468,9 @@ h6.user_name_c a {
 }
 
 @media(max-width:768px) {
+	.course-page-top-section img{
+		height: 220px;
+	}
 	.trans_number {
 		line-height: 40px;
 	}

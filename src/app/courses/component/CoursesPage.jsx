@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { COURSE_PAGE_SIZE, allExportedApi } from '@/utils/apis/Apis';
+import { allExportedApi } from '@/utils/apis/Apis';
 import { useRouter } from 'next/navigation';
 import { emptyImage, formClose } from '../../../../public/assets/images';
 import JoinCourse from '@/app/_forms/JoinCourse';
@@ -13,7 +13,6 @@ function CoursesPage() {
   const [coursesPageData, setCoursesPageData] = useState([]);
   const [result, setResult] = useState({ course_categories: [], courses: [] });
   const [selectedCategory, setSelectedCategory] = useState('');
-  const [currentPage, setCurrentPage] = useState(1);
   const [noCoursesFound, setNoCoursesFound] = useState(false);
   const [filteredCoursesData, setFilteredCoursesData] = useState([]);
   const [isApplyJobVisible, setIsApplyJobVisible] = useState(false);
@@ -61,10 +60,7 @@ function CoursesPage() {
 
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
-    setCurrentPage(1);
   };
-
-  const totalPages = () => Math.ceil(filteredCoursesData.length / COURSE_PAGE_SIZE);
 
   const filteredCourses = () => {
     let filtered = selectedCategory
@@ -75,54 +71,28 @@ function CoursesPage() {
   };
 
   const renderCourses = () => {
-    const startIndex = (currentPage - 1) * COURSE_PAGE_SIZE;
-    const endIndex = startIndex + COURSE_PAGE_SIZE;
-    return filteredCoursesData.slice(startIndex, endIndex).map((course, index) => (
+    return filteredCoursesData.map((course, index) => (
       <ul key={index} className="course">
-        <Link className='see_course' href={`/courses/${course.slug}`} style={{cursor: 'pointer'}}>
-        <li>
-          <img src={course.acf.course_logo.url || emptyImage.src} alt="course_logo" />
-        </li>
-        <li>
-          <h1>{course.acf.course_tittle}</h1>
-        </li>
-        <li>
-          <span className='course_short_intro_section'
-            dangerouslySetInnerHTML={{
-              __html: course.acf.course_short_intro
-            }}
-          ></span>
-        </li>
-        </Link>
+        
+          <li>
+            <img src={course.acf.course_logo.url || emptyImage.src} alt="course_logo" />
+          </li>
+          <li>
+            <h1>{course.acf.course_tittle}</h1>
+          </li>
+          <li>
+            <span className='course_short_intro_section'
+              dangerouslySetInnerHTML={{
+                __html: course.acf.course_short_intro
+              }}
+            ></span>
+          </li>
         <span className='course_card_btns'>
           <span id='course_join_btn' onClick={toggleFormVisibility}>Join Course</span>
           <Link id='course_cirect_connect_btn' href="https://api.whatsapp.com/send/?phone=%2B919317215300&text&type=phone_number&app_absent=0" target='_blank'>Direct Connect</Link>
         </span>
       </ul>
     ));
-  };
-
-  const renderPaginationButtons = () => {
-    const totalPagesCount = totalPages();
-    const pageNumbers = Array.from({ length: totalPagesCount }, (_, i) => i + 1);
-
-    const handleClick = (pageNumber) => {
-      setCurrentPage(pageNumber);
-    };
-
-    return (
-      <div className="pagination-buttons">
-        {pageNumbers.map((pageNumber) => (
-          <button
-            key={pageNumber}
-            onClick={() => handleClick(pageNumber)}
-            className={pageNumber === currentPage ? 'active' : ''}
-          >
-            {pageNumber}
-          </button>
-        ))}
-      </div>
-    );
   };
 
   return (
@@ -192,20 +162,17 @@ function CoursesPage() {
             </div>
           </div>
 
-         
-            <div className={`courses-posts-outer ${noCoursesFound ? 'no-courses' : ''}`}>
+          <div className={`courses-posts-outer ${noCoursesFound ? 'no-courses' : ''}`}>
             {loading ? ( // Show loading indicator while loading
-            <p className="loading_data">Loading...</p>
-          ) : (
+              <p className="loading_data">Loading...</p>
+            ) : (
               filteredCoursesData.length > 0 ? (
                 renderCourses()
               ) : (
                 <p>No courses found for selected category.</p>
-              ))}
-            </div>
-          
-
-          {filteredCoursesData.length >= COURSE_PAGE_SIZE && renderPaginationButtons()}
+              )
+            )}
+          </div>
         </div>
       </div>
     </>
