@@ -27,13 +27,11 @@ yarn-error.log*
 
 # local env files
 .env*.local
-.env
+ 
 
-# utils/api folder
-/src/utils
+ 
 
-#_metadata
-/src/app/_metadata
+ 
 
 # vercel
 .vercel
