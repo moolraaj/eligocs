@@ -62,7 +62,7 @@ export default  function TeamPageComponent() {
 
           <div className="team_member_lists">
             <div className="member_top_heading">
-              <h1>{ele.acf.member_groups_heading}</h1>
+              <h2>{ele.acf.member_groups_heading}</h2>
             </div>
 
             <div className="our_memeber_wrapper">

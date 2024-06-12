@@ -1996,7 +1996,7 @@ h6 {
 
 
 
-.member_top_heading h1 {
+.member_top_heading h2 {
 	font-size: 6em;
 	text-align: center;
 	margin: 0;
@@ -2191,7 +2191,7 @@ h1.type_text_wrapper span {
 
 .right_banner_heading h1 {
 	font-size: 6em;
-	margin: auto;
+	margin: auto auto 20px auto;
 }
 
 .right_banner_heading {
@@ -7529,7 +7529,7 @@ h6.user_name_c a {
 		font-size: 2em;
 	}
 
-	.member_top_heading h1 {
+	.member_top_heading h2{
 		font-size: 3em;
 		padding-top: 20px
 	}
@@ -8927,7 +8927,7 @@ h6.user_name_c a {
 		justify-content: flex-start
 	}
 
-	.member_top_heading h1,
+	.member_top_heading h2,
 	.right_banner_heading h1 {
 		font-size: 1.875em
 	}
