@@ -129,14 +129,14 @@ const WorkingProcess = ({ result }) => {
               {step.step_imageupper && (
                 <img
                   className="image-upper"
-                  src={step.step_imageupper.url || emptyImage.src}
+                  src={step.step_imageupper || emptyImage.src}
                   alt={`Step ${index + 1}`}
                 />
               )}
               {step.step_imagemain && (
                 <img
                   className="main-image"
-                  src={step.step_imagemain.url || emptyImage.src}
+                  src={step.step_imagemain || emptyImage.src}
                   alt={`Step ${index + 1}`}
                 />
               )}
@@ -144,7 +144,7 @@ const WorkingProcess = ({ result }) => {
               {step.step_imagelower && (
                 <img
                   className="image-lower"
-                  src={step.step_imagelower.url || emptyImage.src}
+                  src={step.step_imagelower || emptyImage.src}
                   alt={`Step ${index + 1}`}
                 />
               )}
