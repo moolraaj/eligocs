@@ -45,27 +45,27 @@ const AboutUs = () => {
                               <div className="slider">
                                 <div style={{ display: "flex", }}>
                                   <img
-                                    src={slider.top_slider_image_first.url || emptyImage.src}
+                                    src={slider.top_slider_image_first || emptyImage.src}
                                     alt={`img${index + 1}`}
                                   />
                                   <div className="images-outer">
                                     <div></div>
                                     <div>
                                       <img
-                                        src={slider.top_slider_image_second.url || emptyImage.src}
+                                        src={slider.top_slider_image_second || emptyImage.src}
                                         alt={`img${index + 2}`}
                                       />
                                     </div>
                                     <div>
                                       <img
-                                        src={slider.top_slider_image_third.url || emptyImage.src}
+                                        src={slider.top_slider_image_third || emptyImage.src}
                                         alt={`img${index + 3}`}
                                       />
                                     </div>
                                     <div></div>
                                   </div>
                                   <img
-                                    src={slider.top_slider_image_fourth.url || emptyImage.src}
+                                    src={slider.top_slider_image_fourth || emptyImage.src}
                                     alt={`img${index + 4}`}
                                   />
                                 </div>
@@ -108,34 +108,10 @@ const AboutUs = () => {
                   </h1>
                   <div className="our-mission-outer">
                     <div className="mission-left">
-                      <p>
-                        As a company offering{" "}
-                        <span className="uderline-para">
-                          professional web development
-                        </span>{" "}
-                        and{" "}
-                        <span className="uderline-para">
-                          web hostingservices,
-                        </span>{" "}
-                        <span className="uderline-para">
-                          Eligo Creative Services
-                        </span>{" "}
-                        mission is to design unique, creative and innovative
-                        products, as well as{" "}
-                        <span className="uderline-para">
-                          technological solutions
-                        </span>
-                        , for our clients. Our dedication to quality and{" "}
-                        <span className="uderline-para">
-                          customer satisfaction
-                        </span>{" "}
-                        ensures that we strive to meet tha needs and expectations
-                        of our clients to nurture strong, long-term relationships
-                        while adding more value to our business
-                      </p>
+                      <p dangerouslySetInnerHTML={{__html: ele.acf.our_mission_description}}></p>
                     </div>
                     <div className="mission-right">
-                      <img src={ele.acf.our_mission_image.url || emptyImage.src} alt="ourMissionImg" />
+                      <img src={ele.acf.our_mission_image || emptyImage.src} alt="ourMissionImg" />
                     </div>
                   </div>
                 </div>

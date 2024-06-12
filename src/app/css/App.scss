@@ -430,7 +430,28 @@ body::-webkit-scrollbar-thumb {
 }
 
 .not_found_outer {
-	padding: 120px 20px 50px
+	padding: 120px 20px 50px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 600px;
+}
+
+.not_found_inner {
+	animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+	from {
+		transform: translateY(20px);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
 }
 
 .footer_contact_one li,
@@ -1019,7 +1040,8 @@ form#jobform textarea {
 
 .service_page_right_section,
 .show_all_services_section {
-	padding: 0 20px
+	padding: 0 20px;
+	pointer-events: auto;
 }
 
 .Previous_next_button {
@@ -1731,8 +1753,9 @@ form#applyforjob textarea {
 
 .product-top-info-section .product_right_info_inner p {
 	color: $white;
-	margin-bottom: 20px;
-	font-size: 1.875em
+	margin-bottom: 40px;
+	font-size: 1.875em;
+	text-align: left;
 }
 
 .product-top-info-section .product_right_info_inner a {
@@ -1973,7 +1996,7 @@ h6 {
 
 
 
-.member_top_heading h1 {
+.member_top_heading h2 {
 	font-size: 6em;
 	text-align: center;
 	margin: 0;
@@ -2168,7 +2191,7 @@ h1.type_text_wrapper span {
 
 .right_banner_heading h1 {
 	font-size: 6em;
-	margin: auto;
+	margin: auto auto 20px auto;
 }
 
 .right_banner_heading {
@@ -2785,6 +2808,7 @@ a.back-to-projects {
 .services_navigation {
 	max-width: fit-content;
 	width: 100%;
+	pointer-events: auto;
 }
 
 .port_description p p {
@@ -5663,7 +5687,7 @@ h6.user_name_c a {
 
 	.service_page_right_section,
 	.show_all_services_section {
-		padding: 0 20px
+		padding: 0 20px;
 	}
 
 	.our-mission-outer,
@@ -5796,11 +5820,13 @@ h6.user_name_c a {
 	.home_slider_wrapper p {
 		max-width: 999px;
 	}
+
 	.current_opening_left ul li,
 	.duties_left ul li,
-	.experience_skill_left li{
+	.experience_skill_left li {
 		font-size: 16px;
 	}
+
 	.nested_services_wrapper {
 		grid-template-columns: repeat(3, 1fr);
 	}
@@ -6428,10 +6454,29 @@ h6.user_name_c a {
 }
 
 @media(max-width:768px) {
+	.trans_number {
+		line-height: 40px;
+	}
+	.our_products_wrapper .our_product span.wrap_nmae_btn{
+		padding: 0;
+	}
+	.not_found_outer {
+		.content .text h1 {
+			font-size: 50px !important;
+		}
+
+		p {
+			font-size: 18px !important;
+
+			span {
+				font-size: 40px !important;
+			}
+		}
+	}
 
 	.apply_now_career,
 	.apply_now_career_btn,
-	.experience_skill_left li{
+	.experience_skill_left li {
 		font-size: 16px;
 	}
 
@@ -7126,7 +7171,7 @@ h6.user_name_c a {
 
 	.blog_post_header img {
 		margin-bottom: 40px;
-		height: auto
+		height: 200px
 	}
 
 	.blog_descritpion h3 strong {
@@ -7335,7 +7380,7 @@ h6.user_name_c a {
 	}
 
 	ul.transformation_wrapper li h4 {
-		font-size: 2.813em;
+		font-size: 2.813em !important;
 		margin: .4em 0;
 		color: $primaryyellow;
 		font-family: bebas
@@ -7484,7 +7529,7 @@ h6.user_name_c a {
 		font-size: 2em;
 	}
 
-	.member_top_heading h1 {
+	.member_top_heading h2{
 		font-size: 3em;
 		padding-top: 20px
 	}
@@ -7968,9 +8013,11 @@ h6.user_name_c a {
 	.menu-right-container-bottom a {
 		font-size: 1.8em
 	}
-	.course_toggle{
+
+	.course_toggle {
 		left: 93px !important;
 	}
+
 	.hide_seek_wrapper .blogs {
 		top: 40px;
 		left: 50%;
@@ -8880,7 +8927,7 @@ h6.user_name_c a {
 		justify-content: flex-start
 	}
 
-	.member_top_heading h1,
+	.member_top_heading h2,
 	.right_banner_heading h1 {
 		font-size: 1.875em
 	}
@@ -9225,11 +9272,16 @@ h6.user_name_c a {
 	display: block;
 }
 
+.current_opening_right img {
+	width: 100%;
+}
+
 @media (max-width: 1024px) {
+
 	.products_inner_description ul,
 	.current_opening_left ul li,
 	.duties_left ul li,
-	.experience_skill_left li{
+	.experience_skill_left li {
 		font-size: 16px;
 	}
 
@@ -9354,7 +9406,6 @@ h6.user_name_c a {
 
 		h1 {
 			color: black;
-			font-size: 24px;
 			margin-bottom: 20px;
 		}
 
@@ -9366,11 +9417,15 @@ h6.user_name_c a {
 
 		p {
 			margin-top: 20px;
-			line-height: 40px;
+			line-height: 50px;
 
 			span {
 				color: blue;
 				font-size: 16px;
+			}
+
+			span:hover {
+				color: red !important;
 			}
 		}
 
