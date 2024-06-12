@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { arrow } from '../../../../public/assets/images';
 
 const InternTestimonial = ({ testimonials }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -56,8 +55,8 @@ const InternTestimonial = ({ testimonials }) => {
       </div>
       
       <div className='testimoial_target_btns'>
-        <img src={arrow.src} alt="left_arrow" onClick={handlePrevious} className={currentIndex === 0 ? "prev-btn inactive" : "prev-btn"} />
-        <img src={arrow.src} alt="right_arrow" onClick={handleNext} className={currentIndex === testimonials.acf.internship_testimonials.length - 1 ? "next-btn inactive" : "next-btn"} />
+        <button onClick={handlePrevious} className={currentIndex === 0 ? "prev-btn inactive" : "prev-btn"}>Previous</button>
+        <button onClick={handleNext} className={currentIndex === testimonials.acf.internship_testimonials.length - 1 ? "next-btn inactive" : "next-btn"}>Next</button>
       </div>
     </div>
   );
