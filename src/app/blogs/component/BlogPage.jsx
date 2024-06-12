@@ -4,8 +4,10 @@ import { BLOG_PAGE_SIZE, allExportedApi } from "@/utils/apis/Apis";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { emptyImage } from "../../../../public/assets/images";
+import { useRouter } from "next/navigation";
 
 function BlogPage() {
+  let router = useRouter();
   let api = allExportedApi();
   const [blogPageData, setBlogPageData] = useState([]);
   const [allBlogPosts, setAllBlogPosts] = useState({ all_categories: [], blogs: [] });
@@ -82,10 +84,11 @@ function BlogPage() {
 
   return (
     <>
-      <div className="blog-page-outer page_top">
-        <div className="blog-page-inner-wrapper">
-          {blogPageData && blogPageData.map((data, index) => (
-            <div key={index} className="blog-header-section">
+      {blogPageData && blogPageData.map((data, index) => (
+        <>
+        <div className="blog-page-outer page_top" key={index}>
+          <div className="blog-page-inner-wrapper">
+            <div className="blog-header-section">
               <div className="blog-header-image-heading">
                 <div className="blog_img_heading_wrapper">
                   <h2>{data.acf.blog_page_heading}</h2>
@@ -100,7 +103,8 @@ function BlogPage() {
                 </div>
               </div>
             </div>
-          ))}
+          </div>
+
           <div className="filter_blog_posts">
             <div className="filter_blog_heading">
               <h2>Blogs</h2>
@@ -117,7 +121,7 @@ function BlogPage() {
 
           <div className="blog-posts-section">
             <div className="all-blog-posts-outer">
-              {loading ? ( // Show loading indicator while loading
+              {loading ? (
                 <p className="loading_data">Loading...</p>
               ) : (
                 paginatedBlogs.length > 0 ? (
@@ -144,17 +148,29 @@ function BlogPage() {
             </div>
           </div>
 
-          {/* Pagination Controls */}
           <div className="pagination-controls">
             {filteredBlogs.length > BLOG_PAGE_SIZE && renderPaginationButtons()}
           </div>
+
         </div>
-      </div>
-      <div className="call_outer inner_blogs blog_page_call_to_action">
+        
+        <div className="call_outer inner_blogs blog_page_call_to_action">
         <div className="inner_call">
-          <CallToAction />
+          <div className="call_wrapper">
+            <div className="call_left_section">
+              <h1>{data.acf.call_to_action_heading_first || "Looking For Reliable And Highly Skilled"}</h1>
+              <h1>{data.acf.call_to_action_heading_second || " Web Development Company & Services"}</h1>
+              <p dangerouslySetInnerHTML={{ __html: data.acf.call_to_action_description || "With Our Well-Researched Web Development Services, Your Business Can Attain Significant Online Presence While Meeting Its Goals Effectively." }}></p>
+              <div className="call_button">
+                <button id='sucess-journy-btn' onClick={() => router.push('/contact')}>call us now</button>
+              </div>
+            </div>
+            <CallToAction />
+          </div>
         </div>
       </div>
+      </>
+      ))}
     </>
   );
 }

@@ -5,11 +5,12 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { emptyImage } from "../../../../../public/assets/images";
 import ServicesSlugFaq from "./ServicesSlugFaq";
+import { useRouter } from "next/navigation";
 
 
 function ServicesSecondSlug({ slug }) {
    let api = allExportedApi()
-
+   let router = useRouter();
    let [data, setData] = useState([])
    let [services, setServices] = useState([])
 
@@ -37,10 +38,13 @@ function ServicesSecondSlug({ slug }) {
    return (
       <>
          <div className="services_inner_template">
-            <div className="page_top">
-               {parent_posts && parent_posts.map((ele) => {
 
-                  return <div className="services_inner_template_wrapper" key={ele.id}>
+            {parent_posts && parent_posts.map((ele) => {
+
+               return (
+                  <>
+                  <div className="page_top">
+                  <div className="services_inner_template_wrapper" key={ele.id}>
 
                      <div className="portfolio_page_top_section career_inner_page_top">
                         <div className="portfolio_heading_image_wrapper">
@@ -105,27 +109,27 @@ function ServicesSecondSlug({ slug }) {
                         {Array.isArray(ele.acf?.inner_development_process) ? (
                            ele.acf.inner_development_process.map((process, index) => (
                               <>
-                              <div className='process_flex_first_container'>
-                                 <h3>{process.services_post_container_first_heading || ""}</h3>
-                                 <div dangerouslySetInnerHTML={{__html: process.services_post_container_first_description || ""}}></div>
-                              </div>
-                              <div className={`process_flex_template process_template-${index % 2 === 0 ? "even" : "odd"}`} key={index}>
-                                 <div className="process_left_section">
-                                    <div className="inner_process_heading">
-                                       <h3>{process.services_process_heading || ""}</h3>
+                                 <div className='process_flex_first_container'>
+                                    <h3>{process.services_post_container_first_heading || ""}</h3>
+                                    <div dangerouslySetInnerHTML={{ __html: process.services_post_container_first_description || "" }}></div>
+                                 </div>
+                                 <div className={`process_flex_template process_template-${index % 2 === 0 ? "even" : "odd"}`} key={index}>
+                                    <div className="process_left_section">
+                                       <div className="inner_process_heading">
+                                          <h3>{process.services_process_heading || ""}</h3>
+                                       </div>
+                                       <div className="process_description">
+                                          <p dangerouslySetInnerHTML={{ __html: process.services_process_description || "" }}></p>
+                                       </div>
                                     </div>
-                                    <div className="process_description">
-                                       <p dangerouslySetInnerHTML={{ __html: process.services_process_description || "" }}></p>
+                                    <div className="process_right_section">
+                                       <div className="process_image">
+                                          <img src={process.services_process_image || emptyImage.src} alt='services_process_image' />
+                                       </div>
                                     </div>
                                  </div>
-                                 <div className="process_right_section">
-                                    <div className="process_image">
-                                       <img src={process.services_process_image || emptyImage.src} alt='services_process_image' />
-                                    </div>
-                                 </div>
-                              </div>
                               </>
-                             
+
                            ))
                         ) : (
                            ""
@@ -212,53 +216,60 @@ function ServicesSecondSlug({ slug }) {
                         )}
                      </div>
                   </div>
-               })}
-
-
-               {child_posts && child_posts.length > 0 && (
-                  <>
-                     {parent_posts?.map((ele) => (
-                        <div key={ele.id}>
-                           <h1>{ele.acf.services_title} related services : </h1>
-                        </div>
-                     ))}
-                     <div className="nested_services_outer">
-                        <div className="nested_services_inner">
-                           <div className="nested_services_wrapper">
-                              {child_posts?.map((ele) => (
-                                 <div className="nested_inner_services" key={ele.id} >
-                                    <Link href={`/services/${slug}/${ele.slug}`}>
-                                       <div className="services_nested_image">
-                                          <img src={ele.acf.services_image} alt='nested-service-image' />
+                  {child_posts && child_posts.length > 0 && (
+               <>
+                  {parent_posts?.map((ele) => (
+                     <div key={ele.id}>
+                        <h1>{ele.acf.services_title} related services : </h1>
+                     </div>
+                  ))}
+                  <div className="nested_services_outer">
+                     <div className="nested_services_inner">
+                        <div className="nested_services_wrapper">
+                           {child_posts?.map((ele) => (
+                              <div className="nested_inner_services" key={ele.id} >
+                                 <Link href={`/services/${slug}/${ele.slug}`}>
+                                    <div className="services_nested_image">
+                                       <img src={ele.acf.services_image} alt='nested-service-image' />
+                                    </div>
+                                    <div className="nested_wrapper">
+                                       <div className="nested_link">
+                                          {ele.slug}
                                        </div>
-                                       <div className="nested_wrapper">
-                                          <div className="nested_link">
-                                             {ele.slug}
-                                          </div>
-                                       </div>
-                                    </Link>
-                                 </div>
-                              ))}
-                           </div>
+                                    </div>
+                                 </Link>
+                              </div>
+                           ))}
                         </div>
                      </div>
+                  </div>
+               </>
+            )}
+                  </div>
+                  
+                  <div className="call_outer inner_services">
+                     <div className="inner_call">
+                        <div className="call_wrapper">
+                           <div className="call_left_section">
+                              <h1>{ele.acf.call_to_action_heading_first || "Looking For Reliable And Highly Skilled"}</h1>
+                              <h1>{ele.acf.call_to_action_heading_second || " Web Development Company & Services"}</h1>
+                              <p dangerouslySetInnerHTML={{ __html: ele.acf.call_to_action_description || "With Our Well-Researched Web Development Services, Your Business Can Attain Significant Online Presence While Meeting Its Goals Effectively." }}></p>
+                              <div className="call_button">
+                                 <button id='sucess-journy-btn' onClick={() => router.push('/contact')}>call us now</button>
+                              </div>
+                           </div>
+                           <CallToAction />
+                        </div>
+                     </div>
+
+                  </div>
                   </>
-               )}
+               )
 
-            </div>
-
-
-
+              
+            })}
 
 
-
-
-            <div className="call_outer inner_services">
-               <div className="inner_call">
-                  <CallToAction />
-               </div>
-
-            </div>
          </div>
       </>
    );

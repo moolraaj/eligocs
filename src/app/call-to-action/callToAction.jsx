@@ -28,21 +28,9 @@ function CallToAction() {
         <>
             {
              data &&   data.map((ele) => {
-                    return   <div className="call_wrapper" key={ele.id}>
-                    <div className="call_left_section">
-                        <h1>{ele.acf.action_heading}</h1>
-                        <h1>{ele.acf.action_sub_heading}</h1>
-                        <p dangerouslySetInnerHTML={{__html:ele.acf.action_description}}></p>
-                        <div className="call_button">
-                        <button id='sucess-journy-btn' onClick={() => router.push('/contact')}>call us now</button>
-                        </div>
-                    </div>
-                    <div className="call_right_section" style={{position:'relative'}}>
+                    return   <div className="call_right_section" style={{position:'relative'}}>
                         <CallSlider slider={ele.acf.action_image}/>
                     </div>
-                </div> 
-                           
-                        
                 })
             }
         </>

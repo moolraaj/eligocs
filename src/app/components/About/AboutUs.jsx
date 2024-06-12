@@ -1,12 +1,12 @@
 
 'use client'
 import WorkingProcess from "./WorkingProcess";
-import CallToAction from "@/app/call-to-action/callToAction";
 import { useRouter } from "next/navigation";
 import TestimonialSection from "../Home/home-sections/Testimonial";
 import { allExportedApi } from "@/utils/apis/Apis";
 import { useEffect, useState } from "react";
 import { emptyImage } from "../../../../public/assets/images";
+import CallToAction from "@/app/call-to-action/callToAction";
 
 
 
@@ -108,7 +108,7 @@ const AboutUs = () => {
                   </h1>
                   <div className="our-mission-outer">
                     <div className="mission-left">
-                      <p dangerouslySetInnerHTML={{__html: ele.acf.our_mission_description}}></p>
+                      <p dangerouslySetInnerHTML={{ __html: ele.acf.our_mission_description }}></p>
                     </div>
                     <div className="mission-right">
                       <img src={ele.acf.our_mission_image || emptyImage.src} alt="ourMissionImg" />
@@ -122,7 +122,17 @@ const AboutUs = () => {
                 <div className="content call_action_wrapper">
                   <div className="about_call_action">
                     <div className="inner_call">
-                      <CallToAction />
+                      <div className="call_wrapper">
+                        <div className="call_left_section">
+                          <h1>{ele.acf.call_to_action_heading_first || "Looking For Reliable And Highly Skilled"}</h1>
+                          <h1>{ele.acf.call_to_action_heading_second || " Web Development Company & Services"}</h1>
+                          <p dangerouslySetInnerHTML={{ __html: ele.acf.call_to_action_description || "With Our Well-Researched Web Development Services, Your Business Can Attain Significant Online Presence While Meeting Its Goals Effectively." }}></p>
+                          <div className="call_button">
+                            <button id='sucess-journy-btn' onClick={() => router.push('/contact')}>call us now</button>
+                          </div>
+                        </div>
+                        <CallToAction />
+                      </div>
                     </div>
                   </div>
                 </div>

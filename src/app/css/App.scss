@@ -155,7 +155,7 @@ button {
 .quote_section_outer,
 .testimonial_section_outer,
 .transform_section_outer {
-	padding: 80px 20px
+	padding: 80px 20px;
 }
 
 .development_section_outer,
@@ -505,7 +505,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .call_left_section p {
-	font-size: 1.188em !important;
+	font-size: 22px;
 	font-weight: 500;
 	line-height: 40px;
 	margin-top: 10px;
@@ -577,8 +577,8 @@ span.input-error {
 
 .call_left_section h1 {
 	color: $white;
-	font-size: 1.875em;
-	margin: auto;
+	font-size: 30px;
+	line-height: 40px;
 }
 
 .form_button button {
@@ -1460,13 +1460,12 @@ form#contactus {
 
 .about_call_action .call_left_section h1 {
 	color: $white;
-	margin: 0
+	margin: 0px 0px 10px 0px;
 }
 
 .about_call_action .call_left_section p {
 	color: $white;
 	padding: 10px 0;
-	font-size: 1.188em
 }
 
 .call_button button {
@@ -2232,16 +2231,12 @@ h1.type_text_wrapper span {
 	margin: auto
 }
 
-.call_outer.inner_services .call_left_section h1 {
-	font-size: 2.5em;
+.call_left_section h1 {
 	color: $white;
-	margin-top: 0;
-	margin-bottom: 0
 }
 
-.call_outer.inner_services .call_left_section p {
+ .call_left_section p {
 	color: $white;
-	font-size: 1.25em;
 }
 
 .call_wrapper {
@@ -2259,10 +2254,6 @@ h1.type_text_wrapper span {
 .call_right_section img {
 	position: inherit;
 	margin-top: -160px;
-}
-
-.call_left_section h1 {
-	font-size: 3.125em
 }
 
 
@@ -4566,7 +4557,9 @@ p:empty {
 	font-size: 6.25em;
 	margin: 0
 }
-
+.inner_portfolio_link_section {
+    text-align: right;
+}
 .blog-header-description p {
 	font-size: 1.4em;
 	line-height: 45px
@@ -5888,10 +5881,6 @@ h6.user_name_c a {
 		font-size: 40px;
 	}
 
-	.call_outer.inner_services .call_left_section h1 {
-		font-size: 30px;
-	}
-
 	.step-initial p {
 		font-size: 22px;
 	}
@@ -6024,7 +6013,9 @@ h6.user_name_c a {
 @media(max-width:1024px) {
 	.portfolio_page_top_section {
 		flex-wrap: wrap;
-
+	}
+	.call_action_wrapper{
+		padding: 0;
 	}
 
 	.testimonial_slider {
@@ -6286,9 +6277,6 @@ h6.user_name_c a {
 		padding: 0
 	}
 
-	.call_outer.inner_services .call_left_section h1 {
-		font-size: 2em
-	}
 }
 
 @media(min-width:769px)and (max-width:1024px) {
@@ -6305,7 +6293,7 @@ h6.user_name_c a {
 	}
 
 	.inner_call {
-		padding: 20px;
+		padding: 20px 0px;
 	}
 
 	.courses-posts-outer {
@@ -8520,8 +8508,8 @@ h6.user_name_c a {
 	}
 
 	.call_left_section h1 {
-		font-size: 1.875em !important;
-		line-height: 50px;
+		font-size: 18px;
+		line-height: 30px;
 	}
 
 	button#sucess-journy-btn {
