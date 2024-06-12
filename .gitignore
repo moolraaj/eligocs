@@ -32,6 +32,9 @@ yarn-error.log*
 # utils/api folder
 /src/utils
 
+#_metadata
+/src/app/_metadata
+
 # vercel
 .vercel
 
