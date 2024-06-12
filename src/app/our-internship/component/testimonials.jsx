@@ -55,8 +55,8 @@ const InternTestimonial = ({ testimonials }) => {
       </div>
       
       <div className='testimoial_target_btns'>
-        <button onClick={handlePrevious} className={currentIndex === 0 ? "prev-btn inactive" : "prev-btn"}>Previous</button>
-        <button onClick={handleNext} className={currentIndex === testimonials.acf.internship_testimonials.length - 1 ? "next-btn inactive" : "next-btn"}>Next</button>
+        <button onClick={handlePrevious} className={currentIndex === 0 ? "prev-btn inactive" : "prev-btn"}>&#10094;</button>
+        <button onClick={handleNext} className={currentIndex === testimonials.acf.internship_testimonials.length - 1 ? "next-btn inactive" : "next-btn"}>&#10095;</button>
       </div>
     </div>
   );
