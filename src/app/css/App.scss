@@ -6422,7 +6422,7 @@ h6.user_name_c a {
 	.portfolio_gallery_wrapper {
 		flex: 0 0 50% !important
 	}
-
+	
 	.nested_options {
 		grid-template-columns: repeat(3, 1fr) !important
 	}
@@ -6483,7 +6483,9 @@ h6.user_name_c a {
 	.course-page-top-section img {
 		height: 220px;
 	}
-
+	.blog-header-description p{
+		height: auto;
+	}
 	.trans_number {
 		line-height: 40px;
 	}
@@ -6505,7 +6507,16 @@ h6.user_name_c a {
 			}
 		}
 	}
-
+	.portfolio_top_left_section .portfolio_inner_page_image_heading_section{
+		display: block;
+		width: 100%;
+	}
+	.portfolio_top_left_heading h3{
+		display: none;
+	}
+	 .portfolio_inner_page_image_heading_section span{
+		left: 16% !important;
+	}
 	.apply_now_career,
 	.apply_now_career_btn,
 	.experience_skill_left li {
@@ -7802,7 +7813,7 @@ h6.user_name_c a {
 	.portfolio_top_left_section .portfolio_inner_page_image_heading_section img {
 		width: 100%;
 		max-width: 669px;
-		height: 405px;
+		height: 220px;
 		object-fit: cover
 	}
 

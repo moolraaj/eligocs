@@ -11,12 +11,14 @@ function JoinCourse() {
         fullname: '',
         joinemail: '',
         phonenumber: '',
+        qualification: '',
     });
 
     const [errors, setErrors] = useState({
         fullname: false,
         joinemail: false,
-        phonenumber: false
+        phonenumber: false,
+        qualification: false
     });
 
 
@@ -48,6 +50,7 @@ function JoinCourse() {
         formData.append('fullname', user.fullname);
         formData.append('joinemail', user.joinemail);
         formData.append('phonenumber', user.phonenumber);
+        formData.append('qualification', user.qualification);
         formData.append('g-recaptcha-response', recaptchaToken);
 
         let formValid = true;
@@ -82,6 +85,7 @@ function JoinCourse() {
                     fullname: '',
                     joinemail: '',
                     phonenumber: '',
+                    qualification: '',
                 });
             } catch (error) {
                 toast.error('Mail not send')
@@ -105,13 +109,20 @@ function JoinCourse() {
                         <input type="number" name="phonenumber" placeholder='Phone No.' value={user.phonenumber} onChange={getUserData} />
                         {errors.phonenumber && <span className='error_fields'>Phone number is required</span>}
                     </div>
+                    <div className="form_fields_wrapper">
+                        <input type="text" name="qualification" placeholder='Qualification' value={user.qualification} onChange={getUserData} />
+                        {errors.qualification && <span className='error_fields'>qualification field is required</span>}
+                    </div>
                     <div className="recaptcha_section">
                         <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} onChange={onReCAPTCHAChange} />
                     </div>
                 </div>
+                <div className="form_fields_wrapper">
                 <div className="form_button">
                     <button onClick={submitUserData}>Submit</button>
                 </div>
+                </div>
+
             </form>
         </>
     );
