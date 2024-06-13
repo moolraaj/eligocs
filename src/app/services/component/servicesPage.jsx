@@ -4,9 +4,10 @@ import Link from "next/link"
 import ServicesFaq from "./ServicesFaq"
 import '../../about/AboutPage.scss'
 import { useEffect, useState } from "react"
-import { useRouter } from "next/navigation"
 import TestimonialSection from "@/app/components/Home/home-sections/Testimonial"
-import { emptyImage } from "../../../../public/assets/images"
+import { emptyImage } from "../../../../public/assets/images";
+import { useRouter } from "next/navigation"
+
 
 export default function ServicesPage() {
     const router = useRouter()
