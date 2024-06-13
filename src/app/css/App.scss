@@ -4567,7 +4567,12 @@ p:empty {
 }
 .blog-header-description p {
 	font-size: 1.4em;
-	line-height: 45px
+	line-height: 45px;
+	height: 350px;
+	overflow: auto;
+}
+.blog-header-description p::-webkit-scrollbar{
+	opacity: 0;
 }
 
 .share_blog_post {
@@ -4646,6 +4651,9 @@ p:empty {
 	line-height: 40px;
 	height: 212px;
 	overflow: auto;
+}
+.blog_page_heading_wrapper p p::-webkit-scrollbar{
+	opacity: 0;
 }
 
 .contact_usform_top_section {
@@ -6494,6 +6502,9 @@ h6.user_name_c a {
 	.blog_page_heading_wrapper p p,
 	.our_team_description p p {
 		height: auto;
+	}
+	.our_team_description p p::-webkit-scrollbar{
+		opacity: 0;
 	}
 
 	.map_adress_wrapper h1,
