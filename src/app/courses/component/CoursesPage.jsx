@@ -17,9 +17,11 @@ function CoursesPage() {
   const [filteredCoursesData, setFilteredCoursesData] = useState([]);
   const [isApplyJobVisible, setIsApplyJobVisible] = useState(false);
   const [loading, setLoading] = useState(true); // Add loading state
+  const [courseName, setCourseName] = useState('');
 
-  const toggleFormVisibility = () => {
+  const toggleFormVisibility = (courseName) => {
     setIsApplyJobVisible(!isApplyJobVisible);
+    setCourseName(courseName);
   };
 
   const closeApplyJob = () => {
@@ -73,7 +75,6 @@ function CoursesPage() {
   const renderCourses = () => {
     return filteredCoursesData.map((course, index) => (
       <ul key={index} className="course">
-
         <li>
           <img src={course.acf.course_logo.url || emptyImage.src} alt="course_logo" />
         </li>
@@ -88,7 +89,7 @@ function CoursesPage() {
           ></span>
         </li>
         <span className='course_card_btns'>
-          <span id='course_join_btn' onClick={toggleFormVisibility}>Join Course</span>
+          <span id='course_join_btn' onClick={() => toggleFormVisibility(course.acf.course_tittle)}>Join Course</span>
           <Link id='course_cirect_connect_btn' href="https://api.whatsapp.com/send/?phone=%2B919317215300&text&type=phone_number&app_absent=0" target='_blank'>Direct Connect</Link>
         </span>
       </ul>
@@ -108,7 +109,7 @@ function CoursesPage() {
                   </div>
                   <div className="form_slider_wrapper">
                     <div className="_form_paragraph">
-                      <p>apply for join course</p>
+                      <p> <span>Apply for</span> {courseName ? `${courseName} course` : 'course'}</p>
                     </div>
                   </div>
                 </div>
@@ -151,7 +152,7 @@ function CoursesPage() {
               <div className="filter_course_top_left">
                 <h1>EligoCs</h1>
               </div>
-              <div>
+              <div className='filter_course_dropdown'>
                 <select
                   className="filter_course_top_right"
                   onChange={handleCategoryChange}
@@ -173,8 +174,7 @@ function CoursesPage() {
                 renderCourses()
               ) : (
                 <p>No courses found for selected category.</p>
-              )
-              }
+              )}
             </div>
           </div>
         </div>
