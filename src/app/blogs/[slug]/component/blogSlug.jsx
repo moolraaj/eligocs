@@ -53,7 +53,9 @@ export default function BlogSlug({ slug }) {
         <>
 
             {loading ? ( // Show loading indicator while loading
+                <div className="page_top">
                 <p className="loading_data">Loading...</p>
+           </div>
             ) : (
                 data && data.map((blogPost, index) => (
                     <>

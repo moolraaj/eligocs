@@ -8,9 +8,9 @@ import RerenderCompo from '@/app/common/navbar/component/formAnimationCompo';
 import TestimonialSlides from './testimonialSlides';
 import InternTestimonial from './testimonials';
 import { emptyImage, formClose } from '../../../../public/assets/images';
- 
- 
- 
+
+
+
 
 function OurInternshipsPage() {
   let api = allExportedApi();
@@ -18,28 +18,41 @@ function OurInternshipsPage() {
   const [internship, setInternship] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [isMounted, setIsMounted] = useState(false);
+  const [loading, setLoading] = useState(true)
 
   const router = useRouter();
 
   const toggleFormVisibility = () => {
     setIsMounted(!isMounted);
   };
-  
+
 
   const loadInternshipData = async () => {
-    let data = await api.internshipPageApi();
-    setInternshipPageApiData(data);
+    try {
+      let data = await api.internshipPageApi();
+      setInternshipPageApiData(data);
+    } catch (error) {
+      console.error("Failed to load services", error)
+    }
   };
 
   const loadInternships = async () => {
-    let data = await api.ourInternships();
-    setInternship(data);
+    try {
+      let data = await api.ourInternships();
+      setInternship(data);
+    } catch (error) {
+      console.error("Failed to load services", error)
+    }
   };
 
   useEffect(() => {
-    loadInternshipData();
-    loadInternships();
 
+    const loadData = async () => {
+      await loadInternshipData();
+      await loadInternships();
+      setLoading(false)
+    }
+    loadData()
     const formShown = sessionStorage.getItem('formShown');
     const timer = setTimeout(() => {
       if (!formShown) {
@@ -51,7 +64,7 @@ function OurInternshipsPage() {
     return () => clearTimeout(timer);
   }, []);
 
-  
+
 
   const totalPages = Math.ceil(internship.length / INTERNSHIP_PAGE_SIZE);
 
@@ -99,7 +112,12 @@ function OurInternshipsPage() {
 
   return (
     <>
-      <div className="internship-page-outer page_top">
+     {loading ? (
+                <div className="page_top">
+                     <p className="loading_data">Loading...</p>
+                </div>
+            ) : (
+<div className="internship-page-outer page_top">
         <div className="internship-page-inner">
           {InternshipPageApiData.map((ele, index) => (
             <div key={index} className="product-page-top-section">
@@ -140,22 +158,22 @@ function OurInternshipsPage() {
                     </li>
                   </ul>
                 ))}
-                  <div className="intrns_testimonials_outer">
-                <h2> Our Testimonials</h2>
-                <div className="inter_testi_wrapper">
-                  <div className="inter_left">
-                  <TestimonialSlides slides={ele}/>
-                  </div>
-                  <div className="inter_testi_right">
-                    <InternTestimonial testimonials={ele} />
-                  </div>
+                <div className="intrns_testimonials_outer">
+                  <h2> Our Testimonials</h2>
+                  <div className="inter_testi_wrapper">
+                    <div className="inter_left">
+                      <TestimonialSlides slides={ele} />
+                    </div>
+                    <div className="inter_testi_right">
+                      <InternTestimonial testimonials={ele} />
+                    </div>
 
+                  </div>
                 </div>
-                </div>
-                
+
 
               </div>
-              
+
             );
           })}
         </div>
@@ -197,6 +215,8 @@ function OurInternshipsPage() {
           </>
         )}
       </div>
+            )}
+      
     </>
   );
 }

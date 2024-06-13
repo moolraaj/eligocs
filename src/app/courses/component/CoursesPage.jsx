@@ -73,20 +73,20 @@ function CoursesPage() {
   const renderCourses = () => {
     return filteredCoursesData.map((course, index) => (
       <ul key={index} className="course">
-        
-          <li>
-            <img src={course.acf.course_logo.url || emptyImage.src} alt="course_logo" />
-          </li>
-          <li>
-            <h1>{course.acf.course_tittle}</h1>
-          </li>
-          <li>
-            <span className='course_short_intro_section'
-              dangerouslySetInnerHTML={{
-                __html: course.acf.course_short_intro
-              }}
-            ></span>
-          </li>
+
+        <li>
+          <img src={course.acf.course_logo.url || emptyImage.src} alt="course_logo" />
+        </li>
+        <li>
+          <h1>{course.acf.course_tittle}</h1>
+        </li>
+        <li>
+          <span className='course_short_intro_section'
+            dangerouslySetInnerHTML={{
+              __html: course.acf.course_short_intro
+            }}
+          ></span>
+        </li>
         <span className='course_card_btns'>
           <span id='course_join_btn' onClick={toggleFormVisibility}>Join Course</span>
           <Link id='course_cirect_connect_btn' href="https://api.whatsapp.com/send/?phone=%2B919317215300&text&type=phone_number&app_absent=0" target='_blank'>Direct Connect</Link>
@@ -115,66 +115,71 @@ function CoursesPage() {
                 <div className="cf7_right_section">
                   <div className="close_button">
                     <button onClick={closeApplyJob} className="close_button" aria-label='close popup form'>
-                      <img src={formClose.src || emptyImage.src} alt="formClose"/>
+                      <img src={formClose.src || emptyImage.src} alt="formClose" />
                     </button>
                   </div>
                 </div>
               </div>
               <div className="cf7_form_wrapper">
-                <JoinCourse/>
+                <JoinCourse />
               </div>
             </div>
           </div>
         </div>
       )}
 
-      <div className="courses-page-outer page_top">
-        <div className="courses-page-inner">
-          {coursesPageData && coursesPageData.map((coursesData, index) => (
-            <div key={index} className="course-page-top-section">
-              <h1>{coursesData.acf.courses_page_heading_first}</h1>
-              <h2>{coursesData.acf.courses_page_heading_second}</h2>
-              <p>{coursesData.acf.courses_page_description}</p>
-              <button className="button_global" onClick={() => router.push('/contact')}>
-                Get In Touch
-              </button>
-              <img src={coursesData.acf.courses_page_image.url || emptyImage.src} alt="courses_page_image" />
-            </div>
-          ))}
+      {loading ? ( // Show loading indicator while loading
+        <div className="page_top">
+          <p className="loading_data">Loading...</p>
+        </div>
+      ) : (
+        <div className="courses-page-outer page_top">
+          <div className="courses-page-inner">
+            {coursesPageData && coursesPageData.map((coursesData, index) => (
+              <div key={index} className="course-page-top-section">
+                <h1>{coursesData.acf.courses_page_heading_first}</h1>
+                <h2>{coursesData.acf.courses_page_heading_second}</h2>
+                <p>{coursesData.acf.courses_page_description}</p>
+                <button className="button_global" onClick={() => router.push('/contact')}>
+                  Get In Touch
+                </button>
+                <img src={coursesData.acf.courses_page_image.url || emptyImage.src} alt="courses_page_image" />
+              </div>
+            ))}
 
-          <div className="filter_courses_outer">
-            <div className="filter_course_top_left">
-              <h1>EligoCs</h1>
+            <div className="filter_courses_outer">
+              <div className="filter_course_top_left">
+                <h1>EligoCs</h1>
+              </div>
+              <div>
+                <select
+                  className="filter_course_top_right"
+                  onChange={handleCategoryChange}
+                  value={selectedCategory}
+                >
+                  <option value="">All Courses</option>
+                  {result.course_categories.map((category, index) => (
+                    <option value={category} key={index}>
+                      {category}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
-            <div>
-              <select
-                className="filter_course_top_right"
-                onChange={handleCategoryChange}
-                value={selectedCategory}
-              >
-                <option value="">All Courses</option>
-                {result.course_categories.map((category, index) => (
-                  <option value={category} key={index}>
-                    {category}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
 
-          <div className={`courses-posts-outer ${noCoursesFound ? 'no-courses' : ''}`}>
-            {loading ? ( // Show loading indicator while loading
-              <p className="loading_data">Loading...</p>
-            ) : (
-              filteredCoursesData.length > 0 ? (
+            <div className={`courses-posts-outer ${noCoursesFound ? 'no-courses' : ''}`}>
+
+              {filteredCoursesData.length > 0 ? (
                 renderCourses()
               ) : (
                 <p>No courses found for selected category.</p>
               )
-            )}
+              }
+            </div>
           </div>
         </div>
-      </div>
+      )}
+
     </>
   );
 }
