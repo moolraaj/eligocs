@@ -24,13 +24,13 @@ export default function ServicesPage() {
         const response = await api.ServiceApi()
         setData(response)
     }
-
+    const allServices = [...services].reverse()
     useEffect(() => {
         loadAllServices()
         loadServiceApi()
     }, [])
 
-    const allServices = [...services].reverse()
+   
 
     return (
         <>
