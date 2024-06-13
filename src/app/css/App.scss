@@ -6024,6 +6024,14 @@ h6.user_name_c a {
 }
 
 @media(max-width:1024px) {
+	.hero_top_para {
+    max-width: 840px !important;
+    margin: auto;
+    width: 100%;
+}
+	.parallax-container{
+		position: static;
+	}
 	.portfolio_page_top_section {
 		flex-wrap: wrap;
 	}

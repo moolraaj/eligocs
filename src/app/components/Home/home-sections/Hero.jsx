@@ -113,7 +113,7 @@ function HeroSection({ ele, ParallaxContainer }) {
                  
                   
                 </h1>
-                <div dangerouslySetInnerHTML={{ __html: ele.acf.slider_para }}></div>
+                <div dangerouslySetInnerHTML={{ __html: ele.acf.slider_para }} className='hero_top_para'></div>
               </div>
               <div className="home_slider_animate">
                 <div className="innovation_wrapper">
