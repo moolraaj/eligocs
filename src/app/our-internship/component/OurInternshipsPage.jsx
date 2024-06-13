@@ -59,7 +59,7 @@ function OurInternshipsPage() {
         setIsMounted(true);
         sessionStorage.setItem('formShown', 'true');
       }
-    }, 2000);
+    }, 6000);
 
     return () => clearTimeout(timer);
   }, []);
