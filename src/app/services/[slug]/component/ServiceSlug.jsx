@@ -254,7 +254,6 @@ function ServicesSecondSlug({ slug }) {
                               </div>
                            </div>
                            <div className="related_services_slider_wrapper">
-                              {/* <button>&#10094;</button> */}
                               <div className="related_services_slider">
                                  {child_posts && child_posts.length > 0 && (
                                     <>
@@ -286,7 +285,6 @@ function ServicesSecondSlug({ slug }) {
                                     </>
                                  )}
                               </div>
-                              {/* <button >&#10095;</button> */}
                            </div>
 
                         </div>
