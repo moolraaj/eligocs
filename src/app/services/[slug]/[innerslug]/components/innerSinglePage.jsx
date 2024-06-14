@@ -173,7 +173,7 @@ function InnerSinglePage({ slug, innerslug }) {
                                              <div className="process_left_section">
                                                 {missout.dont_miss_out_tittle && (
                                                    <div className="inner_process_heading">
-                                                      <h1>{missout.dont_miss_out_tittle}</h1>
+                                                      <h3>{missout.dont_miss_out_tittle}</h3>
                                                    </div>
                                                 )}
                                                 {missout.dont_miss_out_description && (
