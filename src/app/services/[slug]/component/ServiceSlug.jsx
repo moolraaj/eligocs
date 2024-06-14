@@ -164,36 +164,36 @@ function ServicesSecondSlug({ slug }) {
                               <div className="services_dont_miss_out">
                                  {Array.isArray(ele.acf?.dont_miss_out_section) && ele.acf.dont_miss_out_section.length > 0 ? (
                                     ele.acf.dont_miss_out_section.map((missout, index) => (
-                                       
+
                                        // Check if any key in the missout object has data
                                        Object.values(missout).some(val => val !== "") ? (
                                           <>
-                                          <div className="services_missout_heading">
+                                             <div className="services_missout_heading">
                                                 <h4>Don't Miss Out</h4>
                                              </div>
-                                          <div className={`process_flex_template process_template-${index % 2 === 0 ? "odd" : "even"}`} key={index}>
-                                             <div className="process_left_section">
-                                                {missout.dont_miss_out_tittle && (
-                                                   <div className="inner_process_heading">
-                                                      <h3>{missout.dont_miss_out_tittle}</h3>
-                                                   </div>
-                                                )}
-                                                {missout.dont_miss_out_description && (
-                                                   <div className="services_missout_description">
-                                                      <div dangerouslySetInnerHTML={{ __html: missout.dont_miss_out_description }}></div>
-                                                   </div>
-                                                )}
-                                             </div>
-                                             {/* <div className="process_right_section">
+                                             <div className={`process_flex_template process_template-${index % 2 === 0 ? "odd" : "even"}`} key={index}>
+                                                <div className="process_left_section">
+                                                   {missout.dont_miss_out_tittle && (
+                                                      <div className="inner_process_heading">
+                                                         <h3>{missout.dont_miss_out_tittle}</h3>
+                                                      </div>
+                                                   )}
+                                                   {missout.dont_miss_out_description && (
+                                                      <div className="services_missout_description">
+                                                         <div dangerouslySetInnerHTML={{ __html: missout.dont_miss_out_description }}></div>
+                                                      </div>
+                                                   )}
+                                                </div>
+                                                {/* <div className="process_right_section">
                                                 {missout.dont_miss_out_image && (
                                                    <div className="process_image">
                                                       <img src={missout.dont_miss_out_image} alt='services_process_image' />
                                                    </div>
                                                 )}
                                              </div> */}
-                                          </div>
+                                             </div>
                                           </>
-                                          
+
                                        ) : null
                                     ))
                                  ) : (
@@ -253,35 +253,42 @@ function ServicesSecondSlug({ slug }) {
                                  )}
                               </div>
                            </div>
-                           {child_posts && child_posts.length > 0 && (
-                              <>
-                                 {parent_posts?.map((ele) => (
-                                    <div key={ele.id} className="related_services_heading">
-                                       <h1>{ele.acf.services_title} related services : </h1>
-                                    </div>
-                                 ))}
-                                 <div className="nested_services_outer">
-                                    <div className="nested_services_inner">
-                                       <div className="nested_services_wrapper">
-                                          {child_posts?.map((ele) => (
-                                             <div className="nested_inner_services" key={ele.id} >
-                                                <Link href={`/services/${slug}/${ele.slug}`}>
-                                                   <div className="services_nested_image">
-                                                      <img src={ele.acf.services_image} alt='nested-service-image' />
+                           <div className="related_services_slider_wrapper">
+                              {/* <button>&#10094;</button> */}
+                              <div className="related_services_slider">
+                                 {child_posts && child_posts.length > 0 && (
+                                    <>
+                                       {parent_posts?.map((ele) => (
+                                          <div key={ele.id} className="related_services_heading">
+                                             <h1>{ele.acf.services_title} related services : </h1>
+                                          </div>
+                                       ))}
+                                       <div className="nested_services_outer">
+                                          <div className="nested_services_inner">
+                                             <div className="nested_services_wrapper">
+                                                {child_posts?.map((ele) => (
+                                                   <div className="nested_inner_services" key={ele.id} >
+                                                      <Link href={`/services/${slug}/${ele.slug}`}>
+                                                         <div className="services_nested_image">
+                                                            <img src={ele.acf.services_image} alt='nested-service-image' />
+                                                         </div>
+                                                         <div className="nested_wrapper">
+                                                            <div className="nested_link">
+                                                               {ele.slug}
+                                                            </div>
+                                                         </div>
+                                                      </Link>
                                                    </div>
-                                                   <div className="nested_wrapper">
-                                                      <div className="nested_link">
-                                                         {ele.slug}
-                                                      </div>
-                                                   </div>
-                                                </Link>
+                                                ))}
                                              </div>
-                                          ))}
+                                          </div>
                                        </div>
-                                    </div>
-                                 </div>
-                              </>
-                           )}
+                                    </>
+                                 )}
+                              </div>
+                              {/* <button >&#10095;</button> */}
+                           </div>
+
                         </div>
 
                         <div className="call_outer inner_services">
