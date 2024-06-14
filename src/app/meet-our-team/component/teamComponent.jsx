@@ -114,13 +114,23 @@ function TeamComponent() {
         if (filteredCategoryMembers.length === 0) {
             return null; // Skip rendering this category if no members match the filter
         }
+
+        // Sort members within the category, placing TLs first
+        const sortedMembers = [...filteredCategoryMembers].sort((a, b) => {
+            const isTL_A = a.acf.our_team_designation.includes('TL');
+            const isTL_B = b.acf.our_team_designation.includes('TL');
+            if (isTL_A && !isTL_B) return -1;
+            if (!isTL_A && isTL_B) return 1;
+            return 0;
+        });
+
         return (
             <div className="member_view_inner" key={category}>
                 <div className="category_header">
                     <h2>{category}</h2>
                 </div>
                 <div className="category_section">
-                    {filteredCategoryMembers.map((member, index) => (
+                    {sortedMembers.map((member, index) => (
                         <div className={`team_member_section ${index % 2 === 0 ? 'even' : 'odd'}`} key={member.id}>
                             {member.acf.our_team_designation.includes('TL') && (
                                 <span className="badge">TL</span>
