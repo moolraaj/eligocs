@@ -3268,7 +3268,9 @@ menu.footer_ul li a {
 	border-radius: 10px;
 	object-fit: cover
 }
-
+.services_inner_description h2 {
+    font-size: 40px;
+}
 .all_services_left_section h1 {
 	color: $blackgrey;
 	font-size: 5em;
@@ -6482,6 +6484,9 @@ h6.user_name_c a {
 }
 
 @media(max-width:768px) {
+	.services_inner_description h2 {
+		font-size: 22px;
+	}
 	.course-page-top-section img {
 		height: 220px;
 	}
