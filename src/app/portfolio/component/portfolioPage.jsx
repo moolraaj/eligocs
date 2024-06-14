@@ -70,10 +70,7 @@ function PortfolioPage() {
   return (
     <>
       <div className="page_top">
-        {loading ? ( // Show loading indicator while loading
-          <p className="loading_data">Loading...</p>
-        ) : (
-          <>
+
             {data && data.map((ele) => (
               <div className="portfolio_page_wrapper" key={ele.id}>
                 <div className="portfolio_page_top_section">
@@ -132,8 +129,7 @@ function PortfolioPage() {
             <div className="unlock_success_btn">
               <Link href={`/`}>Unlock Success Now</Link>
             </div>
-          </>
-        )}
+        
       </div>
     </>
   );
