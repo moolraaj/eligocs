@@ -117,7 +117,7 @@ export default function Portfolioslug({ slug }) {
                                             ))}
                                             
                                                 <button className='show_hide_related_portfolio' onClick={() => setIsShow(!show)}>
-                                                    {show ? 'hide all' : 'show all'}
+                                                    {show ? 'hide remaining' : 'show remaining'}
                                                 </button>
                                             
 
