@@ -165,6 +165,10 @@ function InnerSinglePage({ slug, innerslug }) {
                                     ele.acf.dont_miss_out_section.map((missout, index) => (
                                        // Check if any key in the missout object has data
                                        Object.values(missout).some(val => val !== "") ? (
+                                          <>
+                                          <div className="services_missout_heading">
+                                                <h4>Don't Miss Out</h4>
+                                             </div>
                                           <div className={`process_flex_template process_template-${index % 2 === 0 ? "odd" : "even"}`} key={index}>
                                              <div className="process_left_section">
                                                 {missout.dont_miss_out_tittle && (
@@ -186,6 +190,7 @@ function InnerSinglePage({ slug, innerslug }) {
                                                 )}
                                              </div>
                                           </div>
+                                          </>
                                        ) : null
                                     ))
                                  ) : (

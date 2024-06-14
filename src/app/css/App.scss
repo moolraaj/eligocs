@@ -5132,6 +5132,22 @@ h6 {
 	font-size: 22px;
 }
 
+.services_dont_miss_out{
+	.process_left_section{
+		background-color: $black;
+		.inner_process_heading h1{
+			color: $primaryyellow;
+			font-size: 30px;
+		}
+		.services_missout_description{
+			span,p{
+				font-size: 25px;
+				color: $white;
+				line-height: 40px;
+			}
+		}
+	}
+}
 .process_template-odd .process_left_section {
 	order: 2;
 	padding-left: 80px;
@@ -6703,7 +6719,7 @@ h6.user_name_c a {
 
 	.services_inner_template_wrapper p {
 		font-size: 16px !important;
-		line-height: 30px;
+		line-height: 30px !important;
 	}
 
 	.courses-posts-outer ul.course .course_card_btns {
