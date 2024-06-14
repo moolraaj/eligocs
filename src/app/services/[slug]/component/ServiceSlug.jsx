@@ -51,10 +51,10 @@ function ServicesSecondSlug({ slug }) {
    return (
       <>
          <div className="services_inner_template">
-         {loading ? (
-                <div className="page_top">
-                     <p className="loading_data">Loading...</p>
-                </div>
+            {loading ? (
+               <div className="page_top">
+                  <p className="loading_data">Loading...</p>
+               </div>
             ) : (
                parent_posts && parent_posts.map((ele) => {
 
@@ -62,7 +62,7 @@ function ServicesSecondSlug({ slug }) {
                      <>
                         <div className="page_top">
                            <div className="services_inner_template_wrapper" key={ele.id}>
-   
+
                               <div className="portfolio_page_top_section career_inner_page_top">
                                  <div className="portfolio_heading_image_wrapper">
                                     <div className="portfolio_page_top_heading">
@@ -79,9 +79,9 @@ function ServicesSecondSlug({ slug }) {
                                        </div>
                                     </div>
                                  </div>
-   
+
                               </div>
-   
+
                               <div className="serices_flex_template">
                                  <div className="services_left_sec">
                                     <div className="services_inner_heading">
@@ -105,7 +105,7 @@ function ServicesSecondSlug({ slug }) {
                                              </div>
                                           ))
                                        ) : (
-   
+
                                           services && services.length > 0 && services.map((service) => (
                                              <div key={service.id}>
                                                 <ul>
@@ -118,78 +118,90 @@ function ServicesSecondSlug({ slug }) {
                                        )}
                                     </div>
                                  </div>
-   
-   
+
+
                               </div>
-   
+
                               <div className="services_development_process_wrapper">
-                                 {Array.isArray(ele.acf?.inner_development_process) ? (
+                                 {Array.isArray(ele.acf?.inner_development_process) && ele.acf.inner_development_process.length > 0 ? (
                                     ele.acf.inner_development_process.map((process, index) => (
-                                       <>
-                                          <div className='process_flex_first_container'>
-                                             <h3>{process.services_post_container_first_heading || ""}</h3>
-                                             <div dangerouslySetInnerHTML={{ __html: process.services_post_container_first_description || "" }}></div>
-                                          </div>
-                                          <div className={`process_flex_template process_template-${index % 2 === 0 ? "even" : "odd"}`} key={index}>
-                                             <div className="process_left_section">
-                                                <div className="inner_process_heading">
-                                                   <h3>{process.services_process_heading || ""}</h3>
-                                                </div>
-                                                <div className="process_description">
-                                                   <p dangerouslySetInnerHTML={{ __html: process.services_process_description || "" }}></p>
-                                                </div>
+                                       // Check if any key in the process object has data
+                                       Object.values(process).some(val => val !== "") ? (
+                                          <>
+                                             <div className='process_flex_first_container'>
+                                                <h3>{process.services_post_container_first_heading || ""}</h3>
+                                                <div dangerouslySetInnerHTML={{ __html: process.services_post_container_first_description || "" }}></div>
                                              </div>
-                                             <div className="process_right_section">
-                                                <div className="process_image">
-                                                   <img src={process.services_process_image || emptyImage.src} alt='services_process_image' />
-                                                </div>
+                                             <div className={`process_flex_template process_template-${index % 2 === 0 ? "even" : "odd"}`} key={index}>
+                                                {process.services_process_heading || process.services_process_description || process.services_process_image ? (
+                                                   <>
+                                                      <div className="process_left_section">
+                                                         <div className="inner_process_heading">
+                                                            <h1>{process.services_process_heading || ""}</h1>
+                                                         </div>
+                                                         <div className="process_description">
+                                                            <p dangerouslySetInnerHTML={{ __html: process.services_process_description || "" }}></p>
+                                                         </div>
+                                                      </div>
+                                                      <div className="process_right_section">
+                                                         {process.services_process_image && (
+                                                            <div className="process_image">
+                                                               <img src={process.services_process_image} alt='services_process_image' />
+                                                            </div>
+                                                         )}
+                                                      </div>
+                                                   </>
+                                                ) : null}
                                              </div>
-                                          </div>
-                                       </>
-   
+                                          </>
+                                       ) : null
                                     ))
                                  ) : (
                                     ""
                                  )}
                               </div>
+
                               <div className="services_dont_miss_out">
-                                 <div className="services_development_process_wrapper">
-                                    {Array.isArray(ele.acf?.dont_miss_out_section) ? (
-                                       ele.acf.dont_miss_out_section.map((missout, index) => (
-                                          <>
-                                             <div className="services_missout_heading">
-                                                <h4>Don't Miss Out</h4>
-                                             </div>
-                                             <div className={`process_flex_template process_template-${index % 2 === 0 ? "odd" : "even"}`} key={index}>
-                                                <div className="process_left_section">
+                                 {Array.isArray(ele.acf?.dont_miss_out_section) && ele.acf.dont_miss_out_section.length > 0 ? (
+                                    ele.acf.dont_miss_out_section.map((missout, index) => (
+                                       // Check if any key in the missout object has data
+                                       Object.values(missout).some(val => val !== "") ? (
+                                          <div className={`process_flex_template process_template-${index % 2 === 0 ? "odd" : "even"}`} key={index}>
+                                             <div className="process_left_section">
+                                                {missout.dont_miss_out_tittle && (
                                                    <div className="inner_process_heading">
-                                                      <h1>{missout.dont_miss_out_tittle || ""}</h1>
+                                                      <h1>{missout.dont_miss_out_tittle}</h1>
                                                    </div>
-                                                   <div className=" servives_missout_description">
-                                                      <div dangerouslySetInnerHTML={{ __html: missout.dont_miss_out_description || " Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available" }}></div>
+                                                )}
+                                                {missout.dont_miss_out_description && (
+                                                   <div className="services_missout_description">
+                                                      <div dangerouslySetInnerHTML={{ __html: missout.dont_miss_out_description }}></div>
                                                    </div>
-                                                </div>
-                                                <div className="process_right_section">
-                                                   <div className="process_image">
-                                                      <img src={missout.dont_miss_out_image || emptyImage.src} alt='services_process_image' />
-                                                   </div>
-                                                </div>
+                                                )}
                                              </div>
-                                          </>
-                                       ))
-                                    ) : (
-                                       ""
-                                    )}
-                                 </div>
+                                             <div className="process_right_section">
+                                                {missout.dont_miss_out_image && (
+                                                   <div className="process_image">
+                                                      <img src={missout.dont_miss_out_image} alt='services_process_image' />
+                                                   </div>
+                                                )}
+                                             </div>
+                                          </div>
+                                       ) : null
+                                    ))
+                                 ) : (
+                                    ""
+                                 )}
                               </div>
-   
-   
+
+
+
                               <div className="services_inner_page_faq">
                                  <ServicesSlugFaq ele={ele} />
                               </div>
-   
+
                               <div className="services_inner_packages_serction">
-   
+
                                  {Array.isArray(ele.acf?.services_inner_packages_section) ? (
                                     ele.acf.services_inner_packages_section.map((packages, index) => (
                                        <>
@@ -220,13 +232,13 @@ function ServicesSecondSlug({ slug }) {
                                                       <div className="view_more">
                                                          <Link href={`/`}>View More</Link>
                                                       </div>
-   
+
                                                    </div>
                                                 )
                                              })}
                                           </div>
                                        </>
-   
+
                                     ))
                                  ) : (
                                     ""
@@ -263,7 +275,7 @@ function ServicesSecondSlug({ slug }) {
                               </>
                            )}
                         </div>
-   
+
                         <div className="call_outer inner_services">
                            <div className="inner_call">
                               <div className="call_wrapper">
@@ -278,15 +290,15 @@ function ServicesSecondSlug({ slug }) {
                                  <CallToAction />
                               </div>
                            </div>
-   
+
                         </div>
                      </>
                   )
-   
-   
+
+
                })
             )}
-            
+
 
 
          </div>

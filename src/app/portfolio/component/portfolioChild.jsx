@@ -41,7 +41,7 @@ const PortfolioChild = ({ data = [] }) => {
                         </div>
                     ))
                 ) : (
-                    <p>No Portfolio items available.</p>
+                    <p id='no_portfolio_avail'>No Portfolio items available.</p>
                 )}
             </div>
         </>
