@@ -5133,6 +5133,11 @@ h6 {
 }
 
 .services_dont_miss_out{
+	.process_template-odd,
+	.process_template-even{
+		grid-template-columns: 1fr;
+		width: 100%;
+	}
 	.process_left_section{
 		background-color: $black;
 		.inner_process_heading h3{

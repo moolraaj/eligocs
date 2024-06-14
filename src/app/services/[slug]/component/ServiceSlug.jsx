@@ -184,13 +184,13 @@ function ServicesSecondSlug({ slug }) {
                                                    </div>
                                                 )}
                                              </div>
-                                             <div className="process_right_section">
+                                             {/* <div className="process_right_section">
                                                 {missout.dont_miss_out_image && (
                                                    <div className="process_image">
                                                       <img src={missout.dont_miss_out_image} alt='services_process_image' />
                                                    </div>
                                                 )}
-                                             </div>
+                                             </div> */}
                                           </div>
                                           </>
                                           
