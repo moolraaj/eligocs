@@ -116,7 +116,7 @@ export default function Portfolioslug({ slug }) {
                                                 <Link key={index} href={`/portfolio/${e.slug}`}>{e.acf.portfolio_title}</Link>
                                             ))}
                                             
-                                                <button onClick={() => setIsShow(!show)}>
+                                                <button className='show_hide_related_portfolio' onClick={() => setIsShow(!show)}>
                                                     {show ? 'hide all' : 'show all'}
                                                 </button>
                                             
