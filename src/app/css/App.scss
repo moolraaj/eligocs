@@ -3162,6 +3162,20 @@ menu.footer_ul li a {
 	@include grid-property(grid, 1fr 1fr, start, 70px, 20px);
 }
 
+.services_faq_section_second {
+    margin-top: 60px;
+	#faq_second_title_one{
+		font-size: 30px;
+		text-align: center;
+	}
+	#faq_second_title_two{
+		font-size: 40px;
+		font-weight: 500;
+		color: $primaryyellow;
+		margin: 10px auto 40px auto;
+		text-align: center;
+	}
+}
 .services_inner_question {
 	display: flex;
 	justify-content: space-between;
@@ -6522,7 +6536,11 @@ h6.user_name_c a {
 	}
 }
 
+
 @media(max-width:768px) {
+	.services_faq_section_second #faq_second_title_two{
+		font-size: 30px;
+	}
 	.custom_heading_servivces {
 		margin: 20px auto;
 	}
