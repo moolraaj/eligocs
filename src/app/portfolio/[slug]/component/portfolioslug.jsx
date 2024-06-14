@@ -12,6 +12,7 @@ export default function Portfolioslug({ slug }) {
     const [data, setData] = useState([]);
     const [relatedPortfolio, setRelatedPortfolio] = useState([]);
     const [loading, setLoading] = useState(true)
+    const [show, setIsShow] = useState(false)
 
     const loadSinglePortfolio = async () => {
         try {
@@ -111,9 +112,15 @@ export default function Portfolioslug({ slug }) {
                                     <div className="portfolio_inner_related_posts">
                                         <div className="portfolio_related_posts_inner">
                                             <h3>Related Posts</h3>
-                                            {Portfolio && Portfolio.map((e, index) => (
+                                            {Portfolio&&Portfolio?.slice(0, show ? Portfolio.length : 9).map((e, index) => (
                                                 <Link key={index} href={`/portfolio/${e.slug}`}>{e.acf.portfolio_title}</Link>
                                             ))}
+                                            
+                                                <button onClick={() => setIsShow(!show)}>
+                                                    {show ? 'show all' : 'hide all'}
+                                                </button>
+                                            
+
                                         </div>
                                     </div>
                                 </div>
