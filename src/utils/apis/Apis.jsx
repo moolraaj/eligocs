@@ -144,10 +144,13 @@ export const allExportedApi = () => {
   };
 
   // fetch all portfolio api
-  const fetchAllportFolio = async () => {
-    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/portfolio?fields=acf&acf_format=standard`);
+  const fetchAllportFolio = async (PORTFOLIO_PAGE_SIZE,page) => {
+    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/portfolio?per_page=${PORTFOLIO_PAGE_SIZE}&page=${page}&fields=acf&acf_format=standard`);
     let data = await response.json();
-    return data
+    let totalCount=response.headers.get('X-Wp-Total')
+    console.log(totalCount)
+
+    return {alldata:data, alltotalCount:totalCount}
   };
 
 
@@ -364,6 +367,6 @@ export const allExportedApi = () => {
 
 export const BLOG_PAGE_SIZE = 12;
 export const PRODUCTS_PAGE_SIZE = 12;
-export const PORTFOLIO_PAGE_SIZE = 6;
+export const PORTFOLIO_PAGE_SIZE = 12;
 export const COURSE_PAGE_SIZE = 6;
 export const INTERNSHIP_PAGE_SIZE = 6;
