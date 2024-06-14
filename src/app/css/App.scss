@@ -9270,18 +9270,19 @@ h6.user_name_c a {
 	}
 
 	.faq_toggle_btn-wrapper {
-		width: 25px;
-		height: 25px;
+		width: auto;
+		height: auto;
 		border-radius: 50%;
 		background: $primaryyellow;
 		display: flex;
 		justify-content: center;
-		align-items: center
+		align-items: center;
+		padding: 7px;
 	}
 
 	.faq_toggle_btn-wrapper .arrow-icon {
-		width: 5px;
-		height: 5px;
+		width: 4px;
+		height: 4px;
 		padding: 1px;
 		border: solid $black !important;
 		border-width: 0 2px 2px 0 !important
