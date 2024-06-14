@@ -23,8 +23,6 @@ function AboutSection({ ele }) {
             <h1>{data.acf.about_heading}</h1>
           </div>
           <div className="home_about_right">
-            {/* <p dangerouslySetInnerHTML={{ __html: data.acf.about_para_first }}></p>
-            <p  dangerouslySetInnerHTML={{ __html: data.acf.about_para_second }}></p> */}
             <div dangerouslySetInnerHTML={{__html: data.acf.about_our_company_description}}></div>
             <Link href={`/meet-our-team`} className="meet_our_team">
             Meet Our Team
