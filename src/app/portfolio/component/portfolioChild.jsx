@@ -11,8 +11,8 @@ const PortfolioChild = ({ data = [] }) => {
         <>
             <div className="portfolio_right_section">
                 {allportfolioData.length > 0 ? (
-                    allportfolioData.map((ele) => (
-                        <div className="portfolio" key={ele.id}>
+                    allportfolioData.map((ele,index) => (
+                        <div className="portfolio" key={index}>
                             <Link href={`/portfolio/${ele.slug}`} className='portfolio-post'>
                                 <div className="portfolio_image">
                                     <img src={ele.acf.portfolio_image || emptyImage.src} alt="" />
