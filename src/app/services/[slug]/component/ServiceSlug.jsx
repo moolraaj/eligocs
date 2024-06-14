@@ -249,7 +249,7 @@ function ServicesSecondSlug({ slug }) {
                            {child_posts && child_posts.length > 0 && (
                               <>
                                  {parent_posts?.map((ele) => (
-                                    <div key={ele.id}>
+                                    <div key={ele.id} className="related_services_heading">
                                        <h1>{ele.acf.services_title} related services : </h1>
                                     </div>
                                  ))}

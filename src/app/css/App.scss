@@ -3127,7 +3127,7 @@ menu.footer_ul li a {
 
 .custom_heading_servivces {
     text-align: center;
-    margin: 50px;
+    margin: 50px auto;
 }
 .services_inner_page_faq {
 	margin-top: 40px;
@@ -3590,9 +3590,11 @@ menu.footer_ul li a {
 	color: $white
 }
 
-.services_inner_answer p {
-	font-size: 20px;
-	line-height: 40px;
+.services_inner_answer{
+	p,span{
+		font-size: 20px;
+		line-height: 40px;
+	}
 }
 
 ul.transformation_wrapper:hover img {
@@ -6492,7 +6494,12 @@ h6.user_name_c a {
 }
 
 @media(max-width:768px) {
-	.services_inner_description h2 {
+	.custom_heading_servivces{
+		margin: 20px auto;
+	}
+	
+	.services_inner_description h2,
+	.related_services_heading h1{
 		font-size: 22px;
 	}
 	.course-page-top-section img {
