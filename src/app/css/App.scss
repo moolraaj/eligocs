@@ -484,7 +484,10 @@ body::-webkit-scrollbar-thumb {
 	height: 215px;
 	overflow: auto !important;
 }
-
+p#no_portfolio_avail {
+    color: #fff;
+    font-size: 20px;
+}
 
 .portfolio_slider {
 	overflow-x: auto;
