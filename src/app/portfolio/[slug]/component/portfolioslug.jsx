@@ -117,7 +117,7 @@ export default function Portfolioslug({ slug }) {
                                             ))}
                                             
                                                 <button onClick={() => setIsShow(!show)}>
-                                                    {show ? 'show all' : 'hide all'}
+                                                    {show ? 'hide all' : 'show all'}
                                                 </button>
                                             
 
