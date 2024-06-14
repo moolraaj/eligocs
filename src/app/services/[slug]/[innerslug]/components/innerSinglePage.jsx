@@ -197,6 +197,7 @@ function InnerSinglePage({ slug, innerslug }) {
 
                               <div className="services_inner_page_faq">
                                  <ServicesSlugFaq ele={ele} />
+                                 <h2 className='custom_heading_servivces'>{ele.acf.custom_heading}</h2>
                               </div>
 
                               <div className="services_inner_packages_serction">
