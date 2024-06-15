@@ -6559,6 +6559,13 @@ h6.user_name_c a {
 
 
 @media(max-width:768px) {
+
+	.services_inner_template_wrapper .portfolio_inner_top_right_section h1{
+		font-size: 30px;
+	  }
+	  .portfolio_page_top_image img{
+		opacity: 1 !important;
+	  }
 	.services_faq_section_second #faq_second_title_two{
 		font-size: 30px;
 	}

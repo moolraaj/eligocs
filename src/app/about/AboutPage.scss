@@ -635,7 +635,6 @@ button {
 }
 .uderline-text {
   display: inline-flex;
-  border-bottom: 4px solid #eaaa00;
   line-height: 40px;
 }
 
@@ -652,7 +651,7 @@ button {
 }
 
 @media (max-width: 768px) {
-
+  
   .content.about_page_testimonial .home_testimonial_wrapper  {
     padding-bottom:130px !important;
   } 
@@ -806,7 +805,7 @@ button {
     padding: 0;
     h1{
       font-size: 2.5em;
-      line-height: 10px !important;
+      line-height: 15px !important;
     }
     img{
       width: 100%;
