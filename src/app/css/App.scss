@@ -5140,6 +5140,7 @@ h6 {
 	}
 	.process_left_section{
 		background-color: $black;
+		padding-left: 40px;
 		.inner_process_heading h3{
 			color: $white;
 			font-size: 30px;
@@ -6559,7 +6560,9 @@ h6.user_name_c a {
 
 
 @media(max-width:768px) {
-
+	.services_dont_miss_out .process_left_section {
+		padding-left: 20px;
+	}
 	.services_inner_template_wrapper .portfolio_inner_top_right_section h1{
 		font-size: 30px;
 	  }
