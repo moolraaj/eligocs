@@ -225,6 +225,7 @@ function PortfolioPage() {
 
   return (
     <>
+    <div className="portfolio_page_outer">
       <div className="page_top">
 
         {data && data.map((ele) => (
@@ -304,6 +305,7 @@ function PortfolioPage() {
           <Link href={`/`}>Unlock Success Now</Link>
         </div>
 
+      </div>
       </div>
     </>
   );

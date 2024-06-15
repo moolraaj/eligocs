@@ -770,7 +770,13 @@ div#career_section p {
 	font-size: 25px;
 	text-align: left;
 }
-
+div#career_section,
+.our_product_inner_page,
+.internship-page-outer,
+.portfolio_page_outer,
+.courses-page-outer{
+    padding-bottom: 80px;
+}
 .product_image_right span {
 	display: flex;
 	align-items: center;
@@ -2207,7 +2213,7 @@ h1.type_text_wrapper span {
 
 
 .our_memeber_wrapper {
-	padding-bottom: 250px;
+	padding-bottom: 80px;
 	padding-top: 50px;
 
 	select#categoryFilter {
