@@ -45,7 +45,7 @@ function ServicesSecondSlug({ slug }) {
 
    let { parent_posts, child_posts } = data
 
-
+   const hasChildPosts = child_posts && child_posts.length > 0;
 
 
    return (
@@ -203,10 +203,10 @@ function ServicesSecondSlug({ slug }) {
 
 
 
-                              <div className="services_inner_page_faq">
+                              <div className="services_inner_outer_page_faq">
                                  <ServicesSlugFaq ele={ele} />
-                                 <h2 className='custom_heading_servivces'>{ele.acf.custom_heading}</h2>
                               </div>
+
 
                               <div className="services_inner_packages_serction">
 
@@ -253,9 +253,10 @@ function ServicesSecondSlug({ slug }) {
                                  )}
                               </div>
                            </div>
-                           <div className="related_services_slider_wrapper">
+
+                           <div className="related_services_slider_wrapper" style={{ display: hasChildPosts ? 'block' : 'none' }}>
                               <div className="related_services_slider">
-                                 {child_posts && child_posts.length > 0 && (
+                                 {hasChildPosts && (
                                     <>
                                        {parent_posts?.map((ele) => (
                                           <div key={ele.id} className="related_services_heading">
@@ -286,7 +287,6 @@ function ServicesSecondSlug({ slug }) {
                                  )}
                               </div>
                            </div>
-
                         </div>
 
                         <div className="call_outer inner_services">

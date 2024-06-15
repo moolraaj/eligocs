@@ -636,7 +636,7 @@ a {
 }
 
 .page_top {
-	padding: 120px 20px 50px
+	padding: 120px 20px 0px
 }
 
 .about_section_outer {
@@ -5141,13 +5141,13 @@ h6 {
 	.process_left_section{
 		background-color: $black;
 		.inner_process_heading h3{
-			color: $primaryyellow;
+			color: $white;
 			font-size: 30px;
 		}
 		.services_missout_description{
 			span,p{
 				font-size: 25px;
-				color: $white;
+				color: $primaryyellow;
 				line-height: 40px;
 			}
 		}
@@ -8223,7 +8223,7 @@ h6.user_name_c a {
 	}
 
 	.page_top {
-		padding: 100px 20px 50px
+		padding: 100px 20px 20px;
 	}
 
 	.product-top-info-section .product-page-left-info h1 {
