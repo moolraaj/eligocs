@@ -195,7 +195,8 @@ button {
 .header-portfolio-section::-webkit-scrollbar,
 .blog-header-description p::-webkit-scrollbar,
 .blog_page_heading_wrapper p p::-webkit-scrollbar,
-.our_team_description p p::-webkit-scrollbar {
+.our_team_description p p::-webkit-scrollbar,
+.team_member_section::-webkit-scrollbar{
 	opacity: 0;
 }
 
@@ -7706,8 +7707,9 @@ h6.user_name_c a {
 
 	.team_member_section {
 		padding: 0px 20px 20px 20px;
+		overflow: auto;
 	}
-
+	
 	.our_memeber_wrapper {
 		padding-bottom: 50px;
 
