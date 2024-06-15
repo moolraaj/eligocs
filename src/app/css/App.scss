@@ -1402,16 +1402,22 @@ a.footer_mail {
 }
 
 .close-btn {
-	position: absolute;
-	font-size: 4em;
-	top: 10px;
-	right: 20px;
-	background-color: transparent;
-	border: none;
-	color: #f7d117 !important;
-	cursor: pointer
+    position: absolute;
+    font-size: 4em;
+    top: 7px;
+    border-radius: 66px;
+    padding: 8px 19px;
+    right: 10px;
+    font-size: 33px;
+    z-index: 999;
+    background-color: black;
+    border: none;
+    color: $primaryyellowlight !important;
+    cursor: pointer;
 }
-
+.slide {
+    cursor: pointer;
+}
 .portpolio_flex {
 	background: $white;
 	padding: 20px
