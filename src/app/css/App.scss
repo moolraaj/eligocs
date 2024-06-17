@@ -2476,7 +2476,7 @@ ul.course:nth-child(3n-1) {
 
 .menu-right-container-top {
 	width: 80%;
-	margin-top: 30px;
+	margin-top: 50px;
 	height: 0;
 }
 
@@ -6574,6 +6574,9 @@ h6.user_name_c a {
 
 
 @media(max-width:768px) {
+	form#jobform textarea{
+		padding: 15px 0px 10px;
+	}
 	.services_dont_miss_out .process_left_section {
 		padding-left: 20px !important;
 	}
@@ -6835,6 +6838,7 @@ h6.user_name_c a {
 
 	.form_button {
 		text-align: left !important;
+		margin: auto;
 	}
 
 	.interns_info {
@@ -8837,7 +8841,9 @@ h6.user_name_c a {
 	.nested_services_wrapper {
 		grid-template-columns: repeat(1, 1fr);
 	}
-
+	form#jobform textarea::placeholder {
+		font-size: 16px
+	}
 	.our_product_inner_page .blog_img_heading_wrapper img,
 	.blog_img_heading_wrapper img {
 		height: 220px;
