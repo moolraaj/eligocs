@@ -6406,6 +6406,9 @@ h6.user_name_c a {
 }
 
 @media(min-width:769px)and (max-width:1024px) {
+	.portfolio_top_left_section .portfolio_top_right_section h1{
+		margin-top: 50px;
+	}
 	.nested_services_wrapper {
 		grid-template-columns: repeat(2, 1fr);
 	}
@@ -6615,9 +6618,8 @@ h6.user_name_c a {
 		height: 220px;
 	}
 
-	.blog-header-description p,
-	.portfolio_top_right_section p{
-		height: auto !important;
+	.blog-header-description p{
+		height: auto;
 	}
 
 	.trans_number {
@@ -9470,7 +9472,9 @@ h6.user_name_c a {
 }
 
 @media (max-width: 1024px) {
-
+	.portfolio_top_right_section p{
+		height: auto;
+	}
 	.products_inner_description ul,
 	.current_opening_left ul li,
 	.duties_left ul li,
