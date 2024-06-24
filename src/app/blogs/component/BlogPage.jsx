@@ -17,7 +17,7 @@ function BlogPage() {
   const [page, setPage] = useState(1);
   const [count, setCount] = useState(1);
   const [loading, setLoading] = useState(true);
-  const [showPagination, setShowPagination] = useState(true); // State to toggle pagination visibility
+  const [showPagination, setShowPagination] = useState(true); 
 
   const { all_categories, blogs } = allBlogPosts;
 
