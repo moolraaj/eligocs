@@ -17,6 +17,7 @@ function BlogPage() {
   const [page, setPage] = useState(1);
   const [count, setCount] = useState(1);
   const [loading, setLoading] = useState(true);
+  const [showPagination, setShowPagination] = useState(true); // State to toggle pagination visibility
 
   const { all_categories, blogs } = allBlogPosts;
 
@@ -60,9 +61,11 @@ function BlogPage() {
       const filtered = blogs.filter(blog => blog.blog_category.includes(selectedCategory));
       setFilteredBlogs(filtered);
       setCount(Math.ceil(filtered.length / BLOG_PAGE_SIZE));
+      setShowPagination(filtered.length > 12); // Toggle pagination based on filtered results
     } else {
       setFilteredBlogs(blogs);
       setCount(Math.ceil(blogs.length / BLOG_PAGE_SIZE));
+      setShowPagination(true); // Always show pagination when no category filter
     }
   }, [selectedCategory, blogs]);
 
@@ -88,7 +91,6 @@ function BlogPage() {
   return (
     <>
       {blogPageData && blogPageData.map((data, index) => (
-        <>
         <div className="blog-page-outer page_top" key={index}>
           <div className="blog-page-inner-wrapper">
             <div className="blog-header-section">
@@ -151,7 +153,7 @@ function BlogPage() {
             </div>
           </div>
 
-         
+          {showPagination && (
             <div className="pagination-buttons">
               {Array.from({ length: count }, (_, index) => (
                 <button
@@ -163,27 +165,25 @@ function BlogPage() {
                 </button>
               ))}
             </div>
-       
-        </div>
-        <div className="call_outer inner_blogs blog_page_call_to_action">
-        <div className="inner_call">
-          <div className="call_wrapper">
-            <div className="call_left_section">
-              <h1>{data.acf.call_to_action_heading_first || "Looking For Reliable And Highly Skilled"}</h1>
-              <h1>{data.acf.call_to_action_heading_second || " Web Development Company & Services"}</h1>
-              <p dangerouslySetInnerHTML={{ __html: data.acf.call_to_action_description || "With Our Well-Researched Web Development Services, Your Business Can Attain Significant Online Presence While Meeting Its Goals Effectively." }}></p>
-              <div className="call_button">
-                <button id='sucess-journy-btn' onClick={() => router.push('/contact')}>call us now</button>
+          )}
+
+          <div className="call_outer inner_blogs blog_page_call_to_action">
+            <div className="inner_call">
+              <div className="call_wrapper">
+                <div className="call_left_section">
+                  <h1>{data.acf.call_to_action_heading_first || "Looking For Reliable And Highly Skilled"}</h1>
+                  <h1>{data.acf.call_to_action_heading_second || " Web Development Company & Services"}</h1>
+                  <p dangerouslySetInnerHTML={{ __html: data.acf.call_to_action_description || "With Our Well-Researched Web Development Services, Your Business Can Attain Significant Online Presence While Meeting Its Goals Effectively." }}></p>
+                  <div className="call_button">
+                    <button id='sucess-journy-btn' onClick={() => router.push('/contact')}>call us now</button>
+                  </div>
+                </div>
+                <CallToAction />
               </div>
             </div>
-            <CallToAction />
           </div>
         </div>
-      </div>
-      </>
       ))}
-
-      
     </>
   );
 }
