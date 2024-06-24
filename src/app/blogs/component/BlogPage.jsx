@@ -59,7 +59,7 @@ function BlogPage() {
 
   const filteredBlogs = selectedCategory
   ? blogs.filter(blog => blog.blog_category.includes(selectedCategory))
-  : blogs.slice((page - 1) * BLOG_PAGE_SIZE, page * BLOG_PAGE_SIZE);
+  : blogs;
 
 
   const formatDate = (dateString) => {
