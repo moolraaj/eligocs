@@ -144,12 +144,13 @@ export const allExportedApi = () => {
   };
 
   // fetch all portfolio api
-  const fetchAllportFolio = async (PORTFOLIO_PAGE_SIZE,page) => {
-    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/portfolio?per_page=${PORTFOLIO_PAGE_SIZE}&page=${page}&fields=acf&acf_format=standard`);
-    let data = await response.json();
-    let totalCount=response.headers.get('X-WP-Total')
-    return {data,totalCount}
+  const fetchAllportFolio = async () => {
+   
+    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/portfolio?per_page=100&fields=acf&acf_format=standard`);
+    let data = await response.json(); 
+    return data
   };
+ 
 
 
   // fetch single portfolio api
