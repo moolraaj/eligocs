@@ -91,6 +91,7 @@ function BlogPage() {
   return (
     <>
       {blogPageData && blogPageData.map((data, index) => (
+        <>
         <div className="blog-page-outer page_top" key={index}>
           <div className="blog-page-inner-wrapper">
             <div className="blog-header-section">
@@ -167,7 +168,9 @@ function BlogPage() {
             </div>
           )}
 
-          <div className="call_outer inner_blogs blog_page_call_to_action">
+        </div>
+        
+        <div className="call_outer inner_blogs blog_page_call_to_action">
             <div className="inner_call">
               <div className="call_wrapper">
                 <div className="call_left_section">
@@ -182,7 +185,7 @@ function BlogPage() {
               </div>
             </div>
           </div>
-        </div>
+          </>
       ))}
     </>
   );
