@@ -12,80 +12,66 @@ function BlogPage() {
   const [blogPageData, setBlogPageData] = useState([]);
   const [allBlogPosts, setAllBlogPosts] = useState({ all_categories: [], blogs: [] });
   const [selectedCategory, setSelectedCategory] = useState('');
-  const [currentPage, setCurrentPage] = useState(1);
-  const [loading, setLoading] = useState(true); // Add loading state
+  const [page, setPage] = useState(1);
+  const [count, setCount] = useState(1);
+  const [loading, setLoading] = useState(true);
 
   const { all_categories, blogs } = allBlogPosts;
 
-  const loadAllBlogPosts = async () => {
+  const loadAllBlogPosts = async (page) => {
     try {
-      let response = await api.AllBlogPOsts();
-      setAllBlogPosts(response);
+      let response = await api.AllBlogPOsts(BLOG_PAGE_SIZE, page);
+      setAllBlogPosts(response.allData);
+      setCount(Math.ceil(response.totalResult / BLOG_PAGE_SIZE));
     } catch (error) {
-      // Handle error if needed
+
     }
   };
 
+  const handlePage = (page) => {
+    if (page > 0 && page <= count) {
+      setPage(page)
+    }
+
+  }
+
   const fetchBlogPageData = async () => {
+    setLoading(false)
     let data = await api.BlogPageApi();
     setBlogPageData(data);
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      await loadAllBlogPosts();
-      await fetchBlogPageData();
-      setLoading(false);
-    };
-    fetchData();
+
+
+
+    fetchBlogPageData();
   }, []);
+
+
+  useEffect(() => {
+    loadAllBlogPosts(page);
+  }, [page])
 
   const handleCategoryChange = (e) => {
     setSelectedCategory(e.target.value);
-    setCurrentPage(1);
   };
 
   const filteredBlogs = selectedCategory
-    ? blogs.filter(blog => blog.blog_category.includes(selectedCategory))
-    : blogs;
+  ? blogs.filter(blog => blog.blog_category.includes(selectedCategory))
+  : blogs.slice((page - 1) * BLOG_PAGE_SIZE, page * BLOG_PAGE_SIZE);
 
-  const totalPages = Math.ceil(filteredBlogs.length / BLOG_PAGE_SIZE);
-
-  const handleClick = (page) => {
-    setCurrentPage(page);
-  };
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
   };
 
-  const paginatedBlogs = filteredBlogs.slice((currentPage - 1) * BLOG_PAGE_SIZE, currentPage * BLOG_PAGE_SIZE)
-
-  const renderPaginationButtons = () => {
-    const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
-
-    return (
-      <div className="pagination-buttons">
-        {pageNumbers.map((pageNumber) => (
-          <button
-            key={pageNumber}
-            onClick={() => handleClick(pageNumber)}
-            className={pageNumber === currentPage ? 'active' : ''}
-            disabled={pageNumber === currentPage}
-          >
-            {pageNumber}
-          </button>
-        ))}
-      </div>
-    );
-  };
-
   return (
     <>
       {blogPageData && blogPageData.map((data, index) => (
         <>
+
         <div className="blog-page-outer page_top" key={index}>
           <div className="blog-page-inner-wrapper">
             <div className="blog-header-section">
@@ -124,8 +110,8 @@ function BlogPage() {
               {loading ? (
                 <p className="loading_data">Loading...</p>
               ) : (
-                paginatedBlogs.length > 0 ? (
-                  paginatedBlogs.map((blog) => (
+                filteredBlogs.length > 0 ? (
+                  filteredBlogs.map((blog) => (
                     <ul className="blog-post" key={blog.id}>
                       <Link href={`/blogs/${blog.slug}`}>
                         <li className="blog-post-img">
@@ -147,28 +133,36 @@ function BlogPage() {
               )}
             </div>
           </div>
-
-          <div className="pagination-controls">
-            {filteredBlogs.length > BLOG_PAGE_SIZE && renderPaginationButtons()}
+          
+           
+          <div className="pagination-buttons">
+            {Array.from({ length: count }, (_, index) => (
+              <button
+                key={index}
+                className={page === index + 1 ? 'active' : ''}
+                onClick={() => handlePage(index + 1)}
+              >
+                {index + 1}
+              </button>
+            ))}
           </div>
-
-        </div>
-        
-        <div className="call_outer inner_blogs blog_page_call_to_action">
-        <div className="inner_call">
-          <div className="call_wrapper">
-            <div className="call_left_section">
-              <h1>{data.acf.call_to_action_heading_first || "Looking For Reliable And Highly Skilled"}</h1>
-              <h1>{data.acf.call_to_action_heading_second || " Web Development Company & Services"}</h1>
-              <p dangerouslySetInnerHTML={{ __html: data.acf.call_to_action_description || "With Our Well-Researched Web Development Services, Your Business Can Attain Significant Online Presence While Meeting Its Goals Effectively." }}></p>
-              <div className="call_button">
-                <button id='sucess-journy-btn' onClick={() => router.push('/contact')}>call us now</button>
+          </div>
+          <div className="call_outer inner_blogs blog_page_call_to_action">
+            <div className="inner_call">
+              <div className="call_wrapper">
+                <div className="call_left_section">
+                  <h1>{data.acf.call_to_action_heading_first || "Looking For Reliable And Highly Skilled"}</h1>
+                  <h1>{data.acf.call_to_action_heading_second || " Web Development Company & Services"}</h1>
+                  <p dangerouslySetInnerHTML={{ __html: data.acf.call_to_action_description || "With Our Well-Researched Web Development Services, Your Business Can Attain Significant Online Presence While Meeting Its Goals Effectively." }}></p>
+                  <div className="call_button">
+                    <button id='sucess-journy-btn' onClick={() => router.push('/contact')}>call us now</button>
+                  </div>
+                </div>
+                <CallToAction />
               </div>
             </div>
-            <CallToAction />
           </div>
-        </div>
-      </div>
+
       </>
       ))}
     </>

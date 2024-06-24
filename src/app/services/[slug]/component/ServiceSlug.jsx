@@ -133,7 +133,7 @@ function ServicesSecondSlug({ slug }) {
                                                 <div dangerouslySetInnerHTML={{ __html: process.services_post_container_first_description || "" }}></div>
                                              </div>
                                              <div className={`process_flex_template process_template-${index % 2 === 0 ? "even" : "odd"}`} key={index}>
-                                                {process.services_process_heading || process.services_process_description || process.services_process_image ? (
+                                                {Object.values(process).some(val => val !== "") ? (
                                                    <>
                                                       <div className="process_left_section">
                                                          <div className="inner_process_heading">
@@ -157,7 +157,7 @@ function ServicesSecondSlug({ slug }) {
                                        ) : null
                                     ))
                                  ) : (
-                                    ""
+                                    <div>null</div> // Show null if object values are empty
                                  )}
                               </div>
 

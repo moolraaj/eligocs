@@ -166,11 +166,11 @@ export const allExportedApi = () => {
   };
 
   // fetch all blog posts api
-  const AllBlogPOsts = async () => {
-    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/blog?all_categories=true&per_page=100&fields=acf&acf_format=standard`);
+  const AllBlogPOsts = async (BLOG_PAGE_SIZE,page) => {
+    let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/blog?all_categories=true&per_page=${BLOG_PAGE_SIZE}&page=${page}&fields=acf&acf_format=standard`);
     const data = await response.json();
-
-    return data;
+    const totalCount = response.headers.get('X-WP-Total');
+    return {allData:data,totalResult:totalCount};
   };
 
 
