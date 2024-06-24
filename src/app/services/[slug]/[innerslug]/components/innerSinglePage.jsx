@@ -165,11 +165,15 @@ function InnerSinglePage({ slug, innerslug }) {
                                     ele.acf.dont_miss_out_section.map((missout, index) => (
                                        // Check if any key in the missout object has data
                                        Object.values(missout).some(val => val !== "") ? (
+                                          <>
+                                          <div className="services_missout_heading">
+                                                <h4>Don't Miss Out</h4>
+                                             </div>
                                           <div className={`process_flex_template process_template-${index % 2 === 0 ? "odd" : "even"}`} key={index}>
                                              <div className="process_left_section">
                                                 {missout.dont_miss_out_tittle && (
                                                    <div className="inner_process_heading">
-                                                      <h1>{missout.dont_miss_out_tittle}</h1>
+                                                      <h3>{missout.dont_miss_out_tittle}</h3>
                                                    </div>
                                                 )}
                                                 {missout.dont_miss_out_description && (
@@ -178,14 +182,15 @@ function InnerSinglePage({ slug, innerslug }) {
                                                    </div>
                                                 )}
                                              </div>
-                                             <div className="process_right_section">
+                                             {/* <div className="process_right_section">
                                                 {missout.dont_miss_out_image && (
                                                    <div className="process_image">
                                                       <img src={missout.dont_miss_out_image} alt='services_process_image' />
                                                    </div>
                                                 )}
-                                             </div>
+                                             </div> */}
                                           </div>
+                                          </>
                                        ) : null
                                     ))
                                  ) : (
@@ -195,7 +200,7 @@ function InnerSinglePage({ slug, innerslug }) {
 
 
 
-                              <div className="services_inner_page_faq">
+                              <div className="services_inner_outer_page_faq">
                                  <ServicesSlugFaq ele={ele} />
                               </div>
 

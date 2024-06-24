@@ -25,7 +25,7 @@
 }
 
 .go_back_services,
-.show_hide_related_portfolio{
+.show_hide_related_portfolio {
 	border: 1px solid #fff;
 	padding: 12px;
 	border-radius: 4px;
@@ -195,7 +195,9 @@ button {
 .header-portfolio-section::-webkit-scrollbar,
 .blog-header-description p::-webkit-scrollbar,
 .blog_page_heading_wrapper p p::-webkit-scrollbar,
-.our_team_description p p::-webkit-scrollbar {
+.our_team_description p p::-webkit-scrollbar,
+.team_member_section::-webkit-scrollbar,
+.portfolio_top_right_section p::-webkit-scrollbar{
 	opacity: 0;
 }
 
@@ -485,9 +487,10 @@ body::-webkit-scrollbar-thumb {
 	height: 215px;
 	overflow: auto !important;
 }
+
 p#no_portfolio_avail {
-    color: #fff;
-    font-size: 20px;
+	color: #fff;
+	font-size: 20px;
 }
 
 .portfolio_slider {
@@ -635,7 +638,7 @@ a {
 }
 
 .page_top {
-	padding: 120px 20px 50px
+	padding: 120px 20px 0px
 }
 
 .about_section_outer {
@@ -769,7 +772,13 @@ div#career_section p {
 	font-size: 25px;
 	text-align: left;
 }
-
+div#career_section,
+.our_product_inner_page,
+.internship-page-outer,
+.portfolio_page_outer,
+.courses-page-outer{
+    padding-bottom: 80px;
+}
 .product_image_right span {
 	display: flex;
 	align-items: center;
@@ -942,6 +951,26 @@ form#jobform textarea {
 
 .applyjob_select_box {
 	width: 100%;
+}
+
+.portfolio_heading_filter_outer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	.portfolio_filter_dropdown {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		margin: 10px 0px;
+	}
+	select#portfolio_category {
+		font-size: 18px;
+		padding: 7px;
+		max-width: 170px;
+		width: 100%;
+		
+	}
 }
 
 .portfolio_showcase_wrapper {
@@ -1375,16 +1404,22 @@ a.footer_mail {
 }
 
 .close-btn {
-	position: absolute;
-	font-size: 4em;
-	top: 10px;
-	right: 20px;
-	background-color: transparent;
-	border: none;
-	color: #f7d117 !important;
-	cursor: pointer
+    position: absolute;
+    font-size: 4em;
+    top: 7px;
+    border-radius: 66px;
+    padding: 8px 19px;
+    right: 10px;
+    font-size: 33px;
+    z-index: 999;
+    background-color: black;
+    border: none;
+    color: $primaryyellowlight !important;
+    cursor: pointer;
 }
-
+.slide {
+    cursor: pointer;
+}
 .portpolio_flex {
 	background: $white;
 	padding: 20px
@@ -2186,11 +2221,13 @@ h1.type_text_wrapper span {
 
 
 .our_memeber_wrapper {
-	padding-bottom: 250px;
+	padding-bottom: 80px;
 	padding-top: 50px;
 
 	select#categoryFilter {
 		padding: 7px;
+		max-width: 170px;
+		width: 100%;
 	}
 }
 
@@ -2212,6 +2249,14 @@ h1.type_text_wrapper span {
 	font-size: 1.563em;
 	height: 300px;
 	overflow: auto;
+}
+.portfolio_top_right_section p{
+	height: auto;
+	overflow: auto;
+	p{
+		height: auto !important;
+		margin: 20px 0px;
+	}
 }
 
 .right_banner_heading h1 {
@@ -2440,7 +2485,7 @@ ul.course:nth-child(3n-1) {
 
 .menu-right-container-top {
 	width: 80%;
-	margin-top: 30px;
+	margin-top: 50px;
 	height: 0;
 }
 
@@ -2462,6 +2507,7 @@ ul.course:nth-child(3n-1) {
 		column-gap: 20px;
 		row-gap: 7px;
 		flex-wrap: wrap;
+
 		span {
 			display: block;
 			color: $black;
@@ -2795,7 +2841,7 @@ a.back-to-projects {
 }
 
 .portfolio_top_left_section .portfolio_top_right_section h1 {
-	font-size: 6.25em;
+	font-size: 50px;
 	margin: auto;
 }
 
@@ -3125,6 +3171,11 @@ menu.footer_ul li a {
 	line-height: 49px
 }
 
+.custom_heading_servivces {
+	text-align: center;
+	margin: 50px auto;
+}
+
 .services_inner_page_faq {
 	margin-top: 40px;
 }
@@ -3133,6 +3184,20 @@ menu.footer_ul li a {
 	@include grid-property(grid, 1fr 1fr, start, 70px, 20px);
 }
 
+.services_faq_section_second {
+    margin-top: 60px;
+	#faq_second_title_one{
+		font-size: 30px;
+		text-align: center;
+	}
+	#faq_second_title_two{
+		font-size: 40px;
+		font-weight: 500;
+		color: $primaryyellow;
+		margin: 10px auto 40px auto;
+		text-align: center;
+	}
+}
 .services_inner_question {
 	display: flex;
 	justify-content: space-between;
@@ -3272,9 +3337,11 @@ menu.footer_ul li a {
 	border-radius: 10px;
 	object-fit: cover
 }
+
 .services_inner_description h2 {
-    font-size: 40px;
+	font-size: 40px;
 }
+
 .all_services_left_section h1 {
 	color: $blackgrey;
 	font-size: 5em;
@@ -3586,9 +3653,13 @@ menu.footer_ul li a {
 	color: $white
 }
 
-.services_inner_answer p {
-	font-size: 20px;
-	line-height: 40px;
+.services_inner_answer {
+
+	p,
+	span {
+		font-size: 20px;
+		line-height: 40px;
+	}
 }
 
 ul.transformation_wrapper:hover img {
@@ -5083,6 +5154,29 @@ h6 {
 	font-size: 22px;
 }
 
+.services_dont_miss_out{
+	.process_template-odd,
+	.process_template-even{
+		grid-template-columns: 1fr;
+		width: 100%;
+	}
+	.process_left_section{
+		background-color: $black;
+		padding-left: 40px !important;
+
+		.inner_process_heading h3{
+			color: $white;
+			font-size: 30px;
+		}
+		.services_missout_description{
+			span,p{
+				font-size: 25px;
+				color: $primaryyellow;
+				line-height: 40px;
+			}
+		}
+	}
+}
 .process_template-odd .process_left_section {
 	order: 2;
 	padding-left: 80px;
@@ -6312,6 +6406,9 @@ h6.user_name_c a {
 }
 
 @media(min-width:769px)and (max-width:1024px) {
+	.portfolio_top_left_section .portfolio_top_right_section h1{
+		margin-top: 50px;
+	}
 	.nested_services_wrapper {
 		grid-template-columns: repeat(2, 1fr);
 	}
@@ -6430,7 +6527,7 @@ h6.user_name_c a {
 	.portfolio_gallery_wrapper {
 		flex: 0 0 50% !important
 	}
-	
+
 	.nested_options {
 		grid-template-columns: repeat(3, 1fr) !important
 	}
@@ -6487,16 +6584,44 @@ h6.user_name_c a {
 	}
 }
 
+
 @media(max-width:768px) {
-	.services_inner_description h2 {
+	form#jobform textarea{
+		padding: 15px 0px 10px;
+	}
+	.services_dont_miss_out .process_left_section {
+		padding-left: 20px !important;
+	}
+	.services_inner_template_wrapper .portfolio_inner_top_right_section h1{
+		font-size: 30px;
+	  }
+	  .portfolio_page_top_image img{
+		opacity: 1 !important;
+		filter: drop-shadow(0px 1px 1px #808080);
+		border: 1px solid #8080801a;
+	  }
+	.services_faq_section_second #faq_second_title_two{
+		font-size: 30px;
+	}
+	.custom_heading_servivces {
+		margin: 20px auto;
+	}
+	select#portfolio_category{
+		padding: 4px;
+	}
+	.services_inner_description h2,
+	.related_services_heading h1 {
 		font-size: 22px;
 	}
+
 	.course-page-top-section img {
 		height: 220px;
 	}
+
 	.blog-header-description p{
 		height: auto;
 	}
+
 	.trans_number {
 		line-height: 40px;
 	}
@@ -6518,16 +6643,20 @@ h6.user_name_c a {
 			}
 		}
 	}
-	.portfolio_top_left_section .portfolio_inner_page_image_heading_section{
+
+	.portfolio_top_left_section .portfolio_inner_page_image_heading_section {
 		display: block;
 		width: 100%;
 	}
-	.portfolio_top_left_heading h3{
+
+	.portfolio_top_left_heading h3 {
 		display: none;
 	}
-	 .portfolio_inner_page_image_heading_section span{
+
+	.portfolio_inner_page_image_heading_section span {
 		left: 16% !important;
 	}
+
 	.apply_now_career,
 	.apply_now_career_btn,
 	.experience_skill_left li {
@@ -6636,7 +6765,7 @@ h6.user_name_c a {
 
 	.services_inner_template_wrapper p {
 		font-size: 16px !important;
-		line-height: 30px;
+		line-height: 30px !important;
 	}
 
 	.courses-posts-outer ul.course .course_card_btns {
@@ -6697,13 +6826,13 @@ h6.user_name_c a {
 
 	.team-member_image img {
 		display: block;
-        max-width: 180px;
-        width: 100px;
-        max-height: 100px;
-        object-fit: cover;
-        border-radius: 0;
-        object-position: center;
-        margin-bottom: 20px;
+		max-width: 180px;
+		width: 100px;
+		max-height: 100px;
+		object-fit: cover;
+		border-radius: 0;
+		object-position: center;
+		margin-bottom: 20px;
 	}
 
 	.servives_missout_description img {
@@ -6721,6 +6850,7 @@ h6.user_name_c a {
 
 	.form_button {
 		text-align: left !important;
+		margin: auto;
 	}
 
 	.interns_info {
@@ -7593,7 +7723,9 @@ h6.user_name_c a {
 
 	.team_member_section {
 		padding: 0px 20px 20px 20px;
+		overflow: auto;
 	}
+	
 	.our_memeber_wrapper {
 		padding-bottom: 50px;
 
@@ -8127,7 +8259,7 @@ h6.user_name_c a {
 	}
 
 	.page_top {
-		padding: 100px 20px 50px
+		padding: 100px 20px 20px;
 	}
 
 	.product-top-info-section .product-page-left-info h1 {
@@ -8579,7 +8711,9 @@ h6.user_name_c a {
 	.join_course_form {
 		.cf7_form_outer {
 			left: 3%;
-		}}
+		}
+	}
+
 	.nested_services_wrapper {
 		grid-template-columns: repeat(2, 1fr);
 	}
@@ -8719,7 +8853,9 @@ h6.user_name_c a {
 	.nested_services_wrapper {
 		grid-template-columns: repeat(1, 1fr);
 	}
-
+	form#jobform textarea::placeholder {
+		font-size: 16px
+	}
 	.our_product_inner_page .blog_img_heading_wrapper img,
 	.blog_img_heading_wrapper img {
 		height: 220px;
@@ -9179,18 +9315,19 @@ h6.user_name_c a {
 	}
 
 	.faq_toggle_btn-wrapper {
-		width: 25px;
-		height: 25px;
+		width: auto;
+		height: auto;
 		border-radius: 50%;
 		background: $primaryyellow;
 		display: flex;
 		justify-content: center;
-		align-items: center
+		align-items: center;
+		padding: 7px;
 	}
 
 	.faq_toggle_btn-wrapper .arrow-icon {
-		width: 5px;
-		height: 5px;
+		width: 4px;
+		height: 4px;
 		padding: 1px;
 		border: solid $black !important;
 		border-width: 0 2px 2px 0 !important
@@ -9335,7 +9472,9 @@ h6.user_name_c a {
 }
 
 @media (max-width: 1024px) {
-
+	.portfolio_top_right_section p{
+		height: auto;
+	}
 	.products_inner_description ul,
 	.current_opening_left ul li,
 	.duties_left ul li,

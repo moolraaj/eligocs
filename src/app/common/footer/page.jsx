@@ -107,7 +107,7 @@ function Footer({ response }) {
                   {
                    socialLinks && socialLinks.map((ele, index) => {
                       return <div className="footer_social_wrapper" key={index}>
-                        <Link href={ele.iconUrl}>
+                        <Link href={ele.iconUrl} target="_blank">
                           <img src={ele.imageUrl || emptyImage.src} alt={ele.iconName} />
                         </Link>
 

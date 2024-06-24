@@ -84,9 +84,6 @@ function Internship() {
                     method: 'POST',
                     body: formData,
                 });
-
-                console.log(response)
-
                 toast.success(`<div style='font-size:16px'>Thank you, <span style="font-weight: bold; color: #EAAA00;">${user.studentName}</span>, for contacting us! Our team will be in touch with you soon.</div>`);
 
                 setUser({

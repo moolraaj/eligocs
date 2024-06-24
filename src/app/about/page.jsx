@@ -3,25 +3,14 @@
 
 import { ExportScoApiData } from "@/utils/apis/scoApi";
 import AboutUs from "../components/About/AboutUs";
-
-
 import './AboutPage.scss'
 import { LoadscoData } from "../_metadata/metadata";
  
-
 async function AboutPage() {
  
   return (
     <>
-      
         <AboutUs/>
-
-     
-
-
-
-
-
     </>
   )
 }

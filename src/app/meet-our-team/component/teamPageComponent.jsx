@@ -81,14 +81,6 @@ export default function TeamPageComponent() {
           </div>
 
         </div>
-
-
-
-
-
-
-
-
       })}
 
     </>

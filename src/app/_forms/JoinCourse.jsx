@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { toast } from 'sonner';
 import ReCAPTCHA from 'react-google-recaptcha';
 
-function JoinCourse() {
+function JoinCourse({courseName}) {
     let api = allExportedApi();
     const [recaptchaToken, setRecaptchaToken] = useState(null);
     const [user, setUser] = useState({
@@ -12,6 +12,7 @@ function JoinCourse() {
         joinemail: '',
         phonenumber: '',
         qualification: '',
+        coursename: courseName,
     });
 
     const [errors, setErrors] = useState({
@@ -52,6 +53,7 @@ function JoinCourse() {
         formData.append('phonenumber', user.phonenumber);
         formData.append('qualification', user.qualification);
         formData.append('g-recaptcha-response', recaptchaToken);
+        formData.append('coursename', courseName); // Include courseName in form data
 
         let formValid = true;
         const requiredFields = Object.keys(errors);
@@ -79,8 +81,6 @@ function JoinCourse() {
                 });
 
                 toast.success(`<div style='font-size:16px'>Thank you, <span style="font-weight: bold; color: #EAAA00;">${user.fullname}</span> , for contacting us! Our team will be in touch with you soon.</div>`);
-                console.log(response)
-
                 setUser({
                     fullname: '',
                     joinemail: '',

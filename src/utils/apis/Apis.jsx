@@ -364,6 +364,6 @@ export const allExportedApi = () => {
 
 export const BLOG_PAGE_SIZE = 12;
 export const PRODUCTS_PAGE_SIZE = 12;
-export const PORTFOLIO_PAGE_SIZE = 6;
+export const PORTFOLIO_PAGE_SIZE = 12;
 export const COURSE_PAGE_SIZE = 6;
 export const INTERNSHIP_PAGE_SIZE = 6;

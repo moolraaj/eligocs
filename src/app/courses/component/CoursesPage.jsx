@@ -122,7 +122,7 @@ function CoursesPage() {
                 </div>
               </div>
               <div className="cf7_form_wrapper">
-                <JoinCourse />
+                <JoinCourse courseName={courseName} />
               </div>
             </div>
           </div>
