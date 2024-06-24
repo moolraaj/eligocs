@@ -11,10 +11,6 @@ export default function CourseSlug({ slug }) {
   const[data,setData]=useState([])
   const[courseFaq,setCourseFaq]=useState([])
 
-
- 
-   
-
  const loadSingleCourse=async()=>{
   let response = await api.fetchSingleCourse(slug)
   setData(response)
@@ -23,10 +19,6 @@ export default function CourseSlug({ slug }) {
   let response = await api.CoursesPageApi();
   setCourseFaq(response)
  }
-
-
-   
-   
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);

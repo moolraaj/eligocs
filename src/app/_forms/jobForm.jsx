@@ -82,8 +82,6 @@ function JobForm() {
                 });
                 
                 toast.success(`<div style='font-size:16px'>Thank you, <span style="font-weight: bold; color: #EAAA00;">${user.firstname}</span> , for contacting us! Our team will be in touch with you soon.</div>`);
-                console.log(response)
-
                 setUser({
                     firstname: '',
                     lastname: '',
