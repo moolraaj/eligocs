@@ -22,6 +22,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <link rel="icon" src="favicon.png" sizes="32x32" href="/favicon-32x32.png" />
 
       <body className={inter.className}>
 

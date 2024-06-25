@@ -23,12 +23,14 @@ export const allExportedApi = () => {
     return data;
   };
 
+
   // fetch About page api
   const AboutApi = async () => {
     let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=about&fields=acf&acf_format=standard`);
     let response = await data.json();
     return response;
   };
+
 
   // fetch portfolio page api
   const portfolioApi = async () => {
@@ -37,12 +39,14 @@ export const allExportedApi = () => {
     return result;
   };
 
+
   // fetch Our Service page api
   const ServiceApi = async () => {
     let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=our-services&fields=acf&acf_format=standard`);
     let response = await data.json();
     return response;
   };
+
 
   // fetch meet our team page api
   const meetOurTeamPage = async () => {
@@ -51,13 +55,13 @@ export const allExportedApi = () => {
     return result;
   };
 
+
   // fetch Blog page api
   const BlogPageApi = async () => {
     let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/pages?slug=blogs&fields=acf&acf_format=standard`);
     let response = await data.json();
     return response;
   };
-
 
 
   // fetch Our products page api
@@ -74,9 +78,6 @@ export const allExportedApi = () => {
     let response = await data.json();
     return response;
   }
-
-
-
 
   // fetch contact us page api
   const contactUsPageApi = async () => {
