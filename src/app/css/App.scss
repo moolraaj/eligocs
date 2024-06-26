@@ -6586,6 +6586,9 @@ h6.user_name_c a {
 
 
 @media(max-width:768px) {
+	.related_product.not-clickable{
+		font-size: 20px !important;
+	}
 	form#jobform textarea{
 		padding: 15px 0px 10px;
 	}
@@ -9574,6 +9577,13 @@ h6.user_name_c a {
 	.t_c_data h1 {
 		font-size: 50px;
 	}
+}
+.related_product.not-clickable {
+	font-size: 27.29px;
+	font-weight: 600;
+	font-family: $Euclidfont;
+    color: #ffffff8c;
+    pointer-events: none;
 }
 
 

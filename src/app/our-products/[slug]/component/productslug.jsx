@@ -1,4 +1,6 @@
-'use client'
+
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { allExportedApi } from '@/utils/apis/Apis';
@@ -9,14 +11,14 @@ export default function ProductSlug({ slug }) {
     const api = allExportedApi();
     const [data, setData] = useState([]);
     const [allProducts, setAllProducts] = useState([]);
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true);
 
     const loadSingleProduct = async () => {
         try {
             const response = await api.fetchSigleProducts(slug);
             setData(response);
         } catch (error) {
-            console.error("Failed to load services", error)
+            console.error("Failed to load services", error);
         }
     };
 
@@ -25,7 +27,7 @@ export default function ProductSlug({ slug }) {
             const response = await api.AllProducts();
             setAllProducts(response);
         } catch (error) {
-            console.error("Failed to load services", error)
+            console.error("Failed to load services", error);
         }
     };
 
@@ -33,12 +35,10 @@ export default function ProductSlug({ slug }) {
         const loadData = async () => {
             await loadSingleProduct();
             await loadAllProducts();
-            setLoading(false)
-        }
-        loadData()
+            setLoading(false);
+        };
+        loadData();
     }, []);
-
-
 
     return (
         <>
@@ -77,8 +77,12 @@ export default function ProductSlug({ slug }) {
                                             <h2>Related Products</h2>
                                             <div className="related_product_inner">
                                                 {relatedProducts && relatedProducts.map((relProduct, index) => (
-                                                    <div key={index} className="related_product">
-                                                        <Link href={`/our-products/${relProduct.slug}`}>{relProduct.acf.product_name}</Link>
+                                                    <div key={index} className={`related_product ${relProduct.product_status !== 'completed' ? 'not-clickable' : ''}`}>
+                                                        {relProduct.product_status === 'completed' ? (
+                                                            <Link href={`/our-products/${relProduct.slug}`}>{relProduct.acf.product_name}</Link>
+                                                        ) : (
+                                                            <span>{relProduct.acf.product_name}</span>
+                                                        )}
                                                     </div>
                                                 ))}
                                             </div>
@@ -90,11 +94,8 @@ export default function ProductSlug({ slug }) {
                             );
                         })}
                     </div>
-
-
                 </div>
             )}
-
         </>
     );
 }
